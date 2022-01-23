@@ -1,13 +1,47 @@
+/* Sets default font size. */
+html {
+  font-size: 15px;
+}
+
+/* Removes browser default margin and sets font. */
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Progress bar wrapper. */
+.progress {
+  width: 100%;
+  height: 8px;
+  border-radius: 10px;
+  background-color: inherit;
 }
+
+/* Progress bar. */
+.progress-bar {
+  float: left;
+  height: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  text-align: center;
+  border-right: 0.25em solid white;
+  color: white;
+  border-right-width: 2px;
+}
+
+/* Programming progress theme. */
+.progress-programming { background-color: #fac6c5!important; }
+.progress-programming > .progress-bar { background-color: #EF5350; }
+
+/* Web progress theme. */
+.progress-web { background-color: #bbdffb!important; }
+.progress-web > .progress-bar { background-color: #42A5F5; }
+
+/* Database progress theme. */
+.progress-database { background-color: #ffd980!important; }
+.progress-database > .progress-bar { background-color: #FFB300; }
+
+/* Other progress theme. */
+.progress-other { background-color: #a8bac3!important; }
+.progress-other > .progress-bar { background-color: #607D8B; }
