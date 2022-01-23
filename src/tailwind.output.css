@@ -855,8 +855,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   min-width: 100%;
 }
 
-.max-w-screen-xl {
-  max-width: 1280px;
+.max-w-full {
+  max-width: 100%;
 }
 
 .flex-shrink-0 {
@@ -1530,6 +1530,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:w-8\/12 {
     width: 66.666667%;
+  }
+
+  .lg\:max-w-screen-lg {
+    max-width: 1024px;
   }
 
   .lg\:justify-start {
