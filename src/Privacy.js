@@ -5,7 +5,7 @@ import Section from './components/Section';
 export default function About() {
 
     useEffect(() => {
-        document.title = 'Privacy Policy';
+        document.title = 'Privacy Policy - Kyle Gough';
     }, [])
 
     return (

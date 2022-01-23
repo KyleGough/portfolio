@@ -9,7 +9,7 @@ import Screenshots from '../components/Screenshots';
 export default function CavernMinesweeper() {
 
     useEffect(() => {
-        document.title = 'Cavern Minesweeper';
+        document.title = 'Cavern Minesweeper - Minesweeper clone written in Ruby';
     }, []);
 
     const images = [

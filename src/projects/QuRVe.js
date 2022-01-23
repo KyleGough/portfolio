@@ -7,7 +7,7 @@ import Pagination from '../components/Pagination';
 export default function QuRVe() {
 
     useEffect(() => {
-        document.title = 'QuRVe';
+        document.title = 'QuRVe - Credit Tech Application';
     }, []);
 
     return (

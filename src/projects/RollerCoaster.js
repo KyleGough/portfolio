@@ -9,7 +9,7 @@ import Screenshots from '../components/Screenshots';
 export default function RollerCoaster() {
 
     useEffect(() => {
-        document.title = 'Roller Coaster';
+        document.title = 'Roller Coaster - OpenGL Coaster Simulation';
     }, []);
 
     const images = [

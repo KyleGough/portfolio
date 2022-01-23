@@ -9,7 +9,7 @@ import Screenshots from '../components/Screenshots';
 export default function GraphVisualiser() {
 
     useEffect(() => {
-        document.title = 'Graph Algorithm Visualiser';
+        document.title = 'Graph Algorithm Visualiser - Web App to Visualise Various Graph Algorithms';
     }, []);
 
     const images = [

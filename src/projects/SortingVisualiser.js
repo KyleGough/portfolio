@@ -9,7 +9,7 @@ import Screenshots from '../components/Screenshots';
 export default function SortingVisualiser() {
 
     useEffect(() => {
-        document.title = 'Sorting Algorithm Visualiser';
+        document.title = 'Sorting Algorithm Visualiser - Visualise 20 Unique Sorting Algorithms';
     }, []);
 
     const images = [

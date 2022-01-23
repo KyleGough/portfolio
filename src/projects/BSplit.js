@@ -9,7 +9,7 @@ import Screenshots from '../components/Screenshots';
 export default function BSplit() {
 
     useEffect(() => {
-        document.title = 'BSplit';
+        document.title = 'BSplit: Bill Splitter Web Application';
     }, []);
 
     const images = [

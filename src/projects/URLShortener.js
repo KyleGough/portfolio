@@ -9,7 +9,7 @@ import Screenshots from '../components/Screenshots';
 export default function URLShortener() {
 
     useEffect(() => {
-        document.title = 'URL Shortener';
+        document.title = 'URL Shortener - Shorten Long URLs to Easily Share';
     }, []);
 
     const images = [

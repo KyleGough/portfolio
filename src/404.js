@@ -6,7 +6,7 @@ import Section from './components/Section';
 export default function NotFound() {
 
     useEffect(() => {
-        document.title = 'Page Not Found';
+        document.title = '404 Page Not Found - Kyle Gough';
     }, [])
 
     return (

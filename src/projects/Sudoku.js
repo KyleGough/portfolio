@@ -9,7 +9,7 @@ import Screenshots from '../components/Screenshots';
 export default function Sudoku() {
 
     useEffect(() => {
-        document.title = 'Logical Sudoku Solver';
+        document.title = 'Logical Sudoku Solver - In-Depth Step-by-Step Sudoku Solver';
     }, []);
 
     const images = [

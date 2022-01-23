@@ -9,7 +9,7 @@ import Screenshots from '../components/Screenshots';
 export default function ToDoList() {
 
     useEffect(() => {
-        document.title = 'To Do List';
+        document.title = 'To Do List - Web Application to Manage To Do Lists';
     }, []);
 
     const images = [

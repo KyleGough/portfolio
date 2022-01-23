@@ -6,7 +6,7 @@ export default function Projects() {
     const [filter, setFilter] = useState('All');
 
     useEffect(() => {
-        document.title = 'Projects';
+        document.title = 'Project List - Kyle Gough';
     }, [])
 
     const setFilterProjects = e => {

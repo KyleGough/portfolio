@@ -11,7 +11,7 @@ export default function Home() {
     const carouselInterval = useRef(null);
 
     useEffect(() => {
-        document.title = 'Kyle Gough - Portfolio';
+        document.title = 'Portfolio - Kyle Gough';
         carouselInterval.current = setInterval(carouselNext, 10000);
     }, [])
 

@@ -9,7 +9,7 @@ import Screenshots from '../components/Screenshots';
 export default function Minesweeper() {
 
     useEffect(() => {
-        document.title = 'React Minesweeper';
+        document.title = 'React Minesweeper - Classic Minesweeper Clone Using React';
     }, []);
 
     const images = [

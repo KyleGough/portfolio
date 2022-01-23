@@ -9,7 +9,7 @@ import Screenshots from '../components/Screenshots';
 export default function LucidLab() {
 
     useEffect(() => {
-        document.title = 'LucidLab';
+        document.title = 'LucidLab - An Adaptable, Heterogeneous Internet-of-things Testbed';
     }, []);
 
     const images = [

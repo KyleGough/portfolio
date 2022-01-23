@@ -7,7 +7,7 @@ import Skill from './components/Skill';
 export default function About() {
 
     useEffect(() => {
-        document.title = 'About Me';
+        document.title = 'About Me - Kyle Gough';
     }, [])
     
     const skillsProgramming = [

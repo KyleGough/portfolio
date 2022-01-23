@@ -9,7 +9,7 @@ import Screenshots from '../components/Screenshots';
 export default function Portfolio() {
 
     useEffect(() => {
-        document.title = 'Portfolio';
+        document.title = 'Portfolio - Personal Portfolio Website';
     }, []);
 
     const images = [

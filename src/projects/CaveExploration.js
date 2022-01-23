@@ -9,7 +9,7 @@ import Screenshots from '../components/Screenshots';
 export default function CaveExploration() {
 
     useEffect(() => {
-        document.title = 'Cave Exploration';
+        document.title = 'Cave Exploration - Improving and Simulating Cave Explortation with Swarm AI';
     }, []);
 
     const images = [

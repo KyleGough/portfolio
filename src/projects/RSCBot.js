@@ -9,7 +9,7 @@ import Screenshots from '../components/Screenshots';
 export default function RSCBot() {
 
     useEffect(() => {
-        document.title = 'RSCBot';
+        document.title = 'RSCBot - Personalisable Trader ChatBot';
     }, []);
 
     const images = [

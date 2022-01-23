@@ -9,7 +9,7 @@ import Screenshots from '../components/Screenshots';
 export default function DeliveryPlanner() {
 
     useEffect(() => {
-        document.title = 'Delivery Route Planner';
+        document.title = 'Delivery Route Planner - Delivery Route and Report Generation Software';
     }, []);
 
     const images = [
