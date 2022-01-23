@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import Section from './components/Section';
 import { Link } from 'react-router-dom';
 import Avatar from './img/avatar.png';
@@ -13,6 +13,7 @@ export default function Home() {
     useEffect(() => {
         document.title = 'Portfolio - Kyle Gough';
         carouselInterval.current = setInterval(carouselNext, 10000);
+        return () => { clearInterval(carouselInterval.current) };
     }, [])
 
     const carouselPrevious = () => {
