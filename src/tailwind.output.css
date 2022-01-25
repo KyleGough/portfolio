@@ -1019,15 +1019,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .bg-header2 {
-  background-image: url("/public/img/rscbot5.jpg");
+  background-image: url("/public/img/header2.jpg");
 }
 
 .bg-header3 {
-  background-image: url("/public/img/sudoku1.jpg");
-}
-
-.bg-header4 {
-  background-image: url("/public/img/header4.jpg");
+  background-image: url("/public/img/header3.jpg");
 }
 
 .bg-gradient-to-r {

@@ -7,7 +7,7 @@ import ArrowBack from './icons/ArrowBack';
 
 export default function Home() {
     const [carousel, setCarousel] = useState(0);
-    const carouselCount = 4;
+    const carouselCount = 3;
     const carouselInterval = useRef(null);
 
     useEffect(() => {
@@ -30,7 +30,6 @@ export default function Home() {
             <div className={`absolute top-0 left-0 w-full h-full bg-header1 bg-fixed bg-center bg-cover duration-2000 transition-opacity ${carousel === 0 ? 'opacity-100' : 'opacity-0'}`}></div>
             <div className={`absolute top-0 left-0 w-full h-full bg-header2 bg-fixed bg-center bg-cover duration-2000 transition-opacity ${carousel === 1 ? 'opacity-100' : 'opacity-0'}`}></div>   
             <div className={`absolute top-0 left-0 w-full h-full bg-header3 bg-fixed bg-center bg-cover duration-2000 transition-opacity ${carousel === 2 ? 'opacity-100' : 'opacity-0'}`}></div>   
-            <div className={`absolute top-0 left-0 w-full h-full bg-header4 bg-fixed bg-center bg-cover duration-2000 transition-opacity ${carousel === 3 ? 'opacity-100' : 'opacity-0'}`}></div>   
             <div className='container z-50'>
                 <div className='flex justify-between'>
                     <button onClick={carouselPrevious}><ArrowBack className='cursor-pointer w-16 h-16 fill-white opacity-75 hover:opacity-100 focus:opacity-100' /></button>

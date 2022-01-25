@@ -51,9 +51,8 @@ module.exports = {
       },
       backgroundImage: {
         'header1': 'url("/public/img/header1.jpg")',
-        'header2': 'url("/public/img/rscbot5.jpg")',
-        'header3': 'url("/public/img/sudoku1.jpg")',
-        'header4': 'url("/public/img/header4.jpg")'
+        'header2': 'url("/public/img/header2.jpg")',
+        'header3': 'url("/public/img/header3.jpg")'
       },
       transitionDuration: {
         '2000': '2000ms'
