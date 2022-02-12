@@ -1,10 +1,4 @@
-import React from 'react';
-
-type Props = {
-    className: string;
-};
-
-export default function EmailIcon(props: Props) {
+export default function EmailIcon(props: { className: string }) {
     return (
         <svg className={props.className} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px">
             <path d="M0 0h24v24H0z" fill="none"/>

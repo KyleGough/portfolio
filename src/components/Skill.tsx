@@ -1,6 +1,4 @@
-import React from 'react';
-
-type Props = {
+type SkillProps = {
     type: string,
     progress: string,
     title: string,
@@ -8,12 +6,12 @@ type Props = {
     comment: string
 };
 
-export default function Skill(props: Props) {
+export default function Skill(props: SkillProps) {
     return (
         <div className='flex flex-row justify-center py-4'>
             <div className='w-3/12 lg:w-4/12 pt-2'>
                 <div className={`progress ${props.type}`}>
-                    <div className={`progress-bar ${props.progress}`} data-skill={props.progress}></div>
+                    <div className={`progress-bar ${props.progress}`}></div>
                 </div>
             </div>
             <div className='w-9/12 lg:w-8/12 ml-6'>

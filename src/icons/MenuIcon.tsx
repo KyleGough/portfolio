@@ -1,10 +1,4 @@
-import React from 'react';
-
-type Props = {
-    className: string;
-};
-
-export default function MenuIcon(props: Props) {
+export default function MenuIcon(props: { className: string }) {
     return (
         <svg className={props.className} xmlns="http://www.w3.org/2000/svg" height="24" width="24">
             <path d="M0 0h24v24H0V0z" fill="none"/>

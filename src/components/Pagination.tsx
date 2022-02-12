@@ -1,17 +1,16 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import Section from './Section';
 import ArrowBack from '../icons/ArrowBack';
 import ArrowForward from '../icons/ArrowForward';
 
-type Props = {
+type PaginationProps = {
     previousTitle?: string,
     previousLink?: string,
     nextTitle?: string,
     nextLink?: string
 };
 
-export default function Pagination(props: Props) {
+export default function Pagination(props: PaginationProps) {
     const previousClassName = `flex items-center ${props.previousTitle ? 'fill-link text-link hover:fill-link-hover hover:text-link-hover' : 'fill-disabled text-disabled cursor-not-allowed'}`;
     const nextClassName = `flex items-center ${props.nextTitle ? 'fill-link text-link hover:fill-link-hover hover:text-link-hover' : 'fill-disabled text-disabled cursor-not-allowed'}`;
 

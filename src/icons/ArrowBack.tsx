@@ -1,10 +1,4 @@
-import React from 'react';
-
-type Props = {
-    className: string;
-};
-
-export default function ArrowBack(props: Props) {
+export default function ArrowBack(props: { className: string }) {
     return (
         <svg className={props.className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M0 0h24v24H0V0z" fill="none" opacity=".87"/>

@@ -1,10 +1,4 @@
-import React from 'react';
-
-type Props = {
-    className: string;
-};
-
-export default function ArrowForward(props: Props) {
+export default function ArrowForward(props: { className: string }) {
     return (
         <svg className={props.className} xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24" viewBox="0 0 24 24">
             <g>

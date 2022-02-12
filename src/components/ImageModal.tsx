@@ -1,11 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-type Props = {
-    src: string,
-    caption: string
-};
-
-export default function ImageModal(props: Props) {
+export default function ImageModal(props: { src: string, caption: string }) {
     const [open, setOpen] = useState(false);
 
     const openModal = () => {

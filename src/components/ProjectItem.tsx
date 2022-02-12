@@ -1,9 +1,8 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import Divider from './Divider';
 import Section from './Section';
 
-type Props = {
+type ProjectItemProps = {
     title: string,
     date: string,
     description: string,
@@ -12,7 +11,7 @@ type Props = {
     alt: string
 };
 
-export default function ProjectItem(props: Props) {
+export default function ProjectItem(props: ProjectItemProps) {
     return (
         <>
         <Divider />
