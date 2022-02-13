@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Section from '../components/Section';
 import Divider from '../components/Divider';
 import Chip from '../components/Chip';
@@ -31,6 +31,7 @@ export default function Portfolio() {
             <div className='flex flex-row flex-wrap items-center mt-8'>
                 <Chip name='React' />
                 <Chip name='JavaScript' />
+                <Chip name='TypeScript' />
                 <Chip name='Tailwind' />
                 <Chip name='HTML' />
                 <Chip name='CSS' />

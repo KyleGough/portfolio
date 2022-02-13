@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Section from '../components/Section';
 import Divider from '../components/Divider';
 import Chip from '../components/Chip';
