@@ -14,9 +14,10 @@ export default function LucidLab() {
 
     const images = [
         { src:'/img/lucidlab1.jpg', caption:'Upload test configuration page' },
-        { src:'/img/lucidlab3.jpg', caption:'Upload IoT controller page' },
-        { src:'/img/lucidlab4.jpg', caption:'Upload image page' },
-        { src:'/img/lucidlab2.jpg', caption:'Metrics page' },
+        { src:'/img/lucidlab4.jpg', caption:'Upload IoT controller page' },
+        { src:'/img/lucidlab5.jpg', caption:'Upload image page' },
+        { src:'/img/lucidlab2.jpg', caption:'Mote RSSI Map' },
+        { src:'/img/lucidlab3.jpg', caption:'Mote CCA Charts' }
     ];
 
     return (
