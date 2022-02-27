@@ -24,6 +24,7 @@ export default function About() {
 
     const skillsWeb = [
         ["JavaScript", "w-[90%]", "Portfolio, LucidLab, QuRVe, Graph Algorithm Visualiser, RSCBot", "Confident"],
+        ["TypeScript", "w-[70%]", "Portfolio", "Comfortable"],
         ["React", "w-[75%]", "Portfolio, LucidLab, QuRVe, Minesweeper", "Comfortable"],
         ["HTML", "w-[90%]", "Portfolio, BSplit, To Do List", "Confident"],
         ["CSS", "w-[90%]", "Portfolio, LucidLab, QuRVe, BSplit, Minesweeper", "Confident"],
