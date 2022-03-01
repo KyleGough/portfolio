@@ -3,49 +3,22 @@ import { Link } from 'react-router-dom';
 import Section from './components/Section';
 import Divider from './components/Divider';
 import Skill from './components/Skill';
+import skills from './skills.json';
+
+function Checkbox(props: { name: string, checked: boolean }): React.ReactElement {
+    return (
+        <label className='leading-6 align-middle my-4 flex'>
+            <input className='appearance-none w-6 h-6 mr-4 border-disbaled checked:border-link border-2 checked:bg-link rounded-xl focus:ring-0 checkbox' type='checkbox' checked={props.checked} readOnly/>
+            <span>{ props.name }</span>
+        </label>
+    );
+}
 
 export default function About() {
 
     useEffect(() => {
         document.title = 'About Me - Kyle Gough';
-    }, [])
-    
-    const skillsProgramming = [
-      ["Python", "w-[90%]", "Logical Sudoku Solver, Machine Learning, Image Analysis", "Confident"],
-      ["Java", "w-[80%]", "Robot Maze Environment, Steganography, Witter", "Confident"],
-      ["C#", "w-[75%]", "Sorting Visualiser, Delivery Route Planner", "Confident"],
-      ["C++", "w-[65%]", "OpenGL Simulation of a Roller Coaster", "Comfortable"],
-      ["C", "w-[35%]", "3D Printing Algorithms", "Beginner"],
-      ["Visual Basic", "w-[50%]", "First Programming Language, CLI Sorting Algorithm Visualiser", "Comfortable"],
-      ["Haskell", "w-[40%]", "Mastermind Coursework, Scratch Clone Coursework", "Comfortable"],
-      ["Ruby", "w-[30%]", "Minesweeper Game", "Beginner"],
-      ["MATLAB", "w-[45%]", "Digital Forensics on Images", "Beginner"]
-    ];
-
-    const skillsWeb = [
-        ["JavaScript", "w-[90%]", "Portfolio, LucidLab, QuRVe, Graph Algorithm Visualiser, RSCBot", "Confident"],
-        ["TypeScript", "w-[70%]", "Portfolio", "Comfortable"],
-        ["React", "w-[75%]", "Portfolio, LucidLab, QuRVe, Minesweeper", "Comfortable"],
-        ["HTML", "w-[90%]", "Portfolio, BSplit, To Do List", "Confident"],
-        ["CSS", "w-[90%]", "Portfolio, LucidLab, QuRVe, BSplit, Minesweeper", "Confident"],
-        ["PHP", "w-[55%]", "BSplit, Portfolio", "Comfortable"]
-    ];
-
-    const skillsDatabase = [
-        ["SQL", "w-[60%]", "Delivery Route Planner, BSplit, Department Store Database Analysis", "Comfortable"],
-        ["Access SQL", "w-[25%]", "Delivery Route Planner", "Beginner"],
-        ["SQLite", "w-[30%]", "BSplit", "Beginner"],
-        ["MongoDB", "w-[10%]", "URL Shortener", "Beginner"],
-    ];
-
-    const skillsOther = [
-        ["Bash", "w-[75%]", "Shell Scripting Exercises, Finding security defects in a VM", "Confident"],
-        ["Zsh", "w-[85%]", "Personal Shell of Choice, Everyday Use with Manjaro i3", "Confident"],
-        ["Git", "w-[75%]", "Used in all Personal and Group Projects", "Comfortable"],
-        ["LaTeX", "w-[50%]", "Dissertation, Multiple Group Projects ", "Comfortable"],
-        ["Markdown", "w-[75%]", "Lecture Notes", "Confident"],
-        ["Alloy", "w-[20%]", "Simple Exercises, CS262 Coursework", "Beginner"]
-    ];
+    }, []);
 
     return (
         <>
@@ -66,9 +39,26 @@ export default function About() {
 
         <Divider />
 
+        <Section>
+            <h2 className='project-header text-center md:text-left'>Goals for 2022</h2>
+            <p className='my-4'>Here are some languages and technologies I am keen to learn in 2022.</p>
+            <div className='flex flex-col'>
+                <Checkbox name='TypeScript' checked={true} />
+                <Checkbox name='React Native' checked={false} />
+                <Checkbox name='Rust' checked={false} />
+                <Checkbox name='GraphQL' checked={false} />
+                <Checkbox name='Unity' checked={false} />
+                <Checkbox name='Docker' checked={false} />
+                <Checkbox name='Shopify' checked={false} />
+                <Checkbox name='SendGrid' checked={false} />
+            </div>
+        </Section>
+
+        <Divider />
+
         <Section>    
             <h2 className='project-header text-center md:text-left'>Programming Languages</h2>
-            {skillsProgramming.map((skill, i) => {
+            {skills.programming.map((skill, i) => {
                 return (
                     <Skill
                         key={i}
@@ -86,7 +76,7 @@ export default function About() {
 
         <Section>    
             <h2 className='project-header text-center md:text-left'>Web Development</h2>
-            {skillsWeb.map((skill, i) => {
+            {skills.web.map((skill, i) => {
                 return (
                     <Skill
                         key={i}
@@ -106,7 +96,7 @@ export default function About() {
 
         <Section>    
             <h2 className='project-header text-center md:text-left'>Database</h2>
-            {skillsDatabase.map((skill, i) => {
+            {skills.database.map((skill, i) => {
                 return (
                     <Skill
                         key={i}
@@ -124,7 +114,7 @@ export default function About() {
 
         <Section>    
             <h2 className='project-header text-center md:text-left'>Other</h2>
-            {skillsOther.map((skill, i) => {
+            {skills.other.map((skill, i) => {
                 return (
                     <Skill
                         key={i}

@@ -1,0 +1,35 @@
+{
+    "programming": [
+      ["Python", "w-[90%]", "Logical Sudoku Solver, Machine Learning, Image Analysis", "Confident"],
+      ["Java", "w-[80%]", "Robot Maze Environment, Steganography, Witter", "Confident"],
+      ["C#", "w-[75%]", "Sorting Visualiser, Delivery Route Planner", "Confident"],
+      ["C++", "w-[65%]", "OpenGL Simulation of a Roller Coaster", "Comfortable"],
+      ["C", "w-[35%]", "3D Printing Algorithms", "Beginner"],
+      ["Visual Basic", "w-[50%]", "First Programming Language, CLI Sorting Algorithm Visualiser", "Comfortable"],
+      ["Haskell", "w-[40%]", "Mastermind Coursework, Scratch Clone Coursework", "Comfortable"],
+      ["Ruby", "w-[30%]", "Minesweeper Game", "Beginner"],
+      ["MATLAB", "w-[45%]", "Digital Forensics on Images", "Beginner"]
+    ],
+    "web": [
+        ["JavaScript", "w-[90%]", "Portfolio, LucidLab, QuRVe, Graph Algorithm Visualiser, RSCBot", "Confident"],
+        ["TypeScript", "w-[70%]", "Portfolio", "Comfortable"],
+        ["React", "w-[75%]", "Portfolio, LucidLab, QuRVe, Minesweeper", "Comfortable"],
+        ["HTML", "w-[90%]", "Portfolio, BSplit, To Do List", "Confident"],
+        ["CSS", "w-[90%]", "Portfolio, LucidLab, QuRVe, BSplit, Minesweeper", "Confident"],
+        ["PHP", "w-[55%]", "BSplit, Portfolio", "Comfortable"]
+    ],
+    "database": [
+        ["SQL", "w-[60%]", "Delivery Route Planner, BSplit, Department Store Database Analysis", "Comfortable"],
+        ["Access SQL", "w-[25%]", "Delivery Route Planner", "Beginner"],
+        ["SQLite", "w-[30%]", "BSplit", "Beginner"],
+        ["MongoDB", "w-[10%]", "URL Shortener", "Beginner"]
+    ],
+    "other": [
+        ["Bash", "w-[75%]", "Shell Scripting Exercises, Finding security defects in a VM", "Confident"],
+        ["Zsh", "w-[85%]", "Personal Shell of Choice, Everyday Use with Manjaro i3", "Confident"],
+        ["Git", "w-[75%]", "Used in all Personal and Group Projects", "Comfortable"],
+        ["LaTeX", "w-[50%]", "Dissertation, Multiple Group Projects ", "Comfortable"],
+        ["Markdown", "w-[75%]", "Lecture Notes", "Confident"],
+        ["Alloy", "w-[20%]", "Simple Exercises, CS262 Coursework", "Beginner"]
+    ]
+}
