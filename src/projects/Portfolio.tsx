@@ -63,7 +63,7 @@ export default function Portfolio() {
             <p className='mb-8'>The third iteration was rebuilt again in May 2020 with React due to its benefits and ease of use over PHP. After using React in multiple other projects, I decided to rebuild the site taking effort to replicate most of the previous styling but making specific changes where necessary. The app was built starting from an initial create-react-app environment using Material UI for UI components, a mixture of vanilla CSS and CSS-in-JS for custom styling, and Express.js for the server and routing.</p>
 
             <h3 className='mb-4'><strong>Version 4 (React with Tailwind)</strong></h3>
-            <p className='mb-8'>The current version was rebuilt again in January 2022 with React and Tailwind.</p>
+            <p className='mb-8'>The current version was rebuilt again in January 2022 with React and TailwindCSS as this became my preferred CSS framework. Additionally, JavaScript was upgraded to TypeScript to improve code quality, testing and help me learn the language.</p>
         </Section>
 
         <Divider />
