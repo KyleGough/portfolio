@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Section from './components/Section';
 import Divider from './components/Divider';
 import Skill from './components/Skill';
-import skills from './skills.json';
 
 function Checkbox(props: { name: string, checked: boolean }): React.ReactElement {
     return (
@@ -15,6 +14,43 @@ function Checkbox(props: { name: string, checked: boolean }): React.ReactElement
 }
 
 export default function About() {
+
+    const skillsProgramming: string[][] = [
+        ["Python", "w-[90%]", "Logical Sudoku Solver, Machine Learning, Image Analysis", "Confident"],
+        ["Java", "w-[80%]", "Robot Maze Environment, Steganography, Witter", "Confident"],
+        ["C#", "w-[75%]", "Sorting Visualiser, Delivery Route Planner", "Confident"],
+        ["C++", "w-[65%]", "OpenGL Simulation of a Roller Coaster", "Comfortable"],
+        ["C", "w-[35%]", "3D Printing Algorithms", "Beginner"],
+        ["Visual Basic", "w-[50%]", "First Programming Language, CLI Sorting Algorithm Visualiser", "Comfortable"],
+        ["Haskell", "w-[40%]", "Mastermind Coursework, Scratch Clone Coursework", "Comfortable"],
+        ["Ruby", "w-[30%]", "Minesweeper Game", "Beginner"],
+        ["MATLAB", "w-[45%]", "Digital Forensics on Images", "Beginner"]
+    ];
+
+    const skillsWeb: string[][] = [
+        ["JavaScript", "w-[90%]", "Portfolio, LucidLab, QuRVe, Graph Algorithm Visualiser, RSCBot", "Confident"],
+        ["TypeScript", "w-[70%]", "Portfolio", "Comfortable"],
+        ["React", "w-[75%]", "Portfolio, LucidLab, QuRVe, Minesweeper", "Comfortable"],
+        ["HTML", "w-[90%]", "Portfolio, BSplit, To Do List", "Confident"],
+        ["CSS", "w-[90%]", "Portfolio, LucidLab, QuRVe, BSplit, Minesweeper", "Confident"],
+        ["PHP", "w-[55%]", "BSplit, Portfolio", "Comfortable"]
+    ];
+
+    const skillsDatabase: string[][] = [
+        ["SQL", "w-[60%]", "Delivery Route Planner, BSplit, Department Store Database Analysis", "Comfortable"],
+        ["Access SQL", "w-[25%]", "Delivery Route Planner", "Beginner"],
+        ["SQLite", "w-[30%]", "BSplit", "Beginner"],
+        ["MongoDB", "w-[10%]", "URL Shortener", "Beginner"]
+    ];
+
+    const skillsOther: string[][] = [
+        ["Git", "w-[75%]", "Used in all projects", "Comfortable"],
+        ["Bash", "w-[75%]", "Shell Scripting Exercises, Finding security defects in a VM", "Comfortable"],
+        ["Zsh", "w-[85%]", "Personal Shell of Choice, Everyday use with Manjaro i3", "Comfortable"],
+        ["LaTeX", "w-[50%]", "Dissertation, Multiple Group Projects ", "Comfortable"],
+        ["Markdown", "w-[75%]", "Lecture Notes, GitHub READMEs", "Confident"],
+        ["Alloy", "w-[20%]", "Simple Exercises, CS262 Coursework", "Beginner"]
+    ];
 
     useEffect(() => {
         document.title = 'About Me - Kyle Gough';
@@ -28,7 +64,7 @@ export default function About() {
                 I am a technology analyst at Bank of America working on front office applications and batches.
                 Recent graduate of the University of Warwick with a 1<sup>st</sup> class MEng in Computer Science.
                 Interests lie in bouldering, cycling, guitar and physics. I enjoy learning new languages, frameworks and 
-                technologies and have pursued multiple personal projects putting these skills into practise, detailed below.</p>
+                technologies and have pursued multiple personal projects putting these skills into practice, detailed below.</p>
             <p className='mt-8 mb-4 text-center md:text-left'>You can view my CV 
                 <a className='text-link hover:text-link-hover' href='/CV.pdf' target='_blank' rel='noopener noreferrer'> here.</a>
             </p>
@@ -48,9 +84,9 @@ export default function About() {
                 <Checkbox name='Rust' checked={false} />
                 <Checkbox name='GraphQL' checked={false} />
                 <Checkbox name='Unity' checked={false} />
+                <Checkbox name='AWS' checked={false} />
                 <Checkbox name='Docker' checked={false} />
                 <Checkbox name='Shopify' checked={false} />
-                <Checkbox name='SendGrid' checked={false} />
             </div>
         </Section>
 
@@ -58,7 +94,7 @@ export default function About() {
 
         <Section>    
             <h2 className='project-header text-center md:text-left'>Programming Languages</h2>
-            {skills.programming.map((skill, i) => {
+            {skillsProgramming.map((skill, i) => {
                 return (
                     <Skill
                         key={i}
@@ -76,7 +112,7 @@ export default function About() {
 
         <Section>    
             <h2 className='project-header text-center md:text-left'>Web Development</h2>
-            {skills.web.map((skill, i) => {
+            {skillsWeb.map((skill, i) => {
                 return (
                     <Skill
                         key={i}
@@ -89,14 +125,14 @@ export default function About() {
                 );
             })}
             <p className='font-extrabold mt-8 underline text-center md:text-left'>Other</p>
-            <p className='text-center md:text-left'>Node.js, Sass, Less, jQuery, TailwindCSS, Materialize, Bootstrap, Webix.</p>
+            <p className='text-center md:text-left'>Node.js, Tailwind, Sass, Less, jQuery, Materialize, Bootstrap, Webix.</p>
         </Section>
 
         <Divider />
 
         <Section>    
             <h2 className='project-header text-center md:text-left'>Database</h2>
-            {skills.database.map((skill, i) => {
+            {skillsDatabase.map((skill, i) => {
                 return (
                     <Skill
                         key={i}
@@ -114,7 +150,7 @@ export default function About() {
 
         <Section>    
             <h2 className='project-header text-center md:text-left'>Other</h2>
-            {skills.other.map((skill, i) => {
+            {skillsOther.map((skill, i) => {
                 return (
                     <Skill
                         key={i}
