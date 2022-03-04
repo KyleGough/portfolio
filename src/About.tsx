@@ -19,7 +19,7 @@ export default function About() {
         ["Python", "w-[90%]", "Logical Sudoku Solver, Machine Learning, Image Analysis", "Confident"],
         ["Java", "w-[80%]", "Robot Maze Environment, Steganography, Witter", "Confident"],
         ["C#", "w-[75%]", "Sorting Visualiser, Delivery Route Planner", "Confident"],
-        ["C++", "w-[65%]", "OpenGL Simulation of a Roller Coaster", "Comfortable"],
+        ["C++", "w-[65%]", "GLUT Simulation of a Roller Coaster", "Comfortable"],
         ["C", "w-[35%]", "3D Printing Algorithms", "Beginner"],
         ["Visual Basic", "w-[50%]", "First Programming Language, CLI Sorting Algorithm Visualiser", "Comfortable"],
         ["Haskell", "w-[40%]", "Mastermind Coursework, Scratch Clone Coursework", "Comfortable"],
@@ -31,6 +31,7 @@ export default function About() {
         ["JavaScript", "w-[90%]", "Portfolio, LucidLab, QuRVe, Graph Algorithm Visualiser, RSCBot", "Confident"],
         ["TypeScript", "w-[70%]", "Portfolio", "Comfortable"],
         ["React", "w-[75%]", "Portfolio, LucidLab, QuRVe, Minesweeper", "Comfortable"],
+        ["Tailwind", "w-[70%]", "Portfolio", "Comfortable"],
         ["HTML", "w-[90%]", "Portfolio, BSplit, To Do List", "Confident"],
         ["CSS", "w-[90%]", "Portfolio, LucidLab, QuRVe, BSplit, Minesweeper", "Confident"],
         ["PHP", "w-[55%]", "BSplit, Portfolio", "Comfortable"]
@@ -125,7 +126,7 @@ export default function About() {
                 );
             })}
             <p className='font-extrabold mt-8 underline text-center md:text-left'>Other</p>
-            <p className='text-center md:text-left'>Node.js, Tailwind, Sass, Less, jQuery, Materialize, Bootstrap, Webix.</p>
+            <p className='text-center md:text-left'>Node.js, jQuery, AJAX, Materialize, Bootstrap, Webix.</p>
         </Section>
 
         <Divider />

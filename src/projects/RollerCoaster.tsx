@@ -9,7 +9,7 @@ import Screenshots from '../components/Screenshots';
 export default function RollerCoaster() {
 
     useEffect(() => {
-        document.title = 'Roller Coaster - OpenGL Coaster Simulation';
+        document.title = 'Roller Coaster Simulation';
     }, []);
 
     const images = [
@@ -29,7 +29,7 @@ export default function RollerCoaster() {
 
             <div className='flex flex-row flex-wrap items-center mt-8'>
                 <Chip name='C++' />
-                <Chip name='OpenGL' />
+                <Chip name='GLUT' />
             </div>
         </Section>
 

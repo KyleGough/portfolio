@@ -35,7 +35,7 @@ export default function CaveExploration() {
 
             <div className='flex flex-row flex-wrap items-center mt-8'>
                 <Chip name='C++' />
-                <Chip name='OpenGL' />
+                <Chip name='GLUT' />
             </div>
         </Section>
 
