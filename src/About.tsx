@@ -1,8 +1,9 @@
-import React, { MouseEventHandler, useEffect, useRef } from 'react';
+import React, { MouseEventHandler, RefObject, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Section from './components/Section';
 import Divider from './components/Divider';
-import Skill from './components/Skill';
+import renderSkills from './components/Skill';
+import LabelledLogo from './components/LabelledLogo';
 
 // Technology logos.
 import PythonLogo from './icons/python.png';
@@ -41,24 +42,8 @@ enum Progress {
 
 function TabItem(props: { value: string, onClick?: MouseEventHandler<HTMLButtonElement> | undefined }): React.ReactElement {
     return (
-        <button onClick={props.onClick} className='px-12 py-4 bg-background text-link hover:text-link-hover rounded-b-xl shadow border-light'>{props.value}</button>
+        <button onClick={props.onClick} className='px-12 py-4 bg-background text-link hover:text-link-hover rounded-sm shadow border-light'>{props.value}</button>
     );
-}
-
-function renderSkills(skills: string[][], type: string) {
-    return skills.map(skill => {
-        return (
-            <Skill
-                key={skill[0]}
-                type={type}
-                title={skill[0]}
-                progress={skill[1]}
-                description={skill[2]}
-                comment={skill[3]}
-                logo={skill[4]}
-            />
-        )
-    });
 }
 
 function Checkbox(props: { name: string, progress: Progress, checked: boolean }): React.ReactElement {
@@ -68,16 +53,6 @@ function Checkbox(props: { name: string, progress: Progress, checked: boolean })
             <span>{ props.name }</span>
         </label>
     );
-}
-
-// Labelled logo image.
-function LabelledLogo(props: { name: string, logo: string }): React.ReactElement {
-    return (
-        <div className='text-center mb-8'>
-            <img className='w-8 h-8 mb-2 mx-auto' src={props.logo} alt={`${props.name} Logo`} />
-            <p className='text-sm'>{props.name}</p>
-        </div>
-    )
 }
 
 function UniModules(props: { name: string, children: React.ReactElement }): React.ReactElement {
@@ -99,8 +74,8 @@ export default function About() {
     const anchorUni = useRef<HTMLDivElement>(null);
 
     // Smoothly scrolls to a ref.
-    const scrollTo = (ref: any) => {
-        ref.current.scrollIntoView({ behavior: 'smooth' });
+    const scrollTo = (ref: RefObject<HTMLDivElement>) => {
+        (ref.current as HTMLDivElement).scrollIntoView({ behavior: 'smooth' });
     }
 
     const skillsProgramming: string[][] = [

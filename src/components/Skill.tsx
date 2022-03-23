@@ -10,7 +10,7 @@ type SkillProps = {
     logo?: string
 };
 
-export default function Skill(props: SkillProps) {
+function Skill(props: SkillProps) {
     const progressRef = useRef<HTMLDivElement>(null);
     const isVisible = useOnScreen(progressRef);
     const [animatedIn, setAnimatedIn] = useState(false);
@@ -26,7 +26,7 @@ export default function Skill(props: SkillProps) {
         <div className='flex flex-row justify-center py-4'>
             <div className='w-3/12 lg:w-4/12 pt-2'>
                 <div className={`progress overflow-hidden ${props.type}`}>
-                    <div ref={progressRef} className={`progress-bar transition-transform ease-in-out duration-[1500ms] -translate-x-full ${props.progress}`}></div>
+                    <div ref={progressRef} className={`progress-bar transition-transform ease-in-out duration-[2000ms] -translate-x-full ${props.progress}`}></div>
                 </div>
             </div>
             <div className='w-9/12 lg:w-8/12 ml-6 flex'>
@@ -38,4 +38,20 @@ export default function Skill(props: SkillProps) {
             </div>
         </div>
     );
+}
+
+export default function renderSkills(skills: string[][], type: string) {
+    return skills.map(skill => {
+        return (
+            <Skill
+                key={skill[0]}
+                type={type}
+                title={skill[0]}
+                progress={skill[1]}
+                description={skill[2]}
+                comment={skill[3]}
+                logo={skill[4]}
+            />
+        )
+    });
 }
