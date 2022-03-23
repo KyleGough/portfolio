@@ -1,9 +1,11 @@
-import { ReactNode } from 'react';
+import { ReactNode, forwardRef, ForwardedRef } from 'react';
 
-export default function Section(props: { children: ReactNode }) {
+function Section(props: { id?: string, children: ReactNode }, ref: ForwardedRef<HTMLDivElement>) {
     return (
-        <div className='container text-primary py-8 last:pb-16'>
+        <div id={props.id} ref={ref} className='container text-primary py-8 last:pb-16'>
             {props.children}
         </div>
     );
 }
+
+export default forwardRef(Section);

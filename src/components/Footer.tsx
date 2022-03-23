@@ -4,7 +4,7 @@ import EmailIcon from '../icons/EmailIcon';
 
 export default function Footer() {
     return (
-        <footer>
+        <footer className='bg-background'>
             <div className='bg-nav-light text-white text-center'>
                 <div className='container mx-auto px-0 py-12'>
                     <div className='w-full flex flex-wrap justify-center px-4'>

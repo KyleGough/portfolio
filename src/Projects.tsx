@@ -30,7 +30,7 @@ export default function Projects() {
     const projects: Project[] = [
         {
             title: 'Portfolio',
-            date: 'December 2016 - January 2022',
+            date: 'December 2016 - March 2022',
             src: '/img/portfolio-projects-v4b.png',
             alt: 'Portfolio',
             link: '/projects/portfolio',
@@ -172,7 +172,7 @@ export default function Projects() {
             
             <p className='text-sm mb-2 ml-2 font-bold text-link text-center md:text-left'>Filter Projects</p>
             <div className='flex md:block md:justify-start'>
-                <select onChange={setFilterProjects} name='project-filter' className='mx-auto px-8 py-4 text-lg text-center cursor-pointer bg-white ring-2 ring-link focus:ring-link-hover rounded'>
+                <select onChange={setFilterProjects} name='project-filter' className='mx-auto px-8 py-4 text-lg text-center cursor-pointer bg-background ring-2 ring-link focus:ring-link-hover rounded'>
                     <option value='All'>All</option>
                     <option value='C#'>C#</option>
                     <option value='C++'>C++</option>

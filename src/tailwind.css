@@ -9,6 +9,7 @@
         @apply text-5xl;
         @apply font-light;
         @apply mt-12;
+        @apply tracking-tight;
     }
 
     .project-subtitle {

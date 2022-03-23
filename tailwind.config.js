@@ -41,10 +41,15 @@ module.exports = {
         'link': '#03B0EE',
         'link-hover': '#4CAF50',
         'disabled': 'rgba(0,0,0,0.4)',
-        'chip': '#3F51B5'
+        'chip': '#3F51B5',
+        'chip-light': 'rgba(63, 81, 181, 0.1)',
+        'chip-old': 'rgba(0, 0, 0, 0.1)',
+        'traffic-red': '#EF5350',
+        'traffic-amber': '#FFB300',
+        'traffic-green': '#4CAF50'
       },
       lineHeight: {
-        'chip': '1.6rem'
+        'chip': '1.7rem'
       },
       dropShadow: {
         'header': '0 1px 2px rgba(0, 0, 0, 0.50)'
@@ -52,7 +57,8 @@ module.exports = {
       backgroundImage: {
         'header1': 'url("/public/img/header1.jpg")',
         'header2': 'url("/public/img/header2.jpg")',
-        'header3': 'url("/public/img/header3.jpg")'
+        'header3': 'url("/public/img/header3.jpg")',
+        'noise': 'url("/public/img/noise.png")'
       },
       transitionDuration: {
         '2000': '2000ms'

@@ -38,10 +38,6 @@ body {
 .progress-web { background-color: #bbdffb!important; }
 .progress-web > .progress-bar { background-color: #42A5F5; }
 
-/* Database progress theme. */
-.progress-database { background-color: #ffd980!important; }
-.progress-database > .progress-bar { background-color: #FFB300; }
-
 /* Other progress theme. */
 .progress-other { background-color: #a8bac3!important; }
 .progress-other > .progress-bar { background-color: #607D8B; }
