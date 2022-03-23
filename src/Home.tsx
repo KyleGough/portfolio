@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Section from './components/Section';
 import { Link } from 'react-router-dom';
 import ArrowForward from './icons/ArrowForward';
@@ -13,7 +13,7 @@ export default function Home() {
         document.title = 'Portfolio - Kyle Gough';
         carouselInterval.current = window.setInterval(carouselNext, 10000);
         return () => { window.clearInterval(carouselInterval.current) };
-    }, [])
+    }, []);
 
     const carouselPrevious = () => {
         setCarousel(carousel => (((carousel - 1) % carouselCount) + carouselCount) % carouselCount);
@@ -61,7 +61,7 @@ export default function Home() {
                     </div>
                 </div>
             </Section>
-        <hr className='mt-8 mx-16 h-px bg-nav-light opacity-25' />
+            <hr className='mt-8 mx-16 h-px bg-nav-light opacity-25' />
         </header>
         </>
     );
