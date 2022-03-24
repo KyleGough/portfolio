@@ -59,7 +59,7 @@ body {
   background-color: white;
   width: 3rem;
   height: 20rem;
-  transform: rotateX(30deg);
+  transform: rotateZ(30deg);
   left: 0rem;
   top: -16rem;
   opacity: 75%;
@@ -67,10 +67,10 @@ body {
 
 @keyframes shimmer {
   0% {
-    transform: translateX(0);
+    transform: rotateZ(30deg) translateX(0);
   }
   100% {
-    transform: translateX(25rem)
+    transform: rotateZ(30deg) translateX(25rem);
   }
 }
 
