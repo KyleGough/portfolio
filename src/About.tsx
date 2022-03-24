@@ -41,7 +41,7 @@ enum Progress {
 
 function TabItem(props: { value: string, onClick?: MouseEventHandler<HTMLButtonElement> | undefined }): React.ReactElement {
     return (
-        <button onClick={props.onClick} className='h-[75px] px-12 py-4 bg-background text-link hover:text-link-hover rounded-sm shadow border-light'>{props.value}</button>
+        <button onClick={props.onClick} className='shimmer h-[75px] px-12 py-4 bg-background text-link hover:text-link-hover rounded-sm shadow border-light'>{props.value}</button>
     );
 }
 
