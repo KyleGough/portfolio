@@ -1,5 +1,4 @@
 import React, { MouseEventHandler, RefObject, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import Section from './components/Section';
 import Divider from './components/Divider';
 import renderSkills from './components/Skill';
@@ -42,14 +41,14 @@ enum Progress {
 
 function TabItem(props: { value: string, onClick?: MouseEventHandler<HTMLButtonElement> | undefined }): React.ReactElement {
     return (
-        <button onClick={props.onClick} className='px-12 py-4 bg-background text-link hover:text-link-hover rounded-sm shadow border-light'>{props.value}</button>
+        <button onClick={props.onClick} className='h-[75px] px-12 py-4 bg-background text-link hover:text-link-hover rounded-sm shadow border-light'>{props.value}</button>
     );
 }
 
 function Checkbox(props: { name: string, progress: Progress, checked: boolean }): React.ReactElement {
     return (
-        <label className='leading-6 align-middle my-2 flex'>
-            <input className={`appearance-none w-6 h-6 mr-4 border-2 rounded-xl focus:ring-0 checkbox ${props.progress}`} type='checkbox' checked={props.checked} readOnly/>
+        <label className='leading-6 align-middle my-2 ml-4 flex'>
+            <input className={`appearance-none w-6 h-6 mr-8 border-2 rounded-xl focus:ring-0 checkbox ${props.progress}`} type='checkbox' checked={props.checked} readOnly/>
             <span>{ props.name }</span>
         </label>
     );
@@ -121,16 +120,14 @@ export default function About() {
                 Recent graduate of the University of Warwick with a 1<sup>st</sup> class MEng in Computer Science.
                 Interests lie in bouldering, cycling, guitar and physics. I enjoy learning new languages, frameworks and 
                 technologies and have pursued multiple personal projects putting these skills into practice, detailed below.</p>
-            <p className='mt-8 mb-4 text-center md:text-left'>
+            <p className='mt-8 text-center md:text-left'>
                 <a className='text-link hover:text-link-hover' href='/CV.pdf' target='_blank' rel='noopener noreferrer'>Read my CV</a>
-            </p>
-            <p className='mt-4 text-center md:text-left'>You can view a list of all my projects
-                <Link to='/projects' className='text-link hover:text-link-hover'> here.</Link>
             </p>
         </Section>
 
-        <Divider />
+        <hr className='mt-8 h-px bg-divider' />
 
+        <div className='bg-circuits'>
         <Section>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 justify-center'>
                 <TabItem onClick={() => scrollTo(anchorProgramming)} value='Programming Languages' />
@@ -140,8 +137,8 @@ export default function About() {
                 <TabItem onClick={() => scrollTo(anchorUni)} value='University Modules' />
             </div>
         </Section>
-
-        <Divider />
+        <hr className='mb-8 h-px bg-divider' />
+        </div>
 
         <Section ref={anchorProgramming} id='programming-languages'>    
             <h2 className='project-header text-center md:text-left'>Programming Languages</h2>

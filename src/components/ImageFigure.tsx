@@ -7,7 +7,7 @@ type FigureProps = {
     }
 };
 
-export default function Figure(props: FigureProps) {
+export default function ImageFigure(props: FigureProps) {
     return (
         <Section>
             <img className='text-center items-center mx-auto' src={props.image.src} alt={props.image.caption} />

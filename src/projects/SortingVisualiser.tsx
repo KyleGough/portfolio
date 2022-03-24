@@ -3,8 +3,11 @@ import Section from '../components/Section';
 import Divider from '../components/Divider';
 import Chip from '../components/Chip';
 import Pagination from '../components/Pagination';
-import Figure from '../components/Figure';
+import ImageFigure from '../components/ImageFigure';
+import VideoFigure from '../components/VideoFigure';
 import Screenshots from '../components/Screenshots';
+import HeapSortVideo from '../videos/heap.mp4';
+import QuickSortVideo from '../videos/quick.mp4';
 
 export default function SortingVisualiser() {
 
@@ -57,7 +60,7 @@ export default function SortingVisualiser() {
 
         <Divider />
 
-        <Figure image={images[0]} />
+        <VideoFigure src={HeapSortVideo} caption='Heap Sort' />
 
         <Divider />
 

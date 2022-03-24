@@ -3,7 +3,7 @@ import Section from '../components/Section';
 import Divider from '../components/Divider';
 import Chip from '../components/Chip';
 import Pagination from '../components/Pagination';
-import Figure from '../components/Figure';
+import ImageFigure from '../components/ImageFigure';
 import Screenshots from '../components/Screenshots';
 
 export default function DeliveryPlanner() {
@@ -35,7 +35,7 @@ export default function DeliveryPlanner() {
 
         <Divider />
 
-        <Figure image={images[0]} />
+        <ImageFigure image={images[0]} />
 
         <Divider />
 

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Section from './components/Section';
 import ProjectItem from './components/ProjectItem';
+import Divider from './components/Divider';
 
 type Project = {
     title: string,
     date: string,
+    video?: string,
     src: string,
     alt: string,
     link: string,
@@ -13,7 +15,7 @@ type Project = {
 };
 
 export default function Projects() {
-    const [filter, setFilter] = useState('All');
+    const [filter, setFilter] = useState<string>('All');
 
     useEffect(() => {
         document.title = 'Project List - Kyle Gough';
@@ -168,11 +170,16 @@ export default function Projects() {
     return (
         <>
         <Section>
-            <h1 className='project-title mb-12 text-center md:text-left'>Projects</h1>
-            
+            <h1 className='project-title mb-8 text-center md:text-left'>Projects</h1>
+        </Section>
+
+        <hr className='mt-8 h-px bg-divider' />
+
+        <div className='bg-circuits'>
+        <Section>
             <p className='text-sm mb-2 ml-2 font-bold text-link text-center md:text-left'>Filter Projects</p>
             <div className='flex md:block md:justify-start'>
-                <select onChange={setFilterProjects} name='project-filter' className='mx-auto px-8 py-4 text-lg text-center cursor-pointer bg-background ring-2 ring-link focus:ring-link-hover rounded'>
+                <select onChange={setFilterProjects} name='project-filter' className='mx-auto px-12 py-4 text-center cursor-pointer bg-background text-link hover:text-link-hover ring-0 rounded-sm shadow border-light'>
                     <option value='All'>All</option>
                     <option value='C#'>C#</option>
                     <option value='C++'>C++</option>
@@ -187,18 +194,24 @@ export default function Projects() {
                 </select>
             </div>
         </Section>
+        <hr className='mb-8 h-px bg-divider' />
+        </div>
 
         {projects.filter(filterProjects).map((project, i) => {
             return (
+                <>
+                { i !== 0 && <Divider /> }
                 <ProjectItem
-                    key={i}
+                    key={project.title}
                     title={project.title}
                     date={project.date}
                     description={project.description}
+                    video={project.video}
                     src={project.src}
                     alt={project.alt}
                     link={project.link}
                 />
+                </>
             )
         })}
         </>

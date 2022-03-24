@@ -3,7 +3,7 @@ import Section from '../components/Section';
 import Divider from '../components/Divider';
 import Chip from '../components/Chip';
 import Pagination from '../components/Pagination';
-import Figure from '../components/Figure';
+import ImageFigure from '../components/ImageFigure';
 import Screenshots from '../components/Screenshots';
 
 export default function Portfolio() {
@@ -45,7 +45,7 @@ export default function Portfolio() {
 
         <Divider />
 
-        <Figure image={images[4]} />
+        <ImageFigure image={images[4]} />
 
         <Divider />
 
