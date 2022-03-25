@@ -3,7 +3,7 @@ import UnfoldIcon from '../icons/Unfold';
 
 function ProjectFilterSelection(props: { value: string, onClick: (a: string) => void }) {
     return (
-        <li onClick={() => props.onClick(props.value)} className='hover:text-chip hover:bg-chip-light py-2 px-8 cursor-pointer select-none'>{props.value}</li>
+        <li key={props.value} onClick={() => props.onClick(props.value)} className='hover:text-chip hover:bg-chip-light py-2 px-8 cursor-pointer select-none'>{props.value}</li>
     );
 }
 
@@ -12,18 +12,18 @@ export default function ProjectFilter(props: { filter: string, setFilterCallback
     const filterRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        document.addEventListener('click', checkClickOutside);
-        console.log('add');
-        return () => { console.log('remove'); document.removeEventListener('click', checkClickOutside) };
-    }, []);
-
-    // Close dropdown if user clicks outside component.
-    const checkClickOutside = (e: MouseEvent) => {
-        if (filterRef.current && !filterRef.current.contains(e.target as Node)) {
-            e.preventDefault();
-            closeDropdown();
+        // Close dropdown if user clicks outside project filter component.
+        const checkClickOutside = (e: MouseEvent) => {
+            if (filterRef.current && !filterRef.current.contains(e.target as Node)) {
+                e.preventDefault();
+                closeDropdown();
+            }
         }
-    }
+        // Add listener on mount.
+        document.addEventListener('click', checkClickOutside);
+        // Remove listener on unmount.
+        return () => { document.removeEventListener('click', checkClickOutside) };
+    }, []);
 
     // Sets the value of the filter.
     const setValue = (value: string) => {
