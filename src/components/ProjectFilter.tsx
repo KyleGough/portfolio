@@ -12,13 +12,18 @@ export default function ProjectFilter(props: { filter: string, setFilterCallback
     const filterRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        document.addEventListener('click', function(e: MouseEvent) {
-            if (filterRef.current && !filterRef.current.contains(e.target as Node)) {
-                e.preventDefault();
-                closeDropdown();
-            }
-        });
-    });
+        document.addEventListener('click', checkClickOutside);
+        console.log('add');
+        return () => { console.log('remove'); document.removeEventListener('click', checkClickOutside) };
+    }, []);
+
+    // Close dropdown if user clicks outside component.
+    const checkClickOutside = (e: MouseEvent) => {
+        if (filterRef.current && !filterRef.current.contains(e.target as Node)) {
+            e.preventDefault();
+            closeDropdown();
+        }
+    }
 
     // Sets the value of the filter.
     const setValue = (value: string) => {
