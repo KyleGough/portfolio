@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Section from './components/Section';
+import ProjectFilter from './components/ProjectFilter';
 import ProjectItem from './components/ProjectItem';
 import Divider from './components/Divider';
 
@@ -15,15 +16,11 @@ type Project = {
 };
 
 export default function Projects() {
-    const [filter, setFilter] = useState<string>('All');
+    const [filter, setFilter] = useState('All');
 
     useEffect(() => {
         document.title = 'Project List - Kyle Gough';
-    }, [])
-
-    const setFilterProjects = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        setFilter(e.target.value);
-    }
+    }, []);
 
     const filterProjects = (project: Project): boolean => {
         return (filter === 'All') ? true : project.filters.includes(filter);
@@ -36,7 +33,7 @@ export default function Projects() {
             src: '/img/portfolio-projects-v4b.png',
             alt: 'Portfolio',
             link: '/projects/portfolio',
-            filters: ['JS', 'React', 'Web'],
+            filters: ['JavaScript', 'React', 'Web'],
             description: 'Personal portfolio website created to showcase my projects and technical skills. First created in 2016 as a simple static HTML website, the website has experienced multiple improvements over the years including migration to PHP, then to React with Materialize, and most recently to React with Tailwind.'
         },
         {
@@ -45,7 +42,7 @@ export default function Projects() {
             src: '/img/lucidlab1.jpg',
             alt: 'LucidLab',
             link: '/projects/lucidlab',
-            filters: ['JS', 'Python', 'React', 'SQL', 'Group', 'Web'],
+            filters: ['JavaScript', 'Python', 'React', 'SQL', 'Group Projects', 'Web'],
             description: 'An adaptable, heterogeneous IoT testbed for which I developed the front-end user interface. The UI allows registered users to upload and configure tests and images to be deployed on the testbed. Additionally, test results and custom metrics including mote availability graphs and mote CCA charts can be viewed.'
         },
         {
@@ -54,7 +51,7 @@ export default function Projects() {
             src: '/img/sudoku1.jpg',
             alt: 'Logical sudoku solver',
             link: '/projects/sudoku',
-            filters: ['Python', 'Games'],
+            filters: ['Python', 'Games/Puzzles'],
             description: 'Program that can solve expert level Sudoku using only logical techniques (no brute forcing, guessing or backtracking). The program outputs a detailed description of the techniques and moves required at each step to solve Sudoku. The solver reads CSV files allowing for batch solving. In-depth analysis is displayed including but not limited to: difficulty rating, occurrences/probability of each technique, processing time for each technique and total processing time.'
         },
         {
@@ -63,7 +60,7 @@ export default function Projects() {
             src: '/img/react-minesweeper1.jpg',
             alt: 'React Minesweeper',
             link: '/projects/react-minesweeper',
-            filters: ['JS', 'React', 'Games', 'Web'],
+            filters: ['JavaScript', 'React', 'Games/Puzzles', 'Web'],
             description: 'Clone of classic Minesweeper with an 18x18 board. Ability to reveal tiles and flag tiles for potential mines. Flood fill algorithms will reveal all adjacent tiles when a 0 is uncovered, mimicing the behaviour of the original game.'
         },
         {
@@ -72,7 +69,7 @@ export default function Projects() {
             src: '/img/qurve1.jpg',
             alt: 'QuRVe',
             link: '/projects/qurve',
-            filters: ['JS', 'React', 'Web'],
+            filters: ['JavaScript', 'React', 'Web'],
             description: 'Designed and created an updated UI for the application QuRVe, a credit tech tool using JavaScript, Webix, React and Less. Implemented an interface to retrieve financial instruments data with a configurable dashboard showing graphs, pivot tables and descriptions of selected securities.'
         },
         {
@@ -99,7 +96,7 @@ export default function Projects() {
             src: '/img/rscbot1.jpg',
             alt: 'RSCBot',
             link: '/projects/rscbot',
-            filters: ['JS', 'PHP', 'SQL', 'Group', 'Web'],
+            filters: ['JavaScript', 'PHP', 'SQL', 'Group Projects', 'Web'],
             description: 'A specialised, personalisable trader chatbot that can fetch data and current news on financial stocks and sectors from the FTSE 100 index. RSCBot communicates with the user in a natural way, and has been designed to identify and adapt to the user\'s main interests in the stock market, making for a more personal trading experience.'
         },
         {
@@ -108,7 +105,7 @@ export default function Projects() {
             src: '/img/url-shortener1.jpg',
             alt: 'URL shortener',
             link: '/projects/url-shortener',
-            filters: ['JS', 'Web'],
+            filters: ['JavaScript', 'Web'],
             description: 'A URL shortening tool creating using Node.js, Express.js for routing GET and POST requests and MongoDB to store URLs. The project is my first using all three of these technologies. Long URLs are stored in the database and the ID is encoded and used as the short URL.'
         },
         {
@@ -117,7 +114,7 @@ export default function Projects() {
             src: '/img/graph-algorithm-visualiser1.jpg',
             alt: 'Graph algorithm visualiser',
             link: '/projects/graph-algorithm-visualiser',
-            filters: ['JS', 'Web'],
+            filters: ['JavaScript', 'Web'],
             description: 'Web application which visualises the process of various graph algorithms on randomised nodes. The application can simulate Prim\'s and Kruskal\'s algorithm for constructing minimum spanning trees, Graham scan to construct convex hulls, Greedy algorithm to construct minimal matchings, and Nearest neighbour with 2-Opt to create Hamiltonian cycles.'
         },
         {
@@ -126,7 +123,7 @@ export default function Projects() {
             src: '/img/cavern-minesweeper1.jpg',
             alt: 'Cavern Minesweeper',
             link: '/projects/cavern-minesweeper',
-            filters: ['Games'],
+            filters: ['Games/Puzzles'],
             description: 'Cavern Minesweeper is based off of the original Minesweeper game but with tiered mines (ores) which can only be mined if the player has uncovered enough squares to advance to the required mining level. The game has three levels of difficulty to challenge competitive players. The project served as a tool to teach me Ruby.',
         },
         {
@@ -135,7 +132,7 @@ export default function Projects() {
             src: '/img/bsplit1.jpg',
             alt: 'BSplit',
             link: '/projects/bsplit',
-            filters: ['JS', 'PHP', 'SQL', 'Web'],
+            filters: ['JavaScript', 'PHP', 'SQL', 'Web'],
             description: 'BSplit is a web application that allows registered users to create and settle payments between friends and housemates for things such as restaurant bills, utility bills and food shopping. The app\'s dashboard utilises AJAX requests to prevent web page reloading to enchance user experience. Dashboard and email notifications are sent when a new bill or group is created.'
         },
         {
@@ -144,7 +141,7 @@ export default function Projects() {
             src: '/img/todo-list1.jpg',
             alt: 'To Do List',
             link: '/projects/todo-list',
-            filters: ['JS', 'PHP', 'SQL', 'Group', 'Web'],
+            filters: ['JavaScript', 'PHP', 'SQL', 'Group Projects', 'Web'],
             description: 'To Do List Web application where users can signup and create their own lists. Learned and integrated PHP and SQL to store and query user\'s lists. Protected the application from SQL injection and cross-site scripting.',
         },
         {
@@ -177,22 +174,7 @@ export default function Projects() {
 
         <div className='bg-circuits'>
         <Section>
-            <p className='text-sm mb-2 ml-2 font-bold text-link text-center md:text-left'>Filter Projects</p>
-            <div className='flex md:block md:justify-start'>
-                <select onChange={setFilterProjects} name='project-filter' className='mx-auto px-12 py-4 text-center cursor-pointer bg-background text-link hover:text-link-hover ring-0 rounded-sm shadow border-light'>
-                    <option value='All'>All</option>
-                    <option value='C#'>C#</option>
-                    <option value='C++'>C++</option>
-                    <option value='JS'>JavaScript</option>
-                    <option value='PHP'>PHP</option>
-                    <option value='Python'>Python</option>
-                    <option value='React'>React</option>
-                    <option value='SQL'>SQL</option>
-                    <option value='Games'>Games/Puzzles</option>
-                    <option value='Group'>Group Projects</option>
-                    <option value='Web'>Web Applications</option>
-                </select>
-            </div>
+            <ProjectFilter filter={filter} setFilterCallback={setFilter} />
         </Section>
         <hr className='mb-8 h-px bg-divider' />
         </div>
@@ -202,11 +184,10 @@ export default function Projects() {
                 <>
                 { i !== 0 && <Divider /> }
                 <ProjectItem
-                    key={project.title}
+                    key={`${project.title} Key`}
                     title={project.title}
                     date={project.date}
                     description={project.description}
-                    video={project.video}
                     src={project.src}
                     alt={project.alt}
                     link={project.link}
