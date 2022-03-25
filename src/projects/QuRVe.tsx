@@ -15,7 +15,7 @@ export default function QuRVe() {
         <Section>
             <h1 className='project-title'>QuRVe</h1>
             <h2 className='project-subtitle'>Bank of America Internship Project</h2>
-            <p className='text-link-hover my-4'>June 2019 - August 2019</p>
+            <p className='text-link-hover my-4'><time dateTime='2019-06'>June 2019</time> - <time dateTime='2019-08'>August 2019</time></p>
             <p className='mb-4'>Designed and created an updated UI for the application QuRVe, a credit tech tool using JavaScript, Webix, React and Less. Implemented an interface to retrieve financial instruments data with a configurable dashboard showing graphs, pivot tables and descriptions of selected securities.</p>
             
             <div className='flex flex-row flex-wrap items-center mt-8'>

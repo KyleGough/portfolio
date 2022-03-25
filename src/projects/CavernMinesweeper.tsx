@@ -21,7 +21,7 @@ export default function CavernMinesweeper() {
         <>
         <Section>
             <h1 className='project-title'>Cavern Minesweeper</h1>
-            <p className='text-link-hover my-4'>March 2017</p>
+            <p className='text-link-hover my-4'><time dateTime='2017-03'>March 2017</time></p>
             <p className='mb-4'>Cavern Minesweeper is based off of the original Minesweeper game but with tiered mines (ores) which can only be mined if the player has uncovered enough squares to advance to the required mining level. The game has three levels of difficulty to challenge competitive players. The project served as a tool to teach me Ruby.</p>
             <p className='mb-4'>Explore this project on 
                 <a className='text-link hover:text-link-hover' href='https://github.com/KyleGough/cavern-minesweeper' target='_blank' rel='noopener noreferrer'> GitHub</a>

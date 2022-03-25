@@ -50,7 +50,7 @@ export default function SortingVisualiser() {
         <>
         <Section>
             <h1 className='project-title'>Sorting Algorithm Visualiser</h1>
-            <p className='text-link-hover my-4'>September 2015 - November 2015</p>
+            <p className='text-link-hover my-4'><time dateTime='2015-09'>September 2015</time> - <time dateTime='2015-11'>November 2015</time></p>
             <p className='mb-4'>Tool for visualising the sorting process on a generated dataset. Highlights swapping and sorted elements in real-time. Supports 20 different sorting algorithms including: Bubble, Mergesort and Quicksort. The visualiser is fully customisable with options to change the dataset size, range of values in the dataset and delay between each operation. The tool also has the ability to compare and visualise two sorting algorithms concurrently. The initial dataset can be one of 18 configurations such as: random, normally distributed or sawtooth.</p>
 
             <div className='flex flex-row flex-wrap items-center mt-8'>

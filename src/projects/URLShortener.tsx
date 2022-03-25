@@ -21,7 +21,7 @@ export default function URLShortener() {
         <>
         <Section>
             <h1 className='project-title'>URL Shortener</h1>
-            <p className='text-link-hover my-4'>April 2017</p>
+            <p className='text-link-hover my-4'><time dateTime='2017-04'>April 2017</time></p>
             <p className='mb-4'>A URL shortening tool creating using Node.js, Express.js for routing GET and POST requests and MongoDB to store URLs. The project is my first using all three of these technologies. Long URLs are stored in the database and the ID is encoded and used as the short URL.</p>
 
             <div className='flex flex-row flex-wrap items-center mt-8'>

@@ -24,8 +24,8 @@ export default function LucidLab() {
         <>
         <Section>
             <h1 className='project-title'>LucidLab</h1>
-            <h2 className='project-subtitle'>CS407: Group Project</h2>
-            <p className='text-link-hover my-4'>October 2019 - May 2020</p>
+            <h2 className='project-subtitle'>Masters' Group Project</h2>
+            <p className='text-link-hover my-4'><time dateTime='2019-10'>October 2019</time> - <time dateTime='2020-05'>May 2020</time></p>
             <p className='mb-4'>An adaptable, heterogeneous IoT testbed for which I developed the front-end user interface. The UI allows registered users to upload and configure tests and images to be deployed on the testbed. Additionally, test results and custom metrics including mote availability graphs and mote CCA charts can be viewed.</p>
 
             <div className='flex flex-row flex-wrap items-center mt-8'>

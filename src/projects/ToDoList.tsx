@@ -24,8 +24,8 @@ export default function ToDoList() {
         <>
         <Section>
             <h1 className='project-title'>To Do List</h1>
-            <h2 className='project-subtitle'>CS139: Web Development Technologies Lab Work</h2>
-            <p className='text-link-hover my-4'>January 2017 - February 2017</p>
+            <h2 className='project-subtitle'>Web Development Technologies Lab Work</h2>
+            <p className='text-link-hover my-4'><time dateTime='2017-01'>January 2017</time> - <time dateTime='2017-02'>February 2017</time></p>
             <p className='mb-4'>To Do List Web application where users can signup and create their own lists. Learned and integrated PHP and SQL to store and query user's lists. Protected the application from SQL injection and Cross-Site scripting.</p>
 
             <div className='flex flex-row flex-wrap items-center mt-8'>

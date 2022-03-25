@@ -24,7 +24,7 @@ export default function GraphVisualiser() {
         <>
         <Section>
             <h1 className='project-title'>Graph Algorithm Visualiser</h1>
-            <p className='text-link-hover my-4'>April 2017</p>
+            <p className='text-link-hover my-4'><time dateTime='2017-04'>April 2017</time></p>
             <p className='mb-4'>Web application which visualises the process of various graph algorithms on randomised nodes. The application can simulate Prim's and Kruskal's algorithm for constructing minimum spanning trees, Graham scan to construct convex hulls, Greedy algorithm to construct minimal matchings, and Nearest neighbour with 2-Opt to create Hamiltonian cycles.</p>
             <p className='mb-4'>Explore this project on 
                 <a className='text-link hover:text-link-hover' href='https://github.com/KyleGough/graph-algorithm-visualiser' target='_blank' rel='noopener noreferrer'> GitHub</a>

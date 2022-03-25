@@ -24,7 +24,7 @@ export default function Minesweeper() {
         <>
         <Section>
             <h1 className='project-title'>React Minesweeper</h1>
-            <p className='text-link-hover my-4'>October 2019</p>
+            <p className='text-link-hover my-4'><time dateTime='2019-10'>October 2019</time></p>
             <p className='mb-4'>Clone of classic Minesweeper with an 18x18 board. Ability to reveal tiles and flag tiles for potential mines. Flood fill algorithms will reveal all adjacent tiles when a 0 is uncovered, mimicing the behaviour of the original game.</p>
             <p className='mb-4'>Explore this project on 
                 <a className='text-link hover:text-link-hover' href='https://github.com/KyleGough/react-minesweeper' target='_blank' rel='noopener noreferrer'> GitHub</a>

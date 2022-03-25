@@ -24,8 +24,8 @@ export default function BSplit() {
         <>
         <Section>
             <h1 className='project-title'>BSplit</h1>
-            <h2 className='project-subtitle'>CS139: Web Development Technologies Coursework</h2>
-            <p className='text-link-hover my-4'>February 2017 - March 2017</p>
+            <h2 className='project-subtitle'>Web Development Technologies Coursework</h2>
+            <p className='text-link-hover my-4'><time dateTime='2017-02'>February 2017</time> - <time dateTime='2017-03'>March 2017</time></p>
             <p className='mb-4'>BSplit is a web application that allows registered users to create and settle payments between friends and housemates for things such as restaurant bills, utility bills and food shopping. The app's dashboard utilises AJAX requests to prevent web page reloading to enchance user experience. Dashboard and Email notifications are sent when a new bill or group is created.</p>
 
             <div className='flex flex-row flex-wrap items-center mt-8'>
