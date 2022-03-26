@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Section from './components/Section';
 import ProjectFilter from './components/ProjectFilter';
 import ProjectItem from './components/ProjectItem';
@@ -181,18 +181,17 @@ export default function Projects() {
 
         {projects.filter(filterProjects).map((project, i) => {
             return (
-                <>
-                { i !== 0 && <Divider /> }
-                <ProjectItem
-                    key={`${project.title} Key`}
-                    title={project.title}
-                    date={project.date}
-                    description={project.description}
-                    src={project.src}
-                    alt={project.alt}
-                    link={project.link}
-                />
-                </>
+                <React.Fragment key={project.title}>
+                    { i !== 0 && <Divider /> }
+                    <ProjectItem
+                        title={project.title}
+                        date={project.date}
+                        description={project.description}
+                        src={project.src}
+                        alt={project.alt}
+                        link={project.link}
+                    />
+                </React.Fragment>
             )
         })}
         </>

@@ -31,8 +31,8 @@ export default function Home() {
             <div className={`absolute top-0 left-0 w-full h-full bg-header3 bg-fixed bg-center bg-cover duration-2000 transition-opacity ${carousel === 2 ? 'opacity-100' : 'opacity-0'}`}></div>   
             <div className='container z-50'>
                 <div className='flex justify-between'>
-                    <button onClick={carouselPrevious}><ArrowBack className='cursor-pointer w-16 h-16 fill-white opacity-75 hover:opacity-100 focus:opacity-100' /></button>
-                    <button onClick={carouselNext}><ArrowForward className='cursor-pointer w-16 h-16 fill-white opacity-75 hover:opacity-100 focus:opacity-100' /></button>
+                    <button className='group' onClick={carouselPrevious}><ArrowBack className='cursor-pointer w-16 h-16 fill-white opacity-75 group-hover:opacity-100 group-focus:opacity-100' /></button>
+                    <button className='group' onClick={carouselNext}><ArrowForward className='cursor-pointer w-16 h-16 fill-white opacity-75 group-hover:opacity-100 group-focus:opacity-100' /></button>
                 </div>
             </div>         
         </div>
@@ -50,15 +50,19 @@ export default function Home() {
                             <span className='opacity-50 text-xs'>About Me</span>
                         </p>
                         <p>Technology analyst at Bank of America and Computer Science MEng graduate of Warwick University. Programmer and Web Developer with interests in Bouldering, Cycling, Guitar, Movies and Physics.</p>                
-                    </div>
-                    <div className='col-span-12 md:col-start-3 md:col-end-11 lg:col-start-4 lg:col-end-10'>    
-                        <div className='flex justify-center gap-4 md:gap-8 mt-8 text-white'>
-                            <Link to='/projects' className='home-project-link text-link hover:text-link-hover focus:text-link-hover fill-link hover:fill-link-hover focus:fill-link-hover font-bold text-xl flex items-center'>
-                                <p>Projects</p>
-                                <ArrowForward className='w-6 h-6 mt-[3px]' />
-                            </Link>
-                        </div>                              
-                    </div>
+                    </div>                              
+                </div>
+                <div className='flex justify-center mt-8'>
+                    <Link to='/projects' className='home-project-link justify-center text-link hover:text-link-hover focus:text-link-hover fill-link hover:fill-link-hover focus:fill-link-hover font-bold text-xl flex items-center mb-8'>
+                        <p>Projects</p>
+                        <ArrowForward className='w-6 h-6 mt-[3px]' />
+                    </Link>
+                </div>
+                <div className='flex justify-center'>
+                    <Link to='/about' className='home-project-link justify-center text-link hover:text-link-hover focus:text-link-hover fill-link hover:fill-link-hover focus:fill-link-hover font-bold text-xl flex items-center'>
+                        <p>About Me</p>
+                        <ArrowForward className='w-6 h-6 mt-[3px]' />
+                    </Link>
                 </div>
             </Section>
             <hr className='mt-8 mx-16 h-px bg-nav-light opacity-25' />

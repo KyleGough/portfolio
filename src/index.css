@@ -75,6 +75,7 @@ body {
   }
 }
 
-.shimmer:hover::before {
+.shimmer:hover::before,
+.shimmer:focus::before {
   animation: shimmer 500ms 1;
 }

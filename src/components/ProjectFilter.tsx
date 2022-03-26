@@ -62,16 +62,16 @@ export default function ProjectFilter(props: { filter: string, setFilterCallback
                 role='listbox'
                 aria-orientation='vertical'
             >
-                <ProjectFilterSelection key='All' onClick={setValue} value='All' />
-                <ProjectFilterSelection key='C#' onClick={setValue} value='C#' />
-                <ProjectFilterSelection key='C++' onClick={setValue} value='C++' />
-                <ProjectFilterSelection key='JavaScript' onClick={setValue} value='JavaScript' />
-                <ProjectFilterSelection key='PHP' onClick={setValue} value='PHP' />
-                <ProjectFilterSelection key='Python' onClick={setValue} value='Python' />
-                <ProjectFilterSelection key='React' onClick={setValue} value='React' />
-                <ProjectFilterSelection key='Games/Puzzles' onClick={setValue} value='Games/Puzzles' />
-                <ProjectFilterSelection key='Group Projects' onClick={setValue} value='Group Projects' />
-                <ProjectFilterSelection key='Web' onClick={setValue} value='Web' />
+                <ProjectFilterSelection onClick={setValue} value='All' />
+                <ProjectFilterSelection onClick={setValue} value='C#' />
+                <ProjectFilterSelection onClick={setValue} value='C++' />
+                <ProjectFilterSelection onClick={setValue} value='JavaScript' />
+                <ProjectFilterSelection onClick={setValue} value='PHP' />
+                <ProjectFilterSelection onClick={setValue} value='Python' />
+                <ProjectFilterSelection onClick={setValue} value='React' />
+                <ProjectFilterSelection onClick={setValue} value='Games/Puzzles' />
+                <ProjectFilterSelection onClick={setValue} value='Group Projects' />
+                <ProjectFilterSelection onClick={setValue} value='Web' />
             </ul>
         </div>
         </>
