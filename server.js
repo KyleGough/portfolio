@@ -9,6 +9,7 @@ app.use(enforce.HTTPS({ trustProtoHeader: true }));
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('/*', function (req, res) {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
