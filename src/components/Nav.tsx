@@ -38,17 +38,17 @@ export default function Nav() {
                 <div className='flex items-center flex-shrink-0 mr-6'>
                     <Link to='/' className='ml-6'><span className='text-xl tracking-normal'>Kyle Gough</span></Link>
                 </div>
-                <div ref={menuBtnRef} onClick={toggleDrawer} className='block md:hidden px-6 py-5 border-b-2 border-transparent hover:border-white focus:border-white'>
+                <div ref={menuBtnRef} onClick={toggleDrawer} className='border-bottom-slide block md:hidden px-6 py-5'>
                     <MenuIcon className='w-6 h-6 fill-white' />
                 </div>
                 <div className='hidden md:block flex-grow w-auto'>
                     <div className='flex-grow text-right'>
-                        <Link to='/' className='inline-block px-5 py-5 mt-0 border-b-2 border-transparent hover:border-white focus:border-white'>Home</Link>
-                        <Link to='/projects' className='inline-block px-5 py-5 mt-0 border-b-2 border-transparent hover:border-white focus:border-white'>Projects</Link>
-                        <Link to='/about' className='inline-block px-5 py-5 mt-0 border-b-2 border-transparent hover:border-white focus:border-white'>About Me</Link>
+                        <Link to='/' className='border-bottom-slide inline-block px-5 py-5 mt-0'>Home</Link>
+                        <Link to='/projects' className='border-bottom-slide inline-block px-5 py-5 mt-0'>Projects</Link>
+                        <Link to='/about' className='border-bottom-slide inline-block px-5 py-5 mt-0'>About Me</Link>
                     </div>
                 </div>
-                <a className='hidden md:block px-6 py-5 border-b-2 border-transparent hover:border-white focus:border-white' href='https://github.com/KyleGough' target='_blank' rel='noopener noreferrer'>
+                <a className='border-bottom-slide hidden md:block px-6 py-5' href='https://github.com/KyleGough' target='_blank' rel='noopener noreferrer'>
                     <GitHubIcon className='w-6 h-6 fill-white' />
                 </a>
             </div>

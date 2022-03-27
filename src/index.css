@@ -98,3 +98,26 @@ body {
   animation: slide-in 1000ms ease 1;
 }
 
+/* Custom border slide animation for nav hover/focus state. */
+.border-bottom-slide {
+  position: relative;
+}
+
+.border-bottom-slide::after {
+  content: '';
+  position: absolute;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  height: 2px;
+  background-color: white;
+  transition: all 200ms cubic-bezier(0.25, 0.44, 0, 1.01);
+}
+
+.border-bottom-slide:hover::after {
+  left: 0;
+  right: 0;
+}
+
+
+
