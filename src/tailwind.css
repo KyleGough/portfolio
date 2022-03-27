@@ -28,22 +28,4 @@
         @apply list-outside;
         @apply ml-4;
     }
-
-    .project-link:hover > img {
-        @apply border-link-hover;
-    }
-
-    .project-link:hover > button {
-        @apply from-link-hover;
-        @apply to-emerald-600;
-    }
-
-    .home-project-link > p {
-        @apply mr-2;
-        @apply transition-[margin-right];
-    }
-
-    .home-project-link:hover > p, .home-project-link:focus > p {
-        @apply mr-4;
-    }
 }

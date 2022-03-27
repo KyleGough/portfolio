@@ -53,14 +53,14 @@ export default function Home() {
                     </div>                              
                 </div>
                 <div className='flex justify-center mt-8'>
-                    <Link to='/projects' className='home-project-link justify-center text-link hover:text-link-hover focus:text-link-hover fill-link hover:fill-link-hover focus:fill-link-hover font-bold text-xl flex items-center mb-8'>
-                        <p>Projects</p>
+                    <Link to='/projects' className='group justify-center text-link hover:text-link-hover focus:text-link-hover fill-link hover:fill-link-hover focus:fill-link-hover font-bold text-xl flex items-center mb-8'>
+                        <p className='transition-all mr-2 group-hover:mr-4 group-focus:mr-4'>Projects</p>
                         <ArrowForward className='w-6 h-6 mt-[3px]' />
                     </Link>
                 </div>
                 <div className='flex justify-center'>
-                    <Link to='/about' className='home-project-link justify-center text-link hover:text-link-hover focus:text-link-hover fill-link hover:fill-link-hover focus:fill-link-hover font-bold text-xl flex items-center'>
-                        <p>About Me</p>
+                    <Link to='/about' className='group justify-center text-link hover:text-link-hover focus:text-link-hover fill-link hover:fill-link-hover focus:fill-link-hover font-bold text-xl flex items-center'>
+                        <p className='transition-all mr-2 group-hover:mr-4 group-focus:mr-4'>About Me</p>
                         <ArrowForward className='w-6 h-6 mt-[3px]' />
                     </Link>
                 </div>
