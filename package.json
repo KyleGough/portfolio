@@ -20,14 +20,13 @@
   },
   "scripts": {
     "start": "node server.js",
-    "build:tailwind": "tailwindcss build src/tailwind.css -o src/tailwind.output.css",
+    "build:tailwind": "tailwindcss build -i src/tailwind.css -o src/tailwind.output.css",
     "prestart": "npm run build:tailwind",
     "prebuild": "npm run build:tailwind",
     "dev-start": "npm run build:tailwind && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "npm install && npm run build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

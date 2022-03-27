@@ -95,7 +95,7 @@ body {
 }
 
 .slide-in {
-  animation: slide-in 1000ms ease 1;
+  animation: slide-in 800ms ease 1;
 }
 
 /* Custom border slide animation for nav hover/focus state. */
