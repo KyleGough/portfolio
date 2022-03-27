@@ -26,7 +26,7 @@ export default function Portfolio() {
         <Section>
             <h1 className='project-title'>Portfolio</h1>
             <p className='text-link-hover my-4'><time dateTime='2016-12'>December 2016</time> - <time dateTime='2022-05'>March 2022</time></p>
-            <p className='mb-4'>Personal portfolio website created to showcase my projects and technical skills. First created in 2016 as a simple static HTML website, the website has experienced multiple improvements over the years including migration to PHP, then to React with Materialize, and most recently to React with Tailwind.'</p>
+            <p className='mb-4'>Personal portfolio website created to showcase my projects and technical skills. First created in 2016 as a simple static HTML website, the website has experienced multiple improvements over the years including migration to PHP, then to React with Materialize, and most recently to React with Tailwind.</p>
 
             <div className='flex flex-row flex-wrap items-center mt-8'>
                 <Chip name='React' />

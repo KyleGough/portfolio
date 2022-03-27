@@ -58,7 +58,7 @@ export default function ProjectFilter(props: { filter: string, setFilterCallback
             </button>
             <ul
                 id='project-filter-selection'
-                className={`${isOpen ? 'absolute' : 'hidden'} w-full max-h-[75vh] overflow-y-auto mt-4 py-2 shadow rounded text-link bg-background`}
+                className={`${isOpen ? 'absolute' : 'hidden'} w-full max-h-[75vh] z-[100] overflow-y-auto mt-4 py-2 shadow rounded text-link bg-background`}
                 role='listbox'
                 aria-orientation='vertical'
             >
