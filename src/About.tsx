@@ -102,8 +102,7 @@ export default function About() {
         <Section>
             <h1 className='project-title mb-8 text-center md:text-left'>About Me</h1>
             <p className='my-4 max-w-[780px]'>
-                I am a technology analyst at Bank of America working on front office applications and batches.
-                Recent graduate of the University of Warwick with a 1<sup>st</sup> class MEng in Computer Science.
+                Hello, I'm Kyle - a technology analyst at Bank of America and recent Computer Science MEng graduate of the University of Warwick.
                 Interests lie in bouldering, cycling, guitar and physics. I enjoy learning new languages, frameworks and 
                 technologies and have pursued multiple personal projects putting these skills into practice, detailed below.</p>
             <p className='mt-8 text-center md:text-left'>
@@ -162,7 +161,7 @@ export default function About() {
             <ul className='list-none mt-8 ml-14'>
                 <GoalListItem name='TypeScript' progress={Progress.GREEN} />
                 <GoalListItem name='React Native' progress={Progress.RED} />
-                <GoalListItem name='Extension API' progress={Progress.RED} />
+                <GoalListItem name='Extension API' progress={Progress.AMBER} />
                 <GoalListItem name='GraphQL' progress={Progress.RED} />
                 <GoalListItem name='Unity' progress={Progress.RED} />
                 <GoalListItem name='AWS' progress={Progress.RED} />

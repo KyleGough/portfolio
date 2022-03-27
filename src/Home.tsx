@@ -49,7 +49,7 @@ export default function Home() {
                             <span className='opacity-50'> &#47;&#47; </span>
                             <span className='opacity-50 text-xs'>About Me</span>
                         </p>
-                        <p>Technology analyst at Bank of America and Computer Science MEng graduate of Warwick University. Programmer and Web Developer with interests in Bouldering, Cycling, Guitar, Movies and Physics.</p>                
+                        <p>Hello, I'm Kyle - a programmer and full-stack developer based in London with strong interests in web development. I've made this website to showcase my projects and applications.</p>                
                     </div>                              
                 </div>
                 <div className='flex justify-center mt-8'>

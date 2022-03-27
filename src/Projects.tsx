@@ -30,7 +30,7 @@ export default function Projects() {
         {
             title: 'Portfolio',
             date: 'December 2016 - March 2022',
-            src: '/img/portfolio-projects-v4b.png',
+            src: '/img/portfolio-projects-v4b.jpg',
             alt: 'Portfolio',
             link: '/projects/portfolio',
             filters: ['JavaScript', 'React', 'Web'],
