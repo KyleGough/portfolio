@@ -12,8 +12,8 @@ export default function Footer() {
                             <p className='font-header text-xl pb-6'>About Me</p>
                             <p className='pb-4'>Computer Science MEng graduate of Warwick University. Tech Analyst at Bank of America. Programmer and Web Developer with interests in Bouldering, Cycling, Guitar, Movies and Physics.</p>
                             <div className='flex flex-row justify-center lg:justify-start'>
-                                <a className='flex justify-center fill-white hover:text-nav-hover hover:fill-nav-hover' href='mailto:kylegough98@gmail.com' target='_blank' rel='noopener noreferrer'>
-                                    <EmailIcon className='w-6 h-6 mr-1' />
+                                <a className='group flex justify-center fill-white hover:text-nav-hover hover:fill-nav-hover' href='mailto:kylegough98@gmail.com' target='_blank' rel='noopener noreferrer'>
+                                    <EmailIcon className='w-6 h-6 mr-2' />
                                     <p className='ml-1'>kylegough98@gmail.com</p>
                                 </a>
                             </div>
