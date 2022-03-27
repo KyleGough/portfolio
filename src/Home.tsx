@@ -44,22 +44,24 @@ export default function Home() {
                 </div>
                 <div className='grid grid-cols-12'>
                     <div className='col-span-12 md:col-start-3 md:col-end-11 lg:col-start-4 lg:col-end-10 text-white mb-8'>                    
-                        <p>
-                            <span className='uppercase opacity-75'>Welcome</span>
-                            <span className='opacity-50'> &#47;&#47; </span>
-                            <span className='opacity-50 text-xs'>About Me</span>
+                        <p className='mb-2 monospace uppercase opacity-75 text-xl'>Welcome</p>
+                        <p className='monospace'>
+                            <span className='terminal-header'>kyle@portfolio</span>
+                            Hello, I'm Kyle - a programmer and full-stack developer based in
+                            London, with strong interests in web development. I've made this website to
+                            showcase my projects and applications
+                            <span className='blink'>.</span>
                         </p>
-                        <p>Hello, I'm Kyle - a programmer and full-stack developer based in London with strong interests in web development. I've made this website to showcase my projects and applications.</p>                
                     </div>                              
                 </div>
                 <div className='flex justify-center mt-8'>
-                    <Link to='/projects' className='group justify-center text-link hover:text-link-hover focus:text-link-hover fill-link hover:fill-link-hover focus:fill-link-hover font-bold text-xl flex items-center mb-8'>
+                    <Link to='/projects' className='group justify-center text-link hover:text-link-hover focus:text-link-hover fill-link hover:fill-link-hover focus:fill-link-hover text-2xl flex items-center mb-8'>
                         <p className='transition-all mr-2 group-hover:mr-4 group-focus:mr-4'>Projects</p>
                         <ArrowForward className='w-6 h-6 mt-[3px]' />
                     </Link>
                 </div>
                 <div className='flex justify-center'>
-                    <Link to='/about' className='group justify-center text-link hover:text-link-hover focus:text-link-hover fill-link hover:fill-link-hover focus:fill-link-hover font-bold text-xl flex items-center'>
+                    <Link to='/about' className='group justify-center text-link hover:text-link-hover focus:text-link-hover fill-link hover:fill-link-hover focus:fill-link-hover text-2xl flex items-center'>
                         <p className='transition-all mr-2 group-hover:mr-4 group-focus:mr-4'>About Me</p>
                         <ArrowForward className='w-6 h-6 mt-[3px]' />
                     </Link>

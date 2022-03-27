@@ -119,5 +119,76 @@ body {
   right: 0;
 }
 
+/* Monospace font for home page welcome text. */
+.monospace {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 1em;
+  line-height: 1.75rem;
+}
+
+/* Terminal header for home page welcome text. */
+.terminal-header {
+  position: relative;
+  margin-right: 1.25rem;
+  background-color: #3F51B5;
+  padding-top: 3px;
+  padding-bottom: 2px;
+  padding-left: 4px;
+  padding-right: 0px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  opacity: 85%;
+  border-left: 3px solid #4CAF50;
+}
+
+.terminal-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -0.5rem;
+  width: 0.6rem;
+  height: 100%;
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+  background-color: #3F51B5;
+  border: 2px solid transparent;
+}
+
+
+/* Blink animation for terminal cursor. */
+.blink {
+  position: relative;
+}
+
+.blink::after {
+  content: '';
+  position: absolute;
+  background-color: white;
+  width: 0.4rem;
+  height: 100%;
+  margin-left: 0.5rem;
+  animation: blink 1000ms ease-in-out infinite;
+  top: 0;
+  left: 0.4rem;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0%;
+  }
+  40% {
+    opacity: 0%;
+  }
+  50% {
+    opacity: 80%;
+  }
+  90% {
+    opacity: 80%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+
 
 
