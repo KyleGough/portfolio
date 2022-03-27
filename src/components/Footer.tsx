@@ -48,7 +48,7 @@ export default function Footer() {
             </div>
             <div className='bg-nav-dark text-white text-center'>
                 <div className='container mx-auto px-8 py-8 opacity-75'>
-                    <p className='opacity-100'>© Kyle Gough, 2016-2022</p>
+                    <p className='opacity-100'>© Kyle Gough, 2016 - 2022</p>
                 </div>
             </div>
         </footer>
