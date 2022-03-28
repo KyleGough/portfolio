@@ -49,8 +49,8 @@ export default function Home() {
                             <span className='terminal-header'>kyle@portfolio</span>
                             Hello, I'm Kyle - a programmer and full-stack developer based in
                             London, with strong interests in web development. I've made this website to
-                            showcase my projects and applications
-                            <span className='blink'>.</span>
+                            showcase my projects and applications.
+                            <span className='caret-blink'></span>
                         </p>
                     </div>                              
                 </div>

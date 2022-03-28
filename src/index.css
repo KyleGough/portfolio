@@ -137,7 +137,8 @@ body {
   padding-right: 0px;
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
-  opacity: 85%;
+  opacity: 80%;
+  font-weight: 600;
   border-left: 3px solid #4CAF50;
 }
 
@@ -155,18 +156,17 @@ body {
 }
 
 
-/* Blink animation for terminal cursor. */
-.blink {
+/* Blink animation for terminal caret. */
+.caret-blink {
   position: relative;
 }
 
-.blink::after {
+.caret-blink::after {
   content: '';
   position: absolute;
   background-color: white;
   width: 0.4rem;
   height: 100%;
-  margin-left: 0.5rem;
   animation: blink 1000ms ease-in-out infinite;
   top: 0;
   left: 0.4rem;
