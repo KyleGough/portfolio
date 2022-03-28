@@ -12,7 +12,6 @@ export default function Nav() {
         // Close mobile nav drawer if user clicks outside nav component.
         const checkClickOutside = (e: MouseEvent) => {
             if (menuBtnRef.current && !menuBtnRef.current.contains(e.target as Node) && mobileNavRef.current && !mobileNavRef.current.contains(e.target as Node)) {
-                e.preventDefault();
                 closeDrawer();
             }
         }

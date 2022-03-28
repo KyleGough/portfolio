@@ -15,7 +15,6 @@ export default function ProjectFilter(props: { filter: string, setFilterCallback
         // Close dropdown if user clicks outside project filter component.
         const checkClickOutside = (e: MouseEvent) => {
             if (filterRef.current && !filterRef.current.contains(e.target as Node)) {
-                e.preventDefault();
                 closeDropdown();
             }
         }

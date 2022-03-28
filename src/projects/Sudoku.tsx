@@ -23,8 +23,9 @@ export default function Sudoku() {
             <h1 className='project-title'>Logical Sudoku Solver</h1>
             <p className='text-link-hover my-4'><time dateTime='2019-11'>November 2019</time> - <time dateTime='2020-01'>January 2020</time></p>
             <p className='mb-4'>Program that can solve expert level Sudoku using only logical techniques (no brute forcing, guessing or backtracking). The program outputs a detailed description of the techniques and moves required at each step to solve Sudoku. The solver reads CSV files allowing for batch solving. In-depth analysis is displayed including but not limited to: difficulty rating, occurrences of each technique, probability of each technique, processing time for each technique and total processing time.</p>
-            <p className='mb-4'>Explore this project on 
-                <a className='text-link hover:text-link-hover' href='https://github.com/KyleGough/sudoku' target='_blank' rel='noopener noreferrer'> GitHub</a>
+            <p className='mb-4'>
+                <span>Explore this project on </span>
+                <a className='text-link hover:text-link-hover focus:text-link-hover' href='https://github.com/KyleGough/sudoku' target='_blank' rel='noopener noreferrer'>GitHub</a>
             </p>
 
             <div className='flex flex-row flex-wrap items-center mt-8'>

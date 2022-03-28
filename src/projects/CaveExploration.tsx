@@ -29,8 +29,9 @@ export default function CaveExploration() {
             <h2 className='project-subtitle'>Dissertation</h2>
             <p className='text-link-hover my-4'><time dateTime='2018-12'>December 2018</time> - <time dateTime='2019-04'>April 2019</time></p>
             <p className='mb-4'>Cave exploration is dangerous and time-consuming. This project demonstrates how swarm AI could be used in a group of autonomous flying drones to navigate and explore a cave as efficiently as possible. The project also includes random, realistic cave environment generation.</p>
-            <p className='mb-4'>Explore this project on 
-                <a className='text-link hover:text-link-hover' href='https://github.com/KyleGough/CS310-Dissertation' target='_blank' rel='noopener noreferrer'> GitHub</a>
+            <p className='mb-4'>
+                <span>Explore this project on </span>
+                <a className='text-link hover:text-link-hover focus:text-link-hover' href='https://github.com/KyleGough/CS310-Dissertation' target='_blank' rel='noopener noreferrer'>GitHub</a>
             </p>
 
             <div className='flex flex-row flex-wrap items-center mt-8'>

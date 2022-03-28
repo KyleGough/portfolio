@@ -26,11 +26,13 @@ export default function Minesweeper() {
             <h1 className='project-title'>React Minesweeper</h1>
             <p className='text-link-hover my-4'><time dateTime='2019-10'>October 2019</time></p>
             <p className='mb-4'>Clone of classic Minesweeper with an 18x18 board. Ability to reveal tiles and flag tiles for potential mines. Flood fill algorithms will reveal all adjacent tiles when a 0 is uncovered, mimicing the behaviour of the original game.</p>
-            <p className='mb-4'>Explore this project on 
-                <a className='text-link hover:text-link-hover' href='https://github.com/KyleGough/react-minesweeper' target='_blank' rel='noopener noreferrer'> GitHub</a>
+            <p className='mb-4'>
+                <span>Explore this project on </span>
+                <a className='text-link hover:text-link-hover focus:text-link-hover' href='https://github.com/KyleGough/react-minesweeper' target='_blank' rel='noopener noreferrer'>GitHub</a>
             </p>
-            <p className='mb-4'>Play the live game at
-                <a className='text-link hover:text-link-hover' href='https://kylegough-minesweeper.herokuapp.com/' target='_blank' rel='noopener noreferrer'> https://kylegough-minesweeper.herokuapp.com/</a>
+            <p className='mb-4'>
+                <span>Play the live game at </span>
+                <a className='text-link hover:text-link-hover focus:text-link-hover' href='https://kylegough-minesweeper.herokuapp.com/' target='_blank' rel='noopener noreferrer'>https://kylegough-minesweeper.herokuapp.com/</a>
             </p>
 
             <div className='flex flex-row flex-wrap items-center mt-8'>
