@@ -63,34 +63,34 @@ export default function About() {
         (ref.current as HTMLDivElement).scrollIntoView({ behavior: 'smooth' });
     }
 
-    const skillsProgramming: string[][] = [
-        ["Python", "w-[90%]", "Logical Sudoku Solver, Machine Learning, Image Analysis", "Confident", PythonLogo],
-        ["Java", "w-[80%]", "Robot Maze Environment, Steganography, Witter", "Confident", JavaLogo],
-        ["C#", "w-[75%]", "Sorting Visualiser, Delivery Route Planner", "Confident", CSharpLogo],
-        ["C++", "w-[65%]", "GLUT Simulation of a Roller Coaster", "Comfortable", CPlusPlusLogo],
-        ["Visual Basic", "w-[50%]", "First Programming Language, CLI Sorting Algorithm Visualiser", "Comfortable", VBLogo],
-        ["Haskell", "w-[40%]", "Mastermind Coursework, Scratch Clone Coursework", "Comfortable", HaskellLogo],
-        ["Ruby", "w-[30%]", "Minesweeper Game", "Beginner", RubyLogo],
-        ["MATLAB", "w-[45%]", "Digital Forensics on Images", "Beginner", MatlabLogo]
+    const skillsProgramming: [string, number, string, string, string, string][] = [
+        ["Python", 90, "w-[90%]", "Logical Sudoku Solver, Machine Learning, Image Analysis", "Confident", PythonLogo],
+        ["Java", 80, "w-[80%]", "Robot Maze Environment, Steganography, Witter", "Confident", JavaLogo],
+        ["C#", 75, "w-[75%]", "Sorting Visualiser, Delivery Route Planner", "Confident", CSharpLogo],
+        ["C++", 65, "w-[65%]", "GLUT Simulation of a Roller Coaster", "Comfortable", CPlusPlusLogo],
+        ["Visual Basic", 50,"w-[50%]", "First Programming Language, CLI Sorting Algorithm Visualiser", "Comfortable", VBLogo],
+        ["Haskell", 40, "w-[40%]", "Mastermind Coursework, Scratch Clone Coursework", "Comfortable", HaskellLogo],
+        ["Ruby", 30, "w-[30%]", "Minesweeper Game", "Beginner", RubyLogo],
+        ["MATLAB", 45, "w-[45%]", "Digital Forensics on Images", "Beginner", MatlabLogo]
     ];
 
-    const skillsWeb: string[][] = [
-        ["JavaScript", "w-[90%]", "Portfolio, LucidLab, QuRVe, Graph Algorithm Visualiser, RSCBot", "Confident", JavaScriptLogo],
-        ["TypeScript", "w-[70%]", "Portfolio", "Comfortable", TypeScriptLogo],
-        ["React", "w-[75%]", "Portfolio, LucidLab, QuRVe, Minesweeper", "Comfortable", ReactLogo],
-        ["Tailwind", "w-[70%]", "Portfolio", "Comfortable", TailwindLogo],
-        ["HTML", "w-[90%]", "Portfolio, BSplit, To Do List", "Confident", HTMLLogo],
-        ["CSS", "w-[90%]", "Portfolio, LucidLab, QuRVe, BSplit, Minesweeper", "Confident", CSSLogo],
-        ["PHP", "w-[55%]", "BSplit, Portfolio", "Comfortable", PHPLogo]
+    const skillsWeb: [string, number, string, string, string, string][] = [
+        ["JavaScript", 90, "w-[90%]", "Portfolio, LucidLab, QuRVe, Graph Algorithm Visualiser, RSCBot", "Confident", JavaScriptLogo],
+        ["TypeScript", 70, "w-[70%]", "Portfolio", "Comfortable", TypeScriptLogo],
+        ["React", 75, "w-[75%]", "Portfolio, LucidLab, QuRVe, Minesweeper", "Comfortable", ReactLogo],
+        ["Tailwind", 70, "w-[70%]", "Portfolio", "Comfortable", TailwindLogo],
+        ["HTML", 90, "w-[90%]", "Portfolio, BSplit, To Do List", "Confident", HTMLLogo],
+        ["CSS", 90, "w-[90%]", "Portfolio, LucidLab, QuRVe, BSplit, Minesweeper", "Confident", CSSLogo],
+        ["PHP", 55, "w-[55%]", "BSplit, Portfolio", "Comfortable", PHPLogo]
     ];
 
-    const skillsOther: string[][] = [
-        ["Git", "w-[85%]", "Used in all projects", "Comfortable", GitLogo],
-        ["Bash", "w-[75%]", "Shell Scripting Exercises, Finding security defects in a VM", "Comfortable", BashLogo],
-        ["Zsh", "w-[85%]", "Personal Shell of Choice, Everyday use with Manjaro i3", "Comfortable", TerminalLogo],
-        ["SQL", "w-[60%]", "Delivery Route Planner, BSplit, Department Store Database Analysis", "Comfortable", SQLLogo],
-        ["LaTeX", "w-[50%]", "Dissertation, Multiple Group Projects ", "Comfortable", LatexLogo],
-        ["Markdown", "w-[80%]", "Lecture Notes, GitHub READMEs", "Confident", MarkdownLogo]
+    const skillsOther: [string, number, string, string, string, string][] = [
+        ["Git", 85, "w-[85%]", "Used in all projects", "Comfortable", GitLogo],
+        ["Bash", 75, "w-[75%]", "Shell Scripting Exercises, Finding security defects in a VM", "Comfortable", BashLogo],
+        ["Zsh", 85, "w-[85%]", "Personal Shell of Choice, Everyday use with Manjaro i3", "Comfortable", TerminalLogo],
+        ["SQL", 60, "w-[60%]", "Delivery Route Planner, BSplit, Department Store Database Analysis", "Comfortable", SQLLogo],
+        ["LaTeX", 50, "w-[50%]", "Dissertation, Multiple Group Projects ", "Comfortable", LatexLogo],
+        ["Markdown", 80, "w-[80%]", "Lecture Notes, GitHub READMEs", "Confident", MarkdownLogo]
     ];
 
     useEffect(() => {

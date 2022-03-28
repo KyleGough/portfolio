@@ -17,6 +17,7 @@ export default function Home() {
     const carouselCount: number = 3;
     const carouselInterval = useRef<any>(null);
     const typewriterRef = useRef<HTMLSpanElement>(null);
+    const welcomeMsg = "Hello, I'm Kyle - a programmer and full-stack developer based in London, with strong interests in web development. I've made this website to showcase my projects and applications.";
 
     useEffect(() => {
         document.title = 'Portfolio - Kyle Gough';
@@ -24,7 +25,7 @@ export default function Home() {
         if (typewriterRef.current) {
             (typewriterRef.current as HTMLSpanElement).innerHTML = '';
             setTimeout(() => {
-                typewrite("Hello, I'm Kyle - a programmer and full-stack developer based in London, with strong interests in web development. I've made this website to showcase my projects and applications.", typewriterRef);
+                typewrite(welcomeMsg, typewriterRef);
             }, 2000);
         }
         return () => { window.clearInterval(carouselInterval.current) };
@@ -62,9 +63,7 @@ export default function Home() {
                         <p className='mb-2 monospace uppercase opacity-75 text-xl'>Welcome</p>
                         <p className='monospace'>
                             <span className='terminal-header'>kyle@portfolio</span>
-                            <span ref={typewriterRef}>Hello, I'm Kyle - a programmer and full-stack developer based in
-                            London, with strong interests in web development. I've made this website to
-                            showcase my projects and applications.</span>
+                            <span ref={typewriterRef}>{welcomeMsg}</span>
                             <span className='caret-blink'></span>
                         </p>
                     </div>                              

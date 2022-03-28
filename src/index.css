@@ -190,5 +190,9 @@ body {
   }
 }
 
+/* Custom variable duration for skills progress bar. */
+.custom-duration {
+  transition-duration: calc(20ms * var(--duration-factor))!important;
+}
 
 
