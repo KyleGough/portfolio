@@ -126,36 +126,6 @@ body {
   line-height: 1.75rem;
 }
 
-/* Terminal header for home page welcome text. */
-.terminal-header {
-  position: relative;
-  margin-right: 1.25rem;
-  background-color: #3F51B5;
-  padding-top: 3px;
-  padding-bottom: 2px;
-  padding-left: 4px;
-  padding-right: 0px;
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
-  opacity: 80%;
-  font-weight: 600;
-  border-left: 3px solid #4CAF50;
-}
-
-.terminal-header::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: -0.5rem;
-  width: 0.6rem;
-  height: 100%;
-  border-top-right-radius: 100%;
-  border-bottom-right-radius: 100%;
-  background-color: #3F51B5;
-  border: 2px solid transparent;
-}
-
-
 /* Blink animation for terminal caret. */
 .caret-blink {
   position: relative;
@@ -169,7 +139,7 @@ body {
   height: 100%;
   animation: blink 1000ms ease-in-out infinite;
   top: 0;
-  left: 0.4rem;
+  left: 0.2rem;
 }
 
 @keyframes blink {
@@ -192,7 +162,5 @@ body {
 
 /* Custom variable duration for skills progress bar. */
 .custom-duration {
-  transition-duration: calc(20ms * var(--duration-factor))!important;
+  transition-duration: calc(25ms * var(--duration-factor))!important;
 }
-
-

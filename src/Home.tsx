@@ -9,7 +9,7 @@ function typewrite (txt: string, ref: RefObject<HTMLSpanElement>) {
         return;
     }
     (ref.current as HTMLSpanElement).innerHTML = (ref.current as HTMLSpanElement).innerHTML + txt[0];
-    setTimeout(() => typewrite(txt.slice(1), ref), 40);
+    setTimeout(() => typewrite(txt.slice(1), ref), 35);
 }
 
 export default function Home() {
@@ -18,6 +18,7 @@ export default function Home() {
     const carouselInterval = useRef<any>(null);
     const typewriterRef = useRef<HTMLSpanElement>(null);
     const welcomeMsg = "Hello, I'm Kyle - a programmer and full-stack developer based in London, with strong interests in web development. I've made this website to showcase my projects and applications.";
+    const zws = '​'; // Zero-width space.
 
     useEffect(() => {
         document.title = 'Portfolio - Kyle Gough';
@@ -26,7 +27,7 @@ export default function Home() {
             (typewriterRef.current as HTMLSpanElement).innerHTML = '';
             setTimeout(() => {
                 typewrite(welcomeMsg, typewriterRef);
-            }, 2000);
+            }, 1500);
         }
         return () => { window.clearInterval(carouselInterval.current) };
     }, []);
@@ -59,10 +60,10 @@ export default function Home() {
                     <img className='rounded-full bg-gradient-to-r from-link via-sky-600 to-link border-2 border-link h-36 w-36 lg:h-48 lg:w-48 text-center drop-shadow' src='img/avatar.png' alt='Avatar' />
                 </div>
                 <div className='grid grid-cols-12'>
-                    <div className='col-span-12 md:col-start-3 md:col-end-11 lg:col-start-4 lg:col-end-10 text-white mb-8 h-[14rem] md:h-[10rem]'>
+                    <div className='col-span-12 md:col-start-3 md:col-end-11 lg:col-start-4 lg:col-end-10 text-white mb-8 h-[12rem] sm:h-[8rem]'>
                         <p className='mb-2 monospace uppercase opacity-75 text-xl'>Welcome</p>
                         <p className='monospace'>
-                            <span className='terminal-header'>kyle@portfolio</span>
+                            <span>{zws}</span>
                             <span ref={typewriterRef}>{welcomeMsg}</span>
                             <span className='caret-blink'></span>
                         </p>
