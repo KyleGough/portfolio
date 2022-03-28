@@ -1,17 +1,32 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, RefObject } from 'react';
 import Section from './components/Section';
 import { Link } from 'react-router-dom';
 import ArrowForward from './icons/ArrowForward';
 import ArrowBack from './icons/ArrowBack';
 
+function typewrite (txt: string, ref: RefObject<HTMLSpanElement>) {
+    if (!ref.current || !txt) {
+        return;
+    }
+    (ref.current as HTMLSpanElement).innerHTML = (ref.current as HTMLSpanElement).innerHTML + txt[0];
+    setTimeout(() => typewrite(txt.slice(1), ref), 40);
+}
+
 export default function Home() {
     const [carousel, setCarousel] = useState(0);
     const carouselCount: number = 3;
     const carouselInterval = useRef<any>(null);
+    const typewriterRef = useRef<HTMLSpanElement>(null);
 
     useEffect(() => {
         document.title = 'Portfolio - Kyle Gough';
         carouselInterval.current = window.setInterval(carouselNext, 10000);
+        if (typewriterRef.current) {
+            (typewriterRef.current as HTMLSpanElement).innerHTML = '';
+            setTimeout(() => {
+                typewrite("Hello, I'm Kyle - a programmer and full-stack developer based in London, with strong interests in web development. I've made this website to showcase my projects and applications.", typewriterRef);
+            }, 2000);
+        }
         return () => { window.clearInterval(carouselInterval.current) };
     }, []);
 
@@ -43,13 +58,13 @@ export default function Home() {
                     <img className='rounded-full bg-gradient-to-r from-link via-sky-600 to-link border-2 border-link h-36 w-36 lg:h-48 lg:w-48 text-center drop-shadow' src='img/avatar.png' alt='Avatar' />
                 </div>
                 <div className='grid grid-cols-12'>
-                    <div className='col-span-12 md:col-start-3 md:col-end-11 lg:col-start-4 lg:col-end-10 text-white mb-8'>                    
+                    <div className='col-span-12 md:col-start-3 md:col-end-11 lg:col-start-4 lg:col-end-10 text-white mb-8 h-[14rem] md:h-[10rem]'>
                         <p className='mb-2 monospace uppercase opacity-75 text-xl'>Welcome</p>
                         <p className='monospace'>
                             <span className='terminal-header'>kyle@portfolio</span>
-                            Hello, I'm Kyle - a programmer and full-stack developer based in
+                            <span ref={typewriterRef}>Hello, I'm Kyle - a programmer and full-stack developer based in
                             London, with strong interests in web development. I've made this website to
-                            showcase my projects and applications.
+                            showcase my projects and applications.</span>
                             <span className='caret-blink'></span>
                         </p>
                     </div>                              
