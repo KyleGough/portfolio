@@ -160,6 +160,8 @@ export default function About() {
             <p className='my-4'>Here are some languages and technologies I am keen to learn in 2022.</p>
             <ul className='list-none mt-8 ml-14'>
                 <GoalListItem name='TypeScript' progress={Progress.GREEN} />
+                <GoalListItem name='Next.js' progress={Progress.RED} />
+                <GoalListItem name='Web Sockets' progress={Progress.RED} />
                 <GoalListItem name='React Native' progress={Progress.RED} />
                 <GoalListItem name='Extension API' progress={Progress.AMBER} />
                 <GoalListItem name='GraphQL' progress={Progress.RED} />
