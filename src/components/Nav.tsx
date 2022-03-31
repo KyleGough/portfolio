@@ -32,7 +32,7 @@ export default function Nav() {
     }
 
     return (
-        <nav>
+        <nav className='leading-6'>
             <div className='flex relative z-[200] items-center justify-between flex-wrap bg-nav-light text-white px-2'>
                 <div className='flex items-center flex-shrink-0 mr-6'>
                     <Link to='/' className='ml-6'><span className='text-xl tracking-normal'>Kyle Gough</span></Link>
