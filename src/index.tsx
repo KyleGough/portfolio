@@ -38,7 +38,7 @@ function App() {
       <ScrollTop />
       <div className='App'>
           <Nav />
-          <main className='bg-background bg-noise bg-repeat'>
+          <main className='bg-background bg-noise bg-repeat leading-[1.6rem]'>
               <Routes>
                   <Route path='/' element={<Home />} />
                   <Route path='/about' element={<About />} />
