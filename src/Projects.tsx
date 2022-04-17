@@ -30,7 +30,7 @@ export default function Projects() {
         {
             title: 'Portfolio',
             date: 'December 2016 - March 2022',
-            src: '/img/portfolio-projects-v4b.jpg',
+            src: '/img/card-portfolio.png',
             alt: 'Portfolio',
             link: '/projects/portfolio',
             filters: ['JavaScript', 'React', 'Web'],
@@ -57,7 +57,7 @@ export default function Projects() {
         {
             title: 'React Minesweeper',
             date: 'October 2019',
-            src: '/img/react-minesweeper1.jpg',
+            src: 'img/card-react-minesweeper.png',
             alt: 'React Minesweeper',
             link: '/projects/react-minesweeper',
             filters: ['JavaScript', 'React', 'Games/Puzzles', 'Web'],
@@ -93,7 +93,7 @@ export default function Projects() {
         {
             title: 'RSCBot',
             date: 'February 2018 - March 2019',
-            src: '/img/rscbot1.jpg',
+            src: '/img/card-rscbot.png',
             alt: 'RSCBot',
             link: '/projects/rscbot',
             filters: ['JavaScript', 'PHP', 'SQL', 'Group Projects', 'Web'],
