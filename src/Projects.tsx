@@ -39,7 +39,7 @@ export default function Projects() {
         {
             title: 'LucidLab',
             date: 'October 2019 - May 2020',
-            src: '/img/lucidlab1.jpg',
+            src: '/img/card-lucidlab.png',
             alt: 'LucidLab',
             link: '/projects/lucidlab',
             filters: ['JavaScript', 'Python', 'React', 'SQL', 'Group Projects', 'Web'],
@@ -48,7 +48,7 @@ export default function Projects() {
         {
             title: 'Logical Sudoku Solver',
             date: 'November 2019 - January 2020',
-            src: '/img/sudoku1.jpg',
+            src: '/img/card-sudoku.png',
             alt: 'Logical sudoku solver',
             link: '/projects/sudoku',
             filters: ['Python', 'Games/Puzzles'],
@@ -75,7 +75,7 @@ export default function Projects() {
         {
             title: 'Using Swarm AI to Map a Cave Network',
             date: 'December 2018 - April 2019',
-            src: '/img/cave-exploration1.jpg',
+            src: '/img/card-cave-exploration.png',
             alt: 'Cave Exploration',
             link: '/projects/cave-exploration',
             filters: ['C++'],
@@ -84,7 +84,7 @@ export default function Projects() {
         {
             title: 'Roller Coaster',
             date: 'December 2018 - January 2019',
-            src: '/img/roller-coaster1.jpg',
+            src: '/img/card-roller-coaster.png',
             alt: 'Roller coaster',
             link: '/projects/roller-coaster',
             filters: ['C++'],
@@ -102,7 +102,7 @@ export default function Projects() {
         {
             title: 'URL Shortener',
             date: 'April 2017',
-            src: '/img/url-shortener1.jpg',
+            src: '/img/card-url-shortener.png',
             alt: 'URL shortener',
             link: '/projects/url-shortener',
             filters: ['JavaScript', 'Web'],
@@ -111,7 +111,7 @@ export default function Projects() {
         {
             title: 'Graph Algorithm Visualiser',
             date: 'April 2017',
-            src: '/img/graph-algorithm-visualiser1.jpg',
+            src: '/img/card-graph-algorithm-visualiser.png',
             alt: 'Graph algorithm visualiser',
             link: '/projects/graph-algorithm-visualiser',
             filters: ['JavaScript', 'Web'],
@@ -120,7 +120,7 @@ export default function Projects() {
         {
             title: 'Cavern Minesweeper',
             date: 'March 2017',
-            src: '/img/cavern-minesweeper1.jpg',
+            src: '/img/card-cavern-minesweeper.png',
             alt: 'Cavern Minesweeper',
             link: '/projects/cavern-minesweeper',
             filters: ['Games/Puzzles'],
@@ -129,7 +129,7 @@ export default function Projects() {
         {
             title: 'BSplit',
             date: 'February 2017 - March 2017',
-            src: '/img/bsplit1.jpg',
+            src: '/img/card-bsplit.png',
             alt: 'BSplit',
             link: '/projects/bsplit',
             filters: ['JavaScript', 'PHP', 'SQL', 'Web'],
@@ -138,7 +138,7 @@ export default function Projects() {
         {
             title: 'To Do List',
             date: 'January 2017 - February 2017',
-            src: '/img/todo-list1.jpg',
+            src: '/img/card-todo.png',
             alt: 'To Do List',
             link: '/projects/todo-list',
             filters: ['JavaScript', 'PHP', 'SQL', 'Group Projects', 'Web'],
@@ -147,7 +147,7 @@ export default function Projects() {
         {
             title: 'Delivery Route Planner',
             date: 'December 2015 - March 2016',
-            src: '/img/delivery-route-planner1.jpg',
+            src: '/img/card-delivery-route-planner.png',
             alt: 'Delivery route planner',
             link: '/projects/delivery-route-planner',
             filters: ['C#'],
@@ -156,7 +156,7 @@ export default function Projects() {
         {
             title: 'Sorting Algorithm Visualiser',
             date: 'September 2015 - November 2015',
-            src: '/img/sorting-algorithm-visualiser1.jpg',
+            src: '/img/card-sorting-algorithm-visualiser.png',
             alt: 'Sorting Algorithm Visualiser',
             link: '/projects/sorting-algorithm-visualiser',
             filters: ['C#'],
