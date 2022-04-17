@@ -26,7 +26,6 @@ import URLShortener from './projects/URLShortener';
 import RSCBot from './projects/RSCBot';
 import RollerCoaster from './projects/RollerCoaster';
 import CaveExploration from './projects/CaveExploration';
-import QuRVe from './projects/QuRVe';
 import Minesweeper from './projects/Minesweeper';
 import Sudoku from './projects/Sudoku';
 import LucidLab from './projects/LucidLab';
@@ -54,7 +53,6 @@ function App() {
                   <Route path='/projects/rscbot' element={<RSCBot />} />
                   <Route path='/projects/roller-coaster' element={<RollerCoaster />} />
                   <Route path='/projects/cave-exploration' element={<CaveExploration />} />
-                  <Route path='/projects/qurve' element={<QuRVe />} />
                   <Route path='/projects/react-minesweeper' element={<Minesweeper />} />
                   <Route path='/projects/sudoku' element={<Sudoku />} />
                   <Route path='/projects/lucidlab' element={<LucidLab />} />

@@ -64,15 +64,6 @@ export default function Projects() {
             description: 'Clone of classic Minesweeper with an 18x18 board. Ability to reveal tiles and flag tiles for potential mines. Flood fill algorithms will reveal all adjacent tiles when a 0 is uncovered, mimicing the behaviour of the original game.'
         },
         {
-            title: 'QuRVe',
-            date: 'June 2019 - August 2019',
-            src: '/img/qurve1.jpg',
-            alt: 'QuRVe',
-            link: '/projects/qurve',
-            filters: ['JavaScript', 'React', 'Web'],
-            description: 'Designed and created an updated UI for the application QuRVe, a credit tech tool using JavaScript, Webix, React and Less. Implemented an interface to retrieve financial instruments data with a configurable dashboard showing graphs, pivot tables and descriptions of selected securities.'
-        },
-        {
             title: 'Using Swarm AI to Map a Cave Network',
             date: 'December 2018 - April 2019',
             src: '/img/card-cave-exploration.png',
