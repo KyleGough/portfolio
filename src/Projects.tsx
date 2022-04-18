@@ -30,7 +30,7 @@ export default function Projects() {
         {
             title: 'Portfolio',
             date: 'December 2016 - March 2022',
-            src: '/img/card-portfolio.png',
+            src: '/img/card-portfolio.jpg',
             alt: 'Portfolio',
             link: '/projects/portfolio',
             filters: ['JavaScript', 'React', 'Web'],
@@ -39,7 +39,7 @@ export default function Projects() {
         {
             title: 'LucidLab',
             date: 'October 2019 - May 2020',
-            src: '/img/card-lucidlab.png',
+            src: '/img/card-lucidlab.jpg',
             alt: 'LucidLab',
             link: '/projects/lucidlab',
             filters: ['JavaScript', 'Python', 'React', 'SQL', 'Group Projects', 'Web'],
@@ -48,7 +48,7 @@ export default function Projects() {
         {
             title: 'Logical Sudoku Solver',
             date: 'November 2019 - January 2020',
-            src: '/img/card-sudoku.png',
+            src: '/img/card-sudoku.jpg',
             alt: 'Logical sudoku solver',
             link: '/projects/sudoku',
             filters: ['Python', 'Games/Puzzles'],
@@ -57,7 +57,7 @@ export default function Projects() {
         {
             title: 'React Minesweeper',
             date: 'October 2019',
-            src: 'img/card-react-minesweeper.png',
+            src: 'img/card-react-minesweeper.jpg',
             alt: 'React Minesweeper',
             link: '/projects/react-minesweeper',
             filters: ['JavaScript', 'React', 'Games/Puzzles', 'Web'],
@@ -66,7 +66,7 @@ export default function Projects() {
         {
             title: 'Using Swarm AI to Map a Cave Network',
             date: 'December 2018 - April 2019',
-            src: '/img/card-cave-exploration.png',
+            src: '/img/card-cave-exploration.jpg',
             alt: 'Cave Exploration',
             link: '/projects/cave-exploration',
             filters: ['C++'],
@@ -75,7 +75,7 @@ export default function Projects() {
         {
             title: 'Roller Coaster',
             date: 'December 2018 - January 2019',
-            src: '/img/card-roller-coaster.png',
+            src: '/img/card-roller-coaster.jpg',
             alt: 'Roller coaster',
             link: '/projects/roller-coaster',
             filters: ['C++'],
@@ -84,7 +84,7 @@ export default function Projects() {
         {
             title: 'RSCBot',
             date: 'February 2018 - March 2019',
-            src: '/img/card-rscbot.png',
+            src: '/img/card-rscbot.jpg',
             alt: 'RSCBot',
             link: '/projects/rscbot',
             filters: ['JavaScript', 'PHP', 'SQL', 'Group Projects', 'Web'],
@@ -93,7 +93,7 @@ export default function Projects() {
         {
             title: 'URL Shortener',
             date: 'April 2017',
-            src: '/img/card-url-shortener.png',
+            src: '/img/card-url-shortener.jpg',
             alt: 'URL shortener',
             link: '/projects/url-shortener',
             filters: ['JavaScript', 'Web'],
@@ -102,7 +102,7 @@ export default function Projects() {
         {
             title: 'Graph Algorithm Visualiser',
             date: 'April 2017',
-            src: '/img/card-graph-algorithm-visualiser.png',
+            src: '/img/card-graph-algorithm-visualiser.jpg',
             alt: 'Graph algorithm visualiser',
             link: '/projects/graph-algorithm-visualiser',
             filters: ['JavaScript', 'Web'],
@@ -111,7 +111,7 @@ export default function Projects() {
         {
             title: 'Cavern Minesweeper',
             date: 'March 2017',
-            src: '/img/card-cavern-minesweeper.png',
+            src: '/img/card-cavern-minesweeper.jpg',
             alt: 'Cavern Minesweeper',
             link: '/projects/cavern-minesweeper',
             filters: ['Games/Puzzles'],
@@ -120,7 +120,7 @@ export default function Projects() {
         {
             title: 'BSplit',
             date: 'February 2017 - March 2017',
-            src: '/img/card-bsplit.png',
+            src: '/img/card-bsplit.jpg',
             alt: 'BSplit',
             link: '/projects/bsplit',
             filters: ['JavaScript', 'PHP', 'SQL', 'Web'],
@@ -129,7 +129,7 @@ export default function Projects() {
         {
             title: 'To Do List',
             date: 'January 2017 - February 2017',
-            src: '/img/card-todo.png',
+            src: '/img/card-todo.jpg',
             alt: 'To Do List',
             link: '/projects/todo-list',
             filters: ['JavaScript', 'PHP', 'SQL', 'Group Projects', 'Web'],
@@ -138,7 +138,7 @@ export default function Projects() {
         {
             title: 'Delivery Route Planner',
             date: 'December 2015 - March 2016',
-            src: '/img/card-delivery-route-planner.png',
+            src: '/img/card-delivery-route-planner.jpg',
             alt: 'Delivery route planner',
             link: '/projects/delivery-route-planner',
             filters: ['C#'],
@@ -147,7 +147,7 @@ export default function Projects() {
         {
             title: 'Sorting Algorithm Visualiser',
             date: 'September 2015 - November 2015',
-            src: '/img/card-sorting-algorithm-visualiser.png',
+            src: '/img/card-sorting-algorithm-visualiser.jpg',
             alt: 'Sorting Algorithm Visualiser',
             link: '/projects/sorting-algorithm-visualiser',
             filters: ['C#'],
