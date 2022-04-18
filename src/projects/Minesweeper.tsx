@@ -54,8 +54,8 @@ export default function Minesweeper() {
         <Divider />
         
         <Pagination
-            previousTitle='QuRVe'
-            previousLink='/projects/qurve'
+            previousTitle='Cave Exploration'
+            previousLink='/projects/cave-exploration'
             nextTitle='Logical Sudoku Solver'
             nextLink='/projects/sudoku'
         />

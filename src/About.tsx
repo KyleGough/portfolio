@@ -75,12 +75,12 @@ export default function About() {
     ];
 
     const skillsWeb: [string, number, string, string, string, string][] = [
-        ["JavaScript", 90, "w-[90%]", "Portfolio, LucidLab, QuRVe, Graph Algorithm Visualiser, RSCBot", "Confident", JavaScriptLogo],
+        ["JavaScript", 90, "w-[90%]", "Portfolio, LucidLab, Graph Algorithm Visualiser, RSCBot", "Confident", JavaScriptLogo],
         ["TypeScript", 70, "w-[70%]", "Portfolio", "Comfortable", TypeScriptLogo],
-        ["React", 75, "w-[75%]", "Portfolio, LucidLab, QuRVe, Minesweeper", "Comfortable", ReactLogo],
+        ["React", 75, "w-[75%]", "Portfolio, LucidLab, Minesweeper", "Comfortable", ReactLogo],
         ["Tailwind", 70, "w-[70%]", "Portfolio", "Comfortable", TailwindLogo],
         ["HTML", 90, "w-[90%]", "Portfolio, BSplit, To Do List", "Confident", HTMLLogo],
-        ["CSS", 90, "w-[90%]", "Portfolio, LucidLab, QuRVe, BSplit, Minesweeper", "Confident", CSSLogo],
+        ["CSS", 90, "w-[90%]", "Portfolio, LucidLab, BSplit, Minesweeper", "Confident", CSSLogo],
         ["PHP", 55, "w-[55%]", "BSplit, Portfolio", "Comfortable", PHPLogo]
     ];
 
