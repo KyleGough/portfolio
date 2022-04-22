@@ -66,8 +66,8 @@ export default function CaveExploration() {
         <Pagination
             previousTitle='Roller Coaster'
             previousLink='/projects/roller-coaster'
-            nextTitle='QuRVe'
-            nextLink='/projects/qurve'
+            nextTitle='React Minesweeper'
+            nextLink='/projects/react-minesweeper'
         />
         </>
     );
