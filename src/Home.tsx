@@ -22,7 +22,7 @@ function ProjectChip(props: { name: string }) {
 
 function ProjectCard(props: { src: string, alt: string, title: string, tagline: string, date: string, link: string, chipText: string }) {
     return (
-        <Link to={props.link} className='rounded-2xl overflow-hidden border-2 my-8 border-nav-dark bg-nav-light shadow drop-shadow-lg'>
+        <Link to={props.link} className='rounded-2xl overflow-hidden border-2 border-nav-dark bg-nav-light shadow drop-shadow-lg'>
             <img className='w-full' src={props.src} alt={props.alt} />
             <div className='text-white p-4 font-bold'>
                 <h3 className='text-xl font-extrabold mb-4 h-[3.5rem] overflow-hidden'>{props.tagline}</h3>
@@ -69,9 +69,9 @@ export default function Home() {
             <div className='z-50'>
                 <div className='absolute inset-0 text-white mx-auto text-center flex tracking-tight items-center'>
                     <div className='block lg:flex items-center justify-around w-full'>
-                        <p className='slide-in text-7xl sm:text-8xl lg:text-9xl font-serif tracking-tighter px-8 mb-8 lg:mb-0'>Hello, I'm Kyle.</p>
-                        <p className='text-left text-2xl font-thin max-w-[38ch] monospace tracking-[-0.10rem] mx-auto px-8 lg:mx-0'>
-                            <span className='text-left'>{welcomeMsg}</span>
+                        <p className='slide-in text-7xl sm:text-8xl lg:text-9xl font-sans tracking-tighter px-8 mb-8 lg:mb-0'>Hello, I'm Kyle.</p>
+                        <p className='text-left text-2xl font-thin max-w-[38ch] font-sans mx-auto px-8 lg:mx-0'>
+                            <span className='text-left sans-serif'>{welcomeMsg}</span>
                             <span className='caret-blink'>{zws}</span>
                         </p>
                     </div>
@@ -118,7 +118,7 @@ export default function Home() {
                     chipText='C++'
                 />
             </div>
-            <div className='flex justify-center'>
+            <div className='mt-16 flex justify-center'>
                 <Link to='/projects' className='drop-shadow-lg flex items-center shimmer px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-sm shadow border-light'>All Projects</Link>
             </div>
         </Section>
