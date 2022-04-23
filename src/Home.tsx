@@ -60,12 +60,12 @@ export default function Home() {
 
     return (
         <>
-        <div className={`flex justify-center items-center h-screen-with-nav relative`}>
+        <div className={`flex justify-center items-center h-screen relative`}>
             <div className='absolute inset-0 bg-black opacity-50 w-full h-full z-10'></div>
             <div className={`absolute top-0 left-0 w-full h-full bg-header1 bg-fixed bg-center bg-cover duration-2000 transition-opacity ${carousel === 0 ? 'opacity-100' : 'opacity-0'}`}></div>
             <div className={`absolute top-0 left-0 w-full h-full bg-header2 bg-fixed bg-center bg-cover duration-2000 transition-opacity ${carousel === 1 ? 'opacity-100' : 'opacity-0'}`}></div>   
             <div className={`absolute top-0 left-0 w-full h-full bg-header3 bg-fixed bg-center bg-cover duration-2000 transition-opacity ${carousel === 2 ? 'opacity-100' : 'opacity-0'}`}></div>   
-            <div className='z-50 absolute inset-0 text-white mx-auto text-center flex tracking-tight items-center'>
+            <div className='z-20 absolute inset-0 text-white mx-auto text-center flex tracking-tight items-center'>
                 <div className='block lg:flex items-center justify-around w-full'>
                     <h1 className='slide-in text-7xl sm:text-8xl lg:text-9xl font-sans tracking-tighter px-8 mb-12 lg:mb-0'>Hello, I'm Kyle.</h1>
                     <p className='text-left text-2xl font-thin max-w-[38ch] lg:w-[38ch] font-sans mx-auto px-8 lg:mx-0'>

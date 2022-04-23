@@ -62,12 +62,6 @@ module.exports = {
       },
       transitionDuration: {
         '2000': '2000ms'
-      },
-      height: {
-        'screen-with-nav': 'calc(100vh - 60px)'
-      },
-      minHeight: {
-        'screen-with-nav': 'calc(100vh - 60px)'
       }
     }
   }
