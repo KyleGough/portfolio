@@ -61,7 +61,7 @@ export default function Home() {
 
     return (
         <>
-        <div className={`flex justify-center items-center min-h-screen-with-nav relative`}>
+        <div className={`flex justify-center items-center h-screen-with-nav relative`}>
             <div className='absolute inset-0 bg-black opacity-50 w-full h-full z-10'></div>
             <div className={`absolute top-0 left-0 w-full h-full bg-header1 bg-fixed bg-center bg-cover duration-2000 transition-opacity ${carousel === 0 ? 'opacity-100' : 'opacity-0'}`}></div>
             <div className={`absolute top-0 left-0 w-full h-full bg-header2 bg-fixed bg-center bg-cover duration-2000 transition-opacity ${carousel === 1 ? 'opacity-100' : 'opacity-0'}`}></div>   
@@ -69,9 +69,9 @@ export default function Home() {
             <div className='z-50'>
                 <div className='absolute inset-0 text-white mx-auto text-center flex tracking-tight items-center'>
                     <div className='block lg:flex items-center justify-around w-full'>
-                        <p className='slide-in text-7xl sm:text-8xl lg:text-9xl font-sans tracking-tighter px-8 mb-8 lg:mb-0'>Hello, I'm Kyle.</p>
+                        <p className='slide-in text-7xl sm:text-8xl lg:text-9xl font-sans tracking-tighter px-8 mb-12 lg:mb-0'>Hello, I'm Kyle.</p>
                         <p className='text-left text-2xl font-thin max-w-[38ch] font-sans mx-auto px-8 lg:mx-0'>
-                            <span className='text-left sans-serif'>{welcomeMsg}</span>
+                            <span className='text-xl md:text-2xl text-left sans-serif'>{welcomeMsg}</span>
                             <span className='caret-blink'>{zws}</span>
                         </p>
                     </div>
