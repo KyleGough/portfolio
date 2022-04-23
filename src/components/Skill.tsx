@@ -13,7 +13,7 @@ type SkillProps = {
 
 function Skill(props: SkillProps) {
     const progressRef = useRef<HTMLDivElement>(null);
-    const isVisible = useOnScreen(progressRef);
+    const isVisible = useOnScreen<HTMLDivElement>(progressRef);
     const [animatedIn, setAnimatedIn] = useState(false);
     const durationVar = { "--duration-factor": props.progress } as React.CSSProperties;
 

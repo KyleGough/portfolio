@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef, RefObject } from "react";
 
-export default function useOnScreen(ref: RefObject<HTMLElement>) {
+export default function useOnScreen<T extends HTMLElement>(ref: RefObject<T>) {
     const observerRef = useRef<IntersectionObserver | null>(null);
     const [isOnScreen, setIsOnScreen] = useState<boolean>(false);
 
@@ -11,7 +11,7 @@ export default function useOnScreen(ref: RefObject<HTMLElement>) {
     }, []);
 
     useEffect(() => {
-        (observerRef.current as IntersectionObserver).observe(ref.current as Element);
+        (observerRef.current as IntersectionObserver).observe(ref.current as T);
 
         return () => {
             (observerRef.current as IntersectionObserver).disconnect();
