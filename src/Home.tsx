@@ -19,13 +19,12 @@ function ProjectChip(props: { name: string }) {
     );
 }
 
-
 function ProjectCard(props: { src: string, alt: string, title: string, tagline: string, date: string, link: string, chipText: string }) {
     return (
         <Link to={props.link} className='rounded-2xl overflow-hidden border-2 border-nav-dark bg-nav-light shadow drop-shadow-lg'>
             <img className='w-full' src={props.src} alt={props.alt} />
             <div className='text-white p-4 font-bold'>
-                <h3 className='text-xl font-extrabold mb-4 h-[3.5rem] overflow-hidden'>{props.tagline}</h3>
+                <h3 className='text-xl font-extrabold mb-4 h-[3.5rem] line-clamp-2'>{props.tagline}</h3>
                 <div className='flex justify-between items-center'>
                     <p className='text-sm opacity-80'>{props.date}</p>
                     <ProjectChip name={props.chipText} />
@@ -66,30 +65,22 @@ export default function Home() {
             <div className={`absolute top-0 left-0 w-full h-full bg-header1 bg-fixed bg-center bg-cover duration-2000 transition-opacity ${carousel === 0 ? 'opacity-100' : 'opacity-0'}`}></div>
             <div className={`absolute top-0 left-0 w-full h-full bg-header2 bg-fixed bg-center bg-cover duration-2000 transition-opacity ${carousel === 1 ? 'opacity-100' : 'opacity-0'}`}></div>   
             <div className={`absolute top-0 left-0 w-full h-full bg-header3 bg-fixed bg-center bg-cover duration-2000 transition-opacity ${carousel === 2 ? 'opacity-100' : 'opacity-0'}`}></div>   
-            <div className='z-50'>
-                <div className='absolute inset-0 text-white mx-auto text-center flex tracking-tight items-center'>
-                    <div className='block lg:flex items-center justify-around w-full'>
-                        <p className='slide-in text-7xl sm:text-8xl lg:text-9xl font-sans tracking-tighter px-8 mb-12 lg:mb-0'>Hello, I'm Kyle.</p>
-                        <p className='text-left text-2xl font-thin max-w-[38ch] font-sans mx-auto px-8 lg:mx-0'>
-                            <span className='text-xl md:text-2xl text-left sans-serif'>{welcomeMsg}</span>
-                            <span className='caret-blink'>{zws}</span>
-                        </p>
-                    </div>
+            <div className='z-50 absolute inset-0 text-white mx-auto text-center flex tracking-tight items-center'>
+                <div className='block lg:flex items-center justify-around w-full'>
+                    <h1 className='slide-in text-7xl sm:text-8xl lg:text-9xl font-sans tracking-tighter px-8 mb-12 lg:mb-0'>Hello, I'm Kyle.</h1>
+                    <p className='text-left text-2xl font-thin max-w-[38ch] lg:w-[38ch] font-sans mx-auto px-8 lg:mx-0'>
+                        <span ref={typewriterRef} className='text-xl md:text-2xl text-left sans-serif'>{welcomeMsg}</span>
+                        <span className='fade-in caret-blink'>{zws}</span>
+                    </p>
                 </div>
-                <div className='absolute right-8 bottom-8'>
-                    <Link to='/projects' className='group drop-shadow-lg flex items-center px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-full border-2 shadow border-link hover:border-link-hover focus:border-link-hover'>
-                        <p>Projects</p>
-                        <ArrowForward className='float-right ml-4 w-4 h-4 fill-link group-hover:fill-link-hover group-focus:fill-link-hover' />
-                    </Link>
-                </div>
-            </div>  
+            </div>
         </div>
 
         <div className='bg-circuits min-h-screen flex items-center'>
         <Section>
             <h2 className='font-thin text-6xl text-center mt-24 text-nav-light'>Project Showcase</h2>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 mb-8'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 mb-8 px-4'>
                 <ProjectCard
                     src='/img/card-sudoku.jpg'
                     alt='Logical Sudoku Solver Project Card'
@@ -119,7 +110,10 @@ export default function Home() {
                 />
             </div>
             <div className='mt-16 flex justify-center'>
-                <Link to='/projects' className='drop-shadow-lg flex items-center shimmer px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-sm shadow border-light'>All Projects</Link>
+                <Link to='/projects' className='shimmer group drop-shadow-lg flex items-center px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-full border-2 shadow border-link hover:border-link-hover focus:border-link-hover'>
+                    <p>All Projects</p>
+                    <ArrowForward className='float-right ml-4 w-4 h-4 fill-link group-hover:fill-link-hover group-focus:fill-link-hover' />
+                </Link>
             </div>
         </Section>
         </div>

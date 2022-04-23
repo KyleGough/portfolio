@@ -138,6 +138,7 @@ body {
   width: 0.5rem;
   height: 100%;
   animation: blink 800ms ease-in-out infinite;
+  animation-delay: 1750ms;
   top: 0;
   left: 0.3rem;
 }
@@ -163,4 +164,27 @@ body {
 /* Custom variable duration for skills progress bar. */
 .custom-duration {
   transition-duration: calc(25ms * var(--duration-factor))!important;
+}
+
+/* Show ellipsis on text overflow for multiple lines.*/
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
+
+.fade-in {
+  opacity: 0%;
+  animation: fade 750ms ease 1 forwards;
+  animation-delay: 1000ms;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
 }
