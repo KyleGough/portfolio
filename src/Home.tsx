@@ -1,56 +1,21 @@
-import { useState, useEffect, useRef, RefObject } from 'react';
-import Section from './components/Section';
+import { useState, useEffect, useRef } from 'react';
+import useTypewriter from './hooks/useTypewriter';
 import { Link } from 'react-router-dom';
+import Section from './components/Section';
 import ArrowForward from './icons/ArrowForward';
-
-function typewrite(txt: string, ref: RefObject<HTMLSpanElement>) {
-    if (!ref.current || !txt) {
-        return;
-    }
-    (ref.current as HTMLSpanElement).innerHTML = (ref.current as HTMLSpanElement).innerHTML + txt[0];
-    setTimeout(() => typewrite(txt.slice(1), ref), 35);
-}
-
-function ProjectChip(props: { name: string }) {
-    return (
-        <div className='brightness-200 text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold text-chip bg-chip-light'>
-            {props.name}
-        </div>
-    );
-}
-
-function ProjectCard(props: { src: string, alt: string, title: string, tagline: string, date: string, link: string, chipText: string }) {
-    return (
-        <Link to={props.link} className='rounded-2xl overflow-hidden border-2 border-nav-dark bg-nav-light shadow drop-shadow-lg'>
-            <img className='w-full' src={props.src} alt={props.alt} />
-            <div className='text-white p-4 font-bold'>
-                <h3 className='text-xl font-extrabold mb-4 h-[3.5rem] line-clamp-2'>{props.tagline}</h3>
-                <div className='flex justify-between items-center'>
-                    <p className='text-sm opacity-80'>{props.date}</p>
-                    <ProjectChip name={props.chipText} />
-                </div>
-            </div>
-        </Link>
-    );
-}
+import ProjectCard from './components/ProjectCard';
 
 export default function Home() {
     const [carousel, setCarousel] = useState(0);
     const carouselCount: number = 3;
     const carouselInterval = useRef<any>(null);
-    const typewriterRef = useRef<HTMLParagraphElement>(null);
     const welcomeMsg = "Full-stack developer based in London, with strong interests in web development and over 8 years experience coding. Feel free to browse my projects.";
+    const typewriterRef = useTypewriter<HTMLParagraphElement>(welcomeMsg, 35, 1500);
     const zws = '​'; // Zero-width space.
 
     useEffect(() => {
         document.title = 'Portfolio - Kyle Gough';
         carouselInterval.current = window.setInterval(carouselNext, 10000);
-        if (typewriterRef.current) {
-            (typewriterRef.current as HTMLParagraphElement).innerHTML = '';
-            setTimeout(() => {
-                typewrite(welcomeMsg, typewriterRef);
-            }, 1500);
-        }
         return () => { window.clearInterval(carouselInterval.current) };
     }, []);
 
@@ -61,14 +26,14 @@ export default function Home() {
     return (
         <>
         <div className={`flex justify-center items-center h-screen relative`}>
-            <div className='absolute inset-0 bg-black opacity-50 w-full h-full z-10'></div>
+            <div className='absolute inset-0 bg-black opacity-70 w-full h-full z-10'></div>
             <div className={`absolute top-0 left-0 w-full h-full bg-header1 bg-fixed bg-center bg-cover duration-2000 transition-opacity ${carousel === 0 ? 'opacity-100' : 'opacity-0'}`}></div>
             <div className={`absolute top-0 left-0 w-full h-full bg-header2 bg-fixed bg-center bg-cover duration-2000 transition-opacity ${carousel === 1 ? 'opacity-100' : 'opacity-0'}`}></div>   
             <div className={`absolute top-0 left-0 w-full h-full bg-header3 bg-fixed bg-center bg-cover duration-2000 transition-opacity ${carousel === 2 ? 'opacity-100' : 'opacity-0'}`}></div>   
             <div className='z-20 absolute inset-0 text-white mx-auto text-center flex tracking-tight items-center'>
                 <div className='block lg:flex items-center justify-around w-full'>
                     <h1 className='slide-in text-7xl sm:text-8xl lg:text-9xl font-sans tracking-tighter px-8 mb-12 lg:mb-0'>Hello, I'm Kyle.</h1>
-                    <p className='text-left text-2xl font-thin max-w-[38ch] lg:w-[38ch] font-sans mx-auto px-8 lg:mx-0'>
+                    <p className='text-left text-2xl font-thin max-w-[38ch] lg:w-[38ch] md:h-32 h-40 lg:h-32 font-sans mx-auto px-8 lg:mx-0'>
                         <span ref={typewriterRef} className='text-xl md:text-2xl text-left sans-serif'>{welcomeMsg}</span>
                         <span className='fade-in caret-blink'>{zws}</span>
                     </p>
