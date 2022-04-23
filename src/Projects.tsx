@@ -165,9 +165,9 @@ export default function Projects() {
         <hr className='mt-8 h-px bg-divider' />
 
         <div className='bg-circuits'>
-        <Section>
-            <ProjectFilter filter={filter} setFilterCallback={setFilter} />
-        </Section>
+            <Section overrideTopPadding={true}>
+                <ProjectFilter filter={filter} setFilterCallback={setFilter} />
+            </Section>
         <hr className='mb-8 h-px bg-divider' />
         </div>
 

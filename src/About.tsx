@@ -113,16 +113,16 @@ export default function About() {
         <hr className='mt-8 h-px bg-divider' />
 
         <div className='bg-circuits'>
-        <Section>
-            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 justify-center'>
-                <ScrollButton onClick={() => scrollTo(anchorProgramming)} value='Programming Languages' />
-                <ScrollButton onClick={() => scrollTo(anchorWeb)} value='Web Development' />
-                <ScrollButton onClick={() => scrollTo(anchorOther)} value='Other Technologies' />
-                <ScrollButton onClick={() => scrollTo(anchorGoals)} value='Goals for 2022' />
-                <ScrollButton onClick={() => scrollTo(anchorUni)} value='University Modules' />
-            </div>
-        </Section>
-        <hr className='mb-8 h-px bg-divider' />
+            <Section overrideTopPadding={true}>
+                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 justify-center'>
+                    <ScrollButton onClick={() => scrollTo(anchorProgramming)} value='Programming Languages' />
+                    <ScrollButton onClick={() => scrollTo(anchorWeb)} value='Web Development' />
+                    <ScrollButton onClick={() => scrollTo(anchorOther)} value='Other Technologies' />
+                    <ScrollButton onClick={() => scrollTo(anchorGoals)} value='Goals for 2022' />
+                    <ScrollButton onClick={() => scrollTo(anchorUni)} value='University Modules' />
+                </div>
+            </Section>
+            <hr className='mb-8 h-px bg-divider' />
         </div>
 
         <Section ref={anchorProgramming} id='programming-languages'>    
