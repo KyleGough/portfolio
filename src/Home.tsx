@@ -56,6 +56,7 @@ export default function Home() {
                     chipText='Python'
                 />
                 <ProjectCard
+                    className='delay-100'
                     src='/img/card-bsplit.jpg'
                     alt='BSplit Project Card'
                     title='BSplit'
@@ -65,6 +66,7 @@ export default function Home() {
                     chipText='JavaScript'
                 />
                 <ProjectCard
+                    className='delay-200'
                     src='/img/card-cave-exploration.jpg'
                     alt='Cave Exploration Project Card'
                     title='Cave Exploration'

@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import useOnScreen from '../hooks/useOnScreen';
+import React, { useState, useEffect } from 'react';
+import useObserveElement from '../hooks/useObserveElement';
 
 type SkillProps = {
     type: string,
@@ -12,8 +12,11 @@ type SkillProps = {
 };
 
 function Skill(props: SkillProps) {
-    const progressRef = useRef<HTMLDivElement>(null);
-    const isVisible = useOnScreen<HTMLDivElement>(progressRef);
+    const [progressRef, isVisible] = useObserveElement<HTMLDivElement>({
+        root: null,
+        rootMargin: '0px',
+        threshold: 0
+    });
     const [animatedIn, setAnimatedIn] = useState(false);
     const durationVar = { "--duration-factor": props.progress } as React.CSSProperties;
 
@@ -22,7 +25,7 @@ function Skill(props: SkillProps) {
             (progressRef.current as HTMLDivElement).classList.replace('-translate-x-full', 'translate-x-0');
             setAnimatedIn(true);
         }
-    }, [isVisible, animatedIn]);
+    }, [progressRef, isVisible, animatedIn]);
 
     return (
         <div className='flex flex-row justify-center py-4'>
