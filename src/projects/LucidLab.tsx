@@ -28,7 +28,7 @@ export default function LucidLab() {
             <p className='text-link-hover my-4'><time dateTime='2019-10'>October 2019</time> - <time dateTime='2020-05'>May 2020</time></p>
             <p className='mb-4'>An adaptable, heterogeneous IoT testbed for which I developed the front-end user interface. The UI allows registered users to upload and configure tests and images to be deployed on the testbed. Additionally, test results and custom metrics including mote availability graphs and mote CCA charts can be viewed.</p>
 
-            <div className='flex flex-row flex-wrap items-center mt-8'>
+            <div className='flex flex-row flex-wrap items-center mt-8 gap-4'>
                 <Chip name='React' />
                 <Chip name='JavaScript' />
                 <Chip name='Materialize' />

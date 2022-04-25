@@ -35,7 +35,7 @@ function Skill(props: SkillProps) {
                 </div>
             </div>
             <div className='w-9/12 lg:w-8/12 ml-6 flex'>
-                <img loading='lazy' className='w-8 h-8 mr-4' src={props.logo} alt={`${props.title} logo`} />
+                <img loading='lazy' className={`w-8 h-8 mr-4 transition-opacity duration-500 ${animatedIn ? 'opacity-100' : 'opacity-0'}`} src={props.logo} alt={`${props.title} logo`} />
                 <div>
                     <p><span className='font-extrabold'>{props.title}</span> - <span className='text-sm'>{props.description}</span></p>
                     <p className='text-sm text-link-hover mt-1'>{props.comment}</p>

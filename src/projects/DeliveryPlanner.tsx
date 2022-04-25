@@ -27,7 +27,7 @@ export default function DeliveryPlanner() {
             <p className='text-link-hover my-4'><time dateTime='2015-12'>December 2015</time> - <time dateTime='2016-03'>March 2016</time></p>
             <p className='mb-4'>Software written in C# which creates an efficient route between multiple delivery locations. Uses SQL to store and query data on products, clients and their deliveries. Produces a report which communicates the route, all items in the deliveries, and the estimated time taken. Uses graph algorithms such as Dijkstra's and Nearest Neighbour with 2-Opt to optimise the route.</p>
 
-            <div className='flex flex-row flex-wrap items-center mt-8'>
+            <div className='flex flex-row flex-wrap items-center mt-8 gap-4'>
                 <Chip name='C#' />
                 <Chip name='SQL' />
             </div>

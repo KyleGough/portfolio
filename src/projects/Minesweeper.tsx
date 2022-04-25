@@ -35,7 +35,7 @@ export default function Minesweeper() {
                 <a className='text-link hover:text-link-hover focus:text-link-hover' href='https://kylegough-minesweeper.herokuapp.com/' target='_blank' rel='noopener noreferrer'>https://kylegough-minesweeper.herokuapp.com/</a>
             </p>
 
-            <div className='flex flex-row flex-wrap items-center mt-8'>
+            <div className='flex flex-row flex-wrap items-center mt-8 gap-4'>
                 <Chip name='React' />
                 <Chip name='JavaScript' />
                 <Chip name='CSS' />

@@ -28,7 +28,7 @@ export default function Sudoku() {
                 <a className='text-link hover:text-link-hover focus:text-link-hover' href='https://github.com/KyleGough/sudoku' target='_blank' rel='noopener noreferrer'>GitHub</a>
             </p>
 
-            <div className='flex flex-row flex-wrap items-center mt-8'>
+            <div className='flex flex-row flex-wrap items-center mt-8 gap-4'>
                 <Chip name='Python' />
             </div>
         </Section>

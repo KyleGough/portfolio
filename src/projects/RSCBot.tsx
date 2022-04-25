@@ -29,7 +29,7 @@ export default function RSCBot() {
             <p className='text-link-hover my-4'><time dateTime='2018-02'>February 2018</time> - <time dateTime='2019-03'>March 2019</time></p>
             <p className='mb-4'>A specialised, personalisable trader chatbot that can fetch data and current news on financial stocks and sectors from the FTSE 100 index. RSCBot communicates with the user in a natural way, and has been designed to identify and adapt to the user's main interests in the stock market, making for a more personal trading experience.</p>
 
-            <div className='flex flex-row flex-wrap items-center mt-8'>
+            <div className='flex flex-row flex-wrap items-center mt-8 gap-4'>
                 <Chip name='JavaScript' />
                 <Chip name='jQuery' />
                 <Chip name='HTML' />
