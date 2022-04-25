@@ -62,6 +62,9 @@ module.exports = {
       },
       transitionDuration: {
         '2000': '2000ms'
+      },
+      maxWidth: {
+        'reading': '80ch'
       }
     }
   }

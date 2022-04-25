@@ -19,17 +19,17 @@ export default function About() {
 
         <Section>
             <h2 className='text-2xl mb-4'>Personal Data</h2>
-            <ul className='list-disc list-outside ml-4 mb-16'>
+            <ul className='list-disc list-outside ml-4 mb-16 max-w-reading'>
                 <li>Your data is not stored by myself or by any third party.</li>
             </ul>
 
             <h2 className='text-2xl mb-4'>Cookies</h2>
-            <ul className='list-disc list-outside ml-4 mb-16'>
+            <ul className='list-disc list-outside ml-4 mb-16 max-w-reading'>
                 <li>No cookies are in use on this website.</li>
             </ul>
 
             <h2 className='text-2xl mb-4'>Changes to This Privacy Policy</h2>
-            <ul className='list-disc list-outside ml-4 mb-8'>
+            <ul className='list-disc list-outside ml-4 mb-8 max-w-reading'>
                 <li>Although this privacy policy is unlikely to change, new changes to the privacy policy will be reflected on this page and are effective immediately.</li>
             </ul>
         </Section>

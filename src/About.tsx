@@ -101,7 +101,7 @@ export default function About() {
         <>
         <Section>
             <h1 className='project-title mb-8 text-center md:text-left'>About Me</h1>
-            <p className='my-4 max-w-[780px]'>
+            <p className='my-4 max-w-reading'>
                 Hello, I'm Kyle - a technology analyst at Bank of America and recent Computer Science MEng graduate of the University of Warwick.
                 Interests lie in bouldering, cycling, guitar, movies and physics. I enjoy learning new languages, frameworks and 
                 technologies and have pursued multiple personal projects putting these skills into practice, detailed below.</p>

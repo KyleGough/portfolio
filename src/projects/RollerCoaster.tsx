@@ -25,7 +25,7 @@ export default function RollerCoaster() {
             <h1 className='project-title'>Roller Coaster</h1>
             <h2 className='project-subtitle'>Computer Graphics Coursework</h2>
             <p className='text-link-hover my-4'><time dateTime='2018-12'>December 2018</time> - <time dateTime='2019-01'>January 2019</time></p>
-            <p className='mb-4'>Simulation of a 3-car roller coaster which traverses a small looped track featuring a lift hill, drop, loop-the-loop and turns. The coaster can be viewed from a first-person perspective in each of the carts, as well as additional views that track the carts round the track.</p>
+            <p className='mb-4 max-w-reading'>Simulation of a 3-car roller coaster which traverses a small looped track featuring a lift hill, drop, loop-the-loop and turns. The coaster can be viewed from a first-person perspective in each of the carts, as well as additional views that track the carts round the track.</p>
 
             <div className='flex flex-row flex-wrap items-center mt-8 gap-4'>
                 <Chip name='C++' />

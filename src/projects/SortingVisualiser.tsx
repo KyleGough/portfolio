@@ -49,7 +49,7 @@ export default function SortingVisualiser() {
         <Section>
             <h1 className='project-title'>Sorting Algorithm Visualiser</h1>
             <p className='text-link-hover my-4'><time dateTime='2015-09'>September 2015</time> - <time dateTime='2015-11'>November 2015</time></p>
-            <p className='mb-4'>Tool for visualising the sorting process on a generated dataset. Highlights swapping and sorted elements in real-time. Supports 20 different sorting algorithms including: Bubble, Mergesort and Quicksort. The visualiser is fully customisable with options to change the dataset size, range of values in the dataset and delay between each operation. The tool also has the ability to compare and visualise two sorting algorithms concurrently. The initial dataset can be one of 18 configurations such as: random, normally distributed or sawtooth.</p>
+            <p className='mb-4 max-w-reading'>Tool for visualising the sorting process on a generated dataset. Highlights swapping and sorted elements in real-time. Supports 20 different sorting algorithms including: Bubble, Mergesort and Quicksort. The visualiser is fully customisable with options to change the dataset size, range of values in the dataset and delay between each operation. The tool also has the ability to compare and visualise two sorting algorithms concurrently. The initial dataset can be one of 18 configurations such as: random, normally distributed or sawtooth.</p>
 
             <div className='flex flex-row flex-wrap items-center mt-8 gap-4'>
                 <Chip name='C#' />
@@ -64,7 +64,7 @@ export default function SortingVisualiser() {
 
         <Section>
             <h2 className='project-header'>Overview</h2>
-            <p className='my-4'>Prior to this project, I had developed a simple CLI sorting algorithm visualiser in VB.net featuring a limited selection of algorithms and options. Once I had familiarised myself with C#, I decided to upgrade and rewrite the visualiser with a GUI, additional algorithms and enhanced customisation. The project served as a great tool for improving my C# and GUI design skills as well as futhering my understanding of how sorting algorithms operate, scale and perform.</p>
+            <p className='my-4 max-w-reading'>Prior to this project, I had developed a simple CLI sorting algorithm visualiser in VB.net featuring a limited selection of algorithms and options. Once I had familiarised myself with C#, I decided to upgrade and rewrite the visualiser with a GUI, additional algorithms and enhanced customisation. The project served as a great tool for improving my C# and GUI design skills as well as futhering my understanding of how sorting algorithms operate, scale and perform.</p>
         </Section>
 
         <Divider />
