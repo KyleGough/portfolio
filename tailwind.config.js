@@ -35,6 +35,7 @@ module.exports = {
         'background': '#FAFAFA',
         'divider': 'rgba(0, 0, 0, 0.12)',
         'nav-light': '#424242',
+        'nav': 'rgba(66,66,66, 0.9)',
         'nav-dark': '#353535',
         'nav-hover': '#AAAAAA',
         'light': 'rgba(0,0,0,0.4)',

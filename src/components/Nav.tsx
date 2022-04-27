@@ -32,8 +32,8 @@ export default function Nav() {
     }
 
     return (
-        <nav className='leading-6 w-full absolute z-50 opacity-90'>
-            <div className='flex relative z-[200] items-center justify-between flex-wrap bg-nav-light text-white px-2'>
+        <nav className='leading-6 w-full absolute z-50'>
+            <div className='flex relative z-[200] items-center justify-between flex-wrap bg-nav text-white px-2'>
                 <div className='flex items-center flex-shrink-0 mr-6'>
                     <Link to='/' className='ml-6'><span className='text-xl tracking-normal'>Kyle Gough</span></Link>
                 </div>
@@ -51,7 +51,7 @@ export default function Nav() {
                     <GitHubIcon className='w-6 h-6 fill-white' />
                 </a>
             </div>
-            <div ref={mobileNavRef} className={`${drawerOpen ? 'absolute' : 'hidden'} slide-in z-[100] w-full md:hidden flex-grow`}>
+            <div ref={mobileNavRef} className={`${drawerOpen ? 'absolute' : 'hidden'} slide-in z-[100] w-full md:hidden flex-grow drop-shadow`}>
                 <div className='text-link leading-8 bg-background'>
                     <Link onClick={closeDrawer} to='/' className='block hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm'>Home</Link>
                     <Link onClick={closeDrawer} to='/projects' className='block hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm'>Projects</Link>

@@ -36,7 +36,7 @@ import HerokuLogo from './img/heroku.png';
 
 function ScrollButton(props: { value: string, onClick?: MouseEventHandler<HTMLButtonElement> | undefined }): React.ReactElement {
     return (
-        <button onClick={props.onClick} className='shimmer h-[75px] px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-sm shadow border-light'>{props.value}</button>
+        <button onClick={props.onClick} className='shimmer max-w-[22rem] md:h-[75px] mx-auto w-full px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-sm shadow border-light'>{props.value}</button>
     );
 }
 
@@ -114,6 +114,7 @@ export default function About() {
 
         <div className='bg-circuits'>
             <Section overrideTopPadding={true}>
+                <h2 className='text-lg text-center mb-4 text-link font-bold'>Quick Links</h2>
                 <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 justify-center'>
                     <ScrollButton onClick={() => scrollTo(anchorProgramming)} value='Programming Languages' />
                     <ScrollButton onClick={() => scrollTo(anchorWeb)} value='Web Development' />
