@@ -34,7 +34,7 @@ import MaterializeLogo from './img/materialize.png';
 import WebixLogo from './img/webix.png';
 import HerokuLogo from './img/heroku.png';
 
-function ScrollButton(props: { value: string, onClick?: MouseEventHandler<HTMLButtonElement> | undefined }): React.ReactElement {
+function ScrollButton(props: { value: string, onClick: MouseEventHandler<HTMLButtonElement> }): React.ReactElement {
     return (
         <button onClick={props.onClick} className='shimmer max-w-[22rem] md:h-[75px] mx-auto w-full px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-sm shadow border-light'>{props.value}</button>
     );
