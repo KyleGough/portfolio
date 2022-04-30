@@ -28,7 +28,6 @@ export default function ProjectCard(props: ProjectCardProps) {
                 <h3 className='text-xl font-medium mb-4 h-[3.5rem] line-clamp-2'>{props.tagline}</h3>
                 <div className='flex justify-between items-center'>
                     <p className='text-sm opacity-80'>
-                        {props.date}
                         <time dateTime={props.shortDate}>{props.date}</time>
                     </p>
                     <ProjectChip name={props.chipText} />
