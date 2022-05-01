@@ -5,6 +5,7 @@ import Section from './components/Section';
 import ArrowForward from './icons/ArrowForward';
 import ProjectCard from './components/ProjectCard';
 import Contact from './components/Contact';
+import useObserveElement from './hooks/useObserveElement';
 
 export default function Home() {
     const [carousel, setCarousel] = useState(0);
@@ -13,6 +14,11 @@ export default function Home() {
     const welcomeMsg = 'Full-stack developer based in London, with strong interests in web development and over 8 years experience coding. Feel free to browse my projects.';
     const typewriterRef = useTypewriter<HTMLParagraphElement>(welcomeMsg, 35, 1500);
     const zws = '​'; // Zero-width space.
+    const [imageRef, isVisible] = useObserveElement<HTMLImageElement>({
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    });
 
     useEffect(() => {
         document.title = 'Portfolio - Kyle Gough';
@@ -94,7 +100,7 @@ export default function Home() {
                 <div className='grid grid-cols-1 lg:grid-cols-2 lg:gap-8'>
                     <Contact />
                     <div className='hidden lg:flex justify-center my-auto'>
-                        <img className='w-64 h-64 rounded-full' src='/img/avatar.png' alt='Avatar' />
+                        <img ref={imageRef} className={`${isVisible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000 w-64 h-64 rounded-full`} src='/img/avatar.png' alt='Avatar' />
                     </div>
                 </div>
             </Section>

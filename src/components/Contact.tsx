@@ -3,6 +3,7 @@ import axios from 'axios';
 import SendIcon from '../icons/SendIcon';
 import RestartIcon from '../icons/RestartIcon';
 import TickIcon from '../icons/TickIcon';
+import FadeInWrapper from './FadeInWrapper';
 
 function FieldError(props: { show: boolean, message: string }) {
     return (
@@ -35,6 +36,7 @@ export default function Contact() {
     const [emailValidError, setEmailValidError] = useState(false);
     const [messageError, setMessageError] = useState(false);   
 
+    // Email status.
     const [status, setStatus] = useState(EmailStatus.IDLE);
 
     // Form field change event handlers.
@@ -113,77 +115,85 @@ export default function Contact() {
         <fieldset>
             <legend className='font-thin text-6xl text-center w-full mb-16 text-nav-light'>Contact Me</legend>
           
-            <Label valid={!nameError} htmlFor='name'>Name</Label>
-            <FieldError show={nameError} message='Required!' />
-            <input
-                onChange={onNameChange}
-                className={`${nameError ? 'border-error' : 'border-link focus:border-link-hover'} 
-                    transition-colours duration-200 outline-none mt-2 mb-8 block px-4 py-2
-                    w-full xs:w-field border-2 rounded-2xl shadow outline-1 caret-link-hover`}
-                type='email'
-                id='name'
-                name='name'
-                placeholder='Your name here'
-                required
-                maxLength={50}
-                readOnly={status === EmailStatus.LOADING || status === EmailStatus.SENT}
-            />
+            <FadeInWrapper>
+                <Label valid={!nameError} htmlFor='name'>Name</Label>
+                <FieldError show={nameError} message='Required!' />
+                <input
+                    onChange={onNameChange}
+                    className={`${nameError ? 'border-error' : 'border-link focus:border-link-hover'} 
+                        transition-colours duration-200 outline-none mt-2 mb-8 block px-4 py-2
+                        w-full xs:w-field border-2 rounded-2xl shadow outline-1 caret-link-hover`}
+                    type='email'
+                    id='name'
+                    name='name'
+                    placeholder='Your name here'
+                    required
+                    maxLength={50}
+                    readOnly={status === EmailStatus.LOADING || status === EmailStatus.SENT}
+                />
+            </FadeInWrapper>
         
-            <Label valid={!(emailError || emailValidError)} htmlFor='email'>Email</Label>
-            <FieldError show={emailError} message='Required!' />
-            <FieldError show={emailValidError} message='Invalid Email!' />
-            <input
-                onChange={onEmailChange}
-                className={`${emailError || emailValidError ? 'border-error' : 'border-link focus:border-link-hover'} 
-                    transition-colours duration-200 outline-none mt-2 mb-8 block px-4 py-2
-                    w-full xs:w-field border-2 rounded-2xl shadow outline-1 caret-link-hover`}
-                type='text'
-                id='email'
-                name='email'
-                placeholder='Your email here'
-                required
-                maxLength={254}
-                readOnly={status === EmailStatus.LOADING || status === EmailStatus.SENT}
-            />
+            <FadeInWrapper>
+                <Label valid={!(emailError || emailValidError)} htmlFor='email'>Email</Label>
+                <FieldError show={emailError} message='Required!' />
+                <FieldError show={emailValidError} message='Invalid Email!' />
+                <input
+                    onChange={onEmailChange}
+                    className={`${emailError || emailValidError ? 'border-error' : 'border-link focus:border-link-hover'} 
+                        transition-colours duration-200 outline-none mt-2 mb-8 block px-4 py-2
+                        w-full xs:w-field border-2 rounded-2xl shadow outline-1 caret-link-hover`}
+                    type='text'
+                    id='email'
+                    name='email'
+                    placeholder='Your email here'
+                    required
+                    maxLength={254}
+                    readOnly={status === EmailStatus.LOADING || status === EmailStatus.SENT}
+                />
+            </FadeInWrapper>
         
-            <Label valid={!messageError} htmlFor='message'>Message</Label>
-            <FieldError show={messageError} message='Required!' />
-            <textarea
-                onChange={onMessageChange}
-                className={`${messageError ? 'border-error' : 'border-link focus:border-link-hover'} 
-                    transition-colours duration-200 mt-2 mb-8 block resize-none px-4 py-2
-                    border-2 border-link focus:border-link-hover rounded-2xl shadow
-                    w-full xs:w-field outline-none caret-link-hover max-h-48 h-48`}
-                id='message'
-                name='message'
-                placeholder='Enter your message'
-                required
-                maxLength={1024}
-                readOnly={status === EmailStatus.LOADING || status === EmailStatus.SENT}
-            />
+            <FadeInWrapper>
+                <Label valid={!messageError} htmlFor='message'>Message</Label>
+                <FieldError show={messageError} message='Required!' />
+                <textarea
+                    onChange={onMessageChange}
+                    className={`${messageError ? 'border-error' : 'border-link focus:border-link-hover'} 
+                        transition-colours duration-200 mt-2 mb-8 block resize-none px-4 py-2
+                        border-2 border-link focus:border-link-hover rounded-2xl shadow
+                        w-full xs:w-field outline-none caret-link-hover max-h-48 h-48`}
+                    id='message'
+                    name='message'
+                    placeholder='Enter your message'
+                    required
+                    maxLength={1024}
+                    readOnly={status === EmailStatus.LOADING || status === EmailStatus.SENT}
+                />
+            </FadeInWrapper>
             
-            <button
-                onClick={sendMessage}
-                className={
-                    `${status === EmailStatus.SENT ?
-                        'text-link-hover border-link-hover cursor-default' 
-                    : status === EmailStatus.LOADING ?
-                        'text-disabled border-link-disabled cursor-default'
-                    : status === EmailStatus.FAIL ?
-                        'text-error border-error'
-                    : 'text-link hover:text-link-hover focus:text-link-hover border-link hover:border-link-hover focus:border-link-hover'
+            <FadeInWrapper>
+                <button
+                    onClick={sendMessage}
+                    className={
+                        `${status === EmailStatus.SENT ?
+                            'text-link-hover border-link-hover cursor-default' 
+                        : status === EmailStatus.LOADING ?
+                            'text-disabled border-link-disabled cursor-default'
+                        : status === EmailStatus.FAIL ?
+                            'text-error border-error'
+                        : 'text-link hover:text-link-hover focus:text-link-hover border-link hover:border-link-hover focus:border-link-hover'
+                        }
+                        group my-8 shimmer group flex items-center px-12 py-4 bg-background 
+                        rounded-full border-2 shadow mx-auto`
                     }
-                    group my-8 shimmer group flex items-center px-12 py-4 bg-background 
-                    rounded-full border-2 shadow mx-auto`
-                }
-                type='submit'
-            >
-                {status === EmailStatus.SENT ? 'Message Sent' : status === EmailStatus.FAIL ? 'Message Fail' : 'Send Message'}
-                {status === EmailStatus.IDLE && <SendIcon className='ml-4 w-6 h-6 fill-link group-hover:fill-link-hover group-focus:fill-link-hover' />}
-                {status === EmailStatus.SENT && <TickIcon className='ml-4 w-6 h-6 fill-link-hover' />}
-                {status === EmailStatus.FAIL && <RestartIcon className='ml-4 w-6 h-6 fill-error ' />}
-                {status === EmailStatus.LOADING && <RestartIcon className='ml-4 w-6 h-6 fill-disabled animate-spin' />}
-            </button>
+                    type='submit'
+                >
+                    {status === EmailStatus.SENT ? 'Message Sent' : status === EmailStatus.FAIL ? 'Message Fail' : 'Send Message'}
+                    {status === EmailStatus.IDLE && <SendIcon className='ml-4 w-6 h-6 fill-link group-hover:fill-link-hover group-focus:fill-link-hover' />}
+                    {status === EmailStatus.SENT && <TickIcon className='ml-4 w-6 h-6 fill-link-hover' />}
+                    {status === EmailStatus.FAIL && <RestartIcon className='ml-4 w-6 h-6 fill-error ' />}
+                    {status === EmailStatus.LOADING && <RestartIcon className='ml-4 w-6 h-6 fill-disabled animate-spin' />}
+                </button>
+            </FadeInWrapper>
         </fieldset>
         </div>
     );
