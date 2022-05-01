@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom';
 import Section from './components/Section';
 import ArrowForward from './icons/ArrowForward';
 import ProjectCard from './components/ProjectCard';
+import Contact from './components/Contact';
 
 export default function Home() {
     const [carousel, setCarousel] = useState(0);
     const carouselCount: number = 3;
     const carouselInterval = useRef<any>(null);
-    const welcomeMsg = "Full-stack developer based in London, with strong interests in web development and over 8 years experience coding. Feel free to browse my projects.";
+    const welcomeMsg = 'Full-stack developer based in London, with strong interests in web development and over 8 years experience coding. Feel free to browse my projects.';
     const typewriterRef = useTypewriter<HTMLParagraphElement>(welcomeMsg, 35, 1500);
     const zws = '​'; // Zero-width space.
 
@@ -38,54 +39,65 @@ export default function Home() {
                         <span className='fade-in caret-blink'>{zws}</span>
                     </p>
                 </div>
-            </div>
+            </div>]
         </div>
 
         <div className='bg-circuits min-h-screen flex items-center'>
-        <Section>
-            <h2 className='font-thin text-6xl text-center mt-24 text-nav-light'>Project Showcase</h2>
+            <Section>
+                <h2 className='font-thin text-6xl text-center mt-24 text-nav-light'>Project Showcase</h2>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 mb-8 px-4'>
-                <ProjectCard
-                    src='/img/card-sudoku.jpg'
-                    alt='Logical Sudoku Solver Project Card'
-                    title='Logical Sudoku Solver'
-                    tagline='Solve expert level Sudoku step-by-step using logical algorithms'
-                    shortDate='2020-01'
-                    date='January 2020'
-                    link='/projects/sudoku'
-                    chipText='Python'
-                />
-                <ProjectCard
-                    className='delay-100'
-                    src='/img/card-bsplit.jpg'
-                    alt='BSplit Project Card'
-                    title='BSplit'
-                    tagline='Bill splitter app for organising expenses between friends and housemates'
-                    shortDate='2017-03'
-                    date='March 2017'
-                    link='/projects/bsplit'
-                    chipText='JavaScript'
-                />
-                <ProjectCard
-                    className='delay-200'
-                    src='/img/card-cave-exploration.jpg'
-                    alt='Cave Exploration Project Card'
-                    title='Cave Exploration'
-                    tagline='Using Swarm AI to map unexplored cave networks'
-                    shortDate='2019-04'
-                    date='April 2019'
-                    link='/projects/cave-exploration'
-                    chipText='C++'
-                />
-            </div>
-            <div className='mt-16 flex justify-center'>
-                <Link to='/projects' className='shimmer group drop-shadow-lg flex items-center px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-full border-2 shadow border-link hover:border-link-hover focus:border-link-hover'>
-                    <p>All Projects</p>
-                    <ArrowForward className='float-right ml-4 w-4 h-4 fill-link group-hover:fill-link-hover group-focus:fill-link-hover' />
-                </Link>
-            </div>
-        </Section>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 mb-8 px-4'>
+                    <ProjectCard
+                        src='/img/card-sudoku.jpg'
+                        alt='Logical Sudoku Solver Project Card'
+                        title='Logical Sudoku Solver'
+                        tagline='Solve expert level Sudoku step-by-step using logical algorithms'
+                        shortDate='2020-01'
+                        date='January 2020'
+                        link='/projects/sudoku'
+                        chipText='Python'
+                    />
+                    <ProjectCard
+                        className='delay-100'
+                        src='/img/card-bsplit.jpg'
+                        alt='BSplit Project Card'
+                        title='BSplit'
+                        tagline='Bill splitter app for organising expenses between friends and housemates'
+                        shortDate='2017-03'
+                        date='March 2017'
+                        link='/projects/bsplit'
+                        chipText='JavaScript'
+                    />
+                    <ProjectCard
+                        className='delay-200'
+                        src='/img/card-cave-exploration.jpg'
+                        alt='Cave Exploration Project Card'
+                        title='Cave Exploration'
+                        tagline='Using Swarm AI to map unexplored cave networks'
+                        shortDate='2019-04'
+                        date='April 2019'
+                        link='/projects/cave-exploration'
+                        chipText='C++'
+                    />
+                </div>
+                <div className='mt-16 flex justify-center'>
+                    <Link to='/projects' className='shimmer group drop-shadow-lg flex items-center px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-full border-2 shadow border-link hover:border-link-hover focus:border-link-hover'>
+                        <p>All Projects</p>
+                        <ArrowForward className='float-right ml-4 w-4 h-4 fill-link group-hover:fill-link-hover group-focus:fill-link-hover' />
+                    </Link>
+                </div>
+            </Section>
+        </div>
+
+        <div className='bg-accent-blue min-h-screen flex items-center'>
+            <Section>
+                <div className='grid grid-cols-1 lg:grid-cols-2 lg:gap-8'>
+                    <Contact />
+                    <div className='hidden lg:flex justify-center my-auto'>
+                        <img className='w-64 h-64 rounded-full' src='/img/avatar.png' alt='Avatar' />
+                    </div>
+                </div>
+            </Section>
         </div>
         </>
     );

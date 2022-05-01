@@ -30,9 +30,13 @@ module.exports = {
       square: 'square'
     },
     extend: {
+      screens: {
+        'xs': '480px'
+      },
       colors: {
         'primary': 'rgba(0,0,0,0.87)',
         'background': '#FAFAFA',
+        'accent-blue': '#FAFAFF',
         'divider': 'rgba(0, 0, 0, 0.12)',
         'nav-light': '#424242',
         'nav': 'rgba(66,66,66, 0.9)',
@@ -41,6 +45,7 @@ module.exports = {
         'light': 'rgba(0,0,0,0.4)',
         'link': '#03B0EE',
         'link-hover': '#4CAF50',
+        'error': '#EE3003',
         'disabled': 'rgba(0,0,0,0.4)',
         'chip': '#3F51B5',
         'chip-light': 'rgba(63, 81, 181, 0.1)',
@@ -65,7 +70,14 @@ module.exports = {
         '2000': '2000ms'
       },
       maxWidth: {
-        'reading': '80ch'
+        'reading': '80ch',
+        'short': '50ch',
+        'field': '25rem'
+      },
+      width: {
+        'reading': '80ch',
+        'short': '50ch',
+        'field': '25rem'
       }
     }
   }
