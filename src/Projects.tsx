@@ -31,7 +31,6 @@ export default function Projects() {
         <>
         <Section>
             <h1 className='project-title mb-8 text-center md:text-left'>Projects</h1>
-            <p className='mb-4 font-thin text-light'>Currently working on a browser extension for Firefox and actively improving my portfolio website.</p>
         </Section>
 
         <hr className='mt-8 h-px bg-divider' />
