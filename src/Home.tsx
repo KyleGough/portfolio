@@ -48,7 +48,7 @@ export default function Home() {
             </div>]
         </div>
 
-        <div className='bg-circuits min-h-screen flex items-center'>
+        <div className='bg-circuits min-h-screen flex items-center border-y border-divider shadow'>
             <Section>
                 <h2 className='font-thin text-6xl text-center mt-24 text-nav-light'>Project Showcase</h2>
 
