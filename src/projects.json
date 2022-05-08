@@ -24,7 +24,7 @@
         "alt": "Logical sudoku solver",
         "link": "/projects/sudoku",
         "filters": ["Python", "Games/Puzzles"],
-        "description": "Program that can solve expert level Sudoku using only logical techniques (no brute forcing, guessing or backtracking). The program outputs a detailed description of the techniques and moves required at each step to solve Sudoku. The solver reads CSV files allowing for batch solving. In-depth analysis is displayed including but not limited to: difficulty rating, occurrences/probability of each technique, processing time for each technique and total processing time."
+        "description": "Program that can solve expert level Sudoku using only logical techniques (no brute forcing, guessing or backtracking). Outputs a detailed description of the techniques and moves required at each step to solve Sudoku. Features difficulty and technique analysis."
     },
     {
         "title": "React Minesweeper",
@@ -60,7 +60,7 @@
         "alt": "RSCBot",
         "link": "/projects/rscbot",
         "filters": ["JavaScript", "PHP", "SQL", "Group Projects", "Web"],
-        "description": "A specialised, personalisable trader chatbot that can fetch data and current news on financial stocks and sectors from the FTSE 100 index. RSCBot communicates with the user in a natural way, and has been designed to identify and adapt to the user\"s main interests in the stock market, making for a more personal trading experience."
+        "description": "A specialised, personalisable trader chatbot that can fetch data and current news on financial stocks and sectors from the FTSE 100 index. RSCBot communicates with the user in a natural way, and has been designed to identify and adapt to the user's main interests in the stock market, making for a more personal trading experience."
     },
     {
         "title": "URL Shortener",
@@ -78,7 +78,7 @@
         "alt": "Graph algorithm visualiser",
         "link": "/projects/graph-algorithm-visualiser",
         "filters": ["JavaScript", "Web"],
-        "description": "Web application which visualises the process of various graph algorithms on randomised nodes. The application can simulate Prim\"s and Kruskal\"s algorithm for constructing minimum spanning trees, Graham scan to construct convex hulls, Greedy algorithm to construct minimal matchings, and Nearest neighbour with 2-Opt to create Hamiltonian cycles."
+        "description": "Web application which visualises the process of various graph algorithms on randomised nodes. The application can simulate Prim's and Kruskal's algorithm for constructing minimum spanning trees, Graham scan to construct convex hulls, Greedy algorithm to construct minimal matchings, and Nearest neighbour with 2-Opt to create Hamiltonian cycles."
     },
     {
         "title": "Cavern Minesweeper",
@@ -96,7 +96,7 @@
         "alt": "BSplit",
         "link": "/projects/bsplit",
         "filters": ["JavaScript", "PHP", "SQL", "Web"],
-        "description": "BSplit is a web application that allows registered users to create and settle payments between friends and housemates for things such as restaurant bills, utility bills and food shopping. The app\"s dashboard utilises AJAX requests to prevent web page reloading to enchance user experience. Dashboard and email notifications are sent when a new bill or group is created."
+        "description": "BSplit is a web application that allows registered users to create and settle payments between friends and housemates for things such as restaurant bills, utility bills and food shopping. The app's dashboard utilises AJAX requests to prevent web page reloading to enchance user experience. Dashboard and email notifications are sent when a new bill or group is created."
     },
     {
         "title": "To Do List",
@@ -105,7 +105,7 @@
         "alt": "To Do List",
         "link": "/projects/todo-list",
         "filters": ["JavaScript", "PHP", "SQL", "Group Projects", "Web"],
-        "description": "To Do List Web application where users can signup and create their own lists. Learned and integrated PHP and SQL to store and query user\"s lists. Protected the application from SQL injection and cross-site scripting."
+        "description": "To Do List Web application where users can signup and create their own lists. Learned and integrated PHP and SQL to store and query user's lists. Protected the application from SQL injection and cross-site scripting."
     },
     {
         "title": "Delivery Route Planner",
@@ -114,7 +114,7 @@
         "alt": "Delivery route planner",
         "link": "/projects/delivery-route-planner",
         "filters": ["C#"],
-        "description": "Software written in C# which creates an efficient route between multiple delivery locations. Uses SQL to store and query data on products, clients and their deliveries. Produces a report which communicates the route, all items in the deliveries, and the estimated time taken. Uses graph algorithms such as Dijkstra\"s and Nearest Neighbour with 2-Opt to optimise the route."
+        "description": "Creates an efficient route between multiple delivery locations. Store, view and query data on products, clients and their deliveries. Produces a report which communicates the route, delivery items, and ETA. Uses graph algorithms such as Dijkstra's and Nearest Neighbour with 2-Opt to optimise the route."
     },
     {
         "title": "Sorting Algorithm Visualiser",

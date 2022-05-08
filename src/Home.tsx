@@ -54,6 +54,7 @@ export default function Home() {
 
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 mb-8 px-4'>
                     <ProjectCard
+                        className='delay-100 md:delay-0'
                         src='/img/card-sudoku.jpg'
                         alt='Logical Sudoku Solver Project Card'
                         title='Logical Sudoku Solver'
@@ -64,7 +65,7 @@ export default function Home() {
                         chipText='Python'
                     />
                     <ProjectCard
-                        className='delay-100'
+                        className='delay-0 md:delay-100'
                         src='/img/card-bsplit.jpg'
                         alt='BSplit Project Card'
                         title='BSplit'
@@ -75,7 +76,7 @@ export default function Home() {
                         chipText='JavaScript'
                     />
                     <ProjectCard
-                        className='delay-200'
+                        className='delay-0 md:delay-200'
                         src='/img/card-cave-exploration.jpg'
                         alt='Cave Exploration Project Card'
                         title='Cave Exploration'

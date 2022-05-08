@@ -163,10 +163,8 @@ export default function About() {
                 <GoalListItem name='TypeScript' progress={Progress.GREEN} />
                 <GoalListItem name='Next.js' progress={Progress.RED} />
                 <GoalListItem name='Web Sockets' progress={Progress.RED} />
-                <GoalListItem name='React Native' progress={Progress.RED} />
                 <GoalListItem name='Extension API' progress={Progress.AMBER} />
                 <GoalListItem name='GraphQL' progress={Progress.RED} />
-                <GoalListItem name='Unity' progress={Progress.RED} />
                 <GoalListItem name='AWS' progress={Progress.RED} />
                 <GoalListItem name='Docker' progress={Progress.RED} />
             </ul>

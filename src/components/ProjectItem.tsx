@@ -13,7 +13,7 @@ type ProjectItemProps = {
 export default function ProjectItem(props: ProjectItemProps) {
     return (
         <Section>
-            <div className='grid grid-cols-12 gap-8'>
+            <div className='grid grid-cols-12 gap-8 lg:gap-16'>
                 <div className='col-span-12 lg:col-span-7'>
                     <h2 className='mb-4 project-header'>{props.title}</h2>
                     <p className='my-4 text-link-hover'>{props.date}</p>

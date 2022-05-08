@@ -122,7 +122,7 @@ export default function Contact() {
                     onChange={onNameChange}
                     className={`${nameError ? 'border-error' : 'border-link focus:border-link-hover'} 
                         transition-colours duration-200 outline-none mt-2 mb-8 block px-4 py-2
-                        w-full xs:w-field border-2 rounded-2xl shadow outline-1 caret-link-hover`}
+                        w-full xs:w-field border-2 rounded-2xl shadow outline-1 caret-link-hover bg-background`}
                     type='email'
                     id='name'
                     name='name'
@@ -141,7 +141,7 @@ export default function Contact() {
                     onChange={onEmailChange}
                     className={`${emailError || emailValidError ? 'border-error' : 'border-link focus:border-link-hover'} 
                         transition-colours duration-200 outline-none mt-2 mb-8 block px-4 py-2
-                        w-full xs:w-field border-2 rounded-2xl shadow outline-1 caret-link-hover`}
+                        w-full xs:w-field border-2 rounded-2xl shadow outline-1 caret-link-hover bg-background`}
                     type='text'
                     id='email'
                     name='email'
@@ -160,7 +160,7 @@ export default function Contact() {
                     className={`${messageError ? 'border-error' : 'border-link focus:border-link-hover'} 
                         transition-colours duration-200 mt-2 mb-8 block resize-none px-4 py-2
                         border-2 border-link focus:border-link-hover rounded-2xl shadow
-                        w-full xs:w-field outline-none caret-link-hover max-h-48 h-48`}
+                        w-full xs:w-field outline-none caret-link-hover max-h-48 h-48 bg-background`}
                     id='message'
                     name='message'
                     placeholder='Enter your message'

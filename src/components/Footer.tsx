@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import GitHubIcon from '../icons/GitHubIcon';
+import LinkedInIcon from '../icons/LinkedInIcon';
 import EmailIcon from '../icons/EmailIcon';
 
 export default function Footer() {
@@ -37,8 +38,11 @@ export default function Footer() {
                                 <li><Link to='/projects' className='p-1 hover:text-nav-hover'>Projects</Link></li>
                                 <li><Link to='/privacy' className='p-1 hover:text-nav-hover'>Privacy</Link></li>
                                 <li className='text-center flex justify-center'>
-                                    <a className='py-2' href='https://github.com/KyleGough' target='_blank' rel='noopener noreferrer'>
-                                        <GitHubIcon className='w-6 h-6 fill-white hover:fill-nav-hover' />
+                                    <a className='py-2 group' href='https://github.com/KyleGough' target='_blank' rel='noopener noreferrer'>
+                                        <GitHubIcon className='w-6 h-6 fill-white group-hover:fill-nav-hover' />
+                                    </a>
+                                    <a className='py-2 ml-2 group' href='https://www.linkedin.com/in/kyle-gough-882467161/' target='_blank' rel='noopener noreferrer'>
+                                        <LinkedInIcon className='w-6 h-6 fill-white group-hover:fill-nav-hover' />
                                     </a>
                                 </li>
                             </ul>
