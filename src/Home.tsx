@@ -11,7 +11,7 @@ export default function Home() {
     const [carousel, setCarousel] = useState(0);
     const carouselCount: number = 3;
     const carouselInterval = useRef<any>(null);
-    const welcomeMsg = 'Full-stack developer based in London, with strong interests in web development and over 8 years experience coding. Feel free to browse my projects.';
+    const welcomeMsg = 'Front-End Engineer based in London, with strong interests in web development and over 8 years experience coding. Feel free to browse my projects.';
     const typewriterRef = useTypewriter<HTMLParagraphElement>(welcomeMsg, 35, 1500);
     const zws = '​'; // Zero-width space.
     const [imageRef, isVisible] = useObserveElement<HTMLImageElement>({

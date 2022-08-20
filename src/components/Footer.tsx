@@ -11,7 +11,7 @@ export default function Footer() {
                     <div className='w-full flex flex-wrap justify-center px-4'>
                         <div className='w-full lg:w-4/12 px-6 py-6 text-center lg:text-left'>
                             <p className='font-header text-xl pb-6'>About Me</p>
-                            <p className='pb-4'>Computer Science MEng graduate of Warwick University. Technology Analyst at Bank of America. Programmer and Web Developer with interests in Bouldering, Cycling, Guitar, Movies and Physics.</p>
+                            <p className='pb-4'>Front-End Engineer at Atom Learning. Computer Science MEng graduate of Warwick University. Programmer and Web Developer with interests in Bouldering, Cycling, Guitar, Movies and Physics.</p>
                             <div className='flex flex-row justify-center lg:justify-start'>
                                 <a className='group flex justify-center fill-white hover:text-nav-hover hover:fill-nav-hover' href='mailto:kylegough98@gmail.com' target='_blank' rel='noopener noreferrer'>
                                     <EmailIcon className='w-6 h-6 mr-2' />
