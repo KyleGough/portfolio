@@ -1,60 +1,74 @@
-import { useEffect } from 'react';
-import Section from '../components/Section';
-import Divider from '../components/Divider';
-import Chip from '../components/Chip';
-import Pagination from '../components/Pagination';
-import ImageFigure from '../components/ImageFigure';
-import Screenshots from '../components/Screenshots';
+import React, { useEffect } from 'react';
+import { Section } from '../components/Section';
+import { Divider } from '../components/Divider';
+import { Chip } from '../components/Chip';
+import { Pagination } from '../components/Pagination';
+import { ImageFigure } from '../components/ImageFigure';
+import { Screenshots } from '../components/Screenshots';
 
 export default function Minesweeper() {
+  useEffect(() => {
+    document.title =
+      'React Minesweeper - Classic Minesweeper Clone Using React';
+  }, []);
 
-    useEffect(() => {
-        document.title = 'React Minesweeper - Classic Minesweeper Clone Using React';
-    }, []);
+  const images = [
+    { src: '/img/react-minesweeper1.jpg', caption: 'Complete game' },
+    { src: '/img/react-minesweeper2.jpg', caption: 'Partially complete game' },
+    { src: '/img/react-minesweeper3.jpg', caption: 'Lost game' },
+    { src: '/img/react-minesweeper4.jpg', caption: 'Initial board' },
+    { src: '/img/react-minesweeper5.jpg', caption: 'App introduction' },
+  ];
 
-    const images = [
-        { src:'/img/react-minesweeper1.jpg', caption:'Complete game' },
-        { src:'/img/react-minesweeper2.jpg', caption:'Partially complete game' },
-        { src:'/img/react-minesweeper3.jpg', caption:'Lost game' },
-        { src:'/img/react-minesweeper4.jpg', caption:'Initial board' },
-        { src:'/img/react-minesweeper5.jpg', caption:'App introduction' }
-    ];
+  return (
+    <>
+      <Section>
+        <h1 className="project-title">React Minesweeper</h1>
+        <p className="text-link-hover my-4">
+          <time dateTime="2019-10">October 2019</time>
+        </p>
+        <p className="mb-4 max-w-reading">
+          Clone of classic Minesweeper with an 18x18 board. Ability to reveal
+          tiles and flag tiles for potential mines. Flood fill algorithms will
+          reveal all adjacent tiles when a 0 is uncovered, mimicing the
+          behaviour of the original game.
+        </p>
+        <p className="mb-4">
+          <span>Explore this project on </span>
+          <a
+            className="text-link hover:text-link-hover focus:text-link-hover"
+            href="https://github.com/KyleGough/react-minesweeper"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </p>
 
-    return (
-        <>
-        <Section>
-            <h1 className='project-title'>React Minesweeper</h1>
-            <p className='text-link-hover my-4'><time dateTime='2019-10'>October 2019</time></p>
-            <p className='mb-4 max-w-reading'>Clone of classic Minesweeper with an 18x18 board. Ability to reveal tiles and flag tiles for potential mines. Flood fill algorithms will reveal all adjacent tiles when a 0 is uncovered, mimicing the behaviour of the original game.</p>
-            <p className='mb-4'>
-                <span>Explore this project on </span>
-                <a className='text-link hover:text-link-hover focus:text-link-hover' href='https://github.com/KyleGough/react-minesweeper' target='_blank' rel='noopener noreferrer'>GitHub</a>
-            </p>
+        <div className="flex flex-row flex-wrap items-center mt-8 gap-4">
+          <Chip name="React" />
+          <Chip name="JavaScript" />
+          <Chip name="CSS" />
+          <Chip name="Materialize" />
+        </div>
+      </Section>
 
-            <div className='flex flex-row flex-wrap items-center mt-8 gap-4'>
-                <Chip name='React' />
-                <Chip name='JavaScript' />
-                <Chip name='CSS' />
-                <Chip name='Materialize' />
-            </div>
-        </Section>
+      <Divider />
 
-        <Divider />
+      <ImageFigure image={images[0]} />
 
-        <ImageFigure image={images[0]} />
+      <Divider />
 
-        <Divider />
+      <Screenshots images={images} />
 
-        <Screenshots images={images} />
+      <Divider />
 
-        <Divider />
-        
-        <Pagination
-            previousTitle='Cave Exploration'
-            previousLink='/projects/cave-exploration'
-            nextTitle='Logical Sudoku Solver'
-            nextLink='/projects/sudoku'
-        />
-        </>
-    );
+      <Pagination
+        previousTitle="Cave Exploration"
+        previousLink="/projects/cave-exploration"
+        nextTitle="Logical Sudoku Solver"
+        nextLink="/projects/sudoku"
+      />
+    </>
+  );
 }

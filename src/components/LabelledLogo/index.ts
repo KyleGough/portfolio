@@ -1,0 +1,1 @@
+export { LabelledLogo } from './LabelledLogo';

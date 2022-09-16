@@ -1,0 +1,1 @@
+export { ImageFigure } from './ImageFigure';

@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ScrollTop from './components/ScrollTop';
-import Nav from './components/Nav';
-import Footer from './components/Footer';
+import { ScrollTop } from './components/ScrollTop';
+import { Nav } from './components/Nav';
+import { Footer } from './components/Footer';
 import './index.css';
 import './tailwind.output.css';
 import reportWebVitals from './reportWebVitals';
@@ -35,32 +35,53 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollTop />
-      <div className='App'>
-          <Nav />
-          <main className='bg-background bg-noise bg-repeat leading-[1.6rem]'>
-              <Routes>
-                  <Route path='/' element={<Home />} />
-                  <Route path='/about' element={<About />} />
-                  <Route path='/projects' element={<Projects />} />
-                  <Route path='/privacy' element={<Privacy />} />
-                  <Route path='/projects/sorting-algorithm-visualiser' element={<SortingVisualiser />} />
-                  <Route path='/projects/delivery-route-planner' element={<DeliveryPlanner />} />
-                  <Route path='/projects/todo-list' element={<ToDoList />} />
-                  <Route path='/projects/bsplit' element={<BSplit />} />
-                  <Route path='/projects/cavern-minesweeper' element={<CavernMinesweeper />} />
-                  <Route path='/projects/graph-algorithm-visualiser' element={<GraphVisualiser />} />
-                  <Route path='/projects/url-shortener' element={<URLShortener />} />
-                  <Route path='/projects/rscbot' element={<RSCBot />} />
-                  <Route path='/projects/roller-coaster' element={<RollerCoaster />} />
-                  <Route path='/projects/cave-exploration' element={<CaveExploration />} />
-                  <Route path='/projects/react-minesweeper' element={<Minesweeper />} />
-                  <Route path='/projects/sudoku' element={<Sudoku />} />
-                  <Route path='/projects/lucidlab' element={<LucidLab />} />
-                  <Route path='/projects/portfolio' element={<Portfolio />} />
-                  <Route path='*' element={<NotFound />} />
-              </Routes>
-          </main>
-          <Footer />
+      <div className="App">
+        <Nav />
+        <main className="bg-background bg-noise bg-repeat leading-[1.6rem]">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route
+              path="/projects/sorting-algorithm-visualiser"
+              element={<SortingVisualiser />}
+            />
+            <Route
+              path="/projects/delivery-route-planner"
+              element={<DeliveryPlanner />}
+            />
+            <Route path="/projects/todo-list" element={<ToDoList />} />
+            <Route path="/projects/bsplit" element={<BSplit />} />
+            <Route
+              path="/projects/cavern-minesweeper"
+              element={<CavernMinesweeper />}
+            />
+            <Route
+              path="/projects/graph-algorithm-visualiser"
+              element={<GraphVisualiser />}
+            />
+            <Route path="/projects/url-shortener" element={<URLShortener />} />
+            <Route path="/projects/rscbot" element={<RSCBot />} />
+            <Route
+              path="/projects/roller-coaster"
+              element={<RollerCoaster />}
+            />
+            <Route
+              path="/projects/cave-exploration"
+              element={<CaveExploration />}
+            />
+            <Route
+              path="/projects/react-minesweeper"
+              element={<Minesweeper />}
+            />
+            <Route path="/projects/sudoku" element={<Sudoku />} />
+            <Route path="/projects/lucidlab" element={<LucidLab />} />
+            <Route path="/projects/portfolio" element={<Portfolio />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+        <Footer />
       </div>
     </BrowserRouter>
   );

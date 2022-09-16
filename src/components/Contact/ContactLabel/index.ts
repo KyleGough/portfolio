@@ -1,0 +1,1 @@
+export { ContactLabel } from './ContactLabel';

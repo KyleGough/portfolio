@@ -1,0 +1,1 @@
+export { VideoFigure } from './VideoFigure';

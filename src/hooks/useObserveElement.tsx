@@ -1,20 +1,22 @@
 import { useRef, useState, useEffect, RefObject } from 'react';
 
-export default function useObserveElement<T extends HTMLElement>(options: IntersectionObserverInit): [RefObject<T>, boolean] {
-    const elementRef = useRef<T>(null);
-    const [isVisible, setVisible] = useState(false);
-    
-    useEffect(() => {
-        const observer = new IntersectionObserver(([entry]) => {
-            setVisible(entry.isIntersecting);
-        }, options);
+export default function useObserveElement<T extends HTMLElement>(
+  options: IntersectionObserverInit
+): [RefObject<T>, boolean] {
+  const elementRef = useRef<T>(null);
+  const [isVisible, setVisible] = useState(false);
 
-        elementRef.current && observer.observe(elementRef.current);
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setVisible(entry.isIntersecting);
+    }, options);
 
-        return () => {
-            observer.disconnect()
-        }
-    }, [elementRef, options])
+    elementRef.current && observer.observe(elementRef.current);
 
-    return [elementRef, isVisible];
+    return () => {
+      observer.disconnect();
+    };
+  }, [elementRef, options]);
+
+  return [elementRef, isVisible];
 }
