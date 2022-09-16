@@ -1,0 +1,7 @@
+# Example: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# @KyleGough will be the default owner for everything in
+# the repo. Unless a later match takes precedence.
+# @KyleGough will be requested for
+# review when someone opens a pull request.
+*       @KyleGough
