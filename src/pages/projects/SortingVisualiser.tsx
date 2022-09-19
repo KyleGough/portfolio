@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import { Section } from '../components/Section';
-import { Divider } from '../components/Divider';
-import { Chip } from '../components/Chip';
-import { Pagination } from '../components/Pagination';
-import { VideoFigure } from '../components/VideoFigure';
-import { Screenshots } from '../components/Screenshots';
-import HeapSortVideo from '../videos/heap.mp4';
+import { Section } from '../../components/Section';
+import { Divider } from '../../components/Divider';
+import { Chip } from '../../components/Chip';
+import { Pagination } from '../../components/Pagination';
+import { VideoFigure } from '../../components/VideoFigure';
+import { Screenshots } from '../../components/Screenshots';
+import HeapSortVideo from '../../videos/heap.mp4';
 
 export default function SortingVisualiser() {
   useEffect(() => {

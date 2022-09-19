@@ -1,28 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import useObserveElement from '../../../hooks/useObserveElement';
+import { useObserveElement } from '../../../hooks/useObserveElement';
+import { Confidence } from '../SkillList.types';
 
 interface SkillProps {
   type: string;
   progress: number;
   progressClass: string;
-  title: string;
+  name: string;
   description: string;
-  comment: string;
-  logo?: string;
+  confidence: Confidence;
+  logo: string;
 }
 
 export const Skill: React.FC<SkillProps> = ({
   type,
   progress,
   progressClass,
-  title,
+  name,
   description,
-  comment,
+  confidence,
   logo,
 }) => {
   const [progressRef, isVisible] = useObserveElement<HTMLDivElement>({
-    root: null,
-    rootMargin: '0px',
     threshold: 0,
   });
   const [animatedIn, setAnimatedIn] = useState(false);
@@ -58,14 +57,14 @@ export const Skill: React.FC<SkillProps> = ({
             animatedIn ? 'opacity-100' : 'opacity-0'
           }`}
           src={logo}
-          alt={`${title} logo`}
+          alt={`${name} logo`}
         />
         <div>
           <p>
-            <span className="font-extrabold">{title}</span> -{' '}
+            <span className="font-extrabold">{name}</span> -{' '}
             <span className="text-sm">{description}</span>
           </p>
-          <p className="text-sm text-link-hover mt-1">{comment}</p>
+          <p className="text-sm text-link-hover mt-1">{confidence}</p>
         </div>
       </div>
     </div>

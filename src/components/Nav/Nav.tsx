@@ -116,7 +116,7 @@ export const Nav: React.FC = () => {
             href="https://github.com/KyleGough"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm" //TODO
+            className="group flex items-center hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm"
           >
             <GitHubIcon className="w-6 h-6 mr-2 fill-link group-hover:fill-link-hover group-focus:fill-link-hover" />
             GitHub

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ProjectChip } from '../ProjectChip';
-import useObserveElement from '../../hooks/useObserveElement';
+import { useObserveElement } from '../../hooks/useObserveElement';
 
 interface ProjectCardProps {
   className?: string;
@@ -19,7 +19,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   className,
   src,
   alt,
-  title, // TODO
   tagline,
   shortDate,
   date,
@@ -27,8 +26,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   chipText,
 }) => {
   const [elementRef, isVisible] = useObserveElement<HTMLAnchorElement>({
-    root: null,
-    rootMargin: '0px',
     threshold: 0.5,
   });
 
@@ -36,8 +33,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     <Link
       ref={elementRef}
       to={link}
-      className={`${className ? className : ''} ${
-        // TODO
+      className={`${className} ${
         isVisible ? 'opacity-100' : 'opacity-0'
       } duration-1000 transition-opacity ease-in-out rounded-2xl overflow-hidden border-2 border-white shadow drop-shadow-lg group`}
     >

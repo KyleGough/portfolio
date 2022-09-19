@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
-import useTypewriter from './hooks/useTypewriter';
+import useTypewriter from '../../hooks/useTypewriter';
 import { Link } from 'react-router-dom';
-import { Section } from './components/Section';
-import { ArrowForward } from './icons';
-import { ProjectCard } from './components/ProjectCard';
-import { Contact } from './components/Contact';
-import useObserveElement from './hooks/useObserveElement';
+import { Section } from '../../components/Section';
+import { ArrowForward } from '../../icons';
+import { ProjectCard } from '../../components/ProjectCard';
+import { Contact } from '../../components/Contact';
+import { useObserveElement } from '../../hooks/useObserveElement';
 
-export default function Home() {
+export const Home: React.FC = () => {
   const [carousel, setCarousel] = useState(0);
   const carouselCount = 3;
   const carouselInterval = useRef<any>(null);
@@ -20,8 +20,6 @@ export default function Home() {
   );
   const zws = '​'; // Zero-width space.
   const [imageRef, isVisible] = useObserveElement<HTMLImageElement>({
-    root: null,
-    rootMargin: '0px',
     threshold: 0.5,
   });
 
@@ -147,4 +145,4 @@ export default function Home() {
       </div>
     </>
   );
-}
+};

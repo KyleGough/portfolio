@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Section } from './components/Section';
-import { ProjectFilter } from './components/ProjectFilter';
-import { ProjectItem } from './components/ProjectItem';
-import { Divider } from './components/Divider';
+import { Section } from '../../components/Section';
+import { ProjectFilter } from '../../components/ProjectFilter';
+import { ProjectItem } from '../../components/ProjectItem';
+import { Divider } from '../../components/Divider';
 import projects from './projects.json';
 
-// TODO
-
-type Project = {
+interface IProject {
   title: string;
   date: string;
   video?: string;
@@ -16,16 +14,16 @@ type Project = {
   link: string;
   filters: string[];
   description: string;
-};
+}
 
-export default function Projects() {
+export const Projects: React.FC = () => {
   const [filter, setFilter] = useState('All');
 
   useEffect(() => {
     document.title = 'Project List - Kyle Gough';
   }, []);
 
-  const filterProjects = (project: Project): boolean => {
+  const filterProjects = (project: IProject): boolean => {
     return filter === 'All' ? true : project.filters.includes(filter);
   };
 
@@ -63,4 +61,4 @@ export default function Projects() {
       })}
     </>
   );
-}
+};

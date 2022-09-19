@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Divider } from './components/Divider';
-import { Section } from './components/Section';
+import { Divider } from '../../components/Divider';
+import { Section } from '../../components/Section';
 
-export default function NotFound() {
+export const NotFound: React.FC = () => {
   useEffect(() => {
     document.title = '404 Page Not Found - Kyle Gough';
   }, []);
@@ -64,4 +64,4 @@ export default function NotFound() {
       </Section>
     </>
   );
-}
+};

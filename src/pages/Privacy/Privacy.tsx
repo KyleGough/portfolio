@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import { Divider } from './components/Divider';
-import { Section } from './components/Section';
+import { Divider } from '../../components/Divider';
+import { Section } from '../../components/Section';
 
-export default function About() {
+export const Privacy: React.FC = () => {
   useEffect(() => {
     document.title = 'Privacy Policy - Kyle Gough';
   }, []);
@@ -14,7 +14,7 @@ export default function About() {
           Privacy Policy
         </h1>
         <p className="mt-4 text-link-hover text-center md:text-left">
-          Last Revised: 17th January 2022
+          Last Revised: <time dateTime="2022-01-17">17th January 2022</time>
         </p>
       </Section>
 
@@ -42,4 +42,4 @@ export default function About() {
       </Section>
     </>
   );
-}
+};

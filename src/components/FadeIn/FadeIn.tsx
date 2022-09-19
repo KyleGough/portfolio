@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import useObserveElement from '../../hooks/useObserveElement';
+import { useObserveElement } from '../../hooks/useObserveElement';
 
 interface FadeInProps {
   children: React.ReactNode;
@@ -7,8 +7,6 @@ interface FadeInProps {
 
 export const FadeIn: React.FC<FadeInProps> = ({ children }) => {
   const [elementRef, isVisible] = useObserveElement<HTMLDivElement>({
-    root: null,
-    rootMargin: '0px',
     threshold: 0.5,
   });
   const [show, setShow] = useState(false);

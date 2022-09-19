@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, RefObject } from 'react';
 
-export default function useObserveElement<T extends HTMLElement>(
+export function useObserveElement<T extends HTMLElement>(
   options: IntersectionObserverInit
 ): [RefObject<T>, boolean] {
   const elementRef = useRef<T>(null);

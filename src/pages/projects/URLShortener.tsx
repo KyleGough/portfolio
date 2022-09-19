@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import { Section } from '../components/Section';
-import { Divider } from '../components/Divider';
-import { Chip } from '../components/Chip';
-import { Pagination } from '../components/Pagination';
-import { ImageFigure } from '../components/ImageFigure';
-import { Screenshots } from '../components/Screenshots';
+import { Section } from '../../components/Section';
+import { Divider } from '../../components/Divider';
+import { Chip } from '../../components/Chip';
+import { Pagination } from '../../components/Pagination';
+import { ImageFigure } from '../../components/ImageFigure';
+import { Screenshots } from '../../components/Screenshots';
 
 export default function URLShortener() {
   useEffect(() => {

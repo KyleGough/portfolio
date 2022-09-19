@@ -4,7 +4,7 @@ import { ProjectFilterSelection } from './ProjectFilterSelection';
 
 interface ProjectFilterProps {
   filter: string;
-  setFilterCallback: (value: string) => void; //TODO
+  setFilterCallback: (value: string) => void;
 }
 
 export const ProjectFilter: React.FC<ProjectFilterProps> = ({

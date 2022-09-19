@@ -1,9 +1,9 @@
 import React from 'react';
 import { Skill } from './Skill';
+import { ISkill } from './';
 
-// TODO
 interface SkillListProps {
-  skills: [string, number, string, string, string, string][];
+  skills: ISkill[];
   type: string;
 }
 
@@ -12,14 +12,14 @@ export const SkillList: React.FC<SkillListProps> = ({ skills, type }) => (
     {skills.map((skill) => {
       return (
         <Skill
-          key={skill[0]}
+          key={skill.name}
           type={type}
-          title={skill[0]}
-          progress={skill[1]}
-          progressClass={skill[2]}
-          description={skill[3]}
-          comment={skill[4]}
-          logo={skill[5]}
+          name={skill.name}
+          progress={skill.progress}
+          progressClass={skill.className}
+          description={skill.description}
+          confidence={skill.confidence}
+          logo={skill.logo}
         />
       );
     })}
