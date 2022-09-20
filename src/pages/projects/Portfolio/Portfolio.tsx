@@ -1,42 +1,16 @@
 import React, { useEffect } from 'react';
-import { Section } from '../../components/Section';
-import { Divider } from '../../components/Divider';
-import { Chip } from '../../components/Chip';
-import { Pagination } from '../../components/Pagination';
-import { ImageFigure } from '../../components/ImageFigure';
-import { Screenshots } from '../../components/Screenshots';
+import { Section } from '../../../components/Section';
+import { Divider } from '../../../components/Divider';
+import { Chip } from '../../../components/Chip';
+import { Pagination } from '../../../components/Pagination';
+import { ImageFigure } from '../../../components/ImageFigure';
+import { Screenshots } from '../../../components/Screenshots';
+import images from './images.json';
 
-export default function Portfolio() {
+export const Portfolio: React.FC = () => {
   useEffect(() => {
     document.title = 'Portfolio - Personal Portfolio Website';
   }, []);
-
-  const images = [
-    {
-      src: '/img/portfolio-projects-v1a.jpg',
-      caption: 'Portfolio project page version 1',
-    },
-    {
-      src: '/img/portfolio-projects-v1b.jpg',
-      caption: 'Portfolio about page version 1',
-    },
-    {
-      src: '/img/portfolio-projects-v2.jpg',
-      caption: 'Portfolio project page version 2',
-    },
-    {
-      src: '/img/portfolio-projects-v3.jpg',
-      caption: 'Portfolio project page version 3',
-    },
-    {
-      src: '/img/portfolio-projects-v4a.jpg',
-      caption: 'Portfolio project page upper version 4',
-    },
-    {
-      src: '/img/portfolio-projects-v4b.jpg',
-      caption: 'Portfolio project page lower version 4',
-    },
-  ];
 
   return (
     <>
@@ -189,4 +163,4 @@ export default function Portfolio() {
       <Pagination previousTitle="LucidLab" previousLink="/projects/lucidlab" />
     </>
   );
-}
+};

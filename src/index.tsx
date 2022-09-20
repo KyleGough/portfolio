@@ -16,20 +16,20 @@ import { Privacy } from './pages/Privacy';
 import { NotFound } from './pages/404';
 
 // Project pages.
-import SortingVisualiser from './pages/projects/SortingVisualiser';
-import DeliveryPlanner from './pages/projects/DeliveryPlanner';
-import ToDoList from './pages/projects/ToDoList';
-import BSplit from './pages/projects/BSplit';
-import CavernMinesweeper from './pages/projects/CavernMinesweeper';
-import GraphVisualiser from './pages/projects/GraphVisualiser';
-import URLShortener from './pages/projects/URLShortener';
-import RSCBot from './pages/projects/RSCBot';
-import RollerCoaster from './pages/projects/RollerCoaster';
-import CaveExploration from './pages/projects/CaveExploration';
-import Minesweeper from './pages/projects/Minesweeper';
-import Sudoku from './pages/projects/Sudoku';
-import LucidLab from './pages/projects/LucidLab';
-import Portfolio from './pages/projects/Portfolio';
+import { SortingVisualiser } from './pages/projects/SortingVisualiser';
+import { DeliveryPlanner } from './pages/projects/DeliveryPlanner/DeliveryPlanner';
+import { ToDoList } from './pages/projects/ToDoList/ToDoList';
+import { BSplit } from './pages/projects/BSplit';
+import { CavernMinesweeper } from './pages/projects/CavernMinesweeper';
+import { GraphVisualiser } from './pages/projects/GraphVisualiser';
+import { URLShortener } from './pages/projects/URLShortener/URLShortener';
+import { RSCBot } from './pages/projects/RSCBot';
+import { RollerCoaster } from './pages/projects/RollerCoaster';
+import { CaveExploration } from './pages/projects/CaveExploration';
+import { Minesweeper } from './pages/projects/Minesweeper';
+import { Sudoku } from './pages/projects/Sudoku/Sudoku';
+import { LucidLab } from './pages/projects/LucidLab';
+import { Portfolio } from './pages/projects/Portfolio';
 
 const App: React.FC = () => (
   <BrowserRouter>

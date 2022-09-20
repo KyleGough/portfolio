@@ -1,27 +1,16 @@
 import React, { useEffect } from 'react';
-import { Section } from '../../components/Section';
-import { Divider } from '../../components/Divider';
-import { Chip } from '../../components/Chip';
-import { Pagination } from '../../components/Pagination';
-import { ImageFigure } from '../../components/ImageFigure';
-import { Screenshots } from '../../components/Screenshots';
+import { Section } from '../../../components/Section';
+import { Divider } from '../../../components/Divider';
+import { Chip } from '../../../components/Chip';
+import { Pagination } from '../../../components/Pagination';
+import { ImageFigure } from '../../../components/ImageFigure';
+import { Screenshots } from '../../../components/Screenshots';
+import images from './images.json';
 
-export default function RSCBot() {
+export const RSCBot: React.FC = () => {
   useEffect(() => {
     document.title = 'RSCBot - Personalisable Trader ChatBot';
   }, []);
-
-  const images = [
-    { src: '/img/rscbot1.jpg', caption: 'Stock query' },
-    {
-      src: '/img/rscbot2.jpg',
-      caption: 'Hourly newsfeed with natural language processing',
-    },
-    { src: '/img/rscbot3.jpg', caption: 'Favourites selection' },
-    { src: '/img/rscbot4.jpg', caption: 'News query' },
-    { src: '/img/rscbot5.jpg', caption: 'Other queries' },
-    { src: '/img/rscbot6.jpg', caption: 'Help modal' },
-  ];
 
   return (
     <>
@@ -90,4 +79,4 @@ export default function RSCBot() {
       />
     </>
   );
-}
+};

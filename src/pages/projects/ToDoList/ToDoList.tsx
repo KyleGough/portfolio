@@ -1,25 +1,16 @@
 import React, { useEffect } from 'react';
-import { Section } from '../../components/Section';
-import { Divider } from '../../components/Divider';
-import { Chip } from '../../components/Chip';
-import { Pagination } from '../../components/Pagination';
-import { ImageFigure } from '../../components/ImageFigure';
-import { Screenshots } from '../../components/Screenshots';
+import { Section } from '../../../components/Section';
+import { Divider } from '../../../components/Divider';
+import { Chip } from '../../../components/Chip';
+import { Pagination } from '../../../components/Pagination';
+import { ImageFigure } from '../../../components/ImageFigure';
+import { Screenshots } from '../../../components/Screenshots';
+import images from './images.json';
 
-export default function ToDoList() {
+export const ToDoList: React.FC = () => {
   useEffect(() => {
     document.title = 'To Do List - Web Application to Manage To Do Lists';
   }, []);
-
-  const images = [
-    { src: '/img/todo-list1.jpg', caption: 'Homepage' },
-    { src: '/img/todo-list2.jpg', caption: 'Shopping list' },
-    { src: '/img/todo-list3.jpg', caption: 'New user registration' },
-    // TODO
-    // eslint-disable-next-line quotes
-    { src: '/img/todo-list4.jpg', caption: "User's lists" },
-    { src: '/img/todo-list5.jpg', caption: 'Existing login page' },
-  ];
 
   return (
     <>
@@ -81,4 +72,4 @@ export default function ToDoList() {
       />
     </>
   );
-}
+};

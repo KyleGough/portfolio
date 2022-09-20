@@ -1,24 +1,17 @@
 import React, { useEffect } from 'react';
-import { Section } from '../../components/Section';
-import { Divider } from '../../components/Divider';
-import { Chip } from '../../components/Chip';
-import { Pagination } from '../../components/Pagination';
-import { ImageFigure } from '../../components/ImageFigure';
-import { Screenshots } from '../../components/Screenshots';
+import { Section } from '../../../components/Section';
+import { Divider } from '../../../components/Divider';
+import { Chip } from '../../../components/Chip';
+import { Pagination } from '../../../components/Pagination';
+import { ImageFigure } from '../../../components/ImageFigure';
+import { Screenshots } from '../../../components/Screenshots';
+import images from './images.json';
 
-export default function LucidLab() {
+export const LucidLab: React.FC = () => {
   useEffect(() => {
     document.title =
       'LucidLab - An Adaptable, Heterogeneous Internet-of-things Testbed';
   }, []);
-
-  const images = [
-    { src: '/img/lucidlab1.jpg', caption: 'Upload test configuration page' },
-    { src: '/img/lucidlab4.jpg', caption: 'Upload IoT controller page' },
-    { src: '/img/lucidlab5.jpg', caption: 'Upload image page' },
-    { src: '/img/lucidlab2.jpg', caption: 'Mote RSSI Map' },
-    { src: '/img/lucidlab3.jpg', caption: 'Mote CCA Charts' },
-  ];
 
   return (
     <>
@@ -109,4 +102,4 @@ export default function LucidLab() {
       />
     </>
   );
-}
+};

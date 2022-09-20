@@ -1,22 +1,16 @@
 import React, { useEffect } from 'react';
-import { Section } from '../../components/Section';
-import { Divider } from '../../components/Divider';
-import { Chip } from '../../components/Chip';
-import { Pagination } from '../../components/Pagination';
-import { ImageFigure } from '../../components/ImageFigure';
-import { Screenshots } from '../../components/Screenshots';
+import { Section } from '../../../components/Section';
+import { Divider } from '../../../components/Divider';
+import { Chip } from '../../../components/Chip';
+import { Pagination } from '../../../components/Pagination';
+import { ImageFigure } from '../../../components/ImageFigure';
+import { Screenshots } from '../../../components/Screenshots';
+import images from './images.json';
 
-export default function RollerCoaster() {
+export const RollerCoaster: React.FC = () => {
   useEffect(() => {
     document.title = 'Roller Coaster Simulation';
   }, []);
-
-  const images = [
-    { src: '/img/roller-coaster1.jpg', caption: 'Back cart camera view' },
-    { src: '/img/roller-coaster2.jpg', caption: 'Tracking camera view' },
-    { src: '/img/roller-coaster3.jpg', caption: 'Center cart camera view' },
-    { src: '/img/roller-coaster4.jpg', caption: 'Cart closeup' },
-  ];
 
   return (
     <>
@@ -74,4 +68,4 @@ export default function RollerCoaster() {
       />
     </>
   );
-}
+};

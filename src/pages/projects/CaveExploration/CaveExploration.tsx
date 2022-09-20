@@ -1,35 +1,17 @@
 import React, { useEffect } from 'react';
-import { Section } from '../../components/Section';
-import { Divider } from '../../components/Divider';
-import { Chip } from '../../components/Chip';
-import { Pagination } from '../../components/Pagination';
-import { ImageFigure } from '../../components/ImageFigure';
-import { Screenshots } from '../../components/Screenshots';
+import { Section } from '../../../components/Section';
+import { Divider } from '../../../components/Divider';
+import { Chip } from '../../../components/Chip';
+import { Pagination } from '../../../components/Pagination';
+import { ImageFigure } from '../../../components/ImageFigure';
+import { Screenshots } from '../../../components/Screenshots';
+import images from './images.json';
 
-export default function CaveExploration() {
+export const CaveExploration: React.FC = () => {
   useEffect(() => {
     document.title =
       'Cave Exploration - Improving and Simulating Cave Explortation with Swarm AI';
   }, []);
-
-  const images = [
-    {
-      src: '/img/cave-exploration1.jpg',
-      caption: 'Multiple drone cave exploration',
-    },
-    {
-      src: '/img/cave-exploration2.jpg',
-      caption: 'Single drone cave exploration',
-    },
-    {
-      src: '/img/cave-exploration3.jpg',
-      caption: 'Single drone cave exploration',
-    },
-    { src: '/img/cave-generation1.png', caption: 'Cave generation step 1' },
-    { src: '/img/cave-generation2.png', caption: 'Cave generation step 2' },
-    { src: '/img/cave-generation3.png', caption: 'Cave generation step 3' },
-    { src: '/img/cave-generation4.png', caption: 'Cave generation step 4' },
-  ];
 
   return (
     <>
@@ -123,4 +105,4 @@ export default function CaveExploration() {
       />
     </>
   );
-}
+};

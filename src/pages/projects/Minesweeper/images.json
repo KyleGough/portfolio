@@ -1,0 +1,10 @@
+[
+  { "src": "/img/react-minesweeper1.jpg", "caption": "Complete game" },
+  {
+    "src": "/img/react-minesweeper2.jpg",
+    "caption": "Partially complete game"
+  },
+  { "src": "/img/react-minesweeper3.jpg", "caption": "Lost game" },
+  { "src": "/img/react-minesweeper4.jpg", "caption": "Initial board" },
+  { "src": "/img/react-minesweeper5.jpg", "caption": "App introduction" }
+]

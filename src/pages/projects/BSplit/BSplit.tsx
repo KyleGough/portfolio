@@ -1,23 +1,16 @@
 import React, { useEffect } from 'react';
-import { Section } from '../../components/Section';
-import { Divider } from '../../components/Divider';
-import { Chip } from '../../components/Chip';
-import { Pagination } from '../../components/Pagination';
-import { ImageFigure } from '../../components/ImageFigure';
-import { Screenshots } from '../../components/Screenshots';
+import { Section } from '../../../components/Section';
+import { Divider } from '../../../components/Divider';
+import { Chip } from '../../../components/Chip';
+import { Pagination } from '../../../components/Pagination';
+import { ImageFigure } from '../../../components/ImageFigure';
+import { Screenshots } from '../../../components/Screenshots';
+import images from './images.json';
 
-export default function BSplit() {
+export const BSplit: React.FC = () => {
   useEffect(() => {
     document.title = 'BSplit: Bill Splitter Web Application';
   }, []);
-
-  const images = [
-    { src: '/img/bsplit1.jpg', caption: 'Bill list' },
-    { src: '/img/bsplit2.jpg', caption: 'Homepage' },
-    { src: '/img/bsplit3.jpg', caption: 'New bill form' },
-    { src: '/img/bsplit4.jpg', caption: 'Group list' },
-    { src: '/img/bsplit5.jpg', caption: 'New group form' },
-  ];
 
   return (
     <>
@@ -87,4 +80,4 @@ export default function BSplit() {
       />
     </>
   );
-}
+};

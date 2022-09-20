@@ -1,23 +1,17 @@
 import React, { useEffect } from 'react';
-import { Section } from '../../components/Section';
-import { Divider } from '../../components/Divider';
-import { Chip } from '../../components/Chip';
-import { Pagination } from '../../components/Pagination';
-import { ImageFigure } from '../../components/ImageFigure';
-import { Screenshots } from '../../components/Screenshots';
+import { Section } from '../../../components/Section';
+import { Divider } from '../../../components/Divider';
+import { Chip } from '../../../components/Chip';
+import { Pagination } from '../../../components/Pagination';
+import { ImageFigure } from '../../../components/ImageFigure';
+import { Screenshots } from '../../../components/Screenshots';
+import images from './images.json';
 
-export default function DeliveryPlanner() {
+export const DeliveryPlanner: React.FC = () => {
   useEffect(() => {
     document.title =
       'Delivery Route Planner - Delivery Route and Report Generation Software';
   }, []);
-
-  const images = [
-    { src: '/img/delivery-route-planner1.jpg', caption: 'Delivery view' },
-    { src: '/img/delivery-route-planner2.jpg', caption: 'Route view' },
-    { src: '/img/delivery-route-planner3.jpg', caption: 'Generated report' },
-    { src: '/img/delivery-route-planner4.jpg', caption: 'Generated route' },
-  ];
 
   return (
     <>
@@ -82,4 +76,4 @@ export default function DeliveryPlanner() {
       />
     </>
   );
-}
+};

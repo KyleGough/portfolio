@@ -1,0 +1,1 @@
+export { Minesweeper } from './Minesweeper';

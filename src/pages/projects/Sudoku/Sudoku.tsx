@@ -1,21 +1,17 @@
 import React, { useEffect } from 'react';
-import { Section } from '../../components/Section';
-import { Divider } from '../../components/Divider';
-import { Chip } from '../../components/Chip';
-import { Pagination } from '../../components/Pagination';
-import { ImageFigure } from '../../components/ImageFigure';
-import { Screenshots } from '../../components/Screenshots';
+import { Section } from '../../../components/Section';
+import { Divider } from '../../../components/Divider';
+import { Chip } from '../../../components/Chip';
+import { Pagination } from '../../../components/Pagination';
+import { ImageFigure } from '../../../components/ImageFigure';
+import { Screenshots } from '../../../components/Screenshots';
+import images from './images.json';
 
-export default function Sudoku() {
+export const Sudoku: React.FC = () => {
   useEffect(() => {
     document.title =
       'Logical Sudoku Solver - In-Depth Step-by-Step Sudoku Solver';
   }, []);
-
-  const images = [
-    { src: '/img/sudoku1.jpg', caption: 'X-Wing example' },
-    { src: '/img/sudoku2.jpg', caption: 'XYZ-Wing example' },
-  ];
 
   return (
     <>
@@ -271,4 +267,4 @@ export default function Sudoku() {
       />
     </>
   );
-}
+};

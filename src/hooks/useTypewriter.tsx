@@ -1,6 +1,6 @@
 import { useRef, useEffect, useCallback, RefObject } from 'react';
 
-export default function useTypewriter<T extends HTMLElement>(
+export function useTypewriter<T extends HTMLElement>(
   text: string,
   delay: number,
   startDelay: number

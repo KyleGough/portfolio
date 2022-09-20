@@ -1,24 +1,17 @@
 import React, { useEffect } from 'react';
-import { Section } from '../../components/Section';
-import { Divider } from '../../components/Divider';
-import { Chip } from '../../components/Chip';
-import { Pagination } from '../../components/Pagination';
-import { ImageFigure } from '../../components/ImageFigure';
-import { Screenshots } from '../../components/Screenshots';
+import { Section } from '../../../components/Section';
+import { Divider } from '../../../components/Divider';
+import { Chip } from '../../../components/Chip';
+import { Pagination } from '../../../components/Pagination';
+import { ImageFigure } from '../../../components/ImageFigure';
+import { Screenshots } from '../../../components/Screenshots';
+import images from './images.json';
 
-export default function Minesweeper() {
+export const Minesweeper: React.FC = () => {
   useEffect(() => {
     document.title =
       'React Minesweeper - Classic Minesweeper Clone Using React';
   }, []);
-
-  const images = [
-    { src: '/img/react-minesweeper1.jpg', caption: 'Complete game' },
-    { src: '/img/react-minesweeper2.jpg', caption: 'Partially complete game' },
-    { src: '/img/react-minesweeper3.jpg', caption: 'Lost game' },
-    { src: '/img/react-minesweeper4.jpg', caption: 'Initial board' },
-    { src: '/img/react-minesweeper5.jpg', caption: 'App introduction' },
-  ];
 
   return (
     <>
@@ -71,4 +64,4 @@ export default function Minesweeper() {
       />
     </>
   );
-}
+};

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import useTypewriter from '../../hooks/useTypewriter';
+import { useTypewriter } from '../../hooks/useTypewriter';
 import { Link } from 'react-router-dom';
 import { Section } from '../../components/Section';
 import { ArrowForward } from '../../icons';

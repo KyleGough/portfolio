@@ -1,20 +1,17 @@
 import React, { useEffect } from 'react';
-import { Section } from '../../components/Section';
-import { Divider } from '../../components/Divider';
-import { Chip } from '../../components/Chip';
-import { Pagination } from '../../components/Pagination';
-import { ImageFigure } from '../../components/ImageFigure';
-import { Screenshots } from '../../components/Screenshots';
+import { Section } from '../../../components/Section';
+import { Divider } from '../../../components/Divider';
+import { Chip } from '../../../components/Chip';
+import { Pagination } from '../../../components/Pagination';
+import { ImageFigure } from '../../../components/ImageFigure';
+import { Screenshots } from '../../../components/Screenshots';
+import { Link } from '../../../components/Link';
+import images from './images.json';
 
-export default function CavernMinesweeper() {
+export const CavernMinesweeper: React.FC = () => {
   useEffect(() => {
     document.title = 'Cavern Minesweeper - Minesweeper clone written in Ruby';
   }, []);
-
-  const images = [
-    { src: '/img/cavern-minesweeper1.jpg', caption: 'Finished game' },
-    { src: '/img/cavern-minesweeper2.jpg', caption: 'New game' },
-  ];
 
   return (
     <>
@@ -32,14 +29,9 @@ export default function CavernMinesweeper() {
         </p>
         <p className="mb-4">
           <span>Explore this project on </span>
-          <a
-            className="text-link hover:text-link-hover focus:text-link-hover"
-            href="https://github.com/KyleGough/cavern-minesweeper"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link href="https://github.com/KyleGough/cavern-minesweeper">
             GitHub
-          </a>
+          </Link>
         </p>
 
         <div className="flex flex-row flex-wrap items-center mt-8 gap-4">
@@ -80,4 +72,4 @@ export default function CavernMinesweeper() {
       />
     </>
   );
-}
+};

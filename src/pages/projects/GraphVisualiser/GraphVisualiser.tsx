@@ -1,33 +1,17 @@
 import React, { useEffect } from 'react';
-import { Section } from '../../components/Section';
-import { Divider } from '../../components/Divider';
-import { Chip } from '../../components/Chip';
-import { Pagination } from '../../components/Pagination';
-import { ImageFigure } from '../../components/ImageFigure';
-import { Screenshots } from '../../components/Screenshots';
+import { Section } from '../../../components/Section';
+import { Divider } from '../../../components/Divider';
+import { Chip } from '../../../components/Chip';
+import { Pagination } from '../../../components/Pagination';
+import { ImageFigure } from '../../../components/ImageFigure';
+import { Screenshots } from '../../../components/Screenshots';
+import images from './images.json';
 
-export default function GraphVisualiser() {
+export const GraphVisualiser: React.FC = () => {
   useEffect(() => {
     document.title =
       'Graph Algorithm Visualiser - Web App to Visualise Various Graph Algorithms';
   }, []);
-
-  const images = [
-    {
-      src: '/img/graph-algorithm-visualiser1.jpg',
-      caption: 'Nearest Neighbour with 2-Opt',
-    },
-    {
-      src: '/img/graph-algorithm-visualiser2.jpg',
-      caption: 'Randomly generated nodes',
-    },
-    {
-      src: '/img/graph-algorithm-visualiser3.jpg',
-      caption: 'Algorithm information',
-    },
-    { src: '/img/graph-algorithm-visualiser4.jpg', caption: 'Graham Scan' },
-    { src: '/img/graph-algorithm-visualiser5.jpg', caption: 'Random route' },
-  ];
 
   return (
     <>
@@ -112,4 +96,4 @@ export default function GraphVisualiser() {
       />
     </>
   );
-}
+};

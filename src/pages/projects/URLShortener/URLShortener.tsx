@@ -1,20 +1,16 @@
 import React, { useEffect } from 'react';
-import { Section } from '../../components/Section';
-import { Divider } from '../../components/Divider';
-import { Chip } from '../../components/Chip';
-import { Pagination } from '../../components/Pagination';
-import { ImageFigure } from '../../components/ImageFigure';
-import { Screenshots } from '../../components/Screenshots';
+import { Section } from '../../../components/Section';
+import { Divider } from '../../../components/Divider';
+import { Chip } from '../../../components/Chip';
+import { Pagination } from '../../../components/Pagination';
+import { ImageFigure } from '../../../components/ImageFigure';
+import { Screenshots } from '../../../components/Screenshots';
+import images from './images.json';
 
-export default function URLShortener() {
+export const URLShortener: React.FC = () => {
   useEffect(() => {
     document.title = 'URL Shortener - Shorten Long URLs to Easily Share';
   }, []);
-
-  const images = [
-    { src: '/img/url-shortener1.jpg', caption: 'Shortened URL example 1' },
-    { src: '/img/url-shortener2.jpg', caption: 'Shortened URL example 2' },
-  ];
 
   return (
     <>
@@ -74,4 +70,4 @@ export default function URLShortener() {
       />
     </>
   );
-}
+};

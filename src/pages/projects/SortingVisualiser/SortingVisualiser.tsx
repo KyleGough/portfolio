@@ -1,69 +1,19 @@
 import React, { useEffect } from 'react';
-import { Section } from '../../components/Section';
-import { Divider } from '../../components/Divider';
-import { Chip } from '../../components/Chip';
-import { Pagination } from '../../components/Pagination';
-import { VideoFigure } from '../../components/VideoFigure';
-import { Screenshots } from '../../components/Screenshots';
-import HeapSortVideo from '../../videos/heap.mp4';
+import { Section } from '../../../components/Section';
+import { Divider } from '../../../components/Divider';
+import { Chip } from '../../../components/Chip';
+import { Pagination } from '../../../components/Pagination';
+import { VideoFigure } from '../../../components/VideoFigure';
+import { Screenshots } from '../../../components/Screenshots';
+import HeapSortVideo from '../../../videos/heap.mp4';
+import images from './images.json';
+import algorithms from './algorithms.json';
 
-export default function SortingVisualiser() {
+export const SortingVisualiser: React.FC = () => {
   useEffect(() => {
     document.title =
       'Sorting Algorithm Visualiser - Visualise 20 Unique Sorting Algorithms';
   }, []);
-
-  const images = [
-    {
-      src: '/img/sorting-algorithm-visualiser1.jpg',
-      caption: 'Unsorted Random Data',
-    },
-    {
-      src: '/img/sorting-algorithm-visualiser2.jpg',
-      caption: 'Random and sinusoidal datasets',
-    },
-    {
-      src: '/img/sorting-algorithm-visualiser3.jpg',
-      caption: 'Bitonic sort and sorted dataset',
-    },
-    {
-      src: '/img/sorting-algorithm-visualiser4.jpg',
-      caption: 'Dataset visualised as points',
-    },
-    {
-      src: '/img/sorting-algorithm-visualiser5.jpg',
-      caption: 'Algorithm information table',
-    },
-  ];
-
-  const algorithmTable = [
-    ['Bitonic', 'Parallel sorting algorithm'],
-    ['Bogo', 'Randomly permutates all elements until fully sorted'],
-    ['Bubble', 'Common simple algorithm'],
-    ['Cocktail', 'Bubble sort in both directions'],
-    ['Comb', 'Bubble sort variant with reducing gap'],
-    ['Cycle', 'Optimised for minimal array writes'],
-    [
-      'Gnome',
-      'Insertion sort variant which swaps until element in correct position',
-    ],
-    ['Heap', 'Builds heap and extracts from unsorted region'],
-    ['Insertion', 'Builds sorted array one element at a time'],
-    ['JSort', 'Builds heap then uses insertion sort'],
-    ['Merge', 'Recursively merges half of the array'],
-    ['OddEven', 'Compares all odd/even pairs then vice-versa'],
-    ['Pancake', 'Flips array between regions'],
-    ['Permutation', 'Compares every permutation of the array'],
-    [
-      'Radix LSD',
-      'Bucket sorts digits from least significant to most significant',
-    ],
-    ['Selection', 'Builds sorted array one element at a time'],
-    ['Shell', 'Bubble sort variant with reducing gap'],
-    ['Smooth', 'Builds heap then extracts largest element'],
-    ['Stooge', 'Recursively sorts first 2/3 then last 2/3'],
-    ['Quick', 'Divide and conquer algorithm that uses a pivot'],
-  ];
 
   return (
     <>
@@ -139,18 +89,16 @@ export default function SortingVisualiser() {
 
         <table className="min-w-full">
           <tbody>
-            {algorithmTable.map((row, i) => {
-              return (
-                <tr key={i}>
-                  <td className="px-6 py-4 whitespace-no-wrap border-b border-divider text-sm leading-5">
-                    {row[0]}
-                  </td>
-                  <td className="px-6 py-4 whitespace-no-wrap border-b border-divider text-sm leading-5">
-                    {row[1]}
-                  </td>
-                </tr>
-              );
-            })}
+            {algorithms.map((row, i) => (
+              <tr key={i}>
+                <td className="px-6 py-4 whitespace-no-wrap border-b border-divider text-sm leading-5">
+                  {row[0]}
+                </td>
+                <td className="px-6 py-4 whitespace-no-wrap border-b border-divider text-sm leading-5">
+                  {row[1]}
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </Section>
@@ -167,4 +115,4 @@ export default function SortingVisualiser() {
       />
     </>
   );
-}
+};

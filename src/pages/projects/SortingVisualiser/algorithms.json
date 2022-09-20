@@ -1,0 +1,28 @@
+[
+  ["Bitonic", "Parallel sorting algorithm"],
+  ["Bogo", "Randomly permutates all elements until fully sorted"],
+  ["Bubble", "Common simple algorithm"],
+  ["Cocktail", "Bubble sort in both directions"],
+  ["Comb", "Bubble sort variant with reducing gap"],
+  ["Cycle", "Optimised for minimal array writes"],
+  [
+    "Gnome",
+    "Insertion sort variant which swaps until element in correct position"
+  ],
+  ["Heap", "Builds heap and extracts from unsorted region"],
+  ["Insertion", "Builds sorted array one element at a time"],
+  ["JSort", "Builds heap then uses insertion sort"],
+  ["Merge", "Recursively merges half of the array"],
+  ["OddEven", "Compares all odd/even pairs then vice-versa"],
+  ["Pancake", "Flips array between regions"],
+  ["Permutation", "Compares every permutation of the array"],
+  [
+    "Radix LSD",
+    "Bucket sorts digits from least significant to most significant"
+  ],
+  ["Selection", "Builds sorted array one element at a time"],
+  ["Shell", "Bubble sort variant with reducing gap"],
+  ["Smooth", "Builds heap then extracts largest element"],
+  ["Stooge", "Recursively sorts first 2/3 then last 2/3"],
+  ["Quick", "Divide and conquer algorithm that uses a pivot"]
+]
