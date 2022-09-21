@@ -6,6 +6,6 @@ branch=$(git branch | grep '*' | sed 's/* //')
 if [[ "$branch" =~ ^(master|main|hotfix|develop)|(feat|chore|fix)\/[a-zA-z\d]+(\-[a-zA-Z\d]+)*$ ]]
 then
   exit 0
-elif
+else
   echo "Branch name is invalid" && exit 1
 fi
