@@ -3,4 +3,9 @@
 
 branch=$(git branch | grep '*' | sed 's/* //')
 
-[[ "$branch" =~ ^(master|main|hotfix|develop)|(feat|chore|fix)\/[a-zA-z\d]+(\-[a-zA-Z\d]+)*$ ]] && exit 0 || echo "Branch name is invalid"
+if [[ "$branch" =~ ^(master|main|hotfix|develop)|(feat|chore|fix)\/[a-zA-z\d]+(\-[a-zA-Z\d]+)*$ ]]
+then
+  exit 0
+elif
+  echo "Branch name is invalid" && exit 1
+fi
