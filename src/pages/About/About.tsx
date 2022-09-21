@@ -135,11 +135,10 @@ export const About: React.FC = () => {
         </p>
         <ul className="list-none mt-8 ml-14">
           <GoalListItem name="TypeScript" progress={Progress.GREEN} />
+          <GoalListItem name="ESLint" progress={Progress.GREEN} />
+          <GoalListItem name="Extension API" progress={Progress.AMBER} />
           <GoalListItem name="Next.js" progress={Progress.RED} />
           <GoalListItem name="Web Sockets" progress={Progress.RED} />
-          <GoalListItem name="Extension API" progress={Progress.AMBER} />
-          <GoalListItem name="GraphQL" progress={Progress.RED} />
-          <GoalListItem name="AWS" progress={Progress.RED} />
           <GoalListItem name="Docker" progress={Progress.RED} />
         </ul>
       </Section>
@@ -147,7 +146,7 @@ export const About: React.FC = () => {
       <Divider />
 
       <Section ref={anchorUni} id="university-modules">
-        <h2 className="project-header text-center md:text-left">
+        <h2 className="project-header text-center md:text-left bg-red-400">
           University Modules
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2">
