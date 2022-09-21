@@ -30,20 +30,17 @@ export const Pagination: React.FC<PaginationProps> = ({
   return (
     <Section>
       <div className="flex justify-between">
-        <Link
-          to={previousLink ? previousLink : '#'}
-          className={previousClassName}
-        >
+        <Link to={previousLink || '#'} className={previousClassName}>
           <ArrowBack className="w-6 h-6" />
           <div className="text-center ml-4">
             <p className="text-sm">Previous Project</p>
-            <p>{previousTitle ? previousTitle : '-'}</p>
+            <p>{previousTitle || '-'}</p>
           </div>
         </Link>
-        <Link to={nextLink ? nextLink : '#'} className={nextClassName}>
+        <Link to={nextLink || '#'} className={nextClassName}>
           <div className="text-center mr-4">
             <p className="text-sm">Next Project</p>
-            <p>{nextTitle ? nextTitle : '-'}</p>
+            <p>{nextTitle || '-'}</p>
           </div>
           <ArrowForward className="w-6 h-6" />
         </Link>

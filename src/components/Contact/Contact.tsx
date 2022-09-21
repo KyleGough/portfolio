@@ -1,19 +1,16 @@
-/* eslint-disable indent */
 import React, { useState } from 'react';
 import axios from 'axios';
-import { SendIcon, RestartIcon, TickIcon } from '../../icons';
 import { FadeIn } from '../FadeIn';
 import { ContactLabel } from './ContactLabel';
 import { ContactFieldError } from './ContactFieldError';
+import { EmailStatus } from './Contact.types';
+import { ContactSendButton } from './ContactSendButton';
 
-//TODO
-
-enum EmailStatus {
-  IDLE,
-  SENT,
-  FAIL,
-  LOADING,
-}
+const validateEmail = (email: string) => {
+  const emailRegex =
+    /^(([^\s"(),.:;<>@[\\\]]+(\.[^\s"(),.:;<>@[\\\]]+)*)|(".+"))@((\[(?:\d{1,3}\.){3}\d{1,3}])|(([\dA-Za-z-]+\.)+[A-Za-z]{2,}))$/;
+  return !email || emailRegex.test(String(email).toLowerCase());
+};
 
 export const Contact: React.FC = () => {
   // Form input text content.
@@ -31,36 +28,26 @@ export const Contact: React.FC = () => {
   const [status, setStatus] = useState(EmailStatus.IDLE);
 
   // Form field change event handlers.
-  const onNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
+  const onNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setName(event.target.value);
     setNameError(false);
   };
 
-  const onEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
+  const onEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
     setEmailError(false);
     setEmailValidError(false);
   };
 
-  const onMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setMessage(e.target.value);
+  const onMessageChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setMessage(event.target.value);
     setMessageError(false);
   };
 
-  const validateEmail = (email: string) => {
-    const res =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return !email || res.test(String(email).toLowerCase());
-  };
-
-  const isNotEmpty = (field: string) => {
-    return Boolean(field);
-  };
-
-  const sendMessage = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const sendMessage = (event: React.MouseEvent<HTMLButtonElement>) => {
     // No action if another request has been made.
     if (status === EmailStatus.LOADING || status === EmailStatus.SENT) {
-      e.currentTarget.blur();
+      event.currentTarget.blur();
       return;
     }
 
@@ -74,14 +61,14 @@ export const Contact: React.FC = () => {
       setError(!condition);
     };
 
-    validator(isNotEmpty(name), setNameError);
-    validator(isNotEmpty(email), setEmailError);
+    validator(Boolean(name), setNameError);
+    validator(Boolean(email), setEmailError);
     validator(validateEmail(email), setEmailValidError);
-    validator(isNotEmpty(message), setMessageError);
+    validator(Boolean(message), setMessageError);
 
     if (!validForm) {
       setStatus(EmailStatus.IDLE);
-      e.currentTarget.blur();
+      event.currentTarget.blur();
       return;
     }
 
@@ -93,7 +80,6 @@ export const Contact: React.FC = () => {
         message: message,
       })
       .then(() => {
-        console.log('Email Sent');
         setStatus(EmailStatus.SENT);
       })
       .catch(() => {
@@ -101,7 +87,7 @@ export const Contact: React.FC = () => {
       });
 
     // Unfocus element.
-    e.currentTarget.blur();
+    event.currentTarget.blur();
   };
 
   return (
@@ -120,7 +106,7 @@ export const Contact: React.FC = () => {
             onChange={onNameChange}
             className={`${
               nameError ? 'border-error' : 'border-link focus:border-link-hover'
-            } 
+            }
                         transition-colours duration-200 outline-none mt-2 mb-8 block px-4 py-2
                         w-full xs:w-field border-2 rounded-2xl shadow outline-1 caret-link-hover bg-background`}
             type="email"
@@ -150,7 +136,7 @@ export const Contact: React.FC = () => {
               emailError || emailValidError
                 ? 'border-error'
                 : 'border-link focus:border-link-hover'
-            } 
+            }
                         transition-colours duration-200 outline-none mt-2 mb-8 block px-4 py-2
                         w-full xs:w-field border-2 rounded-2xl shadow outline-1 caret-link-hover bg-background`}
             type="text"
@@ -176,7 +162,7 @@ export const Contact: React.FC = () => {
               messageError
                 ? 'border-error'
                 : 'border-link focus:border-link-hover'
-            } 
+            }
                         transition-colours duration-200 mt-2 mb-8 block resize-none px-4 py-2
                         border-2 border-link focus:border-link-hover rounded-2xl shadow
                         w-full xs:w-field outline-none caret-link-hover max-h-48 h-48 bg-background`}
@@ -192,39 +178,7 @@ export const Contact: React.FC = () => {
         </FadeIn>
 
         <FadeIn>
-          <button
-            onClick={sendMessage}
-            className={`${
-              status === EmailStatus.SENT
-                ? 'text-link-hover border-link-hover cursor-default'
-                : status === EmailStatus.LOADING
-                ? 'text-disabled border-link-disabled cursor-default'
-                : status === EmailStatus.FAIL
-                ? 'text-error border-error'
-                : 'text-link hover:text-link-hover focus:text-link-hover border-link hover:border-link-hover focus:border-link-hover'
-            }
-                        group my-8 shimmer group flex items-center px-12 py-4 bg-background 
-                        rounded-full border-2 shadow mx-auto`}
-            type="submit"
-          >
-            {status === EmailStatus.SENT
-              ? 'Message Sent'
-              : status === EmailStatus.FAIL
-              ? 'Message Fail'
-              : 'Send Message'}
-            {status === EmailStatus.IDLE && (
-              <SendIcon className="ml-4 w-6 h-6 fill-link group-hover:fill-link-hover group-focus:fill-link-hover" />
-            )}
-            {status === EmailStatus.SENT && (
-              <TickIcon className="ml-4 w-6 h-6 fill-link-hover" />
-            )}
-            {status === EmailStatus.FAIL && (
-              <RestartIcon className="ml-4 w-6 h-6 fill-error " />
-            )}
-            {status === EmailStatus.LOADING && (
-              <RestartIcon className="ml-4 w-6 h-6 fill-disabled animate-spin" />
-            )}
-          </button>
+          <ContactSendButton onClick={sendMessage} status={status} />
         </FadeIn>
       </fieldset>
     </div>

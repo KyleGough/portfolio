@@ -10,7 +10,7 @@ import { useObserveElement } from '../../hooks/useObserveElement';
 export const Home: React.FC = () => {
   const [carousel, setCarousel] = useState(0);
   const carouselCount = 3;
-  const carouselInterval = useRef<any>(null);
+  const carouselInterval = useRef<NodeJS.Timeout | null>(null);
   const welcomeMsg =
     'Front-End Engineer based in London, with strong interests in web development and over 8 years experience coding. Feel free to browse my projects.';
   const typewriterRef = useTypewriter<HTMLParagraphElement>(
@@ -25,9 +25,9 @@ export const Home: React.FC = () => {
 
   useEffect(() => {
     document.title = 'Portfolio - Kyle Gough';
-    carouselInterval.current = window.setInterval(carouselNext, 10000);
+    carouselInterval.current = setInterval(carouselNext, 10_000);
     return () => {
-      window.clearInterval(carouselInterval.current);
+      window.clearInterval(carouselInterval.current as NodeJS.Timeout);
     };
   }, []);
 

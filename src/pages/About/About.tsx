@@ -146,7 +146,7 @@ export const About: React.FC = () => {
       <Divider />
 
       <Section ref={anchorUni} id="university-modules">
-        <h2 className="project-header text-center md:text-left bg-red-400">
+        <h2 className="project-header text-center md:text-left">
           University Modules
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2">

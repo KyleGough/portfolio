@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const compression = require('compression');
 const enforce = require('express-sslify');
+
 const app = express();
 const sgMail = require('@sendgrid/mail');
 const cors = require('cors');

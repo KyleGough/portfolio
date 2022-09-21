@@ -44,21 +44,23 @@ export const Projects: React.FC = () => {
         <hr className="mb-8 h-px bg-divider" />
       </div>
 
-      {projects.filter(filterProjects).map((project, i) => {
-        return (
-          <React.Fragment key={project.title}>
-            {i !== 0 && <Divider />}
-            <ProjectItem
-              title={project.title}
-              date={project.date}
-              description={project.description}
-              src={project.src}
-              alt={project.alt}
-              link={project.link}
-            />
-          </React.Fragment>
-        );
-      })}
+      {projects
+        .filter((project) => filterProjects(project))
+        .map((project, i) => {
+          return (
+            <React.Fragment key={project.title}>
+              {i !== 0 && <Divider />}
+              <ProjectItem
+                title={project.title}
+                date={project.date}
+                description={project.description}
+                src={project.src}
+                alt={project.alt}
+                link={project.link}
+              />
+            </React.Fragment>
+          );
+        })}
     </>
   );
 };

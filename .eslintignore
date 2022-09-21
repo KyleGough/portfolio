@@ -1,2 +1,6 @@
 node_modules/
 build/
+postcss.config.js
+server.js
+tailwind.config.js
+src/react-app-env.d.ts

@@ -16,8 +16,11 @@ export const ProjectFilter: React.FC<ProjectFilterProps> = ({
 
   useEffect(() => {
     // Close dropdown if user clicks outside project filter component.
-    const checkClickOutside = (e: MouseEvent) => {
-      if (filterRef.current && !filterRef.current.contains(e.target as Node)) {
+    const checkClickOutside = (event: MouseEvent) => {
+      if (
+        filterRef.current &&
+        !filterRef.current.contains(event.target as Node)
+      ) {
         closeDropdown();
       }
     };
@@ -36,8 +39,8 @@ export const ProjectFilter: React.FC<ProjectFilterProps> = ({
   };
 
   // Toggles opening/closing the dropdown list.
-  const toggleDropdown = (e: React.MouseEvent) => {
-    e.preventDefault();
+  const toggleDropdown = (event: React.MouseEvent) => {
+    event.preventDefault();
     setOpen((prev) => !prev);
   };
 

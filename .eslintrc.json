@@ -8,7 +8,8 @@
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:import/recommended",
-        "plugin:import/typescript"
+        "plugin:import/typescript",
+        "plugin:unicorn/recommended"
     ],
     "overrides": [
     ],
@@ -19,12 +20,14 @@
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "unicorn"
     ],
     "rules": {
-        "indent": [
-            "error",
-            2
+        "indent": "off",
+        "@typescript-eslint/indent": [
+          "error",
+          2
         ],
         "linebreak-style": [
             "error",
@@ -44,11 +47,17 @@
         ],
         "no-console": "warn",
         "no-alert": "warn",
-        "no-debugger": "warn"
+        "no-debugger": "warn",
+        "unicorn/filename-case": "off",
+        "unicorn/prevent-abbreviations": "off",
+        "unicorn/prefer-query-selector": "off"
     },
     "settings": {
+        "react": {
+            "version": "detect"
+        },
         "import/parsers": {
-          "@typescript-eslint/parser": [".ts", ".tsx"]
+            "@typescript-eslint/parser": [".ts", ".tsx"]
         }
     }
 }

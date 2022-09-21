@@ -9,12 +9,12 @@ export const Nav: React.FC = () => {
 
   useEffect(() => {
     // Close mobile nav drawer if user clicks outside nav component.
-    const checkClickOutside = (e: MouseEvent) => {
+    const checkClickOutside = (event: MouseEvent) => {
       if (
         menuBtnRef.current &&
-        !menuBtnRef.current.contains(e.target as Node) &&
+        !menuBtnRef.current.contains(event.target as Node) &&
         mobileNavRef.current &&
-        !mobileNavRef.current.contains(e.target as Node)
+        !mobileNavRef.current.contains(event.target as Node)
       ) {
         closeDrawer();
       }
