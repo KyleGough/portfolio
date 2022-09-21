@@ -6,9 +6,7 @@ interface SectionProps {
   children: React.ReactNode;
 }
 
-//TODO
-// eslint-disable-next-line react/display-name
-export const Section = forwardRef<HTMLDivElement, SectionProps>(
+const Section = forwardRef<HTMLDivElement, SectionProps>(
   ({ id, overrideTopPadding = false, children }, ref) => (
     <div
       id={id}
@@ -21,3 +19,6 @@ export const Section = forwardRef<HTMLDivElement, SectionProps>(
     </div>
   )
 );
+
+Section.displayName = 'Section';
+export { Section };
