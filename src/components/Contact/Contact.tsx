@@ -5,12 +5,7 @@ import { ContactLabel } from './ContactLabel';
 import { ContactFieldError } from './ContactFieldError';
 import { EmailStatus } from './Contact.types';
 import { ContactSendButton } from './ContactSendButton';
-
-const validateEmail = (email: string) => {
-  const emailRegex =
-    /^(([^\s"(),.:;<>@[\\\]]+(\.[^\s"(),.:;<>@[\\\]]+)*)|(".+"))@((\[(?:\d{1,3}\.){3}\d{1,3}])|(([\dA-Za-z-]+\.)+[A-Za-z]{2,}))$/;
-  return !email || emailRegex.test(String(email).toLowerCase());
-};
+import { validateEmail, getFieldBorderStyle } from './Contact.helper';
 
 export const Contact: React.FC = () => {
   // Form input text content.
@@ -104,9 +99,7 @@ export const Contact: React.FC = () => {
           <ContactFieldError show={nameError} message="Required!" />
           <input
             onChange={onNameChange}
-            className={`${
-              nameError ? 'border-error' : 'border-link focus:border-link-hover'
-            }
+            className={`${getFieldBorderStyle(nameError)}
                         transition-colours duration-200 outline-none mt-2 mb-8 block px-4 py-2
                         w-full xs:w-field border-2 rounded-2xl shadow outline-1 caret-link-hover bg-background`}
             type="email"
@@ -132,11 +125,7 @@ export const Contact: React.FC = () => {
           <ContactFieldError show={emailValidError} message="Invalid Email!" />
           <input
             onChange={onEmailChange}
-            className={`${
-              emailError || emailValidError
-                ? 'border-error'
-                : 'border-link focus:border-link-hover'
-            }
+            className={`${getFieldBorderStyle(emailError || emailValidError)}
                         transition-colours duration-200 outline-none mt-2 mb-8 block px-4 py-2
                         w-full xs:w-field border-2 rounded-2xl shadow outline-1 caret-link-hover bg-background`}
             type="text"
@@ -158,11 +147,7 @@ export const Contact: React.FC = () => {
           <ContactFieldError show={messageError} message="Required!" />
           <textarea
             onChange={onMessageChange}
-            className={`${
-              messageError
-                ? 'border-error'
-                : 'border-link focus:border-link-hover'
-            }
+            className={`${getFieldBorderStyle(messageError)}
                         transition-colours duration-200 mt-2 mb-8 block resize-none px-4 py-2
                         border-2 border-link focus:border-link-hover rounded-2xl shadow
                         w-full xs:w-field outline-none caret-link-hover max-h-48 h-48 bg-background`}
