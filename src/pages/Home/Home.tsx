@@ -6,6 +6,7 @@ import { ArrowForward } from '../../icons';
 import { ProjectCard } from '../../components/ProjectCard';
 import { Contact } from '../../components/Contact';
 import { useObserveElement } from '../../hooks/useObserveElement';
+import { CarouselImage } from './CarouselImage';
 
 export const Home: React.FC = () => {
   const [carousel, setCarousel] = useState(0);
@@ -39,21 +40,9 @@ export const Home: React.FC = () => {
     <>
       <div className="flex justify-center items-center h-screen relative">
         <div className="absolute inset-0 bg-black opacity-70 w-full h-full z-10"></div>
-        <div
-          className={`absolute top-0 left-0 w-full h-full bg-header1 bg-fixed bg-center bg-cover duration-2000 transition-opacity ${
-            carousel === 0 ? 'opacity-100' : 'opacity-0'
-          }`}
-        ></div>
-        <div
-          className={`absolute top-0 left-0 w-full h-full bg-header2 bg-fixed bg-center bg-cover duration-2000 transition-opacity ${
-            carousel === 1 ? 'opacity-100' : 'opacity-0'
-          }`}
-        ></div>
-        <div
-          className={`absolute top-0 left-0 w-full h-full bg-header3 bg-fixed bg-center bg-cover duration-2000 transition-opacity ${
-            carousel === 2 ? 'opacity-100' : 'opacity-0'
-          }`}
-        ></div>
+        <CarouselImage bg="bg-header-1" show={carousel === 0} />
+        <CarouselImage bg="bg-header-2" show={carousel === 1} />
+        <CarouselImage bg="bg-header-3" show={carousel === 2} />
         <div className="z-20 absolute inset-0 text-white mx-auto text-center flex tracking-tight items-center">
           <div className="block lg:flex items-center justify-around w-full">
             <h1 className="slide-in text-7xl sm:text-8xl lg:text-9xl font-sans tracking-tighter px-8 mb-12 lg:mb-0">
