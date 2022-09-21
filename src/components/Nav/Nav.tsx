@@ -4,7 +4,7 @@ import { GitHubIcon, MenuIcon } from '../../icons';
 
 export const Nav: React.FC = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const menuBtnRef = useRef<HTMLDivElement>(null);
+  const menuBtnRef = useRef<HTMLButtonElement>(null);
   const mobileNavRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -45,13 +45,13 @@ export const Nav: React.FC = () => {
             <span className="text-xl tracking-normal">Kyle Gough</span>
           </Link>
         </div>
-        <div
+        <button
           ref={menuBtnRef}
           onClick={toggleDrawer}
           className="border-bottom-slide block md:hidden px-6 py-5"
         >
           <MenuIcon className="w-6 h-6 fill-white" />
-        </div>
+        </button>
         <div className="hidden md:block flex-grow w-auto">
           <div className="flex-grow text-right">
             <Link

@@ -8,4 +8,4 @@ then
   echo -e "Commiting directly to the master/main branch is not permitted." && exit 1
 fi
 
-eslint --fix . && exit 0
+eslint --cache --fix . && exit 0
