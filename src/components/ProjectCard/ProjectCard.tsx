@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ProjectChip } from '../ProjectChip';
+
 import { useObserveElement } from '../../hooks/useObserveElement';
+import { ProjectChip } from '../ProjectChip';
 
 interface ProjectCardProps {
   className?: string;

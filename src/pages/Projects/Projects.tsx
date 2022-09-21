@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Section } from '../../components/Section';
+
+import { Divider } from '../../components/Divider';
 import { ProjectFilter } from '../../components/ProjectFilter';
 import { ProjectItem } from '../../components/ProjectItem';
-import { Divider } from '../../components/Divider';
+import { Section } from '../../components/Section';
 import projects from './projects.json';
 
 interface IProject {

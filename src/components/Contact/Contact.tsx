@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
 import axios from 'axios';
+import React, { useState } from 'react';
+
 import { FadeIn } from '../FadeIn';
-import { ContactLabel } from './ContactLabel';
-import { ContactFieldError } from './ContactFieldError';
+import { getFieldBorderStyle,validateEmail } from './Contact.helper';
 import { EmailStatus } from './Contact.types';
+import { ContactFieldError } from './ContactFieldError';
+import { ContactLabel } from './ContactLabel';
 import { ContactSendButton } from './ContactSendButton';
-import { validateEmail, getFieldBorderStyle } from './Contact.helper';
 
 export const Contact: React.FC = () => {
   // Form input text content.

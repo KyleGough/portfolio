@@ -1,35 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { ScrollTop } from './components/ScrollTop';
-import { Nav } from './components/Nav';
-import { Footer } from './components/Footer';
 import './index.css';
 import './tailwind.output.css';
-import reportWebVitals from './reportWebVitals';
 
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Route,Routes } from 'react-router-dom';
+
+import { Footer } from './components/Footer';
+import { Nav } from './components/Nav';
+import { ScrollTop } from './components/ScrollTop';
+import { NotFound } from './pages/404';
+import { About } from './pages/About';
 // Main pages.
 import { Home } from './pages/Home';
-import { About } from './pages/About';
-import { Projects } from './pages/Projects';
 import { Privacy } from './pages/Privacy';
-import { NotFound } from './pages/404';
-
+import { Projects } from './pages/Projects';
+import { BSplit } from './pages/projects/BSplit';
+import { CaveExploration } from './pages/projects/CaveExploration';
+import { CavernMinesweeper } from './pages/projects/CavernMinesweeper';
+import { DeliveryPlanner } from './pages/projects/DeliveryPlanner/DeliveryPlanner';
+import { GraphVisualiser } from './pages/projects/GraphVisualiser';
+import { LucidLab } from './pages/projects/LucidLab';
+import { Minesweeper } from './pages/projects/Minesweeper';
+import { Portfolio } from './pages/projects/Portfolio';
+import { RollerCoaster } from './pages/projects/RollerCoaster';
+import { RSCBot } from './pages/projects/RSCBot';
 // Project pages.
 import { SortingVisualiser } from './pages/projects/SortingVisualiser';
-import { DeliveryPlanner } from './pages/projects/DeliveryPlanner/DeliveryPlanner';
-import { ToDoList } from './pages/projects/ToDoList/ToDoList';
-import { BSplit } from './pages/projects/BSplit';
-import { CavernMinesweeper } from './pages/projects/CavernMinesweeper';
-import { GraphVisualiser } from './pages/projects/GraphVisualiser';
-import { URLShortener } from './pages/projects/URLShortener/URLShortener';
-import { RSCBot } from './pages/projects/RSCBot';
-import { RollerCoaster } from './pages/projects/RollerCoaster';
-import { CaveExploration } from './pages/projects/CaveExploration';
-import { Minesweeper } from './pages/projects/Minesweeper';
 import { Sudoku } from './pages/projects/Sudoku/Sudoku';
-import { LucidLab } from './pages/projects/LucidLab';
-import { Portfolio } from './pages/projects/Portfolio';
+import { ToDoList } from './pages/projects/ToDoList/ToDoList';
+import { URLShortener } from './pages/projects/URLShortener/URLShortener';
+import reportWebVitals from './reportWebVitals';
 
 const App: React.FC = () => (
   <BrowserRouter>

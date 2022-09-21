@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
-import { Section } from '../../../components/Section';
-import { Divider } from '../../../components/Divider';
+
 import { Chip } from '../../../components/Chip';
-import { Pagination } from '../../../components/Pagination';
+import { Divider } from '../../../components/Divider';
 import { ImageFigure } from '../../../components/ImageFigure';
-import { Screenshots } from '../../../components/Screenshots';
 import { Link } from '../../../components/Link';
+import { Pagination } from '../../../components/Pagination';
+import { Screenshots } from '../../../components/Screenshots';
+import { Section } from '../../../components/Section';
 import images from './images.json';
 
 export const CavernMinesweeper: React.FC = () => {

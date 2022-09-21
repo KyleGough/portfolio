@@ -1,6 +1,7 @@
 import React from 'react';
-import { Skill } from './Skill';
+
 import { ISkill } from './';
+import { Skill } from './Skill';
 
 interface SkillListProps {
   skills: ISkill[];

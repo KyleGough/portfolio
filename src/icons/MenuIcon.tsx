@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { IconProps } from './IconInterface';
 
 export const MenuIcon: React.FC<IconProps> = ({ className }) => (

@@ -1,22 +1,21 @@
 import React, { RefObject, useEffect, useRef } from 'react';
-import { Section } from '../../components/Section';
-import { Divider } from '../../components/Divider';
-import { SkillList } from '../../components/SkillList';
-import { LabelledLogo } from '../../components/LabelledLogo';
-import { GoalListItem, Progress } from '../../components/GoalListItem';
-import { UniModuleList } from '../../components/UniModuleList';
-import { ScrollButton } from '../../components/ScrollButton';
 
+import { Divider } from '../../components/Divider';
+import { GoalListItem, Progress } from '../../components/GoalListItem';
+import { LabelledLogo } from '../../components/LabelledLogo';
+import { ScrollButton } from '../../components/ScrollButton';
+import { Section } from '../../components/Section';
+import { SkillList } from '../../components/SkillList';
+import { UniModuleList } from '../../components/UniModuleList';
+import BootstrapLogo from '../../img/bootstrap.png';
+import HerokuLogo from '../../img/heroku.png';
+import JqueryLogo from '../../img/jquery.png';
+import MaterializeLogo from '../../img/materialize.png';
+import NodeLogo from '../../img/node.png';
+import WebixLogo from '../../img/webix.png';
+import { skillsOther } from './SkillsOther';
 import { skillsProgramming } from './SkillsProgramming';
 import { skillsWeb } from './SkillsWeb';
-import { skillsOther } from './SkillsOther';
-
-import JqueryLogo from '../../img/jquery.png';
-import NodeLogo from '../../img/node.png';
-import BootstrapLogo from '../../img/bootstrap.png';
-import MaterializeLogo from '../../img/materialize.png';
-import WebixLogo from '../../img/webix.png';
-import HerokuLogo from '../../img/heroku.png';
 
 export const About: React.FC = () => {
   const anchorProgramming = useRef<HTMLDivElement>(null);

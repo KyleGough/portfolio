@@ -1,6 +1,7 @@
 import React from 'react';
+
+import { RestartIcon, SendIcon, TickIcon } from '../../../icons';
 import { EmailStatus } from '../Contact.types';
-import { SendIcon, RestartIcon, TickIcon } from '../../../icons';
 
 interface ContactSendButtonProps {
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;

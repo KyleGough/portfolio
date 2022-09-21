@@ -1,12 +1,12 @@
-import { ISkill, Confidence } from '../../components/SkillList';
-import PythonLogo from '../../img/python.png';
-import JavaLogo from '../../img/java.png';
+import { Confidence,ISkill } from '../../components/SkillList';
 import CSharpLogo from '../../img/c#.png';
 import CPlusPlusLogo from '../../img/c++.png';
-import VBLogo from '../../img/vb.png';
 import HaskellLogo from '../../img/haskell.png';
-import RubyLogo from '../../img/ruby.png';
+import JavaLogo from '../../img/java.png';
 import MatlabLogo from '../../img/matlab.png';
+import PythonLogo from '../../img/python.png';
+import RubyLogo from '../../img/ruby.png';
+import VBLogo from '../../img/vb.png';
 
 export const skillsProgramming: ISkill[] = [
   {

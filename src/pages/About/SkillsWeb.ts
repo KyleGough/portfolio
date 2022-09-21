@@ -1,11 +1,11 @@
-import { ISkill, Confidence } from '../../components/SkillList';
+import { Confidence,ISkill } from '../../components/SkillList';
+import CSSLogo from '../../img/css.png';
+import HTMLLogo from '../../img/html.png';
 import JavaScriptLogo from '../../img/javascript.png';
-import TypeScriptLogo from '../../img/typescript.png';
+import PHPLogo from '../../img/php.png';
 import ReactLogo from '../../img/react.png';
 import TailwindLogo from '../../img/tailwind.png';
-import HTMLLogo from '../../img/html.png';
-import CSSLogo from '../../img/css.png';
-import PHPLogo from '../../img/php.png';
+import TypeScriptLogo from '../../img/typescript.png';
 
 export const skillsWeb: ISkill[] = [
   {

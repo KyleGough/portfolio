@@ -5,6 +5,7 @@
     },
     "extends": [
         "eslint:recommended",
+        "prettier",
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:import/recommended",
@@ -23,7 +24,9 @@
         "react",
         "@typescript-eslint",
         "unicorn",
-        "sonarjs"
+        "sonarjs",
+        "simple-import-sort",
+        "import"
     ],
     "rules": {
         "indent": "off",
@@ -52,7 +55,9 @@
         "no-debugger": "warn",
         "unicorn/filename-case": "off",
         "unicorn/prevent-abbreviations": "off",
-        "unicorn/prefer-query-selector": "off"
+        "unicorn/prefer-query-selector": "off",
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error"
     },
     "settings": {
         "react": {

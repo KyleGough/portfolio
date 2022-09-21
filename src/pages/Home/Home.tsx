@@ -1,11 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useTypewriter } from '../../hooks/useTypewriter';
+import React, { useEffect, useRef,useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Section } from '../../components/Section';
-import { ArrowForward } from '../../icons';
-import { ProjectCard } from '../../components/ProjectCard';
+
 import { Contact } from '../../components/Contact';
+import { ProjectCard } from '../../components/ProjectCard';
+import { Section } from '../../components/Section';
 import { useObserveElement } from '../../hooks/useObserveElement';
+import { useTypewriter } from '../../hooks/useTypewriter';
+import { ArrowForward } from '../../icons';
 import { CarouselImage } from './CarouselImage';
 
 export const Home: React.FC = () => {

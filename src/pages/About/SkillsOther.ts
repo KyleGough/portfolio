@@ -1,10 +1,10 @@
-import { ISkill, Confidence } from '../../components/SkillList';
-import GitLogo from '../../img/git.png';
+import { Confidence,ISkill } from '../../components/SkillList';
 import BashLogo from '../../img/bash.png';
-import TerminalLogo from '../../img/terminal.png';
-import SQLLogo from '../../img/sql.png';
+import GitLogo from '../../img/git.png';
 import LatexLogo from '../../img/latex.png';
 import MarkdownLogo from '../../img/markdown.png';
+import SQLLogo from '../../img/sql.png';
+import TerminalLogo from '../../img/terminal.png';
 
 export const skillsOther: ISkill[] = [
   {

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
 import { Divider } from '../../components/Divider';
 import { Section } from '../../components/Section';
 

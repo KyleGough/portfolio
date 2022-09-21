@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Section } from '../Section';
+
 import { ArrowBack, ArrowForward } from '../../icons';
+import { Section } from '../Section';
 
 interface PaginationProps {
   previousTitle?: string;
