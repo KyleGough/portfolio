@@ -1,19 +1,29 @@
-import React from 'react';
+import React, { KeyboardEvent } from 'react';
 
 interface ProjectFilterSelectionProps {
   value: string;
-  onClick: (a: string) => void;
+  onSelect: (a: string) => void;
 }
 
 export const ProjectFilterSelection: React.FC<ProjectFilterSelectionProps> = ({
   value,
-  onClick,
-}) => (
-  <li
-    key={value}
-    onClick={() => onClick(value)}
-    className="hover:text-chip hover:bg-chip-light py-2 px-8 cursor-pointer select-none"
-  >
-    {value}
-  </li>
-);
+  onSelect,
+}) => {
+  const onKeyDown = (value: string, event: KeyboardEvent<HTMLLIElement>) => {
+    if (event.key === 'Enter') onSelect(value);
+  };
+
+  return (
+    <li
+      key={value}
+      tabIndex={0}
+      onClick={() => onSelect(value)}
+      onKeyDown={(event: KeyboardEvent<HTMLLIElement>) =>
+        onKeyDown(value, event)
+      }
+      className="hover:text-chip hover:bg-chip-light py-2 px-8 cursor-pointer select-none"
+    >
+      {value}
+    </li>
+  );
+};

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef,useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { UnfoldIcon } from '../../icons';
 import { ProjectFilterSelection } from './ProjectFilterSelection';
@@ -76,16 +76,16 @@ export const ProjectFilter: React.FC<ProjectFilterProps> = ({
           role="listbox"
           aria-orientation="vertical"
         >
-          <ProjectFilterSelection onClick={setValue} value="All" />
-          <ProjectFilterSelection onClick={setValue} value="C#" />
-          <ProjectFilterSelection onClick={setValue} value="C++" />
-          <ProjectFilterSelection onClick={setValue} value="JavaScript" />
-          <ProjectFilterSelection onClick={setValue} value="PHP" />
-          <ProjectFilterSelection onClick={setValue} value="Python" />
-          <ProjectFilterSelection onClick={setValue} value="React" />
-          <ProjectFilterSelection onClick={setValue} value="Games/Puzzles" />
-          <ProjectFilterSelection onClick={setValue} value="Group Projects" />
-          <ProjectFilterSelection onClick={setValue} value="Web" />
+          <ProjectFilterSelection onSelect={setValue} value="All" />
+          <ProjectFilterSelection onSelect={setValue} value="C#" />
+          <ProjectFilterSelection onSelect={setValue} value="C++" />
+          <ProjectFilterSelection onSelect={setValue} value="JavaScript" />
+          <ProjectFilterSelection onSelect={setValue} value="PHP" />
+          <ProjectFilterSelection onSelect={setValue} value="Python" />
+          <ProjectFilterSelection onSelect={setValue} value="React" />
+          <ProjectFilterSelection onSelect={setValue} value="Games/Puzzles" />
+          <ProjectFilterSelection onSelect={setValue} value="Group Projects" />
+          <ProjectFilterSelection onSelect={setValue} value="Web" />
         </ul>
       </div>
     </>
