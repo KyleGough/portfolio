@@ -1,3 +1,4 @@
+import { clsx } from 'clsx';
 import React, { useEffect, useState } from 'react';
 
 import { useObserveElement } from '../../hooks/useObserveElement';
@@ -19,9 +20,11 @@ export const FadeIn: React.FC<FadeInProps> = ({ children }) => {
   return (
     <div
       ref={elementRef}
-      className={`${
-        show ? 'opacity-100' : 'opacity-0'
-      } transition-opacity duration-1000`}
+      className={clsx(
+        { 'opacity-100': show },
+        { 'opacity-0': !show },
+        'transition-opacity duration-1000'
+      )}
     >
       {children}
     </div>

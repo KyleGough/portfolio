@@ -1,3 +1,4 @@
+import { clsx } from 'clsx';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -34,9 +35,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     <Link
       ref={elementRef}
       to={link}
-      className={`${className} ${
-        isVisible ? 'opacity-100' : 'opacity-0'
-      } duration-1000 transition-opacity ease-in-out rounded-2xl overflow-hidden border-2 border-white shadow drop-shadow-lg group`}
+      className={clsx(
+        className,
+        { 'opacity-100': isVisible },
+        { 'opacity-0': !isVisible },
+        'group overflow-hidden',
+        'duration-1000 transition-opacity ease-in-out',
+        'rounded-2xl border-2 border-white',
+        'shadow drop-shadow-lg'
+      )}
     >
       <img className="w-full" src={src} alt={alt} />
       <div className="text-white p-4 font-bold group-hover:brightness-125 group-focus:brightness-125 bg-nav-light">

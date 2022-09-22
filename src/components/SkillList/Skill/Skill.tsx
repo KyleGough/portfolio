@@ -1,4 +1,5 @@
-import React, { useEffect,useState } from 'react';
+import { clsx } from 'clsx';
+import React, { useEffect, useState } from 'react';
 
 import { useObserveElement } from '../../../hooks/useObserveElement';
 import { Confidence } from '../SkillList.types';
@@ -43,10 +44,14 @@ export const Skill: React.FC<SkillProps> = ({
   return (
     <div className="flex flex-row justify-center py-4">
       <div className="w-3/12 lg:w-4/12 pt-2">
-        <div className={`progress overflow-hidden ${type}`}>
+        <div className={clsx(type, 'progress overflow-hidden')}>
           <div
             ref={progressRef}
-            className={`custom-duration progress-bar transition-transform ease-in-out -translate-x-full ${progressClass}`}
+            className={clsx(
+              progressClass,
+              'custom-duration progress-bar',
+              'transition-transform ease-in-out -translate-x-full'
+            )}
             style={durationVar}
           ></div>
         </div>
@@ -54,9 +59,12 @@ export const Skill: React.FC<SkillProps> = ({
       <div className="w-9/12 lg:w-8/12 ml-6 flex">
         <img
           loading="lazy"
-          className={`w-8 h-8 mr-4 transition-opacity duration-500 ${
-            animatedIn ? 'opacity-100' : 'opacity-0'
-          }`}
+          className={clsx(
+            { 'opacity-100': animatedIn },
+            { 'opacity-0': !animatedIn },
+            'w-8 h-8 mr-4',
+            'transition-opacity duration-500'
+          )}
           src={logo}
           alt={`${name} logo`}
         />

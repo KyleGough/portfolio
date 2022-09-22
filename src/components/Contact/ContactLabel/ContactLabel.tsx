@@ -1,3 +1,4 @@
+import { clsx } from 'clsx';
 import React from 'react';
 
 interface ContactLabelProps {
@@ -12,9 +13,16 @@ export const ContactLabel: React.FC<ContactLabelProps> = ({
   children,
 }) => (
   <label
-    className={`${
-      valid ? 'text-link' : 'text-error'
-    } transition-colours duration-200 text-lg mt-8 mb-2 mr-2`}
+    className={clsx(
+      { 'text-link': valid },
+      { 'text-error': !valid },
+      'transition-colours',
+      'duration-200',
+      'text-lg',
+      'mt-8',
+      'mb-2',
+      'mr-2'
+    )}
     htmlFor={htmlFor}
   >
     {children}

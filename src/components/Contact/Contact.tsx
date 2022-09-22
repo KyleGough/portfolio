@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { clsx } from 'clsx';
 import React, { useState } from 'react';
 
 import { FadeIn } from '../FadeIn';
@@ -86,6 +87,15 @@ export const Contact: React.FC = () => {
     event.currentTarget.blur();
   };
 
+  const inputCommonStyles = clsx(
+    'block shadow',
+    'transition-colours duration-200',
+    'mt-2 mb-8 px-4 py-2',
+    'w-full xs:w-field',
+    'border-2 rounded-2xl',
+    'outline-none caret-link-hover bg-background'
+  );
+
   return (
     <div className="flex justify-center">
       <fieldset>
@@ -100,9 +110,7 @@ export const Contact: React.FC = () => {
           <ContactFieldError show={nameError} message="Required!" />
           <input
             onChange={onNameChange}
-            className={`${getFieldBorderStyle(nameError)}
-                        transition-colours duration-200 outline-none mt-2 mb-8 block px-4 py-2
-                        w-full xs:w-field border-2 rounded-2xl shadow outline-1 caret-link-hover bg-background`}
+            className={clsx(getFieldBorderStyle(nameError), inputCommonStyles)}
             type="email"
             id="name"
             name="name"
@@ -126,9 +134,10 @@ export const Contact: React.FC = () => {
           <ContactFieldError show={emailValidError} message="Invalid Email!" />
           <input
             onChange={onEmailChange}
-            className={`${getFieldBorderStyle(emailError || emailValidError)}
-                        transition-colours duration-200 outline-none mt-2 mb-8 block px-4 py-2
-                        w-full xs:w-field border-2 rounded-2xl shadow outline-1 caret-link-hover bg-background`}
+            className={clsx(
+              getFieldBorderStyle(emailError || emailValidError),
+              inputCommonStyles
+            )}
             type="text"
             id="email"
             name="email"
@@ -148,9 +157,13 @@ export const Contact: React.FC = () => {
           <ContactFieldError show={messageError} message="Required!" />
           <textarea
             onChange={onMessageChange}
-            className={`${getFieldBorderStyle(messageError)}
-                        transition-colours duration-200 mt-2 mb-8 block resize-none px-4 py-2
-                        border-2 rounded-2xl shadow w-full xs:w-field outline-none caret-link-hover max-h-48 h-48 bg-background`}
+            className={clsx(
+              getFieldBorderStyle(messageError),
+              inputCommonStyles,
+              'max-h-48',
+              'h-48',
+              'resize-none'
+            )}
             id="message"
             name="message"
             placeholder="Enter your message"
