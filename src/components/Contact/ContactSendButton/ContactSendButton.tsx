@@ -1,3 +1,4 @@
+import { clsx } from 'clsx';
 import React from 'react';
 
 import { RestartIcon, SendIcon, TickIcon } from '../../../icons';
@@ -38,8 +39,14 @@ export const ContactSendButton: React.FC<ContactSendButtonProps> = ({
   return (
     <button
       onClick={onClick}
-      className={`group my-8 shimmer group flex items-center px-12 py-4 bg-background
-      rounded-full border-2 shadow mx-auto ${getButtonStyle(status)}`}
+      className={clsx(
+        getButtonStyle(status),
+        'group flex items-center',
+        'mx-auto my-8 px-12 py-4',
+        'bg-background',
+        'rounded-full border-2',
+        'shimmer shadow'
+      )}
       type="submit"
     >
       {getButtonText(status)}

@@ -1,3 +1,4 @@
+import { clsx } from 'clsx';
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -128,9 +129,11 @@ export const Home: React.FC = () => {
             <div className="hidden lg:flex justify-center my-auto">
               <img
                 ref={imageRef}
-                className={`${
-                  isVisible ? 'opacity-100' : 'opacity-0'
-                } transition-opacity duration-1000 w-64 h-64 rounded-full`}
+                className={clsx(
+                  { 'opacity-100': isVisible },
+                  { 'opacity-0': !isVisible },
+                  'transition-opacity duration-1000 w-64 h-64 rounded-full'
+                )}
                 src="/img/avatar.png"
                 alt="Avatar"
               />

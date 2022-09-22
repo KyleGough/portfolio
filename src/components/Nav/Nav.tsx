@@ -1,3 +1,4 @@
+import { clsx } from 'clsx';
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -86,9 +87,12 @@ export const Nav: React.FC = () => {
       </div>
       <div
         ref={mobileNavRef}
-        className={`${
-          drawerOpen ? 'absolute' : 'hidden'
-        } slide-in z-[100] w-full md:hidden flex-grow drop-shadow`}
+        className={clsx(
+          { absolute: drawerOpen },
+          { hidden: !drawerOpen },
+          'slide-in z-[100] drop-shadow',
+          'w-full md:hidden flex-grow'
+        )}
       >
         <div className="text-link leading-8 bg-background">
           <Link

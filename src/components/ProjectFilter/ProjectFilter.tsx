@@ -1,3 +1,4 @@
+import { clsx } from 'clsx';
 import React, { useEffect, useRef, useState } from 'react';
 
 import { UnfoldIcon } from '../../icons';
@@ -70,9 +71,14 @@ export const ProjectFilter: React.FC<ProjectFilterProps> = ({
         </button>
         <ul
           id="project-filter-selection"
-          className={`${
-            isOpen ? 'absolute' : 'hidden'
-          } w-full max-h-[75vh] z-[100] overflow-y-auto mt-4 py-2 shadow rounded text-link bg-background`}
+          className={clsx(
+            { absolute: isOpen },
+            { hidden: !isOpen },
+            'w-full max-h-[75vh]',
+            'z-[100] overflow-y-auto',
+            'mt-4 py-2',
+            'shadow rounded text-link bg-background'
+          )}
           role="listbox"
           aria-orientation="vertical"
         >

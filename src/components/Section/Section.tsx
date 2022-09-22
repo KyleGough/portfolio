@@ -1,3 +1,4 @@
+import { clsx } from 'clsx';
 import React, { forwardRef } from 'react';
 
 interface SectionProps {
@@ -11,9 +12,10 @@ const Section = forwardRef<HTMLDivElement, SectionProps>(
     <div
       id={id}
       ref={ref}
-      className={`container text-primary py-8 last:pb-16 ${
-        overrideTopPadding ? '' : 'first:pt-24'
-      }`}
+      className={clsx(
+        { 'first:pt-24': overrideTopPadding },
+        'container text-primary py-8 last:pb-16'
+      )}
     >
       {children}
     </div>
