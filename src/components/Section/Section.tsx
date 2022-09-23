@@ -13,7 +13,7 @@ const Section = forwardRef<HTMLDivElement, SectionProps>(
       id={id}
       ref={ref}
       className={clsx(
-        { 'first:pt-24': overrideTopPadding },
+        { 'first:pt-24': !overrideTopPadding },
         'container text-primary py-8 last:pb-16'
       )}
     >
