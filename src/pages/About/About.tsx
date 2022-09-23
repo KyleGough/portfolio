@@ -40,9 +40,9 @@ export const About: React.FC = () => {
           About Me
         </h1>
         <p className="my-4 max-w-reading">
-          Hello, I&apos;m Kyle - a Front-End Engineer at Atom Learning and
+          Hello, I&apos;m Kyle, a Front-End Engineer at Atom Learning and
           Computer Science MEng graduate of the University of Warwick. Interests
-          lie in bouldering, cycling, guitar, movies and physics. I enjoy
+          lie in bouldering, cycling, guitar, movies, and physics. I enjoy
           learning new languages, frameworks and technologies and have pursued
           multiple personal projects putting these skills into practice,
           detailed below.
