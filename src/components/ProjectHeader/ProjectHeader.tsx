@@ -13,6 +13,9 @@ export const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => {
   return (
     <Section>
       <h1 className="project-title">{project.title}</h1>
+      {project.subtitle && (
+        <h2 className="project-subtitle">{project.subtitle}</h2>
+      )}
       <p className="text-link-hover my-4">
         <time dateTime={project.date.start}>
           {getLongDate(project.date.start)}

@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
 
-import { Chip } from '../../../components/Chip';
 import { Divider } from '../../../components/Divider';
 import { ImageFigure } from '../../../components/ImageFigure';
 import { Pagination } from '../../../components/Pagination';
+import { ProjectHeader } from '../../../components/ProjectHeader';
 import { Screenshots } from '../../../components/Screenshots';
 import { Section } from '../../../components/Section';
+import { getProjectData } from '../../../data';
 import images from './images.json';
+
+const project = getProjectData('sudoku');
 
 export const Sudoku: React.FC = () => {
   useEffect(() => {
@@ -16,38 +19,7 @@ export const Sudoku: React.FC = () => {
 
   return (
     <>
-      <Section>
-        <h1 className="project-title">Logical Sudoku Solver</h1>
-        <p className="text-link-hover my-4">
-          <time dateTime="2019-11">November 2019</time> -{' '}
-          <time dateTime="2020-01">January 2020</time>
-        </p>
-        <p className="mb-4 max-w-reading">
-          Program that can solve expert level Sudoku using only logical
-          techniques (no brute forcing, guessing or backtracking). The program
-          outputs a detailed description of the techniques and moves required at
-          each step to solve Sudoku. The solver reads CSV files allowing for
-          batch solving. In-depth analysis is displayed including but not
-          limited to: difficulty rating, occurrences of each technique,
-          probability of each technique, processing time for each technique and
-          total processing time.
-        </p>
-        <p className="mb-4">
-          <span>Explore this project on </span>
-          <a
-            className="text-link hover:text-link-hover focus:text-link-hover"
-            href="https://github.com/KyleGough/sudoku"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
-        </p>
-
-        <div className="flex flex-row flex-wrap items-center mt-8 gap-4">
-          <Chip name="Python" />
-        </div>
-      </Section>
+      <ProjectHeader project={project} />
 
       <Divider />
 

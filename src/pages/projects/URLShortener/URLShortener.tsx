@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
 
-import { Chip } from '../../../components/Chip';
 import { Divider } from '../../../components/Divider';
 import { ImageFigure } from '../../../components/ImageFigure';
 import { Pagination } from '../../../components/Pagination';
+import { ProjectHeader } from '../../../components/ProjectHeader';
 import { Screenshots } from '../../../components/Screenshots';
 import { Section } from '../../../components/Section';
+import { getProjectData } from '../../../data';
 import images from './images.json';
+
+const project = getProjectData('url-shortener');
 
 export const URLShortener: React.FC = () => {
   useEffect(() => {
@@ -15,28 +18,7 @@ export const URLShortener: React.FC = () => {
 
   return (
     <>
-      <Section>
-        <h1 className="project-title">URL Shortener</h1>
-        <p className="text-link-hover my-4">
-          <time dateTime="2017-04">April 2017</time>
-        </p>
-        <p className="mb-4 max-w-reading">
-          A URL shortening tool creating using Node.js, Express.js for routing
-          GET and POST requests and MongoDB to store URLs. The project is my
-          first using all three of these technologies. Long URLs are stored in
-          the database and the ID is encoded and used as the short URL.
-        </p>
-
-        <div className="flex flex-row flex-wrap items-center mt-8 gap-4">
-          <Chip name="JavaScript" />
-          <Chip name="Node" />
-          <Chip name="MongoDB" />
-          <Chip name="jQuery" />
-          <Chip name="HTML" />
-          <Chip name="CSS" />
-          <Chip name="Materialize" />
-        </div>
-      </Section>
+      <ProjectHeader project={project} />
 
       <Divider />
 

@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
 
-import { Chip } from '../../../components/Chip';
 import { Divider } from '../../../components/Divider';
 import { ImageFigure } from '../../../components/ImageFigure';
 import { Pagination } from '../../../components/Pagination';
+import { ProjectHeader } from '../../../components/ProjectHeader';
 import { Screenshots } from '../../../components/Screenshots';
 import { Section } from '../../../components/Section';
+import { getProjectData } from '../../../data';
 import images from './images.json';
+
+const project = getProjectData('todo-list');
 
 export const ToDoList: React.FC = () => {
   useEffect(() => {
@@ -15,31 +18,7 @@ export const ToDoList: React.FC = () => {
 
   return (
     <>
-      <Section>
-        <h1 className="project-title">To Do List</h1>
-        <h2 className="project-subtitle">
-          Web Development Technologies Lab Work
-        </h2>
-        <p className="text-link-hover my-4">
-          <time dateTime="2017-01">January 2017</time> -{' '}
-          <time dateTime="2017-02">February 2017</time>
-        </p>
-        <p className="mb-4 max-w-reading">
-          To Do List Web application where users can signup and create their own
-          lists. Learned and integrated PHP and SQL to store and query
-          user&apos;s lists. Protected the application from SQL injection and
-          Cross-Site scripting.
-        </p>
-
-        <div className="flex flex-row flex-wrap items-center mt-8 gap-4">
-          <Chip name="PHP" />
-          <Chip name="JavaScript" />
-          <Chip name="jQuery" />
-          <Chip name="SQL" />
-          <Chip name="HTML" />
-          <Chip name="CSS" />
-        </div>
-      </Section>
+      <ProjectHeader project={project} />
 
       <Divider />
 

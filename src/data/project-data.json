@@ -27,6 +27,7 @@
   {
     "id": "lucidlab",
     "title": "LucidLab",
+    "subtitle": "Master's Group Project",
     "date": {
       "start": "2019-10",
       "end": "2020-05"
@@ -59,7 +60,7 @@
     "alt": "Logical sudoku solver",
     "link": "/projects/sudoku",
     "filters": ["Python", "Games/Puzzles"],
-    "description": "Program that can solve expert level Sudoku using only logical techniques (no brute forcing, guessing or backtracking). Outputs a detailed description of the techniques and moves required at each step to solve Sudoku. Features difficulty and technique analysis.",
+    "description": "Program that can solve expert level Sudoku using only logical techniques (no brute forcing, guessing or backtracking). The program outputs a detailed description of the techniques and moves required at each step to solve Sudoku. The solver reads CSV files allowing for batch solving. In-depth analysis is displayed including but not limited to: difficulty rating, occurrences of each technique, probability of each technique, processing time for each technique and total processing time.",
     "github": "https://github.com/KyleGough/sudoku",
     "skills": {
       "active": ["Python"]
@@ -84,6 +85,7 @@
   {
     "id": "cave-exploration",
     "title": "Using Swarm AI to Map a Cave Network",
+    "subtitle": "Dissertation",
     "date": {
       "start": "2018-12",
       "end": "2019-04"
@@ -101,6 +103,7 @@
   {
     "id": "roller-coaster",
     "title": "Roller Coaster",
+    "subtitle": "Computer Graphics Coursework",
     "date": {
       "start": "2018-12",
       "end": "2019-01"
@@ -117,6 +120,7 @@
   {
     "id": "rscbot",
     "title": "RSCBot",
+    "subtitle": "Software Engineering Group Project",
     "date": {
       "start": "2018-02",
       "end": "2019-03"
@@ -188,6 +192,7 @@
   {
     "id": "bsplit",
     "title": "BSplit",
+    "subtitle": "Web Development Technologies Coursework",
     "date": {
       "start": "2017-02",
       "end": "2017-03"
@@ -212,6 +217,7 @@
   {
     "id": "todo-list",
     "title": "To Do List",
+    "subtitle": "Web Development Technologies Lab Work",
     "date": {
       "start": "2017-01",
       "end": "2017-02"
@@ -228,6 +234,7 @@
   {
     "id": "delivery-route-planner",
     "title": "Delivery Route Planner",
+    "subtitle": "A-Level Computing Coursework",
     "date": {
       "start": "2015-12",
       "end": "2016-03"
@@ -252,7 +259,7 @@
     "alt": "Sorting Algorithm Visualiser",
     "link": "/projects/sorting-algorithm-visualiser",
     "filters": ["C#"],
-    "description": "Software tool for visualising the sorting process on generated datasets. Supports 20 different sorting algorithms including: Bubble sort, Merge sort, and Quicksort. The tool also has the ability to compare and visualise two sorting algorithms concurrently. The initial dataset can be a choice of 18 configurations such as: random, normally distributed or sawtooth.",
+    "description": "Tool for visualising the sorting process on generated datasets. Supports 20 different sorting algorithms including: Bubble sort, Merge sort, and Quicksort. The tool also has the ability to compare and visualise two sorting algorithms concurrently. The initial dataset can be a choice of 18 configurations such as: random, normally distributed or sawtooth.",
     "skills": {
       "active": ["C#"]
     }

@@ -3,6 +3,7 @@ import projects from './project-data.json';
 export interface IProject {
   id: string;
   title: string;
+  subtitle?: string;
   date: IProjectDate;
   video?: string;
   src: string;
@@ -25,7 +26,7 @@ interface IProjectSkills {
 }
 
 export const getProjectData = (projectKey: string) => {
-  return (projects as IProject[]).find((project) => project.id === projectKey);
+  return projects.find((project) => project.id === projectKey) as IProject;
 };
 
 export const getAllProjects = () => {

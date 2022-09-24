@@ -1,14 +1,17 @@
 import React, { useEffect } from 'react';
 
-import { Chip } from '../../../components/Chip';
 import { Divider } from '../../../components/Divider';
 import { Pagination } from '../../../components/Pagination';
+import { ProjectHeader } from '../../../components/ProjectHeader';
 import { Screenshots } from '../../../components/Screenshots';
 import { Section } from '../../../components/Section';
 import { VideoFigure } from '../../../components/VideoFigure';
+import { getProjectData } from '../../../data';
 import HeapSortVideo from '../../../videos/heap.mp4';
 import algorithms from './algorithms.json';
 import images from './images.json';
+
+const project = getProjectData('sorting-algorithm-visualiser');
 
 export const SortingVisualiser: React.FC = () => {
   useEffect(() => {
@@ -18,27 +21,7 @@ export const SortingVisualiser: React.FC = () => {
 
   return (
     <>
-      <Section>
-        <h1 className="project-title">Sorting Algorithm Visualiser</h1>
-        <p className="text-link-hover my-4">
-          <time dateTime="2015-09">September 2015</time> -{' '}
-          <time dateTime="2015-11">November 2015</time>
-        </p>
-        <p className="mb-4 max-w-reading">
-          Tool for visualising the sorting process on a generated dataset.
-          Highlights swapping and sorted elements in real-time. Supports 20
-          different sorting algorithms including: Bubble, Mergesort and
-          Quicksort. The visualiser is fully customisable with options to change
-          the dataset size, range of values in the dataset and delay between
-          each operation. The tool also has the ability to compare and visualise
-          two sorting algorithms concurrently. The initial dataset can be one of
-          18 configurations such as: random, normally distributed or sawtooth.
-        </p>
-
-        <div className="flex flex-row flex-wrap items-center mt-8 gap-4">
-          <Chip name="C#" />
-        </div>
-      </Section>
+      <ProjectHeader project={project} />
 
       <Divider />
 

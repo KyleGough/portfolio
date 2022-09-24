@@ -6,10 +6,10 @@ import { Pagination } from '../../../components/Pagination';
 import { ProjectHeader } from '../../../components/ProjectHeader';
 import { Screenshots } from '../../../components/Screenshots';
 import { Section } from '../../../components/Section';
-import { getProjectData, IProject } from '../../../data';
+import { getProjectData } from '../../../data';
 import images from './images.json';
 
-const project = getProjectData('portfolio') as IProject;
+const project = getProjectData('portfolio');
 
 export const Portfolio: React.FC = () => {
   useEffect(() => {
