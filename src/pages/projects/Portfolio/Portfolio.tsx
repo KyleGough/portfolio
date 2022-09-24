@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
 
-import { Chip } from '../../../components/Chip';
 import { Divider } from '../../../components/Divider';
 import { ImageFigure } from '../../../components/ImageFigure';
 import { Pagination } from '../../../components/Pagination';
+import { ProjectHeader } from '../../../components/ProjectHeader';
 import { Screenshots } from '../../../components/Screenshots';
 import { Section } from '../../../components/Section';
+import { getProjectData, IProject } from '../../../data';
 import images from './images.json';
+
+const project = getProjectData('portfolio') as IProject;
 
 export const Portfolio: React.FC = () => {
   useEffect(() => {
@@ -15,34 +18,7 @@ export const Portfolio: React.FC = () => {
 
   return (
     <>
-      <Section>
-        <h1 className="project-title">Portfolio</h1>
-        <p className="text-link-hover my-4">
-          <time dateTime="2016-12">December 2016</time> -{' '}
-          <time dateTime="2022-05">March 2022</time>
-        </p>
-        <p className="mb-4 max-w-reading">
-          Personal portfolio website created to showcase my projects and
-          technical skills. First created in 2016 as a simple static HTML
-          website, the website has experienced multiple improvements over the
-          years including migration to PHP, then to React with Materialize, and
-          most recently to React with Tailwind.
-        </p>
-
-        <div className="flex flex-row flex-wrap items-center mt-8 gap-4">
-          <Chip name="React" />
-          <Chip name="JavaScript" />
-          <Chip name="TypeScript" />
-          <Chip name="Tailwind" />
-          <Chip name="HTML" />
-          <Chip name="CSS" />
-          <Chip name="Node" />
-          <Chip disabled name="PHP" />
-          <Chip disabled name="Materialize" />
-          <Chip disabled name="Bootstrap" />
-          <Chip disabled name="Sass" />
-        </div>
-      </Section>
+      <ProjectHeader project={project} />
 
       <Divider />
 

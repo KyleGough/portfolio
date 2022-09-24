@@ -4,18 +4,7 @@ import { Divider } from '../../components/Divider';
 import { ProjectFilter } from '../../components/ProjectFilter';
 import { ProjectItem } from '../../components/ProjectItem';
 import { Section } from '../../components/Section';
-import projects from './projects.json';
-
-interface IProject {
-  title: string;
-  date: string;
-  video?: string;
-  src: string;
-  alt: string;
-  link: string;
-  filters: string[];
-  description: string;
-}
+import { getAllProjects,IProject } from '../../data';
 
 export const Projects: React.FC = () => {
   const [filter, setFilter] = useState('All');
@@ -45,7 +34,7 @@ export const Projects: React.FC = () => {
         <hr className="mb-8 h-px bg-divider" />
       </div>
 
-      {projects
+      {Object.values(getAllProjects())
         .filter((project) => filterProjects(project))
         .map((project, i) => {
           return (
