@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
 
-import { Chip } from '../../../components/Chip';
 import { Divider } from '../../../components/Divider';
 import { ImageFigure } from '../../../components/ImageFigure';
 import { Pagination } from '../../../components/Pagination';
+import { ProjectHeader } from '../../../components/ProjectHeader';
 import { Screenshots } from '../../../components/Screenshots';
 import { Section } from '../../../components/Section';
+import { getProjectData } from '../../../data';
 import images from './images.json';
+
+const project = getProjectData('graph-algorithm-visualiser');
 
 export const GraphVisualiser: React.FC = () => {
   useEffect(() => {
@@ -16,36 +19,7 @@ export const GraphVisualiser: React.FC = () => {
 
   return (
     <>
-      <Section>
-        <h1 className="project-title">Graph Algorithm Visualiser</h1>
-        <p className="text-link-hover my-4">
-          <time dateTime="2017-04">April 2017</time>
-        </p>
-        <p className="mb-4 max-w-reading">
-          Web application which visualises the process of various graph
-          algorithms on randomised nodes. The application can simulate
-          Prim&apos;s and Kruskal&apos;s algorithm for constructing minimum
-          spanning trees, Graham scan to construct convex hulls, Greedy
-          algorithm to construct minimal matchings, and Nearest neighbour with
-          2-Opt to create Hamiltonian cycles.
-        </p>
-        <p className="mb-4">
-          <span>Explore this project on </span>
-          <a
-            className="text-link hover:text-link-hover focus:text-link-hover"
-            href="https://github.com/KyleGough/graph-algorithm-visualiser"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
-        </p>
-
-        <div className="flex flex-row flex-wrap items-center mt-8 gap-4">
-          <Chip name="JavaScript" />
-          <Chip name="Materialize" />
-        </div>
-      </Section>
+      <ProjectHeader project={project} />
 
       <Divider />
 

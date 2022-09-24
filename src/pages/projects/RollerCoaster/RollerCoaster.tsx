@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
 
-import { Chip } from '../../../components/Chip';
 import { Divider } from '../../../components/Divider';
 import { ImageFigure } from '../../../components/ImageFigure';
 import { Pagination } from '../../../components/Pagination';
+import { ProjectHeader } from '../../../components/ProjectHeader';
 import { Screenshots } from '../../../components/Screenshots';
 import { Section } from '../../../components/Section';
+import { getProjectData } from '../../../data';
 import images from './images.json';
+
+const project = getProjectData('roller-coaster');
 
 export const RollerCoaster: React.FC = () => {
   useEffect(() => {
@@ -15,26 +18,7 @@ export const RollerCoaster: React.FC = () => {
 
   return (
     <>
-      <Section>
-        <h1 className="project-title">Roller Coaster</h1>
-        <h2 className="project-subtitle">Computer Graphics Coursework</h2>
-        <p className="text-link-hover my-4">
-          <time dateTime="2018-12">December 2018</time> -{' '}
-          <time dateTime="2019-01">January 2019</time>
-        </p>
-        <p className="mb-4 max-w-reading">
-          Simulation of a 3-car roller coaster which traverses a small looped
-          track featuring a lift hill, drop, loop-the-loop and turns. The
-          coaster can be viewed from a first-person perspective in each of the
-          carts, as well as additional views that track the carts round the
-          track.
-        </p>
-
-        <div className="flex flex-row flex-wrap items-center mt-8 gap-4">
-          <Chip name="C++" />
-          <Chip name="GLUT" />
-        </div>
-      </Section>
+      <ProjectHeader project={project} />
 
       <Divider />
 

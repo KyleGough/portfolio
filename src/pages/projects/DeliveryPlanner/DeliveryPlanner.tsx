@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
 
-import { Chip } from '../../../components/Chip';
 import { Divider } from '../../../components/Divider';
 import { ImageFigure } from '../../../components/ImageFigure';
 import { Pagination } from '../../../components/Pagination';
+import { ProjectHeader } from '../../../components/ProjectHeader';
 import { Screenshots } from '../../../components/Screenshots';
 import { Section } from '../../../components/Section';
+import { getProjectData } from '../../../data';
 import images from './images.json';
+
+const project = getProjectData('delivery-route-planner');
 
 export const DeliveryPlanner: React.FC = () => {
   useEffect(() => {
@@ -16,27 +19,7 @@ export const DeliveryPlanner: React.FC = () => {
 
   return (
     <>
-      <Section>
-        <h1 className="project-title">Delivery Route Planner</h1>
-        <h2 className="project-subtitle">A-Level Computing Coursework</h2>
-        <p className="text-link-hover my-4">
-          <time dateTime="2015-12">December 2015</time> -{' '}
-          <time dateTime="2016-03">March 2016</time>
-        </p>
-        <p className="mb-4 max-w-reading">
-          Software written in C# which creates an efficient route between
-          multiple delivery locations. Uses SQL to store and query data on
-          products, clients and their deliveries. Produces a report which
-          communicates the route, all items in the deliveries, and the estimated
-          time taken. Uses graph algorithms such as Dijkstra&apos;s and Nearest
-          Neighbour with 2-Opt to optimise the route.
-        </p>
-
-        <div className="flex flex-row flex-wrap items-center mt-8 gap-4">
-          <Chip name="C#" />
-          <Chip name="SQL" />
-        </div>
-      </Section>
+      <ProjectHeader project={project} />
 
       <Divider />
 

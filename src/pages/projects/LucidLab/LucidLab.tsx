@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
 
-import { Chip } from '../../../components/Chip';
 import { Divider } from '../../../components/Divider';
 import { ImageFigure } from '../../../components/ImageFigure';
 import { Pagination } from '../../../components/Pagination';
+import { ProjectHeader } from '../../../components/ProjectHeader';
 import { Screenshots } from '../../../components/Screenshots';
 import { Section } from '../../../components/Section';
+import { getProjectData } from '../../../data';
 import images from './images.json';
+
+const project = getProjectData('lucidlab');
 
 export const LucidLab: React.FC = () => {
   useEffect(() => {
@@ -16,33 +19,7 @@ export const LucidLab: React.FC = () => {
 
   return (
     <>
-      <Section>
-        <h1 className="project-title">LucidLab</h1>
-        <h2 className="project-subtitle">Master&apos;s Group Project</h2>
-        <p className="text-link-hover my-4">
-          <time dateTime="2019-10">October 2019</time> -{' '}
-          <time dateTime="2020-05">May 2020</time>
-        </p>
-        <p className="mb-4 max-w-reading">
-          An adaptable, heterogeneous IoT testbed for which I developed the
-          front-end user interface. The UI allows registered users to upload and
-          configure tests and images to be deployed on the testbed.
-          Additionally, test results and custom metrics including mote
-          availability graphs and mote CCA charts can be viewed.
-        </p>
-
-        <div className="flex flex-row flex-wrap items-center mt-8 gap-4">
-          <Chip name="React" />
-          <Chip name="JavaScript" />
-          <Chip name="Materialize" />
-          <Chip name="HTML" />
-          <Chip name="CSS" />
-          <Chip disabled name="Python" />
-          <Chip disabled name="Shell" />
-          <Chip disabled name="C" />
-          <Chip disabled name="SQL" />
-        </div>
-      </Section>
+      <ProjectHeader project={project} />
 
       <Divider />
 
