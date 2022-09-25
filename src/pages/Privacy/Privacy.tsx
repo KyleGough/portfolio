@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 
 import { Divider } from '../../components/Divider';
-import { Section } from '../../components/Section';
 import { Link } from '../../components/Link';
+import { Section } from '../../components/Section';
 
 export const Privacy: React.FC = () => {
   useEffect(() => {
