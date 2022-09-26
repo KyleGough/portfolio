@@ -18,7 +18,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({ src, caption }) => {
 
   return (
     <>
-      <div className="col-span-12 md:col-span-6 lg:col-span-4">
+      <figure className="col-span-12 md:col-span-6 lg:col-span-4">
         <img
           loading="lazy"
           onClick={openModal}
@@ -26,12 +26,13 @@ export const ImageModal: React.FC<ImageModalProps> = ({ src, caption }) => {
           src={src}
           alt={caption}
         />
-        <p className="my-2 text-sm text-center text-light font-thin">
+        <figcaption className="my-2 text-sm text-center text-light font-thin">
           {caption}
-        </p>
-      </div>
-      {open ? (
+        </figcaption>
+      </figure>
+      {open && (
         <div
+          role="dialog"
           onClick={closeModal}
           className="fixed bg-opacity-75 h-screen w-full left-0 top-0 flex justify-center items-center bg-black"
         >
@@ -49,8 +50,6 @@ export const ImageModal: React.FC<ImageModalProps> = ({ src, caption }) => {
             </div>
           </div>
         </div>
-      ) : (
-        ''
       )}
     </>
   );

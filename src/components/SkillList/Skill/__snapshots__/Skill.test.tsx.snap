@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Skill component renders 1`] = `
+<div>
+  <div
+    class="flex flex-row justify-center py-4"
+  >
+    <div
+      class="w-3/12 lg:w-4/12 pt-2"
+    >
+      <div
+        class="progress-web progress overflow-hidden"
+      >
+        <div
+          class="w-[75%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
+          style="--duration-factor: 75;"
+        />
+      </div>
+    </div>
+    <div
+      class="w-9/12 lg:w-8/12 ml-6 flex"
+    >
+      <img
+        alt="React logo"
+        class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
+        loading="lazy"
+        src="/#logo"
+      />
+      <div>
+        <p>
+          <span
+            class="font-extrabold"
+          >
+            React
+          </span>
+           -
+           
+          <span
+            class="text-sm"
+          >
+            Portfolio, LucidLab, Minesweeper
+          </span>
+        </p>
+        <p
+          class="text-sm text-link-hover mt-1"
+        >
+          Comfortable
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

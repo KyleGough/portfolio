@@ -3,15 +3,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { useObserveElement } from '../../hooks/useObserveElement';
+import { getLongDate } from '../../utilities/date';
 import { ProjectChip } from '../ProjectChip';
 
 interface ProjectCardProps {
   className?: string;
   src: string;
   alt: string;
-  title: string;
   tagline: string;
-  shortDate: string;
   date: string;
   link: string;
   chipText: string;
@@ -22,7 +21,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   src,
   alt,
   tagline,
-  shortDate,
   date,
   link,
   chipText,
@@ -52,7 +50,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         </h3>
         <div className="flex justify-between items-center">
           <p className="text-sm opacity-80">
-            <time dateTime={shortDate}>{date}</time>
+            <time dateTime={date}>{getLongDate(date)}</time>
           </p>
           <ProjectChip name={chipText} />
         </div>

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FadeIn component renders 1`] = `
+<div>
+  <div
+    class="opacity-0 transition-opacity duration-1000"
+  >
+    Test
+  </div>
+</div>
+`;

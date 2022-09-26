@@ -1,4 +1,4 @@
-import { Confidence,ISkill } from '../../components/SkillList';
+import { Confidence, ISkill } from '../../components/SkillList';
 import CSSLogo from '../../img/css.png';
 import HTMLLogo from '../../img/html.png';
 import JavaScriptLogo from '../../img/javascript.png';

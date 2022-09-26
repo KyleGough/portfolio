@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectFilterSelection component renders 1`] = `
+<div>
+  <li
+    class="hover:text-chip hover:bg-chip-light py-2 px-8 cursor-pointer select-none"
+    tabindex="0"
+  >
+    Web
+  </li>
+</div>
+`;

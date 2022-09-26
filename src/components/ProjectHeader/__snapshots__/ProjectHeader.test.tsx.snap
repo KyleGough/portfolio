@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectHeader component renders 1`] = `
+<div>
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <h1
+      class="project-title"
+    >
+      Portfolio
+    </h1>
+    <h2
+      class="project-subtitle"
+    >
+      Passion Project
+    </h2>
+    <p
+      class="text-link-hover my-4"
+    >
+      <time
+        datetime="2021-01"
+      >
+        January 2021
+      </time>
+       
+      -
+       
+      <time
+        datetime="2022-03"
+      >
+        March 2022
+      </time>
+    </p>
+    <p
+      class="mb-4 max-w-reading"
+    >
+      Personal portfolio website
+    </p>
+    <p
+      class="mb-4"
+    >
+      <span>
+        Explore this project on 
+      </span>
+      <a
+        class="text-link hover:text-link-hover focus:text-link-hover"
+        href="https://github.com/KyleGough/portfolio"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        GitHub
+      </a>
+    </p>
+    <div
+      class="flex flex-row flex-wrap items-center mt-8 gap-4"
+    >
+      <div
+        class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
+      >
+        TypeScript
+      </div>
+      <div
+        class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
+      >
+        JavaScript
+      </div>
+      <div
+        class="text-disabled bg-chip-old text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
+      >
+        PHP
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectFilter component renders 1`] = `
+<div>
+  <p
+    class="text-sm mb-2 ml-2 font-bold text-link text-center md:text-left"
+  >
+    Filter Projects
+  </p>
+  <div
+    class="relative w-64 mx-auto md:mx-0"
+  >
+    <button
+      aria-controls="project-filter-selection"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="group relative w-full pl-6 pr-12 py-4 cursor-pointer bg-background ring-0 rounded-sm shadow border-light"
+    >
+      <span
+        class="text-link group-hover:text-link-hover float-left"
+      >
+        All
+      </span>
+      <svg
+        class="w-8 h-8 absolute top-[12px] right-0 flex items-center pr-2 pointer-events-none fill-link group-hover:fill-link-hover"
+        height="24px"
+        viewBox="0 0 24 24"
+        width="24px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M12 5.83L15.17 9l1.41-1.41L12 3 7.41 7.59 8.83 9 12 5.83zm0 12.34L8.83 15l-1.41 1.41L12 21l4.59-4.59L15.17 15 12 18.17z"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;

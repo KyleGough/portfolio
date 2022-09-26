@@ -97,7 +97,7 @@ export const Contact: React.FC = () => {
   );
 
   return (
-    <div className="flex justify-center">
+    <form className="flex justify-center">
       <fieldset>
         <legend className="font-thin text-6xl text-center w-full mb-16 text-nav-light">
           Contact Me
@@ -107,11 +107,11 @@ export const Contact: React.FC = () => {
           <ContactLabel valid={!nameError} htmlFor="name">
             Name
           </ContactLabel>
-          <ContactFieldError show={nameError} message="Required!" />
+          {nameError && <ContactFieldError message="Required!" />}
           <input
             onChange={onNameChange}
             className={clsx(getFieldBorderStyle(nameError), inputCommonStyles)}
-            type="email"
+            type="text"
             id="name"
             name="name"
             placeholder="Your name here"
@@ -130,15 +130,15 @@ export const Contact: React.FC = () => {
           >
             Email
           </ContactLabel>
-          <ContactFieldError show={emailError} message="Required!" />
-          <ContactFieldError show={emailValidError} message="Invalid Email!" />
+          {emailError && <ContactFieldError message="Required!" />}
+          {emailValidError && <ContactFieldError message="Invalid Email!" />}
           <input
             onChange={onEmailChange}
             className={clsx(
               getFieldBorderStyle(emailError || emailValidError),
               inputCommonStyles
             )}
-            type="text"
+            type="email"
             id="email"
             name="email"
             placeholder="Your email here"
@@ -154,7 +154,7 @@ export const Contact: React.FC = () => {
           <ContactLabel valid={!messageError} htmlFor="message">
             Message
           </ContactLabel>
-          <ContactFieldError show={messageError} message="Required!" />
+          {messageError && <ContactFieldError message="Required!" />}
           <textarea
             onChange={onMessageChange}
             className={clsx(
@@ -179,6 +179,6 @@ export const Contact: React.FC = () => {
           <ContactSendButton onClick={sendMessage} status={status} />
         </FadeIn>
       </fieldset>
-    </div>
+    </form>
   );
 };

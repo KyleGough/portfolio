@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contact component renders 1`] = `
+<div>
+  <form
+    class="flex justify-center"
+  >
+    <fieldset>
+      <legend
+        class="font-thin text-6xl text-center w-full mb-16 text-nav-light"
+      >
+        Contact Me
+      </legend>
+      <div
+        class="opacity-0 transition-opacity duration-1000"
+      >
+        <label
+          class="text-link transition-colours duration-200 text-lg mt-8 mb-2 mr-2"
+          for="name"
+        >
+          Name
+        </label>
+        <input
+          class="border-link focus:border-link-hover block shadow transition-colours duration-200 mt-2 mb-8 px-4 py-2 w-full xs:w-field border-2 rounded-2xl outline-none caret-link-hover bg-background"
+          id="name"
+          maxlength="50"
+          name="name"
+          placeholder="Your name here"
+          required=""
+          type="text"
+        />
+      </div>
+      <div
+        class="opacity-0 transition-opacity duration-1000"
+      >
+        <label
+          class="text-link transition-colours duration-200 text-lg mt-8 mb-2 mr-2"
+          for="email"
+        >
+          Email
+        </label>
+        <input
+          class="border-link focus:border-link-hover block shadow transition-colours duration-200 mt-2 mb-8 px-4 py-2 w-full xs:w-field border-2 rounded-2xl outline-none caret-link-hover bg-background"
+          id="email"
+          maxlength="254"
+          name="email"
+          placeholder="Your email here"
+          required=""
+          type="email"
+        />
+      </div>
+      <div
+        class="opacity-0 transition-opacity duration-1000"
+      >
+        <label
+          class="text-link transition-colours duration-200 text-lg mt-8 mb-2 mr-2"
+          for="message"
+        >
+          Message
+        </label>
+        <textarea
+          class="border-link focus:border-link-hover block shadow transition-colours duration-200 mt-2 mb-8 px-4 py-2 w-full xs:w-field border-2 rounded-2xl outline-none caret-link-hover bg-background max-h-48 h-48 resize-none"
+          id="message"
+          maxlength="1024"
+          name="message"
+          placeholder="Enter your message"
+          required=""
+        />
+      </div>
+      <div
+        class="opacity-0 transition-opacity duration-1000"
+      >
+        <button
+          class="text-link hover:text-link-hover focus:text-link-hover border-link hover:border-link-hover focus:border-link-hover group flex items-center mx-auto my-8 px-12 py-4 bg-background rounded-full border-2 shimmer shadow"
+          type="submit"
+        >
+          Send Message
+          <svg
+            class="ml-4 w-6 h-6 fill-link group-hover:fill-link-hover group-focus:fill-link-hover"
+            height="24px"
+            viewBox="0 0 24 24"
+            width="24px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+            <path
+              d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
+            />
+          </svg>
+        </button>
+      </div>
+    </fieldset>
+  </form>
+</div>
+`;

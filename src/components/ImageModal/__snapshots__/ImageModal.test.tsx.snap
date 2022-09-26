@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageModal component renders 1`] = `
+<div>
+  <figure
+    class="col-span-12 md:col-span-6 lg:col-span-4"
+  >
+    <img
+      alt="Test Caption"
+      class="cursor-pointer border-2 border-link hover:border-link-hover"
+      loading="lazy"
+      src="/#"
+    />
+    <figcaption
+      class="my-2 text-sm text-center text-light font-thin"
+    >
+      Test Caption
+    </figcaption>
+  </figure>
+</div>
+`;

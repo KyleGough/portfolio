@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link component renders external link 1`] = `
+<div>
+  <a
+    class="text-link hover:text-link-hover focus:text-link-hover"
+    href="https://google.com"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    Link
+  </a>
+</div>
+`;
