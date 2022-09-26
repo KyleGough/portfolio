@@ -1,0 +1,20 @@
+{
+  "Index": {
+    "prefix": ["unit test", "test"],
+    "body": [
+      "import { render, screen } from '@testing-library/react';",
+      "import React from 'react';",
+      "",
+      "import { ${TM_DIRECTORY/.*\\\/([^\\\/]+)$/$1/} } from './${TM_DIRECTORY/.*\\\/([^\\\/]+)$/$1/}';",
+      "",
+      "describe('${TM_DIRECTORY/.*\\\/([^\\\/]+)$/$1/} component', () => {",
+      "  it('renders', async () => {",
+      "    const { container } = render(<${TM_DIRECTORY/.*\\\/([^\\\/]+)$/$1/} />);",
+      "    expect(container).toMatchSnapshot();",
+      "  });",
+      "});",
+      ""
+    ],
+    "description": "Jest Unit Test"
+  }
+}

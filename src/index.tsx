@@ -3,7 +3,7 @@ import './tailwind.output.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route,Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { Footer } from './components/Footer';
 import { Nav } from './components/Nav';

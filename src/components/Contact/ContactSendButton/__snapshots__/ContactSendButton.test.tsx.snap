@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactSendButton component renders 1`] = `
+<div>
+  <button
+    class="text-link hover:text-link-hover focus:text-link-hover border-link hover:border-link-hover focus:border-link-hover group flex items-center mx-auto my-8 px-12 py-4 bg-background rounded-full border-2 shimmer shadow"
+    type="submit"
+  >
+    Send Message
+    <svg
+      class="ml-4 w-6 h-6 fill-link group-hover:fill-link-hover group-focus:fill-link-hover"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
+      />
+    </svg>
+  </button>
+</div>
+`;

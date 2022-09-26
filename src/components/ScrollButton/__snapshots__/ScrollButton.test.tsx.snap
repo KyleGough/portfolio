@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScrollButton component renders 1`] = `
+<div>
+  <button
+    class="shimmer max-w-[22rem] md:h-[78px] mx-auto w-full px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-sm shadow border-light"
+  >
+    Test
+  </button>
+</div>
+`;

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageFigure component renders 1`] = `
+<div>
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <img
+      alt="Test Caption"
+      class="border-2 border-white rounded-lg text-center items-center shadow mx-auto"
+      src="/#"
+    />
+    <p
+      class="mt-4 mb-2 text-sm text-center text-light font-thin"
+    >
+      Test Caption
+    </p>
+  </div>
+</div>
+`;

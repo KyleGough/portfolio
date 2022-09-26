@@ -4,7 +4,7 @@ import React, { forwardRef } from 'react';
 interface SectionProps {
   id?: string;
   overrideTopPadding?: boolean;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const Section = forwardRef<HTMLDivElement, SectionProps>(

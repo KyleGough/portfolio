@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactLabel component renders 1`] = `
+<div>
+  <label
+    class="text-link transition-colours duration-200 text-lg mt-8 mb-2 mr-2"
+    for="email"
+  >
+    Email
+  </label>
+</div>
+`;

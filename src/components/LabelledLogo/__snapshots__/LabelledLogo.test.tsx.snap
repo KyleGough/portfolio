@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LabelledLogo component renders 1`] = `
+<div>
+  <div
+    class="text-center mb-8"
+  >
+    <img
+      alt="React Logo"
+      class="w-8 h-8 mb-2 mx-auto"
+      loading="lazy"
+      src="/#"
+    />
+    <p
+      class="text-sm"
+    >
+      React
+    </p>
+  </div>
+</div>
+`;

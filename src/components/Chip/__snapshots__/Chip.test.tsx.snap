@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chip component renders 1`] = `
+<div>
+  <div
+    class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
+  >
+    TypeScript
+  </div>
+</div>
+`;

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactFieldError component renders 1`] = `
+<div>
+  <span
+    class="transition-opactity duration-200 text-sm text-error"
+  >
+    Invalid Email!
+  </span>
+</div>
+`;

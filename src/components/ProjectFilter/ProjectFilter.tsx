@@ -9,6 +9,19 @@ interface ProjectFilterProps {
   setFilterCallback: (value: string) => void;
 }
 
+const filters = [
+  'All',
+  'C#',
+  'C++',
+  'JavaScript',
+  'PHP',
+  'Python',
+  'React',
+  'Games/Puzzles',
+  'Group Projects',
+  'Web',
+];
+
 export const ProjectFilter: React.FC<ProjectFilterProps> = ({
   filter,
   setFilterCallback,
@@ -69,30 +82,27 @@ export const ProjectFilter: React.FC<ProjectFilterProps> = ({
           </span>
           <UnfoldIcon className="w-8 h-8 absolute top-[12px] right-0 flex items-center pr-2 pointer-events-none fill-link group-hover:fill-link-hover" />
         </button>
-        <ul
-          id="project-filter-selection"
-          className={clsx(
-            { absolute: isOpen },
-            { hidden: !isOpen },
-            'w-full max-h-[75vh]',
-            'z-[100] overflow-y-auto',
-            'mt-4 py-2',
-            'shadow rounded text-link bg-background'
-          )}
-          role="listbox"
-          aria-orientation="vertical"
-        >
-          <ProjectFilterSelection onSelect={setValue} value="All" />
-          <ProjectFilterSelection onSelect={setValue} value="C#" />
-          <ProjectFilterSelection onSelect={setValue} value="C++" />
-          <ProjectFilterSelection onSelect={setValue} value="JavaScript" />
-          <ProjectFilterSelection onSelect={setValue} value="PHP" />
-          <ProjectFilterSelection onSelect={setValue} value="Python" />
-          <ProjectFilterSelection onSelect={setValue} value="React" />
-          <ProjectFilterSelection onSelect={setValue} value="Games/Puzzles" />
-          <ProjectFilterSelection onSelect={setValue} value="Group Projects" />
-          <ProjectFilterSelection onSelect={setValue} value="Web" />
-        </ul>
+        {isOpen && (
+          <ul
+            id="project-filter-selection"
+            className={clsx(
+              'absolute w-full max-h-[75vh]',
+              'z-[100] overflow-y-auto',
+              'mt-4 py-2',
+              'shadow rounded text-link bg-background'
+            )}
+            role="listbox"
+            aria-orientation="vertical"
+          >
+            {filters.map((filter) => (
+              <ProjectFilterSelection
+                key={filter}
+                onSelect={setValue}
+                value={filter}
+              />
+            ))}
+          </ul>
+        )}
       </div>
     </>
   );
