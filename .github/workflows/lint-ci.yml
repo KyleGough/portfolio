@@ -1,4 +1,4 @@
-name: Test
+name: Lint
 
 on:
   push:
@@ -11,13 +11,13 @@ env:
   CI: true
 
 jobs:
-  test-ci:
+  lint-ci:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
@@ -26,6 +26,9 @@ jobs:
       - name: Clean Install
         run: npm ci
 
-      - name: Tests
-        run: npm test
+      - name: Build Tailwind
+        run: npm run build:tailwind
+
+      - name: ESLint
+        run: npm run lint
 
