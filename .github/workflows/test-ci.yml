@@ -41,6 +41,9 @@ jobs:
         with:
           node-version: 16
 
+      - name: Clean Install
+        run: npm ci
+
       - name: ESLint
         run: npm run lint
 
