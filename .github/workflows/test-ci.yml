@@ -44,6 +44,9 @@ jobs:
       - name: Clean Install
         run: npm ci
 
+      - name: Build Tailwind
+        run: npm run build:tailwind
+
       - name: ESLint
         run: npm run lint
 
