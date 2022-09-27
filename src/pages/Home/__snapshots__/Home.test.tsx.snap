@@ -1,0 +1,318 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home component renders 1`] = `
+<div>
+  <div
+    class="flex justify-center items-center h-screen relative"
+  >
+    <div
+      class="absolute inset-0 bg-black opacity-70 w-full h-full z-10"
+    />
+    <div
+      class="bg-header1 opacity-100 absolute top-0 left-0 w-full h-full bg-fixed bg-center bg-cover duration-2000 transition-opacity"
+    />
+    <div
+      class="bg-header2 opacity-0 absolute top-0 left-0 w-full h-full bg-fixed bg-center bg-cover duration-2000 transition-opacity"
+    />
+    <div
+      class="bg-header3 opacity-0 absolute top-0 left-0 w-full h-full bg-fixed bg-center bg-cover duration-2000 transition-opacity"
+    />
+    <div
+      class="z-20 absolute inset-0 text-white mx-auto text-center flex tracking-tight items-center"
+    >
+      <div
+        class="block lg:flex items-center justify-around w-full"
+      >
+        <h1
+          class="slide-in text-7xl sm:text-8xl lg:text-9xl font-sans tracking-tighter px-8 mb-12 lg:mb-0"
+        >
+          Hello, I'm Kyle.
+        </h1>
+        <p
+          class="text-left text-2xl font-thin max-w-[38ch] lg:w-[38ch] md:h-32 h-40 lg:h-32 font-sans mx-auto px-8 lg:mx-0"
+        >
+          <span
+            class="text-xl md:text-2xl text-left sans-serif"
+          />
+          <span
+            class="fade-in caret-blink"
+          >
+            ​
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    class="bg-circuits min-h-screen flex items-center border-y border-divider shadow"
+  >
+    <div
+      class="first:pt-24 container text-primary py-8 last:pb-16"
+    >
+      <h2
+        class="font-thin text-6xl text-center mt-24 text-nav-light"
+      >
+        Project Showcase
+      </h2>
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 mb-8 px-4"
+      >
+        <a
+          class="delay-100 md:delay-0 opacity-0 group overflow-hidden duration-1000 transition-opacity ease-in-out rounded-2xl border-2 border-white shadow drop-shadow-lg"
+          href="/projects/sudoku"
+        >
+          <img
+            alt="Logical Sudoku Solver Project Card"
+            class="w-full"
+            src="/img/card-sudoku.jpg"
+          />
+          <div
+            class="text-white p-4 font-bold group-hover:brightness-125 group-focus:brightness-125 bg-nav-light"
+          >
+            <h3
+              class="text-xl font-medium mb-4 h-[3.5rem] line-clamp-2"
+            >
+              Solve expert level Sudoku step-by-step using logical algorithms
+            </h3>
+            <div
+              class="flex justify-between items-center"
+            >
+              <p
+                class="text-sm opacity-80"
+              >
+                <time
+                  datetime="2020-01"
+                >
+                  January 2020
+                </time>
+              </p>
+              <div
+                class="brightness-200 text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold text-chip bg-chip-light"
+              >
+                Python
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          class="delay-0 md:delay-100 opacity-0 group overflow-hidden duration-1000 transition-opacity ease-in-out rounded-2xl border-2 border-white shadow drop-shadow-lg"
+          href="/projects/bsplit"
+        >
+          <img
+            alt="BSplit Project Card"
+            class="w-full"
+            src="/img/card-bsplit.jpg"
+          />
+          <div
+            class="text-white p-4 font-bold group-hover:brightness-125 group-focus:brightness-125 bg-nav-light"
+          >
+            <h3
+              class="text-xl font-medium mb-4 h-[3.5rem] line-clamp-2"
+            >
+              Bill splitter app for organising expenses between friends and housemates
+            </h3>
+            <div
+              class="flex justify-between items-center"
+            >
+              <p
+                class="text-sm opacity-80"
+              >
+                <time
+                  datetime="2017-03"
+                >
+                  March 2017
+                </time>
+              </p>
+              <div
+                class="brightness-200 text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold text-chip bg-chip-light"
+              >
+                JavaScript
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          class="delay-0 md:delay-200 opacity-0 group overflow-hidden duration-1000 transition-opacity ease-in-out rounded-2xl border-2 border-white shadow drop-shadow-lg"
+          href="/projects/cave-exploration"
+        >
+          <img
+            alt="Cave Exploration Project Card"
+            class="w-full"
+            src="/img/card-cave-exploration.jpg"
+          />
+          <div
+            class="text-white p-4 font-bold group-hover:brightness-125 group-focus:brightness-125 bg-nav-light"
+          >
+            <h3
+              class="text-xl font-medium mb-4 h-[3.5rem] line-clamp-2"
+            >
+              Using Swarm AI to map unexplored cave networks
+            </h3>
+            <div
+              class="flex justify-between items-center"
+            >
+              <p
+                class="text-sm opacity-80"
+              >
+                <time
+                  datetime="2019-04"
+                >
+                  April 2019
+                </time>
+              </p>
+              <div
+                class="brightness-200 text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold text-chip bg-chip-light"
+              >
+                C++
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div
+        class="mt-16 flex justify-center"
+      >
+        <a
+          class="shimmer group drop-shadow-lg flex items-center px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-full border-2 shadow border-link hover:border-link-hover focus:border-link-hover"
+          href="/projects"
+        >
+          <p>
+            All Projects
+          </p>
+          <svg
+            class="float-right ml-4 w-4 h-4 fill-link group-hover:fill-link-hover group-focus:fill-link-hover"
+            enable-background="new 0 0 24 24"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="M0,0h24v24H0V0z"
+                fill="none"
+              />
+            </g>
+            <g>
+              <polygon
+                points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"
+              />
+            </g>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    class="bg-accent-blue min-h-screen flex items-center"
+  >
+    <div
+      class="first:pt-24 container text-primary py-8 last:pb-16"
+    >
+      <div
+        class="grid grid-cols-1 lg:grid-cols-2 lg:gap-8"
+      >
+        <form
+          class="flex justify-center"
+        >
+          <fieldset>
+            <legend
+              class="font-thin text-6xl text-center w-full mb-16 text-nav-light"
+            >
+              Contact Me
+            </legend>
+            <div
+              class="opacity-0 transition-opacity duration-1000"
+            >
+              <label
+                class="text-link transition-colours duration-200 text-lg mt-8 mb-2 mr-2"
+                for="name"
+              >
+                Name
+              </label>
+              <input
+                class="border-link focus:border-link-hover block shadow transition-colours duration-200 mt-2 mb-8 px-4 py-2 w-full xs:w-field border-2 rounded-2xl outline-none caret-link-hover bg-background"
+                id="name"
+                maxlength="50"
+                name="name"
+                placeholder="Your name here"
+                required=""
+                type="text"
+              />
+            </div>
+            <div
+              class="opacity-0 transition-opacity duration-1000"
+            >
+              <label
+                class="text-link transition-colours duration-200 text-lg mt-8 mb-2 mr-2"
+                for="email"
+              >
+                Email
+              </label>
+              <input
+                class="border-link focus:border-link-hover block shadow transition-colours duration-200 mt-2 mb-8 px-4 py-2 w-full xs:w-field border-2 rounded-2xl outline-none caret-link-hover bg-background"
+                id="email"
+                maxlength="254"
+                name="email"
+                placeholder="Your email here"
+                required=""
+                type="email"
+              />
+            </div>
+            <div
+              class="opacity-0 transition-opacity duration-1000"
+            >
+              <label
+                class="text-link transition-colours duration-200 text-lg mt-8 mb-2 mr-2"
+                for="message"
+              >
+                Message
+              </label>
+              <textarea
+                class="border-link focus:border-link-hover block shadow transition-colours duration-200 mt-2 mb-8 px-4 py-2 w-full xs:w-field border-2 rounded-2xl outline-none caret-link-hover bg-background max-h-48 h-48 resize-none"
+                id="message"
+                maxlength="1024"
+                name="message"
+                placeholder="Enter your message"
+                required=""
+              />
+            </div>
+            <div
+              class="opacity-0 transition-opacity duration-1000"
+            >
+              <button
+                class="text-link hover:text-link-hover focus:text-link-hover border-link hover:border-link-hover focus:border-link-hover group flex items-center mx-auto my-8 px-12 py-4 bg-background rounded-full border-2 shimmer shadow"
+                type="button"
+              >
+                Send Message
+                <svg
+                  class="ml-4 w-6 h-6 fill-link group-hover:fill-link-hover group-focus:fill-link-hover"
+                  height="24px"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                  <path
+                    d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </fieldset>
+        </form>
+        <div
+          class="hidden lg:flex justify-center my-auto"
+        >
+          <img
+            alt="Avatar"
+            class="opacity-0 transition-opacity duration-1000 w-64 h-64 rounded-full"
+            src="/img/avatar.png"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
