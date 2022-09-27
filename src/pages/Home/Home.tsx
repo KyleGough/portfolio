@@ -8,7 +8,7 @@ import { Section } from '../../components/Section';
 import { useObserveElement } from '../../hooks/useObserveElement';
 import { useTypewriter } from '../../hooks/useTypewriter';
 import { ArrowForward } from '../../icons';
-import { CarouselImage } from './CarouselImage';
+import { CarouselImage } from '../../components/CarouselImage';
 
 export const Home: React.FC = () => {
   const [carousel, setCarousel] = useState(0);
