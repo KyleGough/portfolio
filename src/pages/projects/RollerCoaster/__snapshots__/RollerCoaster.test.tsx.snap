@@ -1,0 +1,263 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RollerCoaster project page renders 1`] = `
+<div>
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <h1
+      class="project-title"
+    >
+      Roller Coaster
+    </h1>
+    <h2
+      class="project-subtitle"
+    >
+      Computer Graphics Coursework
+    </h2>
+    <p
+      class="text-link-hover my-4"
+    >
+      <time
+        datetime="2018-12"
+      >
+        December 2018
+      </time>
+       
+      -
+       
+      <time
+        datetime="2019-01"
+      >
+        January 2019
+      </time>
+    </p>
+    <p
+      class="mb-4 max-w-reading"
+    >
+      Simulation of a 3-car roller coaster which traverses a small looped track featuring a lift hill, drop, loop-the-loop and turns. The coaster can be viewed from a first-person perspective in each of the carts, as well as additional views that track the carts round the track.
+    </p>
+    <div
+      class="flex flex-row flex-wrap items-center mt-8 gap-4"
+    >
+      <div
+        class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
+      >
+        C++
+      </div>
+      <div
+        class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
+      >
+        GLUT
+      </div>
+    </div>
+  </div>
+  <hr
+    class="m-8 h-px bg-divider"
+  />
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <img
+      alt="Back cart camera view"
+      class="border-2 border-white rounded-lg text-center items-center shadow mx-auto"
+      src="/img/roller-coaster1.jpg"
+    />
+    <p
+      class="mt-4 mb-2 text-sm text-center text-light font-thin"
+    >
+      Back cart camera view
+    </p>
+  </div>
+  <hr
+    class="m-8 h-px bg-divider"
+  />
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <h2
+      class="project-header"
+    >
+      Features
+    </h2>
+    <ul
+      class="project-list"
+    >
+      <li>
+        Looping track with lift-hill, drop, loop-the-loop and turns
+      </li>
+      <li>
+        Texture mapping of cart and wheels
+      </li>
+      <li>
+        Skybox
+      </li>
+      <li>
+        First-person camera view
+      </li>
+      <li>
+        Overview camera mode
+      </li>
+      <li>
+        Rotating cart wheels
+      </li>
+      <li>
+        Lighting
+      </li>
+    </ul>
+  </div>
+  <hr
+    class="m-8 h-px bg-divider"
+  />
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <h2
+      class="text-3xl mb-12"
+    >
+      Screenshots
+    </h2>
+    <div
+      class="grid grid-cols-12 gap-4"
+    >
+      <figure
+        class="col-span-12 md:col-span-6 lg:col-span-4"
+      >
+        <img
+          alt="Back cart camera view"
+          class="cursor-pointer border-2 border-link hover:border-link-hover"
+          loading="lazy"
+          src="/img/roller-coaster1.jpg"
+        />
+        <figcaption
+          class="my-2 text-sm text-center text-light font-thin"
+        >
+          Back cart camera view
+        </figcaption>
+      </figure>
+      <figure
+        class="col-span-12 md:col-span-6 lg:col-span-4"
+      >
+        <img
+          alt="Tracking camera view"
+          class="cursor-pointer border-2 border-link hover:border-link-hover"
+          loading="lazy"
+          src="/img/roller-coaster2.jpg"
+        />
+        <figcaption
+          class="my-2 text-sm text-center text-light font-thin"
+        >
+          Tracking camera view
+        </figcaption>
+      </figure>
+      <figure
+        class="col-span-12 md:col-span-6 lg:col-span-4"
+      >
+        <img
+          alt="Center cart camera view"
+          class="cursor-pointer border-2 border-link hover:border-link-hover"
+          loading="lazy"
+          src="/img/roller-coaster3.jpg"
+        />
+        <figcaption
+          class="my-2 text-sm text-center text-light font-thin"
+        >
+          Center cart camera view
+        </figcaption>
+      </figure>
+      <figure
+        class="col-span-12 md:col-span-6 lg:col-span-4"
+      >
+        <img
+          alt="Cart closeup"
+          class="cursor-pointer border-2 border-link hover:border-link-hover"
+          loading="lazy"
+          src="/img/roller-coaster4.jpg"
+        />
+        <figcaption
+          class="my-2 text-sm text-center text-light font-thin"
+        >
+          Cart closeup
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <hr
+    class="m-8 h-px bg-divider"
+  />
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <div
+      class="flex justify-between"
+    >
+      <a
+        class="flex items-center fill-link text-link hover:fill-link-hover hover:text-link-hover"
+        href="/projects/rscbot"
+      >
+        <svg
+          class="w-6 h-6"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+            opacity=".87"
+          />
+          <path
+            d="M17.51 3.87L15.73 2.1 5.84 12l9.9 9.9 1.77-1.77L9.38 12l8.13-8.13z"
+          />
+        </svg>
+        <div
+          class="text-center ml-4"
+        >
+          <p
+            class="text-sm"
+          >
+            Previous Project
+          </p>
+          <p>
+            RSCBot
+          </p>
+        </div>
+      </a>
+      <a
+        class="flex items-center fill-link text-link hover:fill-link-hover hover:text-link-hover"
+        href="/projects/cave-exploration"
+      >
+        <div
+          class="text-center mr-4"
+        >
+          <p
+            class="text-sm"
+          >
+            Next Project
+          </p>
+          <p>
+            Cave Exploration
+          </p>
+        </div>
+        <svg
+          class="w-6 h-6"
+          enable-background="new 0 0 24 24"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g>
+            <path
+              d="M0,0h24v24H0V0z"
+              fill="none"
+            />
+          </g>
+          <g>
+            <polygon
+              points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"
+            />
+          </g>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+`;
