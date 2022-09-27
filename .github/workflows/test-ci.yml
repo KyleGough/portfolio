@@ -66,14 +66,15 @@ jobs:
         with:
           node-version: 16
 
+      - name: Clean Install
+        run: npm ci
+
   build-ci:
     runs-on: ubuntu-latest
     needs: pre-ci
 
-    name: testname123
-
     steps:
       - name: Build
-        run: npm build
+        run: npm run build
 
 
