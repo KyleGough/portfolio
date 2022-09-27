@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { mockIntersectionObserver } from '../../utilities/mockIntersectionObserver';
+import { mockIntersectionObserver } from '../../mocks/mockIntersectionObserver';
 import { ProjectCard } from './ProjectCard';
 
 describe('ProjectCard component', () => {

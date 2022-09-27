@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 
-import { mockIntersectionObserver } from '../../utilities/mockIntersectionObserver';
+import { mockIntersectionObserver } from '../../mocks/mockIntersectionObserver';
 import { FadeIn } from './FadeIn';
 
 describe('FadeIn component', () => {

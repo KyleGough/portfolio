@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 
-import { mockIntersectionObserver } from '../../../utilities/mockIntersectionObserver';
+import { mockIntersectionObserver } from '../../../mocks/mockIntersectionObserver';
 import { Confidence } from '../SkillList.types';
 import { Skill } from './Skill';
 
