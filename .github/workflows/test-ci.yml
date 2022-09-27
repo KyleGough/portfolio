@@ -74,6 +74,6 @@ jobs:
 
     steps:
       - name: Build
-        uses: npm build
+        run: npm build
 
 
