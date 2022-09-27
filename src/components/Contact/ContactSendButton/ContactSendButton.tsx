@@ -47,7 +47,7 @@ export const ContactSendButton: React.FC<ContactSendButtonProps> = ({
         'rounded-full border-2',
         'shimmer shadow'
       )}
-      type="submit"
+      type="button"
     >
       {getButtonText(status)}
       {status === EmailStatus.IDLE && (

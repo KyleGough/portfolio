@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import axios from 'axios';
 import React from 'react';
 
@@ -48,9 +48,13 @@ describe('Contact component', () => {
     const spy = jest.spyOn(axios, 'post');
     render(<Contact />);
 
-    // On form submit, all 3 fields show required error.
-    const submitBtn = screen.getByRole('button');
-    fireEvent.click(submitBtn);
+    // Send message.
+    const sendBtn = screen.getByRole('button');
+    act(() => {
+      fireEvent.click(sendBtn);
+    });
+
+    // All 3 fields should show required error.
     expect(screen.getAllByText('Required!')).toHaveLength(3);
 
     // Email API should not have been called.
@@ -63,10 +67,15 @@ describe('Contact component', () => {
 
     // Update email field.
     const emailField = screen.getByPlaceholderText('Your email here');
-    fireEvent.change(emailField, { target: { value: 'foo' } });
+    act(() => {
+      fireEvent.change(emailField, { target: { value: 'foo' } });
+    });
 
-    const submitBtn = screen.getByRole('button');
-    fireEvent.click(submitBtn);
+    // Send message.
+    const sendBtn = screen.getByRole('button');
+    act(() => {
+      fireEvent.click(sendBtn);
+    });
 
     // Email field should show invalid email error.
     expect(screen.getByText('Invalid Email!')).toBeVisible();
@@ -79,34 +88,42 @@ describe('Contact component', () => {
   });
 
   it('contact form submits on valid inputs', async () => {
-    const a = jest
+    const axiosMock = jest
       .spyOn(axios, 'post')
-      .mockReturnValue(Promise.resolve(() => jest.fn()));
+      .mockReturnValue(Promise.reject(() => jest.fn().mockReturnValue('test')));
 
     render(<Contact />);
 
-    // Update name field.
     const nameField = screen.getByPlaceholderText('Your name here');
-    fireEvent.change(nameField, { target: { value: 'Kyle Gough' } });
-
-    // Update email field.
     const emailField = screen.getByPlaceholderText('Your email here');
-    fireEvent.change(emailField, {
-      target: { value: 'foo.bar@baz.com' },
-    });
-
-    // Update message field.
     const messageField = screen.getByPlaceholderText('Enter your message');
-    fireEvent.change(messageField, {
-      target: { value: 'Custom Message' },
+
+    // Update all form fields.
+    act(() => {
+      fireEvent.change(nameField, { target: { value: 'Kyle Gough' } });
     });
 
-    const submitBtn = screen.getByRole('button');
-    fireEvent.click(submitBtn);
+    act(() => {
+      fireEvent.change(emailField, {
+        target: { value: 'foo.bar@baz.com' },
+      });
+    });
 
-    // Email API should not have been called.
-    expect(a).toHaveBeenCalledTimes(1);
-    expect(a).toHaveBeenCalledWith('/api/sendMessage', {
+    act(() => {
+      fireEvent.change(messageField, {
+        target: { value: 'Custom Message' },
+      });
+    });
+
+    // Send message.
+    const sendBtn = screen.getByRole('button');
+    await act(async () => {
+      fireEvent.click(sendBtn);
+    });
+
+    // Email API should have been called.
+    expect(axiosMock).toHaveBeenCalledTimes(1);
+    expect(axiosMock).toHaveBeenCalledWith('/api/sendMessage', {
       name: 'Kyle Gough',
       email: 'foo.bar@baz.com',
       message: 'Custom Message',
