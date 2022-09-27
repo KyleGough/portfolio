@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CarouselImage component renders 1`] = `
+<div>
+  <div
+    class="bg-header1 opacity-100 absolute top-0 left-0 w-full h-full bg-fixed bg-center bg-cover duration-2000 transition-opacity"
+  />
+</div>
+`;
