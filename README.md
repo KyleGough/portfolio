@@ -6,6 +6,16 @@
 
 <br />
 
+<div align="center">
+  <img src="https://img.shields.io/github/workflow/status/KyleGough/portfolio/Pre-Merge/master?style=plastic" />
+  <img src="https://img.shields.io/github/last-commit/KyleGough/portfolio?style=plastic" />
+  <img src="https://img.shields.io/github/issues-pr/KyleGough/portfolio?style=plastic" />
+  <img src="https://img.shields.io/github/issues-pr-closed-raw/KyleGough/portfolio?style=plastic" />
+  <img src="https://img.shields.io/website?down_color=red&down_message=Offline&style=plastic&up_color=green&up_message=Online&url=https%3A%2F%2Fkylegough.co.uk" />
+</div>
+
+<br />
+
 <p>Personal portfolio website created to showcase my projects and technical skills. First created in 2016 as a simple static HTML website, the website has experienced multiple improvements over the years including migration to PHP, then to React with Materialize, and most recently upgrading to TypeScript and Tailwind integration.</p>
 
 <h3>Tech Stack</h3>
