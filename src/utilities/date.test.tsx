@@ -1,4 +1,4 @@
-import { getLongDate, getDateRange } from './date';
+import { getDateRange,getLongDate } from './date';
 
 describe('date utilities', () => {
   it('getLongDate returns expected output', async () => {
