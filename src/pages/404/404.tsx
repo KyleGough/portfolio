@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 import { Divider } from '../../components/Divider';
+import { Link } from '../../components/Link';
 import { Section } from '../../components/Section';
 
 export const NotFound: React.FC = () => {
@@ -28,39 +28,19 @@ export const NotFound: React.FC = () => {
           navigate:
         </p>
         <p className="text-center md:text-left md:ml-4">
-          <Link to="/" className="text-link hover:text-link-hover">
-            Return to Homepage
-          </Link>
+          <Link to="/">Return to Homepage</Link>
         </p>
         <p className="text-center md:text-left md:ml-4">
-          <Link to="/about" className="text-link hover:text-link-hover">
-            About Me
-          </Link>
+          <Link to="/about">About Me</Link>
         </p>
         <p className="text-center md:text-left md:ml-4">
-          <Link to="/projects" className="text-link hover:text-link-hover">
-            Projects
-          </Link>
+          <Link to="/projects">Projects</Link>
         </p>
         <p className="text-center md:text-left md:ml-4">
-          <a
-            href="/CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-link hover:text-link-hover"
-          >
-            CV
-          </a>
+          <Link href="/CV.pdf">CV</Link>
         </p>
         <p className="text-center md:text-left md:ml-4">
-          <a
-            href="https://github.com/KyleGough"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-link hover:text-link-hover"
-          >
-            GitHub
-          </a>
+          <Link href="https://github.com/KyleGough">GitHub</Link>
         </p>
       </Section>
     </>
