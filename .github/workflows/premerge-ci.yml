@@ -1,4 +1,4 @@
-name: Pre-Merge CI
+name: Pre-Merge
 
 on:
   push:
@@ -15,27 +15,8 @@ env:
   CI: true
 
 jobs:
-  test-ci:
-    name: Test
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: Clean Install
-        run: npm ci
-
-      - name: Tests
-        run: npm test
-
   lint-ci:
-    name: Lint
+    name: Lint CI
     runs-on: ubuntu-latest
 
     steps:
@@ -56,8 +37,27 @@ jobs:
       - name: ESLint
         run: npm run lint
 
+  test-ci:
+    name: Test CI
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Clean Install
+        run: npm ci
+
+      - name: Tests
+        run: npm test
+
   build-ci:
-    name: Build
+    name: Build CI
     runs-on: ubuntu-latest
 
     steps:
