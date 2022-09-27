@@ -1,0 +1,327 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RSCBot project page renders 1`] = `
+<div>
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <h1
+      class="project-title"
+    >
+      RSCBot
+    </h1>
+    <h2
+      class="project-subtitle"
+    >
+      Software Engineering Group Project
+    </h2>
+    <p
+      class="text-link-hover my-4"
+    >
+      <time
+        datetime="2018-02"
+      >
+        February 2018
+      </time>
+       
+      -
+       
+      <time
+        datetime="2019-03"
+      >
+        March 2019
+      </time>
+    </p>
+    <p
+      class="mb-4 max-w-reading"
+    >
+      A specialised, personalisable trader chatbot that can fetch data and current news on financial stocks and sectors from the FTSE 100 index. RSCBot communicates with the user in a natural way, and has been designed to identify and adapt to the user's main interests in the stock market, making for a more personal trading experience.
+    </p>
+    <div
+      class="flex flex-row flex-wrap items-center mt-8 gap-4"
+    >
+      <div
+        class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
+      >
+        JavaScript
+      </div>
+      <div
+        class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
+      >
+        jQuery
+      </div>
+      <div
+        class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
+      >
+        HTML
+      </div>
+      <div
+        class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
+      >
+        CSS
+      </div>
+      <div
+        class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
+      >
+        Materialize
+      </div>
+      <div
+        class="text-disabled bg-chip-old text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
+      >
+        PHP
+      </div>
+      <div
+        class="text-disabled bg-chip-old text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
+      >
+        SQL
+      </div>
+    </div>
+  </div>
+  <hr
+    class="m-8 h-px bg-divider"
+  />
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <img
+      alt="Stock query"
+      class="border-2 border-white rounded-lg text-center items-center shadow mx-auto"
+      src="/img/rscbot1.jpg"
+    />
+    <p
+      class="mt-4 mb-2 text-sm text-center text-light font-thin"
+    >
+      Stock query
+    </p>
+  </div>
+  <hr
+    class="m-8 h-px bg-divider"
+  />
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <h2
+      class="project-header"
+    >
+      Features
+    </h2>
+    <ul
+      class="project-list"
+    >
+      <li>
+        Fast and responsive answers to stock market queries.
+      </li>
+      <li>
+        Hourly news briefings from a selection of the user's favourite companies and sectors.
+      </li>
+      <li>
+        Ability to select favourite companies and sectors.
+      </li>
+      <li>
+        Poll rate choice for each individual company and sector.
+      </li>
+      <li>
+        Extensive list of available queries.
+      </li>
+      <li>
+        AI to detect possible interests to the user.
+      </li>
+      <li>
+        Sentiment analysis on every news story recieved.
+      </li>
+      <li>
+        Currency conversion capabilities for USD, GBP and Euro.
+      </li>
+      <li>
+        Text and Voice input.
+      </li>
+      <li>
+        Textual, Graphic and Audio output.
+      </li>
+    </ul>
+  </div>
+  <hr
+    class="m-8 h-px bg-divider"
+  />
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <h2
+      class="text-3xl mb-12"
+    >
+      Screenshots
+    </h2>
+    <div
+      class="grid grid-cols-12 gap-4"
+    >
+      <figure
+        class="col-span-12 md:col-span-6 lg:col-span-4"
+      >
+        <img
+          alt="Stock query"
+          class="cursor-pointer border-2 border-link hover:border-link-hover"
+          loading="lazy"
+          src="/img/rscbot1.jpg"
+        />
+        <figcaption
+          class="my-2 text-sm text-center text-light font-thin"
+        >
+          Stock query
+        </figcaption>
+      </figure>
+      <figure
+        class="col-span-12 md:col-span-6 lg:col-span-4"
+      >
+        <img
+          alt="Hourly newsfeed with natural language processing"
+          class="cursor-pointer border-2 border-link hover:border-link-hover"
+          loading="lazy"
+          src="/img/rscbot2.jpg"
+        />
+        <figcaption
+          class="my-2 text-sm text-center text-light font-thin"
+        >
+          Hourly newsfeed with natural language processing
+        </figcaption>
+      </figure>
+      <figure
+        class="col-span-12 md:col-span-6 lg:col-span-4"
+      >
+        <img
+          alt="Favourites selection"
+          class="cursor-pointer border-2 border-link hover:border-link-hover"
+          loading="lazy"
+          src="/img/rscbot3.jpg"
+        />
+        <figcaption
+          class="my-2 text-sm text-center text-light font-thin"
+        >
+          Favourites selection
+        </figcaption>
+      </figure>
+      <figure
+        class="col-span-12 md:col-span-6 lg:col-span-4"
+      >
+        <img
+          alt="News query"
+          class="cursor-pointer border-2 border-link hover:border-link-hover"
+          loading="lazy"
+          src="/img/rscbot4.jpg"
+        />
+        <figcaption
+          class="my-2 text-sm text-center text-light font-thin"
+        >
+          News query
+        </figcaption>
+      </figure>
+      <figure
+        class="col-span-12 md:col-span-6 lg:col-span-4"
+      >
+        <img
+          alt="Other queries"
+          class="cursor-pointer border-2 border-link hover:border-link-hover"
+          loading="lazy"
+          src="/img/rscbot5.jpg"
+        />
+        <figcaption
+          class="my-2 text-sm text-center text-light font-thin"
+        >
+          Other queries
+        </figcaption>
+      </figure>
+      <figure
+        class="col-span-12 md:col-span-6 lg:col-span-4"
+      >
+        <img
+          alt="Help modal"
+          class="cursor-pointer border-2 border-link hover:border-link-hover"
+          loading="lazy"
+          src="/img/rscbot6.jpg"
+        />
+        <figcaption
+          class="my-2 text-sm text-center text-light font-thin"
+        >
+          Help modal
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <hr
+    class="m-8 h-px bg-divider"
+  />
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <div
+      class="flex justify-between"
+    >
+      <a
+        class="flex items-center fill-link text-link hover:fill-link-hover hover:text-link-hover"
+        href="/projects/url-shortener"
+      >
+        <svg
+          class="w-6 h-6"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+            opacity=".87"
+          />
+          <path
+            d="M17.51 3.87L15.73 2.1 5.84 12l9.9 9.9 1.77-1.77L9.38 12l8.13-8.13z"
+          />
+        </svg>
+        <div
+          class="text-center ml-4"
+        >
+          <p
+            class="text-sm"
+          >
+            Previous Project
+          </p>
+          <p>
+            URL Shortener
+          </p>
+        </div>
+      </a>
+      <a
+        class="flex items-center fill-link text-link hover:fill-link-hover hover:text-link-hover"
+        href="/projects/roller-coaster"
+      >
+        <div
+          class="text-center mr-4"
+        >
+          <p
+            class="text-sm"
+          >
+            Next Project
+          </p>
+          <p>
+            Roller Coaster
+          </p>
+        </div>
+        <svg
+          class="w-6 h-6"
+          enable-background="new 0 0 24 24"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g>
+            <path
+              d="M0,0h24v24H0V0z"
+              fill="none"
+            />
+          </g>
+          <g>
+            <polygon
+              points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"
+            />
+          </g>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,295 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToDoList project page renders 1`] = `
+<div>
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <h1
+      class="project-title"
+    >
+      To Do List
+    </h1>
+    <h2
+      class="project-subtitle"
+    >
+      Web Development Technologies Lab Work
+    </h2>
+    <p
+      class="text-link-hover my-4"
+    >
+      <time
+        datetime="2017-01"
+      >
+        January 2017
+      </time>
+       
+      -
+       
+      <time
+        datetime="2017-02"
+      >
+        February 2017
+      </time>
+    </p>
+    <p
+      class="mb-4 max-w-reading"
+    >
+      To Do List Web application where users can signup and create their own lists. Learned and integrated PHP and SQL to store and query user's lists. Protected the application from SQL injection and cross-site scripting.
+    </p>
+    <div
+      class="flex flex-row flex-wrap items-center mt-8 gap-4"
+    >
+      <div
+        class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
+      >
+        PHP
+      </div>
+      <div
+        class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
+      >
+        JavaScript
+      </div>
+      <div
+        class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
+      >
+        jQuery
+      </div>
+      <div
+        class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
+      >
+        SQL
+      </div>
+      <div
+        class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
+      >
+        HTML
+      </div>
+      <div
+        class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
+      >
+        CSS
+      </div>
+    </div>
+  </div>
+  <hr
+    class="m-8 h-px bg-divider"
+  />
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <img
+      alt="Homepage"
+      class="border-2 border-white rounded-lg text-center items-center shadow mx-auto"
+      src="/img/todo-list1.jpg"
+    />
+    <p
+      class="mt-4 mb-2 text-sm text-center text-light font-thin"
+    >
+      Homepage
+    </p>
+  </div>
+  <hr
+    class="m-8 h-px bg-divider"
+  />
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <h2
+      class="project-header"
+    >
+      Features
+    </h2>
+    <ul
+      class="project-list"
+    >
+      <li>
+        User registration.
+      </li>
+      <li>
+        View selection of lists.
+      </li>
+      <li>
+        View items in a list.
+      </li>
+      <li>
+        Mark items in a list as complete.
+      </li>
+      <li>
+        Create a new list.
+      </li>
+      <li>
+        Add new item to a list.
+      </li>
+    </ul>
+  </div>
+  <hr
+    class="m-8 h-px bg-divider"
+  />
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <h2
+      class="text-3xl mb-12"
+    >
+      Screenshots
+    </h2>
+    <div
+      class="grid grid-cols-12 gap-4"
+    >
+      <figure
+        class="col-span-12 md:col-span-6 lg:col-span-4"
+      >
+        <img
+          alt="Homepage"
+          class="cursor-pointer border-2 border-link hover:border-link-hover"
+          loading="lazy"
+          src="/img/todo-list1.jpg"
+        />
+        <figcaption
+          class="my-2 text-sm text-center text-light font-thin"
+        >
+          Homepage
+        </figcaption>
+      </figure>
+      <figure
+        class="col-span-12 md:col-span-6 lg:col-span-4"
+      >
+        <img
+          alt="Shopping list"
+          class="cursor-pointer border-2 border-link hover:border-link-hover"
+          loading="lazy"
+          src="/img/todo-list2.jpg"
+        />
+        <figcaption
+          class="my-2 text-sm text-center text-light font-thin"
+        >
+          Shopping list
+        </figcaption>
+      </figure>
+      <figure
+        class="col-span-12 md:col-span-6 lg:col-span-4"
+      >
+        <img
+          alt="New user registration"
+          class="cursor-pointer border-2 border-link hover:border-link-hover"
+          loading="lazy"
+          src="/img/todo-list3.jpg"
+        />
+        <figcaption
+          class="my-2 text-sm text-center text-light font-thin"
+        >
+          New user registration
+        </figcaption>
+      </figure>
+      <figure
+        class="col-span-12 md:col-span-6 lg:col-span-4"
+      >
+        <img
+          alt="User's lists"
+          class="cursor-pointer border-2 border-link hover:border-link-hover"
+          loading="lazy"
+          src="/img/todo-list4.jpg"
+        />
+        <figcaption
+          class="my-2 text-sm text-center text-light font-thin"
+        >
+          User's lists
+        </figcaption>
+      </figure>
+      <figure
+        class="col-span-12 md:col-span-6 lg:col-span-4"
+      >
+        <img
+          alt="Existing login page"
+          class="cursor-pointer border-2 border-link hover:border-link-hover"
+          loading="lazy"
+          src="/img/todo-list5.jpg"
+        />
+        <figcaption
+          class="my-2 text-sm text-center text-light font-thin"
+        >
+          Existing login page
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <hr
+    class="m-8 h-px bg-divider"
+  />
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <div
+      class="flex justify-between"
+    >
+      <a
+        class="flex items-center fill-link text-link hover:fill-link-hover hover:text-link-hover"
+        href="/projects/delivery-route-planner"
+      >
+        <svg
+          class="w-6 h-6"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+            opacity=".87"
+          />
+          <path
+            d="M17.51 3.87L15.73 2.1 5.84 12l9.9 9.9 1.77-1.77L9.38 12l8.13-8.13z"
+          />
+        </svg>
+        <div
+          class="text-center ml-4"
+        >
+          <p
+            class="text-sm"
+          >
+            Previous Project
+          </p>
+          <p>
+            Delivery Route Planner
+          </p>
+        </div>
+      </a>
+      <a
+        class="flex items-center fill-link text-link hover:fill-link-hover hover:text-link-hover"
+        href="/projects/bsplit"
+      >
+        <div
+          class="text-center mr-4"
+        >
+          <p
+            class="text-sm"
+          >
+            Next Project
+          </p>
+          <p>
+            BSplit
+          </p>
+        </div>
+        <svg
+          class="w-6 h-6"
+          enable-background="new 0 0 24 24"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g>
+            <path
+              d="M0,0h24v24H0V0z"
+              fill="none"
+            />
+          </g>
+          <g>
+            <polygon
+              points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"
+            />
+          </g>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,221 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CavernMinesweeper project page renders 1`] = `
+<div>
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <h1
+      class="project-title"
+    >
+      Cavern Minesweeper
+    </h1>
+    <p
+      class="text-link-hover my-4"
+    >
+      <time
+        datetime="2017-03"
+      >
+        March 2017
+      </time>
+    </p>
+    <p
+      class="mb-4 max-w-reading"
+    >
+      Cavern Minesweeper is based off of the original Minesweeper game but with tiered mines (ores) which can only be mined if the player has uncovered enough squares to advance to the required mining level. The game has three levels of difficulty to challenge competitive players. The project served as a tool to teach me Ruby.
+    </p>
+    <p
+      class="mb-4"
+    >
+      <span>
+        Explore this project on 
+      </span>
+      <a
+        class="text-link hover:text-link-hover focus:text-link-hover"
+        href="https://github.com/KyleGough/cavern-minesweeper"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        GitHub
+      </a>
+    </p>
+    <div
+      class="flex flex-row flex-wrap items-center mt-8 gap-4"
+    >
+      <div
+        class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
+      >
+        Ruby
+      </div>
+    </div>
+  </div>
+  <hr
+    class="m-8 h-px bg-divider"
+  />
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <img
+      alt="Finished game"
+      class="border-2 border-white rounded-lg text-center items-center shadow mx-auto"
+      src="/img/cavern-minesweeper1.jpg"
+    />
+    <p
+      class="mt-4 mb-2 text-sm text-center text-light font-thin"
+    >
+      Finished game
+    </p>
+  </div>
+  <hr
+    class="m-8 h-px bg-divider"
+  />
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <h2
+      class="project-header"
+    >
+      Features
+    </h2>
+    <ul
+      class="project-list"
+    >
+      <li>
+        Three playable difficulties.
+      </li>
+      <li>
+        Tiered Ores which damage the player if their level is not sufficient enough.
+      </li>
+      <li>
+        Flood Fill algorithm for revealing tiles.
+      </li>
+      <li>
+        Shoes GUI.
+      </li>
+    </ul>
+  </div>
+  <hr
+    class="m-8 h-px bg-divider"
+  />
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <h2
+      class="text-3xl mb-12"
+    >
+      Screenshots
+    </h2>
+    <div
+      class="grid grid-cols-12 gap-4"
+    >
+      <figure
+        class="col-span-12 md:col-span-6 lg:col-span-4"
+      >
+        <img
+          alt="Finished game"
+          class="cursor-pointer border-2 border-link hover:border-link-hover"
+          loading="lazy"
+          src="/img/cavern-minesweeper1.jpg"
+        />
+        <figcaption
+          class="my-2 text-sm text-center text-light font-thin"
+        >
+          Finished game
+        </figcaption>
+      </figure>
+      <figure
+        class="col-span-12 md:col-span-6 lg:col-span-4"
+      >
+        <img
+          alt="New game"
+          class="cursor-pointer border-2 border-link hover:border-link-hover"
+          loading="lazy"
+          src="/img/cavern-minesweeper2.jpg"
+        />
+        <figcaption
+          class="my-2 text-sm text-center text-light font-thin"
+        >
+          New game
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <hr
+    class="m-8 h-px bg-divider"
+  />
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <div
+      class="flex justify-between"
+    >
+      <a
+        class="flex items-center fill-link text-link hover:fill-link-hover hover:text-link-hover"
+        href="/projects/bsplit"
+      >
+        <svg
+          class="w-6 h-6"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+            opacity=".87"
+          />
+          <path
+            d="M17.51 3.87L15.73 2.1 5.84 12l9.9 9.9 1.77-1.77L9.38 12l8.13-8.13z"
+          />
+        </svg>
+        <div
+          class="text-center ml-4"
+        >
+          <p
+            class="text-sm"
+          >
+            Previous Project
+          </p>
+          <p>
+            BSplit
+          </p>
+        </div>
+      </a>
+      <a
+        class="flex items-center fill-link text-link hover:fill-link-hover hover:text-link-hover"
+        href="/projects/graph-algorithm-visualiser"
+      >
+        <div
+          class="text-center mr-4"
+        >
+          <p
+            class="text-sm"
+          >
+            Next Project
+          </p>
+          <p>
+            Graph Algorithm Visualiser
+          </p>
+        </div>
+        <svg
+          class="w-6 h-6"
+          enable-background="new 0 0 24 24"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g>
+            <path
+              d="M0,0h24v24H0V0z"
+              fill="none"
+            />
+          </g>
+          <g>
+            <polygon
+              points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"
+            />
+          </g>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+`;

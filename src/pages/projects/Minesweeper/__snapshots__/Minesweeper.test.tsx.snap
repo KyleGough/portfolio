@@ -1,0 +1,253 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Minesweeper project page renders 1`] = `
+<div>
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <h1
+      class="project-title"
+    >
+      React Minesweeper
+    </h1>
+    <p
+      class="text-link-hover my-4"
+    >
+      <time
+        datetime="2019-10"
+      >
+        October 2019
+      </time>
+    </p>
+    <p
+      class="mb-4 max-w-reading"
+    >
+      Clone of classic Minesweeper with an 18x18 board. Ability to reveal tiles and flag tiles for potential mines. Flood fill algorithms will reveal all adjacent tiles when a 0 is uncovered, mimicing the behaviour of the original game.
+    </p>
+    <p
+      class="mb-4"
+    >
+      <span>
+        Explore this project on 
+      </span>
+      <a
+        class="text-link hover:text-link-hover focus:text-link-hover"
+        href="https://github.com/KyleGough/react-minesweeper"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        GitHub
+      </a>
+    </p>
+    <div
+      class="flex flex-row flex-wrap items-center mt-8 gap-4"
+    >
+      <div
+        class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
+      >
+        React
+      </div>
+      <div
+        class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
+      >
+        JavaScript
+      </div>
+      <div
+        class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
+      >
+        CSS
+      </div>
+      <div
+        class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
+      >
+        Materialize
+      </div>
+    </div>
+  </div>
+  <hr
+    class="m-8 h-px bg-divider"
+  />
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <img
+      alt="Complete game"
+      class="border-2 border-white rounded-lg text-center items-center shadow mx-auto"
+      src="/img/react-minesweeper1.jpg"
+    />
+    <p
+      class="mt-4 mb-2 text-sm text-center text-light font-thin"
+    >
+      Complete game
+    </p>
+  </div>
+  <hr
+    class="m-8 h-px bg-divider"
+  />
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <h2
+      class="text-3xl mb-12"
+    >
+      Screenshots
+    </h2>
+    <div
+      class="grid grid-cols-12 gap-4"
+    >
+      <figure
+        class="col-span-12 md:col-span-6 lg:col-span-4"
+      >
+        <img
+          alt="Complete game"
+          class="cursor-pointer border-2 border-link hover:border-link-hover"
+          loading="lazy"
+          src="/img/react-minesweeper1.jpg"
+        />
+        <figcaption
+          class="my-2 text-sm text-center text-light font-thin"
+        >
+          Complete game
+        </figcaption>
+      </figure>
+      <figure
+        class="col-span-12 md:col-span-6 lg:col-span-4"
+      >
+        <img
+          alt="Partially complete game"
+          class="cursor-pointer border-2 border-link hover:border-link-hover"
+          loading="lazy"
+          src="/img/react-minesweeper2.jpg"
+        />
+        <figcaption
+          class="my-2 text-sm text-center text-light font-thin"
+        >
+          Partially complete game
+        </figcaption>
+      </figure>
+      <figure
+        class="col-span-12 md:col-span-6 lg:col-span-4"
+      >
+        <img
+          alt="Lost game"
+          class="cursor-pointer border-2 border-link hover:border-link-hover"
+          loading="lazy"
+          src="/img/react-minesweeper3.jpg"
+        />
+        <figcaption
+          class="my-2 text-sm text-center text-light font-thin"
+        >
+          Lost game
+        </figcaption>
+      </figure>
+      <figure
+        class="col-span-12 md:col-span-6 lg:col-span-4"
+      >
+        <img
+          alt="Initial board"
+          class="cursor-pointer border-2 border-link hover:border-link-hover"
+          loading="lazy"
+          src="/img/react-minesweeper4.jpg"
+        />
+        <figcaption
+          class="my-2 text-sm text-center text-light font-thin"
+        >
+          Initial board
+        </figcaption>
+      </figure>
+      <figure
+        class="col-span-12 md:col-span-6 lg:col-span-4"
+      >
+        <img
+          alt="App introduction"
+          class="cursor-pointer border-2 border-link hover:border-link-hover"
+          loading="lazy"
+          src="/img/react-minesweeper5.jpg"
+        />
+        <figcaption
+          class="my-2 text-sm text-center text-light font-thin"
+        >
+          App introduction
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <hr
+    class="m-8 h-px bg-divider"
+  />
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <div
+      class="flex justify-between"
+    >
+      <a
+        class="flex items-center fill-link text-link hover:fill-link-hover hover:text-link-hover"
+        href="/projects/cave-exploration"
+      >
+        <svg
+          class="w-6 h-6"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+            opacity=".87"
+          />
+          <path
+            d="M17.51 3.87L15.73 2.1 5.84 12l9.9 9.9 1.77-1.77L9.38 12l8.13-8.13z"
+          />
+        </svg>
+        <div
+          class="text-center ml-4"
+        >
+          <p
+            class="text-sm"
+          >
+            Previous Project
+          </p>
+          <p>
+            Cave Exploration
+          </p>
+        </div>
+      </a>
+      <a
+        class="flex items-center fill-link text-link hover:fill-link-hover hover:text-link-hover"
+        href="/projects/sudoku"
+      >
+        <div
+          class="text-center mr-4"
+        >
+          <p
+            class="text-sm"
+          >
+            Next Project
+          </p>
+          <p>
+            Logical Sudoku Solver
+          </p>
+        </div>
+        <svg
+          class="w-6 h-6"
+          enable-background="new 0 0 24 24"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g>
+            <path
+              d="M0,0h24v24H0V0z"
+              fill="none"
+            />
+          </g>
+          <g>
+            <polygon
+              points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"
+            />
+          </g>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+`;
