@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { mockIntersectionObserver } from '../../utilities/mockIntersectionObserver';
+import { mockIntersectionObserver } from '../../mocks/mockIntersectionObserver';
 import { Home } from './Home';
 
 describe('Home component', () => {

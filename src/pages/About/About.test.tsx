@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 
-import { mockIntersectionObserver } from '../../utilities/mockIntersectionObserver';
+import { mockIntersectionObserver } from '../../mocks/mockIntersectionObserver';
 import { About } from './About';
 
 describe('About page', () => {
