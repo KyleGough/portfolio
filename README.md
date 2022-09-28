@@ -1,12 +1,12 @@
-<h1 align="center">Portfolio</h1>
+<h1>Portfolio</h1>
 
-<div align="center">
+<div>
   <a href="https://kylegough.co.uk" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/Website-56347C?style=for-the-badge&logoColor=white" alt="Website Badge"/></a>
 </div>
 
 <br />
 
-<div align="center">
+<div>
   <img src="https://img.shields.io/github/workflow/status/KyleGough/portfolio/Pre-Merge/master?style=plastic" />
   <img src="https://img.shields.io/github/last-commit/KyleGough/portfolio?style=plastic" />
   <img src="https://img.shields.io/github/issues-pr/KyleGough/portfolio?style=plastic" />
