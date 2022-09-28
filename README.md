@@ -7,11 +7,11 @@
 <br />
 
 <div>
-  <img src="https://img.shields.io/github/workflow/status/KyleGough/portfolio/Pre-Merge/master?style=plastic" />
-  <img src="https://img.shields.io/github/last-commit/KyleGough/portfolio?style=plastic" />
-  <img src="https://img.shields.io/github/issues-pr/KyleGough/portfolio?style=plastic" />
-  <img src="https://img.shields.io/github/issues-pr-closed-raw/KyleGough/portfolio?style=plastic" />
-  <img src="https://img.shields.io/website?down_message=down&style=plastic&up_message=up&url=https%3A%2F%2Fkylegough.co.uk" />
+  <a href="https://github.com/KyleGough/portfolio/actions?query=branch%3Amaster"><img src="https://img.shields.io/github/workflow/status/KyleGough/portfolio/Pre-Merge/master?style=plastic" /></a>
+  <a href="https://github.com/KyleGough/portfolio/commits/master"><img src="https://img.shields.io/github/last-commit/KyleGough/portfolio?style=plastic" /></a>
+  <a href="https://github.com/KyleGough/portfolio/pulls"><img src="https://img.shields.io/github/issues-pr/KyleGough/portfolio?style=plastic" /></a>
+  <a href="https://github.com/KyleGough/portfolio/pulls?q=is%3Apr+is%3Aclosed"><img src="https://img.shields.io/github/issues-pr-closed-raw/KyleGough/portfolio?style=plastic" /></a>
+  <a href="https://kylegough.co.uk"><img src="https://img.shields.io/website?down_message=down&style=plastic&up_message=up&url=https%3A%2F%2Fkylegough.co.uk" /></a>
 </div>
 
 <br />
