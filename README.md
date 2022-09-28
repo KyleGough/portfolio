@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/github/last-commit/KyleGough/portfolio?style=plastic" />
   <img src="https://img.shields.io/github/issues-pr/KyleGough/portfolio?style=plastic" />
   <img src="https://img.shields.io/github/issues-pr-closed-raw/KyleGough/portfolio?style=plastic" />
-  <img src="https://img.shields.io/website?down_color=red&down_message=Offline&style=plastic&up_color=green&up_message=Online&url=https%3A%2F%2Fkylegough.co.uk" />
+  <img src="https://img.shields.io/website?down_message=down&style=plastic&up_message=up&url=https%3A%2F%2Fkylegough.co.uk" />
 </div>
 
 <br />
