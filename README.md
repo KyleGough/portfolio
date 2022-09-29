@@ -16,7 +16,7 @@
 
 <br />
 
-<p>Personal portfolio website created to showcase my projects and technical skills. First created in 2016 as a simple static HTML website, the website has experienced multiple improvements over the years including migration to PHP, then to React with Materialize, and most recently upgrading to TypeScript and Tailwind integration.</p>
+<p>Personal portfolio website created to showcase my projects and technical skills. The site was first conceived in late 2016 during my first year at university and was a very simple static <strong>HTML</strong> website with vanilla <strong>CSS</strong>. Over the years I have actively maintained and improved the website integrating new knowledge and experience. This has included migration to <strong>PHP</strong>, then to <strong>React</strong> with <strong>Materialize</strong>. Most recently the site has been upgraded to <strong>TypeScript</strong> with <strong>Tailwind CSS</strong> and behind the scenes lots of work has gone into Hosting, CI/CD, SEO, and Linting.</p>
 
 <h3>Tech Stack</h3>
 
