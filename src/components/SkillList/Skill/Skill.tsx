@@ -42,20 +42,7 @@ export const Skill: React.FC<SkillProps> = ({
   }, [progressRef, isVisible, animatedIn]);
 
   return (
-    <div className="flex flex-row justify-center py-4">
-      <div className="w-3/12 lg:w-4/12 pt-2">
-        <div className={clsx(type, 'progress overflow-hidden')}>
-          <div
-            ref={progressRef}
-            className={clsx(
-              progressClass,
-              'custom-duration progress-bar',
-              'transition-transform ease-in-out -translate-x-full'
-            )}
-            style={durationVar}
-          ></div>
-        </div>
-      </div>
+    <div className="flex flex-row justify-center py-4 gap-4">
       <div className="w-9/12 lg:w-8/12 ml-6 flex">
         <img
           loading="lazy"
@@ -74,6 +61,19 @@ export const Skill: React.FC<SkillProps> = ({
             <span className="text-sm">{description}</span>
           </p>
           <p className="text-sm text-link-hover mt-1">{confidence}</p>
+        </div>
+      </div>
+      <div className="w-3/12 lg:w-4/12 pt-2">
+        <div className={clsx(type, 'progress overflow-hidden')}>
+          <div
+            ref={progressRef}
+            className={clsx(
+              progressClass,
+              'custom-duration progress-bar',
+              'transition-transform ease-in-out -translate-x-full'
+            )}
+            style={durationVar}
+          ></div>
         </div>
       </div>
     </div>
