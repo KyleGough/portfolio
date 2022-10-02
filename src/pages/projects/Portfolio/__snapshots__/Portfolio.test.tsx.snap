@@ -22,9 +22,9 @@ exports[`Portfolio project page renders 1`] = `
       -
        
       <time
-        datetime="2022-09"
+        datetime="2022-10"
       >
-        September 2022
+        October 2022
       </time>
     </p>
     <p
