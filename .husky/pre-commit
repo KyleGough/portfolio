@@ -8,4 +8,4 @@ then
   echo -e "Commiting directly to the master/main branch is not permitted." && exit 1
 fi
 
-eslint --cache --fix --max-warnings 0 . && npm test -- --watchAll=false
+npm run lint && npm test -- --watchAll=false
