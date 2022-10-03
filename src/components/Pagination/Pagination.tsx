@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { ArrowBack, ArrowForward } from '../../icons';
+import { ArrowBackIcon, ArrowForwardIcon } from '../../icons';
 import { Section } from '../Section';
 
 interface PaginationProps {
@@ -32,7 +32,7 @@ export const Pagination: React.FC<PaginationProps> = ({
     <Section>
       <div className="flex justify-between">
         <Link to={previousLink || '#'} className={previousClassName}>
-          <ArrowBack className="w-6 h-6" />
+          <ArrowBackIcon className="w-6 h-6" />
           <div className="text-center ml-4">
             <p className="text-sm">Previous Project</p>
             <p>{previousTitle || '-'}</p>
@@ -43,7 +43,7 @@ export const Pagination: React.FC<PaginationProps> = ({
             <p className="text-sm">Next Project</p>
             <p>{nextTitle || '-'}</p>
           </div>
-          <ArrowForward className="w-6 h-6" />
+          <ArrowForwardIcon className="w-6 h-6" />
         </Link>
       </div>
     </Section>

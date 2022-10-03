@@ -1,5 +1,5 @@
-export { ArrowBack } from './ArrowBack';
-export { ArrowForward } from './ArrowForward';
+export { ArrowBackIcon } from './ArrowBackIcon';
+export { ArrowForwardIcon } from './ArrowForwardIcon';
 export { EmailIcon } from './EmailIcon';
 export { GitHubIcon } from './GitHubIcon';
 export { LinkedInIcon } from './LinkedInIcon';

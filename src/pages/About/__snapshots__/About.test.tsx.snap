@@ -11,71 +11,42 @@ exports[`About page renders 1`] = `
       About Me
     </h1>
     <p
-      class="my-4 max-w-reading"
+      class="mt-4 mb-8 max-w-reading"
     >
       Hello, I'm Kyle, a Front-End Engineer at Atom Learning and Computer Science MEng graduate of the University of Warwick. Interests lie in bouldering, cycling, guitar, movies, and physics. I enjoy learning new languages, frameworks and technologies and have pursued multiple personal projects putting these skills into practice, detailed below.
     </p>
-    <p
-      class="mt-8 text-center md:text-left"
+    <a
+      class="w-fit shimmer group drop-shadow-lg flex items-center px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-full border-2 shadow border-link hover:border-link-hover focus:border-link-hover"
+      href="/CV.pdf"
+      rel="noopener noreferrer"
+      target="_blank"
     >
-      <a
-        class="text-link hover:text-link-hover focus:text-link-hover"
-        href="/CV.pdf"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
+      <p>
         Read my CV
-      </a>
-    </p>
+      </p>
+      <svg
+        class="float-right ml-4 w-4 h-4 fill-link group-hover:fill-link-hover group-focus:fill-link-hover"
+        enable-background="new 0 0 24 24"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <path
+            d="M0,0h24v24H0V0z"
+            fill="none"
+          />
+        </g>
+        <g>
+          <polygon
+            points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"
+          />
+        </g>
+      </svg>
+    </a>
   </div>
   <hr
     class="mt-8 h-px bg-divider"
   />
-  <div
-    class="bg-circuits"
-  >
-    <div
-      class="container text-primary py-8 last:pb-16"
-    >
-      <h2
-        class="text-lg text-center mb-4 text-link font-bold"
-      >
-        Quick Links
-      </h2>
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 justify-center"
-      >
-        <button
-          class="shimmer max-w-[22rem] md:h-[78px] mx-auto w-full px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-sm shadow border-light"
-        >
-          Programming Languages
-        </button>
-        <button
-          class="shimmer max-w-[22rem] md:h-[78px] mx-auto w-full px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-sm shadow border-light"
-        >
-          Web Development
-        </button>
-        <button
-          class="shimmer max-w-[22rem] md:h-[78px] mx-auto w-full px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-sm shadow border-light"
-        >
-          Other Technologies
-        </button>
-        <button
-          class="shimmer max-w-[22rem] md:h-[78px] mx-auto w-full px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-sm shadow border-light"
-        >
-          Goals for 2022
-        </button>
-        <button
-          class="shimmer max-w-[22rem] md:h-[78px] mx-auto w-full px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-sm shadow border-light"
-        >
-          University Modules
-        </button>
-      </div>
-    </div>
-    <hr
-      class="mb-8 h-px bg-divider"
-    />
-  </div>
   <div
     class="first:pt-24 container text-primary py-8 last:pb-16"
     id="programming-languages"
