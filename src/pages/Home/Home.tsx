@@ -8,7 +8,7 @@ import { ProjectCard } from '../../components/ProjectCard';
 import { Section } from '../../components/Section';
 import { useObserveElement } from '../../hooks/useObserveElement';
 import { useTypewriter } from '../../hooks/useTypewriter';
-import { ArrowForward } from '../../icons';
+import { ArrowForwardIcon } from '../../icons';
 
 export const Home: React.FC = () => {
   const [carousel, setCarousel] = useState(0);
@@ -110,7 +110,7 @@ export const Home: React.FC = () => {
               className="shimmer group drop-shadow-lg flex items-center px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-full border-2 shadow border-link hover:border-link-hover focus:border-link-hover"
             >
               <p>All Projects</p>
-              <ArrowForward className="float-right ml-4 w-4 h-4 fill-link group-hover:fill-link-hover group-focus:fill-link-hover" />
+              <ArrowForwardIcon className="float-right ml-4 w-4 h-4 fill-link group-hover:fill-link-hover group-focus:fill-link-hover" />
             </Link>
           </div>
         </Section>

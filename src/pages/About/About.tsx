@@ -1,12 +1,12 @@
-import React, { RefObject, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import { Divider } from '../../components/Divider';
 import { GoalListItem, Progress } from '../../components/GoalListItem';
 import { LabelledLogo } from '../../components/LabelledLogo';
-import { ScrollButton } from '../../components/ScrollButton';
 import { Section } from '../../components/Section';
 import { SkillList } from '../../components/SkillList';
 import { UniModuleList } from '../../components/UniModuleList';
+import { ArrowForwardIcon } from '../../icons';
 import BootstrapLogo from '../../img/bootstrap.png';
 import HerokuLogo from '../../img/heroku.png';
 import JqueryLogo from '../../img/jquery.png';
@@ -24,11 +24,6 @@ export const About: React.FC = () => {
   const anchorGoals = useRef<HTMLDivElement>(null);
   const anchorUni = useRef<HTMLDivElement>(null);
 
-  // Smoothly scrolls to a ref.
-  const scrollTo = (ref: RefObject<HTMLDivElement>) => {
-    (ref.current as HTMLDivElement).scrollIntoView({ behavior: 'smooth' });
-  };
-
   useEffect(() => {
     document.title = 'About Me - Kyle Gough';
   }, []);
@@ -39,7 +34,7 @@ export const About: React.FC = () => {
         <h1 className="project-title mb-8 text-center md:text-left">
           About Me
         </h1>
-        <p className="my-4 max-w-reading">
+        <p className="mt-4 mb-8 max-w-reading">
           Hello, I&apos;m Kyle, a Front-End Engineer at Atom Learning and
           Computer Science MEng graduate of the University of Warwick. Interests
           lie in bouldering, cycling, guitar, movies, and physics. I enjoy
@@ -47,45 +42,18 @@ export const About: React.FC = () => {
           multiple personal projects putting these skills into practice,
           detailed below.
         </p>
-        <p className="mt-8 text-center md:text-left">
-          <a
-            className="text-link hover:text-link-hover focus:text-link-hover"
-            href="/CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read my CV
-          </a>
-        </p>
+        <a
+          href="/CV.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-fit shimmer group drop-shadow-lg flex items-center px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-full border-2 shadow border-link hover:border-link-hover focus:border-link-hover"
+        >
+          <p>Read my CV</p>
+          <ArrowForwardIcon className="float-right ml-4 w-4 h-4 fill-link group-hover:fill-link-hover group-focus:fill-link-hover" />
+        </a>
       </Section>
 
       <hr className="mt-8 h-px bg-divider" />
-
-      <div className="bg-circuits">
-        <Section overrideTopPadding={true}>
-          <h2 className="text-lg text-center mb-4 text-link font-bold">
-            Quick Links
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 justify-center">
-            <ScrollButton onClick={() => scrollTo(anchorProgramming)}>
-              Programming Languages
-            </ScrollButton>
-            <ScrollButton onClick={() => scrollTo(anchorWeb)}>
-              Web Development
-            </ScrollButton>
-            <ScrollButton onClick={() => scrollTo(anchorOther)}>
-              Other Technologies
-            </ScrollButton>
-            <ScrollButton onClick={() => scrollTo(anchorGoals)}>
-              Goals for 2022
-            </ScrollButton>
-            <ScrollButton onClick={() => scrollTo(anchorUni)}>
-              University Modules
-            </ScrollButton>
-          </div>
-        </Section>
-        <hr className="mb-8 h-px bg-divider" />
-      </div>
 
       <Section ref={anchorProgramming} id="programming-languages">
         <h2 className="project-header text-center md:text-left">
