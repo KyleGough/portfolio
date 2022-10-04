@@ -108,7 +108,7 @@ export const Home: React.FC = () => {
           <div className="mt-16 flex justify-center">
             <Link
               to="/projects"
-              className="shimmer group drop-shadow-lg flex items-center px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-full border-2 shadow border-link hover:border-link-hover focus:border-link-hover"
+              className="shimmer group flex items-center px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-full border-2 shadow border-link hover:border-link-hover focus:border-link-hover"
             >
               <p>All Projects</p>
               <ArrowForwardIcon className="float-right ml-4 w-4 h-4 fill-link group-hover:fill-link-hover group-focus:fill-link-hover" />
@@ -120,7 +120,7 @@ export const Home: React.FC = () => {
       <div className="min-h-screen flex items-center border-b border-divider shadow">
         <Section>
           <h2 className="font-thin text-6xl text-center mt-16 text-nav-light max-w-reading">
-          Work Experience
+            Work Experience
           </h2>
           <div className={clsx(
             'grid grid-cols-1 md:grid-cols-2',
