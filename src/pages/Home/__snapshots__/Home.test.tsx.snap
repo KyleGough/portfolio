@@ -173,7 +173,7 @@ exports[`Home component renders 1`] = `
         class="mt-16 flex justify-center"
       >
         <a
-          class="shimmer group drop-shadow-lg flex items-center px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-full border-2 shadow border-link hover:border-link-hover focus:border-link-hover"
+          class="shimmer group flex items-center px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-full border-2 shadow border-link hover:border-link-hover focus:border-link-hover"
           href="/projects"
         >
           <p>
