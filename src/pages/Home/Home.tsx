@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { CarouselImage } from '../../components/CarouselImage';
 import { Contact } from '../../components/Contact';
+import { ProgressNode } from '../../components/ProgressNode';
 import { ProjectCard } from '../../components/ProjectCard';
 import { Section } from '../../components/Section';
 import { TimelineNode } from '../../components/TimelineNode';
