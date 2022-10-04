@@ -3,10 +3,10 @@
 exports[`Skill component renders 1`] = `
 <div>
   <div
-    class="flex flex-row justify-center py-4"
+    class="flex flex-row justify-center py-6"
   >
     <div
-      class="w-3/12 lg:w-4/12 pt-2"
+      class="w-3/12 lg:w-4/12 flex items-center"
     >
       <div
         class="progress-web progress overflow-hidden"
@@ -18,7 +18,7 @@ exports[`Skill component renders 1`] = `
       </div>
     </div>
     <div
-      class="w-9/12 lg:w-8/12 ml-6 flex"
+      class="w-9/12 lg:w-8/12 ml-6 flex items-center"
     >
       <img
         alt="React logo"
@@ -29,7 +29,7 @@ exports[`Skill component renders 1`] = `
       <div>
         <p>
           <span
-            class="font-extrabold"
+            class="font-extrabold text-lg"
           >
             React
           </span>
@@ -40,11 +40,6 @@ exports[`Skill component renders 1`] = `
           >
             Portfolio, LucidLab, Minesweeper
           </span>
-        </p>
-        <p
-          class="text-sm text-link-hover mt-1"
-        >
-          Comfortable
         </p>
       </div>
     </div>

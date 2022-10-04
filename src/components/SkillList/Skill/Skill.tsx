@@ -2,7 +2,6 @@ import { clsx } from 'clsx';
 import React, { useEffect, useState } from 'react';
 
 import { useObserveElement } from '../../../hooks/useObserveElement';
-import { Confidence } from '../SkillList.types';
 
 interface SkillProps {
   type: string;
@@ -10,7 +9,6 @@ interface SkillProps {
   progressClass: string;
   name: string;
   description: string;
-  confidence: Confidence;
   logo: string;
 }
 
@@ -20,7 +18,6 @@ export const Skill: React.FC<SkillProps> = ({
   progressClass,
   name,
   description,
-  confidence,
   logo,
 }) => {
   const [progressRef, isVisible] = useObserveElement<HTMLDivElement>({
@@ -42,8 +39,8 @@ export const Skill: React.FC<SkillProps> = ({
   }, [progressRef, isVisible, animatedIn]);
 
   return (
-    <div className="flex flex-row justify-center py-4">
-      <div className="w-3/12 lg:w-4/12 pt-2">
+    <div className="flex flex-row justify-center py-6">
+      <div className="w-3/12 lg:w-4/12 flex items-center">
         <div className={clsx(type, 'progress overflow-hidden')}>
           <div
             ref={progressRef}
@@ -56,7 +53,7 @@ export const Skill: React.FC<SkillProps> = ({
           ></div>
         </div>
       </div>
-      <div className="w-9/12 lg:w-8/12 ml-6 flex">
+      <div className="w-9/12 lg:w-8/12 ml-6 flex items-center">
         <img
           loading="lazy"
           className={clsx(
@@ -70,10 +67,9 @@ export const Skill: React.FC<SkillProps> = ({
         />
         <div>
           <p>
-            <span className="font-extrabold">{name}</span> -{' '}
+            <span className="font-extrabold text-lg">{name}</span> -{' '}
             <span className="text-sm">{description}</span>
           </p>
-          <p className="text-sm text-link-hover mt-1">{confidence}</p>
         </div>
       </div>
     </div>

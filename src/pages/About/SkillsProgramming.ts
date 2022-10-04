@@ -1,4 +1,4 @@
-import { Confidence,ISkill } from '../../components/SkillList';
+import { ISkill } from '../../components/SkillList';
 import CSharpLogo from '../../img/c#.png';
 import CPlusPlusLogo from '../../img/c++.png';
 import HaskellLogo from '../../img/haskell.png';
@@ -13,16 +13,14 @@ export const skillsProgramming: ISkill[] = [
     name: 'Python',
     progress: 90,
     className: 'w-[90%]',
-    description: 'Logical Sudoku Solver, Machine Learning, Image Analysis',
-    confidence: Confidence.CONFIDENT,
+    description: 'Bank of America, Logical Sudoku Solver, ML, Image Analysis',
     logo: PythonLogo,
   },
   {
     name: 'Java',
     progress: 80,
     className: 'w-[80%]',
-    description: 'Robot Maze Environment, Steganography, Witter',
-    confidence: Confidence.CONFIDENT,
+    description: 'Robot Maze Environment, Steganography',
     logo: JavaLogo,
   },
   {
@@ -30,7 +28,6 @@ export const skillsProgramming: ISkill[] = [
     progress: 75,
     className: 'w-[75%]',
     description: 'Sorting Visualiser, Delivery Route Planner',
-    confidence: Confidence.CONFIDENT,
     logo: CSharpLogo,
   },
   {
@@ -38,39 +35,34 @@ export const skillsProgramming: ISkill[] = [
     progress: 65,
     className: 'w-[65%]',
     description: 'GLUT Simulation of a Roller Coaster',
-    confidence: Confidence.COMFORTABLE,
     logo: CPlusPlusLogo,
   },
   {
     name: 'Visual Basic',
     progress: 50,
     className: 'w-[50%]',
-    description: 'First Programming Language, CLI Sorting Algorithm Visualiser',
-    confidence: Confidence.COMFORTABLE,
+    description: 'First Programming Language, Sorting Algorithm Visualiser',
     logo: VBLogo,
   },
   {
     name: 'Haskell',
-    progress: 40,
-    className: 'w-[40%]',
+    progress: 30,
+    className: 'w-[30%]',
     description: 'Mastermind Coursework, Scratch Clone Coursework',
-    confidence: Confidence.COMFORTABLE,
     logo: HaskellLogo,
   },
   {
     name: 'Ruby',
-    progress: 30,
-    className: 'w-[30%]',
-    description: 'Minesweeper Game',
-    confidence: Confidence.BEGINNER,
+    progress: 20,
+    className: 'w-[20%]',
+    description: 'Minesweeper',
     logo: RubyLogo,
   },
   {
     name: 'MATLAB',
-    progress: 45,
-    className: 'w-[45%]',
-    description: 'Digital Forensics on Images',
-    confidence: Confidence.BEGINNER,
+    progress: 30,
+    className: 'w-[30%]',
+    description: 'Image Forensics',
     logo: MatlabLogo,
   },
 ];

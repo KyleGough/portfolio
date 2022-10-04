@@ -45,395 +45,6 @@ exports[`About page renders 1`] = `
     </a>
   </div>
   <hr
-    class="mt-8 h-px bg-divider"
-  />
-  <div
-    class="first:pt-24 container text-primary py-8 last:pb-16"
-    id="programming-languages"
-  >
-    <h2
-      class="project-header text-center md:text-left"
-    >
-      Programming Languages
-    </h2>
-    <div
-      class="flex flex-row justify-center py-4"
-    >
-      <div
-        class="w-3/12 lg:w-4/12 pt-2"
-      >
-        <div
-          class="progress-programming progress overflow-hidden"
-        >
-          <div
-            class="w-[90%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
-            style="--duration-factor: 90;"
-          />
-        </div>
-      </div>
-      <div
-        class="w-9/12 lg:w-8/12 ml-6 flex"
-      >
-        <img
-          alt="Python logo"
-          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
-          loading="lazy"
-          src="python.png"
-        />
-        <div>
-          <p>
-            <span
-              class="font-extrabold"
-            >
-              Python
-            </span>
-             -
-             
-            <span
-              class="text-sm"
-            >
-              Logical Sudoku Solver, Machine Learning, Image Analysis
-            </span>
-          </p>
-          <p
-            class="text-sm text-link-hover mt-1"
-          >
-            Confident
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="flex flex-row justify-center py-4"
-    >
-      <div
-        class="w-3/12 lg:w-4/12 pt-2"
-      >
-        <div
-          class="progress-programming progress overflow-hidden"
-        >
-          <div
-            class="w-[80%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
-            style="--duration-factor: 80;"
-          />
-        </div>
-      </div>
-      <div
-        class="w-9/12 lg:w-8/12 ml-6 flex"
-      >
-        <img
-          alt="Java logo"
-          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
-          loading="lazy"
-          src="java.png"
-        />
-        <div>
-          <p>
-            <span
-              class="font-extrabold"
-            >
-              Java
-            </span>
-             -
-             
-            <span
-              class="text-sm"
-            >
-              Robot Maze Environment, Steganography, Witter
-            </span>
-          </p>
-          <p
-            class="text-sm text-link-hover mt-1"
-          >
-            Confident
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="flex flex-row justify-center py-4"
-    >
-      <div
-        class="w-3/12 lg:w-4/12 pt-2"
-      >
-        <div
-          class="progress-programming progress overflow-hidden"
-        >
-          <div
-            class="w-[75%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
-            style="--duration-factor: 75;"
-          />
-        </div>
-      </div>
-      <div
-        class="w-9/12 lg:w-8/12 ml-6 flex"
-      >
-        <img
-          alt="C# logo"
-          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
-          loading="lazy"
-          src="c#.png"
-        />
-        <div>
-          <p>
-            <span
-              class="font-extrabold"
-            >
-              C#
-            </span>
-             -
-             
-            <span
-              class="text-sm"
-            >
-              Sorting Visualiser, Delivery Route Planner
-            </span>
-          </p>
-          <p
-            class="text-sm text-link-hover mt-1"
-          >
-            Confident
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="flex flex-row justify-center py-4"
-    >
-      <div
-        class="w-3/12 lg:w-4/12 pt-2"
-      >
-        <div
-          class="progress-programming progress overflow-hidden"
-        >
-          <div
-            class="w-[65%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
-            style="--duration-factor: 65;"
-          />
-        </div>
-      </div>
-      <div
-        class="w-9/12 lg:w-8/12 ml-6 flex"
-      >
-        <img
-          alt="C++ logo"
-          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
-          loading="lazy"
-          src="c++.png"
-        />
-        <div>
-          <p>
-            <span
-              class="font-extrabold"
-            >
-              C++
-            </span>
-             -
-             
-            <span
-              class="text-sm"
-            >
-              GLUT Simulation of a Roller Coaster
-            </span>
-          </p>
-          <p
-            class="text-sm text-link-hover mt-1"
-          >
-            Comfortable
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="flex flex-row justify-center py-4"
-    >
-      <div
-        class="w-3/12 lg:w-4/12 pt-2"
-      >
-        <div
-          class="progress-programming progress overflow-hidden"
-        >
-          <div
-            class="w-[50%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
-            style="--duration-factor: 50;"
-          />
-        </div>
-      </div>
-      <div
-        class="w-9/12 lg:w-8/12 ml-6 flex"
-      >
-        <img
-          alt="Visual Basic logo"
-          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
-          loading="lazy"
-          src="vb.png"
-        />
-        <div>
-          <p>
-            <span
-              class="font-extrabold"
-            >
-              Visual Basic
-            </span>
-             -
-             
-            <span
-              class="text-sm"
-            >
-              First Programming Language, CLI Sorting Algorithm Visualiser
-            </span>
-          </p>
-          <p
-            class="text-sm text-link-hover mt-1"
-          >
-            Comfortable
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="flex flex-row justify-center py-4"
-    >
-      <div
-        class="w-3/12 lg:w-4/12 pt-2"
-      >
-        <div
-          class="progress-programming progress overflow-hidden"
-        >
-          <div
-            class="w-[40%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
-            style="--duration-factor: 40;"
-          />
-        </div>
-      </div>
-      <div
-        class="w-9/12 lg:w-8/12 ml-6 flex"
-      >
-        <img
-          alt="Haskell logo"
-          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
-          loading="lazy"
-          src="haskell.png"
-        />
-        <div>
-          <p>
-            <span
-              class="font-extrabold"
-            >
-              Haskell
-            </span>
-             -
-             
-            <span
-              class="text-sm"
-            >
-              Mastermind Coursework, Scratch Clone Coursework
-            </span>
-          </p>
-          <p
-            class="text-sm text-link-hover mt-1"
-          >
-            Comfortable
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="flex flex-row justify-center py-4"
-    >
-      <div
-        class="w-3/12 lg:w-4/12 pt-2"
-      >
-        <div
-          class="progress-programming progress overflow-hidden"
-        >
-          <div
-            class="w-[30%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
-            style="--duration-factor: 30;"
-          />
-        </div>
-      </div>
-      <div
-        class="w-9/12 lg:w-8/12 ml-6 flex"
-      >
-        <img
-          alt="Ruby logo"
-          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
-          loading="lazy"
-          src="ruby.png"
-        />
-        <div>
-          <p>
-            <span
-              class="font-extrabold"
-            >
-              Ruby
-            </span>
-             -
-             
-            <span
-              class="text-sm"
-            >
-              Minesweeper Game
-            </span>
-          </p>
-          <p
-            class="text-sm text-link-hover mt-1"
-          >
-            Beginner
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="flex flex-row justify-center py-4"
-    >
-      <div
-        class="w-3/12 lg:w-4/12 pt-2"
-      >
-        <div
-          class="progress-programming progress overflow-hidden"
-        >
-          <div
-            class="w-[45%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
-            style="--duration-factor: 45;"
-          />
-        </div>
-      </div>
-      <div
-        class="w-9/12 lg:w-8/12 ml-6 flex"
-      >
-        <img
-          alt="MATLAB logo"
-          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
-          loading="lazy"
-          src="matlab.png"
-        />
-        <div>
-          <p>
-            <span
-              class="font-extrabold"
-            >
-              MATLAB
-            </span>
-             -
-             
-            <span
-              class="text-sm"
-            >
-              Digital Forensics on Images
-            </span>
-          </p>
-          <p
-            class="text-sm text-link-hover mt-1"
-          >
-            Beginner
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <hr
     class="m-8 h-px bg-divider"
   />
   <div
@@ -446,10 +57,10 @@ exports[`About page renders 1`] = `
       Web Development
     </h2>
     <div
-      class="flex flex-row justify-center py-4"
+      class="flex flex-row justify-center py-6"
     >
       <div
-        class="w-3/12 lg:w-4/12 pt-2"
+        class="w-3/12 lg:w-4/12 flex items-center"
       >
         <div
           class="progress-web progress overflow-hidden"
@@ -461,7 +72,7 @@ exports[`About page renders 1`] = `
         </div>
       </div>
       <div
-        class="w-9/12 lg:w-8/12 ml-6 flex"
+        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
       >
         <img
           alt="JavaScript logo"
@@ -472,7 +83,7 @@ exports[`About page renders 1`] = `
         <div>
           <p>
             <span
-              class="font-extrabold"
+              class="font-extrabold text-lg"
             >
               JavaScript
             </span>
@@ -481,69 +92,17 @@ exports[`About page renders 1`] = `
             <span
               class="text-sm"
             >
-              Portfolio, LucidLab, Graph Algorithm Visualiser, RSCBot
+              LucidLab, Graph Algorithm Visualiser, RSCBot
             </span>
-          </p>
-          <p
-            class="text-sm text-link-hover mt-1"
-          >
-            Confident
           </p>
         </div>
       </div>
     </div>
     <div
-      class="flex flex-row justify-center py-4"
+      class="flex flex-row justify-center py-6"
     >
       <div
-        class="w-3/12 lg:w-4/12 pt-2"
-      >
-        <div
-          class="progress-web progress overflow-hidden"
-        >
-          <div
-            class="w-[70%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
-            style="--duration-factor: 70;"
-          />
-        </div>
-      </div>
-      <div
-        class="w-9/12 lg:w-8/12 ml-6 flex"
-      >
-        <img
-          alt="TypeScript logo"
-          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
-          loading="lazy"
-          src="typescript.png"
-        />
-        <div>
-          <p>
-            <span
-              class="font-extrabold"
-            >
-              TypeScript
-            </span>
-             -
-             
-            <span
-              class="text-sm"
-            >
-              Portfolio
-            </span>
-          </p>
-          <p
-            class="text-sm text-link-hover mt-1"
-          >
-            Comfortable
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="flex flex-row justify-center py-4"
-    >
-      <div
-        class="w-3/12 lg:w-4/12 pt-2"
+        class="w-3/12 lg:w-4/12 flex items-center"
       >
         <div
           class="progress-web progress overflow-hidden"
@@ -555,7 +114,49 @@ exports[`About page renders 1`] = `
         </div>
       </div>
       <div
-        class="w-9/12 lg:w-8/12 ml-6 flex"
+        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
+      >
+        <img
+          alt="TypeScript logo"
+          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
+          loading="lazy"
+          src="typescript.png"
+        />
+        <div>
+          <p>
+            <span
+              class="font-extrabold text-lg"
+            >
+              TypeScript
+            </span>
+             -
+             
+            <span
+              class="text-sm"
+            >
+              Atom, Portfolio
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-row justify-center py-6"
+    >
+      <div
+        class="w-3/12 lg:w-4/12 flex items-center"
+      >
+        <div
+          class="progress-web progress overflow-hidden"
+        >
+          <div
+            class="w-[75%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
+            style="--duration-factor: 75;"
+          />
+        </div>
+      </div>
+      <div
+        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
       >
         <img
           alt="React logo"
@@ -566,7 +167,7 @@ exports[`About page renders 1`] = `
         <div>
           <p>
             <span
-              class="font-extrabold"
+              class="font-extrabold text-lg"
             >
               React
             </span>
@@ -575,34 +176,29 @@ exports[`About page renders 1`] = `
             <span
               class="text-sm"
             >
-              Portfolio, LucidLab, Minesweeper
+              Atom, Portfolio, LucidLab, Minesweeper
             </span>
-          </p>
-          <p
-            class="text-sm text-link-hover mt-1"
-          >
-            Comfortable
           </p>
         </div>
       </div>
     </div>
     <div
-      class="flex flex-row justify-center py-4"
+      class="flex flex-row justify-center py-6"
     >
       <div
-        class="w-3/12 lg:w-4/12 pt-2"
+        class="w-3/12 lg:w-4/12 flex items-center"
       >
         <div
           class="progress-web progress overflow-hidden"
         >
           <div
-            class="w-[70%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
-            style="--duration-factor: 70;"
+            class="w-[75%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
+            style="--duration-factor: 75;"
           />
         </div>
       </div>
       <div
-        class="w-9/12 lg:w-8/12 ml-6 flex"
+        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
       >
         <img
           alt="Tailwind logo"
@@ -613,7 +209,7 @@ exports[`About page renders 1`] = `
         <div>
           <p>
             <span
-              class="font-extrabold"
+              class="font-extrabold text-lg"
             >
               Tailwind
             </span>
@@ -625,19 +221,14 @@ exports[`About page renders 1`] = `
               Portfolio
             </span>
           </p>
-          <p
-            class="text-sm text-link-hover mt-1"
-          >
-            Comfortable
-          </p>
         </div>
       </div>
     </div>
     <div
-      class="flex flex-row justify-center py-4"
+      class="flex flex-row justify-center py-6"
     >
       <div
-        class="w-3/12 lg:w-4/12 pt-2"
+        class="w-3/12 lg:w-4/12 flex items-center"
       >
         <div
           class="progress-web progress overflow-hidden"
@@ -649,7 +240,7 @@ exports[`About page renders 1`] = `
         </div>
       </div>
       <div
-        class="w-9/12 lg:w-8/12 ml-6 flex"
+        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
       >
         <img
           alt="HTML logo"
@@ -660,7 +251,7 @@ exports[`About page renders 1`] = `
         <div>
           <p>
             <span
-              class="font-extrabold"
+              class="font-extrabold text-lg"
             >
               HTML
             </span>
@@ -672,19 +263,14 @@ exports[`About page renders 1`] = `
               Portfolio, BSplit, To Do List
             </span>
           </p>
-          <p
-            class="text-sm text-link-hover mt-1"
-          >
-            Confident
-          </p>
         </div>
       </div>
     </div>
     <div
-      class="flex flex-row justify-center py-4"
+      class="flex flex-row justify-center py-6"
     >
       <div
-        class="w-3/12 lg:w-4/12 pt-2"
+        class="w-3/12 lg:w-4/12 flex items-center"
       >
         <div
           class="progress-web progress overflow-hidden"
@@ -696,7 +282,7 @@ exports[`About page renders 1`] = `
         </div>
       </div>
       <div
-        class="w-9/12 lg:w-8/12 ml-6 flex"
+        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
       >
         <img
           alt="CSS logo"
@@ -707,7 +293,7 @@ exports[`About page renders 1`] = `
         <div>
           <p>
             <span
-              class="font-extrabold"
+              class="font-extrabold text-lg"
             >
               CSS
             </span>
@@ -716,34 +302,29 @@ exports[`About page renders 1`] = `
             <span
               class="text-sm"
             >
-              Portfolio, LucidLab, BSplit, Minesweeper
+              Atom, Portfolio, LucidLab, BSplit
             </span>
-          </p>
-          <p
-            class="text-sm text-link-hover mt-1"
-          >
-            Confident
           </p>
         </div>
       </div>
     </div>
     <div
-      class="flex flex-row justify-center py-4"
+      class="flex flex-row justify-center py-6"
     >
       <div
-        class="w-3/12 lg:w-4/12 pt-2"
+        class="w-3/12 lg:w-4/12 flex items-center"
       >
         <div
           class="progress-web progress overflow-hidden"
         >
           <div
-            class="w-[55%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
-            style="--duration-factor: 55;"
+            class="w-[50%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
+            style="--duration-factor: 50;"
           />
         </div>
       </div>
       <div
-        class="w-9/12 lg:w-8/12 ml-6 flex"
+        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
       >
         <img
           alt="PHP logo"
@@ -754,7 +335,7 @@ exports[`About page renders 1`] = `
         <div>
           <p>
             <span
-              class="font-extrabold"
+              class="font-extrabold text-lg"
             >
               PHP
             </span>
@@ -765,11 +346,6 @@ exports[`About page renders 1`] = `
             >
               BSplit, Portfolio
             </span>
-          </p>
-          <p
-            class="text-sm text-link-hover mt-1"
-          >
-            Comfortable
           </p>
         </div>
       </div>
@@ -879,6 +455,355 @@ exports[`About page renders 1`] = `
   />
   <div
     class="first:pt-24 container text-primary py-8 last:pb-16"
+    id="programming-languages"
+  >
+    <h2
+      class="project-header text-center md:text-left"
+    >
+      Programming Languages
+    </h2>
+    <div
+      class="flex flex-row justify-center py-6"
+    >
+      <div
+        class="w-3/12 lg:w-4/12 flex items-center"
+      >
+        <div
+          class="progress-programming progress overflow-hidden"
+        >
+          <div
+            class="w-[90%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
+            style="--duration-factor: 90;"
+          />
+        </div>
+      </div>
+      <div
+        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
+      >
+        <img
+          alt="Python logo"
+          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
+          loading="lazy"
+          src="python.png"
+        />
+        <div>
+          <p>
+            <span
+              class="font-extrabold text-lg"
+            >
+              Python
+            </span>
+             -
+             
+            <span
+              class="text-sm"
+            >
+              Bank of America, Logical Sudoku Solver, ML, Image Analysis
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-row justify-center py-6"
+    >
+      <div
+        class="w-3/12 lg:w-4/12 flex items-center"
+      >
+        <div
+          class="progress-programming progress overflow-hidden"
+        >
+          <div
+            class="w-[80%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
+            style="--duration-factor: 80;"
+          />
+        </div>
+      </div>
+      <div
+        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
+      >
+        <img
+          alt="Java logo"
+          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
+          loading="lazy"
+          src="java.png"
+        />
+        <div>
+          <p>
+            <span
+              class="font-extrabold text-lg"
+            >
+              Java
+            </span>
+             -
+             
+            <span
+              class="text-sm"
+            >
+              Robot Maze Environment, Steganography
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-row justify-center py-6"
+    >
+      <div
+        class="w-3/12 lg:w-4/12 flex items-center"
+      >
+        <div
+          class="progress-programming progress overflow-hidden"
+        >
+          <div
+            class="w-[75%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
+            style="--duration-factor: 75;"
+          />
+        </div>
+      </div>
+      <div
+        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
+      >
+        <img
+          alt="C# logo"
+          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
+          loading="lazy"
+          src="c#.png"
+        />
+        <div>
+          <p>
+            <span
+              class="font-extrabold text-lg"
+            >
+              C#
+            </span>
+             -
+             
+            <span
+              class="text-sm"
+            >
+              Sorting Visualiser, Delivery Route Planner
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-row justify-center py-6"
+    >
+      <div
+        class="w-3/12 lg:w-4/12 flex items-center"
+      >
+        <div
+          class="progress-programming progress overflow-hidden"
+        >
+          <div
+            class="w-[65%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
+            style="--duration-factor: 65;"
+          />
+        </div>
+      </div>
+      <div
+        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
+      >
+        <img
+          alt="C++ logo"
+          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
+          loading="lazy"
+          src="c++.png"
+        />
+        <div>
+          <p>
+            <span
+              class="font-extrabold text-lg"
+            >
+              C++
+            </span>
+             -
+             
+            <span
+              class="text-sm"
+            >
+              GLUT Simulation of a Roller Coaster
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-row justify-center py-6"
+    >
+      <div
+        class="w-3/12 lg:w-4/12 flex items-center"
+      >
+        <div
+          class="progress-programming progress overflow-hidden"
+        >
+          <div
+            class="w-[50%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
+            style="--duration-factor: 50;"
+          />
+        </div>
+      </div>
+      <div
+        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
+      >
+        <img
+          alt="Visual Basic logo"
+          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
+          loading="lazy"
+          src="vb.png"
+        />
+        <div>
+          <p>
+            <span
+              class="font-extrabold text-lg"
+            >
+              Visual Basic
+            </span>
+             -
+             
+            <span
+              class="text-sm"
+            >
+              First Programming Language, Sorting Algorithm Visualiser
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-row justify-center py-6"
+    >
+      <div
+        class="w-3/12 lg:w-4/12 flex items-center"
+      >
+        <div
+          class="progress-programming progress overflow-hidden"
+        >
+          <div
+            class="w-[30%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
+            style="--duration-factor: 30;"
+          />
+        </div>
+      </div>
+      <div
+        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
+      >
+        <img
+          alt="Haskell logo"
+          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
+          loading="lazy"
+          src="haskell.png"
+        />
+        <div>
+          <p>
+            <span
+              class="font-extrabold text-lg"
+            >
+              Haskell
+            </span>
+             -
+             
+            <span
+              class="text-sm"
+            >
+              Mastermind Coursework, Scratch Clone Coursework
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-row justify-center py-6"
+    >
+      <div
+        class="w-3/12 lg:w-4/12 flex items-center"
+      >
+        <div
+          class="progress-programming progress overflow-hidden"
+        >
+          <div
+            class="w-[20%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
+            style="--duration-factor: 20;"
+          />
+        </div>
+      </div>
+      <div
+        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
+      >
+        <img
+          alt="Ruby logo"
+          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
+          loading="lazy"
+          src="ruby.png"
+        />
+        <div>
+          <p>
+            <span
+              class="font-extrabold text-lg"
+            >
+              Ruby
+            </span>
+             -
+             
+            <span
+              class="text-sm"
+            >
+              Minesweeper
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-row justify-center py-6"
+    >
+      <div
+        class="w-3/12 lg:w-4/12 flex items-center"
+      >
+        <div
+          class="progress-programming progress overflow-hidden"
+        >
+          <div
+            class="w-[30%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
+            style="--duration-factor: 30;"
+          />
+        </div>
+      </div>
+      <div
+        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
+      >
+        <img
+          alt="MATLAB logo"
+          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
+          loading="lazy"
+          src="matlab.png"
+        />
+        <div>
+          <p>
+            <span
+              class="font-extrabold text-lg"
+            >
+              MATLAB
+            </span>
+             -
+             
+            <span
+              class="text-sm"
+            >
+              Image Forensics
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr
+    class="m-8 h-px bg-divider"
+  />
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
     id="other-technologies"
   >
     <h2
@@ -887,10 +812,10 @@ exports[`About page renders 1`] = `
       Other Technologies
     </h2>
     <div
-      class="flex flex-row justify-center py-4"
+      class="flex flex-row justify-center py-6"
     >
       <div
-        class="w-3/12 lg:w-4/12 pt-2"
+        class="w-3/12 lg:w-4/12 flex items-center"
       >
         <div
           class="progress-other progress overflow-hidden"
@@ -902,7 +827,7 @@ exports[`About page renders 1`] = `
         </div>
       </div>
       <div
-        class="w-9/12 lg:w-8/12 ml-6 flex"
+        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
       >
         <img
           alt="Git logo"
@@ -913,7 +838,7 @@ exports[`About page renders 1`] = `
         <div>
           <p>
             <span
-              class="font-extrabold"
+              class="font-extrabold text-lg"
             >
               Git
             </span>
@@ -922,22 +847,17 @@ exports[`About page renders 1`] = `
             <span
               class="text-sm"
             >
-              Used in all projects
+              All projects
             </span>
-          </p>
-          <p
-            class="text-sm text-link-hover mt-1"
-          >
-            Comfortable
           </p>
         </div>
       </div>
     </div>
     <div
-      class="flex flex-row justify-center py-4"
+      class="flex flex-row justify-center py-6"
     >
       <div
-        class="w-3/12 lg:w-4/12 pt-2"
+        class="w-3/12 lg:w-4/12 flex items-center"
       >
         <div
           class="progress-other progress overflow-hidden"
@@ -949,10 +869,10 @@ exports[`About page renders 1`] = `
         </div>
       </div>
       <div
-        class="w-9/12 lg:w-8/12 ml-6 flex"
+        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
       >
         <img
-          alt="Bash logo"
+          alt="Bash / Zsh logo"
           class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
           loading="lazy"
           src="bash.png"
@@ -960,9 +880,9 @@ exports[`About page renders 1`] = `
         <div>
           <p>
             <span
-              class="font-extrabold"
+              class="font-extrabold text-lg"
             >
-              Bash
+              Bash / Zsh
             </span>
              -
              
@@ -972,113 +892,56 @@ exports[`About page renders 1`] = `
               Shell Scripting Exercises, Finding security defects in a VM
             </span>
           </p>
-          <p
-            class="text-sm text-link-hover mt-1"
-          >
-            Comfortable
-          </p>
         </div>
       </div>
     </div>
     <div
-      class="flex flex-row justify-center py-4"
+      class="flex flex-row justify-center py-6"
     >
       <div
-        class="w-3/12 lg:w-4/12 pt-2"
+        class="w-3/12 lg:w-4/12 flex items-center"
       >
         <div
           class="progress-other progress overflow-hidden"
         >
           <div
-            class="w-[85%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
-            style="--duration-factor: 85;"
+            class="w-[90%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
+            style="--duration-factor: 90;"
           />
         </div>
       </div>
       <div
-        class="w-9/12 lg:w-8/12 ml-6 flex"
+        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
       >
         <img
-          alt="Zsh logo"
+          alt="Markdown logo"
           class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
           loading="lazy"
-          src="terminal.png"
+          src="markdown.png"
         />
         <div>
           <p>
             <span
-              class="font-extrabold"
+              class="font-extrabold text-lg"
             >
-              Zsh
+              Markdown
             </span>
              -
              
             <span
               class="text-sm"
             >
-              Personal Shell of Choice, Everyday use with Manjaro i3
+              GitHub READMEs, Lecture Notes
             </span>
-          </p>
-          <p
-            class="text-sm text-link-hover mt-1"
-          >
-            Comfortable
           </p>
         </div>
       </div>
     </div>
     <div
-      class="flex flex-row justify-center py-4"
+      class="flex flex-row justify-center py-6"
     >
       <div
-        class="w-3/12 lg:w-4/12 pt-2"
-      >
-        <div
-          class="progress-other progress overflow-hidden"
-        >
-          <div
-            class="w-[60%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
-            style="--duration-factor: 60;"
-          />
-        </div>
-      </div>
-      <div
-        class="w-9/12 lg:w-8/12 ml-6 flex"
-      >
-        <img
-          alt="SQL logo"
-          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
-          loading="lazy"
-          src="sql.png"
-        />
-        <div>
-          <p>
-            <span
-              class="font-extrabold"
-            >
-              SQL
-            </span>
-             -
-             
-            <span
-              class="text-sm"
-            >
-              Delivery Route Planner, BSplit, Department Store Database Analysis
-            </span>
-          </p>
-          <p
-            class="text-sm text-link-hover mt-1"
-          >
-            Comfortable
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="flex flex-row justify-center py-4"
-    >
-      <div
-        class="w-3/12 lg:w-4/12 pt-2"
+        class="w-3/12 lg:w-4/12 flex items-center"
       >
         <div
           class="progress-other progress overflow-hidden"
@@ -1090,7 +953,49 @@ exports[`About page renders 1`] = `
         </div>
       </div>
       <div
-        class="w-9/12 lg:w-8/12 ml-6 flex"
+        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
+      >
+        <img
+          alt="SQL logo"
+          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
+          loading="lazy"
+          src="sql.png"
+        />
+        <div>
+          <p>
+            <span
+              class="font-extrabold text-lg"
+            >
+              SQL
+            </span>
+             -
+             
+            <span
+              class="text-sm"
+            >
+              Delivery Route Planner, BSplit
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-row justify-center py-6"
+    >
+      <div
+        class="w-3/12 lg:w-4/12 flex items-center"
+      >
+        <div
+          class="progress-other progress overflow-hidden"
+        >
+          <div
+            class="w-[40%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
+            style="--duration-factor: 40;"
+          />
+        </div>
+      </div>
+      <div
+        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
       >
         <img
           alt="LaTeX logo"
@@ -1101,7 +1006,7 @@ exports[`About page renders 1`] = `
         <div>
           <p>
             <span
-              class="font-extrabold"
+              class="font-extrabold text-lg"
             >
               LaTeX
             </span>
@@ -1110,60 +1015,8 @@ exports[`About page renders 1`] = `
             <span
               class="text-sm"
             >
-              Dissertation, Multiple Group Projects 
+              Dissertation, LucidLab
             </span>
-          </p>
-          <p
-            class="text-sm text-link-hover mt-1"
-          >
-            Comfortable
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="flex flex-row justify-center py-4"
-    >
-      <div
-        class="w-3/12 lg:w-4/12 pt-2"
-      >
-        <div
-          class="progress-other progress overflow-hidden"
-        >
-          <div
-            class="w-[80%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
-            style="--duration-factor: 80;"
-          />
-        </div>
-      </div>
-      <div
-        class="w-9/12 lg:w-8/12 ml-6 flex"
-      >
-        <img
-          alt="Markdown logo"
-          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
-          loading="lazy"
-          src="markdown.png"
-        />
-        <div>
-          <p>
-            <span
-              class="font-extrabold"
-            >
-              Markdown
-            </span>
-             -
-             
-            <span
-              class="text-sm"
-            >
-              Lecture Notes, GitHub READMEs
-            </span>
-          </p>
-          <p
-            class="text-sm text-link-hover mt-1"
-          >
-            Confident
           </p>
         </div>
       </div>

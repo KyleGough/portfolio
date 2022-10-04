@@ -19,7 +19,6 @@ export const SkillList: React.FC<SkillListProps> = ({ skills, type }) => (
           progress={skill.progress}
           progressClass={skill.className}
           description={skill.description}
-          confidence={skill.confidence}
           logo={skill.logo}
         />
       );
