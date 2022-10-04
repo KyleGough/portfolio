@@ -46,15 +46,6 @@ export const About: React.FC = () => {
         </a>
       </Section>
 
-      <hr className="mt-8 h-px bg-divider" />
-
-      <Section id="programming-languages">
-        <h2 className="project-header text-center md:text-left">
-          Programming Languages
-        </h2>
-        <SkillList skills={skillsProgramming} type="progress-programming" />
-      </Section>
-
       <Divider />
 
       <Section id="web-development">
@@ -73,6 +64,15 @@ export const About: React.FC = () => {
           <LabelledLogo name="Webix" logo={WebixLogo} />
           <LabelledLogo name="Heroku" logo={HerokuLogo} />
         </div>
+      </Section>
+
+      <Divider />
+
+      <Section id="programming-languages">
+        <h2 className="project-header text-center md:text-left">
+          Programming Languages
+        </h2>
+        <SkillList skills={skillsProgramming} type="progress-programming" />
       </Section>
 
       <Divider />

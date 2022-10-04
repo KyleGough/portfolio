@@ -1,4 +1,4 @@
-import { Confidence, ISkill } from '../../components/SkillList';
+import { ISkill } from '../../components/SkillList';
 import CSSLogo from '../../img/css.png';
 import HTMLLogo from '../../img/html.png';
 import JavaScriptLogo from '../../img/javascript.png';
@@ -12,32 +12,28 @@ export const skillsWeb: ISkill[] = [
     name: 'JavaScript',
     progress: 90,
     className: 'w-[90%]',
-    description: 'Portfolio, LucidLab, Graph Algorithm Visualiser, RSCBot',
-    confidence: Confidence.CONFIDENT,
+    description: 'LucidLab, Graph Algorithm Visualiser, RSCBot',
     logo: JavaScriptLogo,
   },
   {
     name: 'TypeScript',
-    progress: 70,
-    className: 'w-[70%]',
-    description: 'Portfolio',
-    confidence: Confidence.COMFORTABLE,
+    progress: 75,
+    className: 'w-[75%]',
+    description: 'Atom, Portfolio',
     logo: TypeScriptLogo,
   },
   {
     name: 'React',
     progress: 75,
     className: 'w-[75%]',
-    description: 'Portfolio, LucidLab, Minesweeper',
-    confidence: Confidence.COMFORTABLE,
+    description: 'Atom, Portfolio, LucidLab, Minesweeper',
     logo: ReactLogo,
   },
   {
     name: 'Tailwind',
-    progress: 70,
-    className: 'w-[70%]',
+    progress: 75,
+    className: 'w-[75%]',
     description: 'Portfolio',
-    confidence: Confidence.COMFORTABLE,
     logo: TailwindLogo,
   },
   {
@@ -45,23 +41,20 @@ export const skillsWeb: ISkill[] = [
     progress: 90,
     className: 'w-[90%]',
     description: 'Portfolio, BSplit, To Do List',
-    confidence: Confidence.CONFIDENT,
     logo: HTMLLogo,
   },
   {
     name: 'CSS',
     progress: 90,
     className: 'w-[90%]',
-    description: 'Portfolio, LucidLab, BSplit, Minesweeper',
-    confidence: Confidence.CONFIDENT,
+    description: 'Atom, Portfolio, LucidLab, BSplit',
     logo: CSSLogo,
   },
   {
     name: 'PHP',
-    progress: 55,
-    className: 'w-[55%]',
+    progress: 50,
+    className: 'w-[50%]',
     description: 'BSplit, Portfolio',
-    confidence: Confidence.COMFORTABLE,
     logo: PHPLogo,
   },
 ];
