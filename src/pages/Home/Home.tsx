@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 import { CarouselImage } from '../../components/CarouselImage';
 import { Contact } from '../../components/Contact';
-import { ProgressNode } from '../../components/ProgressNode';
 import { ProjectCard } from '../../components/ProjectCard';
 import { Section } from '../../components/Section';
+import { TimelineNode } from '../../components/TimelineNode';
 import { useObserveElement } from '../../hooks/useObserveElement';
 import { useTypewriter } from '../../hooks/useTypewriter';
 import { ArrowForwardIcon } from '../../icons';
@@ -132,21 +132,21 @@ export const Home: React.FC = () => {
             'after:top-2/4 after:right-0 md:after:left-2/4',
             'after:bg-gradient-to-b after:from-timeline after:via-timeline after:to-transparent'
           )}>
-            <ProgressNode
+            <TimelineNode
               title="Front-End Engineer"
               company="Atom Learning"
               date="July 2022 - Present"
               align="left"
               logo="/img/atom.png"
             />
-            <ProgressNode
+            <TimelineNode
               title="Tech Analyst"
               company="Bank of America"
               date="July 2020 - June 2022"
               align="right"
               logo="/img/bofa.png"
             />
-            <ProgressNode
+            <TimelineNode
               title="Summer Intern"
               company="Bank of America"
               date="June 2019 - August 2019"

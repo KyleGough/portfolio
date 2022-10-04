@@ -1,7 +1,9 @@
 import { clsx } from 'clsx';
 import React from 'react';
 
-interface ProgressNodeProps {
+import { FadeIn } from '../FadeIn';
+
+interface TimelineNodeProps {
   title: string;
   company: string;
   date: string;
@@ -9,7 +11,7 @@ interface ProgressNodeProps {
   logo?: string;
 }
 
-export const ProgressNode: React.FC<ProgressNodeProps> = ({
+export const TimelineNode: React.FC<TimelineNodeProps> = ({
   title,
   company,
   date,
@@ -23,21 +25,23 @@ export const ProgressNode: React.FC<ProgressNodeProps> = ({
         'flex items-center justify-end h-48',
         { 'md:flex-row-reverse': align === 'right' }
       )}>
-        <img className={clsx(
-          'w-16 md:w-24 lg:w-32 mr-8',
-          { 'md:ml-8 md:mr-0': align === 'right' }
-        )}
-        src={logo}
-        alt={company}
-        />
-        <div className={clsx(
+        <FadeIn>
+          <img className={clsx(
+            'w-16 md:w-24 lg:w-32 mr-8',
+            { 'md:ml-8 md:mr-0': align === 'right' }
+          )}
+          src={logo}
+          alt={company}
+          />
+        </FadeIn>
+        <FadeIn className={clsx(
           'mr-8',
           { 'md:ml-8 md:mr-0 md:text-right': align === 'right' }
         )}>
           <p className="text-3xl">{company}</p>
           <p className="text-xl">{title}</p>
           <p>{date}</p>
-        </div>
+        </FadeIn>
         <div className="h-px border border-timeline w-6 max-w-[12rem] grow"></div>
       </div>
       {align === 'left' && <div className='hidden md:block'></div>}
