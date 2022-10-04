@@ -1,11 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 
 import { Divider } from '../../components/Divider';
 import { GoalListItem, Progress } from '../../components/GoalListItem';
 import { LabelledLogo } from '../../components/LabelledLogo';
 import { Section } from '../../components/Section';
 import { SkillList } from '../../components/SkillList';
-import { UniModuleList } from '../../components/UniModuleList';
 import { ArrowForwardIcon } from '../../icons';
 import BootstrapLogo from '../../img/bootstrap.png';
 import HerokuLogo from '../../img/heroku.png';
@@ -18,12 +17,6 @@ import { skillsProgramming } from './SkillsProgramming';
 import { skillsWeb } from './SkillsWeb';
 
 export const About: React.FC = () => {
-  const anchorProgramming = useRef<HTMLDivElement>(null);
-  const anchorWeb = useRef<HTMLDivElement>(null);
-  const anchorOther = useRef<HTMLDivElement>(null);
-  const anchorGoals = useRef<HTMLDivElement>(null);
-  const anchorUni = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     document.title = 'About Me - Kyle Gough';
   }, []);
@@ -55,7 +48,7 @@ export const About: React.FC = () => {
 
       <hr className="mt-8 h-px bg-divider" />
 
-      <Section ref={anchorProgramming} id="programming-languages">
+      <Section id="programming-languages">
         <h2 className="project-header text-center md:text-left">
           Programming Languages
         </h2>
@@ -64,7 +57,7 @@ export const About: React.FC = () => {
 
       <Divider />
 
-      <Section ref={anchorWeb} id="web-development">
+      <Section id="web-development">
         <h2 className="project-header text-center md:text-left">
           Web Development
         </h2>
@@ -84,7 +77,7 @@ export const About: React.FC = () => {
 
       <Divider />
 
-      <Section ref={anchorOther} id="other-technologies">
+      <Section id="other-technologies">
         <h2 className="project-header text-center md:text-left">
           Other Technologies
         </h2>
@@ -93,7 +86,7 @@ export const About: React.FC = () => {
 
       <Divider />
 
-      <Section ref={anchorGoals} id="goals">
+      <Section id="goals">
         <h2 className="project-header text-center md:text-left">
           Goals for 2022
         </h2>
@@ -108,57 +101,6 @@ export const About: React.FC = () => {
           <GoalListItem name="Web Sockets" progress={Progress.RED} />
           <GoalListItem name="Docker" progress={Progress.RED} />
         </ul>
-      </Section>
-
-      <Divider />
-
-      <Section ref={anchorUni} id="university-modules">
-        <h2 className="project-header text-center md:text-left">
-          University Modules
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          <UniModuleList name="Year 1 Modules">
-            <li>Programming for Computer Scientists</li>
-            <li>Design of Information Structures</li>
-            <li>Mathematics for Computer Scientists I</li>
-            <li>Mathematics for Computer Scientists II</li>
-            <li>Computer Organisation and Architecture</li>
-            <li>Professional Skills</li>
-            <li>Web Development Technologies</li>
-            <li>Computer Security</li>
-          </UniModuleList>
-
-          <UniModuleList name="Year 2 Modules">
-            <li>Operating Systems and Computer Networks</li>
-            <li>Functional Programming</li>
-            <li>Database Systems</li>
-            <li>Formal Languages</li>
-            <li>Algorithms</li>
-            <li>Software Engineering</li>
-            <li>Logic and Verification</li>
-            <li>Cyber Security</li>
-          </UniModuleList>
-
-          <UniModuleList name="Year 3 Modules">
-            <li>Dissertation</li>
-            <li>Mobile Robotics</li>
-            <li>Computer Graphics</li>
-            <li>Neural Computing</li>
-            <li>Machine Learning</li>
-            <li>Project Management</li>
-            <li>Digital Forensics</li>
-          </UniModuleList>
-
-          <UniModuleList name="Year 4 Modules">
-            <li>High Peformance Computing</li>
-            <li>Group Project</li>
-            <li>Image and Video Analysis</li>
-            <li>Quantum Computing</li>
-            <li>Computational Biology</li>
-            <li>Foundations of Data Analytics</li>
-            <li>Advanced Computer Security</li>
-          </UniModuleList>
-        </div>
       </Section>
     </>
   );
