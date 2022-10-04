@@ -4,10 +4,11 @@ import React, { useEffect, useState } from 'react';
 import { useObserveElement } from '../../hooks/useObserveElement';
 
 interface FadeInProps {
+  className?: string;
   children: React.ReactNode;
 }
 
-export const FadeIn: React.FC<FadeInProps> = ({ children }) => {
+export const FadeIn: React.FC<FadeInProps> = ({ className, children }) => {
   const [elementRef, isVisible] = useObserveElement<HTMLDivElement>({
     threshold: 0.5,
   });
@@ -21,6 +22,7 @@ export const FadeIn: React.FC<FadeInProps> = ({ children }) => {
     <div
       ref={elementRef}
       className={clsx(
+        className,
         { 'opacity-100': show },
         { 'opacity-0': !show },
         'transition-opacity duration-1000'

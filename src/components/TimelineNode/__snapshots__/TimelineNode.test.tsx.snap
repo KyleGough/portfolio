@@ -1,17 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ProgressNode component renders 1`] = `
+exports[`TimelineNode component renders 1`] = `
 <div>
   <div
     class="flex items-center justify-end h-48"
   >
-    <img
-      alt="Acme"
-      class="w-16 md:w-24 lg:w-32 mr-8"
-      src="#"
-    />
     <div
-      class="mr-8"
+      class="opacity-0 transition-opacity duration-1000"
+    >
+      <img
+        alt="Acme"
+        class="w-16 md:w-24 lg:w-32 mr-8"
+        src="#"
+      />
+    </div>
+    <div
+      class="mr-8 opacity-0 transition-opacity duration-1000"
     >
       <p
         class="text-3xl"
