@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { CarouselImage } from '../../components/CarouselImage';
 import { Contact } from '../../components/Contact';
+import { ProgressNode } from '../../components/ProgressNode';
 import { ProjectCard } from '../../components/ProjectCard';
 import { Section } from '../../components/Section';
 import { useObserveElement } from '../../hooks/useObserveElement';
@@ -69,7 +70,7 @@ export const Home: React.FC = () => {
         </div>
       </div>
 
-      <div className="bg-circuits min-h-screen flex items-center border-y border-divider shadow">
+      <div className="bg-circuits min-h-screen flex items-center border-y border-divider">
         <Section>
           <h2 className="font-thin text-6xl text-center mt-24 text-nav-light">
             Project Showcase
@@ -112,6 +113,46 @@ export const Home: React.FC = () => {
               <p>All Projects</p>
               <ArrowForwardIcon className="float-right ml-4 w-4 h-4 fill-link group-hover:fill-link-hover group-focus:fill-link-hover" />
             </Link>
+          </div>
+        </Section>
+      </div>
+
+      <div className="min-h-screen flex items-center border-b border-divider shadow">
+        <Section>
+          <h2 className="font-thin text-6xl text-center mt-16 text-nav-light max-w-reading">
+          Work Experience
+          </h2>
+          <div className={clsx(
+            'grid grid-cols-1 md:grid-cols-2',
+            'my-16 relative',
+            'before:absolute before:content-[""] before:h-2/4 before:w-[2px]',
+            'before:right-0 md:before:left-2/4',
+            'before:bg-gradient-to-t before:from-timeline before:via-timeline before:to-transparent',
+            'after:absolute after:content-[""] after:h-2/4 after:w-[2px]',
+            'after:top-2/4 after:right-0 md:after:left-2/4',
+            'after:bg-gradient-to-b after:from-timeline after:via-timeline after:to-transparent'
+          )}>
+            <ProgressNode
+              title="Front-End Engineer"
+              company="Atom Learning"
+              date="July 2022 - Present"
+              align="left"
+              logo="/img/atom.png"
+            />
+            <ProgressNode
+              title="Tech Analyst"
+              company="Bank of America"
+              date="July 2020 - June 2022"
+              align="right"
+              logo="/img/bofa.png"
+            />
+            <ProgressNode
+              title="Summer Intern"
+              company="Bank of America"
+              date="June 2019 - August 2019"
+              align="left"
+              logo="/img/bofa.png"
+            />
           </div>
         </Section>
       </div>

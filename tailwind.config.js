@@ -38,6 +38,7 @@ module.exports = {
         'background': '#FAFAFA',
         'accent-blue': '#FAFAFF',
         'divider': 'rgba(0, 0, 0, 0.12)',
+        'timeline': '#DADADA',
         'nav-light': '#424242',
         'nav': 'rgba(66,66,66, 0.9)',
         'nav-dark': '#353535',
