@@ -17,7 +17,7 @@ export const skillsOther: ISkill[] = [
     name: 'Bash / Zsh',
     progress: 75,
     className: 'w-[75%]',
-    description: 'Shell Scripting Exercises, Finding security defects in a VM',
+    description: 'Daily use, All projects',
     logo: BashLogo,
   },
   {

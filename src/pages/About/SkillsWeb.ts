@@ -54,7 +54,7 @@ export const skillsWeb: ISkill[] = [
     name: 'PHP',
     progress: 50,
     className: 'w-[50%]',
-    description: 'BSplit, Portfolio',
+    description: 'BSplit, To Do List',
     logo: PHPLogo,
   },
 ];
