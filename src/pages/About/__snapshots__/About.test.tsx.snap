@@ -246,7 +246,7 @@ exports[`About page renders 1`] = `
           alt="HTML logo"
           class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
           loading="lazy"
-          src="html.png"
+          src="html.svg"
         />
         <div>
           <p>
@@ -288,7 +288,7 @@ exports[`About page renders 1`] = `
           alt="CSS logo"
           class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
           loading="lazy"
-          src="css.png"
+          src="css.svg"
         />
         <div>
           <p>
@@ -568,7 +568,7 @@ exports[`About page renders 1`] = `
           alt="C# logo"
           class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
           loading="lazy"
-          src="c#.png"
+          src="csharp.svg"
         />
         <div>
           <p>
@@ -610,7 +610,7 @@ exports[`About page renders 1`] = `
           alt="C++ logo"
           class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
           loading="lazy"
-          src="c++.png"
+          src="cplusplus.svg"
         />
         <div>
           <p>
@@ -778,7 +778,7 @@ exports[`About page renders 1`] = `
           alt="MATLAB logo"
           class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
           loading="lazy"
-          src="matlab.png"
+          src="matlab.svg"
         />
         <div>
           <p>

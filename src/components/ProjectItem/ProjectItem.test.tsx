@@ -15,6 +15,7 @@ describe('ProjectItem component', () => {
           link="/#project"
           src="/#image"
           alt="Test Alt Text"
+          logo="/#logo"
         />
       </BrowserRouter>
     );

@@ -90,7 +90,7 @@ exports[`Projects component renders 1`] = `
         class="col-span-12 lg:col-span-5 text-center -mb-8"
       >
         <a
-          class="group relative"
+          class="block group relative"
           href="/projects/portfolio"
         >
           <img
@@ -98,6 +98,10 @@ exports[`Projects component renders 1`] = `
             class="border-2 border-white rounded-lg shadow"
             loading="lazy"
             src="/img/card-portfolio.jpg"
+          />
+          <img
+            class="absolute top-2 right-2 w-8 h-8 drop-shadow"
+            src="typescript.png"
           />
           <button
             class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
@@ -141,7 +145,7 @@ exports[`Projects component renders 1`] = `
         class="col-span-12 lg:col-span-5 text-center -mb-8"
       >
         <a
-          class="group relative"
+          class="block group relative"
           href="/projects/lucidlab"
         >
           <img
@@ -149,6 +153,10 @@ exports[`Projects component renders 1`] = `
             class="border-2 border-white rounded-lg shadow"
             loading="lazy"
             src="/img/card-lucidlab.jpg"
+          />
+          <img
+            class="absolute top-2 right-2 w-8 h-8 drop-shadow"
+            src="javascript.png"
           />
           <button
             class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
@@ -192,7 +200,7 @@ exports[`Projects component renders 1`] = `
         class="col-span-12 lg:col-span-5 text-center -mb-8"
       >
         <a
-          class="group relative"
+          class="block group relative"
           href="/projects/sudoku"
         >
           <img
@@ -200,6 +208,10 @@ exports[`Projects component renders 1`] = `
             class="border-2 border-white rounded-lg shadow"
             loading="lazy"
             src="/img/card-sudoku.jpg"
+          />
+          <img
+            class="absolute top-2 right-2 w-8 h-8 drop-shadow"
+            src="python.png"
           />
           <button
             class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
@@ -243,7 +255,7 @@ exports[`Projects component renders 1`] = `
         class="col-span-12 lg:col-span-5 text-center -mb-8"
       >
         <a
-          class="group relative"
+          class="block group relative"
           href="/projects/react-minesweeper"
         >
           <img
@@ -251,6 +263,10 @@ exports[`Projects component renders 1`] = `
             class="border-2 border-white rounded-lg shadow"
             loading="lazy"
             src="img/card-react-minesweeper.jpg"
+          />
+          <img
+            class="absolute top-2 right-2 w-8 h-8 drop-shadow"
+            src="react.png"
           />
           <button
             class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
@@ -294,7 +310,7 @@ exports[`Projects component renders 1`] = `
         class="col-span-12 lg:col-span-5 text-center -mb-8"
       >
         <a
-          class="group relative"
+          class="block group relative"
           href="/projects/cave-exploration"
         >
           <img
@@ -302,6 +318,10 @@ exports[`Projects component renders 1`] = `
             class="border-2 border-white rounded-lg shadow"
             loading="lazy"
             src="/img/card-cave-exploration.jpg"
+          />
+          <img
+            class="absolute top-2 right-2 w-8 h-8 drop-shadow"
+            src="cplusplus.svg"
           />
           <button
             class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
@@ -345,7 +365,7 @@ exports[`Projects component renders 1`] = `
         class="col-span-12 lg:col-span-5 text-center -mb-8"
       >
         <a
-          class="group relative"
+          class="block group relative"
           href="/projects/roller-coaster"
         >
           <img
@@ -353,6 +373,10 @@ exports[`Projects component renders 1`] = `
             class="border-2 border-white rounded-lg shadow"
             loading="lazy"
             src="/img/card-roller-coaster.jpg"
+          />
+          <img
+            class="absolute top-2 right-2 w-8 h-8 drop-shadow"
+            src="cplusplus.svg"
           />
           <button
             class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
@@ -396,7 +420,7 @@ exports[`Projects component renders 1`] = `
         class="col-span-12 lg:col-span-5 text-center -mb-8"
       >
         <a
-          class="group relative"
+          class="block group relative"
           href="/projects/rscbot"
         >
           <img
@@ -404,6 +428,10 @@ exports[`Projects component renders 1`] = `
             class="border-2 border-white rounded-lg shadow"
             loading="lazy"
             src="/img/card-rscbot.jpg"
+          />
+          <img
+            class="absolute top-2 right-2 w-8 h-8 drop-shadow"
+            src="javascript.png"
           />
           <button
             class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
@@ -447,7 +475,7 @@ exports[`Projects component renders 1`] = `
         class="col-span-12 lg:col-span-5 text-center -mb-8"
       >
         <a
-          class="group relative"
+          class="block group relative"
           href="/projects/url-shortener"
         >
           <img
@@ -455,6 +483,10 @@ exports[`Projects component renders 1`] = `
             class="border-2 border-white rounded-lg shadow"
             loading="lazy"
             src="/img/card-url-shortener.jpg"
+          />
+          <img
+            class="absolute top-2 right-2 w-8 h-8 drop-shadow"
+            src="javascript.png"
           />
           <button
             class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
@@ -498,7 +530,7 @@ exports[`Projects component renders 1`] = `
         class="col-span-12 lg:col-span-5 text-center -mb-8"
       >
         <a
-          class="group relative"
+          class="block group relative"
           href="/projects/graph-algorithm-visualiser"
         >
           <img
@@ -506,6 +538,10 @@ exports[`Projects component renders 1`] = `
             class="border-2 border-white rounded-lg shadow"
             loading="lazy"
             src="/img/card-graph-algorithm-visualiser.jpg"
+          />
+          <img
+            class="absolute top-2 right-2 w-8 h-8 drop-shadow"
+            src="javascript.png"
           />
           <button
             class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
@@ -549,7 +585,7 @@ exports[`Projects component renders 1`] = `
         class="col-span-12 lg:col-span-5 text-center -mb-8"
       >
         <a
-          class="group relative"
+          class="block group relative"
           href="/projects/cavern-minesweeper"
         >
           <img
@@ -557,6 +593,10 @@ exports[`Projects component renders 1`] = `
             class="border-2 border-white rounded-lg shadow"
             loading="lazy"
             src="/img/card-cavern-minesweeper.jpg"
+          />
+          <img
+            class="absolute top-2 right-2 w-8 h-8 drop-shadow"
+            src="ruby.png"
           />
           <button
             class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
@@ -600,7 +640,7 @@ exports[`Projects component renders 1`] = `
         class="col-span-12 lg:col-span-5 text-center -mb-8"
       >
         <a
-          class="group relative"
+          class="block group relative"
           href="/projects/bsplit"
         >
           <img
@@ -608,6 +648,10 @@ exports[`Projects component renders 1`] = `
             class="border-2 border-white rounded-lg shadow"
             loading="lazy"
             src="/img/card-bsplit.jpg"
+          />
+          <img
+            class="absolute top-2 right-2 w-8 h-8 drop-shadow"
+            src="javascript.png"
           />
           <button
             class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
@@ -651,7 +695,7 @@ exports[`Projects component renders 1`] = `
         class="col-span-12 lg:col-span-5 text-center -mb-8"
       >
         <a
-          class="group relative"
+          class="block group relative"
           href="/projects/todo-list"
         >
           <img
@@ -659,6 +703,10 @@ exports[`Projects component renders 1`] = `
             class="border-2 border-white rounded-lg shadow"
             loading="lazy"
             src="/img/card-todo.jpg"
+          />
+          <img
+            class="absolute top-2 right-2 w-8 h-8 drop-shadow"
+            src="javascript.png"
           />
           <button
             class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
@@ -702,7 +750,7 @@ exports[`Projects component renders 1`] = `
         class="col-span-12 lg:col-span-5 text-center -mb-8"
       >
         <a
-          class="group relative"
+          class="block group relative"
           href="/projects/delivery-route-planner"
         >
           <img
@@ -710,6 +758,10 @@ exports[`Projects component renders 1`] = `
             class="border-2 border-white rounded-lg shadow"
             loading="lazy"
             src="/img/card-delivery-route-planner.jpg"
+          />
+          <img
+            class="absolute top-2 right-2 w-8 h-8 drop-shadow"
+            src="csharp.svg"
           />
           <button
             class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
@@ -753,7 +805,7 @@ exports[`Projects component renders 1`] = `
         class="col-span-12 lg:col-span-5 text-center -mb-8"
       >
         <a
-          class="group relative"
+          class="block group relative"
           href="/projects/sorting-algorithm-visualiser"
         >
           <img
@@ -761,6 +813,10 @@ exports[`Projects component renders 1`] = `
             class="border-2 border-white rounded-lg shadow"
             loading="lazy"
             src="/img/card-sorting-algorithm-visualiser.jpg"
+          />
+          <img
+            class="absolute top-2 right-2 w-8 h-8 drop-shadow"
+            src="csharp.svg"
           />
           <button
             class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
