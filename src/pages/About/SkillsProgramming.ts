@@ -20,14 +20,14 @@ export const skillsProgramming: ISkill[] = [
     name: 'Java',
     progress: 80,
     className: 'w-[80%]',
-    description: 'Robot Maze Environment, Steganography',
+    description: 'Robot Maze, Steganography',
     logo: JavaLogo,
   },
   {
     name: 'C#',
     progress: 75,
     className: 'w-[75%]',
-    description: 'Sorting Visualiser, Delivery Route Planner',
+    description: 'Sorting Algorithm Visualiser, Delivery Route Planner',
     logo: CSharpLogo,
   },
   {
@@ -48,7 +48,7 @@ export const skillsProgramming: ISkill[] = [
     name: 'Haskell',
     progress: 30,
     className: 'w-[30%]',
-    description: 'Mastermind Coursework, Scratch Clone Coursework',
+    description: 'Mastermind, Scratch Clone',
     logo: HaskellLogo,
   },
   {
