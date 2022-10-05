@@ -1,9 +1,9 @@
 import { ISkill } from '../../components/SkillList';
-import CSharpLogo from '../../img/c#.png';
-import CPlusPlusLogo from '../../img/c++.png';
+import CPlusPlusLogo from '../../img/cplusplus.svg';
+import CSharpLogo from '../../img/csharp.svg';
 import HaskellLogo from '../../img/haskell.png';
 import JavaLogo from '../../img/java.png';
-import MatlabLogo from '../../img/matlab.png';
+import MatlabLogo from '../../img/matlab.svg';
 import PythonLogo from '../../img/python.png';
 import RubyLogo from '../../img/ruby.png';
 import VBLogo from '../../img/vb.png';

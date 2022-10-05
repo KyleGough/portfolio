@@ -4,7 +4,7 @@ import { Divider } from '../../components/Divider';
 import { ProjectFilter } from '../../components/ProjectFilter';
 import { ProjectItem } from '../../components/ProjectItem';
 import { Section } from '../../components/Section';
-import { getAllProjects,IProject } from '../../data';
+import { IProject, projects } from '../../data';
 
 export const Projects: React.FC = () => {
   const [filter, setFilter] = useState('All');
@@ -34,7 +34,7 @@ export const Projects: React.FC = () => {
         <hr className="mb-8 h-px bg-divider" />
       </div>
 
-      {Object.values(getAllProjects())
+      {projects
         .filter((project) => filterProjects(project))
         .map((project, i) => {
           return (
@@ -47,6 +47,7 @@ export const Projects: React.FC = () => {
                 src={project.src}
                 alt={project.alt}
                 link={project.link}
+                logo={project.logo}
               />
             </React.Fragment>
           );

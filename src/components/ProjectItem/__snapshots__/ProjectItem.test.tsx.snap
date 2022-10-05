@@ -31,7 +31,7 @@ exports[`ProjectItem component renders 1`] = `
         class="col-span-12 lg:col-span-5 text-center -mb-8"
       >
         <a
-          class="group relative"
+          class="block group relative"
           href="/#project"
         >
           <img
@@ -39,6 +39,10 @@ exports[`ProjectItem component renders 1`] = `
             class="border-2 border-white rounded-lg shadow"
             loading="lazy"
             src="/#image"
+          />
+          <img
+            class="absolute top-2 right-2 w-8 h-8 drop-shadow"
+            src="/#logo"
           />
           <button
             class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"

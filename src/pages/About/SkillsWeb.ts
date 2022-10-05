@@ -1,6 +1,6 @@
 import { ISkill } from '../../components/SkillList';
-import CSSLogo from '../../img/css.png';
-import HTMLLogo from '../../img/html.png';
+import CSSLogo from '../../img/css.svg';
+import HTMLLogo from '../../img/html.svg';
 import JavaScriptLogo from '../../img/javascript.png';
 import PHPLogo from '../../img/php.png';
 import ReactLogo from '../../img/react.png';
