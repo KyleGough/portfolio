@@ -344,7 +344,7 @@ exports[`About page renders 1`] = `
             <span
               class="text-sm"
             >
-              BSplit, Portfolio
+              BSplit, To Do List
             </span>
           </p>
         </div>
@@ -540,7 +540,7 @@ exports[`About page renders 1`] = `
             <span
               class="text-sm"
             >
-              Robot Maze Environment, Steganography
+              Robot Maze, Steganography
             </span>
           </p>
         </div>
@@ -582,7 +582,7 @@ exports[`About page renders 1`] = `
             <span
               class="text-sm"
             >
-              Sorting Visualiser, Delivery Route Planner
+              Sorting Algorithm Visualiser, Delivery Route Planner
             </span>
           </p>
         </div>
@@ -708,7 +708,7 @@ exports[`About page renders 1`] = `
             <span
               class="text-sm"
             >
-              Mastermind Coursework, Scratch Clone Coursework
+              Mastermind, Scratch Clone
             </span>
           </p>
         </div>
@@ -889,7 +889,7 @@ exports[`About page renders 1`] = `
             <span
               class="text-sm"
             >
-              Shell Scripting Exercises, Finding security defects in a VM
+              Daily use, All projects
             </span>
           </p>
         </div>
