@@ -20,6 +20,7 @@ export interface IProject {
   github?: string;
   skills: IProjectSkills;
   logo: string;
+  liveLink?: string;
 }
 
 export interface IProjectDate {
@@ -259,7 +260,8 @@ export const projects: IProject[] = [
     skills: {
       active: ['JavaScript', 'Materialize']
     },
-    logo: JavaScriptLogo
+    logo: JavaScriptLogo,
+    liveLink: 'https://kylegough.github.io/graph-algorithm-visualiser/'
   },
   {
     id: 'cavern-minesweeper',

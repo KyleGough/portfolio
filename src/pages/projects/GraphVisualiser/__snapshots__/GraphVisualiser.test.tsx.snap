@@ -24,21 +24,40 @@ exports[`GraphVisualiser project page renders 1`] = `
     >
       Web application which visualises the process of various graph algorithms on randomised nodes. The application can simulate Prim's and Kruskal's algorithm for constructing minimum spanning trees, Graham scan to construct convex hulls, Greedy algorithm to construct minimal matchings, and Nearest neighbour with 2-Opt to create Hamiltonian cycles.
     </p>
-    <p
-      class="mb-4"
+    <ul
+      class="project-list"
     >
-      <span>
-        Explore this project on 
-      </span>
-      <a
-        class="text-link hover:text-link-hover focus:text-link-hover"
-        href="https://github.com/KyleGough/graph-algorithm-visualiser"
-        rel="noopener noreferrer"
-        target="_blank"
+      <li
+        class="mb-4"
       >
-        GitHub
-      </a>
-    </p>
+        <span>
+          Explore this project on 
+        </span>
+        <a
+          class="text-link hover:text-link-hover focus:text-link-hover"
+          href="https://github.com/KyleGough/graph-algorithm-visualiser"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          GitHub
+        </a>
+      </li>
+      <li
+        class="mb-4"
+      >
+        <span>
+          Explore this project live 
+        </span>
+        <a
+          class="text-link hover:text-link-hover focus:text-link-hover"
+          href="https://kylegough.github.io/graph-algorithm-visualiser/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          here
+        </a>
+      </li>
+    </ul>
     <div
       class="flex flex-row flex-wrap items-center mt-8 gap-4"
     >

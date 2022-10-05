@@ -32,21 +32,25 @@ exports[`Portfolio project page renders 1`] = `
     >
       Personal portfolio website created to showcase my projects and technical skills. First created in 2016 as a simple static HTML website, the website has experienced multiple improvements over the years including migration to PHP, then to React with Materialize, and most recently to React with Tailwind.
     </p>
-    <p
-      class="mb-4"
+    <ul
+      class="project-list"
     >
-      <span>
-        Explore this project on 
-      </span>
-      <a
-        class="text-link hover:text-link-hover focus:text-link-hover"
-        href="https://github.com/KyleGough/portfolio"
-        rel="noopener noreferrer"
-        target="_blank"
+      <li
+        class="mb-4"
       >
-        GitHub
-      </a>
-    </p>
+        <span>
+          Explore this project on 
+        </span>
+        <a
+          class="text-link hover:text-link-hover focus:text-link-hover"
+          href="https://github.com/KyleGough/portfolio"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          GitHub
+        </a>
+      </li>
+    </ul>
     <div
       class="flex flex-row flex-wrap items-center mt-8 gap-4"
     >

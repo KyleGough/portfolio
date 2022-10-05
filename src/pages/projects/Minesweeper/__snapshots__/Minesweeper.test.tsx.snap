@@ -24,21 +24,25 @@ exports[`Minesweeper project page renders 1`] = `
     >
       Clone of classic Minesweeper with an 18x18 board. Ability to reveal tiles and flag tiles for potential mines. Flood fill algorithms will reveal all adjacent tiles when a 0 is uncovered, mimicing the behaviour of the original game.
     </p>
-    <p
-      class="mb-4"
+    <ul
+      class="project-list"
     >
-      <span>
-        Explore this project on 
-      </span>
-      <a
-        class="text-link hover:text-link-hover focus:text-link-hover"
-        href="https://github.com/KyleGough/react-minesweeper"
-        rel="noopener noreferrer"
-        target="_blank"
+      <li
+        class="mb-4"
       >
-        GitHub
-      </a>
-    </p>
+        <span>
+          Explore this project on 
+        </span>
+        <a
+          class="text-link hover:text-link-hover focus:text-link-hover"
+          href="https://github.com/KyleGough/react-minesweeper"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          GitHub
+        </a>
+      </li>
+    </ul>
     <div
       class="flex flex-row flex-wrap items-center mt-8 gap-4"
     >
