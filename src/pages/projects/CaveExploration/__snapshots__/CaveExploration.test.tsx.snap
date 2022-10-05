@@ -37,21 +37,25 @@ exports[`CaveExploration project page renders 1`] = `
     >
       Cave exploration is dangerous and time-consuming. This project demonstrates how swarm AI could be used in a group of autonomous flying drones to navigate and explore a cave as efficiently as possible. The project also includes random, realistic cave environment generation.
     </p>
-    <p
-      class="mb-4"
+    <ul
+      class="project-list"
     >
-      <span>
-        Explore this project on 
-      </span>
-      <a
-        class="text-link hover:text-link-hover focus:text-link-hover"
-        href="https://github.com/KyleGough/CS310-Dissertation"
-        rel="noopener noreferrer"
-        target="_blank"
+      <li
+        class="mb-4"
       >
-        GitHub
-      </a>
-    </p>
+        <span>
+          Explore this project on 
+        </span>
+        <a
+          class="text-link hover:text-link-hover focus:text-link-hover"
+          href="https://github.com/KyleGough/CS310-Dissertation"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          GitHub
+        </a>
+      </li>
+    </ul>
     <div
       class="flex flex-row flex-wrap items-center mt-8 gap-4"
     >

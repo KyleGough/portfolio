@@ -3,6 +3,7 @@ import React from 'react';
 import { IProject } from '../../data';
 import { getLongDate } from '../../utilities/date';
 import { Chip } from '../Chip';
+import { Link } from '../Link';
 import { Section } from '../Section';
 
 interface ProjectHeaderProps {
@@ -32,18 +33,21 @@ export const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => {
       </p>
       <p className="mb-4 max-w-reading">{project.description}</p>
 
-      {project.github && (
-        <p className="mb-4">
-          <span>Explore this project on </span>
-          <a
-            className="text-link hover:text-link-hover focus:text-link-hover"
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
-        </p>
+      {(project.github || project.liveLink) && (
+        <ul className="project-list">
+          {project.github && (
+            <li className="mb-4">
+              <span>Explore this project on </span>
+              <Link href={project.github}>GitHub</Link>
+            </li>
+          )}
+          {project.liveLink && (
+            <li className="mb-4">
+              <span>Explore this project live </span>
+              <Link href={project.liveLink}>here</Link>
+            </li>
+          )}
+        </ul>
       )}
 
       <div className="flex flex-row flex-wrap items-center mt-8 gap-4">
