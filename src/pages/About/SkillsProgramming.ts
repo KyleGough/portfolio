@@ -1,11 +1,11 @@
 import { ISkill } from '../../components/SkillList';
 import CPlusPlusLogo from '../../img/cplusplus.svg';
 import CSharpLogo from '../../img/csharp.svg';
-import HaskellLogo from '../../img/haskell.png';
+import HaskellLogo from '../../img/haskell.svg';
 import JavaLogo from '../../img/java.svg';
 import MatlabLogo from '../../img/matlab.svg';
 import PythonLogo from '../../img/python.svg';
-import RubyLogo from '../../img/ruby.png';
+import RubyLogo from '../../img/ruby.svg';
 import VBLogo from '../../img/vb.png';
 
 export const skillsProgramming: ISkill[] = [
