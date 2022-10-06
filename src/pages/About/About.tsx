@@ -11,7 +11,7 @@ import HerokuLogo from '../../img/heroku.svg';
 import JqueryLogo from '../../img/jquery.svg';
 import MaterializeLogo from '../../img/materialize.svg';
 import NodeLogo from '../../img/node.svg';
-import WebixLogo from '../../img/webix.png';
+import WebixLogo from '../../img/webix.svg';
 import { skillsOther } from './SkillsOther';
 import { skillsProgramming } from './SkillsProgramming';
 import { skillsWeb } from './SkillsWeb';
