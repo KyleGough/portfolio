@@ -2,7 +2,7 @@ import { ISkill } from '../../components/SkillList';
 import CSSLogo from '../../img/css.svg';
 import HTMLLogo from '../../img/html.svg';
 import JavaScriptLogo from '../../img/javascript.svg';
-import PHPLogo from '../../img/php.png';
+import PHPLogo from '../../img/php.svg';
 import ReactLogo from '../../img/react.svg';
 import TailwindLogo from '../../img/tailwind.svg';
 import TypeScriptLogo from '../../img/typescript.svg';

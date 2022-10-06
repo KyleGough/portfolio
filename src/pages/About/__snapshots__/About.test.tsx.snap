@@ -330,7 +330,7 @@ exports[`About page renders 1`] = `
           alt="PHP logo"
           class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
           loading="lazy"
-          src="php.png"
+          src="php.svg"
         />
         <div>
           <p>
@@ -365,7 +365,7 @@ exports[`About page renders 1`] = `
           alt="Node.js Logo"
           class="w-8 h-8 mb-2 mx-auto"
           loading="lazy"
-          src="node.png"
+          src="node.svg"
         />
         <p
           class="text-sm"
@@ -395,7 +395,7 @@ exports[`About page renders 1`] = `
           alt="Bootstrap Logo"
           class="w-8 h-8 mb-2 mx-auto"
           loading="lazy"
-          src="bootstrap.png"
+          src="bootstrap.svg"
         />
         <p
           class="text-sm"
@@ -410,7 +410,7 @@ exports[`About page renders 1`] = `
           alt="Materialize Logo"
           class="w-8 h-8 mb-2 mx-auto"
           loading="lazy"
-          src="materialize.png"
+          src="materialize.svg"
         />
         <p
           class="text-sm"
@@ -440,7 +440,7 @@ exports[`About page renders 1`] = `
           alt="Heroku Logo"
           class="w-8 h-8 mb-2 mx-auto"
           loading="lazy"
-          src="heroku.png"
+          src="heroku.svg"
         />
         <p
           class="text-sm"
@@ -694,7 +694,7 @@ exports[`About page renders 1`] = `
           alt="Haskell logo"
           class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
           loading="lazy"
-          src="haskell.png"
+          src="haskell.svg"
         />
         <div>
           <p>
@@ -736,7 +736,7 @@ exports[`About page renders 1`] = `
           alt="Ruby logo"
           class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
           loading="lazy"
-          src="ruby.png"
+          src="ruby.svg"
         />
         <div>
           <p>
@@ -875,7 +875,7 @@ exports[`About page renders 1`] = `
           alt="Bash / Zsh logo"
           class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
           loading="lazy"
-          src="bash.png"
+          src="bash.svg"
         />
         <div>
           <p>
@@ -959,7 +959,7 @@ exports[`About page renders 1`] = `
           alt="SQL logo"
           class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
           loading="lazy"
-          src="sql.png"
+          src="sql.svg"
         />
         <div>
           <p>
@@ -1001,7 +1001,7 @@ exports[`About page renders 1`] = `
           alt="LaTeX logo"
           class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
           loading="lazy"
-          src="latex.png"
+          src="latex.svg"
         />
         <div>
           <p>

@@ -3,7 +3,7 @@ import CSharpLogo from '../img/csharp.svg';
 import JavaScriptLogo from '../img/javascript.svg';
 import PythonLogo from '../img/python.svg';
 import ReactLogo from '../img/react.svg';
-import RubyLogo from '../img/ruby.png';
+import RubyLogo from '../img/ruby.svg';
 import TypeScriptLogo from '../img/typescript.svg';
 
 export interface IProject {
