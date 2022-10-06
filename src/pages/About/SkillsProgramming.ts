@@ -2,9 +2,9 @@ import { ISkill } from '../../components/SkillList';
 import CPlusPlusLogo from '../../img/cplusplus.svg';
 import CSharpLogo from '../../img/csharp.svg';
 import HaskellLogo from '../../img/haskell.png';
-import JavaLogo from '../../img/java.png';
+import JavaLogo from '../../img/java.svg';
 import MatlabLogo from '../../img/matlab.svg';
-import PythonLogo from '../../img/python.png';
+import PythonLogo from '../../img/python.svg';
 import RubyLogo from '../../img/ruby.png';
 import VBLogo from '../../img/vb.png';
 

@@ -101,7 +101,7 @@ exports[`Projects component renders 1`] = `
           />
           <img
             class="absolute top-2 right-2 w-8 h-8 drop-shadow"
-            src="typescript.png"
+            src="typescript.svg"
           />
           <button
             class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
@@ -156,7 +156,7 @@ exports[`Projects component renders 1`] = `
           />
           <img
             class="absolute top-2 right-2 w-8 h-8 drop-shadow"
-            src="javascript.png"
+            src="javascript.svg"
           />
           <button
             class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
@@ -211,7 +211,7 @@ exports[`Projects component renders 1`] = `
           />
           <img
             class="absolute top-2 right-2 w-8 h-8 drop-shadow"
-            src="python.png"
+            src="python.svg"
           />
           <button
             class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
@@ -266,7 +266,7 @@ exports[`Projects component renders 1`] = `
           />
           <img
             class="absolute top-2 right-2 w-8 h-8 drop-shadow"
-            src="react.png"
+            src="react.svg"
           />
           <button
             class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
@@ -431,7 +431,7 @@ exports[`Projects component renders 1`] = `
           />
           <img
             class="absolute top-2 right-2 w-8 h-8 drop-shadow"
-            src="javascript.png"
+            src="javascript.svg"
           />
           <button
             class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
@@ -486,7 +486,7 @@ exports[`Projects component renders 1`] = `
           />
           <img
             class="absolute top-2 right-2 w-8 h-8 drop-shadow"
-            src="javascript.png"
+            src="javascript.svg"
           />
           <button
             class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
@@ -541,7 +541,7 @@ exports[`Projects component renders 1`] = `
           />
           <img
             class="absolute top-2 right-2 w-8 h-8 drop-shadow"
-            src="javascript.png"
+            src="javascript.svg"
           />
           <button
             class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
@@ -651,7 +651,7 @@ exports[`Projects component renders 1`] = `
           />
           <img
             class="absolute top-2 right-2 w-8 h-8 drop-shadow"
-            src="javascript.png"
+            src="javascript.svg"
           />
           <button
             class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
@@ -706,7 +706,7 @@ exports[`Projects component renders 1`] = `
           />
           <img
             class="absolute top-2 right-2 w-8 h-8 drop-shadow"
-            src="javascript.png"
+            src="javascript.svg"
           />
           <button
             class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"

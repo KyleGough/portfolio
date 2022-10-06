@@ -1,8 +1,8 @@
 import { ISkill } from '../../components/SkillList';
 import BashLogo from '../../img/bash.png';
-import GitLogo from '../../img/git.png';
+import GitLogo from '../../img/git.svg';
 import LatexLogo from '../../img/latex.png';
-import MarkdownLogo from '../../img/markdown.png';
+import MarkdownLogo from '../../img/markdown.svg';
 import SQLLogo from '../../img/sql.png';
 
 export const skillsOther: ISkill[] = [

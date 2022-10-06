@@ -8,7 +8,7 @@ import { SkillList } from '../../components/SkillList';
 import { ArrowForwardIcon } from '../../icons';
 import BootstrapLogo from '../../img/bootstrap.png';
 import HerokuLogo from '../../img/heroku.png';
-import JqueryLogo from '../../img/jquery.png';
+import JqueryLogo from '../../img/jquery.svg';
 import MaterializeLogo from '../../img/materialize.png';
 import NodeLogo from '../../img/node.png';
 import WebixLogo from '../../img/webix.png';
