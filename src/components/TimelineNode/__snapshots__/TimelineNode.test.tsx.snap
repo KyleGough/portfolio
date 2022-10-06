@@ -32,7 +32,7 @@ exports[`TimelineNode component renders 1`] = `
       </p>
     </div>
     <div
-      class="h-px border border-timeline w-6 max-w-[12rem] grow"
+      class="h-[2px] bg-timeline w-6 max-w-[12rem] grow"
     />
   </div>
   <div
