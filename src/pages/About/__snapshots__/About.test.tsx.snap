@@ -78,7 +78,7 @@ exports[`About page renders 1`] = `
           alt="JavaScript logo"
           class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
           loading="lazy"
-          src="javascript.png"
+          src="javascript.svg"
         />
         <div>
           <p>
@@ -120,7 +120,7 @@ exports[`About page renders 1`] = `
           alt="TypeScript logo"
           class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
           loading="lazy"
-          src="typescript.png"
+          src="typescript.svg"
         />
         <div>
           <p>
@@ -162,7 +162,7 @@ exports[`About page renders 1`] = `
           alt="React logo"
           class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
           loading="lazy"
-          src="react.png"
+          src="react.svg"
         />
         <div>
           <p>
@@ -204,7 +204,7 @@ exports[`About page renders 1`] = `
           alt="Tailwind logo"
           class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
           loading="lazy"
-          src="tailwind.png"
+          src="tailwind.svg"
         />
         <div>
           <p>
@@ -380,7 +380,7 @@ exports[`About page renders 1`] = `
           alt="jQuery Logo"
           class="w-8 h-8 mb-2 mx-auto"
           loading="lazy"
-          src="jquery.png"
+          src="jquery.svg"
         />
         <p
           class="text-sm"
@@ -484,7 +484,7 @@ exports[`About page renders 1`] = `
           alt="Python logo"
           class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
           loading="lazy"
-          src="python.png"
+          src="python.svg"
         />
         <div>
           <p>
@@ -526,7 +526,7 @@ exports[`About page renders 1`] = `
           alt="Java logo"
           class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
           loading="lazy"
-          src="java.png"
+          src="java.svg"
         />
         <div>
           <p>
@@ -833,7 +833,7 @@ exports[`About page renders 1`] = `
           alt="Git logo"
           class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
           loading="lazy"
-          src="git.png"
+          src="git.svg"
         />
         <div>
           <p>
@@ -917,7 +917,7 @@ exports[`About page renders 1`] = `
           alt="Markdown logo"
           class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
           loading="lazy"
-          src="markdown.png"
+          src="markdown.svg"
         />
         <div>
           <p>
