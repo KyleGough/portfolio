@@ -35,15 +35,17 @@ export const About: React.FC = () => {
           multiple personal projects putting these skills into practice,
           detailed below.
         </p>
-        <a
-          href="/CV.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-fit shimmer group flex items-center px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-full border-2 shadow border-link hover:border-link-hover focus:border-link-hover"
-        >
-          <p>Read my CV</p>
-          <ArrowForwardIcon className="float-right ml-4 w-4 h-4 fill-link group-hover:fill-link-hover group-focus:fill-link-hover" />
-        </a>
+        <div className="flex justify-center md:block">
+          <a
+            href="/CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-fit shimmer group flex items-center px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-full border-2 shadow border-link hover:border-link-hover focus:border-link-hover"
+          >
+            <p>Read my CV</p>
+            <ArrowForwardIcon className="float-right ml-4 w-4 h-4 fill-link group-hover:fill-link-hover group-focus:fill-link-hover" />
+          </a>
+        </div>
       </Section>
 
       <Divider />

@@ -15,34 +15,38 @@ exports[`About page renders 1`] = `
     >
       Hello, I'm Kyle, a Front-End Engineer at Atom Learning and Computer Science MEng graduate of the University of Warwick. Interests lie in bouldering, cycling, guitar, movies, and physics. I enjoy learning new languages, frameworks and technologies and have pursued multiple personal projects putting these skills into practice, detailed below.
     </p>
-    <a
-      class="w-fit shimmer group flex items-center px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-full border-2 shadow border-link hover:border-link-hover focus:border-link-hover"
-      href="/CV.pdf"
-      rel="noopener noreferrer"
-      target="_blank"
+    <div
+      class="flex justify-center md:block"
     >
-      <p>
-        Read my CV
-      </p>
-      <svg
-        class="float-right ml-4 w-4 h-4 fill-link group-hover:fill-link-hover group-focus:fill-link-hover"
-        enable-background="new 0 0 24 24"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <a
+        class="w-fit shimmer group flex items-center px-12 py-4 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-full border-2 shadow border-link hover:border-link-hover focus:border-link-hover"
+        href="/CV.pdf"
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        <g>
-          <path
-            d="M0,0h24v24H0V0z"
-            fill="none"
-          />
-        </g>
-        <g>
-          <polygon
-            points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"
-          />
-        </g>
-      </svg>
-    </a>
+        <p>
+          Read my CV
+        </p>
+        <svg
+          class="float-right ml-4 w-4 h-4 fill-link group-hover:fill-link-hover group-focus:fill-link-hover"
+          enable-background="new 0 0 24 24"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g>
+            <path
+              d="M0,0h24v24H0V0z"
+              fill="none"
+            />
+          </g>
+          <g>
+            <polygon
+              points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"
+            />
+          </g>
+        </svg>
+      </a>
+    </div>
   </div>
   <hr
     class="m-8 h-px bg-divider"
