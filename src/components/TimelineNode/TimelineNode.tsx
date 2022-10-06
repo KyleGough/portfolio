@@ -42,7 +42,7 @@ export const TimelineNode: React.FC<TimelineNodeProps> = ({
           <p className="text-xl">{title}</p>
           <p>{date}</p>
         </FadeIn>
-        <div className="h-px border border-timeline w-6 max-w-[12rem] grow"></div>
+        <div className="h-[2px] bg-timeline w-6 max-w-[12rem] grow"></div>
       </div>
       {align === 'left' && <div className='hidden md:block'></div>}
     </>
