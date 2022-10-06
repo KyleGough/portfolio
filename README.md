@@ -18,7 +18,7 @@
 
 <p>Personal portfolio website created to showcase my projects and technical skills. The site was first conceived in late 2016 during my first year at university and was a very simple static <strong>HTML</strong> website with vanilla <strong>CSS</strong>. Over the years I have actively maintained and improved the website integrating new knowledge and experience. This has included migration to <strong>PHP</strong>, then to <strong>React</strong> with <strong>Materialize</strong>. Most recently the site has been upgraded to <strong>TypeScript</strong> with <strong>Tailwind CSS</strong> and behind the scenes lots of work has gone into Hosting, CI/CD, SEO, and Linting.</p>
 
-<h3>Tech Stack</h3>
+## Tech Stack
 
 <div id="stack">
   <!-- TypeScript -->
@@ -45,3 +45,11 @@
   <!-- Heroku -->
   <img src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg" alt="heroku" width="40" height="40"/>
 </div>
+
+## Screenshots
+
+![2022-10-06-125335_1887x908_scrot](https://user-images.githubusercontent.com/24881448/194305982-b993e1d1-bdb2-496f-b151-b815a7bb52c7.png)
+
+![2022-10-06-124951_1890x910_scrot](https://user-images.githubusercontent.com/24881448/194305432-85c42374-08b2-4c7e-a728-60dde4ce18c2.png)
+
+![2022-10-06-124926_1892x911_scrot](https://user-images.githubusercontent.com/24881448/194305430-17501546-402c-4fb2-b490-2a27dd4996c8.png)
