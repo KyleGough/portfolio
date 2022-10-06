@@ -425,7 +425,7 @@ exports[`About page renders 1`] = `
           alt="Webix Logo"
           class="w-8 h-8 mb-2 mx-auto"
           loading="lazy"
-          src="webix.png"
+          src="webix.svg"
         />
         <p
           class="text-sm"
@@ -652,7 +652,7 @@ exports[`About page renders 1`] = `
           alt="Visual Basic logo"
           class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
           loading="lazy"
-          src="vb.png"
+          src="vb.svg"
         />
         <div>
           <p>

@@ -6,7 +6,7 @@ import JavaLogo from '../../img/java.svg';
 import MatlabLogo from '../../img/matlab.svg';
 import PythonLogo from '../../img/python.svg';
 import RubyLogo from '../../img/ruby.svg';
-import VBLogo from '../../img/vb.png';
+import VBLogo from '../../img/vb.svg';
 
 export const skillsProgramming: ISkill[] = [
   {
