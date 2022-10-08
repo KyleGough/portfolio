@@ -10,7 +10,6 @@ import { Nav } from './components/Nav';
 import { ScrollTop } from './components/ScrollTop';
 import { NotFound } from './pages/404';
 import { About } from './pages/About';
-// Main pages.
 import { Home } from './pages/Home';
 import { Privacy } from './pages/Privacy';
 import { Projects } from './pages/Projects';
@@ -24,7 +23,6 @@ import { Minesweeper } from './pages/projects/Minesweeper';
 import { Portfolio } from './pages/projects/Portfolio';
 import { RollerCoaster } from './pages/projects/RollerCoaster';
 import { RSCBot } from './pages/projects/RSCBot';
-// Project pages.
 import { SortingVisualiser } from './pages/projects/SortingVisualiser';
 import { Sudoku } from './pages/projects/Sudoku/Sudoku';
 import { ToDoList } from './pages/projects/ToDoList/ToDoList';
