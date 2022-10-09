@@ -2,7 +2,6 @@ import { ISkill } from '../../components/SkillList';
 import CSSLogo from '../../img/css.svg';
 import HTMLLogo from '../../img/html.svg';
 import JavaScriptLogo from '../../img/javascript.svg';
-import PHPLogo from '../../img/php.svg';
 import ReactLogo from '../../img/react.svg';
 import TailwindLogo from '../../img/tailwind.svg';
 import TypeScriptLogo from '../../img/typescript.svg';
@@ -10,8 +9,8 @@ import TypeScriptLogo from '../../img/typescript.svg';
 export const skillsWeb: ISkill[] = [
   {
     name: 'JavaScript',
-    progress: 90,
-    className: 'w-[90%]',
+    progress: 85,
+    className: 'w-[85%]',
     description: 'LucidLab, Graph Algorithm Visualiser, RSCBot',
     logo: JavaScriptLogo,
   },
@@ -45,16 +44,9 @@ export const skillsWeb: ISkill[] = [
   },
   {
     name: 'CSS',
-    progress: 90,
-    className: 'w-[90%]',
+    progress: 85,
+    className: 'w-[85%]',
     description: 'Atom, Portfolio, LucidLab, BSplit',
     logo: CSSLogo,
-  },
-  {
-    name: 'PHP',
-    progress: 50,
-    className: 'w-[50%]',
-    description: 'BSplit, To Do List',
-    logo: PHPLogo,
-  },
+  }
 ];
