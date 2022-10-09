@@ -6,11 +6,17 @@ import { LabelledLogo } from '../../components/LabelledLogo';
 import { Section } from '../../components/Section';
 import { SkillList } from '../../components/SkillList';
 import { ArrowForwardIcon } from '../../icons';
-import BootstrapLogo from '../../img/bootstrap.svg';
+import ActionsLogo from '../../img/github-actions.svg';
+import HaskellLogo from '../../img/haskell.svg';
 import HerokuLogo from '../../img/heroku.svg';
 import JqueryLogo from '../../img/jquery.svg';
+import LatexLogo from '../../img/latex.svg';
 import MaterializeLogo from '../../img/materialize.svg';
+import MatlabLogo from '../../img/matlab.svg';
 import NodeLogo from '../../img/node.svg';
+import PHPLogo from '../../img/php.svg';
+import RubyLogo from '../../img/ruby.svg';
+import SQLLogo from '../../img/sql.svg';
 import WebixLogo from '../../img/webix.svg';
 import { skillsOther } from './SkillsOther';
 import { skillsProgramming } from './SkillsProgramming';
@@ -55,17 +61,6 @@ export const About: React.FC = () => {
           Web Development
         </h2>
         <SkillList skills={skillsWeb} type="progress-web" />
-        <p className="font-extrabold text-lg text-center md:text-left mb-8 mt-16">
-          Additional experience in
-        </p>
-        <div className="grid xl:grid-cols-12 md:grid-cols-6 grid-cols-3">
-          <LabelledLogo name="Node.js" logo={NodeLogo} />
-          <LabelledLogo name="jQuery" logo={JqueryLogo} />
-          <LabelledLogo name="Bootstrap" logo={BootstrapLogo} />
-          <LabelledLogo name="Materialize" logo={MaterializeLogo} />
-          <LabelledLogo name="Webix" logo={WebixLogo} />
-          <LabelledLogo name="Heroku" logo={HerokuLogo} />
-        </div>
       </Section>
 
       <Divider />
@@ -88,6 +83,28 @@ export const About: React.FC = () => {
 
       <Divider />
 
+      <Section id="additional-experience">
+        <p className="font-extrabold text-lg text-center md:text-left mb-8 mt-16">
+          Additional Experience
+        </p>
+        <div className="lg:w-4/5 xl:w-3/5 grid md:grid-cols-6 grid-cols-3">
+          <LabelledLogo name="Node.js" logo={NodeLogo} />
+          <LabelledLogo name="PHP" logo={PHPLogo} />
+          <LabelledLogo name="Ruby" logo={RubyLogo} />
+          <LabelledLogo name="Haskell" logo={HaskellLogo} />
+          <LabelledLogo name="MATLAB" logo={MatlabLogo} />
+          <LabelledLogo name="jQuery" logo={JqueryLogo} />
+          <LabelledLogo name="Materialize" logo={MaterializeLogo} />
+          <LabelledLogo name="Webix" logo={WebixLogo} />
+          <LabelledLogo name="Heroku" logo={HerokuLogo} />
+          <LabelledLogo name="SQL" logo={SQLLogo} />
+          <LabelledLogo name="LaTeX" logo={LatexLogo} />
+          <LabelledLogo name="GitHub Actions" logo={ActionsLogo} />
+        </div>
+      </Section>
+
+      <Divider />
+
       <Section id="goals">
         <h2 className="project-header text-center md:text-left">
           Goals for 2022
@@ -98,6 +115,7 @@ export const About: React.FC = () => {
         <ul className="list-none mt-8 ml-14">
           <GoalListItem name="TypeScript" progress={Progress.GREEN} />
           <GoalListItem name="ESLint" progress={Progress.GREEN} />
+          <GoalListItem name="GitHub Actions" progress={Progress.GREEN} />
           <GoalListItem name="Extension API" progress={Progress.AMBER} />
           <GoalListItem name="Next.js" progress={Progress.RED} />
           <GoalListItem name="Web Sockets" progress={Progress.RED} />

@@ -70,8 +70,8 @@ exports[`About page renders 1`] = `
           class="progress-web progress overflow-hidden"
         >
           <div
-            class="w-[90%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
-            style="--duration-factor: 90;"
+            class="w-[85%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
+            style="--duration-factor: 85;"
           />
         </div>
       </div>
@@ -280,8 +280,8 @@ exports[`About page renders 1`] = `
           class="progress-web progress overflow-hidden"
         >
           <div
-            class="w-[90%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
-            style="--duration-factor: 90;"
+            class="w-[85%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
+            style="--duration-factor: 85;"
           />
         </div>
       </div>
@@ -310,147 +310,6 @@ exports[`About page renders 1`] = `
             </span>
           </p>
         </div>
-      </div>
-    </div>
-    <div
-      class="flex flex-row justify-center py-6"
-    >
-      <div
-        class="w-3/12 lg:w-4/12 flex items-center"
-      >
-        <div
-          class="progress-web progress overflow-hidden"
-        >
-          <div
-            class="w-[50%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
-            style="--duration-factor: 50;"
-          />
-        </div>
-      </div>
-      <div
-        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
-      >
-        <img
-          alt="PHP logo"
-          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
-          loading="lazy"
-          src="php.svg"
-        />
-        <div>
-          <p>
-            <span
-              class="font-extrabold text-lg"
-            >
-              PHP
-            </span>
-             -
-             
-            <span
-              class="text-sm"
-            >
-              BSplit, To Do List
-            </span>
-          </p>
-        </div>
-      </div>
-    </div>
-    <p
-      class="font-extrabold text-lg text-center md:text-left mb-8 mt-16"
-    >
-      Additional experience in
-    </p>
-    <div
-      class="grid xl:grid-cols-12 md:grid-cols-6 grid-cols-3"
-    >
-      <div
-        class="text-center mb-8"
-      >
-        <img
-          alt="Node.js Logo"
-          class="w-8 h-8 mb-2 mx-auto"
-          loading="lazy"
-          src="node.svg"
-        />
-        <p
-          class="text-sm"
-        >
-          Node.js
-        </p>
-      </div>
-      <div
-        class="text-center mb-8"
-      >
-        <img
-          alt="jQuery Logo"
-          class="w-8 h-8 mb-2 mx-auto"
-          loading="lazy"
-          src="jquery.svg"
-        />
-        <p
-          class="text-sm"
-        >
-          jQuery
-        </p>
-      </div>
-      <div
-        class="text-center mb-8"
-      >
-        <img
-          alt="Bootstrap Logo"
-          class="w-8 h-8 mb-2 mx-auto"
-          loading="lazy"
-          src="bootstrap.svg"
-        />
-        <p
-          class="text-sm"
-        >
-          Bootstrap
-        </p>
-      </div>
-      <div
-        class="text-center mb-8"
-      >
-        <img
-          alt="Materialize Logo"
-          class="w-8 h-8 mb-2 mx-auto"
-          loading="lazy"
-          src="materialize.svg"
-        />
-        <p
-          class="text-sm"
-        >
-          Materialize
-        </p>
-      </div>
-      <div
-        class="text-center mb-8"
-      >
-        <img
-          alt="Webix Logo"
-          class="w-8 h-8 mb-2 mx-auto"
-          loading="lazy"
-          src="webix.svg"
-        />
-        <p
-          class="text-sm"
-        >
-          Webix
-        </p>
-      </div>
-      <div
-        class="text-center mb-8"
-      >
-        <img
-          alt="Heroku Logo"
-          class="w-8 h-8 mb-2 mx-auto"
-          loading="lazy"
-          src="heroku.svg"
-        />
-        <p
-          class="text-sm"
-        >
-          Heroku
-        </p>
       </div>
     </div>
   </div>
@@ -676,132 +535,6 @@ exports[`About page renders 1`] = `
         </div>
       </div>
     </div>
-    <div
-      class="flex flex-row justify-center py-6"
-    >
-      <div
-        class="w-3/12 lg:w-4/12 flex items-center"
-      >
-        <div
-          class="progress-programming progress overflow-hidden"
-        >
-          <div
-            class="w-[30%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
-            style="--duration-factor: 30;"
-          />
-        </div>
-      </div>
-      <div
-        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
-      >
-        <img
-          alt="Haskell logo"
-          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
-          loading="lazy"
-          src="haskell.svg"
-        />
-        <div>
-          <p>
-            <span
-              class="font-extrabold text-lg"
-            >
-              Haskell
-            </span>
-             -
-             
-            <span
-              class="text-sm"
-            >
-              Mastermind, Scratch Clone
-            </span>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="flex flex-row justify-center py-6"
-    >
-      <div
-        class="w-3/12 lg:w-4/12 flex items-center"
-      >
-        <div
-          class="progress-programming progress overflow-hidden"
-        >
-          <div
-            class="w-[20%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
-            style="--duration-factor: 20;"
-          />
-        </div>
-      </div>
-      <div
-        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
-      >
-        <img
-          alt="Ruby logo"
-          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
-          loading="lazy"
-          src="ruby.svg"
-        />
-        <div>
-          <p>
-            <span
-              class="font-extrabold text-lg"
-            >
-              Ruby
-            </span>
-             -
-             
-            <span
-              class="text-sm"
-            >
-              Minesweeper
-            </span>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="flex flex-row justify-center py-6"
-    >
-      <div
-        class="w-3/12 lg:w-4/12 flex items-center"
-      >
-        <div
-          class="progress-programming progress overflow-hidden"
-        >
-          <div
-            class="w-[30%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
-            style="--duration-factor: 30;"
-          />
-        </div>
-      </div>
-      <div
-        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
-      >
-        <img
-          alt="MATLAB logo"
-          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
-          loading="lazy"
-          src="matlab.svg"
-        />
-        <div>
-          <p>
-            <span
-              class="font-extrabold text-lg"
-            >
-              MATLAB
-            </span>
-             -
-             
-            <span
-              class="text-sm"
-            >
-              Image Forensics
-            </span>
-          </p>
-        </div>
-      </div>
-    </div>
   </div>
   <hr
     class="m-8 h-px bg-divider"
@@ -951,8 +684,8 @@ exports[`About page renders 1`] = `
           class="progress-other progress overflow-hidden"
         >
           <div
-            class="w-[50%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
-            style="--duration-factor: 50;"
+            class="w-[75%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
+            style="--duration-factor: 75;"
           />
         </div>
       </div>
@@ -960,69 +693,224 @@ exports[`About page renders 1`] = `
         class="w-9/12 lg:w-8/12 ml-6 flex items-center"
       >
         <img
-          alt="SQL logo"
+          alt="Manjaro logo"
           class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
           loading="lazy"
-          src="sql.svg"
+          src="manjaro.svg"
         />
         <div>
           <p>
             <span
               class="font-extrabold text-lg"
             >
-              SQL
+              Manjaro
             </span>
              -
              
             <span
               class="text-sm"
             >
-              Delivery Route Planner, BSplit
+              Daily use
             </span>
           </p>
         </div>
       </div>
     </div>
+  </div>
+  <hr
+    class="m-8 h-px bg-divider"
+  />
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+    id="additional-experience"
+  >
+    <p
+      class="font-extrabold text-lg text-center md:text-left mb-8 mt-16"
+    >
+      Additional Experience
+    </p>
     <div
-      class="flex flex-row justify-center py-6"
+      class="lg:w-4/5 xl:w-3/5 grid md:grid-cols-6 grid-cols-3"
     >
       <div
-        class="w-3/12 lg:w-4/12 flex items-center"
-      >
-        <div
-          class="progress-other progress overflow-hidden"
-        >
-          <div
-            class="w-[40%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
-            style="--duration-factor: 40;"
-          />
-        </div>
-      </div>
-      <div
-        class="w-9/12 lg:w-8/12 ml-6 flex items-center"
+        class="text-center mb-8"
       >
         <img
-          alt="LaTeX logo"
-          class="opacity-0 w-8 h-8 mr-4 transition-opacity duration-500"
+          alt="Node.js Logo"
+          class="w-8 h-8 mb-2 mx-auto"
+          loading="lazy"
+          src="node.svg"
+        />
+        <p
+          class="text-sm"
+        >
+          Node.js
+        </p>
+      </div>
+      <div
+        class="text-center mb-8"
+      >
+        <img
+          alt="PHP Logo"
+          class="w-8 h-8 mb-2 mx-auto"
+          loading="lazy"
+          src="php.svg"
+        />
+        <p
+          class="text-sm"
+        >
+          PHP
+        </p>
+      </div>
+      <div
+        class="text-center mb-8"
+      >
+        <img
+          alt="Ruby Logo"
+          class="w-8 h-8 mb-2 mx-auto"
+          loading="lazy"
+          src="ruby.svg"
+        />
+        <p
+          class="text-sm"
+        >
+          Ruby
+        </p>
+      </div>
+      <div
+        class="text-center mb-8"
+      >
+        <img
+          alt="Haskell Logo"
+          class="w-8 h-8 mb-2 mx-auto"
+          loading="lazy"
+          src="haskell.svg"
+        />
+        <p
+          class="text-sm"
+        >
+          Haskell
+        </p>
+      </div>
+      <div
+        class="text-center mb-8"
+      >
+        <img
+          alt="MATLAB Logo"
+          class="w-8 h-8 mb-2 mx-auto"
+          loading="lazy"
+          src="matlab.svg"
+        />
+        <p
+          class="text-sm"
+        >
+          MATLAB
+        </p>
+      </div>
+      <div
+        class="text-center mb-8"
+      >
+        <img
+          alt="jQuery Logo"
+          class="w-8 h-8 mb-2 mx-auto"
+          loading="lazy"
+          src="jquery.svg"
+        />
+        <p
+          class="text-sm"
+        >
+          jQuery
+        </p>
+      </div>
+      <div
+        class="text-center mb-8"
+      >
+        <img
+          alt="Materialize Logo"
+          class="w-8 h-8 mb-2 mx-auto"
+          loading="lazy"
+          src="materialize.svg"
+        />
+        <p
+          class="text-sm"
+        >
+          Materialize
+        </p>
+      </div>
+      <div
+        class="text-center mb-8"
+      >
+        <img
+          alt="Webix Logo"
+          class="w-8 h-8 mb-2 mx-auto"
+          loading="lazy"
+          src="webix.svg"
+        />
+        <p
+          class="text-sm"
+        >
+          Webix
+        </p>
+      </div>
+      <div
+        class="text-center mb-8"
+      >
+        <img
+          alt="Heroku Logo"
+          class="w-8 h-8 mb-2 mx-auto"
+          loading="lazy"
+          src="heroku.svg"
+        />
+        <p
+          class="text-sm"
+        >
+          Heroku
+        </p>
+      </div>
+      <div
+        class="text-center mb-8"
+      >
+        <img
+          alt="SQL Logo"
+          class="w-8 h-8 mb-2 mx-auto"
+          loading="lazy"
+          src="sql.svg"
+        />
+        <p
+          class="text-sm"
+        >
+          SQL
+        </p>
+      </div>
+      <div
+        class="text-center mb-8"
+      >
+        <img
+          alt="LaTeX Logo"
+          class="w-8 h-8 mb-2 mx-auto"
           loading="lazy"
           src="latex.svg"
         />
-        <div>
-          <p>
-            <span
-              class="font-extrabold text-lg"
-            >
-              LaTeX
-            </span>
-             -
-             
-            <span
-              class="text-sm"
-            >
-              Dissertation, LucidLab
-            </span>
-          </p>
-        </div>
+        <p
+          class="text-sm"
+        >
+          LaTeX
+        </p>
+      </div>
+      <div
+        class="text-center mb-8"
+      >
+        <img
+          alt="GitHub Actions Logo"
+          class="w-8 h-8 mb-2 mx-auto"
+          loading="lazy"
+          src="github-actions.svg"
+        />
+        <p
+          class="text-sm"
+        >
+          GitHub Actions
+        </p>
       </div>
     </div>
   </div>
@@ -1055,6 +943,11 @@ exports[`About page renders 1`] = `
         class="before:border-traffic-green relative my-4 before:content-[\\"\\"] before:absolute before:-left-12 before:w-6 before:h-6 before:border-2 before:rounded-xl"
       >
         ESLint
+      </li>
+      <li
+        class="before:border-traffic-green relative my-4 before:content-[\\"\\"] before:absolute before:-left-12 before:w-6 before:h-6 before:border-2 before:rounded-xl"
+      >
+        GitHub Actions
       </li>
       <li
         class="before:border-traffic-amber relative my-4 before:content-[\\"\\"] before:absolute before:-left-12 before:w-6 before:h-6 before:border-2 before:rounded-xl"

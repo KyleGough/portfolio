@@ -1,9 +1,8 @@
 import { ISkill } from '../../components/SkillList';
 import BashLogo from '../../img/bash.svg';
 import GitLogo from '../../img/git.svg';
-import LatexLogo from '../../img/latex.svg';
+import ManjaroLogo from '../../img/manjaro.svg';
 import MarkdownLogo from '../../img/markdown.svg';
-import SQLLogo from '../../img/sql.svg';
 
 export const skillsOther: ISkill[] = [
   {
@@ -28,17 +27,10 @@ export const skillsOther: ISkill[] = [
     logo: MarkdownLogo,
   },
   {
-    name: 'SQL',
-    progress: 50,
-    className: 'w-[50%]',
-    description: 'Delivery Route Planner, BSplit',
-    logo: SQLLogo,
-  },
-  {
-    name: 'LaTeX',
-    progress: 40,
-    className: 'w-[40%]',
-    description: 'Dissertation, LucidLab',
-    logo: LatexLogo,
+    name: 'Manjaro',
+    progress: 75,
+    className: 'w-[75%]',
+    description: 'Daily use',
+    logo: ManjaroLogo,
   }
 ];

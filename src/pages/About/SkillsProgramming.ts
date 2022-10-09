@@ -1,11 +1,8 @@
 import { ISkill } from '../../components/SkillList';
 import CPlusPlusLogo from '../../img/cplusplus.svg';
 import CSharpLogo from '../../img/csharp.svg';
-import HaskellLogo from '../../img/haskell.svg';
 import JavaLogo from '../../img/java.svg';
-import MatlabLogo from '../../img/matlab.svg';
 import PythonLogo from '../../img/python.svg';
-import RubyLogo from '../../img/ruby.svg';
 import VBLogo from '../../img/vb.svg';
 
 export const skillsProgramming: ISkill[] = [
@@ -43,26 +40,5 @@ export const skillsProgramming: ISkill[] = [
     className: 'w-[50%]',
     description: 'First Programming Language, Sorting Algorithm Visualiser',
     logo: VBLogo,
-  },
-  {
-    name: 'Haskell',
-    progress: 30,
-    className: 'w-[30%]',
-    description: 'Mastermind, Scratch Clone',
-    logo: HaskellLogo,
-  },
-  {
-    name: 'Ruby',
-    progress: 20,
-    className: 'w-[20%]',
-    description: 'Minesweeper',
-    logo: RubyLogo,
-  },
-  {
-    name: 'MATLAB',
-    progress: 30,
-    className: 'w-[30%]',
-    description: 'Image Forensics',
-    logo: MatlabLogo,
-  },
+  }
 ];
