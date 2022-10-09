@@ -1,0 +1,27 @@
+ci:
+- .husky/**/*
+- .github/**/*
+
+snippet:
+- .vscode/**/*.code-snippets
+
+readme:
+- README.md
+
+component:
+- src/components/**/*
+
+frontend:
+- src/**/*
+
+config:
+- .editorconfig
+- .eslintignore
+- .eslintrc.json
+- .gitignore
+- package.json
+- package-lock.json
+- postcss.config.js
+- .prettierrc
+- tailwind.config.js
+- tsconfig.json
