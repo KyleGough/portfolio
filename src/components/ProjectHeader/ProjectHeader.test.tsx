@@ -23,7 +23,7 @@ const baseProject: IProject = {
     active: ['TypeScript', 'JavaScript'],
     disabled: ['PHP'],
   },
-  logo: '/#logo'
+  logo: '/#logo',
 };
 
 describe('ProjectHeader component', () => {

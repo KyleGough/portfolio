@@ -1,4 +1,4 @@
-import { RefObject,useCallback, useEffect, useRef } from 'react';
+import { RefObject, useCallback, useEffect, useRef } from 'react';
 
 export function useTypewriter<T extends HTMLElement>(
   text: string,

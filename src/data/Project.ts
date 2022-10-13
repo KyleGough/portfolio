@@ -47,7 +47,7 @@ enum ProjectFilter {
   PUZZLE = 'Games/Puzzles',
   CPLUSPLUS = 'C++',
   PHP = 'PHP',
-  CSHARP = 'C#'
+  CSHARP = 'C#',
 }
 
 export const projects: IProject[] = [
@@ -56,38 +56,28 @@ export const projects: IProject[] = [
     title: 'Portfolio',
     date: {
       start: '2016-12',
-      end: '2022-10'
+      end: '2022-10',
     },
     src: '/img/card-portfolio.jpg',
     alt: 'Portfolio',
     link: '/projects/portfolio',
-    filters: [
-      ProjectFilter.JAVASCRIPT,
-      ProjectFilter.REACT,
-      ProjectFilter.WEB
-    ],
-    description: 'Personal portfolio website created to showcase my projects and technical skills. First created in 2016 as a simple static HTML website, the website has experienced multiple improvements over the years including migration to PHP, then to React with Materialize, and most recently to React with Tailwind.',
+    filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.REACT, ProjectFilter.WEB],
+    description:
+      'Personal portfolio website created to showcase my projects and technical skills. First created in 2016 as a simple static HTML website, the website has experienced multiple improvements over the years including migration to PHP, then to React with Materialize, and most recently to React with Tailwind.',
     github: 'https://github.com/KyleGough/portfolio',
     skills: {
-      active: [
-        'React',
-        'TypeScript',
-        'JavaScript',
-        'Tailwind',
-        'HTML',
-        'CSS'
-      ],
-      disabled: ['PHP', 'Materialize', 'Bootstrap', 'Sass']
+      active: ['React', 'TypeScript', 'JavaScript', 'Tailwind', 'HTML', 'CSS'],
+      disabled: ['PHP', 'Materialize', 'Bootstrap', 'Sass'],
     },
-    logo: TypeScriptLogo
+    logo: TypeScriptLogo,
   },
   {
     id: 'lucidlab',
     title: 'LucidLab',
-    subtitle: 'Master\'s Group Project',
+    subtitle: "Master's Group Project",
     date: {
       start: '2019-10',
-      end: '2020-05'
+      end: '2020-05',
     },
     src: '/img/card-lucidlab.jpg',
     alt: 'LucidLab',
@@ -98,41 +88,40 @@ export const projects: IProject[] = [
       ProjectFilter.REACT,
       ProjectFilter.SQL,
       ProjectFilter.GROUP_PROJECT,
-      ProjectFilter.WEB
+      ProjectFilter.WEB,
     ],
-    description: 'An adaptable, heterogeneous IoT testbed for which I developed the front-end user interface. The UI allows registered users to upload and configure tests and images to be deployed on the testbed. Additionally, test results and custom metrics including mote availability graphs and mote CCA charts can be viewed.',
+    description:
+      'An adaptable, heterogeneous IoT testbed for which I developed the front-end user interface. The UI allows registered users to upload and configure tests and images to be deployed on the testbed. Additionally, test results and custom metrics including mote availability graphs and mote CCA charts can be viewed.',
     skills: {
       active: ['React', 'JavaScript', 'Materialize', 'HTML', 'CSS'],
-      disabled: ['Python', 'Shell', 'C', 'SQL']
+      disabled: ['Python', 'Shell', 'C', 'SQL'],
     },
-    logo: JavaScriptLogo
+    logo: JavaScriptLogo,
   },
   {
     id: 'sudoku',
     title: 'Logical Sudoku Solver',
     date: {
       start: '2019-11',
-      end: '2020-01'
+      end: '2020-01',
     },
     src: '/img/card-sudoku.jpg',
     alt: 'Logical sudoku solver',
     link: '/projects/sudoku',
-    filters: [
-      ProjectFilter.PYTHON,
-      ProjectFilter.PUZZLE
-    ],
-    description: 'Program that can solve expert level Sudoku using only logical techniques (no brute forcing, guessing or backtracking). The program outputs a detailed description of the techniques and moves required at each step to solve Sudoku. The solver reads CSV files allowing for batch solving. In-depth analysis is displayed including but not limited to: difficulty rating, occurrences of each technique, probability of each technique, processing time for each technique and total processing time.',
+    filters: [ProjectFilter.PYTHON, ProjectFilter.PUZZLE],
+    description:
+      'Program that can solve expert level Sudoku using only logical techniques (no brute forcing, guessing or backtracking). The program outputs a detailed description of the techniques and moves required at each step to solve Sudoku. The solver reads CSV files allowing for batch solving. In-depth analysis is displayed including but not limited to: difficulty rating, occurrences of each technique, probability of each technique, processing time for each technique and total processing time.',
     github: 'https://github.com/KyleGough/sudoku',
     skills: {
-      active: ['Python']
+      active: ['Python'],
     },
-    logo: PythonLogo
+    logo: PythonLogo,
   },
   {
     id: 'react-minesweeper',
     title: 'React Minesweeper',
     date: {
-      start: '2019-10'
+      start: '2019-10',
     },
     src: 'img/card-react-minesweeper.jpg',
     alt: 'React Minesweeper',
@@ -141,14 +130,15 @@ export const projects: IProject[] = [
       ProjectFilter.JAVASCRIPT,
       ProjectFilter.REACT,
       ProjectFilter.PUZZLE,
-      ProjectFilter.WEB
+      ProjectFilter.WEB,
     ],
-    description: 'Clone of classic Minesweeper with an 18x18 board. Ability to reveal tiles and flag tiles for potential mines. Flood fill algorithms will reveal all adjacent tiles when a 0 is uncovered, mimicing the behaviour of the original game.',
+    description:
+      'Clone of classic Minesweeper with an 18x18 board. Ability to reveal tiles and flag tiles for potential mines. Flood fill algorithms will reveal all adjacent tiles when a 0 is uncovered, mimicing the behaviour of the original game.',
     github: 'https://github.com/KyleGough/react-minesweeper',
     skills: {
-      active: ['React', 'JavaScript', 'CSS', 'Materialize']
+      active: ['React', 'JavaScript', 'CSS', 'Materialize'],
     },
-    logo: ReactLogo
+    logo: ReactLogo,
   },
   {
     id: 'cave-exploration',
@@ -156,20 +146,19 @@ export const projects: IProject[] = [
     subtitle: 'Dissertation',
     date: {
       start: '2018-12',
-      end: '2019-04'
+      end: '2019-04',
     },
     src: '/img/card-cave-exploration.jpg',
     alt: 'Cave Exploration',
     link: '/projects/cave-exploration',
-    filters: [
-      ProjectFilter.CPLUSPLUS
-    ],
-    description: 'Cave exploration is dangerous and time-consuming. This project demonstrates how swarm AI could be used in a group of autonomous flying drones to navigate and explore a cave as efficiently as possible. The project also includes random, realistic cave environment generation.',
+    filters: [ProjectFilter.CPLUSPLUS],
+    description:
+      'Cave exploration is dangerous and time-consuming. This project demonstrates how swarm AI could be used in a group of autonomous flying drones to navigate and explore a cave as efficiently as possible. The project also includes random, realistic cave environment generation.',
     github: 'https://github.com/KyleGough/CS310-Dissertation',
     skills: {
-      active: ['C++', 'GLUT']
+      active: ['C++', 'GLUT'],
     },
-    logo: CPlusPlusLogo
+    logo: CPlusPlusLogo,
   },
   {
     id: 'roller-coaster',
@@ -177,19 +166,18 @@ export const projects: IProject[] = [
     subtitle: 'Computer Graphics Coursework',
     date: {
       start: '2018-12',
-      end: '2019-01'
+      end: '2019-01',
     },
     src: '/img/card-roller-coaster.jpg',
     alt: 'Roller coaster',
     link: '/projects/roller-coaster',
-    filters: [
-      ProjectFilter.CPLUSPLUS
-    ],
-    description: 'Simulation of a 3-car roller coaster which traverses a small looped track featuring a lift hill, drop, loop-the-loop and turns. The coaster can be viewed from a first-person perspective in each of the carts, as well as additional views that track the carts round the track.',
+    filters: [ProjectFilter.CPLUSPLUS],
+    description:
+      'Simulation of a 3-car roller coaster which traverses a small looped track featuring a lift hill, drop, loop-the-loop and turns. The coaster can be viewed from a first-person perspective in each of the carts, as well as additional views that track the carts round the track.',
     skills: {
-      active: ['C++', 'GLUT']
+      active: ['C++', 'GLUT'],
     },
-    logo: CPlusPlusLogo
+    logo: CPlusPlusLogo,
   },
   {
     id: 'rscbot',
@@ -197,7 +185,7 @@ export const projects: IProject[] = [
     subtitle: 'Software Engineering Group Project',
     date: {
       start: '2018-02',
-      end: '2019-03'
+      end: '2019-03',
     },
     src: '/img/card-rscbot.jpg',
     alt: 'RSCBot',
@@ -207,80 +195,69 @@ export const projects: IProject[] = [
       ProjectFilter.PHP,
       ProjectFilter.SQL,
       ProjectFilter.GROUP_PROJECT,
-      ProjectFilter.WEB
+      ProjectFilter.WEB,
     ],
-    description: 'A specialised, personalisable trader chatbot that can fetch data and current news on financial stocks and sectors from the FTSE 100 index. RSCBot communicates with the user in a natural way, and has been designed to identify and adapt to the user\'s main interests in the stock market, making for a more personal trading experience.',
+    description:
+      "A specialised, personalisable trader chatbot that can fetch data and current news on financial stocks and sectors from the FTSE 100 index. RSCBot communicates with the user in a natural way, and has been designed to identify and adapt to the user's main interests in the stock market, making for a more personal trading experience.",
     skills: {
       active: ['JavaScript', 'jQuery', 'HTML', 'CSS', 'Materialize'],
-      disabled: ['PHP', 'SQL']
+      disabled: ['PHP', 'SQL'],
     },
-    logo: JavaScriptLogo
+    logo: JavaScriptLogo,
   },
   {
     id: 'url-shortener',
     title: 'URL Shortener',
     date: {
-      start: '2017-04'
+      start: '2017-04',
     },
     src: '/img/card-url-shortener.jpg',
     alt: 'URL shortener',
     link: '/projects/url-shortener',
-    filters: [
-      ProjectFilter.JAVASCRIPT,
-      ProjectFilter.WEB
-    ],
-    description: 'A URL shortening tool creating using Node.js, Express.js for routing GET and POST requests and MongoDB to store URLs. The project is my first using all three of these technologies. Long URLs are stored in the database and the ID is encoded and used as the short URL.',
+    filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.WEB],
+    description:
+      'A URL shortening tool creating using Node.js, Express.js for routing GET and POST requests and MongoDB to store URLs. The project is my first using all three of these technologies. Long URLs are stored in the database and the ID is encoded and used as the short URL.',
     skills: {
-      active: [
-        'JavaScript',
-        'MongoDB',
-        'jQuery',
-        'HTML',
-        'CSS',
-        'Materialize'
-      ]
+      active: ['JavaScript', 'MongoDB', 'jQuery', 'HTML', 'CSS', 'Materialize'],
     },
-    logo: JavaScriptLogo
+    logo: JavaScriptLogo,
   },
   {
     id: 'graph-algorithm-visualiser',
     title: 'Graph Algorithm Visualiser',
     date: {
-      start: '2017-04'
+      start: '2017-04',
     },
     src: '/img/card-graph-algorithm-visualiser.jpg',
     alt: 'Graph algorithm visualiser',
     link: '/projects/graph-algorithm-visualiser',
-    filters: [
-      ProjectFilter.JAVASCRIPT,
-      ProjectFilter.WEB
-    ],
-    description: 'Web application which visualises the process of various graph algorithms on randomised nodes. The application can simulate Prim\'s and Kruskal\'s algorithm for constructing minimum spanning trees, Graham scan to construct convex hulls, Greedy algorithm to construct minimal matchings, and Nearest neighbour with 2-Opt to create Hamiltonian cycles.',
+    filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.WEB],
+    description:
+      "Web application which visualises the process of various graph algorithms on randomised nodes. The application can simulate Prim's and Kruskal's algorithm for constructing minimum spanning trees, Graham scan to construct convex hulls, Greedy algorithm to construct minimal matchings, and Nearest neighbour with 2-Opt to create Hamiltonian cycles.",
     github: 'https://github.com/KyleGough/graph-algorithm-visualiser',
     skills: {
-      active: ['JavaScript', 'Materialize']
+      active: ['JavaScript', 'Materialize'],
     },
     logo: JavaScriptLogo,
-    liveLink: 'https://kylegough.github.io/graph-algorithm-visualiser/'
+    liveLink: 'https://kylegough.github.io/graph-algorithm-visualiser/',
   },
   {
     id: 'cavern-minesweeper',
     title: 'Cavern Minesweeper',
     date: {
-      start: '2017-03'
+      start: '2017-03',
     },
     src: '/img/card-cavern-minesweeper.jpg',
     alt: 'Cavern Minesweeper',
     link: '/projects/cavern-minesweeper',
-    filters: [
-      ProjectFilter.PUZZLE
-    ],
-    description: 'Cavern Minesweeper is based off of the original Minesweeper game but with tiered mines (ores) which can only be mined if the player has uncovered enough squares to advance to the required mining level. The game has three levels of difficulty to challenge competitive players. The project served as a tool to teach me Ruby.',
+    filters: [ProjectFilter.PUZZLE],
+    description:
+      'Cavern Minesweeper is based off of the original Minesweeper game but with tiered mines (ores) which can only be mined if the player has uncovered enough squares to advance to the required mining level. The game has three levels of difficulty to challenge competitive players. The project served as a tool to teach me Ruby.',
     github: 'https://github.com/KyleGough/cavern-minesweeper',
     skills: {
-      active: ['Ruby']
+      active: ['Ruby'],
     },
-    logo: RubyLogo
+    logo: RubyLogo,
   },
   {
     id: 'bsplit',
@@ -288,7 +265,7 @@ export const projects: IProject[] = [
     subtitle: 'Web Development Technologies Coursework',
     date: {
       start: '2017-02',
-      end: '2017-03'
+      end: '2017-03',
     },
     src: '/img/card-bsplit.jpg',
     alt: 'BSplit',
@@ -297,9 +274,10 @@ export const projects: IProject[] = [
       ProjectFilter.JAVASCRIPT,
       ProjectFilter.PHP,
       ProjectFilter.SQL,
-      ProjectFilter.WEB
+      ProjectFilter.WEB,
     ],
-    description: 'BSplit is a web application that allows registered users to create and settle payments between friends and housemates for things such as restaurant bills, utility bills and food shopping. The app\'s dashboard utilises AJAX requests to prevent web page reloading to enchance user experience. Dashboard and email notifications are sent when a new bill or group is created.',
+    description:
+      "BSplit is a web application that allows registered users to create and settle payments between friends and housemates for things such as restaurant bills, utility bills and food shopping. The app's dashboard utilises AJAX requests to prevent web page reloading to enchance user experience. Dashboard and email notifications are sent when a new bill or group is created.",
     skills: {
       active: [
         'PHP',
@@ -308,10 +286,10 @@ export const projects: IProject[] = [
         'SQL',
         'HTML',
         'CSS',
-        'Bootstrap'
-      ]
+        'Bootstrap',
+      ],
     },
-    logo: JavaScriptLogo
+    logo: JavaScriptLogo,
   },
   {
     id: 'todo-list',
@@ -319,7 +297,7 @@ export const projects: IProject[] = [
     subtitle: 'Web Development Technologies Lab Work',
     date: {
       start: '2017-01',
-      end: '2017-02'
+      end: '2017-02',
     },
     src: '/img/card-todo.jpg',
     alt: 'To Do List',
@@ -329,13 +307,14 @@ export const projects: IProject[] = [
       ProjectFilter.PHP,
       ProjectFilter.SQL,
       ProjectFilter.GROUP_PROJECT,
-      ProjectFilter.WEB
+      ProjectFilter.WEB,
     ],
-    description: 'To Do List Web application where users can signup and create their own lists. Learned and integrated PHP and SQL to store and query user\'s lists. Protected the application from SQL injection and cross-site scripting.',
+    description:
+      "To Do List Web application where users can signup and create their own lists. Learned and integrated PHP and SQL to store and query user's lists. Protected the application from SQL injection and cross-site scripting.",
     skills: {
-      active: ['PHP', 'JavaScript', 'jQuery', 'SQL', 'HTML', 'CSS']
+      active: ['PHP', 'JavaScript', 'jQuery', 'SQL', 'HTML', 'CSS'],
     },
-    logo: JavaScriptLogo
+    logo: JavaScriptLogo,
   },
   {
     id: 'delivery-route-planner',
@@ -343,38 +322,35 @@ export const projects: IProject[] = [
     subtitle: 'A-Level Computing Coursework',
     date: {
       start: '2015-12',
-      end: '2016-03'
+      end: '2016-03',
     },
     src: '/img/card-delivery-route-planner.jpg',
     alt: 'Delivery route planner',
     link: '/projects/delivery-route-planner',
-    filters: [
-      ProjectFilter.CSHARP
-    ],
-    description: 'Creates an efficient route between multiple delivery locations. Store, view and query data on products, clients and their deliveries. Produces a report which communicates the route, delivery items, and ETA. Uses graph algorithms such as Dijkstra\'s and Nearest Neighbour with 2-Opt to optimise the route.',
+    filters: [ProjectFilter.CSHARP],
+    description:
+      "Creates an efficient route between multiple delivery locations. Store, view and query data on products, clients and their deliveries. Produces a report which communicates the route, delivery items, and ETA. Uses graph algorithms such as Dijkstra's and Nearest Neighbour with 2-Opt to optimise the route.",
     skills: {
-      active: ['C#', 'SQL']
+      active: ['C#', 'SQL'],
     },
-    logo: CSharpLogo
+    logo: CSharpLogo,
   },
   {
     id: 'sorting-algorithm-visualiser',
     title: 'Sorting Algorithm Visualiser',
     date: {
       start: '2015-09',
-      end: '2015-11'
+      end: '2015-11',
     },
     src: '/img/card-sorting-algorithm-visualiser.jpg',
     alt: 'Sorting Algorithm Visualiser',
     link: '/projects/sorting-algorithm-visualiser',
-    filters: [
-      ProjectFilter.CSHARP
-    ],
-    description: 'Tool for visualising the sorting process on generated datasets. Supports 20 different sorting algorithms including: Bubble sort, Merge sort, and Quicksort. The tool also has the ability to compare and visualise two sorting algorithms concurrently. The initial dataset can be a choice of 18 configurations such as: random, normally distributed or sawtooth.',
+    filters: [ProjectFilter.CSHARP],
+    description:
+      'Tool for visualising the sorting process on generated datasets. Supports 20 different sorting algorithms including: Bubble sort, Merge sort, and Quicksort. The tool also has the ability to compare and visualise two sorting algorithms concurrently. The initial dataset can be a choice of 18 configurations such as: random, normally distributed or sawtooth.',
     skills: {
-      active: ['C#']
+      active: ['C#'],
     },
-    logo: CSharpLogo
-  }
+    logo: CSharpLogo,
+  },
 ];
-

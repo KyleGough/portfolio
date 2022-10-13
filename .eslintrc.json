@@ -5,13 +5,14 @@
   },
   "extends": [
     "eslint:recommended",
-    "prettier",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
     "plugin:unicorn/recommended",
-    "plugin:sonarjs/recommended"
+    "plugin:sonarjs/recommended",
+    "prettier",
+    "plugin:prettier/recommended"
   ],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
@@ -20,6 +21,7 @@
     "sourceType": "module"
   },
   "plugins": [
+    "prettier",
     "react",
     "@typescript-eslint",
     "unicorn",
@@ -28,11 +30,12 @@
     "import"
   ],
   "rules": {
+    "prettier/prettier": "error",
     "indent": "off",
     "@typescript-eslint/indent": ["error", 2],
     "@typescript-eslint/no-unused-vars": "warn",
     "linebreak-style": ["error", "unix"],
-    "quotes": ["error", "single"],
+    "quotes": ["error", "single", { "avoidEscape": true }],
     "semi": ["error", "always"],
     "import/newline-after-import": ["error", { "count": 1 }],
     "no-console": "warn",

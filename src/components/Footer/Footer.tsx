@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { EmailIcon,GitHubIcon, LinkedInIcon } from '../../icons';
+import { EmailIcon, GitHubIcon, LinkedInIcon } from '../../icons';
 
 export const Footer: React.FC = () => (
   <footer className="bg-background">
