@@ -32,5 +32,5 @@ export const skillsOther: ISkill[] = [
     className: 'w-[75%]',
     description: 'Daily use',
     logo: ManjaroLogo,
-  }
+  },
 ];

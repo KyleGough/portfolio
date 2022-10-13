@@ -48,5 +48,5 @@ export const skillsWeb: ISkill[] = [
     className: 'w-[85%]',
     description: 'Atom, Portfolio, LucidLab, BSplit',
     logo: CSSLogo,
-  }
+  },
 ];

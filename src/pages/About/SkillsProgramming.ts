@@ -40,5 +40,5 @@ export const skillsProgramming: ISkill[] = [
     className: 'w-[50%]',
     description: 'First Programming Language, Sorting Algorithm Visualiser',
     logo: VBLogo,
-  }
+  },
 ];
