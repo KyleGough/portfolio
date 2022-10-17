@@ -971,5 +971,31 @@ exports[`About page renders 1`] = `
       </li>
     </ul>
   </div>
+  <hr
+    class="m-8 h-px bg-divider"
+  />
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <h2
+      class="project-header text-center md:text-left"
+    >
+      Books
+    </h2>
+    <div
+      class="flex gap-4"
+    >
+      <img
+        alt="Foundation"
+        class="h-80 rounded-sm"
+        src="https://covers.openlibrary.org/b/isbn/9780380440658-L.jpg"
+      />
+      <img
+        alt=""
+        class="h-80 rounded-sm"
+        src="https://covers.openlibrary.org/b/isbn/9780857501004-L.jpg"
+      />
+    </div>
+  </div>
 </div>
 `;
