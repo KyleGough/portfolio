@@ -22,6 +22,22 @@ import { skillsOther } from './SkillsOther';
 import { skillsProgramming } from './SkillsProgramming';
 import { skillsWeb } from './SkillsWeb';
 
+interface IBookImage {
+  isbn: string;
+  title: string;
+  size?: 'S' | 'M' | 'L';
+}
+
+const BookImage: React.FC<IBookImage> = ({ isbn, title, size = 'L' }) => {
+  return (
+    <img
+      className="h-80 rounded-sm"
+      src={`https://covers.openlibrary.org/b/isbn/${isbn}-${size}.jpg`}
+      alt={title}
+    />
+  );
+};
+
 export const About: React.FC = () => {
   useEffect(() => {
     document.title = 'About Me - Kyle Gough';
@@ -121,6 +137,16 @@ export const About: React.FC = () => {
           <GoalListItem name="Web Sockets" progress={Progress.RED} />
           <GoalListItem name="Docker" progress={Progress.RED} />
         </ul>
+      </Section>
+
+      <Divider />
+
+      <Section>
+        <h2 className="project-header text-center md:text-left">Books</h2>
+        <div className="flex gap-4">
+          <BookImage isbn="9780380440658" title="Foundation" />
+          <BookImage isbn="9780857501004" title="" />
+        </div>
       </Section>
     </>
   );
