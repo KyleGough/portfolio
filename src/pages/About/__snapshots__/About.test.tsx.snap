@@ -950,9 +950,14 @@ exports[`About page renders 1`] = `
         GitHub Actions
       </li>
       <li
+        class="before:border-traffic-green relative my-4 before:content-[\\"\\"] before:absolute before:-left-12 before:w-6 before:h-6 before:border-2 before:rounded-xl"
+      >
+        WebExtensions API
+      </li>
+      <li
         class="before:border-traffic-amber relative my-4 before:content-[\\"\\"] before:absolute before:-left-12 before:w-6 before:h-6 before:border-2 before:rounded-xl"
       >
-        Extension API
+        Rust
       </li>
       <li
         class="before:border-traffic-red relative my-4 before:content-[\\"\\"] before:absolute before:-left-12 before:w-6 before:h-6 before:border-2 before:rounded-xl"
@@ -963,11 +968,6 @@ exports[`About page renders 1`] = `
         class="before:border-traffic-red relative my-4 before:content-[\\"\\"] before:absolute before:-left-12 before:w-6 before:h-6 before:border-2 before:rounded-xl"
       >
         Web Sockets
-      </li>
-      <li
-        class="before:border-traffic-red relative my-4 before:content-[\\"\\"] before:absolute before:-left-12 before:w-6 before:h-6 before:border-2 before:rounded-xl"
-      >
-        Docker
       </li>
     </ul>
   </div>

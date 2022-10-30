@@ -137,7 +137,12 @@ export const Portfolio: React.FC = () => {
 
       <Divider />
 
-      <Pagination previousTitle="LucidLab" previousLink="/projects/lucidlab" />
+      <Pagination
+        previousTitle="LucidLab"
+        previousLink="/projects/lucidlab"
+        nextTitle="Bookmark Labeller"
+        nextLink="/projects/bookmark-labeller"
+      />
     </>
   );
 };

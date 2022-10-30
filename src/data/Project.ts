@@ -52,6 +52,24 @@ enum ProjectFilter {
 
 export const projects: IProject[] = [
   {
+    id: 'bookmark-labeller',
+    title: 'Bookmark Labeller',
+    date: {
+      start: '2022-10',
+    },
+    src: 'img/bookmark-labeller.jpg',
+    alt: 'Bookmark Labeller Popup',
+    link: '/projects/bookmark-labeller',
+    filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.WEB],
+    description:
+      'Bookmark Labeller is a lightweight and minimalistic Firefox browser extension that allows you to label bookmarks with your favourite emojis. The extension comes with 9 default emojis which can be customised. Use the action button to select emojis or right-click bookmarks to add emojis with the context menu.',
+    github: 'https://github.com/KyleGough/bookmark-labeller-extension',
+    skills: {
+      active: ['JavaScript', 'WebExtensions API', 'HTML', 'CSS'],
+    },
+    logo: JavaScriptLogo,
+  },
+  {
     id: 'portfolio',
     title: 'Portfolio',
     date: {
