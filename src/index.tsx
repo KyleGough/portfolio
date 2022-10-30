@@ -13,6 +13,7 @@ import { About } from './pages/About';
 import { Home } from './pages/Home';
 import { Privacy } from './pages/Privacy';
 import { Projects } from './pages/Projects';
+import { BookmarkLabeller } from './pages/projects/BookmarkLabeller';
 import { BSplit } from './pages/projects/BSplit';
 import { CaveExploration } from './pages/projects/CaveExploration';
 import { CavernMinesweeper } from './pages/projects/CavernMinesweeper';
@@ -69,6 +70,10 @@ const App: React.FC = () => (
           <Route path="/projects/sudoku" element={<Sudoku />} />
           <Route path="/projects/lucidlab" element={<LucidLab />} />
           <Route path="/projects/portfolio" element={<Portfolio />} />
+          <Route
+            path="/projects/bookmark-labeller"
+            element={<BookmarkLabeller />}
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

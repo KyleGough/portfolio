@@ -423,8 +423,8 @@ exports[`Portfolio project page renders 1`] = `
         </div>
       </a>
       <a
-        class="flex items-center fill-disabled text-disabled cursor-not-allowed"
-        href="/"
+        class="flex items-center fill-link text-link hover:fill-link-hover hover:text-link-hover"
+        href="/projects/bookmark-labeller"
       >
         <div
           class="text-center mr-4"
@@ -435,7 +435,7 @@ exports[`Portfolio project page renders 1`] = `
             Next Project
           </p>
           <p>
-            -
+            Bookmark Labeller
           </p>
         </div>
         <svg

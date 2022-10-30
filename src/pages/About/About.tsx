@@ -116,10 +116,10 @@ export const About: React.FC = () => {
           <GoalListItem name="TypeScript" progress={Progress.GREEN} />
           <GoalListItem name="ESLint" progress={Progress.GREEN} />
           <GoalListItem name="GitHub Actions" progress={Progress.GREEN} />
-          <GoalListItem name="Extension API" progress={Progress.AMBER} />
+          <GoalListItem name="WebExtensions API" progress={Progress.GREEN} />
+          <GoalListItem name="Rust" progress={Progress.AMBER} />
           <GoalListItem name="Next.js" progress={Progress.RED} />
           <GoalListItem name="Web Sockets" progress={Progress.RED} />
-          <GoalListItem name="Docker" progress={Progress.RED} />
         </ul>
       </Section>
     </>
