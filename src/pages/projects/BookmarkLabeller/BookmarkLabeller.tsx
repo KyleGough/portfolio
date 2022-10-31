@@ -42,9 +42,7 @@ export const BookmarkLabeller: React.FC = () => {
       <Section>
         <h2 className="project-header">Features</h2>
         <ul className="project-list">
-          <li>
-            Lightweight and minimalistic &#40;<strong>13.2 KB</strong>&#41;
-          </li>
+          <li>Lightweight and minimalistic</li>
           <li>Quickly label current bookmark from the extension popup</li>
           <li>Label bookmarks and folders with the context menu</li>
           <li>Customise favourite emojis</li>

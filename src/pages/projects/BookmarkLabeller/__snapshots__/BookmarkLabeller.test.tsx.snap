@@ -117,11 +117,7 @@ exports[`BookmarkLabeller component renders 1`] = `
       class="project-list"
     >
       <li>
-        Lightweight and minimalistic (
-        <strong>
-          13.2 KB
-        </strong>
-        )
+        Lightweight and minimalistic
       </li>
       <li>
         Quickly label current bookmark from the extension popup
