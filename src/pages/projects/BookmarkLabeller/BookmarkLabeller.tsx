@@ -2,11 +2,13 @@ import React, { useEffect } from 'react';
 
 import { Divider } from '../../../components/Divider';
 import { ImageFigure } from '../../../components/ImageFigure';
+import { Link } from '../../../components/Link';
 import { Pagination } from '../../../components/Pagination';
 import { ProjectHeader } from '../../../components/ProjectHeader';
 import { Screenshots } from '../../../components/Screenshots';
 import { Section } from '../../../components/Section';
 import { getProjectData } from '../../../data';
+import FirefoxLogo from '../../../img/firefox.svg';
 import images from './images.json';
 
 const project = getProjectData('bookmark-labeller');
@@ -27,6 +29,19 @@ export const BookmarkLabeller: React.FC = () => {
       <Divider />
 
       <Section>
+        <div className="flex">
+          <img className="w-8 h-8 mr-2" src={FirefoxLogo} alt="Firefox Logo" />
+          <Link href="https://addons.mozilla.org/en-US/firefox/addon/bookmark-labeller/">
+            <p className="text-2xl">
+              Install from the Mozilla Add-On Marketplace
+            </p>
+          </Link>
+        </div>
+      </Section>
+
+      <Divider />
+
+      <Section>
         <h2 className="project-header">Inspiration</h2>
         <p className="max-w-reading">
           I created this browser extension for two reasons: I often found myself
@@ -42,9 +57,7 @@ export const BookmarkLabeller: React.FC = () => {
       <Section>
         <h2 className="project-header">Features</h2>
         <ul className="project-list">
-          <li>
-            Lightweight and minimalistic &#40;<strong>13.2 KB</strong>&#41;
-          </li>
+          <li>Lightweight and minimalistic</li>
           <li>Quickly label current bookmark from the extension popup</li>
           <li>Label bookmarks and folders with the context menu</li>
           <li>Customise favourite emojis</li>

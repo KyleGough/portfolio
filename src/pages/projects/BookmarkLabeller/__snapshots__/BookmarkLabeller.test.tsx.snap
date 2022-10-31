@@ -91,6 +91,34 @@ exports[`BookmarkLabeller component renders 1`] = `
   <div
     class="first:pt-24 container text-primary py-8 last:pb-16"
   >
+    <div
+      class="flex"
+    >
+      <img
+        alt="Firefox Logo"
+        class="w-8 h-8 mr-2"
+        src="firefox.svg"
+      />
+      <a
+        class="text-link hover:text-link-hover focus:text-link-hover"
+        href="https://addons.mozilla.org/en-US/firefox/addon/bookmark-labeller/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <p
+          class="text-2xl"
+        >
+          Install from the Mozilla Add-On Marketplace
+        </p>
+      </a>
+    </div>
+  </div>
+  <hr
+    class="m-8 h-px bg-divider"
+  />
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
     <h2
       class="project-header"
     >
@@ -117,11 +145,7 @@ exports[`BookmarkLabeller component renders 1`] = `
       class="project-list"
     >
       <li>
-        Lightweight and minimalistic (
-        <strong>
-          13.2 KB
-        </strong>
-        )
+        Lightweight and minimalistic
       </li>
       <li>
         Quickly label current bookmark from the extension popup
