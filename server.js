@@ -8,7 +8,7 @@ const app = express();
 const sgMail = require('@sendgrid/mail');
 const cors = require('cors');
 
-app.use(helmet({ contentSecurityPolicy: false }));
+app.use(helmet());
 app.use(cors());
 app.use(compression());
 app.use(enforce.HTTPS({ trustProtoHeader: true }));
