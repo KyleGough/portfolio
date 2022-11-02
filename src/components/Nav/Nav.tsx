@@ -51,6 +51,7 @@ export const Nav: React.FC = () => {
           ref={menuBtnRef}
           onClick={toggleDrawer}
           className="border-bottom-slide block md:hidden px-6 py-5"
+          aria-label="Toggle Navigation"
         >
           <MenuIcon className="w-6 h-6 fill-white" />
         </button>
@@ -81,6 +82,7 @@ export const Nav: React.FC = () => {
           href="https://github.com/KyleGough"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="GitHub Profile"
         >
           <GitHubIcon className="w-6 h-6 fill-white" />
         </a>

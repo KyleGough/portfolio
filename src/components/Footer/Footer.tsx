@@ -111,6 +111,7 @@ export const Footer: React.FC = () => (
                   href="https://github.com/KyleGough"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="GitHub Profile"
                 >
                   <GitHubIcon className="w-6 h-6 fill-white group-hover:fill-nav-hover" />
                 </a>
@@ -119,6 +120,7 @@ export const Footer: React.FC = () => (
                   href="https://www.linkedin.com/in/kyle-gough-882467161/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="LinkedIn Profile"
                 >
                   <LinkedInIcon className="w-6 h-6 fill-white group-hover:fill-nav-hover" />
                 </a>
