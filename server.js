@@ -11,7 +11,7 @@ const cors = require('cors');
 app.use(helmet());
 app.use(helmet.contentSecurityPolicy({
   directives: {
-    'script-src': ['unsafe-inline', 'https://www.googletagmanager.com']
+    'script-src': ["'unsafe-inline'", 'https://www.googletagmanager.com']
   }
 }));
 app.use(cors());
