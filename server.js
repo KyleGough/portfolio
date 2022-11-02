@@ -9,6 +9,11 @@ const sgMail = require('@sendgrid/mail');
 const cors = require('cors');
 
 app.use(helmet());
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    'script-src': ['unsafe-inline', 'https://www.googletagmanager.com']
+  }
+}));
 app.use(cors());
 app.use(compression());
 app.use(enforce.HTTPS({ trustProtoHeader: true }));
