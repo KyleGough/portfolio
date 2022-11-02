@@ -170,6 +170,7 @@ exports[`Footer component renders 1`] = `
                 class="text-center flex justify-center"
               >
                 <a
+                  aria-label="GitHub Profile"
                   class="py-2 group"
                   href="https://github.com/KyleGough"
                   rel="noopener noreferrer"
@@ -187,6 +188,7 @@ exports[`Footer component renders 1`] = `
                   </svg>
                 </a>
                 <a
+                  aria-label="LinkedIn Profile"
                   class="py-2 ml-2 group"
                   href="https://www.linkedin.com/in/kyle-gough-882467161/"
                   rel="noopener noreferrer"

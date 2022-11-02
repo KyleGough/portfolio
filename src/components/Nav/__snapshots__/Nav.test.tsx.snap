@@ -23,6 +23,7 @@ exports[`Nav component renders 1`] = `
         </a>
       </div>
       <button
+        aria-label="Toggle Navigation"
         class="border-bottom-slide block md:hidden px-6 py-5"
       >
         <svg
@@ -67,6 +68,7 @@ exports[`Nav component renders 1`] = `
         </div>
       </div>
       <a
+        aria-label="GitHub Profile"
         class="border-bottom-slide hidden md:block px-6 py-5"
         href="https://github.com/KyleGough"
         rel="noopener noreferrer"
