@@ -17,13 +17,13 @@ exports[`Privacy component renders 1`] = `
       <time
         datetime="2022-01-17"
       >
-        25th September 2022
+        3rd November 2022
       </time>
     </p>
     <p
       class="mt-4 max-w-reading"
     >
-      This Privacy Policy outlines what information is collected from you as a user, how your information is collected, and it is used. In short summary: Google Analytics is used to improve the user experience of the website, and any data you voluntarily submit via the contact form will be stored.
+      This Privacy Policy outlines what information is collected from you as a user, how your information is collected, and it is used. In short summary: Any data you voluntarily submit via the contact form will be collected and stored.
     </p>
   </div>
   <hr
@@ -63,49 +63,9 @@ exports[`Privacy component renders 1`] = `
       Cookies
     </h2>
     <p
-      class="mb-4 max-w-reading"
-    >
-      This website does not use or store any cookies other than cookies used by Google Analytics. Cookies can be disabled via your web browser, this will not affect your experience or performance when using this website.
-    </p>
-    <p
       class="mb-16 max-w-reading"
     >
-      For more information on how Google uses cookies, visit their page on
-       
-      <a
-        class="text-link hover:text-link-hover focus:text-link-hover"
-        href="https://developers.google.com/analytics/devguides/collection/gtagjs/cookie-usage"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        Cookie Usage
-      </a>
-      .
-    </p>
-    <h2
-      class="text-2xl my-4"
-    >
-      Analytics
-    </h2>
-    <p
-      class="mb-4 max-w-reading"
-    >
-      This website uses Google Analytics to measure and evaluate traffic and engagement with the intention to use this information to improve the user experience, search-engine optimisation, and for personal development.
-    </p>
-    <p
-      class="mb-16 max-w-reading"
-    >
-      For more information visit
-       
-      <a
-        class="text-link hover:text-link-hover focus:text-link-hover"
-        href="https://policies.google.com/technologies/partner-sites"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        Google's Privacy & Terms
-      </a>
-      .
+      This website does not use or store any cookies.
     </p>
     <h2
       class="text-2xl mb-4"
