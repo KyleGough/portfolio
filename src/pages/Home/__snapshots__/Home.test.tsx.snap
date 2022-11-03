@@ -58,112 +58,124 @@ exports[`Home component renders 1`] = `
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 mb-8 px-4"
       >
         <a
-          class="delay-100 md:delay-0 opacity-0 group overflow-hidden duration-1000 transition-opacity ease-in-out rounded-2xl border-2 border-white shadow drop-shadow-lg"
+          class="group overflow-hidden rounded-2xl border-2 border-white shadow drop-shadow-lg"
           href="/projects/sudoku"
         >
-          <img
-            alt="Logical Sudoku Solver Project Card"
-            class="w-full"
-            src="/img/card-sudoku.jpg"
-          />
           <div
-            class="text-white p-4 font-bold group-hover:brightness-125 group-focus:brightness-125 bg-nav-light"
+            class="delay-100 md:delay-0 opacity-0 transition-opacity duration-1000"
           >
-            <h3
-              class="text-xl font-medium mb-4 h-[3.5rem] line-clamp-2"
-            >
-              Solve expert level Sudoku step-by-step using logical algorithms
-            </h3>
+            <img
+              alt="Logical Sudoku Solver Project Card"
+              class="w-full"
+              src="/img/card-sudoku.jpg"
+            />
             <div
-              class="flex justify-between items-center"
+              class="text-white p-4 font-bold group-hover:brightness-125 group-focus:brightness-125 bg-nav-light"
             >
-              <p
-                class="text-sm opacity-80"
+              <h3
+                class="text-xl font-medium mb-4 h-[3.5rem] line-clamp-2"
               >
-                <time
-                  datetime="2020-01"
-                >
-                  January 2020
-                </time>
-              </p>
+                Solve expert level Sudoku step-by-step using logical algorithms
+              </h3>
               <div
-                class="brightness-200 text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold text-chip bg-chip-light"
+                class="flex justify-between items-center"
               >
-                Python
+                <p
+                  class="text-sm opacity-80"
+                >
+                  <time
+                    datetime="2020-01"
+                  >
+                    January 2020
+                  </time>
+                </p>
+                <div
+                  class="brightness-200 text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold text-chip bg-chip-light"
+                >
+                  Python
+                </div>
               </div>
             </div>
           </div>
         </a>
         <a
-          class="delay-0 md:delay-100 opacity-0 group overflow-hidden duration-1000 transition-opacity ease-in-out rounded-2xl border-2 border-white shadow drop-shadow-lg"
+          class="group overflow-hidden rounded-2xl border-2 border-white shadow drop-shadow-lg"
           href="/projects/bsplit"
         >
-          <img
-            alt="BSplit Project Card"
-            class="w-full"
-            src="/img/card-bsplit.jpg"
-          />
           <div
-            class="text-white p-4 font-bold group-hover:brightness-125 group-focus:brightness-125 bg-nav-light"
+            class="delay-0 md:delay-100 opacity-0 transition-opacity duration-1000"
           >
-            <h3
-              class="text-xl font-medium mb-4 h-[3.5rem] line-clamp-2"
-            >
-              Bill splitter app for organising expenses between friends and housemates
-            </h3>
+            <img
+              alt="BSplit Project Card"
+              class="w-full"
+              src="/img/card-bsplit.jpg"
+            />
             <div
-              class="flex justify-between items-center"
+              class="text-white p-4 font-bold group-hover:brightness-125 group-focus:brightness-125 bg-nav-light"
             >
-              <p
-                class="text-sm opacity-80"
+              <h3
+                class="text-xl font-medium mb-4 h-[3.5rem] line-clamp-2"
               >
-                <time
-                  datetime="2017-03"
-                >
-                  March 2017
-                </time>
-              </p>
+                Bill splitter app for organising expenses between friends and housemates
+              </h3>
               <div
-                class="brightness-200 text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold text-chip bg-chip-light"
+                class="flex justify-between items-center"
               >
-                JavaScript
+                <p
+                  class="text-sm opacity-80"
+                >
+                  <time
+                    datetime="2017-03"
+                  >
+                    March 2017
+                  </time>
+                </p>
+                <div
+                  class="brightness-200 text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold text-chip bg-chip-light"
+                >
+                  JavaScript
+                </div>
               </div>
             </div>
           </div>
         </a>
         <a
-          class="delay-0 md:delay-200 opacity-0 group overflow-hidden duration-1000 transition-opacity ease-in-out rounded-2xl border-2 border-white shadow drop-shadow-lg"
+          class="group overflow-hidden rounded-2xl border-2 border-white shadow drop-shadow-lg"
           href="/projects/cave-exploration"
         >
-          <img
-            alt="Cave Exploration Project Card"
-            class="w-full"
-            src="/img/card-cave-exploration.jpg"
-          />
           <div
-            class="text-white p-4 font-bold group-hover:brightness-125 group-focus:brightness-125 bg-nav-light"
+            class="delay-0 md:delay-200 opacity-0 transition-opacity duration-1000"
           >
-            <h3
-              class="text-xl font-medium mb-4 h-[3.5rem] line-clamp-2"
-            >
-              Using Swarm AI to map unexplored cave networks
-            </h3>
+            <img
+              alt="Cave Exploration Project Card"
+              class="w-full"
+              src="/img/card-cave-exploration.jpg"
+            />
             <div
-              class="flex justify-between items-center"
+              class="text-white p-4 font-bold group-hover:brightness-125 group-focus:brightness-125 bg-nav-light"
             >
-              <p
-                class="text-sm opacity-80"
+              <h3
+                class="text-xl font-medium mb-4 h-[3.5rem] line-clamp-2"
               >
-                <time
-                  datetime="2019-04"
-                >
-                  April 2019
-                </time>
-              </p>
+                Using Swarm AI to map unexplored cave networks
+              </h3>
               <div
-                class="brightness-200 text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold text-chip bg-chip-light"
+                class="flex justify-between items-center"
               >
-                C++
+                <p
+                  class="text-sm opacity-80"
+                >
+                  <time
+                    datetime="2019-04"
+                  >
+                    April 2019
+                  </time>
+                </p>
+                <div
+                  class="brightness-200 text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold text-chip bg-chip-light"
+                >
+                  C++
+                </div>
               </div>
             </div>
           </div>
