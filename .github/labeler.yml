@@ -3,8 +3,8 @@ ci:
 - .github/**/*.yaml
 - .github/**/*.yml
 
-snippet:
-- .vscode/**/*.code-snippets
+vscode:
+- .vscode/**/*
 
 readme:
 - README.md
