@@ -1,6 +1,7 @@
 ci:
 - .husky/**/*
-- .github/**/*
+- .github/**/*.yaml
+- .github/**/*.yml
 
 snippet:
 - .vscode/**/*.code-snippets
@@ -11,8 +12,33 @@ readme:
 component:
 - src/components/**/*
 
+font:
+- src/fonts/**/*
+
+icon:
+- src/icons/**/*
+
+img:
+- src/img/**/*
+
+videos:
+- src/videos/**/*
+
+hooks:
+- src/hooks/**/*
+
 frontend:
 - src/**/*
+
+tailwind:
+- src/tailwind.css
+- tailwind.config.js
+
+lint:
+- .eslintignore
+- .eslintrc.json
+- .editorconfig
+- .prettierrc
 
 config:
 - .editorconfig

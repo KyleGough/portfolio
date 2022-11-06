@@ -4,10 +4,6 @@
 
 [List any relevant links, tickets, or documentation]
 
-# Evidence
-
-[Include relevant screenshots, screen recordings, or other evidence]
-
 # Checklist
 
 - [ ] I have performed a self-review of my own code
