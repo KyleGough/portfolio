@@ -100,15 +100,15 @@ exports[`Home component renders 1`] = `
         </a>
         <a
           class="group overflow-hidden rounded-2xl border-2 border-white shadow drop-shadow-lg"
-          href="/projects/bsplit"
+          href="/projects/ai-space-telescope"
         >
           <div
             class="delay-0 md:delay-100 opacity-0 transition-opacity duration-1000"
           >
             <img
-              alt="BSplit Project Card"
+              alt="AI Space Telescope Project Card"
               class="w-full"
-              src="/img/card-bsplit.jpg"
+              src="/img/ai-space-telescope1.jpg"
             />
             <div
               class="text-white p-4 font-bold group-hover:brightness-125 group-focus:brightness-125 bg-nav-light"
@@ -116,7 +116,7 @@ exports[`Home component renders 1`] = `
               <h3
                 class="text-xl font-medium mb-4 h-[3.5rem] line-clamp-2"
               >
-                Bill splitter app for organising expenses between friends and housemates
+                Gallery of AI generated Sci-Fi images
               </h3>
               <div
                 class="flex justify-between items-center"
@@ -125,15 +125,15 @@ exports[`Home component renders 1`] = `
                   class="text-sm opacity-80"
                 >
                   <time
-                    datetime="2017-03"
+                    datetime="2022-11"
                   >
-                    March 2017
+                    November 2022
                   </time>
                 </p>
                 <div
                   class="brightness-200 text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold text-chip bg-chip-light"
                 >
-                  JavaScript
+                  TypeScript
                 </div>
               </div>
             </div>
