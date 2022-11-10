@@ -88,12 +88,12 @@ export const Home: React.FC = () => {
             />
             <ProjectCard
               className="delay-0 md:delay-100"
-              src="/img/card-bsplit.jpg"
-              alt="BSplit Project Card"
-              tagline="Bill splitter app for organising expenses between friends and housemates"
-              date="2017-03"
-              link="/projects/bsplit"
-              chipText="JavaScript"
+              src="/img/ai-space-telescope1.jpg"
+              alt="AI Space Telescope Project Card"
+              tagline="Gallery of AI generated Sci-Fi images"
+              date="2022-11"
+              link="/projects/ai-space-telescope"
+              chipText="TypeScript"
             />
             <ProjectCard
               className="delay-0 md:delay-200"
