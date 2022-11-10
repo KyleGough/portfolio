@@ -73,6 +73,61 @@ exports[`Projects component renders 1`] = `
         <h2
           class="mb-4 project-header"
         >
+          AI Space Telescope
+        </h2>
+        <p
+          class="my-4 text-link-hover"
+        >
+          November 2022
+        </p>
+        <p
+          class="my-4"
+        >
+          Gallery of science-fiction themed images generated using the amazing DALL·E 2 API. These pictures are a hand-picked selection of my favourite generated images.
+        </p>
+      </div>
+      <div
+        class="col-span-12 lg:col-span-5 text-center -mb-8"
+      >
+        <a
+          class="block group relative"
+          href="/projects/ai-space-telescope"
+        >
+          <img
+            alt="AI Space Telescope Website"
+            class="border-2 border-white rounded-lg shadow"
+            loading="lazy"
+            src="img/ai-space-telescope1.jpg"
+          />
+          <img
+            class="absolute top-2 right-2 w-8 h-8 drop-shadow"
+            src="typescript.svg"
+          />
+          <button
+            class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
+            tabindex="-1"
+          >
+            View Project
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <hr
+    class="m-8 h-px bg-divider"
+  />
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <div
+      class="grid grid-cols-12 gap-8 lg:gap-16"
+    >
+      <div
+        class="col-span-12 lg:col-span-7"
+      >
+        <h2
+          class="mb-4 project-header"
+        >
           Bookmark Labeller
         </h2>
         <p
