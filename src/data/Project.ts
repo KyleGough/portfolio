@@ -52,6 +52,25 @@ enum ProjectFilter {
 
 export const projects: IProject[] = [
   {
+    id: 'ai-space-telescope',
+    title: 'AI Space Telescope',
+    date: {
+      start: '2022-11',
+    },
+    src: 'img/ai-space-telescope1.jpg',
+    alt: 'AI Space Telescope Website',
+    link: '/projects/ai-space-telescope',
+    filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.WEB],
+    description:
+      'Gallery of science-fiction themed images generated using the amazing DALL·E 2 API. These pictures are a hand-picked selection of my favourite generated images.',
+    github: 'https://github.com/KyleGough/ai-space-telescope',
+    skills: {
+      active: ['React', 'Typescript'],
+    },
+    logo: TypeScriptLogo,
+    liveLink: 'https://ai-space-telescope.com',
+  },
+  {
     id: 'bookmark-labeller',
     title: 'Bookmark Labeller',
     date: {

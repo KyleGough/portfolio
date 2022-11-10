@@ -73,6 +73,8 @@ export const BookmarkLabeller: React.FC = () => {
       <Pagination
         previousTitle="Portfolio"
         previousLink="/projects/portfolio"
+        nextTitle="AI Space Telescope"
+        nextLink="/projects/ai-space-telescope"
       />
     </>
   );

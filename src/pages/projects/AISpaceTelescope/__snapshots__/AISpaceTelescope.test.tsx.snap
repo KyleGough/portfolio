@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BookmarkLabeller component renders 1`] = `
+exports[`AISpaceTelescope component renders 1`] = `
 <div>
   <div
     class="first:pt-24 container text-primary py-8 last:pb-16"
@@ -8,21 +8,21 @@ exports[`BookmarkLabeller component renders 1`] = `
     <h1
       class="project-title"
     >
-      Bookmark Labeller
+      AI Space Telescope
     </h1>
     <p
       class="text-link-hover my-4"
     >
       <time
-        datetime="2022-10"
+        datetime="2022-11"
       >
-        October 2022
+        November 2022
       </time>
     </p>
     <p
       class="mb-4 max-w-reading"
     >
-      Bookmark Labeller is a lightweight and minimalistic Firefox browser extension that allows you to label bookmarks with your favourite emojis. The extension comes with 9 default emojis which can be customised. Use the action button to select emojis or right-click bookmarks to add emojis with the context menu.
+      Gallery of science-fiction themed images generated using the amazing DALL·E 2 API. These pictures are a hand-picked selection of my favourite generated images.
     </p>
     <ul
       class="project-list"
@@ -35,11 +35,26 @@ exports[`BookmarkLabeller component renders 1`] = `
         </span>
         <a
           class="text-link hover:text-link-hover focus:text-link-hover"
-          href="https://github.com/KyleGough/bookmark-labeller-extension"
+          href="https://github.com/KyleGough/ai-space-telescope"
           rel="noopener noreferrer"
           target="_blank"
         >
           GitHub
+        </a>
+      </li>
+      <li
+        class="mb-4"
+      >
+        <span>
+          Explore this project live 
+        </span>
+        <a
+          class="text-link hover:text-link-hover focus:text-link-hover"
+          href="https://ai-space-telescope.com"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          here
         </a>
       </li>
     </ul>
@@ -49,22 +64,12 @@ exports[`BookmarkLabeller component renders 1`] = `
       <div
         class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
       >
-        JavaScript
+        React
       </div>
       <div
         class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
       >
-        WebExtensions API
-      </div>
-      <div
-        class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
-      >
-        HTML
-      </div>
-      <div
-        class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
-      >
-        CSS
+        Typescript
       </div>
     </div>
   </div>
@@ -75,43 +80,15 @@ exports[`BookmarkLabeller component renders 1`] = `
     class="first:pt-24 container text-primary py-8 last:pb-16"
   >
     <img
-      alt="Bookmark Labeller Extension Popup"
+      alt="AI Space Telescope Website"
       class="border-2 border-white rounded-lg text-center items-center shadow mx-auto"
-      src="/img/bookmark-labeller.jpg"
+      src="/img/ai-space-telescope1.jpg"
     />
     <p
       class="mt-4 mb-2 text-sm text-center text-light font-thin"
     >
-      Bookmark Labeller Extension Popup
+      AI Space Telescope Website
     </p>
-  </div>
-  <hr
-    class="m-8 h-px bg-divider"
-  />
-  <div
-    class="first:pt-24 container text-primary py-8 last:pb-16"
-  >
-    <div
-      class="flex"
-    >
-      <img
-        alt="Firefox Logo"
-        class="w-8 h-8 mr-2"
-        src="firefox.svg"
-      />
-      <a
-        class="text-link hover:text-link-hover focus:text-link-hover"
-        href="https://addons.mozilla.org/en-US/firefox/addon/bookmark-labeller/"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <p
-          class="text-2xl"
-        >
-          Install from the Mozilla Add-On Marketplace
-        </p>
-      </a>
-    </div>
   </div>
   <hr
     class="m-8 h-px bg-divider"
@@ -122,41 +99,18 @@ exports[`BookmarkLabeller component renders 1`] = `
     <h2
       class="project-header"
     >
-      Inspiration
+      Implementation
     </h2>
+    <p
+      class="max-w-reading mb-4"
+    >
+      The images present on the website have been generated using OpenAI DALLE 2 API by providing space related prompts. Lots of different images have been generated from text prompts or reference images of previously generated images. Of these generated images only a few have been hand-selected to be shown on this website.
+    </p>
     <p
       class="max-w-reading"
     >
-      I created this browser extension for two reasons: I often found myself labelling bookmarks for work such as marking PRs as merged, open, or closed and wanted a simpler way to achieve this. Secondly, I wanted to learn and experiment with the WebExtensions API. My hope is that people other than myself can find this extension useful.
+      AI Space Telescope is a web-app developed using React, TailwindCSS, and TypeScript. Images are stored and served via Sirv, an image CDN which helps optimise images by serving images in the best format and size. The website is deployed on Vercel, and uses Cloudflare services for DNS, and security.
     </p>
-  </div>
-  <hr
-    class="m-8 h-px bg-divider"
-  />
-  <div
-    class="first:pt-24 container text-primary py-8 last:pb-16"
-  >
-    <h2
-      class="project-header"
-    >
-      Features
-    </h2>
-    <ul
-      class="project-list"
-    >
-      <li>
-        Lightweight and minimalistic
-      </li>
-      <li>
-        Quickly label current bookmark from the extension popup
-      </li>
-      <li>
-        Label bookmarks and folders with the context menu
-      </li>
-      <li>
-        Customise favourite emojis
-      </li>
-    </ul>
   </div>
   <hr
     class="m-8 h-px bg-divider"
@@ -176,30 +130,15 @@ exports[`BookmarkLabeller component renders 1`] = `
         class="col-span-12 md:col-span-6 lg:col-span-4"
       >
         <img
-          alt="Bookmark Labeller Extension Popup"
+          alt="AI Space Telescope Website"
           class="cursor-pointer border-2 border-link hover:border-link-hover"
           loading="lazy"
-          src="/img/bookmark-labeller.jpg"
+          src="/img/ai-space-telescope1.jpg"
         />
         <figcaption
           class="my-2 text-sm text-center text-light font-thin"
         >
-          Bookmark Labeller Extension Popup
-        </figcaption>
-      </figure>
-      <figure
-        class="col-span-12 md:col-span-6 lg:col-span-4"
-      >
-        <img
-          alt="Labelled bookmark folder"
-          class="cursor-pointer border-2 border-link hover:border-link-hover"
-          loading="lazy"
-          src="/img/bookmark-labeller-folder.jpg"
-        />
-        <figcaption
-          class="my-2 text-sm text-center text-light font-thin"
-        >
-          Labelled bookmark folder
+          AI Space Telescope Website
         </figcaption>
       </figure>
     </div>
@@ -215,7 +154,7 @@ exports[`BookmarkLabeller component renders 1`] = `
     >
       <a
         class="flex items-center fill-link text-link hover:fill-link-hover hover:text-link-hover"
-        href="/projects/portfolio"
+        href="/projects/bookmark-labeller"
       >
         <svg
           class="w-6 h-6"
@@ -240,13 +179,13 @@ exports[`BookmarkLabeller component renders 1`] = `
             Previous Project
           </p>
           <p>
-            Portfolio
+            Bookmark Labeller
           </p>
         </div>
       </a>
       <a
-        class="flex items-center fill-link text-link hover:fill-link-hover hover:text-link-hover"
-        href="/projects/ai-space-telescope"
+        class="flex items-center fill-disabled text-disabled cursor-not-allowed"
+        href="/"
       >
         <div
           class="text-center mr-4"
@@ -257,7 +196,7 @@ exports[`BookmarkLabeller component renders 1`] = `
             Next Project
           </p>
           <p>
-            AI Space Telescope
+            -
           </p>
         </div>
         <svg
