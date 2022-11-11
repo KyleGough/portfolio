@@ -1,0 +1,34 @@
+name: Check Domain and SSL
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 9 * * *'
+
+jobs:
+  domain:
+    runs-on: ubuntu-latest
+    name: Check domain
+
+    steps:
+      - name: Check domain SSL and registry expire date
+        id: check-domain
+        uses: codex-team/action-check-domain@v1
+        with:
+          url: https://kylegough.co.uk
+
+      - name: Create an issue if domain expiry is below limit 
+        if: ${{ steps.check-domain.outputs.paid-till-days-left && steps.check-domain.outputs.paid-till-days-left < 14 }}
+        uses: rishabhgupta/git-action-issue@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: ${{ matrix.domain }} - Expiries in ${{ steps.check-domain.outputs.paid-till-days-left }} days
+          body: 'Domain Expires: `${{ steps.check-domain.outputs.paid-till-date }}`'
+
+      - name: Create an issue if SSL lifespan is below limit 
+        if: ${{ steps.check-domain.outputs.ssl-expire-days-left && steps.check-domain.outputs.ssl-expire-days-left < 14 }}
+        uses: rishabhgupta/git-action-issue@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: ${{ matrix.domain }} — SSL certificate expires in ${{ steps.check-domain.outputs.ssl-expire-days-left }} days
+          body: 'SSL Expires: `${{ steps.check-domain.outputs.ssl-expire-date }}`'
