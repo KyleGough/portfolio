@@ -1,6 +1,13 @@
 {
   "name": "portfolio",
-  "version": "4.1.0",
+  "version": "4.2.0",
+  "description": "Personal portfolio website",
+  "keywords": ["portfolio", "projects", "website"],
+  "homepage": "https://kylegough.co.uk",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KyleGough/portfolio"
+  },
   "private": true,
   "dependencies": {
     "@sendgrid/mail": "^7.6.2",
