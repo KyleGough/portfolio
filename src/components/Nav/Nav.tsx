@@ -9,6 +9,9 @@ export const Nav: React.FC = () => {
   const menuBtnRef = useRef<HTMLButtonElement>(null);
   const mobileNavRef = useRef<HTMLDivElement>(null);
 
+  const toggleDrawer = () => setDrawerOpen((prev) => !prev);
+  const closeDrawer = () => setDrawerOpen(false);
+
   useEffect(() => {
     // Close mobile nav drawer if user clicks outside nav component.
     const checkClickOutside = (event: MouseEvent) => {
@@ -28,16 +31,6 @@ export const Nav: React.FC = () => {
       document.removeEventListener('click', checkClickOutside);
     };
   }, []);
-
-  // Toggles opening/closing the mobile nav drawer.
-  const toggleDrawer = () => {
-    setDrawerOpen((prev) => !prev);
-  };
-
-  // Closes the mobile nav drawer.
-  const closeDrawer = () => {
-    setDrawerOpen(false);
-  };
 
   return (
     <nav className="leading-6 w-full absolute z-50">

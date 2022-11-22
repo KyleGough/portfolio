@@ -65,7 +65,7 @@ export const projects: IProject[] = [
       'Gallery of science-fiction themed images generated using the amazing DALL·E 2 API. These pictures are a hand-picked selection of my favourite generated images.',
     github: 'https://github.com/KyleGough/ai-space-telescope',
     skills: {
-      active: ['React', 'Typescript'],
+      active: ['React', 'Typescript', 'TailwindCSS'],
     },
     logo: TypeScriptLogo,
     liveLink: 'https://ai-space-telescope.com',
@@ -103,7 +103,14 @@ export const projects: IProject[] = [
       'Personal portfolio website created to showcase my projects and technical skills. First created in 2016 as a simple static HTML website, the website has experienced multiple improvements over the years including migration to PHP, then to React with Materialize, and most recently to React with Tailwind.',
     github: 'https://github.com/KyleGough/portfolio',
     skills: {
-      active: ['React', 'TypeScript', 'JavaScript', 'Tailwind', 'HTML', 'CSS'],
+      active: [
+        'React',
+        'TypeScript',
+        'JavaScript',
+        'TailwindCSS',
+        'HTML',
+        'CSS',
+      ],
       disabled: ['PHP', 'Materialize', 'Bootstrap', 'Sass'],
     },
     logo: TypeScriptLogo,

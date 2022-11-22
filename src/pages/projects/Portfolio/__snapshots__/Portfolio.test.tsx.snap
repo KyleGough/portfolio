@@ -72,7 +72,7 @@ exports[`Portfolio project page renders 1`] = `
       <div
         class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
       >
-        Tailwind
+        TailwindCSS
       </div>
       <div
         class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"

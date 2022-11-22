@@ -78,28 +78,24 @@ export const Home: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 mb-8 px-4">
             <ProjectCard
-              className="delay-100 md:delay-0"
               src="/img/card-sudoku.jpg"
               alt="Logical Sudoku Solver Project Card"
-              tagline="Solve expert level Sudoku step-by-step using logical algorithms"
               date="2020-01"
               link="/projects/sudoku"
               chipText="Python"
             />
             <ProjectCard
-              className="delay-0 md:delay-100"
+              className="md:delay-100"
               src="/img/ai-space-telescope1.jpg"
               alt="AI Space Telescope Project Card"
-              tagline="Gallery of AI generated Sci-Fi images"
               date="2022-11"
               link="/projects/ai-space-telescope"
               chipText="TypeScript"
             />
             <ProjectCard
-              className="delay-0 md:delay-200"
+              className="md:delay-200"
               src="/img/card-cave-exploration.jpg"
               alt="Cave Exploration Project Card"
-              tagline="Using Swarm AI to map unexplored cave networks"
               date="2019-04"
               link="/projects/cave-exploration"
               chipText="C++"
