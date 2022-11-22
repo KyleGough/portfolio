@@ -14,7 +14,6 @@ describe('ProjectCard component', () => {
         <ProjectCard
           src="/#image"
           alt="Alt Text"
-          tagline="Tagline"
           date="2022-04"
           link="/#project"
           chipText="Haskell"
@@ -22,7 +21,6 @@ describe('ProjectCard component', () => {
       </BrowserRouter>
     );
 
-    expect(screen.getByText('Tagline')).toBeVisible();
     expect(screen.getByText('April 2022')).toBeVisible();
     expect(screen.getByText('Haskell')).toBeVisible();
     expect(container).toMatchSnapshot();

@@ -62,7 +62,7 @@ exports[`Home component renders 1`] = `
           href="/projects/sudoku"
         >
           <div
-            class="delay-100 md:delay-0 opacity-0 transition-opacity duration-1000"
+            class="opacity-0 transition-opacity duration-1000"
           >
             <img
               alt="Logical Sudoku Solver Project Card"
@@ -72,11 +72,6 @@ exports[`Home component renders 1`] = `
             <div
               class="text-white p-4 font-bold group-hover:brightness-125 group-focus:brightness-125 bg-nav-light"
             >
-              <h3
-                class="text-xl font-medium mb-4 h-[3.5rem] line-clamp-2"
-              >
-                Solve expert level Sudoku step-by-step using logical algorithms
-              </h3>
               <div
                 class="flex justify-between items-center"
               >
@@ -103,7 +98,7 @@ exports[`Home component renders 1`] = `
           href="/projects/ai-space-telescope"
         >
           <div
-            class="delay-0 md:delay-100 opacity-0 transition-opacity duration-1000"
+            class="md:delay-100 opacity-0 transition-opacity duration-1000"
           >
             <img
               alt="AI Space Telescope Project Card"
@@ -113,11 +108,6 @@ exports[`Home component renders 1`] = `
             <div
               class="text-white p-4 font-bold group-hover:brightness-125 group-focus:brightness-125 bg-nav-light"
             >
-              <h3
-                class="text-xl font-medium mb-4 h-[3.5rem] line-clamp-2"
-              >
-                Gallery of AI generated Sci-Fi images
-              </h3>
               <div
                 class="flex justify-between items-center"
               >
@@ -144,7 +134,7 @@ exports[`Home component renders 1`] = `
           href="/projects/cave-exploration"
         >
           <div
-            class="delay-0 md:delay-200 opacity-0 transition-opacity duration-1000"
+            class="md:delay-200 opacity-0 transition-opacity duration-1000"
           >
             <img
               alt="Cave Exploration Project Card"
@@ -154,11 +144,6 @@ exports[`Home component renders 1`] = `
             <div
               class="text-white p-4 font-bold group-hover:brightness-125 group-focus:brightness-125 bg-nav-light"
             >
-              <h3
-                class="text-xl font-medium mb-4 h-[3.5rem] line-clamp-2"
-              >
-                Using Swarm AI to map unexplored cave networks
-              </h3>
               <div
                 class="flex justify-between items-center"
               >
