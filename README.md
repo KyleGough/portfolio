@@ -44,9 +44,6 @@
 
   <!-- GitHub Actions -->
   <img src="https://github.githubassets.com/images/modules/site/features/actions-icon-actions.svg" alt="github actions" width="60" height="60" />
-
-  <!-- Heroku -->
-  <img src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg" alt="heroku" width="60" height="60"/>
 </div>
 
 ## Screenshots
