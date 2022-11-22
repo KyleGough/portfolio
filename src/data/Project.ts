@@ -60,7 +60,7 @@ export const projects: IProject[] = [
     src: 'img/ai-space-telescope1.jpg',
     alt: 'AI Space Telescope Website',
     link: '/projects/ai-space-telescope',
-    filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.WEB],
+    filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.REACT, ProjectFilter.WEB],
     description:
       'Gallery of science-fiction themed images generated using the amazing DALL·E 2 API. These pictures are a hand-picked selection of my favourite generated images.',
     github: 'https://github.com/KyleGough/ai-space-telescope',
