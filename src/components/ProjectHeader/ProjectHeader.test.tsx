@@ -9,8 +9,14 @@ const baseProject: IProject = {
   title: 'Portfolio',
   subtitle: 'Passion Project',
   date: {
-    start: '2021-01',
-    end: '2022-03',
+    start: {
+      month: 1,
+      year: 2021,
+    },
+    end: {
+      month: 3,
+      year: 2022,
+    },
   },
   video: '/#video',
   src: '/#image',
