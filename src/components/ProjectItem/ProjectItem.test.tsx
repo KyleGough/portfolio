@@ -10,7 +10,10 @@ describe('ProjectItem component', () => {
       <BrowserRouter>
         <ProjectItem
           title="New Project"
-          date={{ start: '2021-01', end: '2022-06' }}
+          date={{
+            start: { month: 1, year: 2021 },
+            end: { month: 6, year: 2022 },
+          }}
           description="Sample Description"
           link="/#project"
           src="/#image"

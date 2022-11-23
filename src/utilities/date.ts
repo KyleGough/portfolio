@@ -1,26 +1,22 @@
-import { IProjectDate } from '../data';
+import dayjs from 'dayjs';
 
-export const getLongDate = (shortDate: string) => {
-  const dt = shortDate.split('-');
-  return months[Number(dt[1]) - 1] + ' ' + dt[0];
+import { IDate, IProjectDate } from '../data';
+
+export const getFormattedDate = (date: IDate) => {
+  return dayjs()
+    .month(date.month - 1)
+    .year(date.year)
+    .format('MMMM YYYY');
+};
+
+export const getShortDate = (date: IDate) => {
+  return dayjs()
+    .month(date.month - 1)
+    .year(date.year)
+    .format('YYYY-MM');
 };
 
 export const getDateRange = (dt: IProjectDate) => {
-  const start = getLongDate(dt.start);
-  return dt.end ? start + ' - ' + getLongDate(dt.end) : start;
+  const start = getFormattedDate(dt.start);
+  return dt.end ? start + ' - ' + getFormattedDate(dt.end) : start;
 };
-
-const months = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December',
-];

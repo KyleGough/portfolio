@@ -14,7 +14,7 @@ describe('ProjectCard component', () => {
         <ProjectCard
           src="/#image"
           alt="Alt Text"
-          date="2022-04"
+          date={{ month: 4, year: 2022 }}
           link="/#project"
           chipText="Haskell"
         />

@@ -80,7 +80,10 @@ export const Home: React.FC = () => {
             <ProjectCard
               src="/img/card-sudoku.jpg"
               alt="Logical Sudoku Solver Project Card"
-              date="2020-01"
+              date={{
+                month: 1,
+                year: 2020,
+              }}
               link="/projects/sudoku"
               chipText="Python"
             />
@@ -88,7 +91,10 @@ export const Home: React.FC = () => {
               className="md:delay-100"
               src="/img/ai-space-telescope1.jpg"
               alt="AI Space Telescope Project Card"
-              date="2022-11"
+              date={{
+                month: 11,
+                year: 2022,
+              }}
               link="/projects/ai-space-telescope"
               chipText="TypeScript"
             />
@@ -96,7 +102,10 @@ export const Home: React.FC = () => {
               className="md:delay-200"
               src="/img/card-cave-exploration.jpg"
               alt="Cave Exploration Project Card"
-              date="2019-04"
+              date={{
+                month: 4,
+                year: 2019,
+              }}
               link="/projects/cave-exploration"
               chipText="C++"
             />

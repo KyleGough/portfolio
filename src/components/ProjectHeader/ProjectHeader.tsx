@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { IProject } from '../../data';
-import { getLongDate } from '../../utilities/date';
+import { getFormattedDate, getShortDate } from '../../utilities/date';
 import { Chip } from '../Chip';
 import { Link } from '../Link';
 import { Section } from '../Section';
@@ -18,15 +18,15 @@ export const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => {
         <h2 className="project-subtitle">{project.subtitle}</h2>
       )}
       <p className="text-link-hover my-4">
-        <time dateTime={project.date.start}>
-          {getLongDate(project.date.start)}
+        <time dateTime={getShortDate(project.date.start)}>
+          {getFormattedDate(project.date.start)}
         </time>
         {project.date.end && (
           <>
             {' '}
             -{' '}
-            <time dateTime={project.date.end}>
-              {getLongDate(project.date.end)}
+            <time dateTime={getShortDate(project.date.end)}>
+              {getFormattedDate(project.date.end)}
             </time>
           </>
         )}

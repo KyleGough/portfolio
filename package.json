@@ -2,7 +2,11 @@
   "name": "portfolio",
   "version": "4.2.0",
   "description": "Personal portfolio website",
-  "keywords": ["portfolio", "projects", "website"],
+  "keywords": [
+    "portfolio",
+    "projects",
+    "website"
+  ],
   "homepage": "https://kylegough.co.uk",
   "repository": {
     "type": "git",
@@ -21,6 +25,7 @@
     "axios": "^0.27.2",
     "clsx": "^1.2.1",
     "cors": "^2.8.5",
+    "dayjs": "^1.11.6",
     "express-sslify": "^1.2.0",
     "helmet": "^6.0.0",
     "react": "^17.0.2",

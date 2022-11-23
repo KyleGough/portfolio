@@ -24,8 +24,13 @@ export interface IProject {
 }
 
 export interface IProjectDate {
-  start: string;
-  end?: string;
+  start: IDate;
+  end?: IDate;
+}
+
+export interface IDate {
+  month: number;
+  year: number;
 }
 
 interface IProjectSkills {
@@ -55,7 +60,10 @@ export const projects: IProject[] = [
     id: 'ai-space-telescope',
     title: 'AI Space Telescope',
     date: {
-      start: '2022-11',
+      start: {
+        month: 11,
+        year: 2022,
+      },
     },
     src: 'img/ai-space-telescope1.jpg',
     alt: 'AI Space Telescope Website',
@@ -74,7 +82,10 @@ export const projects: IProject[] = [
     id: 'bookmark-labeller',
     title: 'Bookmark Labeller',
     date: {
-      start: '2022-10',
+      start: {
+        month: 10,
+        year: 2022,
+      },
     },
     src: 'img/bookmark-labeller.jpg',
     alt: 'Bookmark Labeller Popup',
@@ -92,8 +103,14 @@ export const projects: IProject[] = [
     id: 'portfolio',
     title: 'Portfolio',
     date: {
-      start: '2016-12',
-      end: '2022-10',
+      start: {
+        month: 12,
+        year: 2016,
+      },
+      end: {
+        month: 10,
+        year: 2022,
+      },
     },
     src: '/img/card-portfolio.jpg',
     alt: 'Portfolio',
@@ -120,8 +137,14 @@ export const projects: IProject[] = [
     title: 'LucidLab',
     subtitle: "Master's Group Project",
     date: {
-      start: '2019-10',
-      end: '2020-05',
+      start: {
+        month: 10,
+        year: 2019,
+      },
+      end: {
+        month: 5,
+        year: 2020,
+      },
     },
     src: '/img/card-lucidlab.jpg',
     alt: 'LucidLab',
@@ -146,8 +169,14 @@ export const projects: IProject[] = [
     id: 'sudoku',
     title: 'Logical Sudoku Solver',
     date: {
-      start: '2019-11',
-      end: '2020-01',
+      start: {
+        month: 11,
+        year: 2019,
+      },
+      end: {
+        month: 1,
+        year: 2020,
+      },
     },
     src: '/img/card-sudoku.jpg',
     alt: 'Logical sudoku solver',
@@ -165,7 +194,10 @@ export const projects: IProject[] = [
     id: 'react-minesweeper',
     title: 'React Minesweeper',
     date: {
-      start: '2019-10',
+      start: {
+        month: 10,
+        year: 2019,
+      },
     },
     src: 'img/card-react-minesweeper.jpg',
     alt: 'React Minesweeper',
@@ -189,8 +221,14 @@ export const projects: IProject[] = [
     title: 'Using Swarm AI to Map a Cave Network',
     subtitle: 'Dissertation',
     date: {
-      start: '2018-12',
-      end: '2019-04',
+      start: {
+        month: 12,
+        year: 2018,
+      },
+      end: {
+        month: 4,
+        year: 2019,
+      },
     },
     src: '/img/card-cave-exploration.jpg',
     alt: 'Cave Exploration',
@@ -209,8 +247,14 @@ export const projects: IProject[] = [
     title: 'Roller Coaster',
     subtitle: 'Computer Graphics Coursework',
     date: {
-      start: '2018-12',
-      end: '2019-01',
+      start: {
+        month: 12,
+        year: 2018,
+      },
+      end: {
+        month: 1,
+        year: 2019,
+      },
     },
     src: '/img/card-roller-coaster.jpg',
     alt: 'Roller coaster',
@@ -228,8 +272,14 @@ export const projects: IProject[] = [
     title: 'RSCBot',
     subtitle: 'Software Engineering Group Project',
     date: {
-      start: '2018-02',
-      end: '2019-03',
+      start: {
+        month: 2,
+        year: 2018,
+      },
+      end: {
+        month: 3,
+        year: 2019,
+      },
     },
     src: '/img/card-rscbot.jpg',
     alt: 'RSCBot',
@@ -253,7 +303,10 @@ export const projects: IProject[] = [
     id: 'url-shortener',
     title: 'URL Shortener',
     date: {
-      start: '2017-04',
+      start: {
+        month: 4,
+        year: 2017,
+      },
     },
     src: '/img/card-url-shortener.jpg',
     alt: 'URL shortener',
@@ -270,7 +323,10 @@ export const projects: IProject[] = [
     id: 'graph-algorithm-visualiser',
     title: 'Graph Algorithm Visualiser',
     date: {
-      start: '2017-04',
+      start: {
+        month: 4,
+        year: 2017,
+      },
     },
     src: '/img/card-graph-algorithm-visualiser.jpg',
     alt: 'Graph algorithm visualiser',
@@ -289,7 +345,10 @@ export const projects: IProject[] = [
     id: 'cavern-minesweeper',
     title: 'Cavern Minesweeper',
     date: {
-      start: '2017-03',
+      start: {
+        month: 3,
+        year: 2017,
+      },
     },
     src: '/img/card-cavern-minesweeper.jpg',
     alt: 'Cavern Minesweeper',
@@ -308,8 +367,14 @@ export const projects: IProject[] = [
     title: 'BSplit',
     subtitle: 'Web Development Technologies Coursework',
     date: {
-      start: '2017-02',
-      end: '2017-03',
+      start: {
+        month: 2,
+        year: 2017,
+      },
+      end: {
+        month: 3,
+        year: 2017,
+      },
     },
     src: '/img/card-bsplit.jpg',
     alt: 'BSplit',
@@ -340,8 +405,14 @@ export const projects: IProject[] = [
     title: 'To Do List',
     subtitle: 'Web Development Technologies Lab Work',
     date: {
-      start: '2017-01',
-      end: '2017-02',
+      start: {
+        month: 1,
+        year: 2017,
+      },
+      end: {
+        month: 2,
+        year: 2017,
+      },
     },
     src: '/img/card-todo.jpg',
     alt: 'To Do List',
@@ -365,8 +436,14 @@ export const projects: IProject[] = [
     title: 'Delivery Route Planner',
     subtitle: 'A-Level Computing Coursework',
     date: {
-      start: '2015-12',
-      end: '2016-03',
+      start: {
+        month: 12,
+        year: 2015,
+      },
+      end: {
+        month: 3,
+        year: 2016,
+      },
     },
     src: '/img/card-delivery-route-planner.jpg',
     alt: 'Delivery route planner',
@@ -383,8 +460,14 @@ export const projects: IProject[] = [
     id: 'sorting-algorithm-visualiser',
     title: 'Sorting Algorithm Visualiser',
     date: {
-      start: '2015-09',
-      end: '2015-11',
+      start: {
+        month: 9,
+        year: 2015,
+      },
+      end: {
+        month: 11,
+        year: 2015,
+      },
     },
     src: '/img/card-sorting-algorithm-visualiser.jpg',
     alt: 'Sorting Algorithm Visualiser',
