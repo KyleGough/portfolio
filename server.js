@@ -3,11 +3,10 @@ const helmet = require('helmet');
 const path = require('path');
 const compression = require('compression');
 const enforce = require('express-sslify');
-
-const app = express();
 const sgMail = require('@sendgrid/mail');
 const cors = require('cors');
 
+const app = express();
 
 app.use(
   helmet.contentSecurityPolicy({
@@ -37,7 +36,6 @@ app.use(enforce.HTTPS({ trustProtoHeader: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'build')));
 
-
 app.post('/api/sendMessage', function (req, res) {
   const emailMessage = {
     to: contactRecipient,
@@ -64,6 +62,6 @@ const port = process.env.PORT || 8080;
 const apiKey = process.env.SENDGRID_API_KEY || '';
 const contactRecipient = process.env.CONTACT_RECIPIENT || '';
 
-
-
 app.listen(port, () => console.log(`Server listening on port ${port}...`));
+
+module.exports = app;
