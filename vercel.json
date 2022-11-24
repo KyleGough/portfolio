@@ -1,17 +1,3 @@
 {
-  "version": 2,
-  "devCommand": "npm run dev",
-  "framework": "create-react-app",
-  "builds": [
-      {
-          "src": "server.js",
-          "use": "@now/node"
-      }
-  ],
-  "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "server.js"
-      }
-  ]
+  "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]
 }
