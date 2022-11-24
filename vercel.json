@@ -1,12 +1,6 @@
 {
   "devCommand": "npm run dev",
   "framework": "create-react-app",
-  "builds": [
-      {
-          "src": "server.js",
-          "use": "@vercel/node"
-      }
-  ],
   "routes": [
       {
         "src": "/(.*)",
