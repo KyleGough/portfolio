@@ -16,7 +16,7 @@ describe('ProjectItem component', () => {
         link="/#project"
         src="/#image"
         alt="Test Alt Text"
-        logo="/#logo"
+        logo={{ src: '/#logo', alt: 'Logo' }}
       />
     );
     expect(screen.getByText('January 2021 - June 2022')).toBeVisible();
