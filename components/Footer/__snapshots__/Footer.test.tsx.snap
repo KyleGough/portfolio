@@ -75,7 +75,7 @@ exports[`Footer component renders 1`] = `
             <ul>
               <li>
                 <a
-                  class="p-2 hover:text-nav-hover"
+                  class="p-2 hover:text-nav-hover cursor-pointer"
                   href="/projects"
                 >
                   All Projects
@@ -83,7 +83,7 @@ exports[`Footer component renders 1`] = `
               </li>
               <li>
                 <a
-                  class="p-2 hover:text-nav-hover"
+                  class="p-2 hover:text-nav-hover cursor-pointer"
                   href="/projects/sudoku"
                 >
                   Logical Sudoku Solver
@@ -91,7 +91,7 @@ exports[`Footer component renders 1`] = `
               </li>
               <li>
                 <a
-                  class="p-2 hover:text-nav-hover"
+                  class="p-2 hover:text-nav-hover cursor-pointer"
                   href="/projects/cave-exploration"
                 >
                   Cave Exploration
@@ -99,7 +99,7 @@ exports[`Footer component renders 1`] = `
               </li>
               <li>
                 <a
-                  class="p-2 hover:text-nav-hover"
+                  class="p-2 hover:text-nav-hover cursor-pointer"
                   href="/projects/sorting-algorithm-visualiser"
                 >
                   Sorting Algorithm Visualiser
@@ -107,7 +107,7 @@ exports[`Footer component renders 1`] = `
               </li>
               <li>
                 <a
-                  class="p-2 hover:text-nav-hover"
+                  class="p-2 hover:text-nav-hover cursor-pointer"
                   href="/projects/graph-algorithm-visualiser"
                 >
                   Graph Algorithm Visualiser
@@ -115,7 +115,7 @@ exports[`Footer component renders 1`] = `
               </li>
               <li>
                 <a
-                  class="p-2 hover:text-nav-hover"
+                  class="p-2 hover:text-nav-hover cursor-pointer"
                   href="/projects/bsplit"
                 >
                   BSplit
@@ -134,7 +134,7 @@ exports[`Footer component renders 1`] = `
             <ul>
               <li>
                 <a
-                  class="p-1 hover:text-nav-hover"
+                  class="p-2 hover:text-nav-hover"
                   href="/CV.pdf"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -144,7 +144,7 @@ exports[`Footer component renders 1`] = `
               </li>
               <li>
                 <a
-                  class="p-1 hover:text-nav-hover"
+                  class="p-2 hover:text-nav-hover cursor-pointer"
                   href="/about"
                 >
                   About Me
@@ -152,7 +152,7 @@ exports[`Footer component renders 1`] = `
               </li>
               <li>
                 <a
-                  class="p-1 hover:text-nav-hover"
+                  class="p-2 hover:text-nav-hover cursor-pointer"
                   href="/projects"
                 >
                   Projects
@@ -160,7 +160,7 @@ exports[`Footer component renders 1`] = `
               </li>
               <li>
                 <a
-                  class="p-1 hover:text-nav-hover"
+                  class="p-2 hover:text-nav-hover cursor-pointer"
                   href="/privacy"
                 >
                   Privacy
