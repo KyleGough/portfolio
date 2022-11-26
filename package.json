@@ -38,8 +38,7 @@
     "start": "node server.js",
     "dev": "next dev",
     "build": "next build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "test": "jest --watch",
     "prepare": "husky install",
     "lint": "next lint"
   },
