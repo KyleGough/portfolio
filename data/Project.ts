@@ -11,7 +11,10 @@ export interface IProject {
   description: string;
   github?: string;
   skills: IProjectSkills;
-  logo: string;
+  logo: {
+    src: string;
+    alt: string;
+  };
   liveLink?: string;
 }
 
@@ -47,6 +50,41 @@ enum ProjectFilter {
   CSHARP = 'C#',
 }
 
+const TypeScriptLogo = {
+  src: '/img/typescript.svg',
+  alt: 'TypeScript Logo',
+};
+
+const JavaScriptLogo = {
+  src: '/img/javascript.svg',
+  alt: 'JavaScript Logo',
+};
+
+const PythonLogo = {
+  src: '/img/python.svg',
+  alt: 'Python Logo',
+};
+
+const ReactLogo = {
+  src: '/img/react.svg',
+  alt: 'React Logo',
+};
+
+const RubyLogo = {
+  src: '/img/ruby.svg',
+  alt: 'Ruby Logo',
+};
+
+const CPlusPlusLogo = {
+  src: '/img/cplusplus.svg',
+  alt: 'C++ Logo',
+};
+
+const CSharpLogo = {
+  src: '/img/csharp.svg',
+  alt: 'C# Logo',
+};
+
 export const projects: IProject[] = [
   {
     id: 'ai-space-telescope',
@@ -67,7 +105,7 @@ export const projects: IProject[] = [
     skills: {
       active: ['React', 'Typescript', 'TailwindCSS'],
     },
-    logo: '/img/typescript.svg',
+    logo: TypeScriptLogo,
     liveLink: 'https://ai-space-telescope.com',
   },
   {
@@ -89,7 +127,7 @@ export const projects: IProject[] = [
     skills: {
       active: ['JavaScript', 'WebExtensions API', 'HTML', 'CSS'],
     },
-    logo: '/img/javascript.svg',
+    logo: JavaScriptLogo,
   },
   {
     id: 'portfolio',
@@ -122,7 +160,7 @@ export const projects: IProject[] = [
       ],
       disabled: ['PHP', 'Materialize', 'Bootstrap', 'Sass'],
     },
-    logo: '/img/typescript.svg',
+    logo: TypeScriptLogo,
   },
   {
     id: 'lucidlab',
@@ -155,7 +193,7 @@ export const projects: IProject[] = [
       active: ['React', 'JavaScript', 'Materialize', 'HTML', 'CSS'],
       disabled: ['Python', 'Shell', 'C', 'SQL'],
     },
-    logo: '/img/javascript.svg',
+    logo: JavaScriptLogo,
   },
   {
     id: 'sudoku',
@@ -180,7 +218,7 @@ export const projects: IProject[] = [
     skills: {
       active: ['Python'],
     },
-    logo: '/img/python.svg',
+    logo: PythonLogo,
   },
   {
     id: 'react-minesweeper',
@@ -206,7 +244,7 @@ export const projects: IProject[] = [
     skills: {
       active: ['React', 'JavaScript', 'CSS', 'Materialize'],
     },
-    logo: '/img/react.svg',
+    logo: ReactLogo,
   },
   {
     id: 'cave-exploration',
@@ -232,7 +270,7 @@ export const projects: IProject[] = [
     skills: {
       active: ['C++', 'GLUT'],
     },
-    logo: '/img/cplusplus.svg',
+    logo: CPlusPlusLogo,
   },
   {
     id: 'roller-coaster',
@@ -257,7 +295,7 @@ export const projects: IProject[] = [
     skills: {
       active: ['C++', 'GLUT'],
     },
-    logo: '/img/cplusplus.svg',
+    logo: CPlusPlusLogo,
   },
   {
     id: 'rscbot',
@@ -289,7 +327,7 @@ export const projects: IProject[] = [
       active: ['JavaScript', 'jQuery', 'HTML', 'CSS', 'Materialize'],
       disabled: ['PHP', 'SQL'],
     },
-    logo: '/img/javascript.svg',
+    logo: JavaScriptLogo,
   },
   {
     id: 'url-shortener',
@@ -309,7 +347,7 @@ export const projects: IProject[] = [
     skills: {
       active: ['JavaScript', 'MongoDB', 'jQuery', 'HTML', 'CSS', 'Materialize'],
     },
-    logo: '/img/javascript.svg',
+    logo: JavaScriptLogo,
   },
   {
     id: 'graph-algorithm-visualiser',
@@ -330,7 +368,7 @@ export const projects: IProject[] = [
     skills: {
       active: ['JavaScript', 'Materialize'],
     },
-    logo: '/img/javascript.svg',
+    logo: JavaScriptLogo,
     liveLink: 'https://kylegough.github.io/graph-algorithm-visualiser/',
   },
   {
@@ -352,7 +390,7 @@ export const projects: IProject[] = [
     skills: {
       active: ['Ruby'],
     },
-    logo: '/img/ruby.svg',
+    logo: RubyLogo,
   },
   {
     id: 'bsplit',
@@ -390,7 +428,7 @@ export const projects: IProject[] = [
         'Bootstrap',
       ],
     },
-    logo: '/img/javascript.svg',
+    logo: JavaScriptLogo,
   },
   {
     id: 'todo-list',
@@ -421,7 +459,7 @@ export const projects: IProject[] = [
     skills: {
       active: ['PHP', 'JavaScript', 'jQuery', 'SQL', 'HTML', 'CSS'],
     },
-    logo: '/img/javascript.svg',
+    logo: JavaScriptLogo,
   },
   {
     id: 'delivery-route-planner',
@@ -446,7 +484,7 @@ export const projects: IProject[] = [
     skills: {
       active: ['C#', 'SQL'],
     },
-    logo: '/img/csharp.svg',
+    logo: CSharpLogo,
   },
   {
     id: 'sorting-algorithm-visualiser',
@@ -470,6 +508,6 @@ export const projects: IProject[] = [
     skills: {
       active: ['C#'],
     },
-    logo: '/img/csharp.svg',
+    logo: CSharpLogo,
   },
 ];

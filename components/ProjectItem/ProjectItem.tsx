@@ -13,7 +13,10 @@ interface ProjectItemProps {
   link: string;
   src: string;
   alt: string;
-  logo: string;
+  logo: {
+    src: string;
+    alt: string;
+  };
 }
 
 export const ProjectItem: React.FC<ProjectItemProps> = ({
@@ -42,7 +45,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
               alt={alt}
             />
             <div className="absolute top-2 right-2 w-8 h-8 drop-shadow">
-              <Image src={logo} alt="TODO" layout="fill" />
+              <Image src={logo.src} alt={logo.alt} layout="fill" />
             </div>
             <button
               tabIndex={-1}
