@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
 
 import { Link } from './Link';
 
@@ -17,11 +16,7 @@ describe('Link component', () => {
   });
 
   it('renders internal link', async () => {
-    render(
-      <BrowserRouter>
-        <Link to="/test">Link</Link>
-      </BrowserRouter>
-    );
+    render(<Link to="/test">Link</Link>);
 
     expect(screen.getByRole('link')).toHaveAttribute('href', '/test');
     expect(screen.getByText('Link')).toBeVisible();
