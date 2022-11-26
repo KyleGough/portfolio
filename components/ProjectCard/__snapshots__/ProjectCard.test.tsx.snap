@@ -2,9 +2,8 @@
 
 exports[`ProjectCard component renders 1`] = `
 <div>
-  <a
-    class="group overflow-hidden rounded-2xl border-2 border-white shadow drop-shadow-lg"
-    href="/#project"
+  <div
+    class="group overflow-hidden rounded-2xl border-2 border-white shadow drop-shadow-lg cursor-pointer"
   >
     <div
       class="opacity-0 transition-opacity duration-1000"
@@ -37,6 +36,6 @@ exports[`ProjectCard component renders 1`] = `
         </div>
       </div>
     </div>
-  </a>
+  </div>
 </div>
 `;
