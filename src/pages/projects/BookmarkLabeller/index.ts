@@ -1,1 +1,0 @@
-export { BookmarkLabeller } from './BookmarkLabeller';

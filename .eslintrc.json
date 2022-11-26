@@ -46,7 +46,8 @@
     "unicorn/prefer-query-selector": "off",
     "simple-import-sort/imports": "warn",
     "simple-import-sort/exports": "error",
-    "sonarjs/no-duplicate-string": "warn"
+    "sonarjs/no-duplicate-string": "warn",
+    "react/react-in-jsx-scope": "off"
   },
   "settings": {
     "react": {
