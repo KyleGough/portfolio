@@ -8,13 +8,9 @@ interface ImageModalProps {
 export const ImageModal: React.FC<ImageModalProps> = ({ src, caption }) => {
   const [open, setOpen] = useState(false);
 
-  const openModal = () => {
-    setOpen(true);
-  };
+  const openModal = () => setOpen(true);
 
-  const closeModal = () => {
-    setOpen(false);
-  };
+  const closeModal = () => setOpen(false);
 
   return (
     <>

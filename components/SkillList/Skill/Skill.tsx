@@ -1,4 +1,5 @@
 import { clsx } from 'clsx';
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
 import { useObserveElement } from '../../../hooks/useObserveElement';
@@ -54,17 +55,15 @@ export const Skill: React.FC<SkillProps> = ({
         </div>
       </div>
       <div className="w-9/12 lg:w-8/12 ml-6 flex items-center">
-        <img
-          loading="lazy"
+        <div
           className={clsx(
             { 'opacity-100': animatedIn },
             { 'opacity-0': !animatedIn },
-            'w-8 h-8 mr-4',
-            'transition-opacity duration-500'
+            'mr-4 w-8 h-8 transition-opacity duration-500'
           )}
-          src={logo}
-          alt={`${name} logo`}
-        />
+        >
+          <Image src={logo} alt={`${name} logo`} width={30} height={30} />
+        </div>
         <div>
           <p>
             <span className="font-extrabold text-lg">{name}</span> -{' '}
