@@ -1,4 +1,5 @@
 import { clsx } from 'clsx';
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
 
@@ -24,12 +25,11 @@ const Home: React.FC = () => {
     1500
   );
   const zws = '​'; // Zero-width space.
-  const [imageRef, isVisible] = useObserveElement<HTMLImageElement>({
+  const [imageRef, isVisible] = useObserveElement<HTMLDivElement>({
     threshold: 0.5,
   });
 
   useEffect(() => {
-    document.title = 'Portfolio - Kyle Gough';
     carouselInterval.current = setInterval(carouselNext, 10_000);
     return () => {
       window.clearInterval(carouselInterval.current as NodeJS.Timeout);
@@ -47,7 +47,7 @@ const Home: React.FC = () => {
   };
 
   return (
-    <Layout>
+    <Layout title="Portfolio - Kyle Gough">
       <div className="flex justify-center items-center h-screen relative">
         <div className="absolute inset-0 bg-black opacity-70 w-full h-full z-10"></div>
         <CarouselImage bg={carouselImages.cave} show={carousel === 0} />
@@ -169,16 +169,16 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-8">
             <Contact />
             <div className="hidden lg:flex justify-center my-auto">
-              <img
+              <div
                 ref={imageRef}
                 className={clsx(
                   { 'opacity-100': isVisible },
                   { 'opacity-0': !isVisible },
-                  'transition-opacity duration-1000 w-64 h-64 rounded-full'
+                  'transition-opacity duration-1000 w-64 h-64 rounded-full relative'
                 )}
-                src="/img/avatar.png"
-                alt="Avatar"
-              />
+              >
+                <Image src="/img/avatar.png" alt="Avatar" layout="fill" />
+              </div>
             </div>
           </div>
         </Section>

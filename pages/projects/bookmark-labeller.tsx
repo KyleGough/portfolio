@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 import { Divider } from '../../components/Divider';
@@ -35,11 +36,14 @@ const BookmarkLabeller: React.FC = () => (
 
     <Section>
       <div className="flex">
-        <img
-          className="w-8 h-8 mr-2"
-          src="/img/firefox.svg"
-          alt="Firefox Logo"
-        />
+        <div className="w-8 h-8 mr-2">
+          <Image
+            src="/img/firefox.svg"
+            alt="Firefox Logo"
+            width={30}
+            height={30}
+          />
+        </div>
         <Link href="https://addons.mozilla.org/en-US/firefox/addon/bookmark-labeller/">
           <p className="text-2xl">
             Install from the Mozilla Add-On Marketplace

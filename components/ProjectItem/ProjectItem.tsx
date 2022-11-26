@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -40,10 +41,9 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
               src={src}
               alt={alt}
             />
-            <img
-              className="absolute top-2 right-2 w-8 h-8 drop-shadow"
-              src={logo}
-            />
+            <div className="absolute top-2 right-2 w-8 h-8 drop-shadow">
+              <Image src={logo} alt="TODO" layout="fill" />
+            </div>
             <button
               tabIndex={-1}
               className="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
