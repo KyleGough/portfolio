@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Carousel component renders 1`] = `
+<div>
+  <div
+    class="flex justify-center items-center h-screen relative"
+  >
+    <div
+      class="absolute inset-0 bg-black opacity-70 w-full h-full z-10"
+    />
+    <div
+      class="bg-1 opacity-100 absolute top-0 left-0 w-full h-full bg-fixed bg-center bg-cover duration-2000 transition-opacity"
+    />
+    <div
+      class="bg-2 opacity-0 absolute top-0 left-0 w-full h-full bg-fixed bg-center bg-cover duration-2000 transition-opacity"
+    />
+    <div
+      class="z-20 absolute inset-0 text-white mx-auto text-center flex tracking-tight items-center"
+    >
+      Carousel Text
+    </div>
+  </div>
+</div>
+`;

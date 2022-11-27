@@ -1,5 +1,5 @@
 import { clsx } from 'clsx';
-import { CarouselImage } from 'components/CarouselImage';
+import { Carousel } from 'components/Carousel';
 import { Contact } from 'components/Contact';
 import { Layout } from 'components/Layout';
 import { ProjectCard } from 'components/ProjectCard';
@@ -10,12 +10,9 @@ import { useTypewriter } from 'hooks/useTypewriter';
 import { ArrowForwardIcon } from 'icons';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 
 const Home: React.FC = () => {
-  const [carousel, setCarousel] = useState(0);
-  const carouselCount = 3;
-  const carouselInterval = useRef<NodeJS.Timeout | null>(null);
   const welcomeMsg =
     'Front-End Engineer based in London, with strong interests in web development and over 8 years experience coding. Feel free to browse my projects.';
   const typewriterRef = useTypewriter<HTMLParagraphElement>(
@@ -28,46 +25,26 @@ const Home: React.FC = () => {
     threshold: 0.5,
   });
 
-  useEffect(() => {
-    carouselInterval.current = setInterval(carouselNext, 10_000);
-    return () => {
-      window.clearInterval(carouselInterval.current as NodeJS.Timeout);
-    };
-  }, []);
-
-  const carouselNext = () =>
-    setCarousel((carousel) => (carousel + 1) % carouselCount);
-
-  const carouselImages = {
-    cave: 'bg-header1',
-    minesweeper: 'bg-header2',
-    coaster: 'bg-header3',
-  };
+  const backgrounds = ['bg-header1', 'bg-header2', 'bg-header3'];
 
   return (
     <Layout title="Portfolio - Kyle Gough">
-      <div className="flex justify-center items-center h-screen relative">
-        <div className="absolute inset-0 bg-black opacity-70 w-full h-full z-10"></div>
-        <CarouselImage bg={carouselImages.cave} show={carousel === 0} />
-        <CarouselImage bg={carouselImages.minesweeper} show={carousel === 1} />
-        <CarouselImage bg={carouselImages.coaster} show={carousel === 2} />
-        <div className="z-20 absolute inset-0 text-white mx-auto text-center flex tracking-tight items-center">
-          <div className="block lg:flex items-center justify-around w-full">
-            <h1 className="slide-in text-7xl sm:text-8xl lg:text-9xl font-sans tracking-tighter px-8 mb-12 lg:mb-0">
-              Hello, I&apos;m Kyle.
-            </h1>
-            <p className="text-left text-2xl font-thin max-w-[38ch] lg:w-[38ch] md:h-32 h-40 lg:h-32 font-sans mx-auto px-8 lg:mx-0">
-              <span
-                ref={typewriterRef}
-                className="text-xl md:text-2xl text-left sans-serif"
-              >
-                {welcomeMsg}
-              </span>
-              <span className="fade-in caret-blink">{zws}</span>
-            </p>
-          </div>
+      <Carousel backgrounds={backgrounds}>
+        <div className="block lg:flex items-center justify-around w-full">
+          <h1 className="slide-in text-7xl sm:text-8xl lg:text-9xl font-sans tracking-tighter px-8 mb-12 lg:mb-0">
+            Hello, I&apos;m Kyle.
+          </h1>
+          <p className="text-left text-2xl font-thin max-w-[38ch] lg:w-[38ch] md:h-32 h-40 lg:h-32 font-sans mx-auto px-8 lg:mx-0">
+            <span
+              ref={typewriterRef}
+              className="text-xl md:text-2xl text-left sans-serif"
+            >
+              {welcomeMsg}
+            </span>
+            <span className="fade-in caret-blink">{zws}</span>
+          </p>
         </div>
-      </div>
+      </Carousel>
 
       <div className="bg-circuits min-h-screen flex items-center border-y border-divider">
         <Section>
