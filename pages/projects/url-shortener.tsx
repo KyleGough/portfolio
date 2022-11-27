@@ -50,8 +50,8 @@ const URLShortener: React.FC<ProjectPageProps> = ({ images, project }) => (
 
 export const getStaticProps: GetStaticProps = async () => {
   const images = [
-    { src: '/img/url-shortener1.jpg', caption: 'Shortened URL example 1' },
-    { src: '/img/url-shortener2.jpg', caption: 'Shortened URL example 2' },
+    { src: '/img/url-shortener1.jpg', alt: 'Shortened URL example 1' },
+    { src: '/img/url-shortener2.jpg', alt: 'Shortened URL example 2' },
   ];
 
   return {

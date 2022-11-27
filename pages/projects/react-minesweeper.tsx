@@ -34,14 +34,14 @@ const Minesweeper: React.FC<ProjectPageProps> = ({ images, project }) => (
 
 export const getStaticProps: GetStaticProps = async () => {
   const images = [
-    { src: '/img/react-minesweeper1.jpg', caption: 'Complete game' },
+    { src: '/img/react-minesweeper1.jpg', alt: 'Complete game' },
     {
       src: '/img/react-minesweeper2.jpg',
-      caption: 'Partially complete game',
+      alt: 'Partially complete game',
     },
-    { src: '/img/react-minesweeper3.jpg', caption: 'Lost game' },
-    { src: '/img/react-minesweeper4.jpg', caption: 'Initial board' },
-    { src: '/img/react-minesweeper5.jpg', caption: 'App introduction' },
+    { src: '/img/react-minesweeper3.jpg', alt: 'Lost game' },
+    { src: '/img/react-minesweeper4.jpg', alt: 'Initial board' },
+    { src: '/img/react-minesweeper5.jpg', alt: 'App introduction' },
   ];
 
   return {

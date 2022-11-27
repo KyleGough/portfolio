@@ -15,7 +15,7 @@ export const Screenshots: React.FC<ScreenshotProps> = ({ images }) => (
     <h2 className="text-3xl mb-12">Screenshots</h2>
     <div className="grid grid-cols-12 gap-4">
       {images.map((image, i) => {
-        return <ImageModal key={i} src={image.src} caption={image.alt} />;
+        return <ImageModal key={i} src={image.src} alt={image.alt} />;
       })}
     </div>
   </Section>

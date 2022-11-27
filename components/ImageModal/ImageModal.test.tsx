@@ -5,15 +5,13 @@ import { ImageModal } from './ImageModal';
 
 describe('ImageModal component', () => {
   it('renders', async () => {
-    const { container } = render(
-      <ImageModal src="/#" caption="Test Caption" />
-    );
+    const { container } = render(<ImageModal src="/#" alt="Test Caption" />);
     expect(screen.getByText('Test Caption')).toBeVisible();
     expect(container).toMatchSnapshot();
   });
 
   it('dialog opens and closes on click', async () => {
-    render(<ImageModal src="/#" caption="Test Caption" />);
+    render(<ImageModal src="/#" alt="Test Caption" />);
     expect(screen.getByText('Test Caption')).toBeVisible();
 
     // Modal should not be in the document by default.

@@ -235,8 +235,8 @@ const Sudoku: React.FC<ProjectPageProps> = ({ images, project }) => (
 
 export const getStaticProps: GetStaticProps = async () => {
   const images = [
-    { src: '/img/sudoku1.jpg', caption: 'X-Wing example' },
-    { src: '/img/sudoku2.jpg', caption: 'XYZ-Wing example' },
+    { src: '/img/sudoku1.jpg', alt: 'X-Wing example' },
+    { src: '/img/sudoku2.jpg', alt: 'XYZ-Wing example' },
   ];
 
   return {

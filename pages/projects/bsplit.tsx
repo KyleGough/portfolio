@@ -54,11 +54,11 @@ const BSplit: React.FC<ProjectPageProps> = ({ images, project }) => (
 
 export const getStaticProps: GetStaticProps = async () => {
   const images = [
-    { src: '/img/bsplit1.jpg', caption: 'Bill list' },
-    { src: '/img/bsplit2.jpg', caption: 'Homepage' },
-    { src: '/img/bsplit3.jpg', caption: 'New bill form' },
-    { src: '/img/bsplit4.jpg', caption: 'Group list' },
-    { src: '/img/bsplit5.jpg', caption: 'New group form' },
+    { src: '/img/bsplit1.jpg', alt: 'Bill list' },
+    { src: '/img/bsplit2.jpg', alt: 'Homepage' },
+    { src: '/img/bsplit3.jpg', alt: 'New bill form' },
+    { src: '/img/bsplit4.jpg', alt: 'Group list' },
+    { src: '/img/bsplit5.jpg', alt: 'New group form' },
   ];
 
   return {

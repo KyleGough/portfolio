@@ -77,20 +77,20 @@ export const getStaticProps: GetStaticProps = async () => {
   const images = [
     {
       src: '/img/cave-exploration1.jpg',
-      caption: 'Multiple drone cave exploration',
+      alt: 'Multiple drone cave exploration',
     },
     {
       src: '/img/cave-exploration2.jpg',
-      caption: 'Single drone cave exploration',
+      alt: 'Single drone cave exploration',
     },
     {
       src: '/img/cave-exploration3.jpg',
-      caption: 'Single drone cave exploration',
+      alt: 'Single drone cave exploration',
     },
-    { src: '/img/cave-generation1.png', caption: 'Cave generation step 1' },
-    { src: '/img/cave-generation2.png', caption: 'Cave generation step 2' },
-    { src: '/img/cave-generation3.png', caption: 'Cave generation step 3' },
-    { src: '/img/cave-generation4.png', caption: 'Cave generation step 4' },
+    { src: '/img/cave-generation1.png', alt: 'Cave generation step 1' },
+    { src: '/img/cave-generation2.png', alt: 'Cave generation step 2' },
+    { src: '/img/cave-generation3.png', alt: 'Cave generation step 3' },
+    { src: '/img/cave-generation4.png', alt: 'Cave generation step 4' },
   ];
 
   return {

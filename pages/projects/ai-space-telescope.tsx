@@ -55,7 +55,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const images = [
     {
       src: '/img/ai-space-telescope1.jpg',
-      caption: 'AI Space Telescope Website',
+      alt: 'AI Space Telescope Website',
     },
   ];
 

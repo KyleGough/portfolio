@@ -50,10 +50,10 @@ const RollerCoaster: React.FC<ProjectPageProps> = ({ images, project }) => (
 
 export const getStaticProps: GetStaticProps = async () => {
   const images = [
-    { src: '/img/roller-coaster1.jpg', caption: 'Back cart camera view' },
-    { src: '/img/roller-coaster2.jpg', caption: 'Tracking camera view' },
-    { src: '/img/roller-coaster3.jpg', caption: 'Center cart camera view' },
-    { src: '/img/roller-coaster4.jpg', caption: 'Cart closeup' },
+    { src: '/img/roller-coaster1.jpg', alt: 'Back cart camera view' },
+    { src: '/img/roller-coaster2.jpg', alt: 'Tracking camera view' },
+    { src: '/img/roller-coaster3.jpg', alt: 'Center cart camera view' },
+    { src: '/img/roller-coaster4.jpg', alt: 'Cart closeup' },
   ];
 
   return {

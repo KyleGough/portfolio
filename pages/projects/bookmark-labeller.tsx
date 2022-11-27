@@ -84,11 +84,11 @@ export const getStaticProps: GetStaticProps = async () => {
   const images = [
     {
       src: '/img/bookmark-labeller.jpg',
-      caption: 'Bookmark Labeller Extension Popup',
+      alt: 'Bookmark Labeller Extension Popup',
     },
     {
       src: '/img/bookmark-labeller-folder.jpg',
-      caption: 'Labelled bookmark folder',
+      alt: 'Labelled bookmark folder',
     },
   ];
 

@@ -73,11 +73,11 @@ const LucidLab: React.FC<ProjectPageProps> = ({ images, project }) => (
 
 export const getStaticProps: GetStaticProps = async () => {
   const images = [
-    { src: '/img/lucidlab1.jpg', caption: 'Upload test configuration page' },
-    { src: '/img/lucidlab4.jpg', caption: 'Upload IoT controller page' },
-    { src: '/img/lucidlab5.jpg', caption: 'Upload image page' },
-    { src: '/img/lucidlab2.jpg', caption: 'Mote RSSI Map' },
-    { src: '/img/lucidlab3.jpg', caption: 'Mote CCA Charts' },
+    { src: '/img/lucidlab1.jpg', alt: 'Upload test configuration page' },
+    { src: '/img/lucidlab4.jpg', alt: 'Upload IoT controller page' },
+    { src: '/img/lucidlab5.jpg', alt: 'Upload image page' },
+    { src: '/img/lucidlab2.jpg', alt: 'Mote RSSI Map' },
+    { src: '/img/lucidlab3.jpg', alt: 'Mote CCA Charts' },
   ];
 
   return {

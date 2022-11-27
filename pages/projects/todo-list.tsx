@@ -49,11 +49,11 @@ const ToDoList: React.FC<ProjectPageProps> = ({ images, project }) => (
 
 export const getStaticProps: GetStaticProps = async () => {
   const images = [
-    { src: '/img/todo-list1.jpg', caption: 'Homepage' },
-    { src: '/img/todo-list2.jpg', caption: 'Shopping list' },
-    { src: '/img/todo-list3.jpg', caption: 'New user registration' },
-    { src: '/img/todo-list4.jpg', caption: "User's lists" },
-    { src: '/img/todo-list5.jpg', caption: 'Existing login page' },
+    { src: '/img/todo-list1.jpg', alt: 'Homepage' },
+    { src: '/img/todo-list2.jpg', alt: 'Shopping list' },
+    { src: '/img/todo-list3.jpg', alt: 'New user registration' },
+    { src: '/img/todo-list4.jpg', alt: "User's lists" },
+    { src: '/img/todo-list5.jpg', alt: 'Existing login page' },
   ];
 
   return {

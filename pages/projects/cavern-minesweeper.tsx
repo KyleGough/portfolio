@@ -50,8 +50,8 @@ const CavernMinesweeper: React.FC<ProjectPageProps> = ({ images, project }) => (
 
 export const getStaticProps: GetStaticProps = async () => {
   const images = [
-    { src: '/img/cavern-minesweeper1.jpg', caption: 'Finished game' },
-    { src: '/img/cavern-minesweeper2.jpg', caption: 'New game' },
+    { src: '/img/cavern-minesweeper1.jpg', alt: 'Finished game' },
+    { src: '/img/cavern-minesweeper2.jpg', alt: 'New game' },
   ];
 
   return {

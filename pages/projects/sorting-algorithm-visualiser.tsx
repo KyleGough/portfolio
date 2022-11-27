@@ -96,23 +96,23 @@ export const getStaticProps: GetStaticProps = async () => {
   const images = [
     {
       src: '/img/sorting-algorithm-visualiser1.jpg',
-      caption: 'Unsorted Random Data',
+      alt: 'Unsorted Random Data',
     },
     {
       src: '/img/sorting-algorithm-visualiser2.jpg',
-      caption: 'Random and sinusoidal datasets',
+      alt: 'Random and sinusoidal datasets',
     },
     {
       src: '/img/sorting-algorithm-visualiser3.jpg',
-      caption: 'Bitonic sort and sorted dataset',
+      alt: 'Bitonic sort and sorted dataset',
     },
     {
       src: '/img/sorting-algorithm-visualiser4.jpg',
-      caption: 'Dataset visualised as points',
+      alt: 'Dataset visualised as points',
     },
     {
       src: '/img/sorting-algorithm-visualiser5.jpg',
-      caption: 'Algorithm information table',
+      alt: 'Algorithm information table',
     },
   ];
 

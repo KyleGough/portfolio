@@ -130,27 +130,27 @@ export const getStaticProps: GetStaticProps = async () => {
   const images = [
     {
       src: '/img/portfolio-projects-v1a.jpg',
-      caption: 'Portfolio project page version 1',
+      alt: 'Portfolio project page version 1',
     },
     {
       src: '/img/portfolio-projects-v1b.jpg',
-      caption: 'Portfolio about page version 1',
+      alt: 'Portfolio about page version 1',
     },
     {
       src: '/img/portfolio-projects-v2.jpg',
-      caption: 'Portfolio project page version 2',
+      alt: 'Portfolio project page version 2',
     },
     {
       src: '/img/portfolio-projects-v3.jpg',
-      caption: 'Portfolio project page version 3',
+      alt: 'Portfolio project page version 3',
     },
     {
       src: '/img/portfolio-projects-v4a.jpg',
-      caption: 'Portfolio project page upper version 4',
+      alt: 'Portfolio project page upper version 4',
     },
     {
       src: '/img/portfolio-projects-v4b.jpg',
-      caption: 'Portfolio project page lower version 4',
+      alt: 'Portfolio project page lower version 4',
     },
   ];
 

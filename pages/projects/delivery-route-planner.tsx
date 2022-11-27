@@ -52,10 +52,10 @@ const DeliveryPlanner: React.FC<ProjectPageProps> = ({ images, project }) => (
 
 export const getStaticProps: GetStaticProps = async () => {
   const images = [
-    { src: '/img/delivery-route-planner1.jpg', caption: 'Delivery view' },
-    { src: '/img/delivery-route-planner2.jpg', caption: 'Route view' },
-    { src: '/img/delivery-route-planner3.jpg', caption: 'Generated report' },
-    { src: '/img/delivery-route-planner4.jpg', caption: 'Generated route' },
+    { src: '/img/delivery-route-planner1.jpg', alt: 'Delivery view' },
+    { src: '/img/delivery-route-planner2.jpg', alt: 'Route view' },
+    { src: '/img/delivery-route-planner3.jpg', alt: 'Generated report' },
+    { src: '/img/delivery-route-planner4.jpg', alt: 'Generated route' },
   ];
 
   return {

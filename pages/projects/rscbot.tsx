@@ -56,15 +56,15 @@ const RSCBot: React.FC<ProjectPageProps> = ({ images, project }) => (
 
 export const getStaticProps: GetStaticProps = async () => {
   const images = [
-    { src: '/img/rscbot1.jpg', caption: 'Stock query' },
+    { src: '/img/rscbot1.jpg', alt: 'Stock query' },
     {
       src: '/img/rscbot2.jpg',
-      caption: 'Hourly newsfeed with natural language processing',
+      alt: 'Hourly newsfeed with natural language processing',
     },
-    { src: '/img/rscbot3.jpg', caption: 'Favourites selection' },
-    { src: '/img/rscbot4.jpg', caption: 'News query' },
-    { src: '/img/rscbot5.jpg', caption: 'Other queries' },
-    { src: '/img/rscbot6.jpg', caption: 'Help modal' },
+    { src: '/img/rscbot3.jpg', alt: 'Favourites selection' },
+    { src: '/img/rscbot4.jpg', alt: 'News query' },
+    { src: '/img/rscbot5.jpg', alt: 'Other queries' },
+    { src: '/img/rscbot6.jpg', alt: 'Help modal' },
   ];
 
   return {
