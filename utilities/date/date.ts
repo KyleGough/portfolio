@@ -1,5 +1,5 @@
+import { Date, ProjectDate } from '@utilities/types';
 import dayjs from 'dayjs';
-import { Date, ProjectDate } from 'utilities/types';
 
 export const getFormattedDate = (date: Date) => {
   return dayjs()

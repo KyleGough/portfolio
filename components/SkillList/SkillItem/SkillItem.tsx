@@ -1,8 +1,7 @@
+import { useObserveElement } from '@hooks/useObserveElement';
 import { clsx } from 'clsx';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
-
-import { useObserveElement } from '../../../hooks/useObserveElement';
 
 interface SkillItemProps {
   type: string;

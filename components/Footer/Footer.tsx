@@ -1,6 +1,6 @@
+import { EmailIcon, GitHubIcon, LinkedInIcon } from '@components/Icons';
 import React from 'react';
 
-import { EmailIcon, GitHubIcon, LinkedInIcon } from '../../icons';
 import { FooterLink } from './FooterLink';
 
 export const Footer: React.FC = () => (

@@ -1,7 +1,7 @@
+import { UnfoldIcon } from '@components/Icons';
 import { clsx } from 'clsx';
 import React, { useEffect, useRef, useState } from 'react';
 
-import { UnfoldIcon } from '../../icons';
 import { ProjectFilterSelection } from './ProjectFilterSelection';
 
 interface ProjectFilterProps {

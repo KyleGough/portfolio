@@ -1,8 +1,7 @@
+import { ArrowBackIcon, ArrowForwardIcon } from '@components/Icons';
+import { Section } from '@components/Section';
 import Link from 'next/link';
 import React from 'react';
-
-import { ArrowBackIcon, ArrowForwardIcon } from '../../icons';
-import { Section } from '../Section';
 
 interface PaginationProps {
   previousTitle?: string;

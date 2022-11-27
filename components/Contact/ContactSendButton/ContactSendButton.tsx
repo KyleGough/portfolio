@@ -1,7 +1,7 @@
+import { RestartIcon, SendIcon, TickIcon } from '@components/Icons';
 import { clsx } from 'clsx';
 import React from 'react';
 
-import { RestartIcon, SendIcon, TickIcon } from '../../../icons';
 import { EmailStatus } from '../Contact.types';
 
 interface ContactSendButtonProps {

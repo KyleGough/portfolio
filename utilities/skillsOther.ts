@@ -1,4 +1,4 @@
-import { Skill } from 'utilities/types';
+import { Skill } from '@utilities/types';
 
 export const skillsOther: Skill[] = [
   {

@@ -1,5 +1,5 @@
+import { Skill } from '@utilities/types';
 import React from 'react';
-import { Skill } from 'utilities/types';
 
 import { SkillItem } from './SkillItem';
 

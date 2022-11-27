@@ -1,7 +1,6 @@
+import { useObserveElement } from '@hooks/useObserveElement';
 import { clsx } from 'clsx';
 import React, { useEffect, useState } from 'react';
-
-import { useObserveElement } from '../../hooks/useObserveElement';
 
 interface FadeInProps {
   className?: string;

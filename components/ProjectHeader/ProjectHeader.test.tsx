@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
+import { Project } from '@utilities/types';
 import React from 'react';
-import { Project } from 'utilities/types';
 
 import { ProjectHeader } from './ProjectHeader';
 

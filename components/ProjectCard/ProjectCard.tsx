@@ -1,10 +1,10 @@
+import { FadeIn } from '@components/FadeIn';
+import { ProjectChip } from '@components/ProjectChip';
 import { getFormattedDate, getShortDate } from '@utilities/date';
+import { Date } from '@utilities/types';
 import { clsx } from 'clsx';
-import { FadeIn } from 'components/FadeIn';
-import { ProjectChip } from 'components/ProjectChip';
 import Link from 'next/link';
 import React from 'react';
-import { Date } from 'utilities/types';
 
 interface ProjectCardProps {
   className?: string;

@@ -1,4 +1,4 @@
-import { Date } from 'utilities/types';
+import { Date } from '@utilities/types';
 
 import { getDateRange, getFormattedDate } from './date';
 
