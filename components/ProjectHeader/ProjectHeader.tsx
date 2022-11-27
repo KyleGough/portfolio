@@ -1,7 +1,7 @@
+import { getFormattedDate, getShortDate } from '@utilities/date';
 import React from 'react';
 import { Project } from 'utilities/types';
 
-import { getFormattedDate, getShortDate } from '../../utilities/date';
 import { Chip } from '../Chip';
 import { Link } from '../Link';
 import { Section } from '../Section';

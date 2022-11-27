@@ -1,9 +1,9 @@
+import { getDateRange } from '@utilities/date';
+import { ProjectDate } from '@utilities/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-import { getDateRange } from '../../utilities/date';
-import { ProjectDate } from '../../utilities/types';
 import { Section } from '../Section';
 
 interface ProjectItemProps {

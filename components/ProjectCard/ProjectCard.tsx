@@ -1,9 +1,9 @@
+import { getFormattedDate, getShortDate } from '@utilities/date';
 import { clsx } from 'clsx';
 import { FadeIn } from 'components/FadeIn';
 import { ProjectChip } from 'components/ProjectChip';
 import Link from 'next/link';
 import React from 'react';
-import { getFormattedDate, getShortDate } from 'utilities/date';
 import { Date } from 'utilities/types';
 
 interface ProjectCardProps {

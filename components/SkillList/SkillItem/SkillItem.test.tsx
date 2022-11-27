@@ -1,7 +1,7 @@
+import { mockIntersectionObserver } from '@mocks/mockIntersectionObserver';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 
-import { mockIntersectionObserver } from '../../../mocks/mockIntersectionObserver';
 import { SkillItem } from './SkillItem';
 
 const skill = {
