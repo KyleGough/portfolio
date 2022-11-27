@@ -1,24 +1,16 @@
+import { Divider } from 'components/Divider';
+import { ImageFigure } from 'components/ImageFigure';
+import { Layout } from 'components/Layout';
+import { Pagination } from 'components/Pagination';
+import { ProjectHeader } from 'components/ProjectHeader';
+import { Screenshots } from 'components/Screenshots';
+import { Section } from 'components/Section';
+import { GetStaticProps } from 'next';
 import React from 'react';
+import { getProjectData } from 'utilities/Project';
+import { ProjectPageProps } from 'utilities/types';
 
-import { Divider } from '../../components/Divider';
-import { ImageFigure } from '../../components/ImageFigure';
-import { Layout } from '../../components/Layout';
-import { Pagination } from '../../components/Pagination';
-import { ProjectHeader } from '../../components/ProjectHeader';
-import { Screenshots } from '../../components/Screenshots';
-import { Section } from '../../components/Section';
-import { getProjectData } from '../../data';
-
-const images = [
-  { src: '/img/delivery-route-planner1.jpg', caption: 'Delivery view' },
-  { src: '/img/delivery-route-planner2.jpg', caption: 'Route view' },
-  { src: '/img/delivery-route-planner3.jpg', caption: 'Generated report' },
-  { src: '/img/delivery-route-planner4.jpg', caption: 'Generated route' },
-];
-
-const project = getProjectData('delivery-route-planner');
-
-const DeliveryPlanner: React.FC = () => (
+const DeliveryPlanner: React.FC<ProjectPageProps> = ({ images, project }) => (
   <Layout title="Delivery Route Planner - Delivery Route and Report Generation Software">
     <ProjectHeader project={project} />
 
@@ -57,5 +49,21 @@ const DeliveryPlanner: React.FC = () => (
     />
   </Layout>
 );
+
+export const getStaticProps: GetStaticProps = async () => {
+  const images = [
+    { src: '/img/delivery-route-planner1.jpg', caption: 'Delivery view' },
+    { src: '/img/delivery-route-planner2.jpg', caption: 'Route view' },
+    { src: '/img/delivery-route-planner3.jpg', caption: 'Generated report' },
+    { src: '/img/delivery-route-planner4.jpg', caption: 'Generated route' },
+  ];
+
+  return {
+    props: {
+      images: images,
+      project: getProjectData('delivery-route-planner'),
+    },
+  };
+};
 
 export default DeliveryPlanner;

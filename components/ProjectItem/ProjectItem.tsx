@@ -2,13 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-import { IProjectDate } from '../../data';
 import { getDateRange } from '../../utilities/date';
+import { ProjectDate } from '../../utilities/types';
 import { Section } from '../Section';
 
 interface ProjectItemProps {
   title: string;
-  date: IProjectDate;
+  date: ProjectDate;
   description: string;
   link: string;
   src: string;

@@ -1,11 +1,10 @@
 {
-    "Index": {
-      "prefix": ["index", "component index"],
-      "scope": "typescript",
-      "body": [
-        "export { ${TM_DIRECTORY/.*\\\/([^\\\/]+)$/$1/} } from './${TM_DIRECTORY/.*\\\/([^\\\/]+)$/$1/}'"
-      ],
-      "description": "Component index file"
-    }
+  "Index": {
+    "prefix": ["index", "component index"],
+    "scope": "typescript",
+    "body": [
+      "export { ${TM_DIRECTORY/.*\\/([^\\/]+)$/$1/} } from './${TM_DIRECTORY/.*\\/([^\\/]+)$/$1/}'"
+    ],
+    "description": "Component index file"
   }
-  
+}

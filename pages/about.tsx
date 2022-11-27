@@ -6,10 +6,10 @@ import { LabelledLogo } from '../components/LabelledLogo';
 import { Layout } from '../components/Layout';
 import { Section } from '../components/Section';
 import { SkillList } from '../components/SkillList';
-import { skillsOther } from '../data/SkillsOther';
-import { skillsProgramming } from '../data/SkillsProgramming';
-import { skillsWeb } from '../data/SkillsWeb';
 import { ArrowForwardIcon } from '../icons';
+import { skillsOther } from '../utilities/skillsOther';
+import { skillsProgramming } from '../utilities/skillsProgramming';
+import { skillsWeb } from '../utilities/skillsWeb';
 
 const About: React.FC = () => {
   return (

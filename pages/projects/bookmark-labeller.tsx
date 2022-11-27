@@ -1,30 +1,18 @@
+import { Divider } from 'components/Divider';
+import { ImageFigure } from 'components/ImageFigure';
+import { Layout } from 'components/Layout';
+import { Pagination } from 'components/Pagination';
+import { ProjectHeader } from 'components/ProjectHeader';
+import { Screenshots } from 'components/Screenshots';
+import { Section } from 'components/Section';
+import { GetStaticProps } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
+import { getProjectData } from 'utilities/Project';
+import { ProjectPageProps } from 'utilities/types';
 
-import { Divider } from '../../components/Divider';
-import { ImageFigure } from '../../components/ImageFigure';
-import { Layout } from '../../components/Layout';
-import { Link } from '../../components/Link';
-import { Pagination } from '../../components/Pagination';
-import { ProjectHeader } from '../../components/ProjectHeader';
-import { Screenshots } from '../../components/Screenshots';
-import { Section } from '../../components/Section';
-import { getProjectData } from '../../data';
-
-const images = [
-  {
-    src: '/img/bookmark-labeller.jpg',
-    caption: 'Bookmark Labeller Extension Popup',
-  },
-  {
-    src: '/img/bookmark-labeller-folder.jpg',
-    caption: 'Labelled bookmark folder',
-  },
-];
-
-const project = getProjectData('bookmark-labeller');
-
-const BookmarkLabeller: React.FC = () => (
+const BookmarkLabeller: React.FC<ProjectPageProps> = ({ images, project }) => (
   <Layout title="Bookmark Labeller Extension">
     <ProjectHeader project={project} />
 
@@ -91,5 +79,25 @@ const BookmarkLabeller: React.FC = () => (
     />
   </Layout>
 );
+
+export const getStaticProps: GetStaticProps = async () => {
+  const images = [
+    {
+      src: '/img/bookmark-labeller.jpg',
+      caption: 'Bookmark Labeller Extension Popup',
+    },
+    {
+      src: '/img/bookmark-labeller-folder.jpg',
+      caption: 'Labelled bookmark folder',
+    },
+  ];
+
+  return {
+    props: {
+      images: images,
+      project: getProjectData('bookmark-labeller'),
+    },
+  };
+};
 
 export default BookmarkLabeller;

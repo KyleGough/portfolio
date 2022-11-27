@@ -1,36 +1,16 @@
+import { Divider } from 'components/Divider';
+import { ImageFigure } from 'components/ImageFigure';
+import { Layout } from 'components/Layout';
+import { Pagination } from 'components/Pagination';
+import { ProjectHeader } from 'components/ProjectHeader';
+import { Screenshots } from 'components/Screenshots';
+import { Section } from 'components/Section';
+import { GetStaticProps } from 'next';
 import React from 'react';
+import { getProjectData } from 'utilities/Project';
+import { ProjectPageProps } from 'utilities/types';
 
-import { Divider } from '../../components/Divider';
-import { ImageFigure } from '../../components/ImageFigure';
-import { Layout } from '../../components/Layout';
-import { Pagination } from '../../components/Pagination';
-import { ProjectHeader } from '../../components/ProjectHeader';
-import { Screenshots } from '../../components/Screenshots';
-import { Section } from '../../components/Section';
-import { getProjectData } from '../../data';
-
-const images = [
-  {
-    src: '/img/cave-exploration1.jpg',
-    caption: 'Multiple drone cave exploration',
-  },
-  {
-    src: '/img/cave-exploration2.jpg',
-    caption: 'Single drone cave exploration',
-  },
-  {
-    src: '/img/cave-exploration3.jpg',
-    caption: 'Single drone cave exploration',
-  },
-  { src: '/img/cave-generation1.png', caption: 'Cave generation step 1' },
-  { src: '/img/cave-generation2.png', caption: 'Cave generation step 2' },
-  { src: '/img/cave-generation3.png', caption: 'Cave generation step 3' },
-  { src: '/img/cave-generation4.png', caption: 'Cave generation step 4' },
-];
-
-const project = getProjectData('cave-exploration');
-
-const CaveExploration: React.FC = () => (
+const CaveExploration: React.FC<ProjectPageProps> = ({ images, project }) => (
   <Layout title="Cave Exploration - Improving and Simulating Cave Explortation with Swarm AI">
     <ProjectHeader project={project} />
 
@@ -92,5 +72,33 @@ const CaveExploration: React.FC = () => (
     />
   </Layout>
 );
+
+export const getStaticProps: GetStaticProps = async () => {
+  const images = [
+    {
+      src: '/img/cave-exploration1.jpg',
+      caption: 'Multiple drone cave exploration',
+    },
+    {
+      src: '/img/cave-exploration2.jpg',
+      caption: 'Single drone cave exploration',
+    },
+    {
+      src: '/img/cave-exploration3.jpg',
+      caption: 'Single drone cave exploration',
+    },
+    { src: '/img/cave-generation1.png', caption: 'Cave generation step 1' },
+    { src: '/img/cave-generation2.png', caption: 'Cave generation step 2' },
+    { src: '/img/cave-generation3.png', caption: 'Cave generation step 3' },
+    { src: '/img/cave-generation4.png', caption: 'Cave generation step 4' },
+  ];
+
+  return {
+    props: {
+      images: images,
+      project: getProjectData('cave-exploration'),
+    },
+  };
+};
 
 export default CaveExploration;

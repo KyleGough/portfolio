@@ -1,34 +1,16 @@
+import { Divider } from 'components/Divider';
+import { ImageFigure } from 'components/ImageFigure';
+import { Layout } from 'components/Layout';
+import { Pagination } from 'components/Pagination';
+import { ProjectHeader } from 'components/ProjectHeader';
+import { Screenshots } from 'components/Screenshots';
+import { Section } from 'components/Section';
+import { GetStaticProps } from 'next';
 import React from 'react';
+import { getProjectData } from 'utilities/Project';
+import { ProjectPageProps } from 'utilities/types';
 
-import { Divider } from '../../components/Divider';
-import { ImageFigure } from '../../components/ImageFigure';
-import { Layout } from '../../components/Layout';
-import { Pagination } from '../../components/Pagination';
-import { ProjectHeader } from '../../components/ProjectHeader';
-import { Screenshots } from '../../components/Screenshots';
-import { Section } from '../../components/Section';
-import { getProjectData } from '../../data';
-
-const images = [
-  {
-    src: '/img/graph-algorithm-visualiser1.jpg',
-    caption: 'Nearest Neighbour with 2-Opt',
-  },
-  {
-    src: '/img/graph-algorithm-visualiser2.jpg',
-    caption: 'Randomly generated nodes',
-  },
-  {
-    src: '/img/graph-algorithm-visualiser3.jpg',
-    caption: 'Algorithm information',
-  },
-  { src: '/img/graph-algorithm-visualiser4.jpg', caption: 'Graham Scan' },
-  { src: '/img/graph-algorithm-visualiser5.jpg', caption: 'Random route' },
-];
-
-const project = getProjectData('graph-algorithm-visualiser');
-
-const GraphVisualiser: React.FC = () => (
+const GraphVisualiser: React.FC<ProjectPageProps> = ({ images, project }) => (
   <Layout title="Graph Algorithm Visualiser - Web App to Visualise Various Graph Algorithms">
     <ProjectHeader project={project} />
 
@@ -82,5 +64,31 @@ const GraphVisualiser: React.FC = () => (
     />
   </Layout>
 );
+
+export const getStaticProps: GetStaticProps = async () => {
+  const images = [
+    {
+      src: '/img/graph-algorithm-visualiser1.jpg',
+      caption: 'Nearest Neighbour with 2-Opt',
+    },
+    {
+      src: '/img/graph-algorithm-visualiser2.jpg',
+      caption: 'Randomly generated nodes',
+    },
+    {
+      src: '/img/graph-algorithm-visualiser3.jpg',
+      caption: 'Algorithm information',
+    },
+    { src: '/img/graph-algorithm-visualiser4.jpg', caption: 'Graham Scan' },
+    { src: '/img/graph-algorithm-visualiser5.jpg', caption: 'Random route' },
+  ];
+
+  return {
+    props: {
+      images: images,
+      project: getProjectData('graph-algorithm-visualiser'),
+    },
+  };
+};
 
 export default GraphVisualiser;

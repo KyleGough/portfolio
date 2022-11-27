@@ -1,44 +1,17 @@
+import { Divider } from 'components/Divider';
+import { ImageFigure } from 'components/ImageFigure';
+import { Layout } from 'components/Layout';
+import { Link } from 'components/Link';
+import { Pagination } from 'components/Pagination';
+import { ProjectHeader } from 'components/ProjectHeader';
+import { Screenshots } from 'components/Screenshots';
+import { Section } from 'components/Section';
+import { GetStaticProps } from 'next';
 import React from 'react';
+import { getProjectData } from 'utilities/Project';
+import { ProjectPageProps } from 'utilities/types';
 
-import { Divider } from '../../components/Divider';
-import { ImageFigure } from '../../components/ImageFigure';
-import { Layout } from '../../components/Layout';
-import { Pagination } from '../../components/Pagination';
-import { ProjectHeader } from '../../components/ProjectHeader';
-import { Screenshots } from '../../components/Screenshots';
-import { Section } from '../../components/Section';
-import { getProjectData } from '../../data';
-
-const images = [
-  {
-    src: '/img/portfolio-projects-v1a.jpg',
-    caption: 'Portfolio project page version 1',
-  },
-  {
-    src: '/img/portfolio-projects-v1b.jpg',
-    caption: 'Portfolio about page version 1',
-  },
-  {
-    src: '/img/portfolio-projects-v2.jpg',
-    caption: 'Portfolio project page version 2',
-  },
-  {
-    src: '/img/portfolio-projects-v3.jpg',
-    caption: 'Portfolio project page version 3',
-  },
-  {
-    src: '/img/portfolio-projects-v4a.jpg',
-    caption: 'Portfolio project page upper version 4',
-  },
-  {
-    src: '/img/portfolio-projects-v4b.jpg',
-    caption: 'Portfolio project page lower version 4',
-  },
-];
-
-const project = getProjectData('portfolio');
-
-const Portfolio: React.FC = () => (
+const Portfolio: React.FC<ProjectPageProps> = ({ images, project }) => (
   <Layout title="Portfolio - Personal Portfolio Website">
     <ProjectHeader project={project} />
 
@@ -82,14 +55,9 @@ const Portfolio: React.FC = () => (
           However, these components were not easily maintainable or readable.
         </li>
         <li>
-          <a
-            className="text-link hover:text-link-hover focus:text-link-hover"
-            href="https://github.com/KyleGough/portfolio-php"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link href="https://github.com/KyleGough/portfolio-php">
             GitHub Repository
-          </a>
+          </Link>
         </li>
       </ul>
 
@@ -112,14 +80,9 @@ const Portfolio: React.FC = () => (
         <li>Materialize for UI components.</li>
         <li>Mixture of vanilla CSS and CSS-in-JS for custom styling.</li>
         <li>
-          <a
-            className="text-link hover:text-link-hover focus:text-link-hover"
-            href="https://github.com/KyleGough/portfolio-react"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link href="https://github.com/KyleGough/portfolio-react">
             GitHub Repository
-          </a>
+          </Link>
         </li>
       </ul>
 
@@ -141,14 +104,9 @@ const Portfolio: React.FC = () => (
           and SEO.
         </li>
         <li>
-          <a
-            className="text-link hover:text-link-hover focus:text-link-hover"
-            href="https://github.com/KyleGough/portfolio"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link href="https://github.com/KyleGough/portfolio">
             GitHub Repository
-          </a>
+          </Link>
         </li>
       </ul>
     </Section>
@@ -167,5 +125,41 @@ const Portfolio: React.FC = () => (
     />
   </Layout>
 );
+
+export const getStaticProps: GetStaticProps = async () => {
+  const images = [
+    {
+      src: '/img/portfolio-projects-v1a.jpg',
+      caption: 'Portfolio project page version 1',
+    },
+    {
+      src: '/img/portfolio-projects-v1b.jpg',
+      caption: 'Portfolio about page version 1',
+    },
+    {
+      src: '/img/portfolio-projects-v2.jpg',
+      caption: 'Portfolio project page version 2',
+    },
+    {
+      src: '/img/portfolio-projects-v3.jpg',
+      caption: 'Portfolio project page version 3',
+    },
+    {
+      src: '/img/portfolio-projects-v4a.jpg',
+      caption: 'Portfolio project page upper version 4',
+    },
+    {
+      src: '/img/portfolio-projects-v4b.jpg',
+      caption: 'Portfolio project page lower version 4',
+    },
+  ];
+
+  return {
+    props: {
+      images: images,
+      project: getProjectData('portfolio'),
+    },
+  };
+};
 
 export default Portfolio;

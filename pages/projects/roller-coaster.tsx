@@ -1,24 +1,16 @@
+import { Divider } from 'components/Divider';
+import { ImageFigure } from 'components/ImageFigure';
+import { Layout } from 'components/Layout';
+import { Pagination } from 'components/Pagination';
+import { ProjectHeader } from 'components/ProjectHeader';
+import { Screenshots } from 'components/Screenshots';
+import { Section } from 'components/Section';
+import { GetStaticProps } from 'next';
 import React from 'react';
+import { getProjectData } from 'utilities/Project';
+import { ProjectPageProps } from 'utilities/types';
 
-import { Divider } from '../../components/Divider';
-import { ImageFigure } from '../../components/ImageFigure';
-import { Layout } from '../../components/Layout';
-import { Pagination } from '../../components/Pagination';
-import { ProjectHeader } from '../../components/ProjectHeader';
-import { Screenshots } from '../../components/Screenshots';
-import { Section } from '../../components/Section';
-import { getProjectData } from '../../data';
-
-const images = [
-  { src: '/img/roller-coaster1.jpg', caption: 'Back cart camera view' },
-  { src: '/img/roller-coaster2.jpg', caption: 'Tracking camera view' },
-  { src: '/img/roller-coaster3.jpg', caption: 'Center cart camera view' },
-  { src: '/img/roller-coaster4.jpg', caption: 'Cart closeup' },
-];
-
-const project = getProjectData('roller-coaster');
-
-const RollerCoaster: React.FC = () => (
+const RollerCoaster: React.FC<ProjectPageProps> = ({ images, project }) => (
   <Layout title="Roller Coaster Simulation">
     <ProjectHeader project={project} />
 
@@ -55,5 +47,21 @@ const RollerCoaster: React.FC = () => (
     />
   </Layout>
 );
+
+export const getStaticProps: GetStaticProps = async () => {
+  const images = [
+    { src: '/img/roller-coaster1.jpg', caption: 'Back cart camera view' },
+    { src: '/img/roller-coaster2.jpg', caption: 'Tracking camera view' },
+    { src: '/img/roller-coaster3.jpg', caption: 'Center cart camera view' },
+    { src: '/img/roller-coaster4.jpg', caption: 'Cart closeup' },
+  ];
+
+  return {
+    props: {
+      images: images,
+      project: getProjectData('roller-coaster'),
+    },
+  };
+};
 
 export default RollerCoaster;

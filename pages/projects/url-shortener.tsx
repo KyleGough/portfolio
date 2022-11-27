@@ -1,22 +1,16 @@
+import { Divider } from 'components/Divider';
+import { ImageFigure } from 'components/ImageFigure';
+import { Layout } from 'components/Layout';
+import { Pagination } from 'components/Pagination';
+import { ProjectHeader } from 'components/ProjectHeader';
+import { Screenshots } from 'components/Screenshots';
+import { Section } from 'components/Section';
+import { GetStaticProps } from 'next';
 import React from 'react';
+import { getProjectData } from 'utilities/Project';
+import { ProjectPageProps } from 'utilities/types';
 
-import { Divider } from '../../components/Divider';
-import { ImageFigure } from '../../components/ImageFigure';
-import { Layout } from '../../components/Layout';
-import { Pagination } from '../../components/Pagination';
-import { ProjectHeader } from '../../components/ProjectHeader';
-import { Screenshots } from '../../components/Screenshots';
-import { Section } from '../../components/Section';
-import { getProjectData } from '../../data';
-
-const images = [
-  { src: '/img/url-shortener1.jpg', caption: 'Shortened URL example 1' },
-  { src: '/img/url-shortener2.jpg', caption: 'Shortened URL example 2' },
-];
-
-const project = getProjectData('url-shortener');
-
-const URLShortener: React.FC = () => (
+const URLShortener: React.FC<ProjectPageProps> = ({ images, project }) => (
   <Layout title="URL Shortener - Shorten Long URLs to Easily Share">
     <ProjectHeader project={project} />
 
@@ -53,5 +47,19 @@ const URLShortener: React.FC = () => (
     />
   </Layout>
 );
+
+export const getStaticProps: GetStaticProps = async () => {
+  const images = [
+    { src: '/img/url-shortener1.jpg', caption: 'Shortened URL example 1' },
+    { src: '/img/url-shortener2.jpg', caption: 'Shortened URL example 2' },
+  ];
+
+  return {
+    props: {
+      images: images,
+      project: getProjectData('url-shortener'),
+    },
+  };
+};
 
 export default URLShortener;

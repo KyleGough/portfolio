@@ -5,12 +5,13 @@ import { Layout } from '../../components/Layout';
 import { ProjectFilter } from '../../components/ProjectFilter';
 import { ProjectItem } from '../../components/ProjectItem';
 import { Section } from '../../components/Section';
-import { IProject, projects } from '../../data';
+import { projects } from '../../utilities/Project';
+import { Project } from '../../utilities/types';
 
 const Projects: React.FC = () => {
   const [filter, setFilter] = useState('All');
 
-  const filterProjects = (project: IProject): boolean => {
+  const filterProjects = (project: Project): boolean => {
     return filter === 'All' ? true : project.filters.includes(filter);
   };
 

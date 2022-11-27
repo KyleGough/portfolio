@@ -1,40 +1,7 @@
-export interface IProject {
-  id: string;
-  title: string;
-  subtitle?: string;
-  date: IProjectDate;
-  video?: string;
-  src: string;
-  alt: string;
-  link: string;
-  filters: string[];
-  description: string;
-  github?: string;
-  skills: IProjectSkills;
-  logo: {
-    src: string;
-    alt: string;
-  };
-  liveLink?: string;
-}
-
-export interface IProjectDate {
-  start: IDate;
-  end?: IDate;
-}
-
-export interface IDate {
-  month: number;
-  year: number;
-}
-
-interface IProjectSkills {
-  active: string[];
-  disabled?: string[];
-}
+import { Project } from './types';
 
 export const getProjectData = (projectKey: string) => {
-  return projects.find((project) => project.id === projectKey) as IProject;
+  return projects.find((project) => project.id === projectKey) as Project;
 };
 
 enum ProjectFilter {
@@ -85,7 +52,7 @@ const CSharpLogo = {
   alt: 'C# Logo',
 };
 
-export const projects: IProject[] = [
+export const projects: Project[] = [
   {
     id: 'ai-space-telescope',
     title: 'AI Space Telescope',

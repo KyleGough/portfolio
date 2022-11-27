@@ -1,41 +1,17 @@
+import { Divider } from 'components/Divider';
+import { Layout } from 'components/Layout';
+import { Pagination } from 'components/Pagination';
+import { ProjectHeader } from 'components/ProjectHeader';
+import { Screenshots } from 'components/Screenshots';
+import { Section } from 'components/Section';
+import { VideoFigure } from 'components/VideoFigure';
+import { GetStaticProps } from 'next';
 import React from 'react';
+import algorithms from 'utilities/algorithms.json';
+import { getProjectData } from 'utilities/Project';
+import { ProjectPageProps } from 'utilities/types';
 
-import { Divider } from '../../components/Divider';
-import { Layout } from '../../components/Layout';
-import { Pagination } from '../../components/Pagination';
-import { ProjectHeader } from '../../components/ProjectHeader';
-import { Screenshots } from '../../components/Screenshots';
-import { Section } from '../../components/Section';
-import { VideoFigure } from '../../components/VideoFigure';
-import { getProjectData } from '../../data';
-import algorithms from '../../data/algorithms.json';
-
-const images = [
-  {
-    src: '/img/sorting-algorithm-visualiser1.jpg',
-    caption: 'Unsorted Random Data',
-  },
-  {
-    src: '/img/sorting-algorithm-visualiser2.jpg',
-    caption: 'Random and sinusoidal datasets',
-  },
-  {
-    src: '/img/sorting-algorithm-visualiser3.jpg',
-    caption: 'Bitonic sort and sorted dataset',
-  },
-  {
-    src: '/img/sorting-algorithm-visualiser4.jpg',
-    caption: 'Dataset visualised as points',
-  },
-  {
-    src: '/img/sorting-algorithm-visualiser5.jpg',
-    caption: 'Algorithm information table',
-  },
-];
-
-const project = getProjectData('sorting-algorithm-visualiser');
-
-const SortingVisualiser: React.FC = () => (
+const SortingVisualiser: React.FC<ProjectPageProps> = ({ images, project }) => (
   <Layout title="Sorting Algorithm Visualiser - Visualise 20 Unique Sorting Algorithms">
     <ProjectHeader project={project} />
 
@@ -115,5 +91,37 @@ const SortingVisualiser: React.FC = () => (
     />
   </Layout>
 );
+
+export const getStaticProps: GetStaticProps = async () => {
+  const images = [
+    {
+      src: '/img/sorting-algorithm-visualiser1.jpg',
+      caption: 'Unsorted Random Data',
+    },
+    {
+      src: '/img/sorting-algorithm-visualiser2.jpg',
+      caption: 'Random and sinusoidal datasets',
+    },
+    {
+      src: '/img/sorting-algorithm-visualiser3.jpg',
+      caption: 'Bitonic sort and sorted dataset',
+    },
+    {
+      src: '/img/sorting-algorithm-visualiser4.jpg',
+      caption: 'Dataset visualised as points',
+    },
+    {
+      src: '/img/sorting-algorithm-visualiser5.jpg',
+      caption: 'Algorithm information table',
+    },
+  ];
+
+  return {
+    props: {
+      images: images,
+      project: getProjectData('sorting-algorithm-visualiser'),
+    },
+  };
+};
 
 export default SortingVisualiser;

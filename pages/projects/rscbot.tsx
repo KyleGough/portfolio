@@ -1,29 +1,16 @@
+import { Divider } from 'components/Divider';
+import { ImageFigure } from 'components/ImageFigure';
+import { Layout } from 'components/Layout';
+import { Pagination } from 'components/Pagination';
+import { ProjectHeader } from 'components/ProjectHeader';
+import { Screenshots } from 'components/Screenshots';
+import { Section } from 'components/Section';
+import { GetStaticProps } from 'next';
 import React from 'react';
+import { getProjectData } from 'utilities/Project';
+import { ProjectPageProps } from 'utilities/types';
 
-import { Divider } from '../../components/Divider';
-import { ImageFigure } from '../../components/ImageFigure';
-import { Layout } from '../../components/Layout';
-import { Pagination } from '../../components/Pagination';
-import { ProjectHeader } from '../../components/ProjectHeader';
-import { Screenshots } from '../../components/Screenshots';
-import { Section } from '../../components/Section';
-import { getProjectData } from '../../data';
-
-const images = [
-  { src: '/img/rscbot1.jpg', caption: 'Stock query' },
-  {
-    src: '/img/rscbot2.jpg',
-    caption: 'Hourly newsfeed with natural language processing',
-  },
-  { src: '/img/rscbot3.jpg', caption: 'Favourites selection' },
-  { src: '/img/rscbot4.jpg', caption: 'News query' },
-  { src: '/img/rscbot5.jpg', caption: 'Other queries' },
-  { src: '/img/rscbot6.jpg', caption: 'Help modal' },
-];
-
-const project = getProjectData('rscbot');
-
-const RSCBot: React.FC = () => (
+const RSCBot: React.FC<ProjectPageProps> = ({ images, project }) => (
   <Layout title="RSCBot - Personalisable Trader ChatBot">
     <ProjectHeader project={project} />
 
@@ -66,5 +53,26 @@ const RSCBot: React.FC = () => (
     />
   </Layout>
 );
+
+export const getStaticProps: GetStaticProps = async () => {
+  const images = [
+    { src: '/img/rscbot1.jpg', caption: 'Stock query' },
+    {
+      src: '/img/rscbot2.jpg',
+      caption: 'Hourly newsfeed with natural language processing',
+    },
+    { src: '/img/rscbot3.jpg', caption: 'Favourites selection' },
+    { src: '/img/rscbot4.jpg', caption: 'News query' },
+    { src: '/img/rscbot5.jpg', caption: 'Other queries' },
+    { src: '/img/rscbot6.jpg', caption: 'Help modal' },
+  ];
+
+  return {
+    props: {
+      images: images,
+      project: getProjectData('rscbot'),
+    },
+  };
+};
 
 export default RSCBot;

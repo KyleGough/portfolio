@@ -8,8 +8,8 @@ describe('Screenshots component', () => {
     const { container } = render(
       <Screenshots
         images={[
-          { src: '/#', caption: 'Image A' },
-          { src: '/#', caption: 'Image B' },
+          { src: '/#', alt: 'Image A' },
+          { src: '/#', alt: 'Image B' },
         ]}
       />
     );

@@ -1,19 +1,19 @@
 {
-    "FunctionalComponent": {
-      "prefix": ["fc", "functional component", "component"],
-      "scope": "typescriptreact",
-      "body": [
-        "import React from 'react';",
-        "",
-        "interface ${TM_FILENAME_BASE}Props {${1}}",
-        "",
-        "export const ${TM_FILENAME_BASE}: React.FC<${TM_FILENAME_BASE}Props> = () => {",
-        "  return (",
-        "    $0",
-        "  );",
-        "}",
-        ""
-      ],
-      "description": "React Functional Component with Props interface"
-    }
+  "FunctionalComponent": {
+    "prefix": ["fc", "functional component", "component"],
+    "scope": "typescriptreact",
+    "body": [
+      "import React from 'react';",
+      "",
+      "interface ${TM_FILENAME_BASE}Props {${1}}",
+      "",
+      "export const ${TM_FILENAME_BASE}: React.FC<${TM_FILENAME_BASE}Props> = () => {",
+      "  return (",
+      "    $0",
+      "  );",
+      "}",
+      ""
+    ],
+    "description": "React Functional Component with Props interface"
   }
+}
