@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-import { Divider } from '../components/Divider';
-import { Layout } from '../components/Layout';
-import { ProjectFilter } from '../components/ProjectFilter';
-import { ProjectItem } from '../components/ProjectItem';
-import { Section } from '../components/Section';
-import { IProject, projects } from '../data';
+import { Divider } from '../../components/Divider';
+import { Layout } from '../../components/Layout';
+import { ProjectFilter } from '../../components/ProjectFilter';
+import { ProjectItem } from '../../components/ProjectItem';
+import { Section } from '../../components/Section';
+import { IProject, projects } from '../../data';
 
 const Projects: React.FC = () => {
   const [filter, setFilter] = useState('All');

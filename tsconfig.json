@@ -3,10 +3,6 @@
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "baseUrl": ".",
-    "paths": {
-      "@/components/*": ["components/*"],
-      "@/icons/*": ["icons/*"]
-    },
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -22,6 +18,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["icons", "pages", "components", "hooks", "data", "utilities"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
