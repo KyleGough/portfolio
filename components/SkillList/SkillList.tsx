@@ -1,10 +1,10 @@
 import React from 'react';
+import { Skill } from 'utilities/types';
 
-import { ISkill } from './';
-import { Skill } from './Skill';
+import { SkillItem } from './SkillItem';
 
 interface SkillListProps {
-  skills: ISkill[];
+  skills: Skill[];
   type: string;
 }
 
@@ -12,7 +12,7 @@ export const SkillList: React.FC<SkillListProps> = ({ skills, type }) => (
   <>
     {skills.map((skill) => {
       return (
-        <Skill
+        <SkillItem
           key={skill.name}
           type={type}
           name={skill.name}

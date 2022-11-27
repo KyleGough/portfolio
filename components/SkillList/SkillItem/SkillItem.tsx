@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 import { useObserveElement } from '../../../hooks/useObserveElement';
 
-interface SkillProps {
+interface SkillItemProps {
   type: string;
   progress: number;
   progressClass: string;
@@ -13,7 +13,7 @@ interface SkillProps {
   logo: string;
 }
 
-export const Skill: React.FC<SkillProps> = ({
+export const SkillItem: React.FC<SkillItemProps> = ({
   type,
   progress,
   progressClass,

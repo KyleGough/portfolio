@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 
 import { mockIntersectionObserver } from '../../../mocks/mockIntersectionObserver';
-import { Skill } from './Skill';
+import { SkillItem } from './SkillItem';
 
 const skill = {
   type: 'progress-web',
@@ -13,11 +13,11 @@ const skill = {
   logo: '/#logo',
 };
 
-describe('Skill component', () => {
+describe('SkillItem component', () => {
   beforeEach(mockIntersectionObserver);
 
   it('renders', async () => {
-    const { container } = render(<Skill {...skill} />);
+    const { container } = render(<SkillItem {...skill} />);
 
     expect(screen.getByText('React')).toBeVisible();
     expect(screen.getByText('Portfolio, LucidLab, Minesweeper')).toBeVisible();

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Skill component renders 1`] = `
+exports[`SkillItem component renders 1`] = `
 <div>
   <div
     class="flex flex-row justify-center py-6"
