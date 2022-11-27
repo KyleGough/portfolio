@@ -19,8 +19,9 @@
     "incremental": true,
     "paths": {
       "@components/*": ["./components/*"],
-      "@utilities/*": ["./utilities/*"],
-      "@mocks/*": ["./utilities/mocks/*"]
+      "@hooks/*": ["./hooks/*"],
+      "@mocks/*": ["./utilities/mocks/*"],
+      "@utilities/*": ["./utilities/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

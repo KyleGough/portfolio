@@ -1,6 +1,5 @@
+import { Section } from '@components/Section';
 import React from 'react';
-
-import { Section } from '../Section';
 
 interface VideoFigureProps {
   src: string;

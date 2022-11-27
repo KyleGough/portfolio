@@ -1,7 +1,6 @@
+import { ImageModal } from '@components/ImageModal';
+import { Section } from '@components/Section';
 import React from 'react';
-
-import { ImageModal } from '../ImageModal/ImageModal';
-import { Section } from '../Section';
 
 interface ScreenshotProps {
   images: {

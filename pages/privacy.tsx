@@ -1,6 +1,6 @@
-import { Divider } from 'components/Divider';
-import { Layout } from 'components/Layout';
-import { Section } from 'components/Section';
+import { Divider } from '@components/Divider';
+import { Layout } from '@components/Layout';
+import { Section } from '@components/Section';
 import React from 'react';
 
 const Privacy: React.FC = () => {

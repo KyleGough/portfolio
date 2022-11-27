@@ -1,15 +1,15 @@
-import { Divider } from 'components/Divider';
-import { Layout } from 'components/Layout';
-import { Pagination } from 'components/Pagination';
-import { ProjectHeader } from 'components/ProjectHeader';
-import { Screenshots } from 'components/Screenshots';
-import { Section } from 'components/Section';
-import { VideoFigure } from 'components/VideoFigure';
+import { Divider } from '@components/Divider';
+import { Layout } from '@components/Layout';
+import { Pagination } from '@components/Pagination';
+import { ProjectHeader } from '@components/ProjectHeader';
+import { Screenshots } from '@components/Screenshots';
+import { Section } from '@components/Section';
+import { VideoFigure } from '@components/VideoFigure';
+import algorithms from '@utilities/algorithms.json';
+import { getProjectData } from '@utilities/Project';
+import { ProjectPageProps } from '@utilities/types';
 import { GetStaticProps } from 'next';
 import React from 'react';
-import algorithms from 'utilities/algorithms.json';
-import { getProjectData } from 'utilities/Project';
-import { ProjectPageProps } from 'utilities/types';
 
 const SortingVisualiser: React.FC<ProjectPageProps> = ({ images, project }) => (
   <Layout title="Sorting Algorithm Visualiser - Visualise 20 Unique Sorting Algorithms">

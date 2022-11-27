@@ -1,7 +1,6 @@
+import { FadeIn } from '@components/FadeIn';
 import { clsx } from 'clsx';
 import React from 'react';
-
-import { FadeIn } from '../FadeIn';
 
 interface TimelineNodeProps {
   title: string;

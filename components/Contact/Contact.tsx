@@ -1,8 +1,8 @@
+import { FadeIn } from '@components/FadeIn';
 import axios from 'axios';
 import { clsx } from 'clsx';
 import React, { useState } from 'react';
 
-import { FadeIn } from '../FadeIn';
 import { getFieldBorderStyle, validateEmail } from './Contact.helper';
 import { EmailStatus } from './Contact.types';
 import { ContactFieldError } from './ContactFieldError';

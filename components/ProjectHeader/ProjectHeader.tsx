@@ -1,10 +1,9 @@
+import { Chip } from '@components/Chip';
+import { Link } from '@components/Link';
+import { Section } from '@components/Section';
 import { getFormattedDate, getShortDate } from '@utilities/date';
+import { Project } from '@utilities/types';
 import React from 'react';
-import { Project } from 'utilities/types';
-
-import { Chip } from '../Chip';
-import { Link } from '../Link';
-import { Section } from '../Section';
 
 interface ProjectHeaderProps {
   project: Project;

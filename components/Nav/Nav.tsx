@@ -1,8 +1,7 @@
+import { GitHubIcon, MenuIcon } from '@components/Icons';
 import { clsx } from 'clsx';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
-
-import { GitHubIcon, MenuIcon } from '../../icons';
 
 export const Nav: React.FC = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);

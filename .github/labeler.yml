@@ -1,3 +1,57 @@
+# Frontend
+
+component:
+- components/**/*
+
+font:
+- fonts/**/*
+
+hooks:
+- hooks/**/*
+
+icon:
+- components/icons/**/*
+
+pages:
+- pages/**/*
+
+utilities:
+- utilities/**/*
+
+# Public
+
+img:
+- public/img/**/*
+
+video:
+- public/video/**/*
+
+# Styling
+
+tailwind:
+- styles/tailwind.css
+- tailwind.config.js
+
+css:
+- styles/**/*
+
+# Config
+
+lint:
+- .eslintignore
+- .eslintrc.json
+- .editorconfig
+- .prettierrc
+
+config:
+- .gitignore
+- package.json
+- package-lock.json
+- postcss.config.js
+- tsconfig.json
+- jest.config.js
+- jest.setup.js
+
 ci:
 - .husky/**/*
 - .github/**/*.yaml
@@ -8,46 +62,3 @@ vscode:
 
 readme:
 - README.md
-
-component:
-- src/components/**/*
-
-font:
-- src/fonts/**/*
-
-icon:
-- src/icons/**/*
-
-img:
-- src/img/**/*
-
-videos:
-- src/videos/**/*
-
-hooks:
-- src/hooks/**/*
-
-frontend:
-- src/**/*
-
-tailwind:
-- src/tailwind.css
-- tailwind.config.js
-
-lint:
-- .eslintignore
-- .eslintrc.json
-- .editorconfig
-- .prettierrc
-
-config:
-- .editorconfig
-- .eslintignore
-- .eslintrc.json
-- .gitignore
-- package.json
-- package-lock.json
-- postcss.config.js
-- .prettierrc
-- tailwind.config.js
-- tsconfig.json
