@@ -1,9 +1,8 @@
+import { Divider } from 'components/Divider';
+import { Layout } from 'components/Layout';
+import { Link } from 'components/Link';
+import { Section } from 'components/Section';
 import React from 'react';
-
-import { Divider } from '../components/Divider';
-import { Layout } from '../components/Layout';
-import { Link } from '../components/Link';
-import { Section } from '../components/Section';
 
 const NotFound: React.FC = () => (
   <Layout title="404 Page Not Found - Kyle Gough">

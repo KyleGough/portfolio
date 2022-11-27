@@ -1,15 +1,14 @@
+import { Divider } from 'components/Divider';
+import { GoalListItem, Progress } from 'components/GoalListItem';
+import { LabelledLogo } from 'components/LabelledLogo';
+import { Layout } from 'components/Layout';
+import { Section } from 'components/Section';
+import { SkillList } from 'components/SkillList';
+import { ArrowForwardIcon } from 'icons';
 import React from 'react';
-
-import { Divider } from '../components/Divider';
-import { GoalListItem, Progress } from '../components/GoalListItem';
-import { LabelledLogo } from '../components/LabelledLogo';
-import { Layout } from '../components/Layout';
-import { Section } from '../components/Section';
-import { SkillList } from '../components/SkillList';
-import { ArrowForwardIcon } from '../icons';
-import { skillsOther } from '../utilities/skillsOther';
-import { skillsProgramming } from '../utilities/skillsProgramming';
-import { skillsWeb } from '../utilities/skillsWeb';
+import { skillsOther } from 'utilities/skillsOther';
+import { skillsProgramming } from 'utilities/skillsProgramming';
+import { skillsWeb } from 'utilities/skillsWeb';
 
 const About: React.FC = () => {
   return (

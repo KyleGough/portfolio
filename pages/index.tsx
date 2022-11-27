@@ -1,17 +1,16 @@
 import { clsx } from 'clsx';
+import { CarouselImage } from 'components/CarouselImage';
+import { Contact } from 'components/Contact';
+import { Layout } from 'components/Layout';
+import { ProjectCard } from 'components/ProjectCard';
+import { Section } from 'components/Section';
+import { TimelineNode } from 'components/TimelineNode';
+import { useObserveElement } from 'hooks/useObserveElement';
+import { useTypewriter } from 'hooks/useTypewriter';
+import { ArrowForwardIcon } from 'icons';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
-
-import { CarouselImage } from '../components/CarouselImage';
-import { Contact } from '../components/Contact';
-import { Layout } from '../components/Layout';
-import { ProjectCard } from '../components/ProjectCard';
-import { Section } from '../components/Section';
-import { TimelineNode } from '../components/TimelineNode';
-import { useObserveElement } from '../hooks/useObserveElement';
-import { useTypewriter } from '../hooks/useTypewriter';
-import { ArrowForwardIcon } from '../icons';
 
 const Home: React.FC = () => {
   const [carousel, setCarousel] = useState(0);
@@ -36,9 +35,8 @@ const Home: React.FC = () => {
     };
   }, []);
 
-  const carouselNext = () => {
+  const carouselNext = () =>
     setCarousel((carousel) => (carousel + 1) % carouselCount);
-  };
 
   const carouselImages = {
     cave: 'bg-header1',
