@@ -1,7 +1,8 @@
-import { IDate } from '../../data';
+import { Date } from 'utilities/types';
+
 import { getDateRange, getFormattedDate } from './date';
 
-const testDates: IDate[] = [
+const testDates: Date[] = [
   {
     month: 1,
     year: 2022,

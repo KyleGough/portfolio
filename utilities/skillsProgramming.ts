@@ -1,6 +1,6 @@
-import { ISkill } from '../components/SkillList';
+import { Skill } from 'utilities/types';
 
-export const skillsProgramming: ISkill[] = [
+export const skillsProgramming: Skill[] = [
   {
     name: 'Python',
     progress: 90,

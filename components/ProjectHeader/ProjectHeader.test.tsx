@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
+import { Project } from 'utilities/types';
 
-import { IProject } from '../../data';
 import { ProjectHeader } from './ProjectHeader';
 
-const baseProject: IProject = {
+const baseProject: Project = {
   id: 'portfolio',
   title: 'Portfolio',
   subtitle: 'Passion Project',
@@ -29,7 +29,10 @@ const baseProject: IProject = {
     active: ['TypeScript', 'JavaScript'],
     disabled: ['PHP'],
   },
-  logo: '/#logo',
+  logo: {
+    src: '/#logo',
+    alt: 'Logo',
+  },
 };
 
 describe('ProjectHeader component', () => {

@@ -1,6 +1,6 @@
-import { ISkill } from '../components/SkillList';
+import { Skill } from 'utilities/types';
 
-export const skillsWeb: ISkill[] = [
+export const skillsWeb: Skill[] = [
   {
     name: 'JavaScript',
     progress: 85,

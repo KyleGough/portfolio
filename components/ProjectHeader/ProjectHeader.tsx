@@ -1,13 +1,13 @@
 import React from 'react';
+import { Project } from 'utilities/types';
 
-import { IProject } from '../../data';
 import { getFormattedDate, getShortDate } from '../../utilities/date';
 import { Chip } from '../Chip';
 import { Link } from '../Link';
 import { Section } from '../Section';
 
 interface ProjectHeaderProps {
-  project: IProject;
+  project: Project;
 }
 
 export const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => {

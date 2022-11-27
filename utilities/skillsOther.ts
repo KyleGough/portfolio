@@ -1,6 +1,6 @@
-import { ISkill } from '../components/SkillList';
+import { Skill } from 'utilities/types';
 
-export const skillsOther: ISkill[] = [
+export const skillsOther: Skill[] = [
   {
     name: 'Git',
     progress: 85,

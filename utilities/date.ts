@@ -1,22 +1,21 @@
 import dayjs from 'dayjs';
+import { Date, ProjectDate } from 'utilities/types';
 
-import { IDate, IProjectDate } from '../data';
-
-export const getFormattedDate = (date: IDate) => {
+export const getFormattedDate = (date: Date) => {
   return dayjs()
     .month(date.month - 1)
     .year(date.year)
     .format('MMMM YYYY');
 };
 
-export const getShortDate = (date: IDate) => {
+export const getShortDate = (date: Date) => {
   return dayjs()
     .month(date.month - 1)
     .year(date.year)
     .format('YYYY-MM');
 };
 
-export const getDateRange = (dt: IProjectDate) => {
+export const getDateRange = (dt: ProjectDate) => {
   const start = getFormattedDate(dt.start);
   return dt.end ? start + ' - ' + getFormattedDate(dt.end) : start;
 };
