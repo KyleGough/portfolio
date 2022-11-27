@@ -1,17 +1,16 @@
 import { clsx } from 'clsx';
+import { FadeIn } from 'components/FadeIn';
+import { ProjectChip } from 'components/ProjectChip';
 import Link from 'next/link';
 import React from 'react';
-
-import { IDate } from '../../data';
-import { getFormattedDate, getShortDate } from '../../utilities/date';
-import { FadeIn } from '../FadeIn';
-import { ProjectChip } from '../ProjectChip';
+import { getFormattedDate, getShortDate } from 'utilities/date';
+import { Date } from 'utilities/types';
 
 interface ProjectCardProps {
   className?: string;
   src: string;
   alt: string;
-  date: IDate;
+  date: Date;
   link: string;
   chipText: string;
 }
