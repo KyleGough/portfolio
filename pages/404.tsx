@@ -5,7 +5,7 @@ import { Section } from '@components/Section';
 import React from 'react';
 
 const NotFound: React.FC = () => (
-  <Layout title="404 Page Not Found - Kyle Gough">
+  <Layout title="Page Not Found - Kyle Gough">
     <Section>
       <h1 className="mt-12 tracking-tight text-9xl font-extrabold text-center">
         404
