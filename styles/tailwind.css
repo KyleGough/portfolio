@@ -5,27 +5,27 @@
 @tailwind utilities;
 
 @layer base {
-    .project-title {
-        @apply text-5xl;
-        @apply font-light;
-        @apply mt-12;
-        @apply tracking-tight;
-    }
+  .project-title {
+    @apply text-5xl;
+    @apply font-light;
+    @apply mt-12;
+    @apply tracking-tight;
+  }
 
-    .project-subtitle {
-        @apply text-xl;
-        @apply font-light;
-        @apply mt-4;
-    }
+  .project-subtitle {
+    @apply text-xl;
+    @apply font-light;
+    @apply mt-4;
+  }
 
-    .project-header {
-        @apply text-3xl;
-        @apply mb-8;
-    }
+  .project-header {
+    @apply text-3xl;
+    @apply mb-8;
+  }
 
-    .project-list {
-        @apply list-disc;
-        @apply list-outside;
-        @apply ml-4;
-    }
+  .project-list {
+    @apply list-disc;
+    @apply list-outside;
+    @apply ml-4;
+  }
 }
