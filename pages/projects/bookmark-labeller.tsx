@@ -33,9 +33,9 @@ const BookmarkLabeller: React.FC<ProjectPageProps> = ({ images, project }) => (
           />
         </div>
         <Link href="https://addons.mozilla.org/en-US/firefox/addon/bookmark-labeller/">
-          <p className="text-2xl">
+          <a className="text-2xl text-link hover:text-link-hover focus:text-link-hover">
             Install from the Mozilla Add-On Marketplace
-          </p>
+          </a>
         </Link>
       </div>
     </Section>
