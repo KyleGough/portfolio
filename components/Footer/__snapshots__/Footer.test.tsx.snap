@@ -1,0 +1,228 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component renders 1`] = `
+<div>
+  <footer
+    class="bg-background"
+  >
+    <div
+      class="bg-nav-light text-white text-center"
+    >
+      <div
+        class="container mx-auto px-0 py-12"
+      >
+        <div
+          class="w-full flex flex-wrap justify-center px-4"
+        >
+          <div
+            class="w-full lg:w-4/12 px-6 py-6 text-center lg:text-left"
+          >
+            <p
+              class="font-header text-xl pb-6"
+            >
+              About Me
+            </p>
+            <p
+              class="pb-4"
+            >
+              Front-End Engineer at Atom Learning. Computer Science MEng graduate of Warwick University. Programmer and Web Developer with interests in Bouldering, Cycling, Guitar, Movies and Physics.
+            </p>
+            <div
+              class="flex flex-row justify-center lg:justify-start"
+            >
+              <a
+                class="group flex justify-center fill-white hover:text-nav-hover hover:fill-nav-hover"
+                href="mailto:kylegough98@gmail.com"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <svg
+                  class="w-6 h-6 mr-2"
+                  height="24px"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 0h24v24H0V0z"
+                    fill="none"
+                  />
+                  <path
+                    class="block group-hover:hidden group-focus:hidden"
+                    d="M22 4H2v16h20V4zm-2 4l-8 5-8-5V6l8 5 8-5v2z"
+                  />
+                  <path
+                    class="hidden group-hover:block group-focus:block"
+                    d="M21.99 6.86L12 1 2 6.86V20h20l-.01-13.14zM12 13L3.74 7.84 12 3l8.26 4.84L12 13z"
+                  />
+                </svg>
+                <p
+                  class="ml-1"
+                >
+                  kylegough98@gmail.com
+                </p>
+              </a>
+            </div>
+          </div>
+          <div
+            class="w-full sm:w-6/12 lg:w-4/12 px-6 py-6"
+          >
+            <p
+              class="font-header text-xl pb-6"
+            >
+              Projects
+            </p>
+            <ul>
+              <li>
+                <a
+                  class="p-2 hover:text-nav-hover cursor-pointer"
+                  href="/projects"
+                >
+                  All Projects
+                </a>
+              </li>
+              <li>
+                <a
+                  class="p-2 hover:text-nav-hover cursor-pointer"
+                  href="/projects/sudoku"
+                >
+                  Logical Sudoku Solver
+                </a>
+              </li>
+              <li>
+                <a
+                  class="p-2 hover:text-nav-hover cursor-pointer"
+                  href="/projects/cave-exploration"
+                >
+                  Cave Exploration
+                </a>
+              </li>
+              <li>
+                <a
+                  class="p-2 hover:text-nav-hover cursor-pointer"
+                  href="/projects/sorting-algorithm-visualiser"
+                >
+                  Sorting Algorithm Visualiser
+                </a>
+              </li>
+              <li>
+                <a
+                  class="p-2 hover:text-nav-hover cursor-pointer"
+                  href="/projects/graph-algorithm-visualiser"
+                >
+                  Graph Algorithm Visualiser
+                </a>
+              </li>
+              <li>
+                <a
+                  class="p-2 hover:text-nav-hover cursor-pointer"
+                  href="/projects/bsplit"
+                >
+                  BSplit
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="w-full sm:w-6/12 lg:w-4/12 px-6 py-6"
+          >
+            <p
+              class="font-header text-xl pb-6"
+            >
+              Website
+            </p>
+            <ul>
+              <li>
+                <a
+                  class="p-2 hover:text-nav-hover"
+                  href="/CV.pdf"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  CV
+                </a>
+              </li>
+              <li>
+                <a
+                  class="p-2 hover:text-nav-hover cursor-pointer"
+                  href="/about"
+                >
+                  About Me
+                </a>
+              </li>
+              <li>
+                <a
+                  class="p-2 hover:text-nav-hover cursor-pointer"
+                  href="/projects"
+                >
+                  Projects
+                </a>
+              </li>
+              <li>
+                <a
+                  class="p-2 hover:text-nav-hover cursor-pointer"
+                  href="/privacy"
+                >
+                  Privacy
+                </a>
+              </li>
+              <li
+                class="text-center flex justify-center"
+              >
+                <a
+                  aria-label="GitHub Profile"
+                  class="py-2 group"
+                  href="https://github.com/KyleGough"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <svg
+                    class="w-6 h-6 fill-white group-hover:fill-nav-hover"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                    />
+                  </svg>
+                </a>
+                <a
+                  aria-label="LinkedIn Profile"
+                  class="py-2 ml-2 group"
+                  href="https://www.linkedin.com/in/kyle-gough-882467161/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <svg
+                    class="w-6 h-6 fill-white group-hover:fill-nav-hover"
+                    viewBox="0 0 448 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="bg-nav-dark text-white text-center"
+    >
+      <div
+        class="container mx-auto px-8 py-8 opacity-75"
+      >
+        <p
+          class="opacity-100"
+        >
+          © Kyle Gough, 2016 - 2022
+        </p>
+      </div>
+    </div>
+  </footer>
+</div>
+`;

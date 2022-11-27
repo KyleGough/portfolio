@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FooterLink component renders 1`] = `
+<div>
+  <li>
+    <a
+      class="p-2 hover:text-nav-hover cursor-pointer"
+      href="/"
+    >
+      Homepage
+    </a>
+  </li>
+</div>
+`;

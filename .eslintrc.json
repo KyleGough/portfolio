@@ -5,24 +5,22 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
     "plugin:unicorn/recommended",
     "plugin:sonarjs/recommended",
     "prettier",
+    "next/core-web-vitals",
     "plugin:prettier/recommended"
   ],
   "overrides": [],
-  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
   "plugins": [
     "prettier",
-    "react",
     "@typescript-eslint",
     "unicorn",
     "sonarjs",
@@ -46,14 +44,7 @@
     "unicorn/prefer-query-selector": "off",
     "simple-import-sort/imports": "warn",
     "simple-import-sort/exports": "error",
-    "sonarjs/no-duplicate-string": "warn"
-  },
-  "settings": {
-    "react": {
-      "version": "detect"
-    },
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"]
-    }
+    "sonarjs/no-duplicate-string": "warn",
+    "react/react-in-jsx-scope": "off"
   }
 }

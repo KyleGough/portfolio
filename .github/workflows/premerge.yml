@@ -30,14 +30,11 @@ jobs:
       - name: Clean Install
         run: npm ci
 
-      - name: Build Tailwind
-        run: npm run build:tailwind
-
       - name: Lint
         run: npm run lint
 
       - name: Test
-        run: npm test
+        run: npm run test:ci
 
       - name: Build
         run: npm run build

@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SkillItem component renders 1`] = `
+<div>
+  <div
+    class="flex flex-row justify-center py-6"
+  >
+    <div
+      class="w-3/12 lg:w-4/12 flex items-center"
+    >
+      <div
+        class="progress-web progress overflow-hidden"
+      >
+        <div
+          class="w-[75%] custom-duration progress-bar transition-transform ease-in-out -translate-x-full"
+          style="--duration-factor: 75;"
+        />
+      </div>
+    </div>
+    <div
+      class="w-9/12 lg:w-8/12 ml-6 flex items-center"
+    >
+      <div
+        class="opacity-0 mr-4 w-8 h-8 transition-opacity duration-500 relative"
+      >
+        <span
+          style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+        >
+          <img
+            alt="React logo"
+            data-nimg="fill"
+            decoding="async"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+          />
+          <noscript />
+        </span>
+      </div>
+      <div>
+        <p>
+          <span
+            class="font-extrabold text-lg"
+          >
+            React
+          </span>
+           -
+           
+          <span
+            class="text-sm"
+          >
+            Portfolio, LucidLab, Minesweeper
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectItem component renders 1`] = `
+<div>
+  <div
+    class="first:pt-24 container text-primary py-8 last:pb-16"
+  >
+    <div
+      class="grid grid-cols-12 gap-8 lg:gap-16"
+    >
+      <div
+        class="col-span-12 lg:col-span-7"
+      >
+        <h2
+          class="mb-4 project-header"
+        >
+          New Project
+        </h2>
+        <p
+          class="my-4 text-link-hover"
+        >
+          January 2021 - June 2022
+        </p>
+        <p
+          class="my-4"
+        >
+          Sample Description
+        </p>
+      </div>
+      <div
+        class="col-span-12 lg:col-span-5 text-center -mb-8"
+      >
+        <a
+          class="block group relative"
+          href="/#project"
+        >
+          <img
+            alt="Test Alt Text"
+            class="border-2 border-white rounded-lg shadow"
+            loading="lazy"
+            src="/#image"
+          />
+          <div
+            class="absolute top-2 right-2 w-8 h-8 drop-shadow"
+          >
+            <span
+              style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+            >
+              <img
+                alt="Logo"
+                data-nimg="fill"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+              <noscript />
+            </span>
+          </div>
+          <button
+            class="relative -top-[1.6rem] px-12 py-3 bg-background text-link group-hover:text-link-hover group-focus:text-link-hover rounded-sm shadow border-light whitespace-nowrap"
+            tabindex="-1"
+          >
+            View Project
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

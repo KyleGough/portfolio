@@ -28,24 +28,20 @@
     "dayjs": "^1.11.6",
     "express-sslify": "^1.2.0",
     "helmet": "^6.0.0",
+    "next": "^12.3.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-router-dom": "^6.2.1",
-    "react-scripts": "^5.0.1",
     "typescript": "^4.5.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "node server.js",
-    "build:tailwind": "tailwindcss build -i src/tailwind.css -o src/tailwind.output.css",
-    "prestart": "npm run build:tailwind",
-    "prebuild": "npm run build:tailwind",
-    "dev": "npm run build:tailwind && react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "dev": "next dev",
+    "build": "next build",
+    "test": "jest --watch",
+    "test:ci": "jest --ci",
     "prepare": "husky install",
-    "lint": "eslint --cache --fix --max-warnings 0 ."
+    "lint": "next lint"
   },
   "eslintConfig": {
     "extends": [
@@ -68,20 +64,23 @@
     ]
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "^13.0.5",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
     "autoprefixer": "^10.4.2",
     "eslint": "^8.23.1",
+    "eslint-config-next": "^13.0.5",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.5.1",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-simple-import-sort": "^8.0.0",
     "eslint-plugin-sonarjs": "^0.15.0",
     "eslint-plugin-unicorn": "^43.0.2",
     "husky": "^8.0.1",
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1",
     "postcss": "^8.4.6",
     "prettier": "^2.7.1",
     "tailwindcss": "^3.0.19"

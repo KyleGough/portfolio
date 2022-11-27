@@ -1,6 +1,8 @@
 module.exports = {
   content: [
-    './src/**/*.{js,jsx,ts,tsx,html}',
+    './pages/**/*.{js,jsx,ts,tsx}',
+    './components/**/*.{js,jsx,ts,tsx}',
+    './utilities/**/*.{js,jsx,ts,tsx}'
   ],
   theme: {
     fontFamily: {
@@ -62,10 +64,10 @@ module.exports = {
         'header': '0 1px 2px rgba(0, 0, 0, 0.50)'
       },
       backgroundImage: {
-        'header1': 'url("/public/img/header1.jpg")',
-        'header2': 'url("/public/img/header2.jpg")',
-        'header3': 'url("/public/img/header3.jpg")',
-        'noise': 'url("/public/img/noise.png")'
+        'header1': 'url("/img/header1.jpg")',
+        'header2': 'url("/img/header2.jpg")',
+        'header3': 'url("/img/header3.jpg")',
+        'noise': 'url("/img/noise.png")'
       },
       transitionDuration: {
         '2000': '2000ms'

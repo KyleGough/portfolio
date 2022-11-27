@@ -1,0 +1,19 @@
+{
+  "ProjectPageStaticProps": {
+    "prefix": ["static props", "project page static props", "getstaticprops"],
+    "scope": "typescriptreact",
+    "body": [
+      "export const getStaticProps: GetStaticProps = async () => {",
+      "  const images = [$0];",
+      "",
+      "  return {",
+      "    props: {",
+      "      images: images,",
+      "      project: getProjectData('${TM_FILENAME_BASE}'),",
+      "    },",
+      "  };",
+      "};"
+    ],
+    "description": "getStaticProps function for project page components"
+  }
+}
