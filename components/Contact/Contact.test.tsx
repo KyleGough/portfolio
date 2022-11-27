@@ -1,8 +1,8 @@
+import { mockIntersectionObserver } from '@mocks/mockIntersectionObserver';
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import axios from 'axios';
 import React from 'react';
 
-import { mockIntersectionObserver } from '../../mocks/mockIntersectionObserver';
 import { Contact } from './Contact';
 
 describe('Contact component', () => {
