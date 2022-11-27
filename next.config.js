@@ -1,4 +1,9 @@
 const securityHeaders = [
+  // Enforce HTTPS.
+  {
+    key: 'Strict-Transport-Security',
+    value: 'max-age=63072000; includeSubDomains; preload'
+  },
   // Disable all browser features.
   {
     key: 'Permissions-Policy',
