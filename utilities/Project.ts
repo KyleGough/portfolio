@@ -118,6 +118,7 @@ export const projects: Project[] = [
     github: 'https://github.com/KyleGough/portfolio',
     skills: {
       active: [
+        'Next.js',
         'React',
         'TypeScript',
         'JavaScript',
