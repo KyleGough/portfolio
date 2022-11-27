@@ -51,6 +51,7 @@ config:
 - tsconfig.json
 - jest.config.js
 - jest.setup.js
+- next.config.js
 
 ci:
 - .husky/**/*
