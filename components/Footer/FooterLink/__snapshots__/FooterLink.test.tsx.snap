@@ -4,7 +4,7 @@ exports[`FooterLink component renders 1`] = `
 <div>
   <li>
     <a
-      class="p-2 hover:text-nav-hover cursor-pointer"
+      class="p-2 hover:text-nav-hover"
       href="/"
     >
       Homepage

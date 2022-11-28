@@ -119,7 +119,12 @@ const Home: React.FC = () => {
                   'transition-opacity duration-1000 w-64 h-64 rounded-full relative'
                 )}
               >
-                <Image src="/img/avatar.png" alt="Avatar" layout="fill" />
+                <Image
+                  src="/img/avatar.png"
+                  alt="Avatar"
+                  width={240}
+                  height={240}
+                />
               </div>
             </div>
           </div>

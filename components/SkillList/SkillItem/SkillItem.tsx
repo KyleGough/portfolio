@@ -61,7 +61,7 @@ export const SkillItem: React.FC<SkillItemProps> = ({
             'mr-4 w-8 h-8 transition-opacity duration-500 relative'
           )}
         >
-          <Image src={logo} alt={`${name} logo`} layout="fill" />
+          <Image src={logo} alt={`${name} logo`} width={30} height={30} />
         </div>
         <div>
           <p>

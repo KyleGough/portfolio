@@ -45,9 +45,9 @@ export const Nav: React.FC = () => {
             />
           </div>
           <Link href="/">
-            <a className="ml-3">
+            <p className="ml-3">
               <span className="text-xl tracking-normal">Kyle Gough</span>
-            </a>
+            </p>
           </Link>
         </div>
         <button
@@ -61,19 +61,19 @@ export const Nav: React.FC = () => {
         <div className="hidden md:block flex-grow w-auto">
           <div className="flex-grow text-right">
             <Link href="/">
-              <a className="border-bottom-slide inline-block px-5 py-5 mt-0">
+              <p className="border-bottom-slide inline-block px-5 py-5 mt-0">
                 Home
-              </a>
+              </p>
             </Link>
             <Link href="/projects">
-              <a className="border-bottom-slide inline-block px-5 py-5 mt-0">
+              <p className="border-bottom-slide inline-block px-5 py-5 mt-0">
                 Projects
-              </a>
+              </p>
             </Link>
             <Link href="/about">
-              <a className="border-bottom-slide inline-block px-5 py-5 mt-0">
+              <p className="border-bottom-slide inline-block px-5 py-5 mt-0">
                 About Me
-              </a>
+              </p>
             </Link>
           </div>
         </div>
@@ -98,28 +98,28 @@ export const Nav: React.FC = () => {
       >
         <div className="text-link leading-8 bg-background">
           <Link href="/">
-            <a
+            <p
               onClick={closeDrawer}
               className="block hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm"
             >
               Home
-            </a>
+            </p>
           </Link>
           <Link href="/projects">
-            <a
+            <p
               onClick={closeDrawer}
               className="block hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm"
             >
               Projects
-            </a>
+            </p>
           </Link>
           <Link href="/about">
-            <a
+            <p
               onClick={closeDrawer}
               className="block hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm"
             >
               About Me
-            </a>
+            </p>
           </Link>
           <a
             onClick={closeDrawer}

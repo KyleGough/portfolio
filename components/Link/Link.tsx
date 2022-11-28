@@ -11,10 +11,11 @@ export const Link: React.FC<LinkProps> = ({ to, href, children }) => {
   return (
     <>
       {to ? (
-        <NextLink href={to}>
-          <a className="text-link hover:text-link-hover focus:text-link-hover">
-            {children}
-          </a>
+        <NextLink
+          className="text-link hover:text-link-hover focus:text-link-hover"
+          href={to}
+        >
+          {children}
         </NextLink>
       ) : (
         <a
