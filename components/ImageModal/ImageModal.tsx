@@ -18,15 +18,15 @@ export const ImageModal: React.FC<ImageModalProps> = ({ src, alt }) => {
       <figure className="col-span-12 md:col-span-6 lg:col-span-4 relative">
         <div
           onClick={openModal}
-          className="cursor-pointer border-2 border-link hover:border-link-hover h-44 overflow-hidden"
+          className="cursor-pointer border-2 border-link hover:border-link-hover h-40 overflow-hidden"
         >
           <Image
             src={src}
             alt={alt}
             objectFit="cover"
             objectPosition="top"
-            width={400}
-            height={200}
+            width={300}
+            height={150}
           />
         </div>
         <figcaption className="my-2 text-sm text-center text-light font-thin">
@@ -37,7 +37,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({ src, alt }) => {
         <div
           role="dialog"
           onClick={closeModal}
-          className="fixed bg-opacity-75 h-screen w-full left-0 top-0 flex justify-center items-center bg-black"
+          className="fixed bg-opacity-75 h-screen w-full left-0 top-0 flex justify-center items-center bg-black z-10"
         >
           <div className="bg-white rounded shadow-lg">
             <div className="p-1 items-center justify-center text-center">
