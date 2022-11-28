@@ -10,11 +10,11 @@ describe('TimelineNode component', () => {
   it('renders', async () => {
     const { container } = render(
       <TimelineNode
-        title="CEO"
-        company="Acme"
+        title="Acme"
+        subtitle="CEO"
         date="January 2000 - Present"
         align="left"
-        logo="#"
+        logo={{ src: '/#logo', width: 100, height: 100 }}
       />
     );
     expect(screen.getByText('CEO')).toBeVisible();
