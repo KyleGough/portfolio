@@ -17,9 +17,10 @@ export const Layout: React.FC<LayoutProps> = ({
       <Head>
         <meta charSet="utf-8" />
         <meta name="author" content="Kyle Gough" />
+        <meta name="title" content={title} />
         <meta
           name="description"
-          content="Programmer and web developer. Portfolio showcasing my websites, applications, visualisers, and games."
+          content="Front-end engineer based in London. Former developer for Atom Learning, and Bank of America. Welcome to my portfolio showcasing my websites, games, apps, and tools."
         />
         <meta
           name="keywords"
@@ -46,7 +47,8 @@ export const Layout: React.FC<LayoutProps> = ({
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="theme-color" content="#ffffff" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="Kyle Gough - Portfolio" />
+
+        <meta property="og:title" content={title} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://kylegough.co.uk/" />
         <meta
@@ -55,7 +57,18 @@ export const Layout: React.FC<LayoutProps> = ({
         />
         <meta
           property="og:description"
-          content="Programmer and web developer. Portfolio showcasing my websites, applications, visualisers, and games."
+          content="Front-end engineer based in London. Former developer for Atom Learning, and Bank of America. Welcome to my portfolio showcasing my websites, games, apps, and tools."
+        />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://kylegough.co.uk/" />
+        <meta property="twitter:title" content="Portfolio - Kyle Gough" />
+        <meta
+          property="twitter:description"
+          content="Front-end engineer based in London. Former developer for Atom Learning, and Bank of America. Welcome to my portfolio showcasing my websites, games, apps, and tools."
+        />
+        <meta
+          property="twitter:image"
+          content="https://kylegough.co.uk/android-chrome-512x512.png"
         />
         <meta
           name="google-site-verification"
