@@ -41,7 +41,6 @@ export const TimelineNode: React.FC<TimelineNodeProps> = ({
               alt={title}
               width={logo.width}
               height={logo.height}
-              layout="intrinsic"
             />
           </div>
         </FadeIn>

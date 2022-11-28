@@ -44,7 +44,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
               alt={alt}
             />
             <div className="absolute top-2 right-2 w-8 h-8 drop-shadow">
-              <Image src={logo.src} alt={logo.alt} layout="fill" />
+              <Image src={logo.src} alt={logo.alt} width={30} height={30} />
             </div>
             <button
               tabIndex={-1}
