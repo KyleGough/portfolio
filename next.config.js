@@ -6,7 +6,7 @@ const contentSecurityPolicy = `
   frame-ancestors 'self';
   img-src 'self' data:;
   object-src 'none';
-  script-src 'self' static.cloudflareinsights.com vitals.vercel-insights.com;
+  script-src 'self' static.cloudflareinsights.com ajax.cloudflare.com vitals.vercel-insights.com;
   script-src-attr 'none';
   connect-src 'self' cloudflareinsights.com vitals.vercel-insights.com;
   style-src 'self' https: 'unsafe-inline';
