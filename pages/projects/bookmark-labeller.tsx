@@ -1,6 +1,7 @@
 import { Divider } from '@components/Divider';
 import { ImageFigure } from '@components/ImageFigure';
 import { Layout } from '@components/Layout';
+import { Link } from '@components/Link';
 import { Pagination } from '@components/Pagination';
 import { ProjectHeader } from '@components/ProjectHeader';
 import { Screenshots } from '@components/Screenshots';
@@ -9,7 +10,6 @@ import { getProjectData } from '@utilities/Project';
 import { ProjectPageProps } from '@utilities/types';
 import { GetStaticProps } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 
 const BookmarkLabeller: React.FC<ProjectPageProps> = ({ images, project }) => (
