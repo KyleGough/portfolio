@@ -8,7 +8,7 @@ const contentSecurityPolicy = `
   object-src 'none';
   script-src 'self' static.cloudflareinsights.com;
   script-src-attr 'none';
-  connect-src cloudflareinsights.com
+  connect-src 'self' cloudflareinsights.com
   style-src 'self' https: 'unsafe-inline';
   upgrade-insecure-requests
 `;
