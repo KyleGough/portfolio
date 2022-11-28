@@ -1,14 +1,14 @@
 const contentSecurityPolicy = `
-  default-src 'self' vitals.vercel-insights.com;
+  default-src 'self';
   base-uri 'self';
   font-src 'self' https: data:;
   form-action 'self';
   frame-ancestors 'self';
   img-src 'self' data:;
   object-src 'none';
-  script-src 'self' static.cloudflareinsights.com;
+  script-src 'self' static.cloudflareinsights.com vitals.vercel-insights.com;
   script-src-attr 'none';
-  connect-src 'self' cloudflareinsights.com;
+  connect-src 'self' cloudflareinsights.com vitals.vercel-insights.com;
   style-src 'self' https: 'unsafe-inline';
   upgrade-insecure-requests
 `;
