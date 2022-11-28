@@ -51,7 +51,7 @@ export const Layout: React.FC<LayoutProps> = ({
         <meta property="og:url" content="https://kylegough.co.uk/" />
         <meta
           property="og:image"
-          content="https://kylegough.co.uk/android-chrome-515x512.png"
+          content="https://kylegough.co.uk/android-chrome-512x512.png"
         />
         <meta
           property="og:description"
