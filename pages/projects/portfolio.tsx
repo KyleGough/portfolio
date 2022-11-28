@@ -17,7 +17,7 @@ const Portfolio: React.FC<ProjectPageProps> = ({ images, project }) => (
 
     <Divider />
 
-    <ImageFigure image={images[5]} />
+    <ImageFigure image={images[4]} />
 
     <Divider />
 
@@ -145,12 +145,20 @@ export const getStaticProps: GetStaticProps = async () => {
       alt: 'Portfolio project page version 3',
     },
     {
-      src: '/img/portfolio-projects-v4a.jpg',
-      alt: 'Portfolio project page upper version 4',
+      src: '/img/portfolio-homepage.jpg',
+      alt: 'Current Portfolio Homepage',
     },
     {
-      src: '/img/portfolio-projects-v4b.jpg',
-      alt: 'Portfolio project page lower version 4',
+      src: '/img/portfolio-about.jpg',
+      alt: 'Current Portfolio About Page',
+    },
+    {
+      src: '/img/portfolio-projects.jpg',
+      alt: 'Current Portfolio Projects Page',
+    },
+    {
+      src: '/img/portfolio-project-showcase.jpg',
+      alt: 'Current Portfolio Project Showcase',
     },
   ];
 
