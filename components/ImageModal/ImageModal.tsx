@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { useState } from 'react';
 
 interface ImageModalProps {
@@ -14,14 +15,20 @@ export const ImageModal: React.FC<ImageModalProps> = ({ src, alt }) => {
 
   return (
     <>
-      <figure className="col-span-12 md:col-span-6 lg:col-span-4">
-        <img
-          loading="lazy"
+      <figure className="col-span-12 md:col-span-6 lg:col-span-4 relative">
+        <div
           onClick={openModal}
-          className="cursor-pointer border-2 border-link hover:border-link-hover"
-          src={src}
-          alt={alt}
-        />
+          className="cursor-pointer border-2 border-link hover:border-link-hover h-44 overflow-hidden"
+        >
+          <Image
+            src={src}
+            alt={alt}
+            objectFit="cover"
+            objectPosition="top"
+            width={400}
+            height={200}
+          />
+        </div>
         <figcaption className="my-2 text-sm text-center text-light font-thin">
           {alt}
         </figcaption>
