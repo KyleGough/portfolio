@@ -24,91 +24,73 @@ const Portfolio: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Section>
       <h2 className="project-header">Versions</h2>
       <h3 className="mb-4">
-        <strong>Version 1 (HTML)</strong>
+        <strong>Static HTML</strong>
       </h3>
-      <ul className="project-list mb-16">
-        <li>
-          The initial version created in{' '}
-          <time dateTime="2016-12">December 2016</time>.
-        </li>
-        <li>Simple static site created with HTML, Sass and Bootstrap.</li>
-        <li>
-          As additional project pages were added the CSS framework was ported to
-          Materialize.
-        </li>
-        <li>This version was never made public.</li>
-      </ul>
+      <p className="max-w-reading mb-8">
+        My interest in web development was sparked by the initial version of
+        this website which was created whilst I was studying at university, but
+        was never made public. It started off as a simple static site using
+        HTML, Sass, and Bootstrap. Then as I gained further knowledge during my
+        studies, components were replaced with Materialize CSS.
+      </p>
 
       <h3 className="mb-4">
-        <strong>Version 2 (PHP)</strong>
+        <strong>PHP</strong>
       </h3>
-      <ul className="project-list mb-16">
-        <li>
-          Rebuilt in PHP to aid code reuse, maintainability, and expand
-          functionality.
-        </li>
-        <li>
-          Reusable components such as pagination, navigation bars, footers, and
-          skill progress bars.
-        </li>
-        <li>
-          However, these components were not easily maintainable or readable.
-        </li>
-        <li>
-          <Link href="https://github.com/KyleGough/portfolio-php">
-            GitHub Repository
-          </Link>
-        </li>
-      </ul>
+      <p className="max-w-reading mb-2">
+        The next iteration of the website was reconstructed with PHP to aid
+        maintainability, promote code reuse, and to further my knowledge with
+        PHP. This allowed the creation of various reusable components such as
+        pagination, navigation bar, footer, and skill progress bars.
+      </p>
+      <p className="mb-8">
+        <Link href="https://github.com/KyleGough/portfolio-php">
+          GitHub Repository
+        </Link>
+      </p>
 
       <h3 className="mb-4">
-        <strong>Version 3 (React with Materialize)</strong>
+        <strong>Create React App, JavaScript, Materialize</strong>
       </h3>
-      <ul className="project-list mb-16">
-        <li>
-          Rebuilt in <time dateTime="2020-05">May 2020</time> with React due to
-          its benefits and ease of use over PHP.
-        </li>
-        <li>
-          Effort taken to replicate most of the previous styling but made
-          specific changes where necessary.
-        </li>
-        <li>
-          The app was built starting from an initial create-react-app
-          environment.
-        </li>
-        <li>Materialize for UI components.</li>
-        <li>Mixture of vanilla CSS and CSS-in-JS for custom styling.</li>
-        <li>
-          <Link href="https://github.com/KyleGough/portfolio-react">
-            GitHub Repository
-          </Link>
-        </li>
-      </ul>
+      <p className="max-w-reading mb-2">
+        Migration of the website to React in{' '}
+        <time dateTime="2020-05">May 2020</time> marked the start of my React
+        journey. The site was built with create-react-app and effort was taken
+        to replicate most of the previous functionality and styling. Materialize
+        was retained for UI components with the help of vanilla CSS and
+        CSS-in-JS.
+      </p>
+      <p className="mb-8">
+        <Link href="https://github.com/KyleGough/portfolio-react">
+          GitHub Repository
+        </Link>
+      </p>
 
       <h3 className="mb-4">
-        <strong>Version 4 (React with Tailwind)</strong>
+        <strong>Create React App, TypeScript, TailwindCSS</strong>
       </h3>
-      <ul className="project-list mb-8">
-        <li>
-          Rebuilt in <time dateTime="2022-01">January 2022</time> with React and
-          TailwindCSS - my preferred CSS framework.
-        </li>
-        <li>
-          JavaScript was upgraded to TypeScript to improve code quality, testing
-          and help me learn the language.
-        </li>
-        <li>Created custom CSS animations.</li>
-        <li>
-          Additional care and consideration into responsiveness, semantic HTML,
-          and SEO.
-        </li>
-        <li>
-          <Link href="https://github.com/KyleGough/portfolio">
-            GitHub Repository
-          </Link>
-        </li>
-      </ul>
+      <p className="max-w-reading mb-8">
+        In January 2022, another major update was undertaken to replace
+        Materialize with TailwindCSS which has now become my personal favourite
+        CSS framework for web development. During this period, considerable
+        effort and research was taken to improve and understand responsiveness,
+        page speed, SEO, accessibility, and best practices.
+      </p>
+
+      <h3 className="mb-4">
+        <strong>Next.js, TypeScript, TailwindCSS</strong>
+      </h3>
+      <p className="max-w-reading mb-2">
+        In November 2022, the latest major update to the website replaced the
+        create-react-app framework with Next.js as well as switching deployment
+        hosts from Heroku to Vercel. This update included many updates to
+        security headers, project structure, path aliases, and images.
+      </p>
+      <p className="mb-8">
+        <Link href="https://github.com/KyleGough/portfolio">
+          GitHub Repository
+        </Link>
+      </p>
     </Section>
 
     <Divider />
