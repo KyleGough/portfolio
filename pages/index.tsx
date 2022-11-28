@@ -4,7 +4,7 @@ import { ArrowForwardIcon } from '@components/Icons';
 import { Layout } from '@components/Layout';
 import { ProjectCard } from '@components/ProjectCard';
 import { Section } from '@components/Section';
-import { TimelineNode } from '@components/TimelineNode';
+import { TimelineWidget } from '@components/TimelineWidget';
 import { useObserveElement } from '@hooks/useObserveElement';
 import { useTypewriter } from '@hooks/useTypewriter';
 import { clsx } from 'clsx';
@@ -102,40 +102,7 @@ const Home: React.FC = () => {
           <h2 className="font-thin text-6xl text-center mt-16 text-nav-light max-w-reading">
             Work Experience
           </h2>
-          <div
-            className={clsx(
-              'grid grid-cols-1 md:grid-cols-2',
-              'my-16 relative',
-              'before:absolute before:content-[""] before:h-2/4 before:w-[2px]',
-              'before:right-0 md:before:left-2/4',
-              'before:bg-gradient-to-t before:from-timeline before:via-timeline before:to-transparent',
-              'after:absolute after:content-[""] after:h-2/4 after:w-[2px]',
-              'after:top-2/4 after:right-0 md:after:left-2/4',
-              'after:bg-gradient-to-b after:from-timeline after:via-timeline after:to-transparent'
-            )}
-          >
-            <TimelineNode
-              title="Front-End Engineer"
-              company="Atom Learning"
-              date="July 2022 - Present"
-              align="left"
-              logo="/img/atom.png"
-            />
-            <TimelineNode
-              title="Tech Analyst"
-              company="Bank of America"
-              date="July 2020 - June 2022"
-              align="right"
-              logo="/img/bofa.png"
-            />
-            <TimelineNode
-              title="Summer Intern"
-              company="Bank of America"
-              date="June 2019 - August 2019"
-              align="left"
-              logo="/img/bofa.png"
-            />
-          </div>
+          <TimelineWidget />
         </Section>
       </div>
 

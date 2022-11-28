@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TimelineWidget component renders 1`] = `
+<div>
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 my-16 relative before:absolute before:content-[""] before:h-2/4 before:w-[2px] before:right-0 md:before:left-2/4 before:bg-gradient-to-t before:from-timeline before:via-timeline before:to-transparent after:absolute after:content-[""] after:h-2/4 after:w-[2px] after:top-2/4 after:right-0 md:after:left-2/4 after:bg-gradient-to-b after:from-timeline after:via-timeline after:to-transparent"
+  >
+    <div
+      class="flex items-center justify-end h-48"
+    >
+      <div
+        class="opacity-0 transition-opacity duration-1000"
+      >
+        <div
+          class="relative w-16 md:w-24 lg:w-32 mr-8"
+        >
+          <span
+            style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+          >
+            <span
+              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+            >
+              <img
+                alt=""
+                aria-hidden="true"
+                src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27706%27%20height=%27192%27/%3e"
+                style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+              />
+            </span>
+            <img
+              alt="Atom Learning"
+              data-nimg="intrinsic"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+            />
+            <noscript />
+          </span>
+        </div>
+      </div>
+      <div
+        class="mr-8 opacity-0 transition-opacity duration-1000"
+      >
+        <p
+          class="text-3xl"
+        >
+          Atom Learning
+        </p>
+        <p
+          class="text-xl"
+        >
+          Front-End Engineer
+        </p>
+        <p>
+          July 2022 - Present
+        </p>
+      </div>
+      <div
+        class="h-[2px] bg-timeline w-6 max-w-[12rem] grow"
+      />
+    </div>
+    <div
+      class="hidden md:block"
+    />
+    <div
+      class="hidden md:block"
+    />
+    <div
+      class="flex items-center justify-end h-48 md:flex-row-reverse"
+    >
+      <div
+        class="opacity-0 transition-opacity duration-1000"
+      >
+        <div
+          class="relative w-16 md:w-24 lg:w-32 mr-8 md:ml-8 md:mr-0"
+        >
+          <span
+            style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+          >
+            <span
+              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+            >
+              <img
+                alt=""
+                aria-hidden="true"
+                src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27602%27%20height=%27339%27/%3e"
+                style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+              />
+            </span>
+            <img
+              alt="Bank of America"
+              data-nimg="intrinsic"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+            />
+            <noscript />
+          </span>
+        </div>
+      </div>
+      <div
+        class="mr-8 md:ml-8 md:mr-0 md:text-right opacity-0 transition-opacity duration-1000"
+      >
+        <p
+          class="text-3xl"
+        >
+          Bank of America
+        </p>
+        <p
+          class="text-xl"
+        >
+          Tech Analyst
+        </p>
+        <p>
+          July 2020 - June 2022
+        </p>
+      </div>
+      <div
+        class="h-[2px] bg-timeline w-6 max-w-[12rem] grow"
+      />
+    </div>
+    <div
+      class="flex items-center justify-end h-48"
+    >
+      <div
+        class="opacity-0 transition-opacity duration-1000"
+      >
+        <div
+          class="relative w-16 md:w-24 lg:w-32 mr-8"
+        >
+          <span
+            style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+          >
+            <span
+              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+            >
+              <img
+                alt=""
+                aria-hidden="true"
+                src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27602%27%20height=%27339%27/%3e"
+                style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+              />
+            </span>
+            <img
+              alt="Bank of America"
+              data-nimg="intrinsic"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+            />
+            <noscript />
+          </span>
+        </div>
+      </div>
+      <div
+        class="mr-8 opacity-0 transition-opacity duration-1000"
+      >
+        <p
+          class="text-3xl"
+        >
+          Bank of America
+        </p>
+        <p
+          class="text-xl"
+        >
+          Summer Intern
+        </p>
+        <p>
+          June 2019 - August 2019
+        </p>
+      </div>
+      <div
+        class="h-[2px] bg-timeline w-6 max-w-[12rem] grow"
+      />
+    </div>
+    <div
+      class="hidden md:block"
+    />
+  </div>
+</div>
+`;
