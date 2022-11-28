@@ -1,3 +1,11 @@
+import CPlusPlusLogo from 'public/img/skill/cplusplus.svg';
+import CSharpLogo from 'public/img/skill/csharp.svg';
+import JavaScriptLogo from 'public/img/skill/javascript.svg';
+import PythonLogo from 'public/img/skill/python.svg';
+import ReactLogo from 'public/img/skill/react.svg';
+import RubyLogo from 'public/img/skill/ruby.svg';
+import TypeScriptLogo from 'public/img/skill/typescript.svg';
+
 import { Project } from './types';
 
 export const getProjectData = (projectKey: string) => {
@@ -17,39 +25,35 @@ enum ProjectFilter {
   CSHARP = 'C#',
 }
 
-const TypeScriptLogo = {
-  src: '/img/typescript.svg',
-  alt: 'TypeScript Logo',
-};
-
-const JavaScriptLogo = {
-  src: '/img/javascript.svg',
-  alt: 'JavaScript Logo',
-};
-
-const PythonLogo = {
-  src: '/img/python.svg',
-  alt: 'Python Logo',
-};
-
-const ReactLogo = {
-  src: '/img/react.svg',
-  alt: 'React Logo',
-};
-
-const RubyLogo = {
-  src: '/img/ruby.svg',
-  alt: 'Ruby Logo',
-};
-
-const CPlusPlusLogo = {
-  src: '/img/cplusplus.svg',
-  alt: 'C++ Logo',
-};
-
-const CSharpLogo = {
-  src: '/img/csharp.svg',
-  alt: 'C# Logo',
+const logos = {
+  typescript: {
+    src: TypeScriptLogo,
+    alt: 'TypeScript Logo',
+  },
+  javascript: {
+    src: JavaScriptLogo,
+    alt: 'JavaScript Logo',
+  },
+  python: {
+    src: PythonLogo,
+    alt: 'Python Logo',
+  },
+  react: {
+    src: ReactLogo,
+    alt: 'React Logo',
+  },
+  ruby: {
+    src: RubyLogo,
+    alt: 'Ruby Logo',
+  },
+  cplusplus: {
+    src: CPlusPlusLogo,
+    alt: 'C++ Logo',
+  },
+  csharp: {
+    src: CSharpLogo,
+    alt: 'C# Logo',
+  },
 };
 
 export const projects: Project[] = [
@@ -72,7 +76,7 @@ export const projects: Project[] = [
     skills: {
       active: ['React', 'Typescript', 'TailwindCSS'],
     },
-    logo: TypeScriptLogo,
+    logo: logos.typescript,
     liveLink: 'https://ai-space-telescope.com',
   },
   {
@@ -94,7 +98,7 @@ export const projects: Project[] = [
     skills: {
       active: ['JavaScript', 'WebExtensions API', 'HTML', 'CSS'],
     },
-    logo: JavaScriptLogo,
+    logo: logos.javascript,
   },
   {
     id: 'portfolio',
@@ -128,7 +132,7 @@ export const projects: Project[] = [
       ],
       disabled: ['PHP', 'Materialize', 'Bootstrap', 'Sass'],
     },
-    logo: TypeScriptLogo,
+    logo: logos.typescript,
   },
   {
     id: 'lucidlab',
@@ -161,7 +165,7 @@ export const projects: Project[] = [
       active: ['React', 'JavaScript', 'Materialize', 'HTML', 'CSS'],
       disabled: ['Python', 'Shell', 'C', 'SQL'],
     },
-    logo: JavaScriptLogo,
+    logo: logos.javascript,
   },
   {
     id: 'sudoku',
@@ -186,7 +190,7 @@ export const projects: Project[] = [
     skills: {
       active: ['Python'],
     },
-    logo: PythonLogo,
+    logo: logos.python,
   },
   {
     id: 'react-minesweeper',
@@ -212,7 +216,7 @@ export const projects: Project[] = [
     skills: {
       active: ['React', 'JavaScript', 'CSS', 'Materialize'],
     },
-    logo: ReactLogo,
+    logo: logos.react,
   },
   {
     id: 'cave-exploration',
@@ -238,7 +242,7 @@ export const projects: Project[] = [
     skills: {
       active: ['C++', 'GLUT'],
     },
-    logo: CPlusPlusLogo,
+    logo: logos.cplusplus,
   },
   {
     id: 'roller-coaster',
@@ -263,7 +267,7 @@ export const projects: Project[] = [
     skills: {
       active: ['C++', 'GLUT'],
     },
-    logo: CPlusPlusLogo,
+    logo: logos.cplusplus,
   },
   {
     id: 'rscbot',
@@ -295,7 +299,7 @@ export const projects: Project[] = [
       active: ['JavaScript', 'jQuery', 'HTML', 'CSS', 'Materialize'],
       disabled: ['PHP', 'SQL'],
     },
-    logo: JavaScriptLogo,
+    logo: logos.javascript,
   },
   {
     id: 'url-shortener',
@@ -315,7 +319,7 @@ export const projects: Project[] = [
     skills: {
       active: ['JavaScript', 'MongoDB', 'jQuery', 'HTML', 'CSS', 'Materialize'],
     },
-    logo: JavaScriptLogo,
+    logo: logos.javascript,
   },
   {
     id: 'graph-algorithm-visualiser',
@@ -336,7 +340,7 @@ export const projects: Project[] = [
     skills: {
       active: ['JavaScript', 'Materialize'],
     },
-    logo: JavaScriptLogo,
+    logo: logos.javascript,
     liveLink: 'https://kylegough.github.io/graph-algorithm-visualiser/',
   },
   {
@@ -358,7 +362,7 @@ export const projects: Project[] = [
     skills: {
       active: ['Ruby'],
     },
-    logo: RubyLogo,
+    logo: logos.ruby,
   },
   {
     id: 'bsplit',
@@ -396,7 +400,7 @@ export const projects: Project[] = [
         'Bootstrap',
       ],
     },
-    logo: JavaScriptLogo,
+    logo: logos.javascript,
   },
   {
     id: 'todo-list',
@@ -427,7 +431,7 @@ export const projects: Project[] = [
     skills: {
       active: ['PHP', 'JavaScript', 'jQuery', 'SQL', 'HTML', 'CSS'],
     },
-    logo: JavaScriptLogo,
+    logo: logos.javascript,
   },
   {
     id: 'delivery-route-planner',
@@ -452,7 +456,7 @@ export const projects: Project[] = [
     skills: {
       active: ['C#', 'SQL'],
     },
-    logo: CSharpLogo,
+    logo: logos.csharp,
   },
   {
     id: 'sorting-algorithm-visualiser',
@@ -476,6 +480,6 @@ export const projects: Project[] = [
     skills: {
       active: ['C#'],
     },
-    logo: CSharpLogo,
+    logo: logos.csharp,
   },
 ];

@@ -8,6 +8,18 @@ import { SkillList } from '@components/SkillList';
 import { skillsOther } from '@utilities/skillsOther';
 import { skillsProgramming } from '@utilities/skillsProgramming';
 import { skillsWeb } from '@utilities/skillsWeb';
+import ActionsLogo from 'public/img/skill/github-actions.svg';
+import HaskellLogo from 'public/img/skill/haskell.svg';
+import HerokuLogo from 'public/img/skill/heroku.svg';
+import jQueryLogo from 'public/img/skill/jquery.svg';
+import LaTeXLogo from 'public/img/skill/latex.svg';
+import MaterializeLogo from 'public/img/skill/materialize.svg';
+import MATLABLogo from 'public/img/skill/matlab.svg';
+import NodeLogo from 'public/img/skill/node.svg';
+import PHPLogo from 'public/img/skill/php.svg';
+import RubyLogo from 'public/img/skill/ruby.svg';
+import SQLLogo from 'public/img/skill/sql.svg';
+import WebixLogo from 'public/img/skill/webix.svg';
 import React from 'react';
 
 const About: React.FC = () => {
@@ -72,18 +84,18 @@ const About: React.FC = () => {
           Additional Experience
         </p>
         <div className="lg:w-4/5 xl:w-3/5 grid md:grid-cols-6 grid-cols-3">
-          <LabelledLogo name="Node.js" logo="/img/node.svg" />
-          <LabelledLogo name="PHP" logo="/img/php.svg" />
-          <LabelledLogo name="Ruby" logo="/img/ruby.svg" />
-          <LabelledLogo name="Haskell" logo="/img/haskell.svg" />
-          <LabelledLogo name="MATLAB" logo="/img/matlab.svg" />
-          <LabelledLogo name="jQuery" logo="/img/jquery.svg" />
-          <LabelledLogo name="Materialize" logo="/img/materialize.svg" />
-          <LabelledLogo name="Webix" logo="/img/webix.svg" />
-          <LabelledLogo name="Heroku" logo="/img/heroku.svg" />
-          <LabelledLogo name="SQL" logo="/img/sql.svg" />
-          <LabelledLogo name="LaTeX" logo="/img/latex.svg" />
-          <LabelledLogo name="GitHub Actions" logo="/img/github-actions.svg" />
+          <LabelledLogo name="Node.js" logo={NodeLogo} />
+          <LabelledLogo name="PHP" logo={PHPLogo} />
+          <LabelledLogo name="Ruby" logo={RubyLogo} />
+          <LabelledLogo name="Haskell" logo={HaskellLogo} />
+          <LabelledLogo name="MATLAB" logo={MATLABLogo} />
+          <LabelledLogo name="jQuery" logo={jQueryLogo} />
+          <LabelledLogo name="Materialize" logo={MaterializeLogo} />
+          <LabelledLogo name="Webix" logo={WebixLogo} />
+          <LabelledLogo name="Heroku" logo={HerokuLogo} />
+          <LabelledLogo name="SQL" logo={SQLLogo} />
+          <LabelledLogo name="LaTeX" logo={LaTeXLogo} />
+          <LabelledLogo name="GitHub Actions" logo={ActionsLogo} />
         </div>
       </Section>
 

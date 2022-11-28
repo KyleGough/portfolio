@@ -1,4 +1,8 @@
 import { Skill } from '@utilities/types';
+import BashLogo from 'public/img/skill/bash.svg';
+import GitLogo from 'public/img/skill/git.svg';
+import ManjaroLogo from 'public/img/skill/manjaro.svg';
+import MarkdownLogo from 'public/img/skill/markdown.svg';
 
 export const skillsOther: Skill[] = [
   {
@@ -6,27 +10,27 @@ export const skillsOther: Skill[] = [
     progress: 85,
     className: 'w-[85%]',
     description: 'All projects',
-    logo: '/img/git.svg',
+    logo: GitLogo,
   },
   {
     name: 'Bash / Zsh',
     progress: 75,
     className: 'w-[75%]',
     description: 'Daily use, All projects',
-    logo: '/img/bash.svg',
+    logo: BashLogo,
   },
   {
     name: 'Markdown',
     progress: 90,
     className: 'w-[90%]',
     description: 'GitHub READMEs, Lecture Notes',
-    logo: '/img/markdown.svg',
+    logo: MarkdownLogo,
   },
   {
     name: 'Manjaro',
     progress: 75,
     className: 'w-[75%]',
     description: 'Daily use',
-    logo: '/img/manjaro.svg',
+    logo: ManjaroLogo,
   },
 ];

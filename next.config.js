@@ -1,3 +1,5 @@
+const withImages = require('next-images')
+
 const contentSecurityPolicy = `
   default-src 'self';
   base-uri 'self';
@@ -70,7 +72,7 @@ const securityHeaders = [
   }
 ];
 
-module.exports = {
+module.exports = withImages({
   async headers() {
     return [
       {
@@ -80,4 +82,4 @@ module.exports = {
       },
     ];
   },
-};
+});
