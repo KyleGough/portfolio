@@ -36,7 +36,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
       </div>
       <div className="col-span-12 lg:col-span-5 text-center -mb-8">
         <Link href={link}>
-          <a className="block group relative">
+          <div className="block group relative">
             <img
               loading="lazy"
               className="border-2 border-white rounded-lg shadow"
@@ -52,7 +52,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
             >
               View Project
             </button>
-          </a>
+          </div>
         </Link>
       </div>
     </div>

@@ -9,8 +9,8 @@ interface FooterLinkProps {
 export const FooterLink: React.FC<FooterLinkProps> = ({ children, href }) => {
   return (
     <li>
-      <Link href={href}>
-        <a className="p-2 hover:text-nav-hover cursor-pointer">{children}</a>
+      <Link href={href} className="p-2 hover:text-nav-hover">
+        {children}
       </Link>
     </li>
   );
