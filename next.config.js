@@ -82,4 +82,6 @@ module.exports = withImages({
       },
     ];
   },
+  reactStrictMode: true,
+  swcMinify: true,
 });
