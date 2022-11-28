@@ -10,6 +10,7 @@ import { getProjectData } from '@utilities/Project';
 import { ProjectPageProps } from '@utilities/types';
 import { GetStaticProps } from 'next';
 import Image from 'next/image';
+import FirefoxLogo from 'public/img/firefox.svg';
 import React from 'react';
 
 const BookmarkLabeller: React.FC<ProjectPageProps> = ({ images, project }) => (
@@ -25,12 +26,7 @@ const BookmarkLabeller: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Section>
       <div className="flex">
         <div className="w-8 h-8 mr-2">
-          <Image
-            src="/img/firefox.svg"
-            alt="Firefox Logo"
-            width={30}
-            height={30}
-          />
+          <Image src={FirefoxLogo} alt="Firefox Logo" width={30} height={30} />
         </div>
         <Link href="https://addons.mozilla.org/en-US/firefox/addon/bookmark-labeller/">
           <a className="text-2xl text-link hover:text-link-hover focus:text-link-hover">
