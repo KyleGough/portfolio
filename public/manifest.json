@@ -1,6 +1,6 @@
 {
-  "short_name": "Portfolio",
-  "name": "Portfolio",
+  "short_name": "Kyle Gough",
+  "name": "Kyle Gough - Portfolio",
   "icons": [
     {
         "src": "/android-chrome-192x192.png",
@@ -8,16 +8,13 @@
         "type": "image/png"
     },
     {
-        "src": "/android-chrome-256x256.png",
-        "sizes": "256x256",
+        "src": "/android-chrome-512x512.png",
+        "sizes": "512x512",
         "type": "image/png"
     }
   ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "permissions": [
-    "https://kylegough.co.uk/"
-  ]
+  "background_color": "#ffffff"
 }
