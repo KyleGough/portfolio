@@ -29,10 +29,10 @@ const securityHeaders = [
     key: 'Strict-Transport-Security',
     value: 'max-age=63072000; includeSubDomains; preload'
   },
-  {
+  ...(process.env.NODE_ENV === 'production' ? [{
     key: 'Content-Security-Policy',
     value: contentSecurityPolicy.replace(/\s{2,}/g, ' ').trim()
-  },
+  }] : []),
   // Disable all browser features.
   {
     key: 'Permissions-Policy',
