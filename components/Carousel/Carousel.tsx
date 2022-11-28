@@ -20,7 +20,7 @@ export const Carousel: React.FC<CarouselProps> = ({
     return () => {
       window.clearInterval(carouselInterval.current as NodeJS.Timeout);
     };
-  }, []);
+  });
 
   const carouselNext = () =>
     setCarousel((carousel) => (carousel + 1) % carouselCount);
