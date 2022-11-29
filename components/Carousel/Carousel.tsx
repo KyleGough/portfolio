@@ -1,10 +1,11 @@
+import { StaticImageData } from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 
 import { CarouselImage } from './CarouselImage';
 
 interface CarouselProps {
   children: React.ReactNode;
-  backgrounds: string[];
+  backgrounds: StaticImageData[];
 }
 
 export const Carousel: React.FC<CarouselProps> = ({
@@ -30,7 +31,7 @@ export const Carousel: React.FC<CarouselProps> = ({
       <div className="absolute inset-0 bg-black opacity-70 w-full h-full z-10"></div>
       {backgrounds.map((image, index) => (
         <CarouselImage
-          key={`${image}_${index}`}
+          key={`${image.src}_${index}`}
           bg={image}
           show={carousel === index}
         />
