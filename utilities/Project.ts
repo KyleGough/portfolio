@@ -1,3 +1,19 @@
+import imageAISpaceTelescope from '@image/ai-space-telescope1.jpg';
+import imageBookmarkLabeller from '@image/bookmark-labeller.jpg';
+import imageBSplit from '@image/card-bsplit.jpg';
+import imageCaveExploration from '@image/card-cave-exploration.jpg';
+import imageCavernMinesweeper from '@image/card-cavern-minesweeper.jpg';
+import imageDeliveryPlanner from '@image/card-delivery-route-planner.jpg';
+import imageGraphVisualiser from '@image/card-graph-algorithm-visualiser.jpg';
+import imageLucidLab from '@image/card-lucidlab.jpg';
+import imagePortfolio from '@image/card-portfolio.jpg';
+import imageReactMinesweeper from '@image/card-react-minesweeper.jpg';
+import imageRollerCoaster from '@image/card-roller-coaster.jpg';
+import imageRSCBot from '@image/card-rscbot.jpg';
+import imageSortingVisualiser from '@image/card-sorting-algorithm-visualiser.jpg';
+import imageSudoku from '@image/card-sudoku.jpg';
+import imageToDoList from '@image/card-todo.jpg';
+import imageURLShortener from '@image/card-url-shortener.jpg';
 import CPlusPlusLogo from 'public/img/skill/cplusplus.svg';
 import CSharpLogo from 'public/img/skill/csharp.svg';
 import JavaScriptLogo from 'public/img/skill/javascript.svg';
@@ -66,7 +82,7 @@ export const projects: Project[] = [
         year: 2022,
       },
     },
-    src: 'img/ai-space-telescope1.jpg',
+    image: imageAISpaceTelescope,
     alt: 'AI Space Telescope Website',
     link: '/projects/ai-space-telescope',
     filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.REACT, ProjectFilter.WEB],
@@ -88,7 +104,7 @@ export const projects: Project[] = [
         year: 2022,
       },
     },
-    src: 'img/bookmark-labeller.jpg',
+    image: imageBookmarkLabeller,
     alt: 'Bookmark Labeller Popup',
     link: '/projects/bookmark-labeller',
     filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.WEB],
@@ -113,7 +129,7 @@ export const projects: Project[] = [
         year: 2022,
       },
     },
-    src: '/img/card-portfolio.jpg',
+    image: imagePortfolio,
     alt: 'Portfolio',
     link: '/projects/portfolio',
     filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.REACT, ProjectFilter.WEB],
@@ -148,7 +164,7 @@ export const projects: Project[] = [
         year: 2020,
       },
     },
-    src: '/img/card-lucidlab.jpg',
+    image: imageLucidLab,
     alt: 'LucidLab',
     link: '/projects/lucidlab',
     filters: [
@@ -180,7 +196,7 @@ export const projects: Project[] = [
         year: 2020,
       },
     },
-    src: '/img/card-sudoku.jpg',
+    image: imageSudoku,
     alt: 'Logical sudoku solver',
     link: '/projects/sudoku',
     filters: [ProjectFilter.PYTHON, ProjectFilter.PUZZLE],
@@ -201,7 +217,7 @@ export const projects: Project[] = [
         year: 2019,
       },
     },
-    src: 'img/card-react-minesweeper.jpg',
+    image: imageReactMinesweeper,
     alt: 'React Minesweeper',
     link: '/projects/react-minesweeper',
     filters: [
@@ -232,7 +248,7 @@ export const projects: Project[] = [
         year: 2019,
       },
     },
-    src: '/img/card-cave-exploration.jpg',
+    image: imageCaveExploration,
     alt: 'Cave Exploration',
     link: '/projects/cave-exploration',
     filters: [ProjectFilter.CPLUSPLUS],
@@ -258,7 +274,7 @@ export const projects: Project[] = [
         year: 2019,
       },
     },
-    src: '/img/card-roller-coaster.jpg',
+    image: imageRollerCoaster,
     alt: 'Roller coaster',
     link: '/projects/roller-coaster',
     filters: [ProjectFilter.CPLUSPLUS],
@@ -283,7 +299,7 @@ export const projects: Project[] = [
         year: 2019,
       },
     },
-    src: '/img/card-rscbot.jpg',
+    image: imageRSCBot,
     alt: 'RSCBot',
     link: '/projects/rscbot',
     filters: [
@@ -310,7 +326,7 @@ export const projects: Project[] = [
         year: 2017,
       },
     },
-    src: '/img/card-url-shortener.jpg',
+    image: imageURLShortener,
     alt: 'URL shortener',
     link: '/projects/url-shortener',
     filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.WEB],
@@ -330,7 +346,7 @@ export const projects: Project[] = [
         year: 2017,
       },
     },
-    src: '/img/card-graph-algorithm-visualiser.jpg',
+    image: imageGraphVisualiser,
     alt: 'Graph algorithm visualiser',
     link: '/projects/graph-algorithm-visualiser',
     filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.WEB],
@@ -352,7 +368,7 @@ export const projects: Project[] = [
         year: 2017,
       },
     },
-    src: '/img/card-cavern-minesweeper.jpg',
+    image: imageCavernMinesweeper,
     alt: 'Cavern Minesweeper',
     link: '/projects/cavern-minesweeper',
     filters: [ProjectFilter.PUZZLE],
@@ -378,7 +394,7 @@ export const projects: Project[] = [
         year: 2017,
       },
     },
-    src: '/img/card-bsplit.jpg',
+    image: imageBSplit,
     alt: 'BSplit',
     link: '/projects/bsplit',
     filters: [
@@ -416,7 +432,7 @@ export const projects: Project[] = [
         year: 2017,
       },
     },
-    src: '/img/card-todo.jpg',
+    image: imageToDoList,
     alt: 'To Do List',
     link: '/projects/todo-list',
     filters: [
@@ -447,7 +463,7 @@ export const projects: Project[] = [
         year: 2016,
       },
     },
-    src: '/img/card-delivery-route-planner.jpg',
+    image: imageDeliveryPlanner,
     alt: 'Delivery route planner',
     link: '/projects/delivery-route-planner',
     filters: [ProjectFilter.CSHARP],
@@ -471,7 +487,7 @@ export const projects: Project[] = [
         year: 2015,
       },
     },
-    src: '/img/card-sorting-algorithm-visualiser.jpg',
+    image: imageSortingVisualiser,
     alt: 'Sorting Algorithm Visualiser',
     link: '/projects/sorting-algorithm-visualiser',
     filters: [ProjectFilter.CSHARP],

@@ -39,8 +39,14 @@ exports[`ProjectItem component renders 1`] = `
             <img
               alt="Test Alt Text"
               class="border-2 border-white rounded-lg shadow"
+              data-nimg="1"
+              decoding="async"
+              height="100"
               loading="lazy"
-              src="/#image"
+              src="/_next/image?url=%2F%23image&w=256&q=75"
+              srcset="/_next/image?url=%2F%23image&w=128&q=75 1x, /_next/image?url=%2F%23image&w=256&q=75 2x"
+              style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+              width="100"
             />
             <div
               class="absolute top-2 right-2 w-8 h-8 drop-shadow"

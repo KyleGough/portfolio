@@ -1,10 +1,12 @@
+import { StaticImageData } from 'next/image';
+
 export interface Project {
   id: string;
   title: string;
   subtitle?: string;
   date: ProjectDate;
   video?: string;
-  src: string;
+  image: StaticImageData;
   alt: string;
   link: string;
   filters: string[];

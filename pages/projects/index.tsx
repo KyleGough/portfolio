@@ -41,7 +41,7 @@ const Projects: React.FC = () => {
                 title={project.title}
                 date={project.date}
                 description={project.description}
-                src={project.src}
+                image={project.image}
                 alt={project.alt}
                 link={project.link}
                 logo={project.logo}
