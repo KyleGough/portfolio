@@ -3,13 +3,13 @@ import { ProjectChip } from '@components/ProjectChip';
 import { getFormattedDate, getShortDate } from '@utilities/date';
 import { Date } from '@utilities/types';
 import { clsx } from 'clsx';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
 interface ProjectCardProps {
   className?: string;
-  src: string;
+  image: StaticImageData;
   alt: string;
   date: Date;
   link: string;
@@ -18,7 +18,7 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   className,
-  src,
+  image,
   alt,
   date,
   link,
@@ -35,7 +35,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       >
         <FadeIn className={className}>
           <div className="w-full">
-            <Image src={src} alt={alt} width={640} height={360} />
+            <Image
+              src={image.src}
+              alt={alt}
+              width={image.width}
+              height={image.height}
+              placeholder="blur"
+              blurDataURL={image.blurDataURL}
+            />
           </div>
           <div className="text-white p-4 font-bold group-hover:brightness-125 group-focus:brightness-125 bg-nav-light">
             <div className="flex justify-between items-center">
