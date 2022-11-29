@@ -6,6 +6,14 @@ import { Pagination } from '@components/Pagination';
 import { ProjectHeader } from '@components/ProjectHeader';
 import { Screenshots } from '@components/Screenshots';
 import { Section } from '@components/Section';
+import imageAbout from '@image/portfolio-about.jpg';
+import imageHomepage from '@image/portfolio-homepage.jpg';
+import imageShowcase from '@image/portfolio-project-showcase.jpg';
+import imageProjects from '@image/portfolio-projects.jpg';
+import imageV1Projects from '@image/portfolio-projects-v1a.jpg';
+import imageV1About from '@image/portfolio-projects-v1b.jpg';
+import imageV2Projects from '@image/portfolio-projects-v2.jpg';
+import imageV3Projects from '@image/portfolio-projects-v3.jpg';
 import { getProjectData } from '@utilities/Project';
 import { ProjectPageProps } from '@utilities/types';
 import { GetStaticProps } from 'next';
@@ -111,35 +119,35 @@ const Portfolio: React.FC<ProjectPageProps> = ({ images, project }) => (
 export const getStaticProps: GetStaticProps = async () => {
   const images = [
     {
-      src: '/img/portfolio-projects-v1a.jpg',
+      imageData: imageV1Projects,
       alt: 'Portfolio project page version 1',
     },
     {
-      src: '/img/portfolio-projects-v1b.jpg',
+      imageData: imageV1About,
       alt: 'Portfolio about page version 1',
     },
     {
-      src: '/img/portfolio-projects-v2.jpg',
+      imageData: imageV2Projects,
       alt: 'Portfolio project page version 2',
     },
     {
-      src: '/img/portfolio-projects-v3.jpg',
+      imageData: imageV3Projects,
       alt: 'Portfolio project page version 3',
     },
     {
-      src: '/img/portfolio-homepage.jpg',
+      imageData: imageHomepage,
       alt: 'Current Portfolio Homepage',
     },
     {
-      src: '/img/portfolio-about.jpg',
+      imageData: imageAbout,
       alt: 'Current Portfolio About Page',
     },
     {
-      src: '/img/portfolio-projects.jpg',
+      imageData: imageProjects,
       alt: 'Current Portfolio Projects Page',
     },
     {
-      src: '/img/portfolio-project-showcase.jpg',
+      imageData: imageShowcase,
       alt: 'Current Portfolio Project Showcase',
     },
   ];

@@ -5,6 +5,10 @@ import { Pagination } from '@components/Pagination';
 import { ProjectHeader } from '@components/ProjectHeader';
 import { Screenshots } from '@components/Screenshots';
 import { Section } from '@components/Section';
+import imageDeliveryView from '@image/delivery-route-planner1.jpg';
+import imageRouteView from '@image/delivery-route-planner2.jpg';
+import imageReport from '@image/delivery-route-planner3.jpg';
+import imageRoute from '@image/delivery-route-planner4.jpg';
 import { getProjectData } from '@utilities/Project';
 import { ProjectPageProps } from '@utilities/types';
 import { GetStaticProps } from 'next';
@@ -52,10 +56,10 @@ const DeliveryPlanner: React.FC<ProjectPageProps> = ({ images, project }) => (
 
 export const getStaticProps: GetStaticProps = async () => {
   const images = [
-    { src: '/img/delivery-route-planner1.jpg', alt: 'Delivery view' },
-    { src: '/img/delivery-route-planner2.jpg', alt: 'Route view' },
-    { src: '/img/delivery-route-planner3.jpg', alt: 'Generated report' },
-    { src: '/img/delivery-route-planner4.jpg', alt: 'Generated route' },
+    { imageData: imageDeliveryView, alt: 'Delivery view' },
+    { imageData: imageRouteView, alt: 'Route view' },
+    { imageData: imageReport, alt: 'Generated report' },
+    { imageData: imageRoute, alt: 'Generated route' },
   ];
 
   return {

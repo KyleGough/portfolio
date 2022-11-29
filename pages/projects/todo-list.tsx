@@ -5,6 +5,11 @@ import { Pagination } from '@components/Pagination';
 import { ProjectHeader } from '@components/ProjectHeader';
 import { Screenshots } from '@components/Screenshots';
 import { Section } from '@components/Section';
+import imageHomepage from '@image/todo-list1.jpg';
+import imageShopping from '@image/todo-list2.jpg';
+import imageRegistration from '@image/todo-list3.jpg';
+import imageLists from '@image/todo-list4.jpg';
+import imageLogin from '@image/todo-list5.jpg';
 import { getProjectData } from '@utilities/Project';
 import { ProjectPageProps } from '@utilities/types';
 import { GetStaticProps } from 'next';
@@ -49,11 +54,11 @@ const ToDoList: React.FC<ProjectPageProps> = ({ images, project }) => (
 
 export const getStaticProps: GetStaticProps = async () => {
   const images = [
-    { src: '/img/todo-list1.jpg', alt: 'Homepage' },
-    { src: '/img/todo-list2.jpg', alt: 'Shopping list' },
-    { src: '/img/todo-list3.jpg', alt: 'New user registration' },
-    { src: '/img/todo-list4.jpg', alt: "User's lists" },
-    { src: '/img/todo-list5.jpg', alt: 'Existing login page' },
+    { imageData: imageHomepage, alt: 'Homepage' },
+    { imageData: imageShopping, alt: 'Shopping list' },
+    { imageData: imageRegistration, alt: 'New user registration' },
+    { imageData: imageLists, alt: "User's lists" },
+    { imageData: imageLogin, alt: 'Existing login page' },
   ];
 
   return {

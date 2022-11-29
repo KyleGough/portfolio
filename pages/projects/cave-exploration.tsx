@@ -5,6 +5,13 @@ import { Pagination } from '@components/Pagination';
 import { ProjectHeader } from '@components/ProjectHeader';
 import { Screenshots } from '@components/Screenshots';
 import { Section } from '@components/Section';
+import imageMultiDrone from '@image/cave-exploration1.jpg';
+import imageSingleDroneA from '@image/cave-exploration2.jpg';
+import imageSingleDroneB from '@image/cave-exploration3.jpg';
+import imageCaveGen1 from '@image/cave-generation1.png';
+import imageCaveGen2 from '@image/cave-generation2.png';
+import imageCaveGen3 from '@image/cave-generation3.png';
+import imageCaveGen4 from '@image/cave-generation4.png';
 import { getProjectData } from '@utilities/Project';
 import { ProjectPageProps } from '@utilities/types';
 import { GetStaticProps } from 'next';
@@ -76,21 +83,21 @@ const CaveExploration: React.FC<ProjectPageProps> = ({ images, project }) => (
 export const getStaticProps: GetStaticProps = async () => {
   const images = [
     {
-      src: '/img/cave-exploration1.jpg',
+      imageData: imageMultiDrone,
       alt: 'Multiple drone cave exploration',
     },
     {
-      src: '/img/cave-exploration2.jpg',
+      imageData: imageSingleDroneA,
       alt: 'Single drone cave exploration',
     },
     {
-      src: '/img/cave-exploration3.jpg',
+      imageData: imageSingleDroneB,
       alt: 'Single drone cave exploration',
     },
-    { src: '/img/cave-generation1.png', alt: 'Cave generation step 1' },
-    { src: '/img/cave-generation2.png', alt: 'Cave generation step 2' },
-    { src: '/img/cave-generation3.png', alt: 'Cave generation step 3' },
-    { src: '/img/cave-generation4.png', alt: 'Cave generation step 4' },
+    { imageData: imageCaveGen1, alt: 'Cave generation step 1' },
+    { imageData: imageCaveGen2, alt: 'Cave generation step 2' },
+    { imageData: imageCaveGen3, alt: 'Cave generation step 3' },
+    { imageData: imageCaveGen4, alt: 'Cave generation step 4' },
   ];
 
   return {

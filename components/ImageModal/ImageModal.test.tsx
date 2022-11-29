@@ -1,3 +1,4 @@
+import mockStaticImageData from '@mocks/mockStaticImageData';
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 
@@ -5,13 +6,15 @@ import { ImageModal } from './ImageModal';
 
 describe('ImageModal component', () => {
   it('renders', async () => {
-    const { container } = render(<ImageModal src="/#" alt="Test Caption" />);
+    const { container } = render(
+      <ImageModal image={mockStaticImageData} alt="Test Caption" />
+    );
     expect(screen.getByText('Test Caption')).toBeVisible();
     expect(container).toMatchSnapshot();
   });
 
   it('dialog opens and closes on click', async () => {
-    render(<ImageModal src="/#" alt="Test Caption" />);
+    render(<ImageModal image={mockStaticImageData} alt="Test Caption" />);
     expect(screen.getByText('Test Caption')).toBeVisible();
 
     // Modal should not be in the document by default.

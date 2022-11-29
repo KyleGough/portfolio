@@ -5,6 +5,11 @@ import { Pagination } from '@components/Pagination';
 import { ProjectHeader } from '@components/ProjectHeader';
 import { Screenshots } from '@components/Screenshots';
 import { Section } from '@components/Section';
+import imageNN2Opt from '@image/graph-algorithm-visualiser1.jpg';
+import imageNodes from '@image/graph-algorithm-visualiser2.jpg';
+import imageInfo from '@image/graph-algorithm-visualiser3.jpg';
+import imageGrahamScan from '@image/graph-algorithm-visualiser4.jpg';
+import imageRandomRoute from '@image/graph-algorithm-visualiser5.jpg';
 import { getProjectData } from '@utilities/Project';
 import { ProjectPageProps } from '@utilities/types';
 import { GetStaticProps } from 'next';
@@ -68,19 +73,19 @@ const GraphVisualiser: React.FC<ProjectPageProps> = ({ images, project }) => (
 export const getStaticProps: GetStaticProps = async () => {
   const images = [
     {
-      src: '/img/graph-algorithm-visualiser1.jpg',
+      imageData: imageNN2Opt,
       alt: 'Nearest Neighbour with 2-Opt',
     },
     {
-      src: '/img/graph-algorithm-visualiser2.jpg',
+      imageData: imageNodes,
       alt: 'Randomly generated nodes',
     },
     {
-      src: '/img/graph-algorithm-visualiser3.jpg',
+      imageData: imageInfo,
       alt: 'Algorithm information',
     },
-    { src: '/img/graph-algorithm-visualiser4.jpg', alt: 'Graham Scan' },
-    { src: '/img/graph-algorithm-visualiser5.jpg', alt: 'Random route' },
+    { imageData: imageGrahamScan, alt: 'Graham Scan' },
+    { imageData: imageRandomRoute, alt: 'Random route' },
   ];
 
   return {

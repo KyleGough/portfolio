@@ -5,6 +5,11 @@ import { Pagination } from '@components/Pagination';
 import { ProjectHeader } from '@components/ProjectHeader';
 import { Screenshots } from '@components/Screenshots';
 import { Section } from '@components/Section';
+import imageUploadTest from '@image/lucidlab1.jpg';
+import imageRSSI from '@image/lucidlab2.jpg';
+import imageCCA from '@image/lucidlab3.jpg';
+import imageUploadController from '@image/lucidlab4.jpg';
+import imageUploadImage from '@image/lucidlab5.jpg';
 import { getProjectData } from '@utilities/Project';
 import { ProjectPageProps } from '@utilities/types';
 import { GetStaticProps } from 'next';
@@ -73,11 +78,11 @@ const LucidLab: React.FC<ProjectPageProps> = ({ images, project }) => (
 
 export const getStaticProps: GetStaticProps = async () => {
   const images = [
-    { src: '/img/lucidlab1.jpg', alt: 'Upload test configuration page' },
-    { src: '/img/lucidlab4.jpg', alt: 'Upload IoT controller page' },
-    { src: '/img/lucidlab5.jpg', alt: 'Upload image page' },
-    { src: '/img/lucidlab2.jpg', alt: 'Mote RSSI Map' },
-    { src: '/img/lucidlab3.jpg', alt: 'Mote CCA Charts' },
+    { imageData: imageUploadTest, alt: 'Upload test configuration page' },
+    { imageData: imageUploadController, alt: 'Upload IoT controller page' },
+    { imageData: imageUploadImage, alt: 'Upload image page' },
+    { imageData: imageRSSI, alt: 'Mote RSSI Map' },
+    { imageData: imageCCA, alt: 'Mote CCA Charts' },
   ];
 
   return {

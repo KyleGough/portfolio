@@ -19,8 +19,14 @@ exports[`Screenshots component renders 1`] = `
         <img
           alt="Image A"
           class="cursor-pointer border-2 border-link hover:border-link-hover"
+          data-nimg="1"
+          decoding="async"
+          height="100"
           loading="lazy"
-          src="/#"
+          src="/_next/image?url=%2F%23image&w=256&q=75"
+          srcset="/_next/image?url=%2F%23image&w=128&q=75 1x, /_next/image?url=%2F%23image&w=256&q=75 2x"
+          style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+          width="100"
         />
         <figcaption
           class="my-2 text-sm text-center text-light font-thin"
@@ -34,8 +40,14 @@ exports[`Screenshots component renders 1`] = `
         <img
           alt="Image B"
           class="cursor-pointer border-2 border-link hover:border-link-hover"
+          data-nimg="1"
+          decoding="async"
+          height="100"
           loading="lazy"
-          src="/#"
+          src="/_next/image?url=%2F%23image&w=256&q=75"
+          srcset="/_next/image?url=%2F%23image&w=128&q=75 1x, /_next/image?url=%2F%23image&w=256&q=75 2x"
+          style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+          width="100"
         />
         <figcaption
           class="my-2 text-sm text-center text-light font-thin"

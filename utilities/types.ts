@@ -45,7 +45,7 @@ export interface Skill {
 
 export interface ProjectPageProps {
   images: {
-    src: string;
+    imageData: StaticImageData;
     alt: string;
   }[];
   project: Project;

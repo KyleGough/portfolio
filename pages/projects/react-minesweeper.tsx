@@ -4,6 +4,11 @@ import { Layout } from '@components/Layout';
 import { Pagination } from '@components/Pagination';
 import { ProjectHeader } from '@components/ProjectHeader';
 import { Screenshots } from '@components/Screenshots';
+import imageComplete from '@image/react-minesweeper1.jpg';
+import imagePartial from '@image/react-minesweeper2.jpg';
+import imageLost from '@image/react-minesweeper3.jpg';
+import imageInitial from '@image/react-minesweeper4.jpg';
+import imageIntro from '@image/react-minesweeper5.jpg';
 import { getProjectData } from '@utilities/Project';
 import { ProjectPageProps } from '@utilities/types';
 import { GetStaticProps } from 'next';
@@ -34,14 +39,14 @@ const Minesweeper: React.FC<ProjectPageProps> = ({ images, project }) => (
 
 export const getStaticProps: GetStaticProps = async () => {
   const images = [
-    { src: '/img/react-minesweeper1.jpg', alt: 'Complete game' },
+    { imageData: imageComplete, alt: 'Complete game' },
     {
-      src: '/img/react-minesweeper2.jpg',
+      imageData: imagePartial,
       alt: 'Partially complete game',
     },
-    { src: '/img/react-minesweeper3.jpg', alt: 'Lost game' },
-    { src: '/img/react-minesweeper4.jpg', alt: 'Initial board' },
-    { src: '/img/react-minesweeper5.jpg', alt: 'App introduction' },
+    { imageData: imageLost, alt: 'Lost game' },
+    { imageData: imageInitial, alt: 'Initial board' },
+    { imageData: imageIntro, alt: 'App introduction' },
   ];
 
   return {

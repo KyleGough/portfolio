@@ -5,6 +5,8 @@ import { Pagination } from '@components/Pagination';
 import { ProjectHeader } from '@components/ProjectHeader';
 import { Screenshots } from '@components/Screenshots';
 import { Section } from '@components/Section';
+import imageExample1 from '@image/url-shortener1.jpg';
+import imageExample2 from '@image/url-shortener2.jpg';
 import { getProjectData } from '@utilities/Project';
 import { ProjectPageProps } from '@utilities/types';
 import { GetStaticProps } from 'next';
@@ -50,8 +52,8 @@ const URLShortener: React.FC<ProjectPageProps> = ({ images, project }) => (
 
 export const getStaticProps: GetStaticProps = async () => {
   const images = [
-    { src: '/img/url-shortener1.jpg', alt: 'Shortened URL example 1' },
-    { src: '/img/url-shortener2.jpg', alt: 'Shortened URL example 2' },
+    { imageData: imageExample1, alt: 'Shortened URL example 1' },
+    { imageData: imageExample2, alt: 'Shortened URL example 2' },
   ];
 
   return {

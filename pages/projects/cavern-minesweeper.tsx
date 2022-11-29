@@ -5,6 +5,8 @@ import { Pagination } from '@components/Pagination';
 import { ProjectHeader } from '@components/ProjectHeader';
 import { Screenshots } from '@components/Screenshots';
 import { Section } from '@components/Section';
+import imageFinishGame from '@image/cavern-minesweeper1.jpg';
+import imageStartGame from '@image/cavern-minesweeper2.jpg';
 import { getProjectData } from '@utilities/Project';
 import { ProjectPageProps } from '@utilities/types';
 import { GetStaticProps } from 'next';
@@ -50,8 +52,8 @@ const CavernMinesweeper: React.FC<ProjectPageProps> = ({ images, project }) => (
 
 export const getStaticProps: GetStaticProps = async () => {
   const images = [
-    { src: '/img/cavern-minesweeper1.jpg', alt: 'Finished game' },
-    { src: '/img/cavern-minesweeper2.jpg', alt: 'New game' },
+    { imageData: imageFinishGame, alt: 'Finished game' },
+    { imageData: imageStartGame, alt: 'New game' },
   ];
 
   return {

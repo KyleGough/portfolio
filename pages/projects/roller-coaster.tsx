@@ -5,6 +5,10 @@ import { Pagination } from '@components/Pagination';
 import { ProjectHeader } from '@components/ProjectHeader';
 import { Screenshots } from '@components/Screenshots';
 import { Section } from '@components/Section';
+import imageBackCart from '@image/roller-coaster1.jpg';
+import imageTracking from '@image/roller-coaster2.jpg';
+import imageCentreCart from '@image/roller-coaster3.jpg';
+import imageCloseup from '@image/roller-coaster4.jpg';
 import { getProjectData } from '@utilities/Project';
 import { ProjectPageProps } from '@utilities/types';
 import { GetStaticProps } from 'next';
@@ -50,10 +54,10 @@ const RollerCoaster: React.FC<ProjectPageProps> = ({ images, project }) => (
 
 export const getStaticProps: GetStaticProps = async () => {
   const images = [
-    { src: '/img/roller-coaster1.jpg', alt: 'Back cart camera view' },
-    { src: '/img/roller-coaster2.jpg', alt: 'Tracking camera view' },
-    { src: '/img/roller-coaster3.jpg', alt: 'Center cart camera view' },
-    { src: '/img/roller-coaster4.jpg', alt: 'Cart closeup' },
+    { imageData: imageBackCart, alt: 'Back cart camera view' },
+    { imageData: imageTracking, alt: 'Tracking camera view' },
+    { imageData: imageCentreCart, alt: 'Centre cart camera view' },
+    { imageData: imageCloseup, alt: 'Cart closeup' },
   ];
 
   return {
