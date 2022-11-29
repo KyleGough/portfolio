@@ -6,6 +6,8 @@ import { Pagination } from '@components/Pagination';
 import { ProjectHeader } from '@components/ProjectHeader';
 import { Screenshots } from '@components/Screenshots';
 import { Section } from '@components/Section';
+import imagePopup from '@image/bookmark-labeller.jpg';
+import imageFolder from '@image/bookmark-labeller-folder.jpg';
 import { getProjectData } from '@utilities/Project';
 import { ProjectPageProps } from '@utilities/types';
 import { GetStaticProps } from 'next';
@@ -79,11 +81,11 @@ const BookmarkLabeller: React.FC<ProjectPageProps> = ({ images, project }) => (
 export const getStaticProps: GetStaticProps = async () => {
   const images = [
     {
-      src: '/img/bookmark-labeller.jpg',
+      imageData: imagePopup,
       alt: 'Bookmark Labeller Extension Popup',
     },
     {
-      src: '/img/bookmark-labeller-folder.jpg',
+      imageData: imageFolder,
       alt: 'Labelled bookmark folder',
     },
   ];

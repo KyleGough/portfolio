@@ -5,6 +5,11 @@ import { ProjectHeader } from '@components/ProjectHeader';
 import { Screenshots } from '@components/Screenshots';
 import { Section } from '@components/Section';
 import { VideoFigure } from '@components/VideoFigure';
+import imageUnsorted from '@image/sorting-algorithm-visualiser1.jpg';
+import imageRandom from '@image/sorting-algorithm-visualiser2.jpg';
+import imageBitonic from '@image/sorting-algorithm-visualiser3.jpg';
+import imagePoints from '@image/sorting-algorithm-visualiser4.jpg';
+import imageInfo from '@image/sorting-algorithm-visualiser5.jpg';
 import algorithms from '@utilities/algorithms.json';
 import { getProjectData } from '@utilities/Project';
 import { ProjectPageProps } from '@utilities/types';
@@ -95,23 +100,23 @@ const SortingVisualiser: React.FC<ProjectPageProps> = ({ images, project }) => (
 export const getStaticProps: GetStaticProps = async () => {
   const images = [
     {
-      src: '/img/sorting-algorithm-visualiser1.jpg',
+      imageData: imageUnsorted,
       alt: 'Unsorted Random Data',
     },
     {
-      src: '/img/sorting-algorithm-visualiser2.jpg',
+      imageData: imageRandom,
       alt: 'Random and sinusoidal datasets',
     },
     {
-      src: '/img/sorting-algorithm-visualiser3.jpg',
+      imageData: imageBitonic,
       alt: 'Bitonic sort and sorted dataset',
     },
     {
-      src: '/img/sorting-algorithm-visualiser4.jpg',
+      imageData: imagePoints,
       alt: 'Dataset visualised as points',
     },
     {
-      src: '/img/sorting-algorithm-visualiser5.jpg',
+      imageData: imageInfo,
       alt: 'Algorithm information table',
     },
   ];

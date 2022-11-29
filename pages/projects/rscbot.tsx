@@ -5,6 +5,12 @@ import { Pagination } from '@components/Pagination';
 import { ProjectHeader } from '@components/ProjectHeader';
 import { Screenshots } from '@components/Screenshots';
 import { Section } from '@components/Section';
+import imageStockQuery from '@image/rscbot1.jpg';
+import imageNewsfeed from '@image/rscbot2.jpg';
+import imageFavourites from '@image/rscbot3.jpg';
+import imageNewsQuery from '@image/rscbot4.jpg';
+import imageOther from '@image/rscbot5.jpg';
+import imageHelp from '@image/rscbot6.jpg';
 import { getProjectData } from '@utilities/Project';
 import { ProjectPageProps } from '@utilities/types';
 import { GetStaticProps } from 'next';
@@ -56,15 +62,15 @@ const RSCBot: React.FC<ProjectPageProps> = ({ images, project }) => (
 
 export const getStaticProps: GetStaticProps = async () => {
   const images = [
-    { src: '/img/rscbot1.jpg', alt: 'Stock query' },
+    { imageData: imageStockQuery, alt: 'Stock query' },
     {
-      src: '/img/rscbot2.jpg',
+      imageData: imageNewsfeed,
       alt: 'Hourly newsfeed with natural language processing',
     },
-    { src: '/img/rscbot3.jpg', alt: 'Favourites selection' },
-    { src: '/img/rscbot4.jpg', alt: 'News query' },
-    { src: '/img/rscbot5.jpg', alt: 'Other queries' },
-    { src: '/img/rscbot6.jpg', alt: 'Help modal' },
+    { imageData: imageFavourites, alt: 'Favourites selection' },
+    { imageData: imageNewsQuery, alt: 'News query' },
+    { imageData: imageOther, alt: 'Other queries' },
+    { imageData: imageHelp, alt: 'Help modal' },
   ];
 
   return {

@@ -5,6 +5,7 @@ import { Pagination } from '@components/Pagination';
 import { ProjectHeader } from '@components/ProjectHeader';
 import { Screenshots } from '@components/Screenshots';
 import { Section } from '@components/Section';
+import imageWebsite from '@image/ai-space-telescope1.jpg';
 import { getProjectData } from '@utilities/Project';
 import { ProjectPageProps } from '@utilities/types';
 import { GetStaticProps } from 'next';
@@ -54,7 +55,7 @@ const AISpaceTelescope: React.FC<ProjectPageProps> = ({ images, project }) => (
 export const getStaticProps: GetStaticProps = async () => {
   const images = [
     {
-      src: '/img/ai-space-telescope1.jpg',
+      imageData: imageWebsite,
       alt: 'AI Space Telescope Website',
     },
   ];
