@@ -40,7 +40,7 @@ const About: React.FC = () => {
         </p>
         <div className="flex justify-center md:block">
           <Link
-            className="w-fit shimmer group flex items-center px-8 py-2 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-lg border-2"
+            className="w-fit group flex items-center px-8 py-2 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-lg border-2"
             href="/CV.pdf"
           >
             <p>Read my CV</p>
