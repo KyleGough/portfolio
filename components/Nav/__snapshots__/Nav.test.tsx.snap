@@ -12,7 +12,7 @@ exports[`Nav component renders 1`] = `
         class="flex items-center flex-shrink-0 mr-6"
       >
         <div
-          class="ml-6 w-8 h-8"
+          class="mx-6 w-8 h-8"
         >
           <img
             alt="Website Logo"
@@ -29,15 +29,11 @@ exports[`Nav component renders 1`] = `
         <a
           href="/"
         >
-          <p
-            class="ml-3"
+          <span
+            class="text-xl tracking-normal"
           >
-            <span
-              class="text-xl tracking-normal"
-            >
-              Kyle Gough
-            </span>
-          </p>
+            Kyle Gough
+          </span>
         </a>
       </div>
       <button

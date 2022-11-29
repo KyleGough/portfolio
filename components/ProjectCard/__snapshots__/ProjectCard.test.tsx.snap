@@ -11,11 +11,21 @@ exports[`ProjectCard component renders 1`] = `
       <div
         class="opacity-0 transition-opacity duration-1000"
       >
-        <img
-          alt="Alt Text"
+        <div
           class="w-full"
-          src="/#image"
-        />
+        >
+          <img
+            alt="Alt Text"
+            data-nimg="1"
+            decoding="async"
+            height="360"
+            loading="lazy"
+            src="/_next/image?url=%2F%23image&w=1920&q=75"
+            srcset="/_next/image?url=%2F%23image&w=640&q=75 1x, /_next/image?url=%2F%23image&w=1920&q=75 2x"
+            style="color: transparent;"
+            width="640"
+          />
+        </div>
         <div
           class="text-white p-4 font-bold group-hover:brightness-125 group-focus:brightness-125 bg-nav-light"
         >
