@@ -113,8 +113,8 @@ const About: React.FC = () => {
           <GoalListItem name="ESLint" progress={Progress.GREEN} />
           <GoalListItem name="GitHub Actions" progress={Progress.GREEN} />
           <GoalListItem name="WebExtensions API" progress={Progress.GREEN} />
+          <GoalListItem name="Next.js" progress={Progress.GREEN} />
           <GoalListItem name="Rust" progress={Progress.AMBER} />
-          <GoalListItem name="Next.js" progress={Progress.AMBER} />
           <GoalListItem name="Web Sockets" progress={Progress.RED} />
         </ul>
       </Section>
