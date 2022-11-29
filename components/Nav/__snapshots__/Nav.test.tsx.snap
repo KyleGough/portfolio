@@ -12,7 +12,7 @@ exports[`Nav component renders 1`] = `
         class="flex items-center flex-shrink-0 mr-6"
       >
         <div
-          class="mx-6 w-8 h-8"
+          class="mx-5 w-8 h-8"
         >
           <img
             alt="Website Logo"
