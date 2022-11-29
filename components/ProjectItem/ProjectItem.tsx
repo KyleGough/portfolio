@@ -1,7 +1,7 @@
 import { Section } from '@components/Section';
 import { getDateRange } from '@utilities/date';
 import { ProjectDate } from '@utilities/types';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -10,7 +10,7 @@ interface ProjectItemProps {
   date: ProjectDate;
   description: string;
   link: string;
-  src: string;
+  image: StaticImageData;
   alt: string;
   logo: {
     src: string;
@@ -23,7 +23,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
   date,
   description,
   link,
-  src,
+  image,
   alt,
   logo,
 }) => (
@@ -37,11 +37,14 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
       <div className="col-span-12 lg:col-span-5 text-center -mb-8">
         <Link href={link}>
           <div className="block group relative">
-            <img
-              loading="lazy"
+            <Image
               className="border-2 border-white rounded-lg shadow"
-              src={src}
+              src={image.src}
               alt={alt}
+              width={image.width}
+              height={image.height}
+              placeholder="blur"
+              blurDataURL={image.blurDataURL}
             />
             <div className="absolute top-2 right-2 w-8 h-8 drop-shadow">
               <Image src={logo.src} alt={logo.alt} width={30} height={30} />

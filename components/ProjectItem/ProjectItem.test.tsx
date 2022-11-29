@@ -14,7 +14,12 @@ describe('ProjectItem component', () => {
         }}
         description="Sample Description"
         link="/#project"
-        src="/#image"
+        image={{
+          src: '/#image',
+          height: 100,
+          width: 100,
+          blurDataURL: '/#blur',
+        }}
         alt="Test Alt Text"
         logo={{ src: '/#logo', alt: 'Logo' }}
       />
