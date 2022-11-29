@@ -10,7 +10,12 @@ describe('ProjectCard component', () => {
   it('renders', async () => {
     const { container } = render(
       <ProjectCard
-        src="/#image"
+        image={{
+          src: '/#image',
+          width: 100,
+          height: 100,
+          blurDataURL: '/#blur',
+        }}
         alt="Alt Text"
         date={{ month: 4, year: 2022 }}
         link="/#project"

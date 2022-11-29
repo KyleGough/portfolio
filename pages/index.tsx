@@ -7,6 +7,9 @@ import { Section } from '@components/Section';
 import { TimelineWidget } from '@components/TimelineWidget';
 import { useObserveElement } from '@hooks/useObserveElement';
 import { useTypewriter } from '@hooks/useTypewriter';
+import imageAISpaceTelescope from '@image/ai-space-telescope1.jpg';
+import imageCaveExploration from '@image/card-cave-exploration.jpg';
+import imageSudoku from '@image/card-sudoku.jpg';
 import { clsx } from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -54,7 +57,7 @@ const Home: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 mb-8 px-4">
             <ProjectCard
-              src="/img/card-sudoku.jpg"
+              image={imageSudoku}
               alt="Logical Sudoku Solver Project Card"
               date={{
                 month: 1,
@@ -65,7 +68,7 @@ const Home: React.FC = () => {
             />
             <ProjectCard
               className="md:delay-100"
-              src="/img/ai-space-telescope1.jpg"
+              image={imageAISpaceTelescope}
               alt="AI Space Telescope Project Card"
               date={{
                 month: 11,
@@ -76,7 +79,7 @@ const Home: React.FC = () => {
             />
             <ProjectCard
               className="md:delay-200"
-              src="/img/card-cave-exploration.jpg"
+              image={imageCaveExploration}
               alt="Cave Exploration Project Card"
               date={{
                 month: 4,
