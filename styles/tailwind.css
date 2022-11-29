@@ -29,3 +29,9 @@
     @apply ml-4;
   }
 }
+
+@layer utilities {
+  .clip-inset {
+    clip-path: inset(0);
+  }
+}

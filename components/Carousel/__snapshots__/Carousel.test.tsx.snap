@@ -9,11 +9,37 @@ exports[`Carousel component renders 1`] = `
       class="absolute inset-0 bg-black opacity-70 w-full h-full z-10"
     />
     <div
-      class="bg-1 opacity-100 absolute top-0 left-0 w-full h-full bg-fixed bg-center bg-cover duration-2000 transition-opacity"
-    />
+      class="opacity-100 absolute top-0 left-0 w-full h-full clip-inset duration-2000 transition-opacity"
+    >
+      <img
+        alt=""
+        class="fixed object-cover object-center w-full h-full"
+        data-nimg="1"
+        decoding="async"
+        height="100"
+        loading="lazy"
+        src="/_next/image?url=%2F%23image&w=256&q=75"
+        srcset="/_next/image?url=%2F%23image&w=128&q=75 1x, /_next/image?url=%2F%23image&w=256&q=75 2x"
+        style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+        width="100"
+      />
+    </div>
     <div
-      class="bg-2 opacity-0 absolute top-0 left-0 w-full h-full bg-fixed bg-center bg-cover duration-2000 transition-opacity"
-    />
+      class="opacity-0 absolute top-0 left-0 w-full h-full clip-inset duration-2000 transition-opacity"
+    >
+      <img
+        alt=""
+        class="fixed object-cover object-center w-full h-full"
+        data-nimg="1"
+        decoding="async"
+        height="100"
+        loading="lazy"
+        src="/_next/image?url=%2F%23image&w=256&q=75"
+        srcset="/_next/image?url=%2F%23image&w=128&q=75 1x, /_next/image?url=%2F%23image&w=256&q=75 2x"
+        style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+        width="100"
+      />
+    </div>
     <div
       class="z-20 absolute inset-0 text-white mx-auto text-center flex tracking-tight items-center"
     >

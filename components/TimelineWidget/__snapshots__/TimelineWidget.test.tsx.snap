@@ -18,12 +18,12 @@ exports[`TimelineWidget component renders 1`] = `
             alt="Atom Learning"
             data-nimg="1"
             decoding="async"
-            height="192"
+            height="40"
             loading="lazy"
-            src="/_next/image?url=%2Fimg%2Fatom.png&w=1920&q=75"
-            srcset="/_next/image?url=%2Fimg%2Fatom.png&w=750&q=75 1x, /_next/image?url=%2Fimg%2Fatom.png&w=1920&q=75 2x"
-            style="color: transparent;"
-            width="706"
+            src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
+            srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+            style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+            width="40"
           />
         </div>
       </div>
@@ -67,12 +67,12 @@ exports[`TimelineWidget component renders 1`] = `
             alt="Bank of America"
             data-nimg="1"
             decoding="async"
-            height="339"
+            height="40"
             loading="lazy"
-            src="/_next/image?url=%2Fimg%2Fbofa.png&w=1920&q=75"
-            srcset="/_next/image?url=%2Fimg%2Fbofa.png&w=640&q=75 1x, /_next/image?url=%2Fimg%2Fbofa.png&w=1920&q=75 2x"
-            style="color: transparent;"
-            width="602"
+            src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
+            srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+            style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+            width="40"
           />
         </div>
       </div>
@@ -110,12 +110,12 @@ exports[`TimelineWidget component renders 1`] = `
             alt="Bank of America"
             data-nimg="1"
             decoding="async"
-            height="339"
+            height="40"
             loading="lazy"
-            src="/_next/image?url=%2Fimg%2Fbofa.png&w=1920&q=75"
-            srcset="/_next/image?url=%2Fimg%2Fbofa.png&w=640&q=75 1x, /_next/image?url=%2Fimg%2Fbofa.png&w=1920&q=75 2x"
-            style="color: transparent;"
-            width="602"
+            src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
+            srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+            style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+            width="40"
           />
         </div>
       </div>

@@ -10,6 +10,9 @@ import { useTypewriter } from '@hooks/useTypewriter';
 import imageAISpaceTelescope from '@image/ai-space-telescope1.jpg';
 import imageCaveExploration from '@image/card-cave-exploration.jpg';
 import imageSudoku from '@image/card-sudoku.jpg';
+import imageHeader1 from '@image/header1.jpg';
+import imageHeader2 from '@image/header2.jpg';
+import imageHeader3 from '@image/header3.jpg';
 import { clsx } from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -28,7 +31,7 @@ const Home: React.FC = () => {
     threshold: 0.5,
   });
 
-  const backgrounds = ['bg-header1', 'bg-header2', 'bg-header3'];
+  const backgrounds = [imageHeader1, imageHeader2, imageHeader3];
 
   return (
     <Layout title="Portfolio - Kyle Gough">
