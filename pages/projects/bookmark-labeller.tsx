@@ -30,10 +30,11 @@ const BookmarkLabeller: React.FC<ProjectPageProps> = ({ images, project }) => (
         <div className="w-8 h-8 mr-2">
           <Image src={FirefoxLogo} alt="Firefox Logo" width={30} height={30} />
         </div>
-        <Link href="https://addons.mozilla.org/en-US/firefox/addon/bookmark-labeller/">
-          <a className="text-2xl text-link hover:text-link-hover focus:text-link-hover">
-            Install from the Mozilla Add-On Marketplace
-          </a>
+        <Link
+          className="text-2xl text-link hover:text-link-hover focus:text-link-hover"
+          href="https://addons.mozilla.org/en-US/firefox/addon/bookmark-labeller/"
+        >
+          Install from the Mozilla Add-On Marketplace
         </Link>
       </div>
     </Section>

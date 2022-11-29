@@ -1,7 +1,7 @@
 import { GitHubIcon, MenuIcon } from '@components/Icons';
+import { Link } from '@components/Link';
 import { clsx } from 'clsx';
 import Image from 'next/image';
-import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
 
 export const Nav: React.FC = () => {
@@ -44,8 +44,8 @@ export const Nav: React.FC = () => {
               height={30}
             />
           </div>
-          <Link href="/">
-            <span className="text-xl tracking-normal">Kyle Gough</span>
+          <Link to="/" className="text-xl tracking-normal">
+            Kyle Gough
           </Link>
         </div>
         <button
@@ -58,32 +58,33 @@ export const Nav: React.FC = () => {
         </button>
         <div className="hidden md:block flex-grow w-auto">
           <div className="flex-grow text-right">
-            <Link href="/">
-              <p className="border-bottom-slide inline-block px-5 py-5 mt-0">
-                Home
-              </p>
+            <Link
+              className="border-bottom-slide inline-block px-5 py-5 mt-0"
+              to="/"
+            >
+              Home
             </Link>
-            <Link href="/projects">
-              <p className="border-bottom-slide inline-block px-5 py-5 mt-0">
-                Projects
-              </p>
+            <Link
+              className="border-bottom-slide inline-block px-5 py-5 mt-0"
+              to="/projects"
+            >
+              Projects
             </Link>
-            <Link href="/about">
-              <p className="border-bottom-slide inline-block px-5 py-5 mt-0">
-                About Me
-              </p>
+            <Link
+              className="border-bottom-slide inline-block px-5 py-5 mt-0"
+              to="/about"
+            >
+              About Me
             </Link>
           </div>
         </div>
-        <a
+        <Link
           className="border-bottom-slide hidden md:block px-6 py-5"
           href="https://github.com/KyleGough"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub Profile"
+          ariaLabel="GitHub Profile"
         >
           <GitHubIcon className="w-6 h-6 fill-white" />
-        </a>
+        </Link>
       </div>
       <div
         ref={mobileNavRef}
@@ -95,40 +96,35 @@ export const Nav: React.FC = () => {
         )}
       >
         <div className="text-link leading-8 bg-background">
-          <Link href="/">
-            <p
-              onClick={closeDrawer}
-              className="block hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm"
-            >
-              Home
-            </p>
+          <Link
+            className="block hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm"
+            to="/"
+            onClick={closeDrawer}
+          >
+            Home
           </Link>
-          <Link href="/projects">
-            <p
-              onClick={closeDrawer}
-              className="block hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm"
-            >
-              Projects
-            </p>
+          <Link
+            className="block hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm"
+            to="/projects"
+            onClick={closeDrawer}
+          >
+            Projects
           </Link>
-          <Link href="/about">
-            <p
-              onClick={closeDrawer}
-              className="block hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm"
-            >
-              About Me
-            </p>
+          <Link
+            className="block hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm"
+            to="/about"
+            onClick={closeDrawer}
+          >
+            About Me
           </Link>
-          <a
+          <Link
+            className="group flex items-center hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm"
             onClick={closeDrawer}
             href="https://github.com/KyleGough"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm"
           >
             <GitHubIcon className="w-6 h-6 mr-2 fill-link group-hover:fill-link-hover group-focus:fill-link-hover" />
             GitHub
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
