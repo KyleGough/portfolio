@@ -14,13 +14,13 @@ import imageSortingVisualiser from '@image/card-sorting-algorithm-visualiser.jpg
 import imageSudoku from '@image/card-sudoku.jpg';
 import imageToDoList from '@image/card-todo.jpg';
 import imageURLShortener from '@image/card-url-shortener.jpg';
-import CPlusPlusLogo from 'public/img/skill/cplusplus.svg';
-import CSharpLogo from 'public/img/skill/csharp.svg';
-import JavaScriptLogo from 'public/img/skill/javascript.svg';
-import PythonLogo from 'public/img/skill/python.svg';
-import ReactLogo from 'public/img/skill/react.svg';
-import RubyLogo from 'public/img/skill/ruby.svg';
-import TypeScriptLogo from 'public/img/skill/typescript.svg';
+import CPlusPlusLogo from '@image/skill/cplusplus.svg';
+import CSharpLogo from '@image/skill/csharp.svg';
+import JavaScriptLogo from '@image/skill/javascript.svg';
+import PythonLogo from '@image/skill/python.svg';
+import ReactLogo from '@image/skill/react.svg';
+import RubyLogo from '@image/skill/ruby.svg';
+import TypeScriptLogo from '@image/skill/typescript.svg';
 
 import { Project } from './types';
 

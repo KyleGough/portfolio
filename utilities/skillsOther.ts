@@ -1,8 +1,8 @@
+import BashLogo from '@image/skill/bash.svg';
+import GitLogo from '@image/skill/git.svg';
+import ManjaroLogo from '@image/skill/manjaro.svg';
+import MarkdownLogo from '@image/skill/markdown.svg';
 import { Skill } from '@utilities/types';
-import BashLogo from 'public/img/skill/bash.svg';
-import GitLogo from 'public/img/skill/git.svg';
-import ManjaroLogo from 'public/img/skill/manjaro.svg';
-import MarkdownLogo from 'public/img/skill/markdown.svg';
 
 export const skillsOther: Skill[] = [
   {

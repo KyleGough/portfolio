@@ -8,11 +8,11 @@ import { Screenshots } from '@components/Screenshots';
 import { Section } from '@components/Section';
 import imagePopup from '@image/bookmark-labeller.jpg';
 import imageFolder from '@image/bookmark-labeller-folder.jpg';
+import FirefoxLogo from '@image/firefox.svg';
 import { getProjectData } from '@utilities/Project';
 import { ProjectPageProps } from '@utilities/types';
 import { GetStaticProps } from 'next';
 import Image from 'next/image';
-import FirefoxLogo from 'public/img/firefox.svg';
 import React from 'react';
 
 const BookmarkLabeller: React.FC<ProjectPageProps> = ({ images, project }) => (

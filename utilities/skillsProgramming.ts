@@ -1,9 +1,9 @@
+import CPlusPlusLogo from '@image/skill/cplusplus.svg';
+import CSharpLogo from '@image/skill/csharp.svg';
+import JavaLogo from '@image/skill/java.svg';
+import PythonLogo from '@image/skill/python.svg';
+import VBLogo from '@image/skill/vb.svg';
 import { Skill } from '@utilities/types';
-import CPlusPlusLogo from 'public/img/skill/cplusplus.svg';
-import CSharpLogo from 'public/img/skill/csharp.svg';
-import JavaLogo from 'public/img/skill/java.svg';
-import PythonLogo from 'public/img/skill/python.svg';
-import VBLogo from 'public/img/skill/vb.svg';
 
 export const skillsProgramming: Skill[] = [
   {
