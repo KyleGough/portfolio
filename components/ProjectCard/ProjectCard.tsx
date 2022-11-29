@@ -3,6 +3,7 @@ import { ProjectChip } from '@components/ProjectChip';
 import { getFormattedDate, getShortDate } from '@utilities/date';
 import { Date } from '@utilities/types';
 import { clsx } from 'clsx';
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -33,7 +34,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         )}
       >
         <FadeIn className={className}>
-          <img className="w-full" src={src} alt={alt} />
+          <div className="w-full">
+            <Image src={src} alt={alt} width={640} height={360} />
+          </div>
           <div className="text-white p-4 font-bold group-hover:brightness-125 group-focus:brightness-125 bg-nav-light">
             <div className="flex justify-between items-center">
               <p className="text-sm opacity-80">

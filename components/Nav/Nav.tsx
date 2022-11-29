@@ -36,7 +36,7 @@ export const Nav: React.FC = () => {
     <nav className="leading-6 w-full absolute z-50">
       <div className="flex relative z-[200] items-center justify-between flex-wrap bg-nav text-white px-2">
         <div className="flex items-center flex-shrink-0 mr-6">
-          <div className="ml-6 w-8 h-8">
+          <div className="mx-6 w-8 h-8">
             <Image
               src="/favicon-32x32.png"
               alt="Website Logo"
@@ -45,9 +45,7 @@ export const Nav: React.FC = () => {
             />
           </div>
           <Link href="/">
-            <p className="ml-3">
-              <span className="text-xl tracking-normal">Kyle Gough</span>
-            </p>
+            <span className="text-xl tracking-normal">Kyle Gough</span>
           </Link>
         </div>
         <button

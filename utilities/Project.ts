@@ -109,7 +109,7 @@ export const projects: Project[] = [
         year: 2016,
       },
       end: {
-        month: 10,
+        month: 11,
         year: 2022,
       },
     },
