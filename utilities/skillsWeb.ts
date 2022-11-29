@@ -1,10 +1,10 @@
+import CSSLogo from '@image/skill/css.svg';
+import HTMLLogo from '@image/skill/html.svg';
+import JavaScriptLogo from '@image/skill/javascript.svg';
+import ReactLogo from '@image/skill/react.svg';
+import TailwindLogo from '@image/skill/tailwind.svg';
+import TypeScriptLogo from '@image/skill/typescript.svg';
 import { Skill } from '@utilities/types';
-import CSSLogo from 'public/img/skill/css.svg';
-import HTMLLogo from 'public/img/skill/html.svg';
-import JavaScriptLogo from 'public/img/skill/javascript.svg';
-import ReactLogo from 'public/img/skill/react.svg';
-import TailwindLogo from 'public/img/skill/tailwind.svg';
-import TypeScriptLogo from 'public/img/skill/typescript.svg';
 
 export const skillsWeb: Skill[] = [
   {
@@ -30,8 +30,8 @@ export const skillsWeb: Skill[] = [
   },
   {
     name: 'Tailwind',
-    progress: 75,
-    className: 'w-[75%]',
+    progress: 80,
+    className: 'w-[80%]',
     description: 'Portfolio',
     logo: TailwindLogo,
   },
