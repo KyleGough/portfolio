@@ -33,20 +33,24 @@ export const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => {
       <p className="mb-4 max-w-reading">{project.description}</p>
 
       {(project.github || project.liveLink) && (
-        <ul className="project-list">
+        <div className="block sm:flex gap-2">
           {project.github && (
-            <li className="mb-4">
-              <span>Explore this project on </span>
-              <Link href={project.github}>GitHub</Link>
-            </li>
+            <Link
+              className="w-fit block my-2 px-8 py-2 bg-background rounded-lg border-2 text-link hover:text-link-hover focus:text-hover-link"
+              href={project.github}
+            >
+              Explore project on GitHub
+            </Link>
           )}
           {project.liveLink && (
-            <li className="mb-4">
-              <span>Explore this project live </span>
-              <Link href={project.liveLink}>here</Link>
-            </li>
+            <Link
+              className="w-fit block my-2 px-8 py-2 bg-background rounded-lg border-2 text-link hover:text-link-hover focus:text-link-hover"
+              href={project.liveLink}
+            >
+              Explore project live
+            </Link>
           )}
-        </ul>
+        </div>
       )}
 
       <div className="flex flex-row flex-wrap items-center mt-8 gap-4">

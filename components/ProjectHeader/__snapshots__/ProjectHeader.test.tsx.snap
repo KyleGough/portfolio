@@ -37,25 +37,18 @@ exports[`ProjectHeader component renders 1`] = `
     >
       Personal portfolio website
     </p>
-    <ul
-      class="project-list"
+    <div
+      class="block sm:flex gap-2"
     >
-      <li
-        class="mb-4"
+      <a
+        class="w-fit block my-2 px-8 py-2 bg-background rounded-lg border-2 text-link hover:text-link-hover focus:text-hover-link"
+        href="https://github.com/KyleGough/portfolio"
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        <span>
-          Explore this project on 
-        </span>
-        <a
-          class="text-link hover:text-link-hover focus:text-link-hover"
-          href="https://github.com/KyleGough/portfolio"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          GitHub
-        </a>
-      </li>
-    </ul>
+        Explore project on GitHub
+      </a>
+    </div>
     <div
       class="flex flex-row flex-wrap items-center mt-8 gap-4"
     >

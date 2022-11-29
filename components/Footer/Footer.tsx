@@ -1,4 +1,5 @@
 import { EmailIcon, GitHubIcon, LinkedInIcon } from '@components/Icons';
+import { Link } from '@components/Link';
 import React from 'react';
 
 import { FooterLink } from './FooterLink';
@@ -16,15 +17,13 @@ export const Footer: React.FC = () => (
               interests in Bouldering, Cycling, Guitar, Movies and Physics.
             </p>
             <div className="flex flex-row justify-center lg:justify-start">
-              <a
+              <Link
                 className="group flex justify-center fill-white hover:text-nav-hover hover:fill-nav-hover"
                 href="mailto:kylegough98@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 <EmailIcon className="w-6 h-6 mr-2" />
                 <p className="ml-1">kylegough98@gmail.com</p>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="w-full sm:w-6/12 lg:w-4/12 px-6 py-6">
@@ -50,37 +49,28 @@ export const Footer: React.FC = () => (
             <p className="font-header text-xl pb-6">Website</p>
             <ul>
               <li>
-                <a
-                  href="/CV.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 hover:text-nav-hover"
-                >
+                <Link className="p-2 hover:text-nav-hover" href="/CV.pdf">
                   CV
-                </a>
+                </Link>
               </li>
               <FooterLink href="/about">About Me</FooterLink>
               <FooterLink href="/projects">Projects</FooterLink>
               <FooterLink href="/privacy">Privacy</FooterLink>
               <li className="text-center flex justify-center">
-                <a
+                <Link
                   className="py-2 group"
                   href="https://github.com/KyleGough"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub Profile"
+                  ariaLabel="GitHub Profile"
                 >
                   <GitHubIcon className="w-6 h-6 fill-white group-hover:fill-nav-hover" />
-                </a>
-                <a
+                </Link>
+                <Link
                   className="py-2 ml-2 group"
                   href="https://www.linkedin.com/in/kyle-gough-882467161/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn Profile"
+                  ariaLabel="LinkedIn Profile"
                 >
                   <LinkedInIcon className="w-6 h-6 fill-white group-hover:fill-nav-hover" />
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
