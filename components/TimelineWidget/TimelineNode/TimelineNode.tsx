@@ -1,6 +1,6 @@
 import { FadeIn } from '@components/FadeIn';
 import { clsx } from 'clsx';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 
 interface TimelineNodeProps {
@@ -8,11 +8,7 @@ interface TimelineNodeProps {
   subtitle: string;
   date: string;
   align: 'left' | 'right';
-  logo: {
-    src: string;
-    width: number;
-    height: number;
-  };
+  logo: StaticImageData;
 }
 
 export const TimelineNode: React.FC<TimelineNodeProps> = ({
@@ -41,6 +37,8 @@ export const TimelineNode: React.FC<TimelineNodeProps> = ({
               alt={title}
               width={logo.width}
               height={logo.height}
+              placeholder="blur"
+              blurDataURL={logo.blurDataURL}
             />
           </div>
         </FadeIn>

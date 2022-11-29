@@ -1,4 +1,5 @@
 import mockIntersectionObserver from '@mocks/mockIntersectionObserver';
+import mockStaticImageData from '@mocks/mockStaticImageData';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 
@@ -14,7 +15,7 @@ describe('TimelineNode component', () => {
         subtitle="CEO"
         date="January 2000 - Present"
         align="left"
-        logo={{ src: '/#logo', width: 100, height: 100 }}
+        logo={mockStaticImageData}
       />
     );
     expect(screen.getByText('CEO')).toBeVisible();
