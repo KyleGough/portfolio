@@ -1,3 +1,4 @@
+import mockStaticImageData from '@mocks/mockStaticImageData';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 
@@ -8,8 +9,8 @@ describe('Screenshots component', () => {
     const { container } = render(
       <Screenshots
         images={[
-          { src: '/#', alt: 'Image A' },
-          { src: '/#', alt: 'Image B' },
+          { imageData: mockStaticImageData, alt: 'Image A' },
+          { imageData: mockStaticImageData, alt: 'Image B' },
         ]}
       />
     );

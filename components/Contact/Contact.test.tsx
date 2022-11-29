@@ -1,4 +1,4 @@
-import { mockIntersectionObserver } from '@mocks/mockIntersectionObserver';
+import mockIntersectionObserver from '@mocks/mockIntersectionObserver';
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import axios from 'axios';
 import React from 'react';

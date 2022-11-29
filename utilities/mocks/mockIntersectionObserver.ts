@@ -1,4 +1,4 @@
-export const mockIntersectionObserver = () => {
+const mockIntersectionObserver = () => {
   const mockIntersectionObserver = jest.fn();
   mockIntersectionObserver.mockReturnValue({
     observe: () => jest.fn(),
@@ -7,3 +7,5 @@ export const mockIntersectionObserver = () => {
   });
   window.IntersectionObserver = mockIntersectionObserver;
 };
+
+export default mockIntersectionObserver;
