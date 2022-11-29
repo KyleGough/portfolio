@@ -44,9 +44,7 @@ const Home: React.FC = () => {
             <span
               ref={typewriterRef}
               className="text-xl md:text-2xl text-left sans-serif"
-            >
-              {welcomeMsg}
-            </span>
+            ></span>
             <span className="fade-in caret-blink">{zws}</span>
           </p>
         </div>
