@@ -20,54 +20,54 @@ const permissionsPolicy = [
   'geolocation=()', 'gyroscope=()', 'keyboard-map=()', 'magnetometer=()', 'microphone=()',
   'midi=()', 'navigation-override=()', 'payment=()', 'picture-in-picture=()',
   'publickey-credentials-get=()', 'screen-wake-lock=()', 'sync-xhr=()', 'usb=()',
-  'web-share=()', 'xr-spatial-tracking=()'
+  'web-share=()', 'xr-spatial-tracking=()',
 ];
 
 const securityHeaders = [
   // Enforce HTTPS.
   {
     key: 'Strict-Transport-Security',
-    value: 'max-age=63072000; includeSubDomains; preload'
+    value: 'max-age=63072000; includeSubDomains; preload',
   },
   ...(process.env.NODE_ENV === 'production' ? [{
     key: 'Content-Security-Policy',
-    value: contentSecurityPolicy.replace(/\s{2,}/g, ' ').trim()
+    value: contentSecurityPolicy.replace(/\s{2,}/g, ' ').trim(),
   }] : []),
   // Disable all browser features.
   {
     key: 'Permissions-Policy',
-    value: permissionsPolicy.join(', ')
+    value: permissionsPolicy.join(', '),
   },
   // Blocks the referrer header for all requests.
   {
     key: 'Referrer-Policy',
-    value: 'no-referrer'
+    value: 'no-referrer',
   },
   // Blocks pages from loading if the browser detects a reflected XSS attack.
   {
     key: 'X-XSS-Protection',
-    value: '1; mode=block'
+    value: '1; mode=block',
   },
   // Enables DNS prefetching to reduce latency when users click links.
   {
     key: 'X-DNS-Prefetch-Control',
-    value: 'on'
+    value: 'on',
   },
   // Prevents MIME type sniffing.
   {
     key: 'X-Content-Type-Options',
-    value: 'nosniff'
+    value: 'nosniff',
   },
   // Allows the page in iframes only if all ancestor frames are same origin.
   {
     key: 'X-Frame-Options',
-    value: 'SAMEORIGIN'
+    value: 'SAMEORIGIN',
   },
   // Block unwanted requests from unwanted policies.
   {
     key: 'X-Permitted-Cross-Domain-Policies',
-    value: 'none'
-  }
+    value: 'none',
+  },
 ];
 
 module.exports = {
@@ -80,6 +80,5 @@ module.exports = {
       },
     ];
   },
-  reactStrictMode: true,
   swcMinify: true,
 };
