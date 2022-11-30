@@ -34,6 +34,7 @@ export const Carousel: React.FC<CarouselProps> = ({
           key={`${image.src}_${index}`}
           bg={image}
           show={carousel === index}
+          priority={index === 0}
         />
       ))}
       <div className="z-20 absolute inset-0 text-white mx-auto text-center flex tracking-tight items-center">

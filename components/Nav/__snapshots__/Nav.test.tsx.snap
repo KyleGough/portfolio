@@ -20,7 +20,6 @@ exports[`Nav component renders 1`] = `
             data-nimg="1"
             decoding="async"
             height="30"
-            loading="lazy"
             src="/_next/image?url=%2Ffavicon-32x32.png&w=64&q=75"
             srcset="/_next/image?url=%2Ffavicon-32x32.png&w=32&q=75 1x, /_next/image?url=%2Ffavicon-32x32.png&w=64&q=75 2x"
             style="color: transparent;"

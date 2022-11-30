@@ -17,7 +17,6 @@ exports[`Carousel component renders 1`] = `
         data-nimg="1"
         decoding="async"
         height="100"
-        loading="lazy"
         src="/_next/image?url=%2F%23image&w=256&q=75"
         srcset="/_next/image?url=%2F%23image&w=128&q=75 1x, /_next/image?url=%2F%23image&w=256&q=75 2x"
         style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
