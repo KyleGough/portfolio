@@ -46,6 +46,7 @@ export const Nav: React.FC = () => {
               alt="Website Logo"
               width={30}
               height={30}
+              priority
             />
           </div>
           <p className="text-xl tracking-normal">Kyle Gough</p>

@@ -5,9 +5,14 @@ import React from 'react';
 interface CarouselImageProps {
   show: boolean;
   bg: StaticImageData;
+  priority: boolean;
 }
 
-export const CarouselImage: React.FC<CarouselImageProps> = ({ show, bg }) => (
+export const CarouselImage: React.FC<CarouselImageProps> = ({
+  show,
+  bg,
+  priority,
+}) => (
   <div
     className={clsx(
       { 'opacity-100': show },
@@ -25,6 +30,7 @@ export const CarouselImage: React.FC<CarouselImageProps> = ({ show, bg }) => (
       placeholder="blur"
       blurDataURL={bg.blurDataURL}
       className="fixed object-cover object-center w-full h-full"
+      priority={priority}
     />
   </div>
 );
