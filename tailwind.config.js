@@ -42,7 +42,7 @@ module.exports = {
         'divider': 'rgba(0, 0, 0, 0.12)',
         'timeline': '#DADADA',
         'nav-light': '#424242',
-        'nav': 'rgba(66,66,66, 0.9)',
+        'nav': 'rgb(66,66,66)',
         'nav-dark': '#353535',
         'nav-hover': '#AAAAAA',
         'light': 'rgba(0,0,0,0.4)',

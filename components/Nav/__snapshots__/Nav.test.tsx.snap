@@ -8,11 +8,12 @@ exports[`Nav component renders 1`] = `
     <div
       class="flex relative z-[200] items-center justify-between flex-wrap bg-nav text-white px-2"
     >
-      <div
-        class="flex items-center flex-shrink-0 mr-6"
+      <a
+        class="flex items-center flex-shrink-0 mx-5"
+        href="/"
       >
         <div
-          class="mx-5 w-8 h-8"
+          class="mr-4 w-8 h-8"
         >
           <img
             alt="Website Logo"
@@ -26,13 +27,12 @@ exports[`Nav component renders 1`] = `
             width="30"
           />
         </div>
-        <a
+        <p
           class="text-xl tracking-normal"
-          href="/"
         >
           Kyle Gough
-        </a>
-      </div>
+        </p>
+      </a>
       <button
         aria-label="Toggle Navigation"
         class="border-bottom-slide block md:hidden px-6 py-5"
