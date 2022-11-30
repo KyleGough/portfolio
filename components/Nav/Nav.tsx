@@ -35,8 +35,12 @@ export const Nav: React.FC = () => {
   return (
     <nav className="leading-6 w-full absolute z-50">
       <div className="flex relative z-[200] items-center justify-between flex-wrap bg-nav text-white px-2">
-        <div className="flex items-center flex-shrink-0 mr-6">
-          <div className="mx-5 w-8 h-8">
+        <Link
+          to="/"
+          ariaLabel="Home"
+          className="flex items-center flex-shrink-0 mx-5"
+        >
+          <div className="mr-4 w-8 h-8">
             <Image
               src="/favicon-32x32.png"
               alt="Website Logo"
@@ -44,10 +48,8 @@ export const Nav: React.FC = () => {
               height={30}
             />
           </div>
-          <Link to="/" className="text-xl tracking-normal">
-            Kyle Gough
-          </Link>
-        </div>
+          <p className="text-xl tracking-normal">Kyle Gough</p>
+        </Link>
         <button
           ref={menuBtnRef}
           onClick={toggleDrawer}
