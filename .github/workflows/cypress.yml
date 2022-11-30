@@ -1,6 +1,15 @@
 name: Cypress e2e
+
 on:
-- pull_request_target
+  push:
+    branches:
+      - master
+      - develop
+  pull_request:
+    branches:
+      - master
+      - develop
+  workflow_dispatch:
 
 jobs:
  cypress-run:
