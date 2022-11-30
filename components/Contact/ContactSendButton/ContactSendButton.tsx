@@ -38,6 +38,7 @@ export const ContactSendButton: React.FC<ContactSendButtonProps> = ({
 
   return (
     <button
+      id="submit"
       onClick={onClick}
       className={clsx(
         getButtonStyle(status),
