@@ -12,6 +12,7 @@
     "plugin:sonarjs/recommended",
     "prettier",
     "next/core-web-vitals",
+    "plugin:cypress/recommended",
     "plugin:prettier/recommended"
   ],
   "overrides": [],
@@ -26,7 +27,8 @@
     "unicorn",
     "sonarjs",
     "simple-import-sort",
-    "import"
+    "import",
+    "cypress"
   ],
   "rules": {
     "prettier/prettier": "error",

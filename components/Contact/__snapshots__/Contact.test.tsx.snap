@@ -72,6 +72,7 @@ exports[`Contact component renders 1`] = `
       >
         <button
           class="text-link hover:text-link-hover focus:text-link-hover border-link hover:border-link-hover focus:border-link-hover group flex items-center mx-auto my-8 px-12 py-4 bg-background rounded-full border-2 shimmer shadow"
+          id="submit"
           type="button"
         >
           Send Message
