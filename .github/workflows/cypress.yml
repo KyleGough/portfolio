@@ -1,4 +1,4 @@
-name: Cypress e2e
+name: Cypress e2e Tests
 
 on:
   push:
@@ -14,18 +14,36 @@ on:
 jobs:
  cypress-run:
     runs-on: ubuntu-latest
+    container: cypress/included:11.2.0
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Install node
+
+      - name: Install Node
         uses: actions/setup-node@v2
         with:
-           node-version: '16'
-      - name: Install dependencies
-        run: npm install
+           node-version: '18'
 
-      - name: Run dev server
-        run: npm run dev
+      - name: Install Dependencies
+        run: npm install --ignore-scripts
 
-      - name: Cypress run
+      - name: Cache Build
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            ${{ github.workspace }}/.next/cache
+          # Generate a new cache whenever packages or source files change.
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          # If source files changed but packages didn't, rebuild from a prior cache.
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+
+      - name: Run e2e tests
         uses: cypress-io/github-action@v4
+        with:
+          install: false
+          build: npm run build
+          start: npm start
+          browser: chrome
+
