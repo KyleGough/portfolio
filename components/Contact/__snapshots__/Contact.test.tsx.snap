@@ -12,10 +12,10 @@ exports[`Contact component renders 1`] = `
         Contact Me
       </legend>
       <div
-        class="opacity-0 transition-opacity duration-1000"
+        class="group opacity-0 transition-opacity duration-1000"
       >
         <label
-          class="text-link transition-colours duration-200 text-lg mt-8 mb-2 mr-2"
+          class="text-link group-focus-within:text-link-hover transition-colours duration-200 text-lg mt-8 mb-2 mr-2"
           for="name"
         >
           Name
@@ -31,10 +31,10 @@ exports[`Contact component renders 1`] = `
         />
       </div>
       <div
-        class="opacity-0 transition-opacity duration-1000"
+        class="group opacity-0 transition-opacity duration-1000"
       >
         <label
-          class="text-link transition-colours duration-200 text-lg mt-8 mb-2 mr-2"
+          class="text-link group-focus-within:text-link-hover transition-colours duration-200 text-lg mt-8 mb-2 mr-2"
           for="email"
         >
           Email
@@ -50,10 +50,10 @@ exports[`Contact component renders 1`] = `
         />
       </div>
       <div
-        class="opacity-0 transition-opacity duration-1000"
+        class="group opacity-0 transition-opacity duration-1000"
       >
         <label
-          class="text-link transition-colours duration-200 text-lg mt-8 mb-2 mr-2"
+          class="text-link group-focus-within:text-link-hover transition-colours duration-200 text-lg mt-8 mb-2 mr-2"
           for="message"
         >
           Message
