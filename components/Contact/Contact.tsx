@@ -25,6 +25,9 @@ export const Contact: React.FC = () => {
   // Email status.
   const [status, setStatus] = useState(EmailStatus.IDLE);
 
+  const isSent = status === EmailStatus.SENT;
+  const isLoading = status === EmailStatus.LOADING;
+
   // Form field change event handlers.
   const onNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
@@ -44,7 +47,7 @@ export const Contact: React.FC = () => {
 
   const sendMessage = (event: React.MouseEvent<HTMLButtonElement>) => {
     // No action if another request has been made.
-    if (status === EmailStatus.LOADING || status === EmailStatus.SENT) {
+    if (isLoading || isSent) {
       event.currentTarget.blur();
       return;
     }
@@ -104,29 +107,31 @@ export const Contact: React.FC = () => {
           Contact Me
         </legend>
 
-        <FadeIn>
-          <ContactLabel valid={!nameError} htmlFor="name">
+        <FadeIn className="group">
+          <ContactLabel valid={!nameError} isSent={isSent} htmlFor="name">
             Name
           </ContactLabel>
           {nameError && <ContactFieldError message="Required!" />}
           <input
             onChange={onNameChange}
-            className={clsx(getFieldBorderStyle(nameError), inputCommonStyles)}
+            className={clsx(
+              getFieldBorderStyle(!nameError, isSent),
+              inputCommonStyles
+            )}
             type="text"
             id="name"
             name="name"
             placeholder="Your name here"
             required
             maxLength={50}
-            readOnly={
-              status === EmailStatus.LOADING || status === EmailStatus.SENT
-            }
+            readOnly={isLoading || isSent}
           />
         </FadeIn>
 
-        <FadeIn>
+        <FadeIn className="group">
           <ContactLabel
             valid={!(emailError || emailValidError)}
+            isSent={isSent}
             htmlFor="email"
           >
             Email
@@ -136,7 +141,7 @@ export const Contact: React.FC = () => {
           <input
             onChange={onEmailChange}
             className={clsx(
-              getFieldBorderStyle(emailError || emailValidError),
+              getFieldBorderStyle(!emailError && !emailValidError, isSent),
               inputCommonStyles
             )}
             type="email"
@@ -145,21 +150,19 @@ export const Contact: React.FC = () => {
             placeholder="Your email here"
             required
             maxLength={254}
-            readOnly={
-              status === EmailStatus.LOADING || status === EmailStatus.SENT
-            }
+            readOnly={isLoading || isSent}
           />
         </FadeIn>
 
-        <FadeIn>
-          <ContactLabel valid={!messageError} htmlFor="message">
+        <FadeIn className="group">
+          <ContactLabel valid={!messageError} isSent={isSent} htmlFor="message">
             Message
           </ContactLabel>
           {messageError && <ContactFieldError message="Required!" />}
           <textarea
             onChange={onMessageChange}
             className={clsx(
-              getFieldBorderStyle(messageError),
+              getFieldBorderStyle(!messageError, isSent),
               inputCommonStyles,
               'max-h-48',
               'h-48',
@@ -170,9 +173,7 @@ export const Contact: React.FC = () => {
             placeholder="Enter your message"
             required
             maxLength={1024}
-            readOnly={
-              status === EmailStatus.LOADING || status === EmailStatus.SENT
-            }
+            readOnly={isLoading || isSent}
           />
         </FadeIn>
 
