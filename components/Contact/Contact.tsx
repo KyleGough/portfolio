@@ -59,10 +59,10 @@ export const Contact: React.FC = () => {
       setError(!condition);
     };
 
-    validator(Boolean(name), setNameError);
-    validator(Boolean(email), setEmailError);
+    validator(!!name, setNameError);
+    validator(!!email, setEmailError);
     validator(validateEmail(email), setEmailValidError);
-    validator(Boolean(message), setMessageError);
+    validator(!!message, setMessageError);
 
     if (!validForm) {
       setStatus(EmailStatus.IDLE);
