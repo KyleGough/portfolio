@@ -21,31 +21,13 @@
 
 ## Tech Stack
 
-<div id="stack">
-  <!-- TypeScript -->
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="45" height="45"/>
-
-  <!-- JavaScript -->
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="45" height="45"/>
-
-  <!-- React -->
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="react" width="45" height="45"/>
-
-  <!-- TailwindCSS -->
-  <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwindcss" width="45" height="45"/>
-
-  <!-- HTML -->
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="html5" width="45" height="45"/>
-
-  <!-- CSS -->
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="css3" width="45" height="45"/>
-
-  <!-- Node.js -->
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-plain.svg" alt="nodejs" width="45" height="45"/>
-
-  <!-- GitHub Actions -->
-  <img src="https://github.githubassets.com/images/modules/site/features/actions-icon-actions.svg" alt="github actions" width="45" height="45" />
-</div>
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Frameworks**: [Next.js](https://nextjs.org/), [React](https://reactjs.org/)
+- **CSS Framework**: [TailwindCSS](https://tailwindcss.com/)
+- **Testing**: [Jest](https://jestjs.io/), [Cypress](https://www.cypress.io/)
+- **Deployment**: [Vercel](https://vercel.com/)
+- **CI/CD**: [GitHub Actions](https://github.com/features/actions)
+- **Other**: [Cloudflare](https://www.cloudflare.com/)
 
 ## Screenshots
 
