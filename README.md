@@ -24,9 +24,11 @@
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Frameworks**: [Next.js](https://nextjs.org/), [React](https://reactjs.org/)
 - **CSS Framework**: [TailwindCSS](https://tailwindcss.com/)
+- **Linting**: [ESLint](https://eslint.org/), [Prettier](https://prettier.io/), [EditorConfig](https://editorconfig.org/)
 - **Testing**: [Jest](https://jestjs.io/), [Cypress](https://www.cypress.io/)
 - **Deployment**: [Vercel](https://vercel.com/)
 - **CI/CD**: [GitHub Actions](https://github.com/features/actions)
+- **Analytics**: [SplitBee](https://splitbee.io/), [Cloudflare](https://www.cloudflare.com/)
 - **Other**: [Cloudflare](https://www.cloudflare.com/)
 
 ## Screenshots
