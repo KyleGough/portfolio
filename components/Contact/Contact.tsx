@@ -103,7 +103,7 @@ export const Contact: React.FC = () => {
   return (
     <form className="flex justify-center">
       <fieldset>
-        <legend className="font-thin text-6xl text-center w-full mb-16 text-nav-light">
+        <legend className="font-semibold text-6xl text-center w-full mb-16 text-header">
           Contact Me
         </legend>
 

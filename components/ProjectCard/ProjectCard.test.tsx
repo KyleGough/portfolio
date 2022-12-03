@@ -19,12 +19,12 @@ describe('ProjectCard component', () => {
         alt="Alt Text"
         date={{ month: 4, year: 2022 }}
         link="/#project"
-        chipText="Haskell"
+        logo="/#logo"
+        logoAlt="Logo"
       />
     );
 
     expect(screen.getByText('April 2022')).toBeVisible();
-    expect(screen.getByText('Haskell')).toBeVisible();
     expect(container).toMatchSnapshot();
   });
 });

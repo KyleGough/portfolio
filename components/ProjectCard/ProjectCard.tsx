@@ -1,5 +1,4 @@
 import { FadeIn } from '@components/FadeIn';
-import { ProjectChip } from '@components/ProjectChip';
 import { getFormattedDate, getShortDate } from '@utilities/date';
 import { Date } from '@utilities/types';
 import { clsx } from 'clsx';
@@ -13,7 +12,8 @@ interface ProjectCardProps {
   alt: string;
   date: Date;
   link: string;
-  chipText: string;
+  logo: string;
+  logoAlt: string;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -22,7 +22,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   alt,
   date,
   link,
-  chipText,
+  logo,
+  logoAlt,
 }) => {
   return (
     <Link href={link}>
@@ -51,7 +52,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   {getFormattedDate(date)}
                 </time>
               </p>
-              <ProjectChip name={chipText} />
+              <Image src={logo} alt={logoAlt} width={30} height={30} />
             </div>
           </div>
         </FadeIn>

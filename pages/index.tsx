@@ -13,6 +13,9 @@ import imageSudoku from '@image/card-sudoku.jpg';
 import imageHeader1 from '@image/header1.jpg';
 import imageHeader2 from '@image/header2.jpg';
 import imageHeader3 from '@image/header3.jpg';
+import CPlusPlusLogo from '@image/skill/cplusplus.svg';
+import PythonLogo from '@image/skill/python.svg';
+import TypescriptLogo from '@image/skill/typescript.svg';
 import { clsx } from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -52,7 +55,7 @@ const Home: React.FC = () => {
 
       <div className="bg-circuits min-h-screen flex items-center border-y border-divider">
         <Section>
-          <h2 className="font-thin text-6xl text-center mt-24 text-nav-light">
+          <h2 className="font-semibold text-6xl text-center mt-24 text-header">
             Project Showcase
           </h2>
 
@@ -65,7 +68,8 @@ const Home: React.FC = () => {
                 year: 2020,
               }}
               link="/projects/sudoku"
-              chipText="Python"
+              logo={PythonLogo}
+              logoAlt="Python Logo"
             />
             <ProjectCard
               className="md:delay-100"
@@ -76,7 +80,8 @@ const Home: React.FC = () => {
                 year: 2022,
               }}
               link="/projects/ai-space-telescope"
-              chipText="TypeScript"
+              logo={TypescriptLogo}
+              logoAlt="TypeScript Logo"
             />
             <ProjectCard
               className="md:delay-200"
@@ -87,7 +92,8 @@ const Home: React.FC = () => {
                 year: 2019,
               }}
               link="/projects/cave-exploration"
-              chipText="C++"
+              logo={CPlusPlusLogo}
+              logoAlt="C++ Logo"
             />
           </div>
           <div className="mt-16 flex justify-center">
@@ -103,7 +109,7 @@ const Home: React.FC = () => {
 
       <div className="min-h-screen flex items-center border-b border-divider shadow">
         <Section>
-          <h2 className="font-thin text-6xl text-center mt-16 text-nav-light max-w-reading">
+          <h2 className="font-semibold text-6xl text-center mt-16 text-header max-w-reading">
             Work Experience
           </h2>
           <TimelineWidget />
