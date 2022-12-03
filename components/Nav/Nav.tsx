@@ -34,7 +34,7 @@ export const Nav: React.FC = () => {
 
   return (
     <nav className="leading-6 w-full absolute z-50">
-      <div className="flex relative z-[200] items-center justify-between flex-wrap bg-nav text-white px-2">
+      <div className="flex relative z-[200] items-center justify-between flex-wrap bg-nav-light text-white px-2">
         <Link
           to="/"
           ariaLabel="Home"

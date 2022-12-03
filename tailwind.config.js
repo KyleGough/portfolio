@@ -43,7 +43,6 @@ module.exports = {
         'timeline': '#DADADA',
         'header': '#424242',
         'nav-light': '#424242',
-        'nav': 'rgb(66,66,66)',
         'nav-dark': '#353535',
         'nav-hover': '#BBBBBB',
         'light': 'rgba(0,0,0,0.4)',

@@ -6,7 +6,7 @@ exports[`Nav component renders 1`] = `
     class="leading-6 w-full absolute z-50"
   >
     <div
-      class="flex relative z-[200] items-center justify-between flex-wrap bg-nav text-white px-2"
+      class="flex relative z-[200] items-center justify-between flex-wrap bg-nav-light text-white px-2"
     >
       <a
         class="flex items-center flex-shrink-0 mx-5"
