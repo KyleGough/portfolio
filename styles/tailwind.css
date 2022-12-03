@@ -7,7 +7,8 @@
 @layer base {
   .project-title {
     @apply text-5xl;
-    @apply font-light;
+    @apply font-semibold;
+    @apply text-header;
     @apply mt-12;
     @apply tracking-tight;
   }
@@ -21,6 +22,8 @@
   .project-header {
     @apply text-3xl;
     @apply mb-8;
+    @apply font-semibold;
+    @apply text-header;
   }
 
   .project-list {

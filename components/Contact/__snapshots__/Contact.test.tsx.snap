@@ -7,7 +7,7 @@ exports[`Contact component renders 1`] = `
   >
     <fieldset>
       <legend
-        class="font-thin text-6xl text-center w-full mb-16 text-nav-light"
+        class="font-semibold text-6xl text-center w-full mb-16 text-header"
       >
         Contact Me
       </legend>

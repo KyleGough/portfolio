@@ -41,11 +41,17 @@ exports[`ProjectCard component renders 1`] = `
                 April 2022
               </time>
             </p>
-            <div
-              class="brightness-200 text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold text-chip bg-chip-light"
-            >
-              Haskell
-            </div>
+            <img
+              alt="Logo"
+              data-nimg="1"
+              decoding="async"
+              height="30"
+              loading="lazy"
+              src="/_next/image?url=%2F%23logo&w=64&q=75"
+              srcset="/_next/image?url=%2F%23logo&w=32&q=75 1x, /_next/image?url=%2F%23logo&w=64&q=75 2x"
+              style="color: transparent;"
+              width="30"
+            />
           </div>
         </div>
       </div>

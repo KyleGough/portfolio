@@ -7,10 +7,10 @@ import React from 'react';
 const NotFound: React.FC = () => (
   <Layout title="Page Not Found - Kyle Gough">
     <Section>
-      <h1 className="mt-12 tracking-tight text-9xl font-extrabold text-center">
+      <h1 className="mt-12 tracking-tight text-9xl font-semibold text-header text-center">
         404
       </h1>
-      <h2 className="mb-8 tracking-tight text-6xl font-extrabold text-center">
+      <h2 className="mb-8 tracking-tight text-6xl font-semibold text-header text-center">
         Page Not Found
       </h2>
     </Section>

@@ -79,9 +79,9 @@ const About: React.FC = () => {
       <Divider />
 
       <Section id="additional-experience">
-        <p className="font-extrabold text-lg text-center md:text-left mb-8 mt-16">
+        <h2 className="project-header text-center md:text-left mb-16">
           Additional Experience
-        </p>
+        </h2>
         <div className="lg:w-4/5 xl:w-3/5 grid md:grid-cols-6 grid-cols-3">
           <LabelledLogo name="Node.js" logo={NodeLogo} />
           <LabelledLogo name="Next.js" logo={NextLogo} />
