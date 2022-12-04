@@ -121,10 +121,10 @@ export const Contact: React.FC = () => {
             type="text"
             id="name"
             name="name"
-            placeholder="Your name here"
             required
             maxLength={50}
             readOnly={isLoading || isSent}
+            data-testid="contact-form-name"
           />
         </FadeIn>
 
@@ -147,10 +147,10 @@ export const Contact: React.FC = () => {
             type="email"
             id="email"
             name="email"
-            placeholder="Your email here"
             required
             maxLength={254}
             readOnly={isLoading || isSent}
+            data-testid="contact-form-email"
           />
         </FadeIn>
 
@@ -170,10 +170,10 @@ export const Contact: React.FC = () => {
             )}
             id="message"
             name="message"
-            placeholder="Enter your message"
             required
             maxLength={1024}
             readOnly={isLoading || isSent}
+            data-testid="contact-form-message"
           />
         </FadeIn>
 

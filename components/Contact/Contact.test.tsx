@@ -35,7 +35,7 @@ describe('Contact component', () => {
     render(<Contact />);
 
     // Update email field.
-    const emailField = screen.getByPlaceholderText('Your email here');
+    const emailField = screen.getByTestId('contact-form-email');
     act(() => {
       fireEvent.change(emailField, { target: { value: 'foo' } });
     });
@@ -63,9 +63,9 @@ describe('Contact component', () => {
 
     render(<Contact />);
 
-    const nameField = screen.getByPlaceholderText('Your name here');
-    const emailField = screen.getByPlaceholderText('Your email here');
-    const messageField = screen.getByPlaceholderText('Enter your message');
+    const nameField = screen.getByTestId('contact-form-name');
+    const emailField = screen.getByTestId('contact-form-email');
+    const messageField = screen.getByTestId('contact-form-message');
 
     // Update all form fields.
     act(() => {
