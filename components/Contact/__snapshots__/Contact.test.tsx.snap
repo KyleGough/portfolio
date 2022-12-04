@@ -22,10 +22,10 @@ exports[`Contact component renders 1`] = `
         </label>
         <input
           class="border-link focus:border-link-hover block shadow transition-colours duration-200 mt-2 mb-8 px-4 py-2 w-full xs:w-field border-2 rounded-2xl outline-none caret-link-hover bg-background"
+          data-testid="contact-form-name"
           id="name"
           maxlength="50"
           name="name"
-          placeholder="Your name here"
           required=""
           type="text"
         />
@@ -41,10 +41,10 @@ exports[`Contact component renders 1`] = `
         </label>
         <input
           class="border-link focus:border-link-hover block shadow transition-colours duration-200 mt-2 mb-8 px-4 py-2 w-full xs:w-field border-2 rounded-2xl outline-none caret-link-hover bg-background"
+          data-testid="contact-form-email"
           id="email"
           maxlength="254"
           name="email"
-          placeholder="Your email here"
           required=""
           type="email"
         />
@@ -60,10 +60,10 @@ exports[`Contact component renders 1`] = `
         </label>
         <textarea
           class="border-link focus:border-link-hover block shadow transition-colours duration-200 mt-2 mb-8 px-4 py-2 w-full xs:w-field border-2 rounded-2xl outline-none caret-link-hover bg-background max-h-48 h-48 resize-none"
+          data-testid="contact-form-message"
           id="message"
           maxlength="1024"
           name="message"
-          placeholder="Enter your message"
           required=""
         />
       </div>
