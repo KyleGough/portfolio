@@ -63,9 +63,6 @@ module.exports = {
         'header': '0 1px 2px rgba(0, 0, 0, 0.50)'
       },
       backgroundImage: {
-        'header1': 'url("/img/header1.jpg")',
-        'header2': 'url("/img/header2.jpg")',
-        'header3': 'url("/img/header3.jpg")',
         'noise': 'url("/img/noise.png")'
       },
       transitionDuration: {
