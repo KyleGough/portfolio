@@ -62,11 +62,6 @@ exports[`ProjectHeader component renders 1`] = `
       >
         JavaScript
       </div>
-      <div
-        class="text-disabled bg-chip-old text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"
-      >
-        PHP
-      </div>
     </div>
   </div>
 </div>

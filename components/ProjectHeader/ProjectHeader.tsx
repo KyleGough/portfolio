@@ -54,13 +54,9 @@ export const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => {
       )}
 
       <div className="flex flex-row flex-wrap items-center mt-8 gap-4">
-        {project.skills.active.map((skill) => (
+        {project.skills.map((skill) => (
           <Chip key={skill} name={skill} />
         ))}
-        {project.skills.disabled &&
-          project.skills.disabled.map((skill) => (
-            <Chip disabled key={skill} name={skill} />
-          ))}
       </div>
     </Section>
   );

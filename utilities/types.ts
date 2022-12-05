@@ -12,17 +12,12 @@ export interface Project {
   filters: string[];
   description: string;
   github?: string;
-  skills: ProjectSkills;
+  skills: string[];
   logo: {
     src: string;
     alt: string;
   };
   liveLink?: string;
-}
-
-interface ProjectSkills {
-  active: string[];
-  disabled?: string[];
 }
 
 export interface ProjectDate {

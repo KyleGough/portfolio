@@ -52,7 +52,6 @@ module.exports = {
         'disabled': 'rgba(0,0,0,0.4)',
         'chip': '#3F51B5',
         'chip-light': 'rgba(63, 81, 181, 0.1)',
-        'chip-old': 'rgba(0, 0, 0, 0.1)',
         'traffic-red': '#EF5350',
         'traffic-amber': '#FFB300',
         'traffic-green': '#4CAF50'
@@ -64,9 +63,6 @@ module.exports = {
         'header': '0 1px 2px rgba(0, 0, 0, 0.50)'
       },
       backgroundImage: {
-        'header1': 'url("/img/header1.jpg")',
-        'header2': 'url("/img/header2.jpg")',
-        'header3': 'url("/img/header3.jpg")',
         'noise': 'url("/img/noise.png")'
       },
       transitionDuration: {
