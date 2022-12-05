@@ -37,8 +37,6 @@ export interface Date {
 
 export interface Skill {
   name: string;
-  progress: number;
-  className: string;
   description: string;
   logo: string;
 }
