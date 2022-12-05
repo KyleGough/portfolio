@@ -5,9 +5,6 @@ import React from 'react';
 import { SkillItem } from './SkillItem';
 
 const skill = {
-  type: 'progress-web',
-  progress: 75,
-  progressClass: 'w-[75%]',
   name: 'React',
   description: 'Portfolio, LucidLab, Minesweeper',
   logo: '/#logo',
