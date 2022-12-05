@@ -3,7 +3,7 @@
 exports[`SkillItem component renders 1`] = `
 <div>
   <li
-    class="flex flex-row py-6 ml-8 items-center relative before:absolute before:h-2 before:w-2 before:rounded-full before:-left-6"
+    class="flex py-6 ml-8 items-center relative before:absolute before:h-2 before:w-2 before:rounded-full before:-left-6"
   >
     <div
       class="mr-4 w-8 h-8 duration-500 relative opacity-0 transition-opacity duration-1000"

@@ -18,7 +18,7 @@ export const SkillItem: React.FC<SkillItemProps> = ({
 }) => (
   <li
     className={clsx(
-      'flex flex-row py-6 ml-8 items-center relative before:absolute before:h-2 before:w-2 before:rounded-full before:-left-6',
+      'flex py-6 ml-8 items-center relative before:absolute before:h-2 before:w-2 before:rounded-full before:-left-6',
       className
     )}
   >
