@@ -6,7 +6,7 @@ import { ContactLabel } from './ContactLabel';
 describe('ContactLabel component', () => {
   it('renders', async () => {
     const { container } = render(
-      <ContactLabel valid={true} htmlFor="email">
+      <ContactLabel isSent={true} valid={true} htmlFor="email">
         Email
       </ContactLabel>
     );
@@ -15,7 +15,7 @@ describe('ContactLabel component', () => {
 
   it('component has link colours if valid', async () => {
     render(
-      <ContactLabel valid={true} htmlFor="email">
+      <ContactLabel isSent={false} valid={true} htmlFor="email">
         Email
       </ContactLabel>
     );
@@ -27,7 +27,7 @@ describe('ContactLabel component', () => {
 
   it('component has error colours if invalid', async () => {
     render(
-      <ContactLabel valid={false} htmlFor="name">
+      <ContactLabel isSent={false} valid={false} htmlFor="name">
         Name
       </ContactLabel>
     );
