@@ -55,7 +55,7 @@ const About: React.FC = () => {
         <h2 className="project-header text-center md:text-left">
           Web Development
         </h2>
-        <SkillList skills={skillsWeb} type="progress-web" />
+        <SkillList skills={skillsWeb} className="progress-web" />
       </Section>
 
       <Divider />
@@ -64,7 +64,10 @@ const About: React.FC = () => {
         <h2 className="project-header text-center md:text-left">
           Programming Languages
         </h2>
-        <SkillList skills={skillsProgramming} type="progress-programming" />
+        <SkillList
+          skills={skillsProgramming}
+          className="progress-programming"
+        />
       </Section>
 
       <Divider />
@@ -73,7 +76,7 @@ const About: React.FC = () => {
         <h2 className="project-header text-center md:text-left">
           Other Technologies
         </h2>
-        <SkillList skills={skillsOther} type="progress-other" />
+        <SkillList skills={skillsOther} className="progress-other" />
       </Section>
 
       <Divider />

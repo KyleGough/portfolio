@@ -5,23 +5,21 @@ import { SkillItem } from './SkillItem';
 
 interface SkillListProps {
   skills: Skill[];
-  type: string;
+  className?: string;
 }
 
-export const SkillList: React.FC<SkillListProps> = ({ skills, type }) => (
-  <>
+export const SkillList: React.FC<SkillListProps> = ({ skills, className }) => (
+  <ul className="grid xl:grid-cols-2">
     {skills.map((skill) => {
       return (
         <SkillItem
           key={skill.name}
-          type={type}
           name={skill.name}
-          progress={skill.progress}
-          progressClass={skill.className}
           description={skill.description}
           logo={skill.logo}
+          className={className}
         />
       );
     })}
-  </>
+  </ul>
 );
