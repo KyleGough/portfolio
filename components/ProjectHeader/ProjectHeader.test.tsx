@@ -1,3 +1,4 @@
+import mockStaticImageData from '@mocks/mockStaticImageData';
 import { render, screen } from '@testing-library/react';
 import { Project } from '@utilities/types';
 import React from 'react';
@@ -19,16 +20,13 @@ const baseProject: Project = {
     },
   },
   video: '/#video',
-  src: '/#image',
+  image: mockStaticImageData,
   alt: 'Portfolio Homepage',
   link: '/projects/portfolio',
   filters: ['JavaScript', 'Web'],
   description: 'Personal portfolio website',
   github: 'https://github.com/KyleGough/portfolio',
-  skills: {
-    active: ['TypeScript', 'JavaScript'],
-    disabled: ['PHP'],
-  },
+  skills: ['TypeScript', 'JavaScript'],
   logo: {
     src: '/#logo',
     alt: 'Logo',
@@ -45,7 +43,6 @@ describe('ProjectHeader component', () => {
     expect(screen.getByText('March 2022')).toBeVisible();
     expect(screen.getByText('Personal portfolio website')).toBeVisible();
     expect(screen.getByText('TypeScript')).toBeVisible();
-    expect(screen.getByText('PHP')).toBeVisible();
 
     expect(container).toMatchSnapshot();
   });

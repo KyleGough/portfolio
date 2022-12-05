@@ -52,7 +52,6 @@ module.exports = {
         'disabled': 'rgba(0,0,0,0.4)',
         'chip': '#3F51B5',
         'chip-light': 'rgba(63, 81, 181, 0.1)',
-        'chip-old': 'rgba(0, 0, 0, 0.1)',
         'traffic-red': '#EF5350',
         'traffic-amber': '#FFB300',
         'traffic-green': '#4CAF50'
