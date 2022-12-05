@@ -23,7 +23,7 @@ export const skillsProgramming: Skill[] = [
   },
   {
     name: 'C++',
-    description: 'GLUT Simulation of a Roller Coaster',
+    description: 'Cave Exploration, Roller Coaster',
     logo: CPlusPlusLogo,
   },
   {

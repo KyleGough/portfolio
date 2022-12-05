@@ -8,14 +8,14 @@ import { Skill } from '@utilities/types';
 
 export const skillsWeb: Skill[] = [
   {
-    name: 'JavaScript',
-    description: 'LucidLab, Graph Algorithm Visualiser, RSCBot',
-    logo: JavaScriptLogo,
-  },
-  {
     name: 'TypeScript',
     description: 'Atom, Portfolio, AI Space Telescope',
     logo: TypeScriptLogo,
+  },
+  {
+    name: 'JavaScript',
+    description: 'LucidLab, Graph Algorithm Visualiser, RSCBot',
+    logo: JavaScriptLogo,
   },
   {
     name: 'React',
