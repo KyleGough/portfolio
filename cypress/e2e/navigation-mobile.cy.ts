@@ -1,3 +1,5 @@
+import { cy, it } from 'local-cypress';
+
 describe('Mobile Navigation', () => {
   beforeEach(() => {
     cy.viewport(375, 812);

@@ -1,3 +1,5 @@
+import { cy, it } from 'local-cypress';
+
 describe('Desktop Navigation', () => {
   it('Navigate to about page', () => {
     cy.visit('/');
