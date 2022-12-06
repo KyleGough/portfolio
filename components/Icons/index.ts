@@ -8,3 +8,4 @@ export { RestartIcon } from './RestartIcon';
 export { SendIcon } from './SendIcon';
 export { TickIcon } from './TickIcon';
 export { UnfoldIcon } from './UnfoldIcon';
+export { WebsiteIcon } from './WebsiteIcon';

@@ -1,4 +1,5 @@
 import { Chip } from '@components/Chip';
+import { GitHubIcon, WebsiteIcon } from '@components/Icons';
 import { Link } from '@components/Link';
 import { Section } from '@components/Section';
 import { getFormattedDate, getShortDate } from '@utilities/date';
@@ -36,18 +37,20 @@ export const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => {
         <div className="block sm:flex gap-2">
           {project.github && (
             <Link
-              className="w-fit block my-2 px-8 py-2 bg-background rounded-lg border-2 text-link hover:text-link-hover focus:text-hover-link"
+              className="group w-fit flex items-center my-2 px-4 py-2 bg-background rounded-lg border-2 text-link hover:text-link-hover"
               href={project.github}
             >
-              Explore project on GitHub
+              <GitHubIcon className="w-5 h-5 mr-2 fill-link group-hover:fill-link-hover" />
+              GitHub
             </Link>
           )}
           {project.liveLink && (
             <Link
-              className="w-fit block my-2 px-8 py-2 bg-background rounded-lg border-2 text-link hover:text-link-hover focus:text-link-hover"
+              className="group w-fit flex items-center my-2 px-4 py-2 bg-background rounded-lg border-2 text-link hover:text-link-hover"
               href={project.liveLink}
             >
-              Explore project live
+              <WebsiteIcon className="w-5 h-5 mr-2 fill-link group-hover:fill-link-hover" />
+              Website
             </Link>
           )}
         </div>
