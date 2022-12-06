@@ -1,6 +1,7 @@
 import CSSLogo from '@image/skill/css.svg';
 import HTMLLogo from '@image/skill/html.svg';
 import JavaScriptLogo from '@image/skill/javascript.svg';
+import JestLogo from '@image/skill/jest.svg';
 import ReactLogo from '@image/skill/react.svg';
 import TailwindLogo from '@image/skill/tailwind.svg';
 import TypeScriptLogo from '@image/skill/typescript.svg';
@@ -36,5 +37,10 @@ export const skillsWeb: Skill[] = [
     name: 'CSS',
     description: 'Atom, Portfolio, LucidLab, BSplit',
     logo: CSSLogo,
+  },
+  {
+    name: 'Jest',
+    description: 'Portfolio, Atom',
+    logo: JestLogo,
   },
 ];
