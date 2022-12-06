@@ -1,7 +1,7 @@
 <h1>Portfolio</h1>
 
-<div>
-  <a href="https://kylegough.co.uk" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/Website-56347C?style=for-the-badge&logoColor=white" alt="Website Badge"/></a>
+<div>  
+  <a href="https://kylegough.co.uk" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/-kylegough.co.uk-purple?style=flat-square&logoColor=white" alt="Website Badge" height="25"/></a>
 </div>
 
 <br />
