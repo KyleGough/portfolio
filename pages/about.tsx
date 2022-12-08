@@ -1,5 +1,5 @@
 import { Divider } from '@components/Divider';
-import { GoalListItem, Progress } from '@components/GoalListItem';
+import { GoalsWidget } from '@components/GoalsWidget';
 import { ArrowForwardIcon } from '@components/Icons';
 import { LabelledLogo } from '@components/LabelledLogo';
 import { Layout } from '@components/Layout';
@@ -103,23 +103,7 @@ const About: React.FC = () => {
 
       <Divider />
 
-      <Section id="goals">
-        <h2 className="project-header text-center md:text-left">
-          Goals for 2022
-        </h2>
-        <p className="my-4">
-          Here are some languages and technologies I am keen to learn in 2022.
-        </p>
-        <ul className="list-none mt-8 ml-14">
-          <GoalListItem name="TypeScript" progress={Progress.GREEN} />
-          <GoalListItem name="ESLint" progress={Progress.GREEN} />
-          <GoalListItem name="GitHub Actions" progress={Progress.GREEN} />
-          <GoalListItem name="WebExtensions API" progress={Progress.GREEN} />
-          <GoalListItem name="Next.js" progress={Progress.GREEN} />
-          <GoalListItem name="Rust" progress={Progress.AMBER} />
-          <GoalListItem name="Web Sockets" progress={Progress.RED} />
-        </ul>
-      </Section>
+      <GoalsWidget />
     </Layout>
   );
 };
