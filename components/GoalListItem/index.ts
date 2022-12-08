@@ -1,1 +1,1 @@
-export { GoalListItem, Progress } from './GoalListItem';
+export { GoalListItem } from './GoalListItem';

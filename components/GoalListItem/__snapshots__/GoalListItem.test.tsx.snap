@@ -3,9 +3,9 @@
 exports[`GoalListItem component renders 1`] = `
 <div>
   <li
-    class="before:border-traffic-amber relative my-4 before:content-[""] before:absolute before:-left-12 before:w-6 before:h-6 before:border-2 before:rounded-xl"
+    class="before:bg-link before:absolute before:h-2 before:w-2 before:rounded-full before:-left-9 ml-12 py-2 w-fit flex items-center relative"
   >
-    Docker
+    ESLint
   </li>
 </div>
 `;
