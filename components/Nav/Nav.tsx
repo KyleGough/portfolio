@@ -1,5 +1,6 @@
 import { GitHubIcon, MenuIcon } from '@components/Icons';
 import { Link } from '@components/Link';
+import Logo from '@image/logo.png';
 import { clsx } from 'clsx';
 import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
@@ -42,10 +43,12 @@ export const Nav: React.FC = () => {
         >
           <div className="mr-4 w-8 h-8">
             <Image
-              src="/favicon-32x32.png"
+              src={Logo.src}
               alt="Website Logo"
-              width={30}
-              height={30}
+              width={Logo.width}
+              height={Logo.height}
+              placeholder="blur"
+              blurDataURL={Logo.blurDataURL}
               priority
             />
           </div>
