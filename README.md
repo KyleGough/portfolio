@@ -7,12 +7,24 @@
 <br />
 
 <div>
-  <a href="https://github.com/KyleGough/portfolio/actions?query=branch%3Amaster"><img src="https://img.shields.io/github/workflow/status/KyleGough/portfolio/Pre-Merge/master?style=flat-square" /></a>
-  <a href="https://github.com/KyleGough/portfolio/actions/workflows/cypress.yml"><img src="https://img.shields.io/github/workflow/status/KyleGough/portfolio/Cypress%20e2e%20Tests?label=cypress&style=flat-square" /></a>
-  <a href="https://github.com/KyleGough/portfolio/commits/master"><img src="https://img.shields.io/github/last-commit/KyleGough/portfolio?style=flat-square" /></a>
-  <a href="https://github.com/KyleGough/portfolio/pulls"><img src="https://img.shields.io/github/issues-pr/KyleGough/portfolio?style=flat-square" /></a>
-  <a href="https://github.com/KyleGough/portfolio/pulls?q=is%3Apr+is%3Aclosed"><img src="https://img.shields.io/github/issues-pr-closed-raw/KyleGough/portfolio?style=flat-square" /></a>
-  <a href="https://kylegough.co.uk"><img src="https://img.shields.io/website?down_message=down&style=flat-square&up_message=up&url=https%3A%2F%2Fkylegough.co.uk" /></a>
+  <a href="https://github.com/KyleGough/portfolio/actions?query=branch%3Amaster">
+    <img src="https://img.shields.io/github/actions/workflow/status/KyleGough/portfolio/premerge.yml?branch=master&style=flat-square" />
+  </a>
+  <a href="https://github.com/KyleGough/portfolio/actions/workflows/cypress.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/KyleGough/portfolio/cypress.yml?branch=master&label=cypress&style=flat-square" />
+  </a>
+  <a href="https://github.com/KyleGough/portfolio/commits/master">
+    <img src="https://img.shields.io/github/last-commit/KyleGough/portfolio?style=flat-square" />
+  </a>
+  <a href="https://github.com/KyleGough/portfolio/pulls">
+    <img src="https://img.shields.io/github/issues-pr/KyleGough/portfolio?style=flat-square" />
+  </a>
+  <a href="https://github.com/KyleGough/portfolio/pulls?q=is%3Apr+is%3Aclosed">
+    <img src="https://img.shields.io/github/issues-pr-closed-raw/KyleGough/portfolio?style=flat-square" />
+  </a>
+  <a href="https://kylegough.co.uk">
+    <img src="https://img.shields.io/website?down_message=down&style=flat-square&up_message=up&url=https%3A%2F%2Fkylegough.co.uk" />
+  </a>
 </div>
 
 <br />
