@@ -219,7 +219,8 @@ exports[`Footer component renders 1`] = `
         <p
           class="opacity-100"
         >
-          © Kyle Gough, 2016 - 2022
+          © Kyle Gough, 2016 - 
+          2023
         </p>
       </div>
     </div>
