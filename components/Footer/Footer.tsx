@@ -1,5 +1,6 @@
 import { EmailIcon, GitHubIcon, LinkedInIcon } from '@components/Icons';
 import { Link } from '@components/Link';
+import dayjs from 'dayjs';
 import React from 'react';
 
 import { FooterLink } from './FooterLink';
@@ -79,7 +80,7 @@ export const Footer: React.FC = () => (
     </div>
     <div className="bg-nav-dark text-white text-center">
       <div className="container mx-auto px-8 py-8 opacity-75">
-        <p className="opacity-100">© Kyle Gough, 2016 - 2022</p>
+        <p className="opacity-100">© Kyle Gough, 2016 - {dayjs().year()}</p>
       </div>
     </div>
   </footer>
