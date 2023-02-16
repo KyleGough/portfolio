@@ -21,7 +21,7 @@ export const TimelineWidget: React.FC = () => (
     <TimelineNode
       title="Atom Learning"
       subtitle="Front-End Engineer"
-      date="July 2022 - Present"
+      date="July 2022 - January 2023"
       align="left"
       logo={AtomLogo}
     />

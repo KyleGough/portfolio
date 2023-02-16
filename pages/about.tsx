@@ -31,12 +31,13 @@ const About: React.FC = () => {
           About Me
         </h1>
         <p className="mt-4 mb-8 max-w-reading">
-          Hello, I&apos;m Kyle, a Front-End Engineer at Atom Learning and
-          Computer Science MEng graduate of the University of Warwick. Interests
-          lie in bouldering, cycling, guitar, movies, and physics. I enjoy
-          learning new languages, frameworks and technologies and have pursued
-          multiple personal projects putting these skills into practice,
-          detailed below.
+          Hello, I&apos;m Kyle, a Front-End Engineer, and former engineer at
+          Atom Learning and Bank of America. I have a Master of Engineering
+          degree from the University of Warwick. My interests lie in bouldering,
+          cycling, guitar, movies, and physics (cosmology and quantum
+          mechanics). I enjoy learning and acquiring new skills and putting them
+          into practice. Currently I am learning Three.js, and hope to apply
+          these newly acquired skills on this website.
         </p>
         <div className="flex justify-center md:block">
           <Link
