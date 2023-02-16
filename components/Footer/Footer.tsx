@@ -13,9 +13,10 @@ export const Footer: React.FC = () => (
           <div className="w-full lg:w-4/12 px-6 py-6 text-center lg:text-left">
             <p className="font-header text-xl pb-6">About Me</p>
             <p className="pb-4">
-              Front-End Engineer at Atom Learning. Computer Science MEng
-              graduate of Warwick University. Programmer and Web Developer with
-              interests in Bouldering, Cycling, Guitar, Movies and Physics.
+              Front-End Engineer. Former engineer at Atom Learning and Bank of
+              America. Computer Science MEng graduate of Warwick University.
+              Programmer and Web Developer with interests in Bouldering,
+              Cycling, Guitar, Movies and Physics.
             </p>
             <div className="flex flex-row justify-center lg:justify-start">
               <Link
