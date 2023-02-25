@@ -43,7 +43,7 @@ export const Layout: React.FC<LayoutProps> = ({
           sizes="180x180"
           href="/apple-touch-icon.png"
         />
-        <link crossOrigin="true" rel="manifest" href="/manifest.json" />
+        <link rel="manifest" href="/manifest.json" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="theme-color" content="#424242" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
