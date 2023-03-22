@@ -1,0 +1,1 @@
+export { OpenGraphMeta } from './OpenGraphMeta';
