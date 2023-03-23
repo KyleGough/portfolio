@@ -7,29 +7,28 @@ import { FooterLink } from './FooterLink';
 
 export const Footer: React.FC = () => (
   <footer className="bg-background">
-    <div className="bg-nav-light text-white text-center">
-      <div className="container mx-auto px-0 py-12">
-        <div className="w-full flex flex-wrap justify-center px-4">
-          <div className="w-full lg:w-4/12 px-6 py-6 text-center lg:text-left">
-            <p className="font-header text-xl pb-6">About Me</p>
+    <div className="text-center text-white bg-nav-light">
+      <div className="container px-0 py-12 mx-auto">
+        <div className="flex flex-wrap justify-center px-4 w-full">
+          <div className="px-6 py-6 w-full text-center lg:w-4/12 lg:text-left">
+            <p className="pb-6 text-xl font-header">About Me</p>
             <p className="pb-4">
-              Front-End Engineer. Former engineer at Atom Learning and Bank of
-              America. Computer Science MEng graduate of Warwick University.
-              Programmer and Web Developer with interests in Bouldering,
-              Cycling, Guitar, Movies and Physics.
+              Front-End Engineer at Ripjar. Computer Science MEng graduate of
+              Warwick University. Programmer and Web Developer with interests in
+              Bouldering, Cycling, Guitar, Movies, and Physics.
             </p>
             <div className="flex flex-row justify-center lg:justify-start">
               <Link
-                className="group flex justify-center fill-white hover:text-nav-hover hover:fill-nav-hover"
+                className="flex justify-center group fill-white hover:text-nav-hover hover:fill-nav-hover"
                 href="mailto:kylegough98@gmail.com"
               >
-                <EmailIcon className="w-6 h-6 mr-2" />
+                <EmailIcon className="mr-2 w-6 h-6" />
                 <p className="ml-1">kylegough98@gmail.com</p>
               </Link>
             </div>
           </div>
-          <div className="w-full sm:w-6/12 lg:w-4/12 px-6 py-6">
-            <p className="font-header text-xl pb-6">Projects</p>
+          <div className="px-6 py-6 w-full sm:w-6/12 lg:w-4/12">
+            <p className="pb-6 text-xl font-header">Projects</p>
             <ul>
               <FooterLink href="/projects">All Projects</FooterLink>
               <FooterLink href="/projects/sudoku">
@@ -47,8 +46,8 @@ export const Footer: React.FC = () => (
               <FooterLink href="/projects/bsplit">BSplit</FooterLink>
             </ul>
           </div>
-          <div className="w-full sm:w-6/12 lg:w-4/12 px-6 py-6">
-            <p className="font-header text-xl pb-6">Website</p>
+          <div className="px-6 py-6 w-full sm:w-6/12 lg:w-4/12">
+            <p className="pb-6 text-xl font-header">Website</p>
             <ul>
               <li>
                 <Link className="p-2 hover:text-nav-hover" href="/CV.pdf">
@@ -58,7 +57,7 @@ export const Footer: React.FC = () => (
               <FooterLink href="/about">About Me</FooterLink>
               <FooterLink href="/projects">Projects</FooterLink>
               <FooterLink href="/privacy">Privacy</FooterLink>
-              <li className="text-center flex justify-center">
+              <li className="flex justify-center text-center">
                 <Link
                   className="py-2 group"
                   href="https://github.com/KyleGough"
@@ -79,8 +78,8 @@ export const Footer: React.FC = () => (
         </div>
       </div>
     </div>
-    <div className="bg-nav-dark text-white text-center">
-      <div className="container mx-auto px-8 py-8 opacity-75">
+    <div className="text-center text-white bg-nav-dark">
+      <div className="container px-8 py-8 mx-auto opacity-75">
         <p className="opacity-100">© Kyle Gough, 2016 - {dayjs().year()}</p>
       </div>
     </div>
