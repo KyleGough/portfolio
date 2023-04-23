@@ -27,21 +27,20 @@ const About: React.FC = () => {
   return (
     <Layout title="About Me - Kyle Gough">
       <Section>
-        <h1 className="project-title mb-8 text-center md:text-left">
+        <h1 className="mb-8 text-center project-title md:text-left">
           About Me
         </h1>
         <p className="mt-4 mb-8 max-w-reading">
-          Hello, I&apos;m Kyle, a Front-End Engineer, and former engineer at
-          Atom Learning and Bank of America. I have a Master of Engineering
-          degree from the University of Warwick. My interests lie in bouldering,
-          cycling, guitar, movies, and physics (cosmology and quantum
-          mechanics). I enjoy learning and acquiring new skills and putting them
-          into practice. Currently I am learning Three.js, and hope to apply
-          these newly acquired skills on this website.
+          Hello, I&apos;m Kyle, a Front-End Engineer at Ripjar. I have a Master
+          of Engineering degree from Warwick University. My interests lie in
+          bouldering, cycling, guitar, movies, and physics (cosmology and
+          quantum mechanics). I enjoy learning and acquiring new skills and
+          putting them into practice. Currently I am learning Three.js, and hope
+          to apply these newly acquired skills on this website.
         </p>
         <div className="flex justify-center md:block">
           <Link
-            className="w-fit group flex items-center px-8 py-2 bg-background text-link hover:text-link-hover focus:text-link-hover rounded-lg border-2"
+            className="flex items-center px-8 py-2 rounded-lg border-2 w-fit group bg-background text-link hover:text-link-hover focus:text-link-hover"
             href="/CV.pdf"
           >
             <p>Read my CV</p>
@@ -53,7 +52,7 @@ const About: React.FC = () => {
       <Divider />
 
       <Section id="web-development">
-        <h2 className="project-header text-center md:text-left">
+        <h2 className="text-center project-header md:text-left">
           Web Development
         </h2>
         <SkillList skills={skillsWeb} className="progress-web" />
@@ -62,7 +61,7 @@ const About: React.FC = () => {
       <Divider />
 
       <Section id="programming-languages">
-        <h2 className="project-header text-center md:text-left">
+        <h2 className="text-center project-header md:text-left">
           Programming Languages
         </h2>
         <SkillList
@@ -74,7 +73,7 @@ const About: React.FC = () => {
       <Divider />
 
       <Section id="other-technologies">
-        <h2 className="project-header text-center md:text-left">
+        <h2 className="text-center project-header md:text-left">
           Other Technologies
         </h2>
         <SkillList skills={skillsOther} className="progress-other" />
@@ -83,10 +82,10 @@ const About: React.FC = () => {
       <Divider />
 
       <Section id="additional-experience">
-        <h2 className="project-header text-center md:text-left mb-16">
+        <h2 className="mb-16 text-center project-header md:text-left">
           Additional Experience
         </h2>
-        <div className="lg:w-4/5 xl:w-3/5 grid md:grid-cols-6 grid-cols-3">
+        <div className="grid grid-cols-3 lg:w-4/5 xl:w-3/5 md:grid-cols-6">
           <LabelledLogo name="Node.js" logo={NodeLogo} />
           <LabelledLogo name="Next.js" logo={NextLogo} />
           <LabelledLogo name="PHP" logo={PHPLogo} />

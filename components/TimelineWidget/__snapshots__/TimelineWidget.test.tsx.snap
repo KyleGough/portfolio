@@ -3,7 +3,7 @@
 exports[`TimelineWidget component renders 1`] = `
 <div>
   <div
-    class="grid grid-cols-1 md:grid-cols-2 my-16 relative before:absolute before:content-[""] before:h-2/4 before:w-[2px] before:right-0 md:before:left-2/4 before:bg-gradient-to-t before:from-timeline before:via-timeline before:to-transparent after:absolute after:content-[""] after:h-2/4 after:w-[2px] after:top-2/4 after:right-0 md:after:left-2/4 after:bg-gradient-to-b after:from-timeline after:via-timeline after:to-transparent"
+    class="grid grid-cols-1 md:grid-cols-2 relative my-16 before:absolute before:content-[""] before:h-2/4 before:w-[2px] before:right-0 md:before:left-2/4 before:bg-gradient-to-t before:from-timeline before:via-timeline before:to-transparent after:absolute after:content-[""] after:h-2/4 after:w-[2px] after:top-2/4 after:right-0 md:after:left-2/4 after:bg-gradient-to-b after:from-timeline after:via-timeline after:to-transparent"
   >
     <div
       class="flex items-center justify-end h-48"
@@ -15,7 +15,7 @@ exports[`TimelineWidget component renders 1`] = `
           class="relative w-16 md:w-24 lg:w-32 mr-8"
         >
           <img
-            alt="Atom Learning"
+            alt="Ripjar"
             data-nimg="1"
             decoding="async"
             height="40"
@@ -33,6 +33,55 @@ exports[`TimelineWidget component renders 1`] = `
         <p
           class="text-3xl"
         >
+          Ripjar
+        </p>
+        <p
+          class="text-xl"
+        >
+          Front-End Engineer
+        </p>
+        <p>
+          April 2023 - Present
+        </p>
+      </div>
+      <div
+        class="h-[2px] bg-timeline w-6 max-w-[12rem] grow"
+      />
+    </div>
+    <div
+      class="hidden md:block"
+    />
+    <div
+      class="hidden md:block"
+    />
+    <div
+      class="flex items-center justify-end h-48 md:flex-row-reverse"
+    >
+      <div
+        class="opacity-0 transition-opacity duration-1000"
+      >
+        <div
+          class="relative w-16 md:w-24 lg:w-32 mr-8 md:ml-8 md:mr-0"
+        >
+          <img
+            alt="Atom Learning"
+            data-nimg="1"
+            decoding="async"
+            height="40"
+            loading="lazy"
+            src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
+            srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+            style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+            width="40"
+          />
+        </div>
+      </div>
+      <div
+        class="mr-8 md:ml-8 md:mr-0 md:text-right opacity-0 transition-opacity duration-1000"
+      >
+        <p
+          class="text-3xl"
+        >
           Atom Learning
         </p>
         <p
@@ -42,6 +91,49 @@ exports[`TimelineWidget component renders 1`] = `
         </p>
         <p>
           July 2022 - January 2023
+        </p>
+      </div>
+      <div
+        class="h-[2px] bg-timeline w-6 max-w-[12rem] grow"
+      />
+    </div>
+    <div
+      class="flex items-center justify-end h-48"
+    >
+      <div
+        class="opacity-0 transition-opacity duration-1000"
+      >
+        <div
+          class="relative w-16 md:w-24 lg:w-32 mr-8"
+        >
+          <img
+            alt="Bank of America"
+            data-nimg="1"
+            decoding="async"
+            height="40"
+            loading="lazy"
+            src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
+            srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+            style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+            width="40"
+          />
+        </div>
+      </div>
+      <div
+        class="mr-8 opacity-0 transition-opacity duration-1000"
+      >
+        <p
+          class="text-3xl"
+        >
+          Bank of America
+        </p>
+        <p
+          class="text-xl"
+        >
+          Tech Analyst
+        </p>
+        <p>
+          July 2020 - June 2022
         </p>
       </div>
       <div
@@ -87,49 +179,6 @@ exports[`TimelineWidget component renders 1`] = `
         <p
           class="text-xl"
         >
-          Tech Analyst
-        </p>
-        <p>
-          July 2020 - June 2022
-        </p>
-      </div>
-      <div
-        class="h-[2px] bg-timeline w-6 max-w-[12rem] grow"
-      />
-    </div>
-    <div
-      class="flex items-center justify-end h-48"
-    >
-      <div
-        class="opacity-0 transition-opacity duration-1000"
-      >
-        <div
-          class="relative w-16 md:w-24 lg:w-32 mr-8"
-        >
-          <img
-            alt="Bank of America"
-            data-nimg="1"
-            decoding="async"
-            height="40"
-            loading="lazy"
-            src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
-            srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
-            style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
-            width="40"
-          />
-        </div>
-      </div>
-      <div
-        class="mr-8 opacity-0 transition-opacity duration-1000"
-      >
-        <p
-          class="text-3xl"
-        >
-          Bank of America
-        </p>
-        <p
-          class="text-xl"
-        >
           Summer Intern
         </p>
         <p>
@@ -140,9 +189,6 @@ exports[`TimelineWidget component renders 1`] = `
         class="h-[2px] bg-timeline w-6 max-w-[12rem] grow"
       />
     </div>
-    <div
-      class="hidden md:block"
-    />
   </div>
 </div>
 `;

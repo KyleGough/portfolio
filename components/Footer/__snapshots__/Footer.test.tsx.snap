@@ -6,38 +6,38 @@ exports[`Footer component renders 1`] = `
     class="bg-background"
   >
     <div
-      class="bg-nav-light text-white text-center"
+      class="text-center text-white bg-nav-light"
     >
       <div
-        class="container mx-auto px-0 py-12"
+        class="container px-0 py-12 mx-auto"
       >
         <div
-          class="w-full flex flex-wrap justify-center px-4"
+          class="flex flex-wrap justify-center px-4 w-full"
         >
           <div
-            class="w-full lg:w-4/12 px-6 py-6 text-center lg:text-left"
+            class="px-6 py-6 w-full text-center lg:w-4/12 lg:text-left"
           >
             <p
-              class="font-header text-xl pb-6"
+              class="pb-6 text-xl font-header"
             >
               About Me
             </p>
             <p
               class="pb-4"
             >
-              Front-End Engineer. Former engineer at Atom Learning and Bank of America. Computer Science MEng graduate of Warwick University. Programmer and Web Developer with interests in Bouldering, Cycling, Guitar, Movies and Physics.
+              Front-End Engineer at Ripjar. Computer Science MEng graduate of Warwick University. Programmer and Web Developer with interests in Bouldering, Cycling, Guitar, Movies, and Physics.
             </p>
             <div
               class="flex flex-row justify-center lg:justify-start"
             >
               <a
-                class="group flex justify-center fill-white hover:text-nav-hover hover:fill-nav-hover"
+                class="flex justify-center group fill-white hover:text-nav-hover hover:fill-nav-hover"
                 href="mailto:kylegough98@gmail.com"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 <svg
-                  class="w-6 h-6 mr-2"
+                  class="mr-2 w-6 h-6"
                   height="24px"
                   viewBox="0 0 24 24"
                   width="24px"
@@ -65,10 +65,10 @@ exports[`Footer component renders 1`] = `
             </div>
           </div>
           <div
-            class="w-full sm:w-6/12 lg:w-4/12 px-6 py-6"
+            class="px-6 py-6 w-full sm:w-6/12 lg:w-4/12"
           >
             <p
-              class="font-header text-xl pb-6"
+              class="pb-6 text-xl font-header"
             >
               Projects
             </p>
@@ -124,10 +124,10 @@ exports[`Footer component renders 1`] = `
             </ul>
           </div>
           <div
-            class="w-full sm:w-6/12 lg:w-4/12 px-6 py-6"
+            class="px-6 py-6 w-full sm:w-6/12 lg:w-4/12"
           >
             <p
-              class="font-header text-xl pb-6"
+              class="pb-6 text-xl font-header"
             >
               Website
             </p>
@@ -167,7 +167,7 @@ exports[`Footer component renders 1`] = `
                 </a>
               </li>
               <li
-                class="text-center flex justify-center"
+                class="flex justify-center text-center"
               >
                 <a
                   aria-label="GitHub Profile"
@@ -211,10 +211,10 @@ exports[`Footer component renders 1`] = `
       </div>
     </div>
     <div
-      class="bg-nav-dark text-white text-center"
+      class="text-center text-white bg-nav-dark"
     >
       <div
-        class="container mx-auto px-8 py-8 opacity-75"
+        class="container px-8 py-8 mx-auto opacity-75"
       >
         <p
           class="opacity-100"
