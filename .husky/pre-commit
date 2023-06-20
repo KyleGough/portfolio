@@ -1,11 +1,11 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-branchName=$(git branch | grep '*' | sed 's/* //')
+branchName=$(git branch | grep '\*' | sed 's/* //')
 
-if [ $branchName == 'master' ] || [ $branchName == 'main' ]
+if [ "$branchName" = 'master' ] || [ "$branchName" = 'main' ]
 then
-  echo -e "Commiting directly to the master/main branch is not permitted." && exit 1
+  echo "Commiting directly to the master/main branch is not permitted." && exit 1
 fi
 
 npm run lint && npm run test:ci
