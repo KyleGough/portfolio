@@ -1,5 +1,4 @@
 import { FadeIn } from '@components/FadeIn';
-import { Endpoints } from '@utilities/endpoints';
 import axios from 'axios';
 import { clsx } from 'clsx';
 import React, { useState } from 'react';
@@ -75,7 +74,7 @@ export const Contact: React.FC = () => {
 
     // Send Email.
     axios
-      .post(Endpoints.CONTACT, {
+      .post('/api/send', {
         name: name,
         email: email,
         message: message,

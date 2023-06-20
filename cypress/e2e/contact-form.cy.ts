@@ -3,13 +3,13 @@ import { cy, it } from 'local-cypress';
 
 describe('Contact Form', () => {
   it('Submit contact form with valid details', () => {
-    cy.intercept('POST', '/api/contact', { success: true }).as('sendMessage');
+    cy.intercept('POST', '/api/send', { id: '0000' }).as('sendEmail');
     cy.visit('/');
     cy.get('#name').focus().type('Kyle Gough');
     cy.get('#email').focus().type('kylegough98@gmail.com');
     cy.get('#message').focus().type(`e2e contact form test at ${dayjs()}.`);
     cy.getSubmitButton().click();
-    cy.wait('@sendMessage');
+    cy.wait('@sendEmail');
     cy.getSubmitButton().should('have.text', 'Message Sent');
   });
 

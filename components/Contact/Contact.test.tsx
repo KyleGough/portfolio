@@ -92,7 +92,7 @@ describe('Contact component', () => {
 
     // Email API should have been called.
     expect(axiosMock).toHaveBeenCalledTimes(1);
-    expect(axiosMock).toHaveBeenCalledWith('/api/contact', {
+    expect(axiosMock).toHaveBeenCalledWith('/api/send', {
       name: 'Kyle Gough',
       email: 'foo.bar@baz.com',
       message: 'Custom Message',
