@@ -52,7 +52,7 @@ const RollerCoaster: React.FC<ProjectPageProps> = ({ images, project }) => (
   </Layout>
 );
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = () => {
   const images = [
     { imageData: imageBackCart, alt: 'Back cart camera view' },
     { imageData: imageTracking, alt: 'Tracking camera view' },

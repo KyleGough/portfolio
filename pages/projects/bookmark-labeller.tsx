@@ -28,7 +28,12 @@ const BookmarkLabeller: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Section>
       <div className="flex">
         <div className="w-8 h-8 mr-2">
-          <Image src={FirefoxLogo} alt="Firefox Logo" width={30} height={30} />
+          <Image
+            src={FirefoxLogo as string}
+            alt="Firefox Logo"
+            width={30}
+            height={30}
+          />
         </div>
         <Link
           className="text-2xl text-link hover:text-link-hover focus:text-link-hover"
@@ -79,7 +84,7 @@ const BookmarkLabeller: React.FC<ProjectPageProps> = ({ images, project }) => (
   </Layout>
 );
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = () => {
   const images = [
     {
       imageData: imagePopup,

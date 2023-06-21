@@ -68,7 +68,7 @@ const Home: React.FC = () => {
                 year: 2020,
               }}
               link="/projects/sudoku"
-              logo={PythonLogo}
+              logo={PythonLogo as string}
               logoAlt="Python Logo"
             />
             <ProjectCard
@@ -80,7 +80,7 @@ const Home: React.FC = () => {
                 year: 2022,
               }}
               link="/projects/ai-space-telescope"
-              logo={TypescriptLogo}
+              logo={TypescriptLogo as string}
               logoAlt="TypeScript Logo"
             />
             <ProjectCard
@@ -92,7 +92,7 @@ const Home: React.FC = () => {
                 year: 2019,
               }}
               link="/projects/cave-exploration"
-              logo={CPlusPlusLogo}
+              logo={CPlusPlusLogo as string}
               logoAlt="C++ Logo"
             />
           </div>

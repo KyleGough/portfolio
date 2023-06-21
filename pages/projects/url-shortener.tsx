@@ -50,7 +50,7 @@ const URLShortener: React.FC<ProjectPageProps> = ({ images, project }) => (
   </Layout>
 );
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = () => {
   const images = [
     { imageData: imageExample1, alt: 'Shortened URL example 1' },
     { imageData: imageExample2, alt: 'Shortened URL example 2' },

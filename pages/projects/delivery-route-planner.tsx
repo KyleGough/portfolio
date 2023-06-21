@@ -54,7 +54,7 @@ const DeliveryPlanner: React.FC<ProjectPageProps> = ({ images, project }) => (
   </Layout>
 );
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = () => {
   const images = [
     { imageData: imageDeliveryView, alt: 'Delivery view' },
     { imageData: imageRouteView, alt: 'Route view' },
