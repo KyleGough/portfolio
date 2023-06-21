@@ -4,7 +4,7 @@ import React from 'react';
 import { Pagination } from './Pagination';
 
 describe('Pagination component', () => {
-  it('renders', async () => {
+  it('renders', () => {
     const { container } = render(
       <Pagination
         previousTitle="Sorting Algorithm Visualiser"

@@ -4,7 +4,7 @@ import React from 'react';
 import { ProjectItem } from './ProjectItem';
 
 describe('ProjectItem component', () => {
-  it('renders', async () => {
+  it('renders', () => {
     const { container } = render(
       <ProjectItem
         title="New Project"

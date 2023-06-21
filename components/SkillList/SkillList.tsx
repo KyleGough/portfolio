@@ -4,8 +4,8 @@ import React from 'react';
 import { SkillItem } from './SkillItem';
 
 interface SkillListProps {
-  skills: Skill[];
   className?: string;
+  skills: Skill[];
 }
 
 export const SkillList: React.FC<SkillListProps> = ({ skills, className }) => (

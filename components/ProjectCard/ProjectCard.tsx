@@ -7,10 +7,10 @@ import Link from 'next/link';
 import React from 'react';
 
 interface ProjectCardProps {
-  className?: string;
-  image: StaticImageData;
   alt: string;
+  className?: string;
   date: Date;
+  image: StaticImageData;
   link: string;
   logo: string;
   logoAlt: string;

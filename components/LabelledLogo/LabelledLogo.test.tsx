@@ -4,7 +4,7 @@ import React from 'react';
 import { LabelledLogo } from './LabelledLogo';
 
 describe('LabelledLogo component', () => {
-  it('renders', async () => {
+  it('renders', () => {
     const { container } = render(<LabelledLogo name="React" logo="/#" />);
     expect(screen.getByText('React')).toBeVisible();
     expect(container).toMatchSnapshot();

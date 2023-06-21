@@ -3,8 +3,8 @@ import { clsx } from 'clsx';
 import React, { useEffect, useState } from 'react';
 
 interface FadeInProps {
-  className?: string;
   children: React.ReactNode;
+  className?: string;
 }
 
 export const FadeIn: React.FC<FadeInProps> = ({ className, children }) => {

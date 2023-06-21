@@ -86,18 +86,18 @@ const About: React.FC = () => {
           Additional Experience
         </h2>
         <div className="grid grid-cols-3 lg:w-4/5 xl:w-3/5 md:grid-cols-6">
-          <LabelledLogo name="Node.js" logo={NodeLogo} />
-          <LabelledLogo name="Next.js" logo={NextLogo} />
-          <LabelledLogo name="PHP" logo={PHPLogo} />
-          <LabelledLogo name="Ruby" logo={RubyLogo} />
-          <LabelledLogo name="Haskell" logo={HaskellLogo} />
-          <LabelledLogo name="MATLAB" logo={MATLABLogo} />
-          <LabelledLogo name="GitHub Actions" logo={ActionsLogo} />
-          <LabelledLogo name="jQuery" logo={jQueryLogo} />
-          <LabelledLogo name="Materialize" logo={MaterializeLogo} />
-          <LabelledLogo name="MySQL" logo={SQLLogo} />
-          <LabelledLogo name="LaTeX" logo={LaTeXLogo} />
-          <LabelledLogo name="Webix" logo={WebixLogo} />
+          <LabelledLogo name="Node.js" logo={NodeLogo as string} />
+          <LabelledLogo name="Next.js" logo={NextLogo as string} />
+          <LabelledLogo name="PHP" logo={PHPLogo as string} />
+          <LabelledLogo name="Ruby" logo={RubyLogo as string} />
+          <LabelledLogo name="Haskell" logo={HaskellLogo as string} />
+          <LabelledLogo name="MATLAB" logo={MATLABLogo as string} />
+          <LabelledLogo name="GitHub Actions" logo={ActionsLogo as string} />
+          <LabelledLogo name="jQuery" logo={jQueryLogo as string} />
+          <LabelledLogo name="Materialize" logo={MaterializeLogo as string} />
+          <LabelledLogo name="MySQL" logo={SQLLogo as string} />
+          <LabelledLogo name="LaTeX" logo={LaTeXLogo as string} />
+          <LabelledLogo name="Webix" logo={WebixLogo as string} />
         </div>
       </Section>
 

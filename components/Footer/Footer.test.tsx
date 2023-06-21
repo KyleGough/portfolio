@@ -4,7 +4,7 @@ import React from 'react';
 import { Footer } from './Footer';
 
 describe('Footer component', () => {
-  it('renders', async () => {
+  it('renders', () => {
     const { container } = render(<Footer />);
     expect(container).toMatchSnapshot();
   });

@@ -2,9 +2,9 @@ import { clsx } from 'clsx';
 import React, { forwardRef } from 'react';
 
 interface SectionProps {
+  children?: React.ReactNode;
   id?: string;
   overrideTopPadding?: boolean;
-  children?: React.ReactNode;
 }
 
 const Section = forwardRef<HTMLDivElement, SectionProps>(

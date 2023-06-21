@@ -5,7 +5,7 @@ import React from 'react';
 import { ImageModal } from './ImageModal';
 
 describe('ImageModal component', () => {
-  it('renders', async () => {
+  it('renders', () => {
     const { container } = render(
       <ImageModal image={mockStaticImageData} alt="Test Caption" />
     );
@@ -13,7 +13,7 @@ describe('ImageModal component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('dialog opens and closes on click', async () => {
+  it('dialog opens and closes on click', () => {
     render(<ImageModal image={mockStaticImageData} alt="Test Caption" />);
     expect(screen.getByText('Test Caption')).toBeVisible();
 

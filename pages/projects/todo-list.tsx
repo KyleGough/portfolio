@@ -52,7 +52,7 @@ const ToDoList: React.FC<ProjectPageProps> = ({ images, project }) => (
   </Layout>
 );
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = () => {
   const images = [
     { imageData: imageHomepage, alt: 'Homepage' },
     { imageData: imageShopping, alt: 'Shopping list' },

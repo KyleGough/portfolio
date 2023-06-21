@@ -2,12 +2,12 @@ import NextLink from 'next/link';
 import React from 'react';
 
 interface LinkProps {
-  className?: string;
-  to?: string;
-  href?: string;
-  onClick?: () => void;
   ariaLabel?: string;
   children: React.ReactNode;
+  className?: string;
+  href?: string;
+  onClick?: () => void;
+  to?: string;
 }
 
 export const Link: React.FC<LinkProps> = ({

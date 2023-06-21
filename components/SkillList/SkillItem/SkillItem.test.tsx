@@ -13,7 +13,7 @@ const skill = {
 describe('SkillItem component', () => {
   beforeEach(mockIntersectionObserver);
 
-  it('renders', async () => {
+  it('renders', () => {
     const { container } = render(<SkillItem {...skill} />);
 
     expect(screen.getByText('React')).toBeVisible();

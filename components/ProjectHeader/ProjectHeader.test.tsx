@@ -34,7 +34,7 @@ const baseProject: Project = {
 };
 
 describe('ProjectHeader component', () => {
-  it('renders', async () => {
+  it('renders', () => {
     const { container } = render(<ProjectHeader project={baseProject} />);
 
     expect(screen.getByText('Portfolio')).toBeVisible();

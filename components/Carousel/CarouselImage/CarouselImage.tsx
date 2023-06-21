@@ -3,9 +3,9 @@ import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 
 interface CarouselImageProps {
-  show: boolean;
   bg: StaticImageData;
   priority: boolean;
+  show: boolean;
 }
 
 export const CarouselImage: React.FC<CarouselImageProps> = ({

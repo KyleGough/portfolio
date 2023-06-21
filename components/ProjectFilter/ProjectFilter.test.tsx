@@ -4,14 +4,14 @@ import React from 'react';
 import { ProjectFilter } from './ProjectFilter';
 
 describe('ProjectFilter component', () => {
-  it('renders', async () => {
+  it('renders', () => {
     const { container } = render(
       <ProjectFilter filter="All" setFilterCallback={() => jest.fn()} />
     );
     expect(container).toMatchSnapshot();
   });
 
-  it('filter selection opens on click event', async () => {
+  it('filter selection opens on click event', () => {
     render(<ProjectFilter filter="All" setFilterCallback={() => jest.fn()} />);
 
     const filterBtn = screen.getByRole('button');

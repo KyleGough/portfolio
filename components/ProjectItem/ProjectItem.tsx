@@ -6,16 +6,16 @@ import Link from 'next/link';
 import React from 'react';
 
 interface ProjectItemProps {
-  title: string;
+  alt: string;
   date: ProjectDate;
   description: string;
-  link: string;
   image: StaticImageData;
-  alt: string;
+  link: string;
   logo: {
-    src: string;
     alt: string;
+    src: string;
   };
+  title: string;
 }
 
 export const ProjectItem: React.FC<ProjectItemProps> = ({

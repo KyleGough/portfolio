@@ -4,7 +4,7 @@ import React from 'react';
 import { ContactFieldError } from './ContactFieldError';
 
 describe('ContactFieldError component', () => {
-  it('renders', async () => {
+  it('renders', () => {
     const { container } = render(
       <ContactFieldError message="Invalid Email!" />
     );

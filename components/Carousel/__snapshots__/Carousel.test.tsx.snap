@@ -16,6 +16,7 @@ exports[`Carousel component renders 1`] = `
         class="fixed object-cover object-center w-full h-full"
         data-nimg="1"
         decoding="async"
+        fetchpriority="high"
         height="100"
         src="/_next/image?url=%2F%23image&w=256&q=75"
         srcset="/_next/image?url=%2F%23image&w=128&q=75 1x, /_next/image?url=%2F%23image&w=256&q=75 2x"
