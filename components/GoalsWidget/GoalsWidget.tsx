@@ -9,6 +9,7 @@ import RustLogo from '@image/skill/rust.svg';
 import ThreeLogo from '@image/skill/three.svg';
 import TypeScriptLogo from '@image/skill/typescript.svg';
 import ViteLogo from '@image/skill/vite.svg';
+import { StaticImageData } from 'next/image';
 import React from 'react';
 
 export const GoalsWidget: React.FC = () => (
@@ -20,10 +21,16 @@ export const GoalsWidget: React.FC = () => (
           <p>Learned</p>
         </h2>
         <ul className="w-fit mx-auto">
-          <GoalListItem logo={TypeScriptLogo} name="TypeScript" />
-          <GoalListItem logo={ESLintLogo} name="ESLint" />
-          <GoalListItem logo={ActionsLogo} name="GitHub Actions" />
-          <GoalListItem logo={NextLogo} name="Next.js" />
+          <GoalListItem
+            logo={TypeScriptLogo as StaticImageData}
+            name="TypeScript"
+          />
+          <GoalListItem logo={ESLintLogo as StaticImageData} name="ESLint" />
+          <GoalListItem
+            logo={ActionsLogo as StaticImageData}
+            name="GitHub Actions"
+          />
+          <GoalListItem logo={NextLogo as StaticImageData} name="Next.js" />
           <GoalListItem name="WebExtensions API" />
         </ul>
       </div>
@@ -34,11 +41,11 @@ export const GoalsWidget: React.FC = () => (
           <p>Goals</p>
         </h2>
         <ul className="w-fit mx-auto">
-          <GoalListItem logo={ThreeLogo} name="Three.js" />
-          <GoalListItem logo={RustLogo} name="Rust" />
-          <GoalListItem logo={AstroLogo} name="Astro" />
-          <GoalListItem logo={GraphQLLogo} name="GraphQL" />
-          <GoalListItem logo={ViteLogo} name="Vite" />
+          <GoalListItem logo={ThreeLogo as StaticImageData} name="Three.js" />
+          <GoalListItem logo={RustLogo as StaticImageData} name="Rust" />
+          <GoalListItem logo={AstroLogo as StaticImageData} name="Astro" />
+          <GoalListItem logo={GraphQLLogo as StaticImageData} name="GraphQL" />
+          <GoalListItem logo={ViteLogo as StaticImageData} name="Vite" />
         </ul>
       </div>
     </div>

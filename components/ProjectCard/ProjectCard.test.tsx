@@ -7,7 +7,7 @@ import { ProjectCard } from './ProjectCard';
 describe('ProjectCard component', () => {
   beforeEach(mockIntersectionObserver);
 
-  it('renders', async () => {
+  it('renders', () => {
     const { container } = render(
       <ProjectCard
         image={{

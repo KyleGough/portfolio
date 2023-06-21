@@ -4,10 +4,10 @@ import Image from 'next/image';
 import React from 'react';
 
 interface SkillItemProps {
-  name: string;
+  className?: string;
   description: string;
   logo: string;
-  className?: string;
+  name: string;
 }
 
 export const SkillItem: React.FC<SkillItemProps> = ({

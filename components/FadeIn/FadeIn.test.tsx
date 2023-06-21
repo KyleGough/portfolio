@@ -6,7 +6,7 @@ import { FadeIn } from './FadeIn';
 
 describe('FadeIn component', () => {
   beforeEach(mockIntersectionObserver);
-  it('renders', async () => {
+  it('renders', () => {
     const { container } = render(<FadeIn>Test</FadeIn>);
 
     expect(screen.getByText('Test')).toBeVisible();

@@ -8,7 +8,7 @@ import { TimelineNode } from './TimelineNode';
 describe('TimelineNode component', () => {
   beforeEach(mockIntersectionObserver);
 
-  it('renders', async () => {
+  it('renders', () => {
     const { container } = render(
       <TimelineNode
         title="Acme"

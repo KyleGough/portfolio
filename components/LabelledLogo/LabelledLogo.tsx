@@ -2,8 +2,8 @@ import Image from 'next/image';
 import React from 'react';
 
 interface LabelledLogoProps {
-  name: string;
   logo: string;
+  name: string;
 }
 
 export const LabelledLogo: React.FC<LabelledLogoProps> = ({ name, logo }) => (

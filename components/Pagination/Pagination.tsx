@@ -4,10 +4,10 @@ import Link from 'next/link';
 import React from 'react';
 
 interface PaginationProps {
-  previousTitle?: string;
-  previousLink?: string;
-  nextTitle?: string;
   nextLink?: string;
+  nextTitle?: string;
+  previousLink?: string;
+  previousTitle?: string;
 }
 
 export const Pagination: React.FC<PaginationProps> = ({

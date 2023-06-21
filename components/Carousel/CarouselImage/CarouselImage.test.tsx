@@ -5,7 +5,7 @@ import React from 'react';
 import { CarouselImage } from './CarouselImage';
 
 describe('CarouselImage component', () => {
-  it('renders', async () => {
+  it('renders', () => {
     const { container } = render(
       <CarouselImage show={true} bg={mockStaticImageData} />
     );

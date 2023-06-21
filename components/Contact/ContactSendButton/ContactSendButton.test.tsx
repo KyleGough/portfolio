@@ -5,7 +5,7 @@ import { EmailStatus } from '../Contact.types';
 import { ContactSendButton } from './ContactSendButton';
 
 describe('ContactSendButton component', () => {
-  it('renders', async () => {
+  it('renders', () => {
     const { container } = render(
       <ContactSendButton onClick={() => jest.fn()} status={EmailStatus.IDLE} />
     );
@@ -14,7 +14,7 @@ describe('ContactSendButton component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('component displays correct text on fail status', async () => {
+  it('component displays correct text on fail status', () => {
     render(
       <ContactSendButton onClick={() => jest.fn()} status={EmailStatus.FAIL} />
     );
@@ -22,7 +22,7 @@ describe('ContactSendButton component', () => {
     expect(screen.getByText('Message Failed')).toBeVisible();
   });
 
-  it('component displays correct text on sent status', async () => {
+  it('component displays correct text on sent status', () => {
     render(
       <ContactSendButton onClick={() => jest.fn()} status={EmailStatus.SENT} />
     );

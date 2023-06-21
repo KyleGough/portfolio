@@ -4,11 +4,11 @@ import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 
 interface TimelineNodeProps {
-  title: string;
-  subtitle: string;
-  date: string;
   align: 'left' | 'right';
+  date: string;
   logo: StaticImageData;
+  subtitle: string;
+  title: string;
 }
 
 export const TimelineNode: React.FC<TimelineNodeProps> = ({

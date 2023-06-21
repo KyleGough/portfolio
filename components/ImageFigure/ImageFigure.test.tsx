@@ -5,7 +5,7 @@ import React from 'react';
 import { ImageFigure } from './ImageFigure';
 
 describe('ImageFigure component', () => {
-  it('renders', async () => {
+  it('renders', () => {
     const { container } = render(
       <ImageFigure
         image={{

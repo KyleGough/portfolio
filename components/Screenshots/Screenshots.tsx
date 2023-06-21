@@ -5,8 +5,8 @@ import React from 'react';
 
 interface ScreenshotProps {
   images: {
-    imageData: StaticImageData;
     alt: string;
+    imageData: StaticImageData;
   }[];
 }
 

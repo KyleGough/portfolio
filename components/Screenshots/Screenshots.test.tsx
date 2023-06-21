@@ -5,7 +5,7 @@ import React from 'react';
 import { Screenshots } from './Screenshots';
 
 describe('Screenshots component', () => {
-  it('renders', async () => {
+  it('renders', () => {
     const { container } = render(
       <Screenshots
         images={[

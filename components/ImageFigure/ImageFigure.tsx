@@ -4,8 +4,8 @@ import React from 'react';
 
 interface ImageFigureProps {
   image: {
-    imageData: StaticImageData;
     alt: string;
+    imageData: StaticImageData;
   };
 }
 

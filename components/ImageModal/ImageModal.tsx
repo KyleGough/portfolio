@@ -2,8 +2,8 @@ import Image, { StaticImageData } from 'next/image';
 import React, { useState } from 'react';
 
 interface ImageModalProps {
-  image: StaticImageData;
   alt: string;
+  image: StaticImageData;
 }
 
 export const ImageModal: React.FC<ImageModalProps> = ({ image, alt }) => {

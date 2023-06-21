@@ -1,8 +1,8 @@
 export interface SocialMetaProps {
+  desc: string;
+  image: string;
   title: string;
   url: string;
-  image: string;
-  desc: string;
 }
 
 export const socialMeta = {

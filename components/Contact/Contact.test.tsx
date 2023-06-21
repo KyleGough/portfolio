@@ -8,12 +8,12 @@ import { Contact } from './Contact';
 describe('Contact component', () => {
   beforeEach(mockIntersectionObserver);
 
-  it('renders', async () => {
+  it('renders', () => {
     const { container } = render(<Contact />);
     expect(container).toMatchSnapshot();
   });
 
-  it('contact from gives errors when required fields are empty', async () => {
+  it('contact from gives errors when required fields are empty', () => {
     const spy = jest.spyOn(axios, 'post');
     render(<Contact />);
 
@@ -30,7 +30,7 @@ describe('Contact component', () => {
     expect(spy).toHaveBeenCalledTimes(0);
   });
 
-  it('contact from gives error when given invalid email', async () => {
+  it('contact from gives error when given invalid email', () => {
     const spy = jest.spyOn(axios, 'post');
     render(<Contact />);
 
@@ -56,7 +56,7 @@ describe('Contact component', () => {
     expect(spy).toHaveBeenCalledTimes(0);
   });
 
-  it('contact form submits on valid inputs', async () => {
+  it('contact form submits on valid inputs', () => {
     const axiosMock = jest
       .spyOn(axios, 'post')
       .mockReturnValue(Promise.reject(() => jest.fn().mockReturnValue('test')));
@@ -86,7 +86,7 @@ describe('Contact component', () => {
 
     // Send message.
     const sendBtn = screen.getByRole('button');
-    await act(async () => {
+    act(() => {
       fireEvent.click(sendBtn);
     });
 

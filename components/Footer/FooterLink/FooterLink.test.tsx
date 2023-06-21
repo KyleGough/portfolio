@@ -4,7 +4,7 @@ import React from 'react';
 import { FooterLink } from './FooterLink';
 
 describe('FooterLink component', () => {
-  it('renders', async () => {
+  it('renders', () => {
     const { container } = render(<FooterLink href="/">Homepage</FooterLink>);
     expect(screen.getByText('Homepage')).toBeVisible();
     expect(screen.getByRole('link')).toHaveAttribute('href', '/');

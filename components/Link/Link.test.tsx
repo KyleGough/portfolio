@@ -4,7 +4,7 @@ import React from 'react';
 import { Link } from './Link';
 
 describe('Link component', () => {
-  it('renders external link', async () => {
+  it('renders external link', () => {
     const { container } = render(<Link href="https://google.com">Link</Link>);
 
     expect(screen.getByRole('link')).toHaveAttribute(
@@ -15,7 +15,7 @@ describe('Link component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('renders internal link', async () => {
+  it('renders internal link', () => {
     render(<Link to="/test">Link</Link>);
 
     expect(screen.getByRole('link')).toHaveAttribute('href', '/test');

@@ -2,8 +2,8 @@ import { Section } from '@components/Section';
 import React from 'react';
 
 interface VideoFigureProps {
-  src: string;
   caption: string;
+  src: string;
 }
 
 export const VideoFigure: React.FC<VideoFigureProps> = ({ src, caption }) => (

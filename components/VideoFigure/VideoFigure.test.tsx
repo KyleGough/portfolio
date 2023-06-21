@@ -4,7 +4,7 @@ import React from 'react';
 import { VideoFigure } from './VideoFigure';
 
 describe('VideoFigure component', () => {
-  it('renders', async () => {
+  it('renders', () => {
     const { container } = render(
       <VideoFigure src="/#" caption="Test Caption" />
     );

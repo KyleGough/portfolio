@@ -5,7 +5,7 @@ import React from 'react';
 import { Carousel } from './Carousel';
 
 describe('Carousel component', () => {
-  it('renders', async () => {
+  it('renders', () => {
     const { container } = render(
       <Carousel backgrounds={[mockStaticImageData, mockStaticImageData]}>
         Carousel Text

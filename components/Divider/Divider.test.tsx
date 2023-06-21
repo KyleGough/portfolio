@@ -4,7 +4,7 @@ import React from 'react';
 import { Divider } from './Divider';
 
 describe('Divider component', () => {
-  it('renders', async () => {
+  it('renders', () => {
     const { container } = render(<Divider />);
     expect(container).toMatchSnapshot();
   });

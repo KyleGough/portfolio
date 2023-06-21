@@ -1,8 +1,8 @@
 import React, { KeyboardEvent } from 'react';
 
 interface ProjectFilterSelectionProps {
-  value: string;
   onSelect: (a: string) => void;
+  value: string;
 }
 
 export const ProjectFilterSelection: React.FC<ProjectFilterSelectionProps> = ({

@@ -4,7 +4,7 @@ import React from 'react';
 import { GoalListItem } from './GoalListItem';
 
 describe('GoalListItem component', () => {
-  it('renders', async () => {
+  it('renders', () => {
     const { container } = render(<GoalListItem name="ESLint" />);
 
     expect(screen.getByText('ESLint')).toBeVisible();

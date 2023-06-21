@@ -4,8 +4,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { CarouselImage } from './CarouselImage';
 
 interface CarouselProps {
-  children: React.ReactNode;
   backgrounds: StaticImageData[];
+  children: React.ReactNode;
 }
 
 export const Carousel: React.FC<CarouselProps> = ({

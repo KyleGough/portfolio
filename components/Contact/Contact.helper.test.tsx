@@ -21,7 +21,7 @@ const invalidEmails = [
 ];
 
 describe('Contact helper', () => {
-  it('validateEmail indentifies valid emails successfully', async () => {
+  it('validateEmail indentifies valid emails successfully', () => {
     for (const email of validEmails) {
       expect(validateEmail(email)).toBe(true);
     }

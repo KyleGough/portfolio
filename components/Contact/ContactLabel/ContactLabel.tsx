@@ -2,10 +2,10 @@ import { clsx } from 'clsx';
 import React from 'react';
 
 interface ContactLabelProps {
-  valid: boolean;
-  isSent: boolean;
-  htmlFor: string;
   children: React.ReactNode;
+  htmlFor: string;
+  isSent: boolean;
+  valid: boolean;
 }
 
 export const ContactLabel: React.FC<ContactLabelProps> = ({

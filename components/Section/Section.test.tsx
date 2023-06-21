@@ -4,13 +4,13 @@ import React from 'react';
 import { Section } from './Section';
 
 describe('Section component', () => {
-  it('renders', async () => {
+  it('renders', () => {
     const { container } = render(<Section>Test</Section>);
     expect(screen.getByText('Test')).toBeVisible();
     expect(container).toMatchSnapshot();
   });
 
-  it('component overrides top padding', async () => {
+  it('component overrides top padding', () => {
     render(
       <Section id="test" overrideTopPadding={true}>
         Test
