@@ -46,5 +46,3 @@ const send = async (req: NextApiRequest, res: NextApiResponse) => {
 };
 
 export default send;
-
-// POST only.
