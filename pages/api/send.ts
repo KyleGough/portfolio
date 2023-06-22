@@ -11,6 +11,11 @@ interface Email {
 
 const resend = new Resend(process.env.EMAIL_API_KEY);
 
+const recipient =
+  process.env.NODE_ENV === 'production'
+    ? 'kylegough98@gmail.com'
+    : 'delivered@resend.dev';
+
 const send = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== 'POST') {
     res.setHeader('Allow', ['POST']);
@@ -33,7 +38,7 @@ const send = async (req: NextApiRequest, res: NextApiResponse) => {
 
     const data = await resend.emails.send({
       from: 'contact@kylegough.co.uk',
-      to: 'kylegough98@gmail.com',
+      to: recipient,
       subject: `Portfolio Message from ${body.name}`,
       html: '<strong>Portfolio message</strong>',
       react: EmailTemplate(body),
