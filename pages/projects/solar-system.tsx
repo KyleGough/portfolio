@@ -5,14 +5,15 @@ import { Pagination } from '@components/Pagination';
 import { ProjectHeader } from '@components/ProjectHeader';
 import { Screenshots } from '@components/Screenshots';
 import { Section } from '@components/Section';
-import imageWebsite from '@image/ai-space-telescope1.jpg';
+import imageEarth from '@image/earth.png';
+import imageSun from '@image/sun.png';
 import { getProjectData } from '@utilities/Project';
 import { ProjectPageProps } from '@utilities/types';
 import { GetStaticProps } from 'next';
 import React from 'react';
 
 const AISpaceTelescope: React.FC<ProjectPageProps> = ({ images, project }) => (
-  <Layout title="AI Space Telescope">
+  <Layout title="Solar System Model">
     <ProjectHeader project={project} />
 
     <Divider />
@@ -46,10 +47,8 @@ const AISpaceTelescope: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Divider />
 
     <Pagination
-      previousTitle="Bookmark Labeller"
-      previousLink="/projects/bookmark-labeller"
-      nextTitle="Solar System"
-      nextLink="/projects/solar-system"
+      previousTitle="AI Space Telescope"
+      previousLink="/projects/ai-space-telescope"
     />
   </Layout>
 );
@@ -57,15 +56,19 @@ const AISpaceTelescope: React.FC<ProjectPageProps> = ({ images, project }) => (
 export const getStaticProps: GetStaticProps = () => {
   const images = [
     {
-      imageData: imageWebsite,
-      alt: 'AI Space Telescope Website',
+      imageData: imageEarth,
+      alt: 'Earth',
+    },
+    {
+      imageData: imageSun,
+      alt: 'Sun',
     },
   ];
 
   return {
     props: {
       images: images,
-      project: getProjectData('ai-space-telescope'),
+      project: getProjectData('solar-system'),
     },
   };
 };
