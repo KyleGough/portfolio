@@ -70,7 +70,7 @@
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
     "autoprefixer": "^10.4.2",
-    "cypress": "^11.2.0",
+    "cypress": "^13.1.0",
     "eslint": "^8.23.1",
     "eslint-config-next": "^13.0.5",
     "eslint-plugin-cypress": "^2.12.1",
