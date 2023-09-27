@@ -26,19 +26,42 @@ const BSplit: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Divider />
 
     <Section>
-      <h2 className="project-header">Features</h2>
-      <ul className="project-list">
-        <li>User registration.</li>
-        <li>User authentication.</li>
-        <li>Create a group of existing users by email address.</li>
-        <li>Create a bill for a group.</li>
-        <li>Create a bill for any set of users.</li>
-        <li>Mostly AJAX content to enchance user experience.</li>
-        <li>Ability to settle a payment in one or multiple payments.</li>
-        <li>Displays the status of bills.</li>
-        <li>Notification system for new unseen bills.</li>
-        <li>Email notifications for new groups and bills.</li>
-        <li>Search functionality for bills and groups.</li>
+      <h2 className="project-header">Project Highlights</h2>
+      <ul className="project-list max-w-reading">
+        <li>
+          <strong>Effortless Registration:</strong> Get started quickly by
+          registering as a user, unlocking the power of collaborative bill
+          management.
+        </li>
+        <li>
+          <strong>Group Creation:</strong> Seamlessly bring friends and
+          housemates together by creating groups using their email addresses.
+        </li>
+        <li>
+          <strong>Bills Made Simple:</strong> Create bills effortlessly, whether
+          for a specific group or any set of users, ensuring everyone&apos;s
+          contributions are accurately tracked.
+        </li>
+        <li>
+          <strong>Enhanced User Experience:</strong> Enjoy a smooth and
+          uninterrupted experience with our AJAX-powered dashboard, preventing
+          unnecessary page reloading and streamlining your interaction with the
+          app.
+        </li>
+        <li>
+          <strong>Flexible Payment Settlement:</strong> Settle payments at your
+          convenience, whether in a single payment or multiple installments,
+          making it easy to manage shared expenses.
+        </li>
+        <li>
+          <strong>Notification System:</strong> Stay informed with our
+          notification system, alerting you to unseen bills and providing email
+          notifications for new groups and bills.
+        </li>
+        <li>
+          <strong>Effortless Search:</strong> Quickly find the bills and groups
+          you need with our intuitive search functionality.
+        </li>
       </ul>
     </Section>
 

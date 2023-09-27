@@ -29,16 +29,16 @@ export const getProjectData = (projectKey: string) => {
 };
 
 enum ProjectFilter {
-  REACT = 'React',
-  JAVASCRIPT = 'JavaScript',
-  WEB = 'Web',
-  PYTHON = 'Python',
-  SQL = 'SQL',
-  GROUP_PROJECT = 'Group Projects',
-  PUZZLE = 'Games/Puzzles',
   CPLUSPLUS = 'C++',
-  PHP = 'PHP',
   CSHARP = 'C#',
+  GROUP_PROJECT = 'Group Projects',
+  JAVASCRIPT = 'JavaScript',
+  PHP = 'PHP',
+  PUZZLE = 'Games/Puzzles',
+  PYTHON = 'Python',
+  REACT = 'React',
+  SQL = 'SQL',
+  WEB = 'Web',
 }
 
 const logos = {
@@ -87,7 +87,7 @@ export const projects: Project[] = [
     link: '/projects/ai-space-telescope',
     filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.REACT, ProjectFilter.WEB],
     description:
-      'Gallery of science-fiction themed images generated using the amazing DALL·E 2 API. These pictures are a hand-picked selection of my favourite generated images.',
+      'Embark on a cosmic journey through a captivating image gallery, where the realm of science fiction comes to life, courtesy of the extraordinary DALL·E 2 API. Every image in this curated collection represents a handpicked selection of my personal favourites, each a testament to the boundless creativity of AI-generated artistry.',
     github: 'https://github.com/KyleGough/ai-space-telescope',
     skills: ['React', 'Typescript', 'TailwindCSS'],
     logo: logos.typescript,
@@ -107,7 +107,7 @@ export const projects: Project[] = [
     link: '/projects/bookmark-labeller',
     filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.WEB],
     description:
-      'Bookmark Labeller is a lightweight and minimalistic Firefox browser extension that allows you to label bookmarks with your favourite emojis. The extension comes with 9 default emojis which can be customised. Use the action button to select emojis or right-click bookmarks to add emojis with the context menu.',
+      'Firefox browser extension that brings a touch of personalization to your bookmarks. This lightweight and minimalist tool empowers you to effortlessly label your bookmarks with your favorite emojis, adding a fun and visual twist to your browsing experience.',
     github: 'https://github.com/KyleGough/bookmark-labeller-extension',
     skills: ['JavaScript', 'WebExtensions API', 'HTML', 'CSS'],
     logo: logos.javascript,
@@ -130,7 +130,7 @@ export const projects: Project[] = [
     link: '/projects/portfolio',
     filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.REACT, ProjectFilter.WEB],
     description:
-      'Personal portfolio website created to showcase my projects and technical skills. Initially created as a static HTML website, the website has experienced multiple upgrades over the years including migration to PHP, Create React App, and most recently Next.js.',
+      "Dynamic showcase of my evolving journey as a front-end engineer. Here, you'll find a curated collection of my projects and a glimpse into my ever-expanding technical repertoire.",
     github: 'https://github.com/KyleGough/portfolio',
     skills: [
       'Next.js',
@@ -171,7 +171,7 @@ export const projects: Project[] = [
       ProjectFilter.WEB,
     ],
     description:
-      'An adaptable, heterogeneous IoT testbed for which I developed the front-end user interface. The UI allows registered users to upload and configure tests and images to be deployed on the testbed. Additionally, test results and custom metrics including mote availability graphs and mote CCA charts can be viewed.',
+      'An adaptable, heterogeneous IoT testbed, where I took the lead in developing the front-end user interface. This user-friendly platform empowers registered users to seamlessly upload, configure, and deploy tests and images on the testbed, all at their fingertips.',
     skills: [
       'React',
       'JavaScript',
@@ -203,7 +203,7 @@ export const projects: Project[] = [
     link: '/projects/sudoku',
     filters: [ProjectFilter.PYTHON, ProjectFilter.PUZZLE],
     description:
-      'Program that can solve expert level Sudoku using only logical techniques (no brute forcing, guessing or backtracking). The program outputs a detailed description of the techniques and moves required at each step to solve Sudoku. The solver reads CSV files allowing for batch solving. In-depth analysis is displayed including but not limited to: difficulty rating, occurrences of each technique, probability of each technique, processing time for each technique and total processing time.',
+      'A powerful algorithmic tool designed to conquer even the most challenging Sudoku puzzles without resorting to brute force, guessing, or backtracking. This solver showcases a refined approach to puzzle solving, providing users with detailed insights at every step.',
     github: 'https://github.com/KyleGough/sudoku',
     skills: ['Python'],
     logo: logos.python,
@@ -227,7 +227,7 @@ export const projects: Project[] = [
       ProjectFilter.WEB,
     ],
     description:
-      'Clone of classic Minesweeper with an 18x18 board. Ability to reveal tiles and flag tiles for potential mines. Flood fill algorithms will reveal all adjacent tiles when a 0 is uncovered, mimicing the behaviour of the original game.',
+      'Step back in time and relive the classic Minesweeper experience with this faithful clone, meticulously crafted in React. Featuring an 18x18 game board, it offers all the elements you love about the original game and more.',
     github: 'https://github.com/KyleGough/react-minesweeper',
     skills: ['React', 'JavaScript', 'CSS', 'Materialize'],
     logo: logos.react,
@@ -330,7 +330,7 @@ export const projects: Project[] = [
     link: '/projects/url-shortener',
     filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.WEB],
     description:
-      'A URL shortening tool creating using Node.js, Express.js for routing GET and POST requests and MongoDB to store URLs. The project is my first using all three of these technologies. Long URLs are stored in the database and the ID is encoded and used as the short URL.',
+      'Simple yet powerful URL shortening tool that is designed to simplify link management while ensuring efficient and reliable shortening. The project marks my debut in harnessing the capabilities of Node.js, Express.js, and MongoDB to create a seamless user experience.',
     skills: ['JavaScript', 'MongoDB', 'jQuery', 'HTML', 'CSS', 'Materialize'],
     logo: logos.javascript,
   },
@@ -348,7 +348,7 @@ export const projects: Project[] = [
     link: '/projects/graph-algorithm-visualiser',
     filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.WEB],
     description:
-      "Web application which visualises the process of various graph algorithms on randomised nodes. The application can simulate Prim's and Kruskal's algorithm for constructing minimum spanning trees, Graham scan to construct convex hulls, Greedy algorithm to construct minimal matchings, and Nearest neighbour with 2-Opt to create Hamiltonian cycles.",
+      'Dive into the captivating world of graph algorithms with a web application, designed to provide a visual and interactive experience. Explore the intricate elegance of algorithms on randomised nodes, offering an illuminating understanding of their real-world applications.',
     github: 'https://github.com/KyleGough/graph-algorithm-visualiser',
     skills: ['JavaScript', 'Materialize'],
     logo: logos.javascript,
@@ -368,7 +368,7 @@ export const projects: Project[] = [
     link: '/projects/cavern-minesweeper',
     filters: [ProjectFilter.PUZZLE],
     description:
-      'Cavern Minesweeper is based off of the original Minesweeper game but with tiered mines (ores) which can only be mined if the player has uncovered enough squares to advance to the required mining level. The game has three levels of difficulty to challenge competitive players. The project served as a tool to teach me Ruby.',
+      'Cavern Minesweeper takes the classic Minesweeper game to new depths, introducing tiered mines (ores) that add an exciting twist to your mining adventure. You must strategically uncover enough squares to reach the required mining level. With three challenging difficulty levels, Cavern Minesweeper offers competitive players an exhilarating test of their skills.',
     github: 'https://github.com/KyleGough/cavern-minesweeper',
     skills: ['Ruby'],
     logo: logos.ruby,
@@ -397,7 +397,7 @@ export const projects: Project[] = [
       ProjectFilter.WEB,
     ],
     description:
-      "BSplit is a web application that allows registered users to create and settle payments between friends and housemates for things such as restaurant bills, utility bills and food shopping. The app's dashboard utilises AJAX requests to prevent web page reloading to enchance user experience. Dashboard and email notifications are sent when a new bill or group is created.",
+      'Meet BSplit, your all-in-one web application designed to simplify the process of splitting bills and settling payments among friends and housemates. With user-friendly features and a commitment to enhancing the user experience, BSplit makes managing shared expenses a breeze.',
     skills: ['PHP', 'JavaScript', 'jQuery', 'SQL', 'HTML', 'CSS', 'Bootstrap'],
     logo: logos.javascript,
   },
@@ -426,7 +426,7 @@ export const projects: Project[] = [
       ProjectFilter.WEB,
     ],
     description:
-      "To Do List Web application where users can signup and create their own lists. Learned and integrated PHP and SQL to store and query user's lists. Protected the application from SQL injection and cross-site scripting.",
+      'Web application that empowers users to efficiently manage their tasks and to-do lists. This project was an educational journey in which I acquired proficiency in PHP and SQL to implement secure data storage and retrieval, safeguarding the application against SQL injection and cross-site scripting vulnerabilities.',
     skills: ['PHP', 'JavaScript', 'jQuery', 'SQL', 'HTML', 'CSS'],
     logo: logos.javascript,
   },
@@ -449,7 +449,7 @@ export const projects: Project[] = [
     link: '/projects/delivery-route-planner',
     filters: [ProjectFilter.CSHARP],
     description:
-      "Creates an efficient route between multiple delivery locations. Store, view and query data on products, clients and their deliveries. Produces a report which communicates the route, delivery items, and ETA. Uses graph algorithms such as Dijkstra's and Nearest Neighbour with 2-Opt to optimise the route.",
+      'Delivery route planner designed for efficiency and precision. Seamlessly links multiple delivery locations, minimising travel time and maximising resource utilisation. Gain comprehensive insights with detailed reports that illuminate the delivery route, item inclusions, and estimated time of arrival.',
     skills: ['C#', 'SQL'],
     logo: logos.csharp,
   },
@@ -471,7 +471,7 @@ export const projects: Project[] = [
     link: '/projects/sorting-algorithm-visualiser',
     filters: [ProjectFilter.CSHARP],
     description:
-      'Tool for visualising the sorting process on generated datasets. Supports 20 different sorting algorithms including: Bubble sort, Merge sort, and Quicksort. The tool also has the ability to compare and visualise two sorting algorithms concurrently. The initial dataset can be a choice of 18 configurations such as: random, normally distributed or sawtooth.',
+      "Journey into the mesmerizing world of data sorting with a visualisation tool designed to demystify the intricate sorting process. This versatile platform empowers you to not only witness but deeply understand how data transforms when processed by sorting algorithms. Featuring a vast array of options and capabilities, it's your gateway to exploring the fascinating realm of data organisation.",
     skills: ['C#'],
     logo: logos.csharp,
   },

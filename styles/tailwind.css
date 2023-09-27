@@ -31,6 +31,10 @@
     @apply list-outside;
     @apply ml-4;
   }
+
+  .project-list li {
+    @apply mb-4;
+  }
 }
 
 @layer utilities {

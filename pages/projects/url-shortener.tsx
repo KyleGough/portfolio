@@ -25,13 +25,20 @@ const URLShortener: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Section>
       <h2 className="project-header">Features</h2>
       <ul className="project-list">
-        <li>Simple URL shortener.</li>
-        <li>AJAX request to send URL and get link counter.</li>
-        <li>Express.js to handle routing for GET and POST requests.</li>
-        <li>Live counter on homepage of how many links have been created.</li>
-        <li>Prevents shortening links from itself.</li>
-        <li>Will not duplicate URLs.</li>
-        <li>Copy to clipboard feature for the short URL.</li>
+        <li>
+          <strong>Effortless URL Shortening:</strong> Simplify lengthy URLs with
+          ease, creating concise and manageable short links for your
+          convenience.
+        </li>
+        <li>
+          <strong>Duplicate Prevention:</strong> Avoid clutter and confusion by
+          preventing the creation of duplicate short URLs for the same long URL.
+        </li>
+        <li>
+          <strong>Copy to Clipboard:</strong> Enjoy the convenience of copying
+          your short URL with a simple click, making sharing and dissemination
+          effortless.
+        </li>
       </ul>
     </Section>
 

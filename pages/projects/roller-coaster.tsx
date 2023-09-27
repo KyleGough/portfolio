@@ -25,15 +25,20 @@ const RollerCoaster: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Divider />
 
     <Section>
-      <h2 className="project-header">Features</h2>
-      <ul className="project-list">
-        <li>Looping track with lift-hill, drop, loop-the-loop and turns</li>
-        <li>Texture mapping of cart and wheels</li>
-        <li>Skybox</li>
-        <li>First-person camera view</li>
-        <li>Overview camera mode</li>
-        <li>Rotating cart wheels</li>
-        <li>Lighting</li>
+      <h2 className="project-header">Project Highlights</h2>
+      <ul className="project-list max-w-reading">
+        <li>
+          <strong>First-person thrills:</strong> Strap in for the ride of your
+          life as you experience the roller coaster from a first-person
+          perspective in each of the three cars. Feel the virtual G-forces as
+          you navigate the twists and turns.
+        </li>
+        <li>
+          <strong>Multiple viewing angles:</strong> For those who prefer a
+          different view, the simulation offers additional camera angles that
+          track the coaster&apos;s progress along the track, providing a
+          comprehensive and visually stunning perspective.
+        </li>
       </ul>
     </Section>
 
