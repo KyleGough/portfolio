@@ -23,15 +23,19 @@ const CavernMinesweeper: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Divider />
 
     <Section>
-      <h2 className="project-header">Features</h2>
-      <ul className="project-list">
-        <li>Three playable difficulties.</li>
+      <h2 className="project-header">Project Highlights</h2>
+      <ul className="project-list max-w-reading">
         <li>
-          Tiered Ores which damage the player if their level is not sufficient
-          enough.
+          <strong>Tiered Ores:</strong> Discover an array of tiered ores, each
+          with its own level requirement. Dig too deep without the proper level,
+          and you&apos;ll face the consequences as these ores can damage you.
         </li>
-        <li>Flood Fill algorithm for revealing tiles.</li>
-        <li>Shoes GUI.</li>
+        <li>
+          <strong>Three Playable Difficulties:</strong> Choose from three
+          distinct difficulty levels, catering to both newcomers and seasoned
+          miners. Test your strategic prowess as you ascend from novice to
+          expert.
+        </li>
       </ul>
     </Section>
 

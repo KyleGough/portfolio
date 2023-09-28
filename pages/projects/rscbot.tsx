@@ -27,21 +27,42 @@ const RSCBot: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Divider />
 
     <Section>
-      <h2 className="project-header">Features</h2>
-      <ul className="project-list">
-        <li>Fast and responsive answers to stock market queries.</li>
+      <h2 className="project-header">Project Highlights</h2>
+      <ul className="project-list max-w-reading">
         <li>
-          Hourly news briefings from a selection of the user&apos;s favourite
-          companies and sectors.
+          <strong>Swift and Precise Responses:</strong> Experience
+          lightning-fast answers to all your stock market queries, ensuring
+          you&apos;re always in the know.
         </li>
-        <li>Ability to select favourite companies and sectors.</li>
-        <li>Poll rate choice for each individual company and sector.</li>
-        <li>Extensive list of available queries.</li>
-        <li>AI to detect possible interests to the user.</li>
-        <li>Sentiment analysis on every news story recieved.</li>
-        <li>Currency conversion capabilities for USD, GBP and Euro.</li>
-        <li>Text and Voice input.</li>
-        <li>Textual, Graphic and Audio output.</li>
+        <li>
+          <strong>Tailored News Briefings:</strong> Enjoy hourly news updates on
+          your favourite companies and sectors within the FTSE 100 index,
+          keeping you well-informed about market developments.
+        </li>
+        <li>
+          <strong>Customised Preferences:</strong> Handpick your favourite
+          companies and sectors, then choose your preferred poll rate for each,
+          ensuring you receive the information that matters most to you.
+        </li>
+        <li>
+          <strong>Comprehensive Query Options:</strong> Access an extensive list
+          of available queries, making it easy to retrieve the precise
+          information you need.
+        </li>
+        <li>
+          <strong>AI-Driven Adaptation:</strong> RSCBot&apos;s AI capabilities
+          identify and adapt to your main interests in the stock market,
+          delivering a personalised trading experience that evolves with you.
+        </li>
+        <li>
+          <strong>Sentiment Analysis:</strong> Gain valuable insights into news
+          stories with sentiment analysis on every piece of information
+          received, helping you assess market sentiment.
+        </li>
+        <li>
+          <strong>Currency Conversion:</strong> Seamlessly convert between USD,
+          GBP, and Euro, simplifying your currency-related tasks.
+        </li>
       </ul>
     </Section>
 

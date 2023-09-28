@@ -25,16 +25,24 @@ const DeliveryPlanner: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Divider />
 
     <Section>
-      <h2 className="project-header">Features</h2>
-      <ul className="project-list">
-        <li>Creates an efficient route for a number of selected deliveries.</li>
-        <li>Utilises database to store client, delivery, and product data.</li>
+      <h2 className="project-header">Project Highlights</h2>
+      <ul className="project-list max-w-reading">
         <li>
-          Ability to view/add/edit/delete client, delivery and product data.
+          <strong>Optimised Routing:</strong> Harness the power of cutting-edge
+          graph algorithms, including Dijkstra&apos;s and Nearest Neighbor with
+          2-Opt, to craft the most efficient delivery routes. Minimize travel
+          time and maximize resource utilization.
         </li>
         <li>
-          Creates a printable report including delivery order, total items and
-          estimated time.
+          <strong>Detailed Insights: </strong> Gain comprehensive insights with
+          detailed reports that illuminate the delivery route, item inclusions,
+          and precise Estimated Time of Arrival (ETA). Stay informed at every
+          step of the delivery process.
+        </li>
+        <li>
+          <strong>User-Friendly Data Management:</strong> Enjoy the flexibility
+          to view, add, edit, and delete client, delivery, and product data with
+          ease, putting you in control of your logistics.
         </li>
       </ul>
     </Section>

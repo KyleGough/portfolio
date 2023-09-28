@@ -26,14 +26,22 @@ const ToDoList: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Divider />
 
     <Section>
-      <h2 className="project-header">Features</h2>
-      <ul className="project-list">
-        <li>User registration.</li>
-        <li>View selection of lists.</li>
-        <li>View items in a list.</li>
-        <li>Mark items in a list as complete.</li>
-        <li>Create a new list.</li>
-        <li>Add new item to a list.</li>
+      <h2 className="project-header">Project Highlights</h2>
+      <ul className="project-list max-w-reading">
+        <li>
+          <strong>User Registration:</strong> Seamlessly sign up and create a
+          personalised account.
+        </li>
+        <li>
+          <strong>List Management:</strong> Dive deep into your tasks with the
+          ability to mark them as complete, helping you stay organised and
+          productive.
+        </li>
+        <li>
+          <strong>Add New Tasks:</strong> Quickly and intuitively add new tasks
+          to your lists, making it easy to capture your todos as they come to
+          mind.
+        </li>
       </ul>
     </Section>
 

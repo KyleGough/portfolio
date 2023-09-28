@@ -27,39 +27,33 @@ const SortingVisualiser: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Divider />
 
     <Section>
-      <h2 className="project-header">Overview</h2>
-      <p className="my-4 max-w-reading">
-        Prior to this project, I had developed a simple CLI sorting algorithm
-        visualiser in VB.net featuring a limited selection of algorithms and
-        options. Once I had familiarised myself with C#, I decided to upgrade
-        and rewrite the visualiser with a GUI, additional algorithms and
-        enhanced customisation. The project served as a great tool for improving
-        my C# and GUI design skills as well as futhering my understanding of how
-        sorting algorithms operate, scale and perform.
-      </p>
-    </Section>
-
-    <Divider />
-
-    <Section>
-      <h2 className="project-header">Features</h2>
-      <ul className="project-list">
-        <li>Real-time visualiser which can be paused and stopped.</li>
-        <li>20 unique sorting algorithms.</li>
+      <h2 className="project-header">Project Highlights</h2>
+      <ul className="project-list max-w-reading">
         <li>
-          18 starting datasets to analyse the performance of each algorithm.
-        </li>
-        <li>Ability to compare two algorithms simultaneously.</li>
-        <li>Customisable dataset size, range and delay.</li>
-        <li>
-          Statistics provided for each algorithm (incl. Big-O Complexities,
-          Stability, In-place).
+          <strong>Real-time Visualisation:</strong> Immerse yourself in the
+          sorting process with a real-time visualiser that can be paused and
+          stopped at your command. Gain a profound understanding of how
+          algorithms work under the hood.
         </li>
         <li>
-          Analysis results after sorting data (incl. Comparisons, Swaps,
-          Duration).
+          <strong>Algorithmic Arsenal:</strong> Choose from a diverse lineup of
+          20 distinct sorting algorithms, each with its own unique
+          characteristics. Explore classics like Bubble Sort, Merge Sort, and
+          Quicksort, and discover their Big-O complexities, stability, and
+          in-place capabilities.
         </li>
-        <li>Custom colours and data display styles.</li>
+        <li>
+          <strong>Customisation Unleashed:</strong> Tailor your sorting
+          experiments with precision. Select from 18 starting datasets, tweak
+          dataset size, range, and delay, and choose custom colours and data
+          display styles to match your preferences.
+        </li>
+        <li>
+          <strong>Insightful Statistics:</strong> Dive deep into the performance
+          metrics of each algorithm, with detailed statistics including
+          comparisons, swaps, and duration provided. Grasp the true efficiency
+          of each sorting strategy.
+        </li>
       </ul>
     </Section>
 
@@ -72,10 +66,10 @@ const SortingVisualiser: React.FC<ProjectPageProps> = ({ images, project }) => (
         <tbody>
           {algorithms.map((row, i) => (
             <tr key={i}>
-              <td className="px-6 py-4 whitespace-no-wrap border-b border-divider text-sm leading-5">
+              <td className="px-6 py-4 text-sm leading-5 border-b whitespace-no-wrap border-divider">
                 {row[0]}
               </td>
-              <td className="px-6 py-4 whitespace-no-wrap border-b border-divider text-sm leading-5">
+              <td className="px-6 py-4 text-sm leading-5 border-b whitespace-no-wrap border-divider">
                 {row[1]}
               </td>
             </tr>
