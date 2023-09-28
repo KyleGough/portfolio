@@ -28,39 +28,36 @@ const CaveExploration: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Divider />
 
     <Section>
-      <h2 className="project-header">Features</h2>
+      <h2 className="project-header">Project Highlights</h2>
       <ul className="project-list max-w-reading">
-        <li className="mb-4">
-          <strong>Realistic cave environment generation</strong>
-          <br />
-          Starting from Simplex noise, a cellular automata and several flood
-          fills create unique, realistic cave environments for the simulation to
-          run on.
+        <li>
+          <strong>Realistic Cave Environments:</strong> Starting from Simplex
+          noise, then employing cellular automata and several flood fills to
+          craft unique, realistic cave environments that serve as the backdrop
+          for exploration.
         </li>
-        <li className="mb-4">
-          <strong>Individual drone searching</strong>
-          <br />A single drone can successfully explore every cell in the cave
-          using a semi-efficient approach.
+        <li>
+          <strong>Individual Drone Search:</strong> Observe a single drone
+          efficiently navigating and exploring every nook and cranny within the
+          cave, employing a semi-efficient approach that ensures no stone goes
+          unturned.
         </li>
-        <li className="mb-4">
-          <strong>Multiple drone searching</strong>
-          <br />
-          Multiple drones can work together to more efficiently explore the cave
-          by communicating information between them and avoiding exploring the
-          same locations.
+        <li>
+          <strong>Collaborative Drone Search:</strong> Harness the synergy of
+          multiple drones working in unison. These autonomous explorers share
+          information, avoid redundant exploration, and collaborate seamlessly
+          to efficiently map the cave.
         </li>
-        <li className="mb-4">
-          <strong>Visualisation</strong>
-          <br />
-          View the process of the drone&apos;s exploration. Ability to see what
-          cells the drone has explored, potential frontier cells and the next
-          target cell.
+        <li>
+          <strong>Immersive Visualisation:</strong> Visualise the drone&apos;s
+          journey as they uncover new territory, see explored cells, identify
+          potential frontier areas, and pinpoint their next target location.
         </li>
-        <li className="mb-4">
-          <strong>Statistics</strong>
-          <br />
-          View statistics of each drone including the distance they have
-          travelled and percentage of the cave they have explored.
+        <li>
+          <strong>Detailed Statistics:</strong> Review in-depth statistics for
+          each drone, including the distance travelled and the percentage of the
+          cave each has successfully explored, providing valuable insights into
+          their efficiency and effectiveness.
         </li>
       </ul>
     </Section>

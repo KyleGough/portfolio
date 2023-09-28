@@ -171,7 +171,7 @@ export const projects: Project[] = [
       ProjectFilter.WEB,
     ],
     description:
-      'An adaptable, heterogeneous IoT testbed, where I took the lead in developing the front-end user interface. This user-friendly platform empowers registered users to seamlessly upload, configure, and deploy tests and images on the testbed, all at their fingertips.',
+      'An adaptable, heterogeneous IoT testbed, where I took the lead in developing the front-end user interface. This user-friendly platform empowers registered users to seamlessly upload, configure, and deploy tests and images on the testbed.',
     skills: [
       'React',
       'JavaScript',
@@ -251,7 +251,8 @@ export const projects: Project[] = [
     link: '/projects/cave-exploration',
     filters: [ProjectFilter.CPLUSPLUS],
     description:
-      'Cave exploration is dangerous and time-consuming. This project demonstrates how swarm AI could be used in a group of autonomous flying drones to navigate and explore a cave as efficiently as possible. The project also includes random, realistic cave environment generation.',
+      "Cave exploration poses a unique set of challenges - it's both dangerous and time-consuming. This project showcases the potential of swarm AI through a fleet of autonomous flying drones, navigating and exploring caves with improved efficiency. In addition, the simulation utilises a cave environment generation system to ensure each simulation unfolds in a realistic and captivating landscape.",
+
     github: 'https://github.com/KyleGough/CS310-Dissertation',
     skills: ['C++', 'GLUT'],
     logo: logos.cplusplus,
