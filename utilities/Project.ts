@@ -14,6 +14,7 @@ import imageSortingVisualiser from '@image/card-sorting-algorithm-visualiser.jpg
 import imageSudoku from '@image/card-sudoku.jpg';
 import imageToDoList from '@image/card-todo.jpg';
 import imageURLShortener from '@image/card-url-shortener.jpg';
+import imageMars from '@image/mars.png';
 import CPlusPlusLogo from '@image/skill/cplusplus.svg';
 import CSharpLogo from '@image/skill/csharp.svg';
 import JavaScriptLogo from '@image/skill/javascript.svg';
@@ -74,6 +75,26 @@ const logos = {
 
 export const projects: Project[] = [
   {
+    id: 'solar-system',
+    title: 'Interactive Solar System Model',
+    date: {
+      start: {
+        month: 7,
+        year: 2023,
+      },
+    },
+    image: imageMars,
+    alt: 'Solar System Model',
+    link: '/projects/solar-system',
+    filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.WEB],
+    description:
+      'Dive into a stunningly rendered model of the solar system created using Three.js and TypeScript. This interactive visualization showcases the planets and their moons orbiting in a dynamic environment, complete with realistic lighting and detailed bump maps for an immersive experience.',
+    github: 'https://github.com/KyleGough/solar-system',
+    skills: ['Three.js', 'TypeScript'],
+    logo: logos.typescript,
+    liveLink: 'https://kylegough.github.io/solar-system/',
+  },
+  {
     id: 'ai-space-telescope',
     title: 'AI Space Telescope',
     date: {
@@ -89,7 +110,7 @@ export const projects: Project[] = [
     description:
       'Embark on a cosmic journey through a captivating image gallery, where the realm of science fiction comes to life, courtesy of the extraordinary DALL·E 2 API. Every image in this curated collection represents a handpicked selection of my personal favourites, each a testament to the boundless creativity of AI-generated artistry.',
     github: 'https://github.com/KyleGough/ai-space-telescope',
-    skills: ['React', 'Typescript', 'TailwindCSS'],
+    skills: ['React', 'TypeScript', 'TailwindCSS'],
     logo: logos.typescript,
     liveLink: 'https://ai-space-telescope.com',
   },

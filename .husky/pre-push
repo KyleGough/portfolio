@@ -3,7 +3,7 @@
 
 branchName=$(git branch | grep '\*' | sed 's/* //')
 
-if [ $(echo $branchName | grep '\(master\|main\|hotfix\|develop\)\|\(feat\|chore\|fix\|ci\)/.\+') ]; then
+if [ $(echo $branchName | grep '\(master\|main\|hotfix\|develop\)\|\(feat\|feature\|chore\|fix\|ci\)/.\+') ]; then
   exit 0
 else
   echo "Branch name is invalid." && exit 1

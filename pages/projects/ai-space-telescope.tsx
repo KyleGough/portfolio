@@ -48,6 +48,8 @@ const AISpaceTelescope: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Pagination
       previousTitle="Bookmark Labeller"
       previousLink="/projects/bookmark-labeller"
+      nextTitle="Solar System"
+      nextLink="/projects/solar-system"
     />
   </Layout>
 );
