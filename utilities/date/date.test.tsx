@@ -22,14 +22,14 @@ const testDates: Date[] = [
 ];
 
 describe('date utilities', () => {
-  it('getFormattedDate returns expected output', async () => {
+  it('getFormattedDate returns expected output', () => {
     expect(getFormattedDate(testDates[0])).toBe('January 2022');
     expect(getFormattedDate(testDates[1])).toBe('June 1990');
     expect(getFormattedDate(testDates[2])).toBe('December 1540');
     expect(getFormattedDate(testDates[3])).toBe('August 2020');
   });
 
-  it('getDateRange returns expected output', async () => {
+  it('getDateRange returns expected output', () => {
     expect(getDateRange({ start: { month: 4, year: 1975 } })).toBe(
       'April 1975'
     );

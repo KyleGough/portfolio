@@ -26,7 +26,7 @@
       "    <Divider />",
       "",
       "    <Section>",
-      "      <h2 className=\"project-header\">Features</h2>",
+      "      <h2 className=\"project-header\">Key Features</h2>",
       "    </Section>",
       "",
       "    <Divider />",

@@ -14,6 +14,7 @@ import imageSortingVisualiser from '@image/card-sorting-algorithm-visualiser.jpg
 import imageSudoku from '@image/card-sudoku.jpg';
 import imageToDoList from '@image/card-todo.jpg';
 import imageURLShortener from '@image/card-url-shortener.jpg';
+import imageMars from '@image/mars.png';
 import CPlusPlusLogo from '@image/skill/cplusplus.svg';
 import CSharpLogo from '@image/skill/csharp.svg';
 import JavaScriptLogo from '@image/skill/javascript.svg';
@@ -75,18 +76,19 @@ const logos = {
 export const projects: Project[] = [
   {
     id: 'solar-system',
-    title: 'Solar System',
+    title: 'Interactive Solar System Model',
     date: {
       start: {
         month: 7,
         year: 2023,
       },
     },
-    image: imageAISpaceTelescope,
+    image: imageMars,
     alt: 'Solar System Model',
     link: '/projects/solar-system',
     filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.WEB],
-    description: '',
+    description:
+      'Dive into a stunningly rendered model of the solar system created using Three.js and TypeScript. This interactive visualization showcases the planets and their moons orbiting in a dynamic environment, complete with realistic lighting and detailed bump maps for an immersive experience.',
     github: 'https://github.com/KyleGough/solar-system',
     skills: ['Three.js', 'TypeScript'],
     logo: logos.typescript,

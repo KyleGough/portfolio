@@ -15,7 +15,7 @@ export const Footer: React.FC = () => (
             <p className="pb-4">
               Front-End Engineer at Ripjar. Computer Science MEng graduate of
               Warwick University. Programmer and Web Developer with interests in
-              Bouldering, Cycling, Guitar, Movies, and Physics.
+              Physics, Cycling, Guitar, and Movies.
             </p>
             <div className="flex flex-row justify-center lg:justify-start">
               <Link

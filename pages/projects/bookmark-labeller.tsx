@@ -60,7 +60,7 @@ const BookmarkLabeller: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Divider />
 
     <Section>
-      <h2 className="project-header">Features</h2>
+      <h2 className="project-header">Key Features</h2>
       <ul className="project-list">
         <li>Lightweight and minimalistic</li>
         <li>Quickly label current bookmark from the extension popup</li>

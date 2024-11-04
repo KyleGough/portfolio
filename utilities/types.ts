@@ -1,28 +1,28 @@
 import { StaticImageData } from 'next/image';
 
 export interface Project {
-  id: string;
-  title: string;
-  subtitle?: string;
-  date: ProjectDate;
-  video?: string;
-  image: StaticImageData;
   alt: string;
-  link: string;
-  filters: string[];
+  date: ProjectDate;
   description: string;
+  filters: string[];
   github?: string;
-  skills: string[];
-  logo: {
-    src: string;
-    alt: string;
-  };
+  id: string;
+  image: StaticImageData;
+  link: string;
   liveLink?: string;
+  logo: {
+    alt: string;
+    src: string;
+  };
+  skills: string[];
+  subtitle?: string;
+  title: string;
+  video?: string;
 }
 
 export interface ProjectDate {
-  start: Date;
   end?: Date;
+  start: Date;
 }
 
 export interface Date {
@@ -31,15 +31,15 @@ export interface Date {
 }
 
 export interface Skill {
-  name: string;
   description: string;
   logo: string;
+  name: string;
 }
 
 export interface ProjectPageProps {
   images: {
-    imageData: StaticImageData;
     alt: string;
+    imageData: StaticImageData;
   }[];
   project: Project;
 }

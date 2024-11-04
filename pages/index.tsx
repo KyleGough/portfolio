@@ -7,12 +7,12 @@ import { Section } from '@components/Section';
 import { TimelineWidget } from '@components/TimelineWidget';
 import { useObserveElement } from '@hooks/useObserveElement';
 import { useTypewriter } from '@hooks/useTypewriter';
-import imageAISpaceTelescope from '@image/ai-space-telescope1.jpg';
 import imageCaveExploration from '@image/card-cave-exploration.jpg';
 import imageSudoku from '@image/card-sudoku.jpg';
 import imageHeader1 from '@image/header1.jpg';
 import imageHeader2 from '@image/header2.jpg';
 import imageHeader3 from '@image/header3.jpg';
+import imageMars from '@image/mars.png';
 import CPlusPlusLogo from '@image/skill/cplusplus.svg';
 import PythonLogo from '@image/skill/python.svg';
 import TypescriptLogo from '@image/skill/typescript.svg';
@@ -23,7 +23,7 @@ import React from 'react';
 
 const Home: React.FC = () => {
   const welcomeMsg =
-    'Front-End Engineer based in London, with strong interests in web development and over 8 years experience coding. Feel free to browse my projects.';
+    'Front-End Engineer based in London, with strong interests in web development and over a decade of experience coding. Feel free to browse my projects.';
   const typewriterRef = useTypewriter<HTMLParagraphElement>(
     welcomeMsg,
     35,
@@ -73,13 +73,13 @@ const Home: React.FC = () => {
             />
             <ProjectCard
               className="md:delay-100"
-              image={imageAISpaceTelescope}
-              alt="AI Space Telescope Project Card"
+              image={imageMars}
+              alt="Solar System Modal Project Card"
               date={{
-                month: 11,
-                year: 2022,
+                month: 7,
+                year: 2023,
               }}
-              link="/projects/ai-space-telescope"
+              link="/projects/solar-system"
               logo={TypescriptLogo as string}
               logoAlt="TypeScript Logo"
             />

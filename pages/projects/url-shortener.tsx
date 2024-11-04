@@ -23,7 +23,7 @@ const URLShortener: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Divider />
 
     <Section>
-      <h2 className="project-header">Features</h2>
+      <h2 className="project-header">Key Features</h2>
       <ul className="project-list">
         <li>
           <strong>Effortless URL Shortening:</strong> Simplify lengthy URLs with

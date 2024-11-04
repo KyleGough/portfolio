@@ -6,13 +6,15 @@ import { ProjectHeader } from '@components/ProjectHeader';
 import { Screenshots } from '@components/Screenshots';
 import { Section } from '@components/Section';
 import imageEarth from '@image/earth.png';
+import imageMars from '@image/mars.png';
+import imageMoon from '@image/moon.png';
 import imageSun from '@image/sun.png';
 import { getProjectData } from '@utilities/Project';
 import { ProjectPageProps } from '@utilities/types';
 import { GetStaticProps } from 'next';
 import React from 'react';
 
-const AISpaceTelescope: React.FC<ProjectPageProps> = ({ images, project }) => (
+const SolarSystem: React.FC<ProjectPageProps> = ({ images, project }) => (
   <Layout title="Solar System Model">
     <ProjectHeader project={project} />
 
@@ -23,21 +25,43 @@ const AISpaceTelescope: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Divider />
 
     <Section>
-      <h2 className="project-header">Implementation</h2>
-      <p className="max-w-reading mb-4">
-        The images present on the website have been generated using OpenAI DALLE
-        2 API by providing space related prompts. Lots of different images have
-        been generated from text prompts or reference images of previously
-        generated images. Of these generated images only a few have been
-        hand-selected to be shown on this website.
-      </p>
-      <p className="max-w-reading">
-        AI Space Telescope is a web-app developed using React, TailwindCSS, and
-        TypeScript. Images are stored and served via Sirv, an image CDN which
-        helps optimise images by serving images in the best format and size. The
-        website is deployed on Vercel, and uses Cloudflare services for DNS, and
-        security.
-      </p>
+      <h2 className="project-header">Key Features</h2>
+      <ul className="project-list max-w-reading">
+        <li className="mb-4">
+          <strong>Orbital Dynamics</strong>
+          <br />
+          Observe the natural motion of planets as they follow their respective
+          orbits, giving you a sense of the scale and structure of our solar
+          system.
+        </li>
+        <li className="mb-4">
+          <strong>Planetary Waypoints</strong>
+          <br />
+          Access detailed waypoints for each planet, highlighting significant
+          locations such as the landing sites of Mars rovers, including
+          Curiosity and Perseverance.
+        </li>
+        <li className="mb-4">
+          <strong>Cinematic Camera Control</strong>
+          <br />
+          Rotate the camera around the planets like an orbiting satellite,
+          allowing you to view each planet in its entirety from different
+          angles.
+        </li>
+        <li className="mb-4">
+          <strong>Speed Control</strong>
+          <br />
+          Adjust the speed of the model to explore the solar system at your own
+          pace, whether you want to experience rapid movements or slow,
+          deliberate exploration.
+        </li>
+        <li className="mb-4">
+          <strong>Day and Night Cycle</strong>
+          <br />
+          Witness the mesmerizing day and night cycles on each planet,
+          showcasing the interplay of light and shadow as they rotate.
+        </li>
+      </ul>
     </Section>
 
     <Divider />
@@ -56,8 +80,16 @@ const AISpaceTelescope: React.FC<ProjectPageProps> = ({ images, project }) => (
 export const getStaticProps: GetStaticProps = () => {
   const images = [
     {
+      imageData: imageMars,
+      alt: 'Mars',
+    },
+    {
       imageData: imageEarth,
       alt: 'Earth',
+    },
+    {
+      imageData: imageMoon,
+      alt: 'Moon',
     },
     {
       imageData: imageSun,
@@ -73,4 +105,4 @@ export const getStaticProps: GetStaticProps = () => {
   };
 };
 
-export default AISpaceTelescope;
+export default SolarSystem;
