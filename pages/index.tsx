@@ -15,7 +15,7 @@ import imageHeader3 from '@image/header3.jpg';
 import imageMars from '@image/mars.png';
 import CPlusPlusLogo from '@image/skill/cplusplus.svg';
 import PythonLogo from '@image/skill/python.svg';
-import TypescriptLogo from '@image/skill/typescript.svg';
+import ThreeLogo from '@image/skill/three.svg';
 import { clsx } from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -80,8 +80,8 @@ const Home: React.FC = () => {
                 year: 2023,
               }}
               link="/projects/solar-system"
-              logo={TypescriptLogo as string}
-              logoAlt="TypeScript Logo"
+              logo={ThreeLogo as string}
+              logoAlt="Three.js Logo"
             />
             <ProjectCard
               className="md:delay-200"

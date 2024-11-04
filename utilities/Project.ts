@@ -21,6 +21,7 @@ import JavaScriptLogo from '@image/skill/javascript.svg';
 import PythonLogo from '@image/skill/python.svg';
 import ReactLogo from '@image/skill/react.svg';
 import RubyLogo from '@image/skill/ruby.svg';
+import ThreeLogo from '@image/skill/three.svg';
 import TypeScriptLogo from '@image/skill/typescript.svg';
 
 import { Project } from './types';
@@ -71,6 +72,10 @@ const logos = {
     src: CSharpLogo,
     alt: 'C# Logo',
   },
+  three: {
+    src: ThreeLogo,
+    alt: 'Three.js Logo',
+  },
 };
 
 export const projects: Project[] = [
@@ -91,7 +96,7 @@ export const projects: Project[] = [
       'Dive into a stunningly rendered model of the solar system created using Three.js and TypeScript. This interactive visualization showcases the planets and their moons orbiting in a dynamic environment, complete with realistic lighting and detailed bump maps for an immersive experience.',
     github: 'https://github.com/KyleGough/solar-system',
     skills: ['Three.js', 'TypeScript'],
-    logo: logos.typescript,
+    logo: logos.three,
     liveLink: 'https://kylegough.github.io/solar-system/',
   },
   {
