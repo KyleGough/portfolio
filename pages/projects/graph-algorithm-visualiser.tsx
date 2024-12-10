@@ -35,7 +35,7 @@ const GraphVisualiser: React.FC<ProjectPageProps> = ({ images, project }) => (
           in action as they traverse the nodes and create complex structures.
         </li>
         <li>
-          <strong>Node Count:</strong>: Tailor your exploration with the choice
+          <strong>Node Count:</strong> Tailor your exploration with the choice
           of a low to high number of nodes, allowing you to study algorithm
           behaviour and performance under varying conditions.
         </li>
