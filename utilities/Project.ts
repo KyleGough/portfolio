@@ -1,4 +1,4 @@
-import imageAISpaceTelescope from '@image/ai-space-telescope1.jpg';
+import imageAISpaceTelescope from '@image/ai-space-telescope.jpg';
 import imageBookmarkLabeller from '@image/bookmark-labeller.jpg';
 import imageBSplit from '@image/card-bsplit.jpg';
 import imageCaveExploration from '@image/card-cave-exploration.jpg';
@@ -107,13 +107,17 @@ export const projects: Project[] = [
         month: 11,
         year: 2022,
       },
+      end: {
+        month: 12,
+        year: 2024,
+      },
     },
     image: imageAISpaceTelescope,
     alt: 'AI Space Telescope Website',
     link: '/projects/ai-space-telescope',
     filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.REACT, ProjectFilter.WEB],
     description:
-      'Embark on a cosmic journey through a captivating image gallery, where the realm of science fiction comes to life, courtesy of the extraordinary DALL·E 2 API. Every image in this curated collection represents a handpicked selection of my personal favourites, each a testament to the boundless creativity of AI-generated artistry.',
+      'Curated gallery of science-fiction themed images generated using text-to-image AI models. This project explores the capabilities, limitations, and artistic creativity of current AI technologies.',
     github: 'https://github.com/KyleGough/ai-space-telescope',
     skills: ['React', 'TypeScript', 'TailwindCSS'],
     logo: logos.typescript,

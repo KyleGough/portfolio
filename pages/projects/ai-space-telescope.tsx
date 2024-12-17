@@ -5,7 +5,7 @@ import { Pagination } from '@components/Pagination';
 import { ProjectHeader } from '@components/ProjectHeader';
 import { Screenshots } from '@components/Screenshots';
 import { Section } from '@components/Section';
-import imageWebsite from '@image/ai-space-telescope1.jpg';
+import imageWebsite from '@image/ai-space-telescope.jpg';
 import { getProjectData } from '@utilities/Project';
 import { ProjectPageProps } from '@utilities/types';
 import { GetStaticProps } from 'next';
@@ -24,15 +24,17 @@ const AISpaceTelescope: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Section>
       <h2 className="project-header">Implementation</h2>
       <p className="max-w-reading mb-4">
-        The images present on the website have been generated using OpenAI DALLE
-        2 API by providing space related prompts. Lots of different images have
-        been generated from text prompts or reference images of previously
-        generated images. Of these generated images only a few have been
-        hand-selected to be shown on this website.
+        The images present on the website have been generated using various
+        text-to-image models including: OpenAI&apos;s DALLE 2, PicLumen
+        Realistic V2, FLUX.1-schnell, and Google DeepMind&apos;s Imagen 3.
+        Images have been generated with varying subjects such as: black holes,
+        nebulae, galaxies, planets, and spaceships through crafting prompts. Of
+        the hundreds of generated images a hand-selected subset have been chosen
+        to be shown on this website.
       </p>
       <p className="max-w-reading">
         AI Space Telescope is a web-app developed using React, TailwindCSS, and
-        TypeScript. Images are stored and served via Sirv, an image CDN which
+        TypeScript. Images are uploaded via a script to Sirv, an image CDN which
         helps optimise images by serving images in the best format and size. The
         website is deployed on Vercel, and uses Cloudflare services for DNS, and
         security.
