@@ -16,7 +16,7 @@ exports[`ProjectHeader component renders 1`] = `
       Passion Project
     </h2>
     <p
-      class="text-link-hover my-4"
+      class="my-3 font-primary text-sm font-medium tabular-nums tracking-wide text-link-hover"
     >
       <time
         datetime="2021-01"
@@ -24,7 +24,7 @@ exports[`ProjectHeader component renders 1`] = `
         January 2021
       </time>
        
-      -
+      –
        
       <time
         datetime="2022-03"
@@ -33,21 +33,21 @@ exports[`ProjectHeader component renders 1`] = `
       </time>
     </p>
     <p
-      class="mb-4 max-w-reading"
+      class="mb-4 max-w-reading text-base leading-relaxed text-primary"
     >
       Personal portfolio website
     </p>
     <div
-      class="block sm:flex gap-2"
+      class="flex flex-col items-start gap-1 sm:flex-row sm:flex-wrap sm:gap-3"
     >
       <a
-        class="group w-fit flex items-center my-2 px-4 py-2 bg-background rounded-lg border-2 text-link hover:text-link-hover"
+        class="project-header-cta group w-fit"
         href="https://github.com/KyleGough/portfolio"
         rel="noopener noreferrer"
         target="_blank"
       >
         <svg
-          class="w-5 h-5 mr-2 fill-link group-hover:fill-link-hover"
+          class="project-header-cta__icon"
           role="img"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +60,7 @@ exports[`ProjectHeader component renders 1`] = `
       </a>
     </div>
     <div
-      class="flex flex-row flex-wrap items-center mt-8 gap-4"
+      class="mt-8 flex flex-row flex-wrap items-center gap-4"
     >
       <div
         class="text-chip bg-chip-light text-xs px-4 py-0.5 h-8 leading-chip rounded-2xl font-extrabold"

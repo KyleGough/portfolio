@@ -1,7 +1,9 @@
 import { Nav } from '@components//Nav';
 import { Footer } from '@components/Footer';
+import { clsx } from 'clsx';
 import Head from 'next/head';
-import React from 'react';
+import { useRouter } from 'next/router';
+import React, { useEffect } from 'react';
 
 import { OpenGraphMeta } from './OpenGraphMeta';
 import { socialMeta } from './SocialMeta';
@@ -16,8 +18,23 @@ export const Layout: React.FC<LayoutProps> = ({
   children,
   title = 'Kyle Gough - Portfolio',
 }) => {
+  const router = useRouter();
+  const isProjectSpaceGothic = router.pathname.startsWith('/projects');
+
+  useEffect(() => {
+    const el = document.querySelector('meta[name="theme-color"]');
+    if (el) {
+      el.setAttribute(
+        'content',
+        isProjectSpaceGothic ? '#07070c' : '#424242'
+      );
+    }
+  }, [isProjectSpaceGothic]);
+
   return (
-    <div className="App">
+    <div
+      className={clsx('App', isProjectSpaceGothic && 'app-space-gothic')}
+    >
       <Head>
         <meta charSet="utf-8" />
         <meta name="author" content="Kyle Gough" />
@@ -46,7 +63,10 @@ export const Layout: React.FC<LayoutProps> = ({
         />
         <link rel="manifest" href="/manifest.json" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-        <meta name="theme-color" content="#424242" />
+        <meta
+          name="theme-color"
+          content={isProjectSpaceGothic ? '#07070c' : '#424242'}
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <OpenGraphMeta
           url={socialMeta.url}
@@ -67,7 +87,14 @@ export const Layout: React.FC<LayoutProps> = ({
         <title>{title}</title>
       </Head>
       <Nav />
-      <main className="bg-background bg-noise bg-repeat leading-[1.6rem]">
+      <main
+        className={clsx(
+          'leading-[1.6rem] relative',
+          isProjectSpaceGothic
+            ? 'text-primary'
+            : 'bg-background bg-noise bg-repeat'
+        )}
+      >
         {children}
       </main>
       <Footer />

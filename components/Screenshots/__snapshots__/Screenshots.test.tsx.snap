@@ -6,7 +6,7 @@ exports[`Screenshots component renders 1`] = `
     class="first:pt-24 container text-primary py-8 last:pb-16"
   >
     <h2
-      class="text-3xl mb-12"
+      class="mb-12 text-3xl"
     >
       Screenshots
     </h2>

@@ -1,0 +1,354 @@
+/* Space-gothic theme: scoped to .app-space-gothic (all /projects/* routes) */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+.app-space-gothic {
+  /* Void + cold violet, not pure #000; tint toward brand hue */
+  --void-deep: oklch(9% 0.02 275);
+  --void-mid: oklch(13% 0.03 280);
+  --void-elevated: oklch(17% 0.04 280);
+  --gothic-fg: oklch(93% 0.02 280);
+  --gothic-muted: oklch(72% 0.04 280);
+  --gothic-faint: oklch(52% 0.03 280);
+  --gothic-cyan: oklch(78% 0.12 200);
+  --gothic-magenta: oklch(72% 0.2 310);
+  --gothic-stroke: oklch(100% 0 0 / 0.12);
+  --gothic-stroke-bright: oklch(65% 0.15 290 / 0.45);
+}
+
+/* Main canvas: layered radii + static grid (no anim unless user allows) */
+.app-space-gothic main {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+  min-height: 100vh;
+  color: var(--gothic-fg) !important;
+  background-color: var(--void-deep) !important;
+  background-image:
+    radial-gradient(ellipse 100% 60% at 50% -15%, oklch(32% 0.12 285 / 0.5), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 0% 20%, oklch(22% 0.1 300 / 0.35), transparent 50%),
+    radial-gradient(ellipse 40% 35% at 100% 40%, oklch(20% 0.08 260 / 0.3), transparent 50%),
+    linear-gradient(180deg, var(--void-mid) 0%, var(--void-deep) 100%);
+  background-attachment: scroll;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+  background-blend-mode: screen, screen, screen, normal;
+  box-shadow: inset 0 0 120px oklch(0% 0 0 / 0.4);
+}
+
+.app-space-gothic main::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: linear-gradient(
+      90deg,
+      oklch(100% 0 0 / 0.04) 0,
+      oklch(100% 0 0 / 0.04) 1px,
+      transparent 1px,
+      transparent 80px
+    ),
+    linear-gradient(180deg, oklch(100% 0 0 / 0.04) 0, oklch(100% 0 0 / 0.04) 1px, transparent 1px, transparent 80px);
+  background-size: 80px 80px;
+  mask-image: linear-gradient(180deg, white 0%, white 50%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-space-gothic main::before {
+    opacity: 0.2;
+  }
+}
+
+.app-space-gothic main > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Nav: sleek bar with violet hairline, purposeful blur (not a glass card) */
+.app-space-gothic .bg-nav-light,
+.app-space-gothic [class~='bg-nav-light'] {
+  background-color: oklch(11% 0.03 280) !important;
+  border-bottom: 1px solid var(--gothic-stroke-bright) !important;
+  box-shadow: 0 0 32px oklch(50% 0.15 290 / 0.12);
+  backdrop-filter: blur(8px);
+}
+
+/* Mobile nav drawer */
+.app-space-gothic nav [class~='text-link'] {
+  color: var(--gothic-cyan) !important;
+}
+.app-space-gothic nav a.border-bottom-slide,
+.app-space-gothic nav a[class~='text-link'] {
+  color: var(--gothic-cyan) !important;
+}
+.app-space-gothic nav a.text-link:hover,
+.app-space-gothic nav a.text-link:focus {
+  color: var(--gothic-magenta) !important;
+}
+
+.app-space-gothic nav .slide-in .bg-background {
+  background-color: var(--void-elevated) !important;
+  border-top: 1px solid var(--gothic-stroke) !important;
+  box-shadow: 0 16px 48px oklch(0% 0 0 / 0.45);
+}
+.app-space-gothic nav .slide-in .text-link,
+.app-space-gothic nav .slide-in a {
+  color: var(--gothic-cyan) !important;
+  border-color: var(--gothic-stroke) !important;
+}
+.app-space-gothic nav .slide-in a:hover,
+.app-space-gothic nav .slide-in a:focus {
+  color: var(--gothic-magenta) !important;
+}
+
+/* Primary text in sections */
+.app-space-gothic .text-primary {
+  color: var(--gothic-fg) !important;
+}
+
+/* Headings: Space Grotesk, crisp glow, solid fills (no gradient text) */
+.app-space-gothic .project-title {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  color: var(--gothic-fg) !important;
+  text-shadow: 0 0 2rem oklch(65% 0.2 300 / 0.35);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+.app-space-gothic .project-subtitle {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  color: var(--gothic-muted) !important;
+  font-weight: 400;
+}
+.app-space-gothic .project-header {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  color: var(--gothic-fg) !important;
+  text-shadow: 0 0 1.5rem oklch(50% 0.15 300 / 0.25);
+}
+
+/* Lists: mono markers feel technical (scoped, not all font-primary) */
+.app-space-gothic .project-list,
+.app-space-gothic .project-list li {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace !important;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--gothic-muted) !important;
+}
+.app-space-gothic .project-list {
+  --tw-marker-color: var(--gothic-magenta) !important;
+}
+.app-space-gothic .project-list li::marker {
+  color: var(--gothic-magenta) !important;
+}
+.app-space-gothic .project-list strong {
+  color: var(--gothic-fg) !important;
+}
+
+/* Date / meta: mono + cold accent (category-reflex check: we avoid generic “crypto neon”) */
+.app-space-gothic p.font-primary.text-sm,
+.app-space-gothic p[class*='tabular-nums'] {
+  font-family: 'IBM Plex Mono', monospace !important;
+  color: var(--gothic-cyan) !important;
+  text-shadow: 0 0 0.5rem oklch(60% 0.15 200 / 0.2);
+}
+.app-space-gothic p.text-link-hover,
+.app-space-gothic .text-link-hover {
+  color: var(--gothic-cyan) !important;
+}
+.app-space-gothic a.text-link,
+.app-space-gothic a[class~='text-link'] {
+  color: var(--gothic-cyan) !important;
+}
+.app-space-gothic a.text-link:hover,
+.app-space-gothic a.text-link:focus {
+  color: var(--gothic-magenta) !important;
+}
+.app-space-gothic p.max-w-reading.leading-relaxed,
+.app-space-gothic p.leading-relaxed {
+  color: var(--gothic-fg) !important;
+  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+  font-size: 1rem;
+  line-height: 1.7 !important;
+  letter-spacing: 0.01em;
+}
+.app-space-gothic p.max-w-reading {
+  color: var(--gothic-fg) !important;
+  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+  line-height: 1.65;
+}
+.app-space-gothic .max-w-reading:not(.project-list) {
+  font-size: 1rem;
+  letter-spacing: 0.012em;
+}
+
+/* Dividers */
+.app-space-gothic .bg-divider,
+.app-space-gothic hr,
+.app-space-gothic [class~='bg-divider'] {
+  background-color: var(--gothic-stroke) !important;
+  border: none;
+}
+
+/* Chips: outlined signal, not flat AI slop */
+.app-space-gothic [class~='text-chip'] {
+  color: var(--gothic-magenta) !important;
+  border: 1px solid oklch(60% 0.18 310 / 0.4);
+  background: oklch(20% 0.06 300 / 0.6) !important;
+  box-shadow: 0 0 12px oklch(50% 0.15 310 / 0.2);
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Section containers */
+.app-space-gothic [class~='container'] {
+  --tw-prose-bullets: var(--gothic-cyan);
+}
+
+/* Image figures & captions */
+.app-space-gothic [class~='text-light'] {
+  color: var(--gothic-faint) !important;
+}
+.app-space-gothic [class~='text-sm'],
+.app-space-gothic p.text-sm {
+  color: var(--gothic-muted) !important;
+}
+.app-space-gothic [class~='font-thin'] {
+  color: var(--gothic-faint) !important;
+}
+.app-space-gothic .border-light,
+.app-space-gothic [class~='border-white'] {
+  border-color: var(--gothic-stroke) !important;
+  box-shadow: 0 0 32px oklch(0% 0 0 / 0.3);
+}
+
+/* Project list index (View Project button) */
+.app-space-gothic [class~='bg-background'] {
+  background-color: var(--void-elevated) !important;
+  color: var(--gothic-fg) !important;
+}
+.app-space-gothic a .bg-background,
+.app-space-gothic a [class~='text-link'] {
+  border-color: var(--gothic-stroke-bright) !important;
+  color: var(--gothic-cyan) !important;
+}
+
+/* bg-circuits: replace mauve circuit pattern with void haze */
+.app-space-gothic .bg-circuits,
+.app-space-gothic [class~='bg-circuits'] {
+  background-color: var(--void-mid) !important;
+  background-image: none !important;
+  border-top: 1px solid var(--gothic-stroke) !important;
+  border-bottom: 1px solid var(--gothic-stroke) !important;
+  box-shadow: inset 0 0 64px oklch(15% 0.08 290 / 0.25) !important;
+}
+
+/* Project cards in grid: glow frame + caption void */
+.app-space-gothic a .group {
+  border-radius: 1rem;
+  box-shadow: 0 0 0 1px var(--gothic-stroke), 0 0 20px oklch(40% 0.1 300 / 0.2), 0 8px 40px oklch(0% 0 0 / 0.45) !important;
+  border-color: oklch(100% 0 0 / 0.18) !important;
+}
+.app-space-gothic a .group [class~='text-white'] {
+  background: linear-gradient(180deg, var(--void-elevated) 0%, var(--void-deep) 100%) !important;
+  color: var(--gothic-fg) !important;
+  border: 1px solid var(--gothic-stroke) !important;
+  box-shadow: 0 0 24px oklch(15% 0.06 300 / 0.35);
+}
+.app-space-gothic a .group [class~='text-white'] [class~='opacity-80'] {
+  color: var(--gothic-muted) !important;
+  opacity: 0.9 !important;
+}
+
+/* Pagination */
+.app-space-gothic a .fill-link,
+.app-space-gothic a .fill-link-hover {
+  fill: currentColor !important;
+}
+.app-space-gothic .fill-link {
+  color: var(--gothic-cyan) !important;
+  fill: var(--gothic-cyan) !important;
+}
+.app-space-gothic a:hover .fill-link-hover,
+.app-space-gothic a:focus .fill-link-hover {
+  fill: var(--gothic-magenta) !important;
+}
+
+/* Footer: cathedral basement */
+.app-space-gothic footer [class~='bg-background'] {
+  background: var(--void-deep) !important;
+}
+.app-space-gothic footer [class~='text-white'][class~='bg-nav-light'],
+.app-space-gothic footer .bg-nav-light,
+.app-space-gothic footer [class~='bg-nav-light'] {
+  background: linear-gradient(180deg, var(--void-elevated) 0%, oklch(8% 0.02 280) 100%) !important;
+  color: var(--gothic-fg) !important;
+  border-top: 1px solid var(--gothic-stroke) !important;
+  box-shadow: 0 0 80px oklch(30% 0.12 300 / 0.15);
+}
+.app-space-gothic footer p,
+.app-space-gothic footer .font-header {
+  color: var(--gothic-fg) !important;
+}
+.app-space-gothic footer .bg-nav-dark,
+.app-space-gothic footer [class~='bg-nav-dark'] {
+  background: oklch(5% 0.02 280) !important;
+  border-top: 1px solid var(--gothic-stroke) !important;
+  color: var(--gothic-muted) !important;
+}
+.app-space-gothic footer a[href] {
+  color: var(--gothic-cyan) !important;
+}
+.app-space-gothic footer a[href]:hover,
+.app-space-gothic footer a[href]:focus {
+  color: var(--gothic-magenta) !important;
+}
+.app-space-gothic footer .group.fill-white,
+.app-space-gothic footer [class~='fill-white'] {
+  color: var(--gothic-cyan) !important;
+  fill: var(--gothic-cyan) !important;
+}
+
+/* ProjectHeader GitHub / Website: modern pill, soft layer (not neon square) */
+.app-space-gothic a.project-header-cta {
+  border: 1px solid oklch(100% 0 0 / 0.18) !important;
+  background: linear-gradient(
+    165deg,
+    oklch(22% 0.04 290 / 0.55) 0%,
+    oklch(12% 0.03 280 / 0.9) 100%
+  ) !important;
+  box-shadow: 0 1px 1px oklch(0% 0 0 / 0.2), 0 8px 24px oklch(0% 0 0 / 0.2) !important;
+  color: var(--gothic-cyan) !important;
+  backdrop-filter: blur(8px);
+}
+.app-space-gothic a.project-header-cta:hover,
+.app-space-gothic a.project-header-cta:focus-visible {
+  border-color: oklch(65% 0.1 200 / 0.35) !important;
+  color: var(--gothic-magenta) !important;
+  box-shadow: 0 2px 4px oklch(0% 0 0 / 0.25), 0 10px 28px oklch(40% 0.08 300 / 0.2) !important;
+}
+.app-space-gothic a.project-header-cta .project-header-cta__icon {
+  fill: currentColor !important;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .app-space-gothic a.project-header-cta:hover {
+    transform: translateY(-1px);
+  }
+}
+
+/* Screenshots / carousel: subtle frame */
+.app-space-gothic [class~='shadow'],
+.app-space-gothic [class~='drop-shadow-lg'] {
+  box-shadow: 0 12px 40px oklch(0% 0 0 / 0.4), 0 0 0 1px var(--gothic-stroke) !important;
+}
+
+/* Disabled / pagination */
+.app-space-gothic [class~='text-disabled'] {
+  color: var(--gothic-faint) !important;
+}
+
+/* Filter select button area */
+.app-space-gothic [class~='text-nav-dark'] {
+  color: var(--gothic-fg) !important;
+}
+.app-space-gothic [class~='text-nav-light'] {
+  color: var(--gothic-muted) !important;
+}

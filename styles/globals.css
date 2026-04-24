@@ -1,6 +1,6 @@
-/* Sets default font size. */
+/* Sets default font size (1rem = 16px for readable body and Tailwind rem scale). */
 html {
-  font-size: 15px;
+  font-size: 16px;
 }
 
 /* Removes browser default margin and sets font. */
