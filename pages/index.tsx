@@ -23,7 +23,7 @@ import React from 'react';
 
 const Home: React.FC = () => {
   const welcomeMsg =
-    'Front-End Engineer based in London, with strong interests in web development and over a decade of experience coding. Feel free to browse my projects.';
+    'Front-End Engineer, with strong interests in web development and over a decade of experience coding. Feel free to browse my projects.';
   const typewriterRef = useTypewriter<HTMLParagraphElement>(
     welcomeMsg,
     35,

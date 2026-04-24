@@ -25,7 +25,7 @@ exports[`Footer component renders 1`] = `
             <p
               class="pb-4"
             >
-              Front-End Engineer at Ripjar. Computer Science MEng graduate of Warwick University. Programmer and Web Developer with interests in Physics, Cycling, Guitar, and Movies.
+              Senior Front-End Engineer at Ripjar. Computer Science MEng graduate of Warwick University. Programmer and Web Developer with interests in Physics, Cycling, Guitar, and Movies.
             </p>
             <div
               class="flex flex-row justify-center lg:justify-start"
@@ -135,16 +135,6 @@ exports[`Footer component renders 1`] = `
               <li>
                 <a
                   class="p-2 hover:text-nav-hover"
-                  href="/CV.pdf"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  CV
-                </a>
-              </li>
-              <li>
-                <a
-                  class="p-2 hover:text-nav-hover"
                   href="/about"
                 >
                   About Me
@@ -220,7 +210,7 @@ exports[`Footer component renders 1`] = `
           class="opacity-100"
         >
           © Kyle Gough, 2016 - 
-          2025
+          2026
         </p>
       </div>
     </div>

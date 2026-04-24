@@ -21,7 +21,7 @@ export const TimelineWidget: React.FC = () => (
   >
     <TimelineNode
       title="Ripjar"
-      subtitle="Front-End Engineer"
+      subtitle="Senior Front-End Engineer"
       date="April 2023 - Present"
       align="left"
       logo={RipjarLogo}
