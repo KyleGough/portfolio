@@ -6,16 +6,19 @@ exports[`Pagination component renders 1`] = `
     class="first:pt-24 container text-primary py-8 last:pb-16"
   >
     <div
-      class="flex justify-between"
+      class="project-pagination__grid mx-auto grid w-full max-w-4xl grid-cols-1 items-stretch gap-4 sm:max-w-5xl sm:grid-cols-2 sm:gap-5"
     >
       <a
+        aria-label="Previous project: Sorting Algorithm Visualiser"
+        class="project-pagination__card flex w-full min-h-[4.75rem] items-center gap-3 rounded-2xl border p-3.5 text-left no-underline transition [transition-property:box-shadow,transform,opacity] duration-200 [transition-timing-function:cubic-bezier(0.25,1,0.5,1)] sm:min-h-0 sm:gap-4 sm:p-4 group border-header/10 bg-background/90 text-link shadow-sm hover:border-link/25 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-link/40 motion-safe:hover:-translate-y-0.5 motion-safe:active:translate-y-0 motion-safe:active:scale-[0.985]"
         href="/projects/sorting-algorithm-visualiser"
       >
-        <div
-          class="flex items-center fill-link text-link hover:fill-link-hover hover:text-link-hover"
+        <span
+          aria-hidden="true"
+          class="project-pagination__icon-well flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-link/[0.08] transition-[transform,background-color] duration-200 [transition-timing-function:cubic-bezier(0.25,1,0.5,1)] group-hover:bg-link/[0.12] motion-safe:group-hover:scale-105"
         >
           <svg
-            class="w-6 h-6"
+            class="h-5 w-5 fill-link transition-[transform,fill] duration-200 [transition-timing-function:cubic-bezier(0.25,1,0.5,1)] group-hover:fill-link-hover group-hover:-translate-x-0.5 motion-reduce:group-hover:translate-x-0"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -28,40 +31,49 @@ exports[`Pagination component renders 1`] = `
               d="M17.51 3.87L15.73 2.1 5.84 12l9.9 9.9 1.77-1.77L9.38 12l8.13-8.13z"
             />
           </svg>
-          <div
-            class="text-center ml-4"
+        </span>
+        <div
+          class="min-w-0 flex-1"
+        >
+          <p
+            class="text-[0.7rem] font-medium uppercase tracking-wider text-header/75"
           >
-            <p
-              class="text-sm"
-            >
-              Previous Project
-            </p>
-            <p>
-              Sorting Algorithm Visualiser
-            </p>
-          </div>
+            Previous
+          </p>
+          <p
+            class="mt-0.5 line-clamp-2 font-primary text-base font-semibold text-header"
+            title="Sorting Algorithm Visualiser"
+          >
+            Sorting Algorithm Visualiser
+          </p>
         </div>
       </a>
       <a
+        aria-label="Next project: To Do List"
+        class="project-pagination__card flex w-full min-h-[4.75rem] items-center gap-3 rounded-2xl border p-3.5 text-left no-underline transition [transition-property:box-shadow,transform,opacity] duration-200 [transition-timing-function:cubic-bezier(0.25,1,0.5,1)] sm:min-h-0 sm:gap-4 sm:p-4 group border-header/10 bg-background/90 text-link shadow-sm hover:border-link/25 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-link/40 motion-safe:hover:-translate-y-0.5 motion-safe:active:translate-y-0 motion-safe:active:scale-[0.985]"
         href="/projects/todo-list"
       >
         <div
-          class="flex items-center fill-link text-link hover:fill-link-hover hover:text-link-hover"
+          class="min-w-0 flex-1 text-right"
         >
-          <div
-            class="text-center mr-4"
+          <p
+            class="text-[0.7rem] font-medium uppercase tracking-wider text-header/75"
           >
-            <p
-              class="text-sm"
-            >
-              Next Project
-            </p>
-            <p>
-              To Do List
-            </p>
-          </div>
+            Next
+          </p>
+          <p
+            class="mt-0.5 line-clamp-2 font-primary text-base font-semibold text-header"
+            title="To Do List"
+          >
+            To Do List
+          </p>
+        </div>
+        <span
+          aria-hidden="true"
+          class="project-pagination__icon-well flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-link/[0.08] transition-[transform,background-color] duration-200 [transition-timing-function:cubic-bezier(0.25,1,0.5,1)] group-hover:bg-link/[0.12] motion-safe:group-hover:scale-105"
+        >
           <svg
-            class="w-6 h-6"
+            class="h-5 w-5 fill-link transition-[transform,fill] duration-200 [transition-timing-function:cubic-bezier(0.25,1,0.5,1)] group-hover:fill-link-hover group-hover:translate-x-0.5 motion-reduce:group-hover:translate-x-0"
             enable-background="new 0 0 24 24"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +90,7 @@ exports[`Pagination component renders 1`] = `
               />
             </g>
           </svg>
-        </div>
+        </span>
       </a>
     </div>
   </div>

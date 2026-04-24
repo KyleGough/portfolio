@@ -258,7 +258,38 @@
   opacity: 0.9 !important;
 }
 
-/* Pagination */
+/* Pagination (next / previous project) */
+.app-space-gothic a.project-pagination__card {
+  background: linear-gradient(
+    160deg,
+    oklch(20% 0.04 285 / 0.5) 0%,
+    oklch(12% 0.03 280 / 0.88) 100%
+  ) !important;
+  border: 1px solid oklch(100% 0 0 / 0.16) !important;
+  box-shadow: 0 2px 6px oklch(0% 0 0 / 0.2), 0 8px 20px oklch(0% 0 0 / 0.2) !important;
+  color: var(--gothic-cyan) !important;
+  backdrop-filter: blur(6px);
+}
+.app-space-gothic a.project-pagination__card:hover,
+.app-space-gothic a.project-pagination__card:focus-visible {
+  border-color: oklch(65% 0.1 200 / 0.38) !important;
+  box-shadow: 0 4px 16px oklch(0% 0 0 / 0.28) !important;
+}
+.app-space-gothic a.project-pagination__card p.font-semibold {
+  color: var(--gothic-fg) !important;
+}
+.app-space-gothic a.project-pagination__card p.text-header\/75 {
+  color: var(--gothic-muted) !important;
+  opacity: 0.9;
+}
+.app-space-gothic a.project-pagination__icon-well {
+  background: oklch(22% 0.05 200 / 0.35) !important;
+  box-shadow: 0 0 0 1px oklch(100% 0 0 / 0.06) inset;
+}
+.app-space-gothic a.project-pagination__card:hover .project-pagination__icon-well,
+.app-space-gothic a.project-pagination__card:focus-visible .project-pagination__icon-well {
+  background: oklch(28% 0.08 200 / 0.42) !important;
+}
 .app-space-gothic a .fill-link,
 .app-space-gothic a .fill-link-hover {
   fill: currentColor !important;
@@ -269,6 +300,9 @@
 }
 .app-space-gothic a:hover .fill-link-hover,
 .app-space-gothic a:focus .fill-link-hover {
+  fill: var(--gothic-magenta) !important;
+}
+.app-space-gothic a.project-pagination__card:hover [class*='fill-link'] {
   fill: var(--gothic-magenta) !important;
 }
 
@@ -334,8 +368,30 @@
   }
 }
 
-/* Screenshots / carousel: subtle frame */
-.app-space-gothic [class~='shadow'],
+/* Screenshot grid (case study): void frame, corner hint, lift on focus/hover */
+.app-space-gothic .screenshot-tile__trigger {
+  border-color: var(--gothic-stroke) !important;
+  background: oklch(12% 0.03 280 / 0.5) !important;
+  box-shadow: 0 0 0 1px oklch(100% 0 0 / 0.05), 0 8px 32px oklch(0% 0 0 / 0.5) !important;
+}
+.app-space-gothic .screenshot-tile__trigger:hover,
+.app-space-gothic .screenshot-tile__trigger:focus-visible {
+  border-color: oklch(65% 0.1 200 / 0.38) !important;
+  box-shadow: 0 0 0 1px oklch(100% 0 0 / 0.08), 0 0 28px oklch(45% 0.1 300 / 0.22), 0 12px 40px oklch(0% 0 0 / 0.55) !important;
+}
+.app-space-gothic .screenshot-tile__trigger span[aria-hidden] {
+  border-color: var(--gothic-cyan) !important;
+}
+.app-space-gothic .screenshot-tile__trigger:hover span[aria-hidden],
+.app-space-gothic .screenshot-tile__trigger:focus span[aria-hidden] {
+  border-color: var(--gothic-magenta) !important;
+}
+.app-space-gothic .screenshot-tile__caption {
+  color: var(--gothic-muted) !important;
+}
+
+/* Screenshots / carousel: subtle frame (project cards; exclude case-study tiles) */
+.app-space-gothic [class~='shadow']:not(.screenshot-tile__trigger),
 .app-space-gothic [class~='drop-shadow-lg'] {
   box-shadow: 0 12px 40px oklch(0% 0 0 / 0.4), 0 0 0 1px var(--gothic-stroke) !important;
 }

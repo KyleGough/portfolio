@@ -18,11 +18,12 @@ describe('ImageModal component', () => {
     expect(screen.getByText('Test Caption')).toBeVisible();
 
     // Modal should not be in the document by default.
-    const img = screen.getByRole('img');
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
 
-    // Modal opens upon click event.
-    fireEvent.click(img);
+    // Modal opens on thumbnail (button) activation.
+    fireEvent.click(
+      screen.getByRole('button', { name: 'View larger version: Test Caption' })
+    );
     expect(screen.queryByRole('dialog')).toBeInTheDocument();
 
     // Modal closes upon click event.
