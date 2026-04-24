@@ -31,22 +31,13 @@ const About: React.FC = () => {
           About Me
         </h1>
         <p className="mt-4 mb-8 max-w-reading">
-          Hello, I&apos;m Kyle, a Front-End Engineer at Ripjar. I have a Master
-          of Engineering degree from Warwick University. My interests lie in
-          cycling, guitar, movies, and physics (cosmology and quantum
+          Hello, I&apos;m Kyle, a Senior Front-End Engineer at Ripjar. I have a
+          Master of Engineering degree from Warwick University. My interests lie
+          in cycling, guitar, movies, and physics (cosmology and quantum
           mechanics). I enjoy learning and acquiring new skills and putting them
           into practice. Currently I am learning Three.js, and hope to apply
           these newly acquired skills on this website.
         </p>
-        <div className="flex justify-center md:block">
-          <Link
-            className="flex items-center px-8 py-2 rounded-lg border-2 w-fit group bg-background text-link hover:text-link-hover focus:text-link-hover"
-            href="/CV.pdf"
-          >
-            <p>Read my CV</p>
-            <ArrowForwardIcon className="float-right ml-4 w-4 h-4 fill-link group-hover:fill-link-hover group-focus:fill-link-hover" />
-          </Link>
-        </div>
       </Section>
 
       <Divider />

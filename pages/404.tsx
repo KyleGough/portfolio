@@ -32,9 +32,6 @@ const NotFound: React.FC = () => (
         <Link to="/projects">Projects</Link>
       </p>
       <p className="text-center md:text-left md:ml-4">
-        <Link href="/CV.pdf">CV</Link>
-      </p>
-      <p className="text-center md:text-left md:ml-4">
         <Link href="https://github.com/KyleGough">GitHub</Link>
       </p>
     </Section>

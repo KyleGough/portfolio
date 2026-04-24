@@ -13,9 +13,9 @@ export const Footer: React.FC = () => (
           <div className="px-6 py-6 w-full text-center lg:w-4/12 lg:text-left">
             <p className="pb-6 text-xl font-header">About Me</p>
             <p className="pb-4">
-              Front-End Engineer at Ripjar. Computer Science MEng graduate of
-              Warwick University. Programmer and Web Developer with interests in
-              Physics, Cycling, Guitar, and Movies.
+              Senior Front-End Engineer at Ripjar. Computer Science MEng
+              graduate of Warwick University. Programmer and Web Developer with
+              interests in Physics, Cycling, Guitar, and Movies.
             </p>
             <div className="flex flex-row justify-center lg:justify-start">
               <Link
@@ -49,11 +49,6 @@ export const Footer: React.FC = () => (
           <div className="px-6 py-6 w-full sm:w-6/12 lg:w-4/12">
             <p className="pb-6 text-xl font-header">Website</p>
             <ul>
-              <li>
-                <Link className="p-2 hover:text-nav-hover" href="/CV.pdf">
-                  CV
-                </Link>
-              </li>
               <FooterLink href="/about">About Me</FooterLink>
               <FooterLink href="/projects">Projects</FooterLink>
               <FooterLink href="/privacy">Privacy</FooterLink>
