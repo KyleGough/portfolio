@@ -1,0 +1,1 @@
+export { ExtrudedHeroTitle } from './ExtrudedHeroTitle';
