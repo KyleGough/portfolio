@@ -743,13 +743,13 @@ footer.footer--space-gothic li.flex a.group:focus-visible svg {
   color: var(--gothic-muted) !important;
 }
 
-/* /privacy: layout, rhythm, and a finer grid layer over the main void grid */
+/* /privacy: single column, no sidebar chrome */
 .app-space-gothic .privacy-page {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: clamp(1.75rem, 1.2rem + 2vw, 2.75rem);
-  max-width: 80rem;
+  gap: clamp(1.5rem, 1rem + 1.8vw, 2.5rem);
+  max-width: 50rem;
   margin-inline: auto;
   padding-bottom: clamp(0.5rem, 0.2rem + 1.5vw, 1.25rem);
 }
@@ -792,7 +792,7 @@ footer.footer--space-gothic li.flex a.group:focus-visible svg {
 }
 
 .app-space-gothic .privacy-page__header,
-.app-space-gothic .privacy-page__body {
+.app-space-gothic .privacy-page__content {
   position: relative;
   z-index: 1;
 }
@@ -812,76 +812,17 @@ footer.footer--space-gothic li.flex a.group:focus-visible svg {
   color: var(--gothic-cyan);
 }
 
-.app-space-gothic .privacy-page__body {
-  display: grid;
-  gap: clamp(1.5rem, 1rem + 1.5vw, 2.25rem);
-}
-
-@media (min-width: 64rem) {
-  .app-space-gothic .privacy-page__body {
-    grid-template-columns: minmax(10.5rem, 13.5rem) minmax(0, 1fr);
-    align-items: start;
-    column-gap: clamp(1.5rem, 1rem + 2vw, 2.5rem);
-  }
-}
-
-.app-space-gothic .privacy-page__toc {
-  border: 1px solid oklch(100% 0 0 / 0.14);
-  border-radius: 0.75rem;
-  padding: 1rem 1.1rem;
-  background: oklch(12% 0.04 280 / 0.6);
-  box-shadow: 0 8px 28px oklch(0% 0 0 / 0.35);
-}
-
-@media (min-width: 64rem) {
-  .app-space-gothic .privacy-page__toc {
-    position: sticky;
-    top: 6.2rem;
-  }
-}
-
-.app-space-gothic .privacy-page__toc-title {
-  margin: 0 0 0.6rem;
-  font-family: 'IBM Plex Mono', ui-monospace, monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--gothic-faint);
-}
-
-.app-space-gothic .privacy-page__toc-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.app-space-gothic .privacy-page__content {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
-}
-
-.app-space-gothic .privacy-page__toc-list a {
-  display: block;
-  padding: 0.4rem 0.35rem 0.4rem 0.25rem;
-  font-family: 'Space Grotesk', system-ui, sans-serif;
-  font-size: 0.9375rem;
-  line-height: 1.4;
-  color: var(--gothic-muted);
-  text-decoration: none;
-  border-radius: 0.45rem;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out;
-}
-
-.app-space-gothic .privacy-page__toc-list a:hover,
-.app-space-gothic .privacy-page__toc-list a:focus-visible {
-  color: var(--gothic-cyan);
-  background: oklch(22% 0.05 200 / 0.25);
-  outline: none;
-}
-
-.app-space-gothic .privacy-page__main {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(2rem, 1.2rem + 2.2vw, 3rem);
+  gap: clamp(1.75rem, 1.1rem + 1.8vw, 2.75rem);
   min-width: 0;
+}
+
+.app-space-gothic .privacy-page__outro {
+  margin: 0;
+  padding-top: 0.35rem;
+  color: var(--gothic-muted);
 }
 
 .app-space-gothic .privacy-page__section .project-header {
@@ -897,16 +838,3 @@ footer.footer--space-gothic li.flex a.group:focus-visible svg {
   margin-top: 0.85rem;
 }
 
-.app-space-gothic .privacy-page__subhead {
-  margin-top: 1.25rem;
-  margin-bottom: 0.5rem;
-  font-family: 'Space Grotesk', system-ui, sans-serif;
-  font-size: 1.125rem;
-  font-weight: 600;
-  letter-spacing: -0.015em;
-  color: var(--gothic-fg);
-}
-
-.app-space-gothic .privacy-page__section .project-list {
-  margin-top: 0.5rem;
-}

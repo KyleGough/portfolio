@@ -5,115 +5,58 @@ import React from 'react';
 
 const Privacy: React.FC = () => {
   return (
-    <Layout title="Privacy Policy - Kyle Gough" theme="space-gothic">
+    <Layout title="Privacy - Kyle Gough" theme="space-gothic">
       <Section>
-        <div className="privacy-page">
+        <article className="privacy-page">
           <header className="privacy-page__header">
-            <h1 className="project-title">Privacy Policy</h1>
+            <h1 className="project-title">Privacy</h1>
             <p className="privacy-page__meta">
-              Last updated{' '}
-              <time dateTime="2026-04-25">25 April 2026</time>
+              Last updated <time dateTime="2026-04-25">25 April 2026</time>
             </p>
             <p className="project-subtitle max-w-reading">
-              What is collected when you use this site, why it exists, and how
-              long it is kept. The short version: data you send through the
-              contact form is used to reply to you. Nothing is sold.
+              What this site stores and why. Nothing is sold to advertisers.
             </p>
           </header>
 
-          <div className="privacy-page__body">
-            <nav
-              className="privacy-page__toc"
-              aria-label="Sections on this page"
+          <div className="privacy-page__content">
+            <section
+              className="privacy-page__section"
+              aria-labelledby="contact-form-heading"
             >
-              <p className="privacy-page__toc-title">On this page</p>
-              <ul className="privacy-page__toc-list">
-                <li>
-                  <a href="#personal-data">Personal data</a>
-                </li>
-                <li>
-                  <a href="#cookies">Cookies and analytics</a>
-                </li>
-                <li>
-                  <a href="#changes">Policy changes</a>
-                </li>
-                <li>
-                  <a href="#contact">Contact</a>
-                </li>
-              </ul>
-            </nav>
+              <h2 id="contact-form-heading" className="project-header">
+                Contact form
+              </h2>
+              <p className="max-w-reading">
+                If you use the form on the homepage, I receive your name, email
+                address, and message. I use that only to reply. It is not sold
+                and I do not add you to marketing lists. I may keep messages for
+                a reasonable time in line with normal email practice.
+              </p>
+            </section>
 
-            <div className="privacy-page__main">
-              <section
-                id="personal-data"
-                className="privacy-page__section"
-                aria-labelledby="personal-data-heading"
-              >
-                <h2 id="personal-data-heading" className="project-header">
-                  Personal data
-                </h2>
-                <p className="max-w-reading">
-                  The site collects your name, email address, and message when
-                  you submit the contact form on the homepage. That information
-                  is kept only as long as it is needed to respond and for
-                  reasonable record keeping. It is not sold to third parties.
-                </p>
-                <h3 className="privacy-page__subhead">How it is used</h3>
-                <ul className="project-list max-w-reading">
-                  <li>To improve site content and clarity.</li>
-                  <li>
-                    To reply by email when you ask a question through the
-                    contact form.
-                  </li>
-                </ul>
-              </section>
+            <section
+              className="privacy-page__section"
+              aria-labelledby="analytics-heading"
+            >
+              <h2 id="analytics-heading" className="project-header">
+                Analytics and hosting
+              </h2>
+              <p className="max-w-reading">
+                The site is hosted on Vercel, which can collect basic traffic
+                and performance data so the pages stay fast and reliable. There
+                are no advertising or social tracking cookies from this
+                project.
+              </p>
+            </section>
 
-              <section
-                id="cookies"
-                className="privacy-page__section"
-                aria-labelledby="cookies-heading"
-              >
-                <h2 id="cookies-heading" className="project-header">
-                  Cookies and analytics
-                </h2>
-                <p className="max-w-reading">
-                  This site does not use advertising or social tracking
-                  cookies. Anonymized traffic and performance metrics may be
-                  collected by the hosting platform so basic usage can be
-                  understood without identifying individuals.
-                </p>
-              </section>
-
-              <section
-                id="changes"
-                className="privacy-page__section"
-                aria-labelledby="changes-heading"
-              >
-                <h2 id="changes-heading" className="project-header">
-                  Changes to this policy
-                </h2>
-                <p className="max-w-reading">
-                  This policy may be updated. Changes are published on this
-                  page and take effect when posted.
-                </p>
-              </section>
-
-              <section
-                id="contact"
-                className="privacy-page__section"
-                aria-labelledby="contact-heading"
-              >
-                <h2 id="contact-heading" className="project-header">
-                  Contact
-                </h2>
-                <p className="max-w-reading">
-                  Questions about this policy can be sent through the{' '}
-                  <Link to="/">contact form on the homepage</Link>.
-                </p>
-              </section>
-            </div>
+            <p className="privacy-page__outro max-w-reading">
+              I may update this text; the current version is always on this
+              page. Questions:{' '}
+              <Link to="/">home page contact form</Link>
+              .
+            </p>
           </div>
-        </div>
+        </article>
       </Section>
     </Layout>
   );
