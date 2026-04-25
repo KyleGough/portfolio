@@ -1,0 +1,389 @@
+/* Scoped 404 “void navigation” scene: 3D grid + orbits + extruded type (solid fills, no gradient text). */
+
+.root {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: min(88dvh, 56rem);
+  padding: clamp(1.5rem, 5vw, 3rem) 1rem 4rem;
+  overflow: hidden;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* —— Perspective floor: animated 3D grid —— */
+.perspective {
+  position: absolute;
+  left: -15%;
+  right: -15%;
+  bottom: -5%;
+  height: 62%;
+  perspective: 920px;
+  perspective-origin: 50% 28%;
+}
+
+.gridFloor {
+  position: absolute;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  bottom: -35%;
+  transform-origin: 50% 100%;
+  transform-style: preserve-3d;
+  will-change: transform;
+  background-image:
+    linear-gradient(
+      90deg,
+      oklch(100% 0 0 / 0.045) 0,
+      oklch(100% 0 0 / 0.045) 1px,
+      transparent 1px,
+      transparent 56px
+    ),
+    linear-gradient(
+      0deg,
+      oklch(100% 0 0 / 0.045) 0,
+      oklch(100% 0 0 / 0.045) 1px,
+      transparent 1px,
+      transparent 56px
+    ),
+    linear-gradient(
+      90deg,
+      oklch(78% 0.12 200 / 0.07) 0,
+      oklch(78% 0.12 200 / 0.07) 1px,
+      transparent 1px,
+      transparent 168px
+    ),
+    linear-gradient(
+      0deg,
+      oklch(72% 0.2 310 / 0.05) 0,
+      oklch(72% 0.2 310 / 0.05) 1px,
+      transparent 1px,
+      transparent 168px
+    );
+  background-size:
+    56px 56px,
+    56px 56px,
+    168px 168px,
+    168px 168px;
+  background-position: center bottom;
+  mask-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.95) 38%,
+    white 100%
+  );
+  border-top: 1px solid oklch(65% 0.15 290 / 0.22);
+  animation: gridDrift 18s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
+}
+
+@keyframes gridDrift {
+  0% {
+    transform: rotateX(74deg) translateZ(-140px) translateY(0) scale(1);
+    opacity: 0.55;
+  }
+  100% {
+    transform: rotateX(80deg) translateZ(-96px) translateY(-3%) scale(1.02);
+    opacity: 0.88;
+  }
+}
+
+/* —— Orbital stack (elliptical via scaleX) —— */
+.orbitStage {
+  position: absolute;
+  top: clamp(6%, 10vh, 14%);
+  right: clamp(4%, 8vw, 12%);
+  width: min(42vw, 280px);
+  height: min(42vw, 280px);
+  transform: rotateX(58deg);
+  transform-style: preserve-3d;
+}
+
+@media (max-width: 767px) {
+  .orbitStage {
+    top: 4%;
+    right: 50%;
+    transform: translateX(50%) rotateX(58deg);
+  }
+}
+
+.orbitRing {
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  border: 1px solid oklch(65% 0.15 290 / 0.18);
+  box-shadow: 0 0 0 1px oklch(0% 0 0 / 0.2) inset;
+}
+
+.orbitRingWide {
+  transform: scaleX(1.22);
+}
+
+.orbitRingTight {
+  inset: 22%;
+  transform: scaleX(0.88);
+  opacity: 0.65;
+}
+
+/* Elliptical apparent path: scale parent, keep circular spin math */
+.orbitEllipse {
+  position: absolute;
+  inset: 0;
+  transform: scaleX(1.14);
+  transform-origin: center center;
+}
+
+.orbitSpinSlow {
+  position: absolute;
+  inset: 0;
+  animation: orbitTurn 46s linear infinite;
+}
+
+.orbitSpinMid {
+  position: absolute;
+  inset: 0;
+  animation: orbitTurn 31s linear infinite reverse;
+}
+
+.orbitSpinFast {
+  position: absolute;
+  inset: 0;
+  animation: orbitTurn 19s linear infinite;
+}
+
+@keyframes orbitTurn {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.body {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+}
+
+.satellite {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  margin: -4.5px 0 0 -4.5px;
+  border-radius: 50%;
+  background: oklch(78% 0.12 200);
+  box-shadow:
+    0 0 14px oklch(78% 0.12 200 / 0.85),
+    0 0 2px oklch(100% 0 0 / 0.4);
+}
+
+.satelliteMagenta {
+  background: oklch(72% 0.2 310);
+  box-shadow:
+    0 0 12px oklch(72% 0.2 310 / 0.75),
+    0 0 2px oklch(100% 0 0 / 0.35);
+}
+
+.satelliteMuted {
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  background: oklch(72% 0.04 280);
+  box-shadow: 0 0 8px oklch(72% 0.04 280 / 0.6);
+}
+
+/* Kepler-ish: inner faster (smaller radius), outer slower */
+.rInner {
+  transform: translateX(72px);
+}
+
+.rMid {
+  transform: translateX(104px);
+}
+
+.rOuter {
+  transform: translateX(128px);
+}
+
+.core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 22px;
+  height: 22px;
+  margin: -11px 0 0 -11px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 32% 30%,
+    oklch(88% 0.08 200) 0%,
+    oklch(42% 0.14 285) 55%,
+    oklch(22% 0.08 300) 100%
+  );
+  box-shadow:
+    0 0 24px oklch(65% 0.15 300 / 0.45),
+    0 0 4px oklch(100% 0 0 / 0.15) inset;
+}
+
+/* —— Foreground —— */
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 36rem;
+}
+
+.signal {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gothic-faint, oklch(52% 0.03 280));
+  margin-bottom: 0.75rem;
+}
+
+.titleBlock {
+  margin: 0 0 1rem;
+}
+
+.digits {
+  display: inline-flex;
+  gap: 0.02em;
+  justify-content: center;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(4.25rem, 16vw, 10.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.07em;
+  color: oklch(82% 0.11 200);
+  transform: perspective(520px) rotateX(14deg) rotateY(-8deg);
+  transform-style: preserve-3d;
+  text-shadow:
+    0.5px 0.5px 0 oklch(48% 0.1 285),
+    1px 1px 0 oklch(44% 0.11 285),
+    1.5px 1.5px 0 oklch(40% 0.11 285),
+    2px 2px 0 oklch(36% 0.1 285),
+    2.5px 2.5px 0 oklch(32% 0.09 285),
+    3px 3px 0 oklch(28% 0.08 285),
+    3.5px 3.5px 0 oklch(24% 0.07 285),
+    4px 4px 0 oklch(21% 0.06 285),
+    4.5px 4.5px 0 oklch(18% 0.05 285),
+    5px 5px 0 oklch(16% 0.04 285),
+    5.5px 5.5px 0 oklch(14% 0.04 285),
+    6px 6px 0 oklch(12% 0.03 285),
+    0 0 48px oklch(65% 0.15 300 / 0.35),
+    0 0 2px oklch(100% 0 0 / 0.12);
+  animation: titleSettle 2.4s cubic-bezier(0.22, 1, 0.36, 1) 1 both;
+}
+
+.digit {
+  display: inline-block;
+  animation: digitEase 2.8s cubic-bezier(0.22, 1, 0.36, 1) 1 both;
+}
+
+.digit:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+.digit:nth-child(2) {
+  animation-delay: 80ms;
+}
+
+.digit:nth-child(3) {
+  animation-delay: 160ms;
+}
+
+@keyframes digitEase {
+  0% {
+    opacity: 0;
+    transform: translateZ(-40px) translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateZ(0) translateY(0);
+  }
+}
+
+@keyframes titleSettle {
+  0% {
+    filter: blur(6px);
+    letter-spacing: -0.02em;
+  }
+  100% {
+    filter: blur(0);
+    letter-spacing: -0.07em;
+  }
+}
+
+.subtitle {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: clamp(1.35rem, 4vw, 2rem);
+  font-weight: 600;
+  color: var(--gothic-fg, oklch(93% 0.02 280));
+  letter-spacing: -0.03em;
+  margin: 0 0 0.5rem;
+}
+
+.blurb {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--gothic-muted, oklch(72% 0.04 280));
+  margin: 0 auto 2rem;
+  max-width: 28rem;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.5rem;
+}
+
+.nav a {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+}
+
+.sep {
+  color: oklch(52% 0.03 280);
+  font-size: 0.65rem;
+  user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gridFloor,
+  .orbitSpinSlow,
+  .orbitSpinMid,
+  .orbitSpinFast {
+    animation: none !important;
+  }
+
+  .gridFloor {
+    transform: rotateX(78deg) translateZ(-120px);
+    opacity: 0.65;
+  }
+
+  .digits {
+    animation: none;
+    filter: none;
+  }
+
+  .digit {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
