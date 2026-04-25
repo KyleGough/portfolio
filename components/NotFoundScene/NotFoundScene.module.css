@@ -1,4 +1,4 @@
-/* Scoped 404 “void navigation” scene: 3D grid + orbits + extruded type (solid fills, no gradient text). */
+/* Scoped 404 void scene: 3D grid floor + extruded type (solid fills, no gradient text). */
 
 .root {
   position: relative;
@@ -19,7 +19,7 @@
   z-index: 0;
 }
 
-/* —— Perspective floor: animated 3D grid —— */
+/* Perspective floor: animated 3D grid */
 .perspective {
   position: absolute;
   left: -15%;
@@ -95,146 +95,7 @@
   }
 }
 
-/* —— Orbital stack (elliptical via scaleX) —— */
-.orbitStage {
-  position: absolute;
-  top: clamp(6%, 10vh, 14%);
-  right: clamp(4%, 8vw, 12%);
-  width: min(42vw, 280px);
-  height: min(42vw, 280px);
-  transform: rotateX(58deg);
-  transform-style: preserve-3d;
-}
-
-@media (max-width: 767px) {
-  .orbitStage {
-    top: 4%;
-    right: 50%;
-    transform: translateX(50%) rotateX(58deg);
-  }
-}
-
-.orbitRing {
-  position: absolute;
-  inset: 8%;
-  border-radius: 50%;
-  border: 1px solid oklch(65% 0.15 290 / 0.18);
-  box-shadow: 0 0 0 1px oklch(0% 0 0 / 0.2) inset;
-}
-
-.orbitRingWide {
-  transform: scaleX(1.22);
-}
-
-.orbitRingTight {
-  inset: 22%;
-  transform: scaleX(0.88);
-  opacity: 0.65;
-}
-
-/* Elliptical apparent path: scale parent, keep circular spin math */
-.orbitEllipse {
-  position: absolute;
-  inset: 0;
-  transform: scaleX(1.14);
-  transform-origin: center center;
-}
-
-.orbitSpinSlow {
-  position: absolute;
-  inset: 0;
-  animation: orbitTurn 46s linear infinite;
-}
-
-.orbitSpinMid {
-  position: absolute;
-  inset: 0;
-  animation: orbitTurn 31s linear infinite reverse;
-}
-
-.orbitSpinFast {
-  position: absolute;
-  inset: 0;
-  animation: orbitTurn 19s linear infinite;
-}
-
-@keyframes orbitTurn {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.body {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 0;
-  height: 0;
-}
-
-.satellite {
-  position: absolute;
-  width: 9px;
-  height: 9px;
-  margin: -4.5px 0 0 -4.5px;
-  border-radius: 50%;
-  background: oklch(78% 0.12 200);
-  box-shadow:
-    0 0 14px oklch(78% 0.12 200 / 0.85),
-    0 0 2px oklch(100% 0 0 / 0.4);
-}
-
-.satelliteMagenta {
-  background: oklch(72% 0.2 310);
-  box-shadow:
-    0 0 12px oklch(72% 0.2 310 / 0.75),
-    0 0 2px oklch(100% 0 0 / 0.35);
-}
-
-.satelliteMuted {
-  width: 6px;
-  height: 6px;
-  margin: -3px 0 0 -3px;
-  background: oklch(72% 0.04 280);
-  box-shadow: 0 0 8px oklch(72% 0.04 280 / 0.6);
-}
-
-/* Kepler-ish: inner faster (smaller radius), outer slower */
-.rInner {
-  transform: translateX(72px);
-}
-
-.rMid {
-  transform: translateX(104px);
-}
-
-.rOuter {
-  transform: translateX(128px);
-}
-
-.core {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 22px;
-  height: 22px;
-  margin: -11px 0 0 -11px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 32% 30%,
-    oklch(88% 0.08 200) 0%,
-    oklch(42% 0.14 285) 55%,
-    oklch(22% 0.08 300) 100%
-  );
-  box-shadow:
-    0 0 24px oklch(65% 0.15 300 / 0.45),
-    0 0 4px oklch(100% 0 0 / 0.15) inset;
-}
-
-/* —— Foreground —— */
+/* Foreground */
 .content {
   position: relative;
   z-index: 1;
@@ -253,6 +114,8 @@
 
 .titleBlock {
   margin: 0 0 1rem;
+  perspective: 760px;
+  perspective-origin: 50% 38%;
 }
 
 .digits {
@@ -264,30 +127,75 @@
   font-size: clamp(4.25rem, 16vw, 10.5rem);
   line-height: 0.92;
   letter-spacing: -0.07em;
-  color: oklch(82% 0.11 200);
-  transform: perspective(520px) rotateX(14deg) rotateY(-8deg);
+  color: oklch(93% 0.05 205 / 0.72);
+  transform: rotateX(19deg) rotateY(-12deg) translateZ(6px);
   transform-style: preserve-3d;
   text-shadow:
-    0.5px 0.5px 0 oklch(48% 0.1 285),
-    1px 1px 0 oklch(44% 0.11 285),
-    1.5px 1.5px 0 oklch(40% 0.11 285),
-    2px 2px 0 oklch(36% 0.1 285),
-    2.5px 2.5px 0 oklch(32% 0.09 285),
-    3px 3px 0 oklch(28% 0.08 285),
-    3.5px 3.5px 0 oklch(24% 0.07 285),
-    4px 4px 0 oklch(21% 0.06 285),
-    4.5px 4.5px 0 oklch(18% 0.05 285),
-    5px 5px 0 oklch(16% 0.04 285),
-    5.5px 5.5px 0 oklch(14% 0.04 285),
-    6px 6px 0 oklch(12% 0.03 285),
-    0 0 48px oklch(65% 0.15 300 / 0.35),
-    0 0 2px oklch(100% 0 0 / 0.12);
-  animation: titleSettle 2.4s cubic-bezier(0.22, 1, 0.36, 1) 1 both;
+    0.45px 0.45px 0 oklch(58% 0.09 275 / 0.92),
+    0.9px 0.9px 0 oklch(52% 0.1 280 / 0.9),
+    1.35px 1.35px 0 oklch(46% 0.1 282 / 0.88),
+    1.8px 1.8px 0 oklch(40% 0.1 285 / 0.85),
+    2.25px 2.25px 0 oklch(35% 0.09 285 / 0.82),
+    2.7px 2.7px 0 oklch(30% 0.08 285 / 0.8),
+    3.15px 3.15px 0 oklch(26% 0.08 285 / 0.78),
+    3.6px 3.6px 0 oklch(22% 0.07 285 / 0.76),
+    4.05px 4.05px 0 oklch(19% 0.06 285 / 0.74),
+    4.5px 4.5px 0 oklch(16% 0.05 285 / 0.72),
+    4.95px 4.95px 0 oklch(14% 0.05 285 / 0.7),
+    5.4px 5.4px 0 oklch(12% 0.04 285 / 0.68),
+    5.85px 5.85px 0 oklch(11% 0.04 285 / 0.65),
+    6.3px 6.3px 0 oklch(10% 0.03 285 / 0.62),
+    6.75px 6.75px 0 oklch(9% 0.03 285 / 0.58),
+    7.2px 7.2px 0 oklch(8% 0.03 285 / 0.54),
+    7.65px 7.65px 0 oklch(7% 0.025 285 / 0.5),
+    8.1px 8.1px 0 oklch(6% 0.02 285 / 0.45),
+    8.55px 8.55px 0 oklch(5.5% 0.02 285 / 0.4),
+    9px 9px 0 oklch(5% 0.02 285 / 0.35),
+    -0.35px -0.35px 0 oklch(78% 0.08 200 / 0.35),
+    0 0 1px oklch(90% 0.06 205 / 0.55),
+    0 0 22px oklch(78% 0.1 200 / 0.45),
+    0 0 52px oklch(68% 0.14 295 / 0.28),
+    0 0 88px oklch(62% 0.12 270 / 0.18),
+    11px 13px 36px oklch(6% 0.04 285 / 0.55),
+    3px 4px 14px oklch(8% 0.03 285 / 0.35);
+  animation:
+    titleSettle 2.4s cubic-bezier(0.22, 1, 0.36, 1) 1 both,
+    etherealBreath 5.5s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate 2.6s;
+}
+
+@keyframes etherealBreath {
+  0% {
+    color: oklch(91% 0.045 205 / 0.68);
+    filter: brightness(1) saturate(1);
+  }
+  100% {
+    color: oklch(95% 0.06 200 / 0.82);
+    filter: brightness(1.08) saturate(1.12);
+  }
 }
 
 .digit {
   display: inline-block;
+  transform-style: preserve-3d;
   animation: digitEase 2.8s cubic-bezier(0.22, 1, 0.36, 1) 1 both;
+}
+
+.digitInner {
+  display: inline-block;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.digit:nth-child(1) .digitInner {
+  transform: translateZ(16px);
+}
+
+.digit:nth-child(2) .digitInner {
+  transform: translateZ(0);
+}
+
+.digit:nth-child(3) .digitInner {
+  transform: translateZ(10px);
 }
 
 .digit:nth-child(1) {
@@ -364,14 +272,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .gridFloor,
-  .orbitSpinSlow,
-  .orbitSpinMid,
-  .orbitSpinFast {
-    animation: none !important;
-  }
-
   .gridFloor {
+    animation: none !important;
     transform: rotateX(78deg) translateZ(-120px);
     opacity: 0.65;
   }

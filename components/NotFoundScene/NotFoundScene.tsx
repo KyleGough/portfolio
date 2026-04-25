@@ -15,9 +15,15 @@ export const NotFoundScene: React.FC = () => (
       <p className={styles.signal}>signal lost</p>
       <h1 id="not-found-heading" className={styles.titleBlock}>
         <span className={styles.digits}>
-          <span className={styles.digit}>4</span>
-          <span className={styles.digit}>0</span>
-          <span className={styles.digit}>4</span>
+          <span className={styles.digit}>
+            <span className={styles.digitInner}>4</span>
+          </span>
+          <span className={styles.digit}>
+            <span className={styles.digitInner}>0</span>
+          </span>
+          <span className={styles.digit}>
+            <span className={styles.digitInner}>4</span>
+          </span>
         </span>
       </h1>
       <p className={styles.subtitle}>Page not in this orbit</p>
