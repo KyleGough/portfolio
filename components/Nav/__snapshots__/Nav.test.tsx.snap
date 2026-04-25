@@ -3,132 +3,140 @@
 exports[`Nav component renders 1`] = `
 <div>
   <nav
-    class="leading-6 w-full absolute z-50"
+    aria-label="Main"
+    class="font-primary absolute z-50 w-full antialiased"
+    role="navigation"
   >
     <div
-      class="flex relative z-[200] items-center justify-between flex-wrap bg-nav-light text-white px-2"
-    >
-      <a
-        class="flex items-center flex-shrink-0 mx-5"
-        href="/"
-      >
-        <div
-          class="mr-4 w-8 h-8"
-        >
-          <img
-            alt="Website Logo"
-            data-nimg="1"
-            decoding="async"
-            fetchpriority="high"
-            height="40"
-            src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
-            srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
-            style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
-            width="40"
-          />
-        </div>
-        <p
-          class="text-xl tracking-normal"
-        >
-          Kyle Gough
-        </p>
-      </a>
-      <button
-        aria-label="Toggle Navigation"
-        class="border-bottom-slide block md:hidden px-6 py-5"
-      >
-        <svg
-          class="w-6 h-6 fill-white"
-          height="24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0 0h24v24H0V0z"
-            fill="none"
-          />
-          <path
-            d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-          />
-        </svg>
-      </button>
-      <div
-        class="hidden md:block flex-grow w-auto"
-      >
-        <div
-          class="flex-grow text-right"
-        >
-          <a
-            class="border-bottom-slide inline-block px-5 py-5 mt-0"
-            href="/"
-          >
-            Home
-          </a>
-          <a
-            class="border-bottom-slide inline-block px-5 py-5 mt-0"
-            href="/projects"
-          >
-            Projects
-          </a>
-          <a
-            class="border-bottom-slide inline-block px-5 py-5 mt-0"
-            href="/about"
-          >
-            About Me
-          </a>
-        </div>
-      </div>
-      <a
-        aria-label="GitHub Profile"
-        class="border-bottom-slide hidden md:block px-6 py-5"
-        href="https://github.com/KyleGough"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <svg
-          class="w-6 h-6 fill-white"
-          role="img"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-          />
-        </svg>
-      </a>
-    </div>
-    <div
-      class="hidden slide-in z-[100] drop-shadow w-full md:hidden flex-grow"
+      class="nav-bar--shell nav-bar--overdrive bg-nav-light relative z-[200] text-white"
+      style="--nav-scroll: 0.0000;"
     >
       <div
-        class="text-link leading-8 bg-background"
+        class="nav-bar--inner relative z-10 flex w-full flex-wrap items-center justify-between px-2"
       >
         <a
-          class="block hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm"
+          class="mx-5 flex flex-shrink-0 items-center text-inherit no-underline"
           href="/"
         >
-          Home
+          <div
+            class="mr-4 h-8 w-8"
+          >
+            <img
+              alt="Website Logo"
+              data-nimg="1"
+              decoding="async"
+              fetchpriority="high"
+              height="40"
+              src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
+              srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+              style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+              width="40"
+            />
+          </div>
+          <span
+            class="nav-wordmark"
+          >
+            Kyle Gough
+          </span>
         </a>
-        <a
-          class="block hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm"
-          href="/projects"
+        <button
+          aria-label="Toggle navigation"
+          class="nav-gh border-bottom-slide block md:hidden px-6 py-5"
+          type="button"
         >
-          Projects
-        </a>
-        <a
-          class="block hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm"
-          href="/about"
+          <svg
+            class="h-6 w-6 fill-white"
+            height="24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+            />
+          </svg>
+        </button>
+        <div
+          class="hidden w-auto flex-grow md:block"
         >
-          About Me
-        </a>
+          <div
+            class="text-right text-base"
+          >
+            <a
+              class="nav-link--bar border-bottom-slide mt-0 inline-block px-5 py-5"
+              href="/"
+            >
+              Home
+            </a>
+            <a
+              class="nav-link--bar border-bottom-slide mt-0 inline-block px-5 py-5"
+              href="/projects"
+            >
+              Projects
+            </a>
+            <a
+              class="nav-link--bar border-bottom-slide mt-0 inline-block px-5 py-5"
+              href="/about"
+            >
+              About Me
+            </a>
+          </div>
+        </div>
         <a
-          class="group flex items-center hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm"
+          aria-label="GitHub Profile"
+          class="nav-gh border-bottom-slide hidden px-6 py-5 md:block"
           href="https://github.com/KyleGough"
           rel="noopener noreferrer"
           target="_blank"
         >
           <svg
-            class="w-6 h-6 mr-2 fill-link group-hover:fill-link-hover group-focus:fill-link-hover"
+            class="h-6 w-6 fill-white"
+            role="img"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div
+      class="hidden slide-in z-[100] drop-shadow w-full md:hidden flex-grow"
+    >
+      <div
+        class="text-link bg-background text-base"
+      >
+        <a
+          class="nav-drawer__link text-inherit hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm"
+          href="/"
+        >
+          Home
+        </a>
+        <a
+          class="nav-drawer__link text-inherit hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm"
+          href="/projects"
+        >
+          Projects
+        </a>
+        <a
+          class="nav-drawer__link text-inherit hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm"
+          href="/about"
+        >
+          About Me
+        </a>
+        <a
+          class="nav-drawer__link group flex items-center text-inherit hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm"
+          href="https://github.com/KyleGough"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <svg
+            class="mr-2 h-6 w-6 fill-link group-hover:fill-link-hover group-focus:fill-link-hover"
             role="img"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
