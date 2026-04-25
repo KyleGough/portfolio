@@ -1,4 +1,5 @@
 import { Link } from '@components/Link';
+import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
 import React from 'react';
 
 import styles from './NotFoundScene.module.css';
@@ -14,15 +15,17 @@ export const NotFoundScene: React.FC = () => (
     <div className={styles.content}>
       <p className={styles.signal}>signal lost</p>
       <h1 id="not-found-heading" className={styles.titleBlock}>
-        <span className={styles.digits}>
-          <span className={styles.digit}>
-            <span className={styles.digitInner}>4</span>
-          </span>
-          <span className={styles.digit}>
-            <span className={styles.digitInner}>0</span>
-          </span>
-          <span className={styles.digit}>
-            <span className={styles.digitInner}>4</span>
+        <span className={extruded.perspectiveWrapHero}>
+          <span className={extruded.heroDigits}>
+            <span className={styles.digit}>
+              <span className={styles.digitInner}>4</span>
+            </span>
+            <span className={styles.digit}>
+              <span className={styles.digitInner}>0</span>
+            </span>
+            <span className={styles.digit}>
+              <span className={styles.digitInner}>4</span>
+            </span>
           </span>
         </span>
       </h1>

@@ -1,5 +1,6 @@
 import { EmailIcon, GitHubIcon, LinkedInIcon } from '@components/Icons';
 import { Link } from '@components/Link';
+import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
 import dayjs from 'dayjs';
 import React from 'react';
 
@@ -11,7 +12,11 @@ export const Footer: React.FC = () => (
       <div className="container px-0 py-12 mx-auto">
         <div className="flex flex-wrap justify-center px-4 w-full">
           <div className="px-6 py-6 w-full text-center lg:w-4/12 lg:text-left">
-            <p className="pb-6 text-xl font-header">About Me</p>
+            <p className="pb-5">
+              <span className={extruded.perspectiveWrapFooter}>
+                <span className={extruded.footerTitle}>About Me</span>
+              </span>
+            </p>
             <p className="pb-4">
               Senior Front-End Engineer at Ripjar. Computer Science MEng
               graduate of Warwick University. Programmer and Web Developer with
@@ -28,7 +33,11 @@ export const Footer: React.FC = () => (
             </div>
           </div>
           <div className="px-6 py-6 w-full sm:w-6/12 lg:w-4/12">
-            <p className="pb-6 text-xl font-header">Projects</p>
+            <p className="pb-5">
+              <span className={extruded.perspectiveWrapFooter}>
+                <span className={extruded.footerTitle}>Projects</span>
+              </span>
+            </p>
             <ul>
               <FooterLink href="/projects">All Projects</FooterLink>
               <FooterLink href="/projects/sudoku">
@@ -47,7 +56,11 @@ export const Footer: React.FC = () => (
             </ul>
           </div>
           <div className="px-6 py-6 w-full sm:w-6/12 lg:w-4/12">
-            <p className="pb-6 text-xl font-header">Website</p>
+            <p className="pb-5">
+              <span className={extruded.perspectiveWrapFooter}>
+                <span className={extruded.footerTitle}>Website</span>
+              </span>
+            </p>
             <ul>
               <FooterLink href="/about">About Me</FooterLink>
               <FooterLink href="/projects">Projects</FooterLink>
