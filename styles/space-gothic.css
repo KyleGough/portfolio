@@ -211,6 +211,12 @@
   z-index: 1;
 }
 
+/* Project list filter: must stack above following sections or rows capture clicks
+   (main > * alone forces z-index:1; specificity beats the filter panel’s module class). */
+.app-space-gothic main > .projects-filter-wrapper {
+  z-index: 20;
+}
+
 /* —— Main site header: void chrome + Space Grotesk (all routes; matches former /projects look) */
 nav[aria-label='Main'] {
   --gothic-fg: oklch(93% 0.02 280);

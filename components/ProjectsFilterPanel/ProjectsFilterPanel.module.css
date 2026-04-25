@@ -1,0 +1,6 @@
+/* Filter wrapper: stacking only (no panel background). */
+
+.panel {
+  position: relative;
+  z-index: 20;
+}

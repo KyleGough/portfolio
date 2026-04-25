@@ -1,7 +1,7 @@
 import { Divider } from '@components/Divider';
 import { Layout } from '@components/Layout';
-import { ProjectFilter } from '@components/ProjectFilter';
 import { ProjectItem } from '@components/ProjectItem';
+import { ProjectsFilterPanel } from '@components/ProjectsFilterPanel';
 import { Section } from '@components/Section';
 import { projects } from '@utilities/Project';
 import { Project } from '@utilities/types';
@@ -22,15 +22,7 @@ const Projects: React.FC = () => {
         </h1>
       </Section>
 
-      <hr className="mt-8 h-px bg-divider" />
-
-      {/* Above project rows: space-gothic sets main > * { z-index: 1 }, so later siblings paint over this strip and block the open dropdown. */}
-      <div className="relative !z-20 bg-circuits">
-        <Section overrideTopPadding={true}>
-          <ProjectFilter filter={filter} setFilterCallback={setFilter} />
-        </Section>
-        <hr className="mb-8 h-px bg-divider" />
-      </div>
+      <ProjectsFilterPanel filter={filter} setFilter={setFilter} />
 
       {projects
         .filter((project) => filterProjects(project))
