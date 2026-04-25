@@ -12,7 +12,7 @@ export function useTypewriter<T extends HTMLElement>(
       if (!ref.current || !txt) {
         return;
       }
-      (ref.current as T).innerHTML = (ref.current as T).innerHTML + txt[0];
+      ref.current.innerHTML = ref.current.innerHTML + txt[0];
       setTimeout(() => typewrite(txt.slice(1), ref), delay);
     },
     [delay]
@@ -20,7 +20,7 @@ export function useTypewriter<T extends HTMLElement>(
 
   useEffect(() => {
     if (typewriterRef.current) {
-      (typewriterRef.current as T).innerHTML = '';
+      typewriterRef.current.innerHTML = '';
       setTimeout(() => {
         typewrite(text, typewriterRef);
       }, startDelay);

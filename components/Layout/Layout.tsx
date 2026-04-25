@@ -11,29 +11,30 @@ import { TwitterMeta } from './TwitterMeta';
 
 interface LayoutProps {
   children: React.ReactNode;
+  /** Use space-gothic void chrome (same as /projects) without changing the URL. */
+  theme?: 'default' | 'space-gothic';
   title?: string;
 }
 
 export const Layout: React.FC<LayoutProps> = ({
   children,
+  theme = 'default',
   title = 'Kyle Gough - Portfolio',
 }) => {
   const router = useRouter();
-  const isProjectSpaceGothic = router.pathname.startsWith('/projects');
+  const isSpaceGothic =
+    theme === 'space-gothic' || router.pathname.startsWith('/projects');
 
   useEffect(() => {
     const el = document.querySelector('meta[name="theme-color"]');
     if (el) {
-      el.setAttribute(
-        'content',
-        isProjectSpaceGothic ? '#07070c' : '#424242'
-      );
+      el.setAttribute('content', isSpaceGothic ? '#07070c' : '#424242');
     }
-  }, [isProjectSpaceGothic]);
+  }, [isSpaceGothic]);
 
   return (
     <div
-      className={clsx('App', isProjectSpaceGothic && 'app-space-gothic')}
+      className={clsx('App', isSpaceGothic && 'app-space-gothic')}
     >
       <Head>
         <meta charSet="utf-8" />
@@ -65,7 +66,7 @@ export const Layout: React.FC<LayoutProps> = ({
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta
           name="theme-color"
-          content={isProjectSpaceGothic ? '#07070c' : '#424242'}
+          content={isSpaceGothic ? '#07070c' : '#424242'}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <OpenGraphMeta
@@ -90,7 +91,7 @@ export const Layout: React.FC<LayoutProps> = ({
       <main
         className={clsx(
           'leading-[1.6rem] relative',
-          isProjectSpaceGothic
+          isSpaceGothic
             ? 'text-primary'
             : 'bg-background bg-noise bg-repeat'
         )}
