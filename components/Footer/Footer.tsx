@@ -7,7 +7,7 @@ import React from 'react';
 import { FooterLink } from './FooterLink';
 
 export const Footer: React.FC = () => (
-  <footer className="bg-background">
+  <footer className="bg-background footer--space-gothic">
     <div className="text-center text-white bg-nav-light">
       <div className="container px-0 py-12 mx-auto">
         <div className="flex flex-wrap justify-center px-4 w-full">
@@ -71,14 +71,14 @@ export const Footer: React.FC = () => (
                   href="https://github.com/KyleGough"
                   ariaLabel="GitHub Profile"
                 >
-                  <GitHubIcon className="w-6 h-6 fill-white group-hover:fill-nav-hover" />
+                  <GitHubIcon className="w-6 h-6 fill-white" />
                 </Link>
                 <Link
                   className="py-2 ml-2 group"
                   href="https://www.linkedin.com/in/kyle-gough-882467161/"
                   ariaLabel="LinkedIn Profile"
                 >
-                  <LinkedInIcon className="w-6 h-6 fill-white group-hover:fill-nav-hover" />
+                  <LinkedInIcon className="w-6 h-6 fill-white" />
                 </Link>
               </li>
             </ul>

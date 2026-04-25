@@ -1,5 +1,5 @@
 /* Space-gothic: main canvas + components scoped to .app-space-gothic ( /projects/* ).
-   Header nav (space-gothic look) is global: see nav[aria-label="Main"] below. */
+   Header nav + void footer: global (nav below; footer uses .footer--space-gothic on all routes). */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 .app-space-gothic {
@@ -404,39 +404,73 @@ nav[aria-label='Main'] .slide-in a:focus {
   fill: var(--gothic-magenta) !important;
 }
 
-/* Footer: cathedral basement */
-.app-space-gothic footer [class~='bg-background'] {
+/* Footer: cathedral basement (every route via .footer--space-gothic on <footer>, or inside .app-space-gothic) */
+footer.footer--space-gothic {
+  --void-deep: oklch(9% 0.02 275);
+  --void-mid: oklch(13% 0.03 280);
+  --void-elevated: oklch(17% 0.04 280);
+  --gothic-fg: oklch(93% 0.02 280);
+  --gothic-muted: oklch(72% 0.04 280);
+  --gothic-faint: oklch(52% 0.03 280);
+  --gothic-cyan: oklch(78% 0.12 200);
+  --gothic-magenta: oklch(72% 0.2 310);
+  --gothic-stroke: oklch(100% 0 0 / 0.12);
+  --gothic-stroke-bright: oklch(65% 0.15 290 / 0.45);
+}
+
+.app-space-gothic footer [class~='bg-background'],
+footer.footer--space-gothic[class~='bg-background'] {
   background: var(--void-deep) !important;
 }
 .app-space-gothic footer [class~='text-white'][class~='bg-nav-light'],
 .app-space-gothic footer .bg-nav-light,
-.app-space-gothic footer [class~='bg-nav-light'] {
+.app-space-gothic footer [class~='bg-nav-light'],
+footer.footer--space-gothic [class~='text-white'][class~='bg-nav-light'],
+footer.footer--space-gothic .bg-nav-light,
+footer.footer--space-gothic [class~='bg-nav-light'] {
   background: linear-gradient(180deg, var(--void-elevated) 0%, oklch(8% 0.02 280) 100%) !important;
   color: var(--gothic-fg) !important;
   border-top: 1px solid var(--gothic-stroke) !important;
   box-shadow: 0 0 80px oklch(30% 0.12 300 / 0.15);
 }
 .app-space-gothic footer p,
-.app-space-gothic footer .font-header {
+.app-space-gothic footer .font-header,
+footer.footer--space-gothic p,
+footer.footer--space-gothic .font-header {
   color: var(--gothic-fg) !important;
 }
 .app-space-gothic footer .bg-nav-dark,
-.app-space-gothic footer [class~='bg-nav-dark'] {
+.app-space-gothic footer [class~='bg-nav-dark'],
+footer.footer--space-gothic .bg-nav-dark,
+footer.footer--space-gothic [class~='bg-nav-dark'] {
   background: oklch(5% 0.02 280) !important;
   border-top: 1px solid var(--gothic-stroke) !important;
   color: var(--gothic-muted) !important;
 }
-.app-space-gothic footer a[href] {
+.app-space-gothic footer a[href],
+footer.footer--space-gothic a[href] {
   color: var(--gothic-cyan) !important;
 }
 .app-space-gothic footer a[href]:hover,
-.app-space-gothic footer a[href]:focus {
+.app-space-gothic footer a[href]:focus,
+footer.footer--space-gothic a[href]:hover,
+footer.footer--space-gothic a[href]:focus {
   color: var(--gothic-magenta) !important;
 }
 .app-space-gothic footer .group.fill-white,
-.app-space-gothic footer [class~='fill-white'] {
+.app-space-gothic footer [class~='fill-white'],
+footer.footer--space-gothic .group.fill-white,
+footer.footer--space-gothic [class~='fill-white'] {
   color: var(--gothic-cyan) !important;
   fill: var(--gothic-cyan) !important;
+}
+
+/* GitHub / LinkedIn row: icon fill matches link hover (magenta), not legacy nav-hover grey */
+.app-space-gothic footer li.flex a.group:hover svg,
+.app-space-gothic footer li.flex a.group:focus-visible svg,
+footer.footer--space-gothic li.flex a.group:hover svg,
+footer.footer--space-gothic li.flex a.group:focus-visible svg {
+  fill: var(--gothic-magenta) !important;
 }
 
 /* ProjectHeader GitHub / Website: modern pill, soft layer (not neon square) */

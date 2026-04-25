@@ -24,7 +24,8 @@ const Projects: React.FC = () => {
 
       <hr className="mt-8 h-px bg-divider" />
 
-      <div className="bg-circuits">
+      {/* Above project rows: space-gothic sets main > * { z-index: 1 }, so later siblings paint over this strip and block the open dropdown. */}
+      <div className="relative !z-20 bg-circuits">
         <Section overrideTopPadding={true}>
           <ProjectFilter filter={filter} setFilterCallback={setFilter} />
         </Section>
