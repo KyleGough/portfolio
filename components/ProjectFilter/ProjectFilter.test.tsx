@@ -9,7 +9,7 @@ describe('ProjectFilter component', () => {
     render(
       <ProjectFilter filter="All" setFilterCallback={onFilter} />
     );
-    expect(screen.getByText('Filter Projects')).toBeVisible();
+    expect(screen.getByText('Filter projects')).toBeVisible();
     expect(screen.getByText('All')).toBeVisible();
   });
 

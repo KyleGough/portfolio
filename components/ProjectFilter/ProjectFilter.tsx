@@ -1,7 +1,8 @@
 import { UnfoldIcon } from '@components/Icons';
 import { clsx } from 'clsx';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useId, useRef, useState } from 'react';
 
+import styles from './ProjectFilter.module.css';
 import { ProjectFilterSelection } from './ProjectFilterSelection';
 
 interface ProjectFilterProps {
@@ -28,6 +29,9 @@ export const ProjectFilter: React.FC<ProjectFilterProps> = ({
 }) => {
   const [isOpen, setOpen] = useState(false);
   const filterRef = useRef<HTMLDivElement>(null);
+  const baseId = String(useId());
+  const labelId = `${baseId}-label`;
+  const listId = `${baseId}-listbox`;
 
   useEffect(() => {
     // Close dropdown if user clicks outside project filter component.
@@ -66,39 +70,41 @@ export const ProjectFilter: React.FC<ProjectFilterProps> = ({
 
   return (
     <>
-      <p className="text-sm mb-2 ml-2 font-bold text-link text-center md:text-left">
-        Filter Projects
+      <p id={labelId} className={styles.label}>
+        Filter projects
       </p>
-      <div ref={filterRef} className="relative w-64 mx-auto md:mx-0">
+      <div ref={filterRef} className={styles.root}>
         <button
+          type="button"
           onClick={toggleDropdown}
-          className="group relative w-full pl-6 pr-12 py-4 cursor-pointer bg-background ring-0 rounded-sm shadow border-light"
+          className={styles.trigger}
           aria-haspopup="listbox"
           aria-expanded={isOpen}
-          aria-controls="project-filter-selection"
+          aria-controls={listId}
+          aria-labelledby={labelId}
         >
-          <span className="text-link group-hover:text-link-hover float-left">
-            {filter}
-          </span>
-          <UnfoldIcon className="w-8 h-8 absolute top-[12px] right-0 flex items-center pr-2 pointer-events-none fill-link group-hover:fill-link-hover" />
+          <span className={styles.value}>{filter}</span>
+          <UnfoldIcon
+            className={clsx(
+              styles.chevron,
+              isOpen && styles.chevronOpen
+            )}
+          />
         </button>
         {isOpen && (
           <ul
-            id="project-filter-selection"
-            className={clsx(
-              'absolute w-full max-h-[75vh]',
-              'z-[100] overflow-y-auto',
-              'mt-4 py-2',
-              'shadow rounded text-link bg-background'
-            )}
+            id={listId}
+            className={styles.menu}
             role="listbox"
+            aria-labelledby={labelId}
             aria-orientation="vertical"
           >
-            {filters.map((filter) => (
+            {filters.map((name) => (
               <ProjectFilterSelection
-                key={filter}
+                key={name}
                 onSelect={setValue}
-                value={filter}
+                selected={filter === name}
+                value={name}
               />
             ))}
           </ul>

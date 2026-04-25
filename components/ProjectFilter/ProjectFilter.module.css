@@ -1,0 +1,171 @@
+/* Project index filter: control surface + void accents under .app-space-gothic */
+
+.label {
+  margin: 0 0 0.75rem 0.5rem;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #03b0ee;
+}
+
+@media (min-width: 768px) {
+  .label {
+    text-align: left;
+  }
+}
+
+.root {
+  position: relative;
+  width: 16rem;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .root {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.trigger {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0.9rem 2.75rem 0.9rem 1.1rem;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 0.375rem;
+  color: #03b0ee;
+  background: #fafafa;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  transition:
+    box-shadow 0.2s cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 0.2s cubic-bezier(0.25, 1, 0.5, 1),
+    background-color 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.trigger:hover {
+  border-color: rgba(3, 176, 238, 0.35);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.trigger:focus {
+  outline: none;
+}
+
+.trigger:focus-visible {
+  outline: 2px solid #03b0ee;
+  outline-offset: 2px;
+}
+
+.value {
+  display: block;
+  padding-right: 0.15rem;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.trigger:hover .value {
+  color: #4caf50;
+}
+
+.chevron {
+  position: absolute;
+  top: 50%;
+  right: 0.35rem;
+  width: 2rem;
+  height: 2rem;
+  pointer-events: none;
+  transform: translateY(-50%);
+  color: #03b0ee;
+  fill: currentColor;
+  transition:
+    color 0.2s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.chevronOpen {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.trigger:hover .chevron {
+  color: #4caf50;
+}
+
+.menu {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  max-height: 75vh;
+  margin-top: 0.4rem;
+  padding: 0.35rem 0;
+  overflow-y: auto;
+  list-style: none;
+  border-radius: 0.375rem;
+  color: #03b0ee;
+  background: rgba(250, 250, 250, 0.97);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px) saturate(1.1);
+  -webkit-backdrop-filter: blur(10px) saturate(1.1);
+}
+
+:global(.app-space-gothic) .label {
+  color: var(--gothic-cyan) !important;
+  text-shadow: 0 0 0.75rem oklch(60% 0.14 200 / 0.2);
+}
+
+:global(.app-space-gothic) .trigger {
+  color: var(--gothic-cyan) !important;
+  background: oklch(16% 0.04 280 / 0.72) !important;
+  border: 1px solid oklch(100% 0 0 / 0.16) !important;
+  box-shadow:
+    inset 0 1px 0 0 oklch(100% 0 0 / 0.1),
+    0 0 0 1px oklch(55% 0.1 200 / 0.2),
+    0 4px 20px oklch(0% 0 0 / 0.4) !important;
+}
+
+:global(.app-space-gothic) .trigger:hover {
+  border-color: oklch(70% 0.12 200 / 0.35) !important;
+  box-shadow:
+    inset 0 1px 0 0 oklch(100% 0 0 / 0.12),
+    0 0 0 1px oklch(60% 0.12 200 / 0.28),
+    0 8px 32px oklch(0% 0 0 / 0.5) !important;
+}
+
+:global(.app-space-gothic) .trigger:hover .value {
+  color: var(--gothic-magenta) !important;
+}
+
+:global(.app-space-gothic) .trigger:focus-visible {
+  outline: 2px solid oklch(72% 0.12 200 / 0.9) !important;
+  outline-offset: 2px;
+}
+
+:global(.app-space-gothic) .chevron {
+  color: var(--gothic-cyan) !important;
+}
+
+:global(.app-space-gothic) .trigger:hover .chevron {
+  color: var(--gothic-magenta) !important;
+}
+
+:global(.app-space-gothic) .menu {
+  background: oklch(12% 0.035 285 / 0.92) !important;
+  border: 1px solid oklch(100% 0 0 / 0.14) !important;
+  color: var(--gothic-cyan) !important;
+  box-shadow:
+    0 0 0 1px oklch(50% 0.1 200 / 0.15),
+    0 12px 40px oklch(0% 0 0 / 0.55) !important;
+  backdrop-filter: blur(14px) saturate(1.12) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(1.12) !important;
+}

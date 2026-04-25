@@ -1,0 +1,1 @@
+export { ProjectsListHeroTitle } from './ProjectsListHeroTitle';
