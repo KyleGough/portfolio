@@ -15,10 +15,24 @@ describe('Nav component', () => {
     mockUseRouter.mockReturnValue({ asPath: '/' } as never);
   });
 
-  it('renders', () => {
+  afterEach(() => {
+    mockUseRouter.mockReset();
+  });
+
+  it('renders the main navigation landmark', () => {
     render(<Nav />);
     expect(
       screen.getByRole('navigation', { name: 'Main' })
     ).toBeInTheDocument();
+  });
+
+  it('marks the projects link as current for project routes (desktop and drawer)', () => {
+    mockUseRouter.mockReturnValue({ asPath: '/projects' } as never);
+    render(<Nav />);
+    const projectsLinks = screen.getAllByRole('link', { name: 'Projects' });
+    expect(projectsLinks).toHaveLength(2);
+    for (const link of projectsLinks) {
+      expect(link).toHaveAttribute('aria-current', 'page');
+    }
   });
 });

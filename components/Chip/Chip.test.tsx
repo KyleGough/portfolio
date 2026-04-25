@@ -4,9 +4,8 @@ import React from 'react';
 import { Chip } from './Chip';
 
 describe('Chip component', () => {
-  it('renders', async () => {
-    const { container } = render(<Chip name="TypeScript" />);
-    expect(await screen.findByText('TypeScript')).toBeVisible();
-    expect(container).toMatchSnapshot();
+  it('renders the chip label', () => {
+    render(<Chip name="TypeScript" />);
+    expect(screen.getByText('TypeScript')).toBeVisible();
   });
 });

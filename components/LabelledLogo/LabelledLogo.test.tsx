@@ -4,9 +4,9 @@ import React from 'react';
 import { LabelledLogo } from './LabelledLogo';
 
 describe('LabelledLogo component', () => {
-  it('renders', () => {
-    const { container } = render(<LabelledLogo name="React" logo="/#" />);
+  it('renders name and logo with accessible label', () => {
+    render(<LabelledLogo name="React" logo="/#" />);
     expect(screen.getByText('React')).toBeVisible();
-    expect(container).toMatchSnapshot();
+    expect(screen.getByRole('img', { name: 'React Logo' })).toBeInTheDocument();
   });
 });

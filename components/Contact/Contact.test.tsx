@@ -7,8 +7,11 @@ import { Contact } from './Contact';
 
 describe('Contact component', () => {
   beforeEach(mockIntersectionObserver);
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
 
-  it('contact from gives errors when required fields are empty', () => {
+  it('contact form shows errors when required fields are empty', () => {
     const spy = jest.spyOn(axios, 'post');
     render(<Contact />);
 
@@ -25,7 +28,7 @@ describe('Contact component', () => {
     expect(spy).toHaveBeenCalledTimes(0);
   });
 
-  it('contact from gives error when given invalid email', () => {
+  it('contact form shows error when given invalid email', () => {
     const spy = jest.spyOn(axios, 'post');
     render(<Contact />);
 
@@ -52,9 +55,10 @@ describe('Contact component', () => {
   });
 
   it('contact form submits on valid inputs', () => {
+    // Pending promise: we only assert axios was invoked; no async state flush needed.
     const axiosMock = jest
       .spyOn(axios, 'post')
-      .mockReturnValue(Promise.reject(() => jest.fn().mockReturnValue('test')));
+      .mockReturnValue(new Promise<never>(() => undefined));
 
     render(<Contact />);
 

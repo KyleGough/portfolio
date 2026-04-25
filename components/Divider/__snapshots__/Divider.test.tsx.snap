@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Divider component renders 1`] = `
-<div>
-  <hr
-    class="m-8 h-px bg-divider"
-  />
-</div>
-`;
