@@ -1,15 +1,15 @@
 import { EmailIcon, GitHubIcon, LinkedInIcon } from '@components/Icons';
 import { Link } from '@components/Link';
 import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
-import dayjs from 'dayjs';
 import React from 'react';
 
+import { FooterCopyright } from './FooterCopyright';
 import { FooterLink } from './FooterLink';
 
 export const Footer: React.FC = () => (
   <footer className="bg-background footer--space-gothic">
     <div className="text-center text-white bg-nav-light">
-      <div className="container px-0 py-12 mx-auto">
+      <div className="container px-0 pt-12 mx-auto">
         <div className="flex flex-wrap justify-center px-4 w-full">
           <div className="px-6 py-6 w-full text-center lg:w-4/12 lg:text-left">
             <p className="pb-5">
@@ -87,8 +87,8 @@ export const Footer: React.FC = () => (
       </div>
     </div>
     <div className="text-center text-white bg-nav-dark">
-      <div className="container px-8 py-8 mx-auto opacity-75">
-        <p className="opacity-100">© Kyle Gough, 2016 - {dayjs().year()}</p>
+      <div className="container px-8 py-6 mx-auto">
+        <FooterCopyright />
       </div>
     </div>
   </footer>

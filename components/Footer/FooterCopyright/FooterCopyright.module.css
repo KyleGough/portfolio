@@ -1,0 +1,70 @@
+/* Tight, registry-style colophon: mono + fine hairline, soft hover. */
+
+.band {
+  text-align: center;
+}
+
+.inner {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  max-width: 100%;
+  padding: 1rem 1.25rem 0;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  color: oklch(96% 0.01 300 / 0.85);
+  cursor: default;
+  transition: color 0.22s ease-out, text-shadow 0.22s ease-out;
+}
+
+.inner::before {
+  content: '';
+  position: absolute;
+  left: 0.15rem;
+  right: 0.15rem;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    oklch(100% 0 0 / 0%),
+    oklch(78% 0.1 200 / 0.28) 20%,
+    oklch(100% 0 0 / 0.1) 50%,
+    oklch(72% 0.12 300 / 0.22) 80%,
+    oklch(100% 0 0 / 0%)
+  );
+  border-radius: 0.5px;
+  pointer-events: none;
+}
+
+.years {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.name {
+  white-space: nowrap;
+}
+
+.dash {
+  user-select: none;
+}
+
+.band:hover .inner,
+.band:hover .inner:focus,
+.inner:hover {
+  color: oklch(99% 0.015 280 / 0.96);
+  text-shadow: 0 0 0.9rem oklch(70% 0.1 200 / 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inner {
+    transition: none;
+  }
+
+  .band:hover .inner,
+  .inner:hover {
+    text-shadow: none;
+  }
+}
