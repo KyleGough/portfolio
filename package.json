@@ -44,12 +44,6 @@
     "e2e:headless": "cypress run --browser firefox",
     "prepare": "husky install"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "author": "Kyle Gough",
   "license": "ISC",
   "browserslist": {

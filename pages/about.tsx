@@ -1,9 +1,7 @@
 import { Divider } from '@components/Divider';
 import { GoalsWidget } from '@components/GoalsWidget';
-import { ArrowForwardIcon } from '@components/Icons';
 import { LabelledLogo } from '@components/LabelledLogo';
 import { Layout } from '@components/Layout';
-import { Link } from '@components/Link';
 import { Section } from '@components/Section';
 import { SkillList } from '@components/SkillList';
 import ActionsLogo from '@image/skill/github-actions.svg';
