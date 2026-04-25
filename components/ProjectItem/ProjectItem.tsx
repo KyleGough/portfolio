@@ -1,3 +1,4 @@
+import { ArrowForwardIcon } from '@components/Icons';
 import { Section } from '@components/Section';
 import { getDateRange } from '@utilities/date';
 import { ProjectDate } from '@utilities/types';
@@ -56,20 +57,12 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
             </div>
             <div className="project-item-cta relative flex items-center justify-center gap-2.5 border-t border-white/25 bg-background px-5 py-3.5 font-mono text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-link transition-[color,box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none group-hover:text-link-hover group-focus-visible:text-link-hover">
               <span>View project</span>
-              <svg
+              <span
                 aria-hidden
-                className="h-3.5 w-3.5 shrink-0 opacity-55 transition-[transform,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none motion-safe:group-hover:translate-x-1 motion-safe:group-focus-visible:translate-x-1 motion-safe:group-hover:opacity-100 motion-safe:group-focus-visible:opacity-100"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2.25}
+                className="inline-flex h-3.5 w-3.5 shrink-0 items-center justify-center opacity-55 transition-[transform,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none motion-safe:group-hover:translate-x-1 motion-safe:group-focus-visible:translate-x-1 motion-safe:group-hover:opacity-100 motion-safe:group-focus-visible:opacity-100"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
+                <ArrowForwardIcon className="h-full w-full fill-current" />
+              </span>
             </div>
           </div>
         </Link>
