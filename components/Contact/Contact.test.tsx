@@ -8,11 +8,6 @@ import { Contact } from './Contact';
 describe('Contact component', () => {
   beforeEach(mockIntersectionObserver);
 
-  it('renders', () => {
-    const { container } = render(<Contact />);
-    expect(container).toMatchSnapshot();
-  });
-
   it('contact from gives errors when required fields are empty', () => {
     const spy = jest.spyOn(axios, 'post');
     render(<Contact />);

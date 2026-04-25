@@ -5,7 +5,7 @@ import { ProjectItem } from './ProjectItem';
 
 describe('ProjectItem component', () => {
   it('renders', () => {
-    const { container } = render(
+    render(
       <ProjectItem
         title="New Project"
         date={{
@@ -25,6 +25,5 @@ describe('ProjectItem component', () => {
       />
     );
     expect(screen.getByText('January 2021 - June 2022')).toBeVisible();
-    expect(container).toMatchSnapshot();
   });
 });

@@ -1,8 +1,10 @@
 import { GitHubIcon, MenuIcon } from '@components/Icons';
 import { Link } from '@components/Link';
 import Logo from '@image/logo.png';
+import { isNavPathActive } from '@utilities/isNavPathActive';
 import { clsx } from 'clsx';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 /** useLayoutEffect warns on SSR; on the server, use `useEffect` (effects still run only in the browser). */
@@ -13,7 +15,23 @@ const SCROLL_ELEVATE_PX = 8;
 /** 0–1: ramp over first ~220px of scroll (drives overdrive layer intensity). */
 const SCROLL_RAMP_PX = 220;
 
+const BAR_LINK_BASE =
+  'nav-link--bar border-bottom-slide mt-0 inline-block px-5 py-5';
+const DRAWER_LINK_BASE =
+  'nav-drawer__link text-inherit hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm';
+const FOCUS_CHROME_RINGS =
+  'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-link/40';
+const ARIA_CURRENT_PAGE = (active: boolean) => (active ? 'page' : undefined);
+
+const BAR_LINKS = [
+  { to: '/', label: 'Home' },
+  { to: '/projects', label: 'Projects' },
+  { to: '/about', label: 'About Me' },
+] as const;
+
 export const Nav: React.FC = () => {
+  const router = useRouter();
+  const { asPath } = router;
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [navScrolled, setNavScrolled] = useState(false);
   const menuBtnRef = useRef<HTMLButtonElement>(null);
@@ -75,7 +93,10 @@ export const Nav: React.FC = () => {
         <Link
           to="/"
           ariaLabel="Home"
-          className="mx-5 flex flex-shrink-0 items-center text-inherit no-underline"
+          className="group mx-5 flex flex-shrink-0 items-center rounded-sm text-inherit no-underline
+            focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+            focus-visible:outline-link/50"
+          aria-current={isNavPathActive(asPath, '/') ? 'page' : undefined}
         >
           <div className="mr-4 h-8 w-8">
             <Image
@@ -88,45 +109,61 @@ export const Nav: React.FC = () => {
               priority
             />
           </div>
-          <span className="nav-wordmark">Kyle Gough</span>
+          <span
+            className={clsx(
+              'nav-wordmark transition-colors duration-200',
+              isNavPathActive(asPath, '/') && 'nav-wordmark--active',
+              'group-hover:text-link-hover'
+            )}
+          >
+            Kyle Gough
+          </span>
         </Link>
         <button
           type="button"
           ref={menuBtnRef}
           onClick={toggleDrawer}
-          className="nav-gh border-bottom-slide block md:hidden px-6 py-5"
+          className={clsx(
+            'nav-gh border-bottom-slide text-white block transition-colors duration-200',
+            'hover:text-link focus-visible:text-link',
+            FOCUS_CHROME_RINGS,
+            'md:hidden px-6 py-5'
+          )}
           aria-label="Toggle navigation"
         >
-          <MenuIcon className="h-6 w-6 fill-white" />
+          <MenuIcon className="h-6 w-6 fill-current" />
         </button>
         <div className="hidden w-auto flex-grow md:block">
           <div className="text-right text-base">
-            <Link
-              className="nav-link--bar border-bottom-slide mt-0 inline-block px-5 py-5"
-              to="/"
-            >
-              Home
-            </Link>
-            <Link
-              className="nav-link--bar border-bottom-slide mt-0 inline-block px-5 py-5"
-              to="/projects"
-            >
-              Projects
-            </Link>
-            <Link
-              className="nav-link--bar border-bottom-slide mt-0 inline-block px-5 py-5"
-              to="/about"
-            >
-              About Me
-            </Link>
+            {BAR_LINKS.map(({ to, label }) => {
+              const active = isNavPathActive(asPath, to);
+              return (
+                <Link
+                  key={to}
+                  className={clsx(
+                    BAR_LINK_BASE,
+                    active && 'nav-link--bar--active'
+                  )}
+                  to={to}
+                  aria-current={ARIA_CURRENT_PAGE(active)}
+                >
+                  {label}
+                </Link>
+              );
+            })}
           </div>
         </div>
         <Link
-          className="nav-gh border-bottom-slide hidden px-6 py-5 md:block"
+          className={clsx(
+            'nav-gh border-bottom-slide items-center justify-center text-white',
+            'hidden transition-colors duration-200 hover:text-link',
+            FOCUS_CHROME_RINGS,
+            'focus-visible:text-link md:inline-flex md:px-6 py-5'
+          )}
           href="https://github.com/KyleGough"
           ariaLabel="GitHub Profile"
         >
-          <GitHubIcon className="h-6 w-6 fill-white" />
+          <GitHubIcon className="h-6 w-6 fill-current" />
         </Link>
         </div>
       </div>
@@ -140,27 +177,23 @@ export const Nav: React.FC = () => {
         )}
       >
         <div className="text-link bg-background text-base">
-          <Link
-            className="nav-drawer__link text-inherit hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm"
-            to="/"
-            onClick={closeDrawer}
-          >
-            Home
-          </Link>
-          <Link
-            className="nav-drawer__link text-inherit hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm"
-            to="/projects"
-            onClick={closeDrawer}
-          >
-            Projects
-          </Link>
-          <Link
-            className="nav-drawer__link text-inherit hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm"
-            to="/about"
-            onClick={closeDrawer}
-          >
-            About Me
-          </Link>
+          {BAR_LINKS.map(({ to, label }) => {
+            const active = isNavPathActive(asPath, to);
+            return (
+              <Link
+                key={to}
+                className={clsx(
+                  DRAWER_LINK_BASE,
+                  active && 'nav-drawer__link--active'
+                )}
+                to={to}
+                onClick={closeDrawer}
+                aria-current={ARIA_CURRENT_PAGE(active)}
+              >
+                {label}
+              </Link>
+            );
+          })}
           <Link
             className="nav-drawer__link group flex items-center text-inherit hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm"
             onClick={closeDrawer}

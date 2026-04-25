@@ -56,10 +56,20 @@ export const ImageModal: React.FC<ImageModalProps> = ({ image, alt }) => {
             blurDataURL={image.blurDataURL}
             sizes="(min-width: 1024px) 50vw, 100vw"
           />
-          <span
-            className="pointer-events-none absolute bottom-2.5 right-2.5 h-3.5 w-3.5 border-b-2 border-r-2 border-link opacity-0 transition-opacity duration-200 ease-out group-hover:opacity-60 group-focus:opacity-70"
-            aria-hidden
-          />
+          {(
+            [
+              'top-2.5 left-2.5 border-t-2 border-l-2',
+              'top-2.5 right-2.5 border-t-2 border-r-2',
+              'bottom-2.5 left-2.5 border-b-2 border-l-2',
+              'bottom-2.5 right-2.5 border-b-2 border-r-2',
+            ] as const
+          ).map(corners => (
+            <span
+              key={corners}
+              className={`pointer-events-none absolute h-3.5 w-3.5 border-link opacity-0 transition-opacity duration-200 ease-out group-hover:opacity-60 group-focus:opacity-70 ${corners}`}
+              aria-hidden
+            />
+          ))}
         </button>
         <figcaption className="screenshot-tile__caption text-sm text-header/80 mt-3 text-left">
           {alt}

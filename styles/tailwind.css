@@ -42,19 +42,53 @@
 @layer components {
   /* Site nav: Lato, ≥16px, clear step above wordmark (1.25); wordmark = Merriweather to match page titles */
   .nav-wordmark {
-    @apply font-header font-semibold text-white leading-tight tracking-tight
+    @apply font-header font-semibold leading-tight tracking-tight
       text-lg
+      text-white/95
       md:text-xl;
   }
+  .nav-wordmark--active {
+    @apply text-link;
+  }
   .nav-link--bar {
-    @apply font-primary text-base font-medium text-white;
+    @apply font-primary text-base font-medium text-white/90
+      transition-colors duration-200
+      focus-visible:rounded-sm
+      focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+      focus-visible:outline-link/50;
     line-height: 1.3;
     letter-spacing: 0.02em;
+  }
+  .nav-link--bar:hover,
+  .nav-link--bar:focus-visible {
+    @apply text-link;
+  }
+  .nav-link--bar--active {
+    @apply font-semibold text-link;
+  }
+  /* Hairline: brand cyan; active = full-width bar */
+  a.nav-link--bar.border-bottom-slide:hover::after,
+  a.nav-link--bar.border-bottom-slide:focus-visible::after,
+  a.nav-gh.border-bottom-slide:hover::after,
+  a.nav-gh.border-bottom-slide:focus-visible::after,
+  button.nav-gh.border-bottom-slide:hover::after,
+  button.nav-gh.border-bottom-slide:focus-visible::after {
+    left: 0 !important;
+    right: 0 !important;
+    background-color: #03b0ee !important;
+  }
+  a.nav-link--bar--active.border-bottom-slide::after {
+    left: 0 !important;
+    right: 0 !important;
+    background-color: #03b0ee !important;
   }
   .nav-drawer__link {
     @apply block w-full text-left font-primary text-base font-medium;
     line-height: 1.75;
     letter-spacing: 0.015em;
+  }
+  .nav-drawer__link--active {
+    @apply bg-link/[0.1] text-link font-semibold;
   }
   .nav-gh {
     @apply font-primary;

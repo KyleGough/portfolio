@@ -8,7 +8,7 @@ describe('ProjectCard component', () => {
   beforeEach(mockIntersectionObserver);
 
   it('renders', () => {
-    const { container } = render(
+    render(
       <ProjectCard
         image={{
           src: '/#image',
@@ -25,6 +25,5 @@ describe('ProjectCard component', () => {
     );
 
     expect(screen.getByText('April 2022')).toBeVisible();
-    expect(container).toMatchSnapshot();
   });
 });

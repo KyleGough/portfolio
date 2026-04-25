@@ -1,4 +1,5 @@
-/* Space-gothic theme: scoped to .app-space-gothic (all /projects/* routes) */
+/* Space-gothic: main canvas + components scoped to .app-space-gothic ( /projects/* ).
+   Header nav (space-gothic look) is global: see nav[aria-label="Main"] below. */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 .app-space-gothic {
@@ -65,9 +66,19 @@
   z-index: 1;
 }
 
-/* Nav: sleek bar with violet hairline, purposeful blur (not a glass card) */
-.app-space-gothic .bg-nav-light,
-.app-space-gothic [class~='bg-nav-light'] {
+/* —— Main site header: void chrome + Space Grotesk (all routes; matches former /projects look) */
+nav[aria-label='Main'] {
+  --gothic-fg: oklch(93% 0.02 280);
+  --gothic-cyan: oklch(78% 0.12 200);
+  --gothic-magenta: oklch(72% 0.2 310);
+  --gothic-stroke: oklch(100% 0 0 / 0.12);
+  --gothic-stroke-bright: oklch(65% 0.15 290 / 0.45);
+  --void-elevated: oklch(17% 0.04 280);
+}
+
+/* Sleek bar with violet hairline, purposeful blur (not a glass card) */
+nav[aria-label='Main'] .nav-bar--shell,
+nav[aria-label='Main'] [class~='nav-bar--shell'] {
   background-color: oklch(11% 0.03 280) !important;
   border-bottom: 1px solid var(--gothic-stroke-bright) !important;
   box-shadow: 0 0 32px oklch(50% 0.15 290 / 0.12);
@@ -75,7 +86,7 @@
 }
 
 /* Scrolled: lighter veil, stronger depth (still a signal layer, not decorative glass) */
-.app-space-gothic .nav-bar--shell.nav-bar--scrolled {
+nav[aria-label='Main'] .nav-bar--shell.nav-bar--scrolled {
   background-color: oklch(11% 0.03 280 / 0.7) !important;
   border-bottom: 1px solid oklch(100% 0 0 / 0.1) !important;
   box-shadow: 0 4px 28px oklch(0% 0 0 / 0.35) !important;
@@ -83,8 +94,8 @@
   -webkit-backdrop-filter: blur(16px) saturate(1.15) !important;
 }
 
-/* Nav overdrive: cold cyan + violet signal in the void (replaces workshop blend) */
-.app-space-gothic .nav-bar--overdrive::before {
+/* Nav overdrive: cold cyan + violet signal in the void */
+nav[aria-label='Main'] .nav-bar--overdrive::before {
   background: linear-gradient(
     102deg,
     oklch(15% 0.04 280 / 0) 0%,
@@ -96,7 +107,7 @@
   mix-blend-mode: plus-lighter !important;
   opacity: calc(0.14 + var(--nav-scroll) * 0.52) !important;
 }
-.app-space-gothic .nav-bar--overdrive::after {
+nav[aria-label='Main'] .nav-bar--overdrive::after {
   background: linear-gradient(
     90deg,
     transparent 0%,
@@ -108,56 +119,85 @@
   opacity: calc(0.08 + var(--nav-scroll) * 0.88) !important;
 }
 @media (prefers-reduced-motion: reduce) {
-  .app-space-gothic .nav-bar--overdrive::before,
-  .app-space-gothic .nav-bar--overdrive::after {
+  nav[aria-label='Main'] .nav-bar--overdrive::before,
+  nav[aria-label='Main'] .nav-bar--overdrive::after {
     opacity: 0 !important;
   }
 }
 
-/* Nav type: same shell as project pages (no Merriweather in the void chrome) */
-.app-space-gothic .nav-wordmark {
+/* Nav type: void chrome (not Merriweather) */
+nav[aria-label='Main'] .nav-wordmark {
   font-family: 'Space Grotesk', system-ui, sans-serif !important;
   font-weight: 600;
   letter-spacing: -0.03em;
   color: var(--gothic-fg) !important;
 }
-.app-space-gothic .nav-link--bar,
-.app-space-gothic .nav-gh,
-.app-space-gothic .nav-drawer__link {
+nav[aria-label='Main'] .nav-link--bar,
+nav[aria-label='Main'] .nav-gh,
+nav[aria-label='Main'] .nav-drawer__link {
   font-family: 'Space Grotesk', system-ui, sans-serif !important;
   font-weight: 500;
   letter-spacing: 0.02em;
 }
-.app-space-gothic a.nav-link--bar {
+nav[aria-label='Main'] a.nav-link--bar {
   color: var(--gothic-fg) !important;
+}
+nav[aria-label='Main'] a.nav-gh,
+nav[aria-label='Main'] button.nav-gh {
+  color: var(--gothic-fg) !important;
+}
+nav[aria-label='Main'] a.nav-link--bar--active,
+nav[aria-label='Main'] .nav-wordmark--active {
+  color: var(--gothic-cyan) !important;
+}
+nav[aria-label='Main'] a.nav-link--bar:hover,
+nav[aria-label='Main'] a.nav-link--bar:focus-visible {
+  color: var(--gothic-cyan) !important;
+}
+nav[aria-label='Main'] a.nav-link--bar--active:hover,
+nav[aria-label='Main'] a.nav-link--bar--active:focus-visible {
+  color: var(--gothic-magenta) !important;
+}
+nav[aria-label='Main'] .nav-drawer__link--active {
+  background: oklch(22% 0.08 200 / 0.35) !important;
+  color: var(--gothic-cyan) !important;
+  box-shadow: inset 0 0 0 1px oklch(65% 0.1 200 / 0.4) !important;
 }
 
 /* Mobile nav drawer */
-.app-space-gothic nav [class~='text-link'] {
+nav[aria-label='Main'] [class~='text-link'] {
   color: var(--gothic-cyan) !important;
 }
-.app-space-gothic nav a.border-bottom-slide,
-.app-space-gothic nav a[class~='text-link'] {
+nav[aria-label='Main'] a.border-bottom-slide,
+nav[aria-label='Main'] a[class~='text-link'] {
   color: var(--gothic-cyan) !important;
 }
-.app-space-gothic nav a.text-link:hover,
-.app-space-gothic nav a.text-link:focus {
+nav[aria-label='Main'] a.text-link:hover,
+nav[aria-label='Main'] a.text-link:focus {
   color: var(--gothic-magenta) !important;
 }
 
-.app-space-gothic nav .slide-in .bg-background {
+nav[aria-label='Main'] .slide-in .bg-background {
   background-color: var(--void-elevated) !important;
   border-top: 1px solid var(--gothic-stroke) !important;
   box-shadow: 0 16px 48px oklch(0% 0 0 / 0.45);
 }
-.app-space-gothic nav .slide-in .text-link,
-.app-space-gothic nav .slide-in a {
+nav[aria-label='Main'] .slide-in .text-link,
+nav[aria-label='Main'] .slide-in a {
   color: var(--gothic-cyan) !important;
   border-color: var(--gothic-stroke) !important;
 }
-.app-space-gothic nav .slide-in a:hover,
-.app-space-gothic nav .slide-in a:focus {
+nav[aria-label='Main'] .slide-in a:hover,
+nav[aria-label='Main'] .slide-in a:focus {
   color: var(--gothic-magenta) !important;
+}
+
+/* /projects: project card lower strip still uses void bg (not the global #424242 bar look) */
+.app-space-gothic main a [class~='bg-nav-light'] {
+  background-color: oklch(11% 0.03 280) !important;
+  border-bottom: 1px solid var(--gothic-stroke-bright) !important;
+  box-shadow: 0 0 32px oklch(50% 0.15 290 / 0.12);
+  backdrop-filter: blur(8px);
 }
 
 /* Primary text in sections */

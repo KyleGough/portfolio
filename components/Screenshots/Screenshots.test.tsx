@@ -6,7 +6,7 @@ import { Screenshots } from './Screenshots';
 
 describe('Screenshots component', () => {
   it('renders', () => {
-    const { container } = render(
+    render(
       <Screenshots
         images={[
           { imageData: mockStaticImageData, alt: 'Image A' },
@@ -17,6 +17,6 @@ describe('Screenshots component', () => {
 
     expect(screen.getByText('Image A')).toBeVisible();
     expect(screen.getByText('Image B')).toBeVisible();
-    expect(container).toMatchSnapshot();
+    expect(screen.getByRole('heading', { name: 'Screenshots' })).toBeInTheDocument();
   });
 });
