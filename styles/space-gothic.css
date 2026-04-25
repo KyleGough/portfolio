@@ -474,6 +474,42 @@ nav[aria-label='Main'] .slide-in a:focus {
   color: var(--gothic-cyan) !important;
 }
 
+/* ProjectItem row card: rim + glow on hover only (no translate; card stays put) */
+.app-space-gothic a.project-item-link .project-item-card {
+  transition: box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .app-space-gothic a.project-item-link:hover .project-item-card,
+  .app-space-gothic a.project-item-link:focus-visible .project-item-card {
+    box-shadow:
+      0 0 0 1px oklch(100% 0 0 / 0.2),
+      0 0 36px oklch(58% 0.14 200 / 0.22),
+      0 20px 52px oklch(0% 0 0 / 0.55) !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .app-space-gothic a.project-item-link .project-item-card {
+    transition: none;
+  }
+}
+
+.app-space-gothic a.project-item-link .project-item-cta {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace !important;
+  letter-spacing: 0.2em !important;
+  border-top-color: oklch(100% 0 0 / 0.16) !important;
+  transition:
+    color 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.app-space-gothic a.project-item-link:hover .project-item-cta,
+.app-space-gothic a.project-item-link:focus-visible .project-item-cta {
+  color: var(--gothic-magenta) !important;
+  box-shadow:
+    inset 0 1px 0 0 oklch(100% 0 0 / 0.1),
+    inset 0 -28px 40px -18px oklch(48% 0.16 310 / 0.14) !important;
+}
+
 /* bg-circuits: replace mauve circuit pattern with void haze */
 .app-space-gothic .bg-circuits,
 .app-space-gothic [class~='bg-circuits'] {

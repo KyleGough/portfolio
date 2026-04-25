@@ -37,9 +37,9 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
       <div className="col-span-12 lg:col-span-5 text-center -mb-8">
         <Link
           href={link}
-          className="group mx-auto block w-full max-w-md lg:max-w-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link-hover focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-lg"
+          className="project-item-link group mx-auto block w-full max-w-md rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link-hover focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:max-w-none"
         >
-          <div className="overflow-hidden rounded-lg border-2 border-white shadow">
+          <div className="project-item-card overflow-hidden rounded-lg border-2 border-white shadow transition-shadow duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none">
             <div className="relative">
               <Image
                 className="block h-auto w-full"
@@ -54,8 +54,22 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
                 <Image src={logo.src} alt={logo.alt} width={30} height={30} />
               </div>
             </div>
-            <div className="border-t border-white/25 bg-background px-4 py-3 text-sm font-semibold tracking-wide text-link transition-colors group-hover:text-link-hover group-focus-visible:text-link-hover">
-              View Project
+            <div className="project-item-cta relative flex items-center justify-center gap-2.5 border-t border-white/25 bg-background px-5 py-3.5 font-mono text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-link transition-[color,box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none group-hover:text-link-hover group-focus-visible:text-link-hover">
+              <span>View project</span>
+              <svg
+                aria-hidden
+                className="h-3.5 w-3.5 shrink-0 opacity-55 transition-[transform,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none motion-safe:group-hover:translate-x-1 motion-safe:group-focus-visible:translate-x-1 motion-safe:group-hover:opacity-100 motion-safe:group-focus-visible:opacity-100"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2.25}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
             </div>
           </div>
         </Link>
