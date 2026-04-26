@@ -78,7 +78,29 @@
   }
 
   .work-timeline__line {
-    @apply h-0.5 w-6 max-w-[12rem] grow bg-timeline self-center;
+    @apply relative h-[3px] w-6 max-w-[12rem] grow bg-timeline self-center;
+  }
+
+  /* Circular node on card end only (spine end omitted so it does not sit on the vertical rail) */
+  .work-timeline__line::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    width: 10px;
+    height: 10px;
+    border-radius: 9999px;
+    @apply bg-timeline;
+  }
+
+  .work-timeline__line--spine-right::after {
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  .work-timeline__line--spine-left::after {
+    right: 0;
+    transform: translate(50%, -50%);
   }
 
   .contact-form__message-meter {

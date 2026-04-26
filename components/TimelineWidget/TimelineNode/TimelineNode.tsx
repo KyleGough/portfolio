@@ -54,7 +54,15 @@ export const TimelineNode: React.FC<TimelineNodeProps> = ({
           <p className="work-timeline__role">{subtitle}</p>
           <p className="work-timeline__date">{date}</p>
         </FadeIn>
-        <div className="work-timeline__line" aria-hidden />
+        <div
+          className={clsx(
+            'work-timeline__line',
+            align === 'left'
+              ? 'work-timeline__line--spine-right'
+              : 'work-timeline__line--spine-left'
+          )}
+          aria-hidden
+        />
       </div>
       {align === 'left' && <div className="hidden md:block"></div>}
     </>

@@ -944,6 +944,11 @@ footer.footer--space-gothic li.flex a.group:focus-visible svg {
 }
 
 .app-space-gothic .work-timeline__line {
-  background-color: oklch(100% 0 0 / 0.14) !important;
+  /* Match vertical spine (bg-timeline / #DADADA) so 3px horizontals read as thick */
+  background-color: #dadada !important;
   align-self: center;
+}
+
+.app-space-gothic .work-timeline__line::after {
+  background-color: #dadada !important;
 }

@@ -11,12 +11,12 @@ export const TimelineWidget: React.FC = () => (
     className={clsx(
       'work-timeline grid grid-cols-1 md:grid-cols-2',
       'relative my-10',
-      'before:absolute before:content-[""] before:h-2/4 before:w-[2px]',
+      'before:absolute before:content-[""] before:h-2/4 before:w-[3px]',
       'before:right-0 md:before:left-2/4',
-      'before:bg-gradient-to-t before:from-timeline before:via-timeline before:to-transparent',
-      'after:absolute after:content-[""] after:h-2/4 after:w-[2px]',
+      'before:bg-timeline',
+      'after:absolute after:content-[""] after:h-2/4 after:w-[3px]',
       'after:top-2/4 after:right-0 md:after:left-2/4',
-      'after:bg-gradient-to-b after:from-timeline after:via-timeline after:to-transparent'
+      'after:bg-timeline'
     )}
   >
     <TimelineNode

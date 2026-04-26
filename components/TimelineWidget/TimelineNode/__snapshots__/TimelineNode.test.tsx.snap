@@ -45,7 +45,7 @@ exports[`TimelineNode component renders 1`] = `
     </div>
     <div
       aria-hidden="true"
-      class="work-timeline__line"
+      class="work-timeline__line work-timeline__line--spine-right"
     />
   </div>
   <div
