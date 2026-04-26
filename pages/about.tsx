@@ -11,14 +11,13 @@ import NextLogo from '@image/skill/next.svg';
 import NodeLogo from '@image/skill/node.svg';
 import PHPLogo from '@image/skill/php.svg';
 import RubyLogo from '@image/skill/ruby.svg';
-import { skillsOther } from '@utilities/skillsOther';
 import { skillsProgramming } from '@utilities/skillsProgramming';
 import { skillsWeb } from '@utilities/skillsWeb';
 import React from 'react';
 
 const About: React.FC = () => {
   return (
-    <Layout title="About Me - Kyle Gough">
+    <Layout title="About Me - Kyle Gough" theme="space-gothic">
       <Section>
         <h1 className="mb-8 text-center project-title md:text-left">
           About Me
@@ -52,15 +51,6 @@ const About: React.FC = () => {
           skills={skillsProgramming}
           className="progress-programming"
         />
-      </Section>
-
-      <Divider />
-
-      <Section id="other-technologies">
-        <h2 className="text-center project-header md:text-left">
-          Other Technologies
-        </h2>
-        <SkillList skills={skillsOther} className="progress-other" />
       </Section>
 
       <Divider />
