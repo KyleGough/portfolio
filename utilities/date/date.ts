@@ -19,3 +19,9 @@ export const getDateRange = (dt: ProjectDate) => {
   const start = getFormattedDate(dt.start);
   return dt.end ? start + ' - ' + getFormattedDate(dt.end) : start;
 };
+
+/** First day of project start month, for `<time dateTime>` (ISO). */
+export const getProjectStartDateTime = (dt: ProjectDate): string => {
+  const m = String(dt.start.month).padStart(2, '0');
+  return `${dt.start.year}-${m}-01`;
+};

@@ -1,6 +1,6 @@
 import { ArrowForwardIcon } from '@components/Icons';
 import { Section } from '@components/Section';
-import { getDateRange } from '@utilities/date';
+import { getDateRange, getProjectStartDateTime } from '@utilities/date';
 import { ProjectDate } from '@utilities/types';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
@@ -29,13 +29,18 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
   logo,
 }) => (
   <Section>
-    <div className="grid grid-cols-12 gap-8 lg:gap-16">
-      <div className="col-span-12 lg:col-span-7">
-        <h2 className="mb-4 project-header">{title}</h2>
-        <p className="work-timeline__date my-4">{getDateRange(date)}</p>
-        <p className="my-4">{description}</p>
+    <div className="project-item__row">
+      <div className="project-item__text col-span-12 lg:col-span-7">
+        <h2 className="project-header !mb-2 text-balance">{title}</h2>
+        <time
+          className="work-timeline__date mt-1 block"
+          dateTime={getProjectStartDateTime(date)}
+        >
+          {getDateRange(date)}
+        </time>
+        <p className="project-item__desc mt-6">{description}</p>
       </div>
-      <div className="col-span-12 lg:col-span-5 text-center -mb-8">
+      <div className="col-span-12 flex justify-center lg:col-span-5 lg:-mb-8 lg:justify-end">
         <Link
           href={link}
           className="project-item-link group mx-auto block w-full max-w-md rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link-hover focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:max-w-none"

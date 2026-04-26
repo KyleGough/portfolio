@@ -26,6 +26,22 @@
     text-wrap: balance;
   }
 
+  /* Project list row: reading column + media (typeset with timeline / project stack) */
+  .project-item__row {
+    @apply grid grid-cols-12 gap-x-8 gap-y-10 lg:grid-flow-row lg:items-start lg:gap-x-16 lg:gap-y-0;
+  }
+
+  .project-item__text {
+    @apply flex min-w-0 flex-col text-left;
+  }
+
+  .project-item__desc {
+    @apply m-0 max-w-reading font-primary text-primary;
+    font-size: clamp(0.9375rem, 0.88rem + 0.18vw, 1.02rem);
+    line-height: 1.68;
+    letter-spacing: 0.012em;
+  }
+
   .project-list {
     @apply list-disc list-outside ml-5 pl-0.5 font-primary text-primary text-base leading-[1.7] max-w-reading marker:text-header;
   }

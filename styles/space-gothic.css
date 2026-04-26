@@ -379,6 +379,13 @@ nav[aria-label='Main'] .slide-in a:focus {
   text-shadow: 0 0 1.5rem oklch(50% 0.15 300 / 0.25);
 }
 
+/* Project list index: body under title + date */
+.app-space-gothic .project-item__desc {
+  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+  color: var(--gothic-muted) !important;
+  line-height: 1.7 !important;
+}
+
 /* Lists: mono markers feel technical (scoped, not all font-primary) */
 .app-space-gothic .project-list,
 .app-space-gothic .project-list li {
