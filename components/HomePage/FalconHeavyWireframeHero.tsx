@@ -64,6 +64,51 @@ function addStrut(
   parent.add(line);
 }
 
+/**
+ * Outboard grid fin: top edge (yAttach) lies on the tank, bottom (yFlare) is
+ * canted out in +radial and slightly wider in z (hinged / fanned look).
+ * y: booster base = 0, up = +Y.
+ */
+function addSideBoosterGridFins(
+  parent: THREE.Group,
+  mat: THREE.LineBasicMaterial,
+  sx: number,
+  boosterR: number,
+  yFlare: number,
+  yAttach: number,
+  halfZAtFlare: number,
+  halfZAtAttach: number,
+  radialFlare: number,
+  nCols: number,
+  nRows: number
+): void {
+  const outDir = sx > 0 ? 1 : -1;
+  const skin = 0.002;
+  const xAttach = sx + outDir * (boosterR + skin);
+  const xFlare = sx + outDir * (boosterR + radialFlare);
+  for (let j = 0; j <= nRows; j += 1) {
+    const t = j / nRows;
+    const y = THREE.MathUtils.lerp(yFlare, yAttach, t);
+    const x = THREE.MathUtils.lerp(xFlare, xAttach, t);
+    const zH = THREE.MathUtils.lerp(halfZAtFlare, halfZAtAttach, t);
+    const geomH = new THREE.BufferGeometry().setFromPoints([
+      new THREE.Vector3(x, y, -zH),
+      new THREE.Vector3(x, y, zH),
+    ]);
+    parent.add(new THREE.Line(geomH, mat.clone()));
+  }
+  for (let i = 0; i <= nCols; i += 1) {
+    const u = i / nCols;
+    const z0 = THREE.MathUtils.lerp(-halfZAtFlare, halfZAtFlare, u);
+    const z1 = THREE.MathUtils.lerp(-halfZAtAttach, halfZAtAttach, u);
+    const geomV = new THREE.BufferGeometry().setFromPoints([
+      new THREE.Vector3(xFlare, yFlare, z0),
+      new THREE.Vector3(xAttach, yAttach, z1),
+    ]);
+    parent.add(new THREE.Line(geomV, mat.clone()));
+  }
+}
+
 /** Cone with apex toward −Y (Merlin bell opening downward). */
 function addInvertedConeEdges(
   parent: THREE.Group,
@@ -151,9 +196,11 @@ function buildRocket(
   const hf = 0.8;
   const boosterH = 2.95;
   /* Slightly closer to center core than 0.84; strut endpoints follow booster inner face */
-  const boosterX = 0.72;
+  const boosterX = 0.7;
   const coreR = 0.35;
-  const boosterR = 0.3;
+  const boosterR = 0.25;
+  const boosterRTop = 0.24; /* tapers: narrow toward second-stage joint */
+  const boosterOctawebRingR = 0.127; /* ~scaled with diameter vs 0.3 / 0.152 */
 
   // Center: first stage
   addCylinderEdges(body, wireMat, 0.32, coreR, h1, 10, 0, h1 / 2, 0);
@@ -175,7 +222,7 @@ function buildRocket(
     addCylinderEdges(
       body,
       wireMat,
-      0.28,
+      boosterRTop,
       boosterR,
       boosterH,
       10,
@@ -183,12 +230,36 @@ function buildRocket(
       boosterH / 2,
       0
     );
-    /* Stubbier cap + base matches booster top radius (0.28) for a clean seam */
+    /* Nose cap matches top-of-stage radius */
     const noseH = 0.34;
-    const noseR = 0.28;
+    const noseR = boosterRTop;
     addConeEdges(body, wireMat, noseR, noseH, 8, sx, boosterH + noseH / 2, 0);
     // Booster octaweb (same 9-engine pattern, scaled to booster diameter)
-    addOctawebEngines(body, wireMat, sx, 0, yMountCore, 0.152, 0.86);
+    addOctawebEngines(
+      body,
+      wireMat,
+      sx,
+      0,
+      yMountCore,
+      boosterOctawebRingR,
+      0.86
+    );
+    // Outboard grid fin: top against hull, bottom flared out
+    const finYFlare = 0.12;
+    const finYAttach = 0.46;
+    addSideBoosterGridFins(
+      body,
+      wireMat,
+      sx,
+      boosterR,
+      finYFlare,
+      finYAttach,
+      0.1,
+      0.05,
+      0.04,
+      4,
+      4
+    );
   }
 
   // Struts (center core to side boosters)
