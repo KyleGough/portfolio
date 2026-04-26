@@ -18,7 +18,7 @@ import { GetStaticProps } from 'next';
 import React from 'react';
 
 const CaveExploration: React.FC<ProjectPageProps> = ({ images, project }) => (
-  <Layout title="Cave Exploration - Improving and Simulating Cave Explortation with Swarm AI">
+  <Layout title="Cave Exploration - Improving and Simulating Cave Exploration with Swarm AI">
     <ProjectHeader project={project} />
 
     <Divider />

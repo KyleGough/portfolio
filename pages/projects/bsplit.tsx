@@ -6,7 +6,7 @@ import { ProjectHeader } from '@components/ProjectHeader';
 import { Screenshots } from '@components/Screenshots';
 import { Section } from '@components/Section';
 import imageBillList from '@image/bsplit1.jpg';
-import imageHompage from '@image/bsplit2.jpg';
+import imageHomepage from '@image/bsplit2.jpg';
 import imageNewBill from '@image/bsplit3.jpg';
 import imageGroupList from '@image/bsplit4.jpg';
 import imageNewGroup from '@image/bsplit5.jpg';
@@ -83,7 +83,7 @@ const BSplit: React.FC<ProjectPageProps> = ({ images, project }) => (
 export const getStaticProps: GetStaticProps = () => {
   const images = [
     { imageData: imageBillList, alt: 'Bill list' },
-    { imageData: imageHompage, alt: 'Homepage' },
+    { imageData: imageHomepage, alt: 'Homepage' },
     { imageData: imageNewBill, alt: 'New bill form' },
     { imageData: imageGroupList, alt: 'Group list' },
     { imageData: imageNewGroup, alt: 'New group form' },
