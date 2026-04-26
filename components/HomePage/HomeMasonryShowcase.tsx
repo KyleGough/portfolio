@@ -62,9 +62,9 @@ const Tile: React.FC<{
             <p className={styles.meta}>
               {label} · {when}
             </p>
-            <p className={styles.arrow} aria-hidden>
-              ↗
-            </p>
+            <span className={styles.arrow} aria-hidden>
+              <ArrowForwardIcon className="h-3.5 w-3.5 fill-current" />
+            </span>
           </div>
         </div>
       </Link>
@@ -107,7 +107,7 @@ export const HomeMasonryShowcase: React.FC = () => {
 
         <p className={styles.strap}>
           <Link
-            className={clsx(heroStyles.ctaButton, styles.viewAllInline)}
+            className={`${heroStyles.ctaButton} ${styles.viewAllInline}`}
             href="/projects"
           >
             <span>View All Projects</span>
