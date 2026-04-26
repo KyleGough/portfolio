@@ -5,16 +5,12 @@ import { Section } from '@components/Section';
 import { SkillList } from '@components/SkillList';
 import ActionsLogo from '@image/skill/github-actions.svg';
 import HaskellLogo from '@image/skill/haskell.svg';
-import jQueryLogo from '@image/skill/jquery.svg';
 import LaTeXLogo from '@image/skill/latex.svg';
-import MaterializeLogo from '@image/skill/materialize.svg';
 import MATLABLogo from '@image/skill/matlab.svg';
 import NextLogo from '@image/skill/next.svg';
 import NodeLogo from '@image/skill/node.svg';
 import PHPLogo from '@image/skill/php.svg';
 import RubyLogo from '@image/skill/ruby.svg';
-import SQLLogo from '@image/skill/sql.svg';
-import WebixLogo from '@image/skill/webix.svg';
 import { skillsOther } from '@utilities/skillsOther';
 import { skillsProgramming } from '@utilities/skillsProgramming';
 import { skillsWeb } from '@utilities/skillsWeb';
@@ -81,11 +77,7 @@ const About: React.FC = () => {
           <LabelledLogo name="Haskell" logo={HaskellLogo as string} />
           <LabelledLogo name="MATLAB" logo={MATLABLogo as string} />
           <LabelledLogo name="GitHub Actions" logo={ActionsLogo as string} />
-          <LabelledLogo name="jQuery" logo={jQueryLogo as string} />
-          <LabelledLogo name="Materialize" logo={MaterializeLogo as string} />
-          <LabelledLogo name="MySQL" logo={SQLLogo as string} />
           <LabelledLogo name="LaTeX" logo={LaTeXLogo as string} />
-          <LabelledLogo name="Webix" logo={WebixLogo as string} />
         </div>
       </Section>
     </Layout>
