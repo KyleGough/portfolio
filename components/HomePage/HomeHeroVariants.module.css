@@ -1,4 +1,4 @@
-/* Hero: procedural entangled cores + warped grid (SVG + CSS motion) */
+/* Hero: Falcon Heavy wireframe (Three.js) + copy */
 .slot {
   position: relative;
   min-height: 88vh;
@@ -38,167 +38,28 @@
   }
 }
 
-.quantumFrame {
+.rocketFrame {
   position: relative;
   width: 100%;
   min-height: 12rem;
   aspect-ratio: 10 / 7;
   max-height: min(70vh, 28rem);
   margin-inline: auto;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 0 0 1px oklch(100% 0 0 / 0.1) inset,
-    0 0.5rem 0 oklch(0% 0 0 / 0.15), 0 1.5rem 3.5rem oklch(0% 0 0 / 0.5),
-    0 0 3rem oklch(50% 0.1 200 / 0.12);
-  background: oklch(8% 0.03 275);
+  /* No border or shadow: wireframe blends into space-gothic main */
+  background: transparent;
 }
 
-.quantumScene {
-  display: block;
+.rocketCanvasHost {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
 }
 
-.sceneVoid {
-  fill: oklch(9% 0.03 275);
-}
-
-.sceneVignette {
-  pointer-events: none;
-}
-
-.gridGroup {
-  animation: gridShimmer 5.5s cubic-bezier(0.22, 1, 0.36, 1) infinite
-    alternate;
-}
-
-.gridLineH,
-.gridLineV {
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.gridLineH {
-  stroke: oklch(68% 0.11 230 / 0.32);
-  stroke-width: 0.55;
-}
-
-.gridLineV {
-  stroke: oklch(58% 0.09 250 / 0.22);
-  stroke-width: 0.45;
-}
-
-.beamPath {
-  stroke-dasharray: 14 10;
-  animation: beamFlow 2.8s cubic-bezier(0.22, 1, 0.36, 1) infinite linear;
-  filter: drop-shadow(0 0 4px oklch(75% 0.18 55 / 0.55));
-}
-
-.beamCore {
-  animation: beamGlow 1.8s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
-}
-
-.fieldRing,
-.fieldRingAlt {
-  transform-origin: 0 0;
-}
-
-.fieldRing {
-  animation: fieldSpin 32s linear infinite;
-}
-
-.fieldRingAlt {
-  animation: fieldSpinRev 26s linear infinite;
-}
-
-.glassHalo {
-  fill: oklch(22% 0.06 285 / 0.12);
-  stroke: oklch(100% 0 0 / 0.05);
-  stroke-width: 0.4;
-}
-
-.particleCore {
-  transform-origin: 0 0;
-  animation: corePulse 2.6s cubic-bezier(0.22, 1, 0.36, 1) infinite
-    alternate;
-}
-
-.sparkles circle {
-  animation: starTwinkle 3.2s cubic-bezier(0.22, 1, 0.36, 1) infinite
-    alternate;
-}
-
-.sparkles circle:nth-child(2) {
-  animation-delay: -0.6s;
-}
-.sparkles circle:nth-child(3) {
-  animation-delay: -1.2s;
-}
-.sparkles circle:nth-child(4) {
-  animation-delay: -0.9s;
-}
-.sparkles circle:nth-child(5) {
-  animation-delay: -1.8s;
-}
-
-@keyframes gridShimmer {
-  from {
-    opacity: 0.72;
-  }
-  to {
-    opacity: 0.95;
-  }
-}
-
-@keyframes beamFlow {
-  from {
-    stroke-dashoffset: 0;
-  }
-  to {
-    stroke-dashoffset: -48;
-  }
-}
-
-@keyframes beamGlow {
-  from {
-    stroke-opacity: 0.35;
-  }
-  to {
-    stroke-opacity: 0.85;
-  }
-}
-
-@keyframes fieldSpin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes fieldSpinRev {
-  to {
-    transform: rotate(-360deg);
-  }
-}
-
-@keyframes corePulse {
-  from {
-    transform: scale(0.94);
-    opacity: 0.88;
-  }
-  to {
-    transform: scale(1.06);
-    opacity: 1;
-  }
-}
-
-@keyframes starTwinkle {
-  from {
-    opacity: 0.25;
-  }
-  to {
-    opacity: 0.95;
-  }
+.rocketCanvasHost canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .copy {
@@ -348,40 +209,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .gridGroup,
-  .beamPath,
-  .beamCore,
-  .fieldRing,
-  .fieldRingAlt,
-  .particleCore,
-  .sparkles circle,
   .scrollerLine {
     animation: none;
-  }
-  .beamPath {
-    stroke-dashoffset: 0;
-    filter: none;
-  }
-  .beamCore {
-    stroke-opacity: 0.65;
-  }
-  .gridGroup {
-    opacity: 0.88;
-  }
-  .particleCore {
-    transform: none;
-    opacity: 1;
-  }
-  .sparkles circle {
-    opacity: 0.55;
-  }
-  .scrollerLine {
     opacity: 0.4;
   }
-  .fieldRing,
-  .fieldRingAlt {
-    transform: none;
-  }
+
   .ctaButton:hover,
   .ctaButton:focus-visible {
     transform: none;
