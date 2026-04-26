@@ -1,16 +1,24 @@
 import { Chip } from '@components/Chip';
-import { GitHubIcon, WebsiteIcon } from '@components/Icons';
+import { GitHubIcon, StarIcon, WebsiteIcon } from '@components/Icons';
 import { Link } from '@components/Link';
 import { Section } from '@components/Section';
 import { getFormattedDate, getShortDate } from '@utilities/date';
 import { Project } from '@utilities/types';
 import React from 'react';
 
+const githubStargazersUrl = (repoUrl: string): string => {
+  return repoUrl.replace(/\/$/, '') + '/stargazers';
+};
+
 interface ProjectHeaderProps {
+  githubStargazerCount?: number | null;
   project: Project;
 }
 
-export const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => {
+export const ProjectHeader: React.FC<ProjectHeaderProps> = ({
+  project,
+  githubStargazerCount,
+}) => {
   return (
     <Section>
       <h1 className="project-title">{project.title}</h1>
@@ -38,13 +46,34 @@ export const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => {
       {(project.github || project.liveLink) && (
         <div className="flex flex-col items-start gap-1 sm:flex-row sm:flex-wrap sm:gap-3">
           {project.github && (
-            <Link
-              className="project-header-cta group w-fit"
-              href={project.github}
-            >
-              <GitHubIcon className="project-header-cta__icon" />
-              GitHub
-            </Link>
+            <>
+              {typeof githubStargazerCount === 'number' ? (
+                <div className="project-header-cta-pair w-fit self-start sm:self-auto">
+                  <Link
+                    className="project-header-cta project-header-cta--firstOfPair group w-fit"
+                    href={project.github}
+                  >
+                    <GitHubIcon className="project-header-cta__icon" />
+                    GitHub
+                  </Link>
+                  <Link
+                    className="project-header-cta project-header-cta--secondOfPair group w-fit"
+                    href={githubStargazersUrl(project.github)}
+                  >
+                    <StarIcon className="project-header-cta__icon" />
+                    {githubStargazerCount.toLocaleString('en-GB')}
+                  </Link>
+                </div>
+              ) : (
+                <Link
+                  className="project-header-cta group w-fit"
+                  href={project.github}
+                >
+                  <GitHubIcon className="project-header-cta__icon" />
+                  GitHub
+                </Link>
+              )}
+            </>
           )}
           {project.liveLink && (
             <Link

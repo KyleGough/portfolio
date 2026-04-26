@@ -791,6 +791,33 @@ footer.footer--space-gothic li.flex a.group:focus-visible svg {
   }
 }
 
+/* GitHub + stargazers: one visual pill, second segment to the right */
+.app-space-gothic a.project-header-cta--firstOfPair:not(:only-child) {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-right: none !important;
+}
+.app-space-gothic a.project-header-cta--secondOfPair {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-left: 1px solid oklch(100% 0 0 / 0.14) !important;
+  font-size: 0.8125rem !important;
+}
+.app-space-gothic
+  a.project-header-cta--secondOfPair
+  .project-header-cta__icon {
+  width: 1rem !important;
+  height: 1rem !important;
+}
+.app-space-gothic
+  a.project-header-cta--firstOfPair:not(:only-child)
+  + a.project-header-cta--secondOfPair:hover,
+.app-space-gothic
+  a.project-header-cta--firstOfPair:not(:only-child)
+  + a.project-header-cta--secondOfPair:focus-visible {
+  border-left-color: oklch(65% 0.1 200 / 0.4) !important;
+}
+
 /* Screenshot grid (case study): void frame, corner hint, lift on focus/hover */
 .app-space-gothic .screenshot-tile__trigger {
   border-color: var(--gothic-stroke) !important;

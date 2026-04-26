@@ -289,6 +289,25 @@
     @apply fill-link-hover;
   }
 
+  /* Stargazer count: right segment attached to GitHub (single pill) */
+  .project-header-cta-pair {
+    @apply my-2 inline-flex items-stretch;
+  }
+  .project-header-cta--firstOfPair {
+    @apply my-0 !rounded-l-full !rounded-r-none;
+  }
+  .project-header-cta--firstOfPair:not(:only-child) {
+    @apply -mr-px pr-4;
+  }
+  .project-header-cta--secondOfPair {
+    @apply my-0 !-ml-px !gap-1.5 !rounded-l-none !rounded-r-full border-l pl-3
+      text-[0.8125rem] font-medium leading-tight;
+    border-left-color: oklch(100% 0 0 / 0.12);
+  }
+  .project-header-cta--secondOfPair .project-header-cta__icon {
+    @apply h-4 w-4;
+  }
+
   /* Case-study screenshot grid: workbench frame + lift, not generic bordered thumbs */
   .project-screenshots__grid {
     @apply w-full;
