@@ -24,6 +24,6 @@ describe('ProjectItem component', () => {
         logo={{ src: '/#logo', alt: 'Logo' }}
       />
     );
-    expect(screen.getByText('January 2021 - June 2022')).toBeVisible();
+    expect(screen.getByText('Jan 2021 - Jun 2022')).toBeVisible();
   });
 });

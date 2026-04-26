@@ -110,9 +110,10 @@ export const Nav: React.FC = () => {
           </div>
           <span
             className={clsx(
-              'nav-wordmark transition-colors duration-200',
+              'nav-wordmark text-white transition-colors duration-200',
               isNavPathActive(asPath, '/') && 'nav-wordmark--active',
-              'group-hover:text-link-hover'
+              /* Keep wordmark white on logo row hover/focus (do not follow link accent) */
+              'group-hover:text-white group-focus-visible:text-white'
             )}
           >
             Kyle Gough

@@ -79,11 +79,12 @@
   .nav-wordmark {
     @apply font-header font-semibold leading-tight tracking-tight
       text-lg
-      text-white/95
+      text-white
       md:text-xl;
   }
+  /* Wordmark stays white on every route (active state is typographic only if needed). */
   .nav-wordmark--active {
-    @apply text-link;
+    @apply text-white;
   }
   .nav-link--bar {
     @apply font-primary text-base font-medium text-white/90

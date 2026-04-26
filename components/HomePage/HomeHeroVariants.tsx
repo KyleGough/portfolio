@@ -5,7 +5,7 @@ import React from 'react';
 import styles from './HomeHeroVariants.module.css';
 
 const INTRO =
-  'Senior Front-End Engineer at Ripjar. I have a Master of Engineering degree from Warwick University. My interests lie in cycling, guitar, movies, and physics (cosmology and quantum mechanics). I enjoy learning and acquiring new skills and putting them into practice.';
+  'Specialising in building scalable, performant web applications with TypeScript and React. My interests lie in cosmology, science-fiction, cycling, guitar, and board games.';
 
 const FalconHeavyWireframeHero = dynamic(
   () =>

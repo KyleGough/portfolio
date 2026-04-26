@@ -5,7 +5,7 @@ export const getFormattedDate = (date: Date) => {
   return dayjs()
     .month(date.month - 1)
     .year(date.year)
-    .format('MMMM YYYY');
+    .format('MMM YYYY');
 };
 
 export const getShortDate = (date: Date) => {

@@ -276,12 +276,17 @@ nav[aria-label='Main'] .nav-bar--overdrive::after {
   }
 }
 
-/* Nav type: void chrome (not Merriweather) */
-nav[aria-label='Main'] .nav-wordmark {
+/* Nav type: void chrome (not Merriweather); wordmark always white on all routes */
+nav[aria-label='Main'] .nav-wordmark,
+nav[aria-label='Main'] .nav-wordmark--active {
   font-family: 'Space Grotesk', system-ui, sans-serif !important;
   font-weight: 600;
   letter-spacing: -0.03em;
-  color: var(--gothic-fg) !important;
+  color: oklch(100% 0 0 / 0.98) !important;
+}
+nav[aria-label='Main'] a.group:hover .nav-wordmark,
+nav[aria-label='Main'] a.group:focus-visible .nav-wordmark {
+  color: oklch(100% 0 0 / 0.98) !important;
 }
 nav[aria-label='Main'] .nav-link--bar,
 nav[aria-label='Main'] .nav-gh,
@@ -297,8 +302,7 @@ nav[aria-label='Main'] a.nav-gh,
 nav[aria-label='Main'] button.nav-gh {
   color: var(--gothic-fg) !important;
 }
-nav[aria-label='Main'] a.nav-link--bar--active,
-nav[aria-label='Main'] .nav-wordmark--active {
+nav[aria-label='Main'] a.nav-link--bar--active {
   color: var(--gothic-cyan) !important;
 }
 nav[aria-label='Main'] a.nav-link--bar:hover,
