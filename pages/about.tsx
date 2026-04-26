@@ -1,17 +1,8 @@
 import { Divider } from '@components/Divider';
-import { LabelledLogo } from '@components/LabelledLogo';
 import { Layout } from '@components/Layout';
 import { Section } from '@components/Section';
 import { SkillList } from '@components/SkillList';
 import { TimelineWidget } from '@components/TimelineWidget';
-import ActionsLogo from '@image/skill/github-actions.svg';
-import HaskellLogo from '@image/skill/haskell.svg';
-import LaTeXLogo from '@image/skill/latex.svg';
-import MATLABLogo from '@image/skill/matlab.svg';
-import NextLogo from '@image/skill/next.svg';
-import NodeLogo from '@image/skill/node.svg';
-import PHPLogo from '@image/skill/php.svg';
-import RubyLogo from '@image/skill/ruby.svg';
 import { skillsProgramming } from '@utilities/skillsProgramming';
 import { skillsWeb } from '@utilities/skillsWeb';
 import React from 'react';
@@ -59,24 +50,6 @@ const About: React.FC = () => {
           skills={skillsProgramming}
           className="progress-programming"
         />
-      </Section>
-
-      <Divider />
-
-      <Section id="additional-experience">
-        <h2 className="mb-16 text-center project-header md:text-left">
-          Additional Experience
-        </h2>
-        <div className="grid grid-cols-3 lg:w-4/5 xl:w-3/5 md:grid-cols-6">
-          <LabelledLogo name="Node.js" logo={NodeLogo as string} />
-          <LabelledLogo name="Next.js" logo={NextLogo as string} />
-          <LabelledLogo name="PHP" logo={PHPLogo as string} />
-          <LabelledLogo name="Ruby" logo={RubyLogo as string} />
-          <LabelledLogo name="Haskell" logo={HaskellLogo as string} />
-          <LabelledLogo name="MATLAB" logo={MATLABLogo as string} />
-          <LabelledLogo name="GitHub Actions" logo={ActionsLogo as string} />
-          <LabelledLogo name="LaTeX" logo={LaTeXLogo as string} />
-        </div>
       </Section>
     </Layout>
   );
