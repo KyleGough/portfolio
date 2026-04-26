@@ -1,4 +1,5 @@
 import { FadeIn } from '@components/FadeIn';
+import { ArrowForwardIcon } from '@components/Icons';
 import imageMars from '@image/mars.png';
 import imageSudoku from '@image/sudoku1.jpg';
 import { getDateRange } from '@utilities/date';
@@ -111,16 +112,7 @@ export const HomeMasonryShowcase: React.FC = () => {
           >
             <span>View All Projects</span>
             <span className={styles.viewAllIcon} aria-hidden>
-              <svg viewBox="0 0 20 20" width={18} height={18} focusable="false">
-                <path
-                  d="M4.5 10h9M11.5 6.5L15 10l-3.5 3.5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="1.75"
-                />
-              </svg>
+              <ArrowForwardIcon className="h-[1.125rem] w-[1.125rem] fill-current" />
             </span>
           </Link>
         </p>
