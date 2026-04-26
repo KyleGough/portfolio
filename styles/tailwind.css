@@ -60,20 +60,20 @@
   .work-timeline__title {
     @apply m-0 font-header font-semibold text-header;
     font-size: clamp(1.125rem, 0.95rem + 0.55vw, 1.375rem);
-    line-height: 1.22;
+    line-height: 1.18;
     letter-spacing: -0.02em;
   }
 
   .work-timeline__role {
     @apply m-0 font-primary font-normal text-primary;
     font-size: 1rem;
-    line-height: 1.55;
+    line-height: 1.42;
   }
 
   .work-timeline__date {
     @apply m-0 font-primary tabular-nums text-header/70;
     font-size: 0.8125rem;
-    line-height: 1.45;
+    line-height: 1.35;
     letter-spacing: 0.02em;
   }
 

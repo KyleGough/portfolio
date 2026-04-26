@@ -25,26 +25,52 @@
   color: var(--gothic-fg) !important;
   background-color: var(--void-deep) !important;
   background-image: radial-gradient(
-      ellipse 100% 60% at 50% -15%,
-      oklch(32% 0.12 285 / 0.5),
-      transparent 55%
+      ellipse 118% 64% at 50% -6%,
+      oklch(30% 0.12 285 / 0.4),
+      transparent 60%
     ),
     radial-gradient(
-      ellipse 50% 40% at 0% 20%,
-      oklch(22% 0.1 300 / 0.35),
-      transparent 50%
+      ellipse 56% 42% at 0% 14%,
+      oklch(23% 0.1 300 / 0.3),
+      transparent 54%
     ),
     radial-gradient(
-      ellipse 40% 35% at 100% 40%,
-      oklch(20% 0.08 260 / 0.3),
-      transparent 50%
+      ellipse 52% 40% at 100% 28%,
+      oklch(21% 0.09 265 / 0.26),
+      transparent 54%
+    ),
+    /* Lower bloom: lifts mid / footer void */
+    radial-gradient(
+      ellipse 96% 46% at 50% 104%,
+      oklch(21% 0.09 305 / 0.26),
+      transparent 56%
+    ),
+    /* Sides: vertical violet wash so edges aren’t flat black */
+    radial-gradient(
+      ellipse 36% 56% at -3% 48%,
+      oklch(18% 0.08 295 / 0.22),
+      transparent 53%
+    ),
+    radial-gradient(
+      ellipse 40% 52% at 102% 62%,
+      oklch(19% 0.09 310 / 0.24),
+      transparent 52%
+    ),
+    /* Center mist: soft fill across the scroll column */
+    radial-gradient(
+      ellipse 60% 48% at 50% 44%,
+      oklch(14% 0.06 288 / 0.14),
+      transparent 72%
     ),
     linear-gradient(180deg, var(--void-mid) 0%, var(--void-deep) 100%);
   background-attachment: scroll;
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
-  background-blend-mode: screen, screen, screen, normal;
-  box-shadow: inset 0 0 120px oklch(0% 0 0 / 0.4);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-blend-mode: screen, screen, screen, screen, screen, screen, screen, normal;
+  /* Slight black vignette + whisper of violet at the edges */
+  box-shadow:
+    inset 0 0 110px oklch(0% 0 0 / 0.38),
+    inset 0 0 200px oklch(26% 0.09 300 / 0.045);
 }
 
 .app-space-gothic main::before {
@@ -55,15 +81,15 @@
   z-index: 0;
   background-image: linear-gradient(
       90deg,
-      oklch(100% 0 0 / 0.04) 0,
-      oklch(100% 0 0 / 0.04) 1px,
+      oklch(100% 0 0 / 0.065) 0,
+      oklch(100% 0 0 / 0.065) 1px,
       transparent 1px,
       transparent 80px
     ),
     linear-gradient(
       180deg,
-      oklch(100% 0 0 / 0.04) 0,
-      oklch(100% 0 0 / 0.04) 1px,
+      oklch(100% 0 0 / 0.065) 0,
+      oklch(100% 0 0 / 0.065) 1px,
       transparent 1px,
       transparent 80px
     );
@@ -74,12 +100,12 @@
     white 50%,
     rgba(255, 255, 255, 0) 100%
   );
-  opacity: 0.5;
+  opacity: 0.62;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .app-space-gothic main::before {
-    opacity: 0.2;
+    opacity: 0.3;
   }
 }
 
@@ -892,7 +918,7 @@ footer.footer--space-gothic li.flex a.group:focus-visible svg {
   font-size: clamp(1.125rem, 1.02rem + 0.35vw, 1.3125rem);
   font-weight: 600;
   letter-spacing: -0.02em;
-  line-height: 1.2;
+  line-height: 1.18;
   color: var(--gothic-fg) !important;
 }
 
@@ -901,7 +927,7 @@ footer.footer--space-gothic li.flex a.group:focus-visible svg {
   font-family: 'Space Grotesk', system-ui, sans-serif;
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.42;
   color: var(--gothic-muted) !important;
 }
 
@@ -912,7 +938,7 @@ footer.footer--space-gothic li.flex a.group:focus-visible svg {
   font-weight: 500;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.06em;
-  line-height: 1.4;
+  line-height: 1.32;
   text-transform: uppercase;
   color: var(--gothic-cyan) !important;
 }

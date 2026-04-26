@@ -10,7 +10,7 @@ export const TimelineWidget: React.FC = () => (
   <div
     className={clsx(
       'work-timeline grid grid-cols-1 md:grid-cols-2',
-      'relative my-16',
+      'relative my-10',
       'before:absolute before:content-[""] before:h-2/4 before:w-[2px]',
       'before:right-0 md:before:left-2/4',
       'before:bg-gradient-to-t before:from-timeline before:via-timeline before:to-transparent',

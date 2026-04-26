@@ -22,7 +22,7 @@ export const TimelineNode: React.FC<TimelineNodeProps> = ({
     <>
       {align === 'right' && <div className="hidden md:block"></div>}
       <div
-        className={clsx('flex items-center justify-end h-48', {
+        className={clsx('flex items-center justify-end h-36 md:h-40', {
           'md:flex-row-reverse': align === 'right',
         })}
       >
@@ -44,7 +44,7 @@ export const TimelineNode: React.FC<TimelineNodeProps> = ({
         </FadeIn>
         <FadeIn
           className={clsx(
-            'work-timeline__copy mr-8 flex min-w-0 flex-col gap-1.5',
+            'work-timeline__copy mr-8 flex min-w-0 flex-col gap-1',
             {
               'md:ml-8 md:mr-0 md:text-right': align === 'right',
             }

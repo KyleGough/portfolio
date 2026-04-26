@@ -88,14 +88,11 @@
 }
 
 .name {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  /* Size: unchanged; “extruded” look (stacked shadow + breath) is on the inner span */
   font-size: clamp(2.1rem, 1rem + 4vw, 3.25rem);
-  font-weight: 600;
   line-height: 1.05;
   letter-spacing: -0.04em;
-  color: var(--gothic-fg, oklch(93% 0.02 280));
   margin: 0 0 0.45rem;
-  text-shadow: 0 0 1.8rem oklch(50% 0.15 300 / 0.35);
 }
 
 .tag {

@@ -1,4 +1,5 @@
 import { Link } from '@components/Link';
+import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
 import dynamic from 'next/dynamic';
 import React from 'react';
 
@@ -36,7 +37,9 @@ export const HomeHeroVariants: React.FC = () => {
         <FalconHeavyWireframeHero />
       </div>
       <div className={styles.copy}>
-        <h1 className={styles.name}>Kyle Gough</h1>
+        <h1 className={styles.name}>
+          <span className={extruded.nameExtruded}>Kyle Gough</span>
+        </h1>
         <p className={styles.eyebrow}>Senior Front-End Engineer</p>
         <p className={styles.intro}>{INTRO}</p>
         <div className={styles.cta}>
