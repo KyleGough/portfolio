@@ -49,9 +49,9 @@ exports[`Pagination component renders 1`] = `
         </div>
       </a>
       <a
-        aria-label="Next project: To Do List"
+        aria-label="Next project: BSplit"
         class="project-pagination__card flex w-full min-h-[4.75rem] items-center gap-3 rounded-2xl border p-3.5 text-left no-underline transition [transition-property:box-shadow,transform,opacity] duration-200 [transition-timing-function:cubic-bezier(0.25,1,0.5,1)] sm:min-h-0 sm:gap-4 sm:p-4 group border-header/10 bg-background/90 text-link shadow-sm hover:border-link/25 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-link/40 motion-safe:hover:-translate-y-0.5 motion-safe:active:translate-y-0 motion-safe:active:scale-[0.985]"
-        href="/projects/todo-list"
+        href="/projects/bsplit"
       >
         <div
           class="min-w-0 flex-1 text-right"
@@ -63,9 +63,9 @@ exports[`Pagination component renders 1`] = `
           </p>
           <p
             class="mt-0.5 line-clamp-2 font-primary text-base font-semibold text-header"
-            title="To Do List"
+            title="BSplit"
           >
-            To Do List
+            BSplit
           </p>
         </div>
         <span

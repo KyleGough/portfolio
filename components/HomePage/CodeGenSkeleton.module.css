@@ -1,0 +1,94 @@
+/* Skeleton stream: static lines, stepped scroll only (no per-line “typing”) */
+.root {
+  --line-slot: 0.46s;
+  --line-count: 28;
+  --cycle: calc(var(--line-slot) * var(--line-count));
+  position: relative;
+  flex: 0 0 auto;
+  width: clamp(4.25rem, 11vw, 6.25rem);
+  height: clamp(7.5rem, 20vh, 10.5rem);
+  margin-inline-start: -0.15rem;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+}
+
+.viewport {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.blockWrap {
+  --row-gap: 0.32rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--row-gap);
+  /*
+   * Add one trailing gap so the seam between duplicated blocks matches
+   * the per-line spacing; this keeps stepped scroll increments uniform.
+   */
+  padding-bottom: var(--row-gap);
+}
+
+.track {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  animation-name: codeStreamScroll;
+  animation-duration: var(--cycle);
+  animation-timing-function: steps(var(--line-count), end);
+  animation-iteration-count: infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+    transform: translateY(-12%);
+  }
+}
+
+@keyframes codeStreamScroll {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+.lineShell {
+  overflow: hidden;
+  opacity: 0.95;
+}
+
+.line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.2rem;
+  height: 3px;
+  min-height: 3px;
+}
+
+.token {
+  --hue: 268;
+  height: 100%;
+  min-height: 3px;
+  border-radius: 2px;
+  background: oklch(82% 0.06 var(--hue) / 0.2);
+  flex-shrink: 0;
+}
+

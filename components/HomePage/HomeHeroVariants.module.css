@@ -38,6 +38,23 @@
   }
 }
 
+.graphicStage {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.05rem, 0.45vw, 0.4rem);
+  width: 100%;
+}
+
+.graphicStage .rocketFrame {
+  margin-inline: 0;
+  flex: 1 1 14rem;
+  min-width: min(100%, 12rem);
+  max-width: min(36rem, 100%);
+}
+
 .rocketFrame {
   position: relative;
   width: 100%;

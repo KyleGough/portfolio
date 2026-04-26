@@ -6,11 +6,9 @@ import imageDeliveryPlanner from '@image/card-delivery-route-planner.jpg';
 import imageGraphVisualiser from '@image/card-graph-algorithm-visualiser.jpg';
 import imageLucidLab from '@image/card-lucidlab.jpg';
 import imagePortfolio from '@image/card-portfolio.jpg';
-import imageRollerCoaster from '@image/card-roller-coaster.jpg';
 import imageRSCBot from '@image/card-rscbot.jpg';
 import imageSortingVisualiser from '@image/card-sorting-algorithm-visualiser.jpg';
 import imageSudoku from '@image/card-sudoku.jpg';
-import imageToDoList from '@image/card-todo.jpg';
 import imageURLShortener from '@image/card-url-shortener.jpg';
 import imageMars from '@image/mars.png';
 import CPlusPlusLogo from '@image/skill/cplusplus.svg';
@@ -262,29 +260,6 @@ export const projects: Project[] = [
     logo: logos.cplusplus,
   },
   {
-    id: 'roller-coaster',
-    title: 'Roller Coaster',
-    subtitle: 'Computer Graphics Coursework',
-    date: {
-      start: {
-        month: 12,
-        year: 2018,
-      },
-      end: {
-        month: 1,
-        year: 2019,
-      },
-    },
-    image: imageRollerCoaster,
-    alt: 'Roller coaster',
-    link: '/projects/roller-coaster',
-    filters: [ProjectFilter.CPLUSPLUS],
-    description:
-      'Simulation of a 3-car roller coaster which traverses a small looped track featuring a lift hill, drop, loop-the-loop and turns. The coaster can be viewed from a first-person perspective in each of the carts, as well as additional views that track the carts round the track.',
-    skills: ['C++', 'GLUT'],
-    logo: logos.cplusplus,
-  },
-  {
     id: 'rscbot',
     title: 'RSCBot',
     subtitle: 'Software Engineering Group Project',
@@ -385,35 +360,6 @@ export const projects: Project[] = [
     description:
       'Meet BSplit, your all-in-one web application designed to simplify the process of splitting bills and settling payments among friends and housemates. With user-friendly features and a commitment to enhancing the user experience, BSplit makes managing shared expenses a breeze.',
     skills: ['PHP', 'JavaScript', 'jQuery', 'SQL', 'HTML', 'CSS', 'Bootstrap'],
-    logo: logos.javascript,
-  },
-  {
-    id: 'todo-list',
-    title: 'To Do List',
-    subtitle: 'Web Development Technologies Lab Work',
-    date: {
-      start: {
-        month: 1,
-        year: 2017,
-      },
-      end: {
-        month: 2,
-        year: 2017,
-      },
-    },
-    image: imageToDoList,
-    alt: 'To Do List',
-    link: '/projects/todo-list',
-    filters: [
-      ProjectFilter.JAVASCRIPT,
-      ProjectFilter.PHP,
-      ProjectFilter.SQL,
-      ProjectFilter.GROUP_PROJECT,
-      ProjectFilter.WEB,
-    ],
-    description:
-      'Web application that empowers users to efficiently manage their tasks and to-do lists. This project was an educational journey in which I acquired proficiency in PHP and SQL to implement secure data storage and retrieval, safeguarding the application against SQL injection and cross-site scripting vulnerabilities.',
-    skills: ['PHP', 'JavaScript', 'jQuery', 'SQL', 'HTML', 'CSS'],
     logo: logos.javascript,
   },
   {
