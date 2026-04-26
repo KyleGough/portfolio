@@ -3,6 +3,7 @@ import { Layout } from '@components/Layout';
 import { ProjectItem } from '@components/ProjectItem';
 import { ProjectsFilterPanel } from '@components/ProjectsFilterPanel';
 import { Section } from '@components/Section';
+import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
 import { projects } from '@utilities/Project';
 import { Project } from '@utilities/types';
 import React, { useState } from 'react';
@@ -17,8 +18,8 @@ const Projects: React.FC = () => {
   return (
     <Layout title="Project List - Kyle Gough">
       <Section>
-        <h1 className="project-title mb-8 text-center md:text-left">
-          Projects
+        <h1 className="projects-list-page-title mb-8 mt-12 text-center md:text-left">
+          <span className={extruded.nameExtruded}>Projects</span>
         </h1>
       </Section>
 

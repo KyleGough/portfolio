@@ -386,6 +386,15 @@ nav[aria-label='Main'] .slide-in a:focus {
   color: var(--gothic-fg) !important;
 }
 
+/* Project index only: match home hero “Kyle Gough” scale (extruded glow on inner span via CSS module) */
+.app-space-gothic .projects-list-page-title {
+  font-size: clamp(2.1rem, 1rem + 4vw, 3.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  text-wrap: balance;
+}
+
 /* Headings: Space Grotesk, crisp glow, solid fills (no gradient text) */
 .app-space-gothic .project-title {
   font-family: 'Space Grotesk', system-ui, sans-serif;

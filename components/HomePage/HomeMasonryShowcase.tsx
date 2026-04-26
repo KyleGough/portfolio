@@ -8,6 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
+import heroStyles from './HomeHeroVariants.module.css';
 import styles from './HomeMasonryShowcase.module.css';
 
 const EXCERPTS: Record<string, string> = {
@@ -104,8 +105,11 @@ export const HomeMasonryShowcase: React.FC = () => {
         </div>
 
         <p className={styles.strap}>
-          <Link className={styles.viewAll} href="/projects">
-            <span className={styles.viewAllLabel}>View All Projects</span>
+          <Link
+            className={clsx(heroStyles.ctaButton, styles.viewAllInline)}
+            href="/projects"
+          >
+            <span>View All Projects</span>
             <span className={styles.viewAllIcon} aria-hidden>
               <svg viewBox="0 0 20 20" width={18} height={18} focusable="false">
                 <path
