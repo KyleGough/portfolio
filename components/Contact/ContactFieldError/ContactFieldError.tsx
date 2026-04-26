@@ -10,10 +10,9 @@ export const ContactFieldError: React.FC<ContactFieldErrorProps> = ({
 }) => (
   <span
     className={clsx(
-      'transition-opactity',
-      'duration-200',
-      'text-sm',
-      'text-error'
+      'block font-primary text-sm font-medium leading-snug text-error',
+      'transition-opacity duration-200',
+      'mb-1'
     )}
   >
     {message}

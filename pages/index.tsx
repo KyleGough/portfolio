@@ -1,4 +1,5 @@
 import { Contact } from '@components/Contact';
+import { Divider } from '@components/Divider';
 import { HomeHeroVariants, HomeMasonryShowcase } from '@components/HomePage';
 import { Layout } from '@components/Layout';
 import { Section } from '@components/Section';
@@ -17,6 +18,7 @@ const Home: React.FC = () => {
     <Layout title="Portfolio - Kyle Gough" theme="space-gothic">
       <HomeHeroVariants />
       <HomeMasonryShowcase />
+      <Divider />
 
       <div className="min-h-0 border-y border-divider">
         <Section id="work-experience">

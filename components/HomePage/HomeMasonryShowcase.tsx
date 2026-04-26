@@ -84,7 +84,7 @@ export const HomeMasonryShowcase: React.FC = () => {
         <header className={styles.heading}>
           <p className={styles.headingKicker}>Selected</p>
           <h2 className={styles.title} id="featured-heading">
-            Case studies
+            Case Studies
           </h2>
         </header>
 
@@ -105,7 +105,7 @@ export const HomeMasonryShowcase: React.FC = () => {
 
         <p className={styles.strap}>
           <Link className={styles.viewAll} href="/projects">
-            <span className={styles.viewAllLabel}>View all projects</span>
+            <span className={styles.viewAllLabel}>View All Projects</span>
             <span className={styles.viewAllIcon} aria-hidden>
               <svg viewBox="0 0 20 20" width={18} height={18} focusable="false">
                 <path

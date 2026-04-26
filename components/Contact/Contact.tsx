@@ -91,18 +91,18 @@ export const Contact: React.FC = () => {
   };
 
   const inputCommonStyles = clsx(
-    'block shadow',
-    'transition-colours duration-200',
-    'mt-2 mb-8 px-4 py-2',
-    'w-full xs:w-field',
+    'block w-full',
+    'font-primary text-base leading-relaxed',
+    'shadow transition-colors duration-200',
+    'mt-2 mb-6 px-4 py-2.5',
     'border-2 rounded-2xl',
     'outline-none caret-link-hover bg-background'
   );
 
   return (
-    <form className="flex justify-center">
-      <fieldset>
-        <legend className="font-semibold text-6xl text-center w-full mb-16 text-header">
+    <form className="contact-form flex w-full justify-center">
+      <fieldset className="w-full max-w-field">
+        <legend className="project-header mb-10 w-full text-center lg:text-left">
           Contact Me
         </legend>
 
@@ -163,9 +163,7 @@ export const Contact: React.FC = () => {
             className={clsx(
               getFieldBorderStyle(!messageError, isSent),
               inputCommonStyles,
-              'max-h-48',
-              'h-48',
-              'resize-none'
+              'h-40 max-h-52 min-h-[10rem] resize-y'
             )}
             id="message"
             name="message"

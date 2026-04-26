@@ -19,12 +19,9 @@ export const ContactLabel: React.FC<ContactLabelProps> = ({
       { 'text-link-hover': isSent },
       { 'text-link group-focus-within:text-link-hover': valid && !isSent },
       { 'text-error': !valid && !isSent },
-      'transition-colours',
-      'duration-200',
-      'text-lg',
-      'mt-8',
-      'mb-2',
-      'mr-2'
+      'block font-primary text-lg font-medium leading-snug tracking-wide',
+      'transition-colors duration-200',
+      'mt-6 mb-1.5'
     )}
     htmlFor={htmlFor}
   >

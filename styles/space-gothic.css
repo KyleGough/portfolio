@@ -430,6 +430,47 @@ nav[aria-label='Main'] .slide-in a:focus {
   letter-spacing: 0.012em;
 }
 
+/* Contact form: match void stack; readable 1rem controls */
+.app-space-gothic .contact-form label {
+  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+}
+.app-space-gothic .contact-form input,
+.app-space-gothic .contact-form textarea {
+  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+  color: var(--gothic-fg) !important;
+}
+.app-space-gothic .contact-form textarea::placeholder,
+.app-space-gothic .contact-form input::placeholder {
+  color: var(--gothic-faint) !important;
+}
+.app-space-gothic .contact-form [class~='text-error'] {
+  color: #ee3003 !important;
+}
+
+/* Contact send CTA: same strip language as ProjectItem “View project” */
+.app-space-gothic button.contact-send-cta {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace !important;
+  letter-spacing: 0.2em !important;
+  border-color: oklch(100% 0 0 / 0.16) !important;
+  transition:
+    color 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.app-space-gothic button.contact-send-cta[data-tone='idle']:enabled:hover,
+.app-space-gothic button.contact-send-cta[data-tone='idle']:enabled:focus-visible {
+  color: var(--gothic-magenta) !important;
+  box-shadow:
+    inset 0 1px 0 0 oklch(100% 0 0 / 0.1),
+    inset 0 -28px 40px -18px oklch(48% 0.16 310 / 0.14),
+    0 0 0 1px oklch(100% 0 0 / 0.12),
+    0 0 28px oklch(58% 0.14 200 / 0.18) !important;
+}
+
+.app-space-gothic button.contact-send-cta[class~='border-error'] {
+  border-color: #ee3003 !important;
+}
+
 /* Dividers */
 .app-space-gothic .bg-divider,
 .app-space-gothic hr,
@@ -836,21 +877,4 @@ footer.footer--space-gothic li.flex a.group:focus-visible svg {
 .app-space-gothic .work-timeline__line {
   background-color: oklch(100% 0 0 / 0.14) !important;
   align-self: center;
-}
-
-.app-space-gothic .work-timeline__spine {
-  background: linear-gradient(
-    180deg,
-    oklch(0% 0 0 / 0),
-    var(--gothic-stroke) 6%,
-    var(--gothic-stroke) 94%,
-    oklch(0% 0 0 / 0)
-  );
-  opacity: 0.9;
-}
-
-.app-space-gothic .work-timeline__mark {
-  border-color: oklch(100% 0 0 / 0.2) !important;
-  background-color: var(--void-elevated) !important;
-  box-shadow: 0 0 0 1px oklch(0% 0 0 / 0.2);
 }

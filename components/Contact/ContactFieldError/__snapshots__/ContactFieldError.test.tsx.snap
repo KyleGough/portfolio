@@ -3,7 +3,7 @@
 exports[`ContactFieldError component renders 1`] = `
 <div>
   <span
-    class="transition-opactity duration-200 text-sm text-error"
+    class="block font-primary text-sm font-medium leading-snug text-error transition-opacity duration-200 mb-1"
   >
     Invalid Email!
   </span>

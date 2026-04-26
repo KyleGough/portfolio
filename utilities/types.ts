@@ -30,12 +30,6 @@ export interface Date {
   year: number;
 }
 
-export interface Skill {
-  description: string;
-  logo: string;
-  name: string;
-}
-
 export interface ProjectPageProps {
   images: {
     alt: string;
