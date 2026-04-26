@@ -29,10 +29,10 @@ export const NotFoundScene: React.FC = () => (
           </span>
         </span>
       </h1>
-      <p className={styles.subtitle}>Page not in this orbit</p>
+      <p className={styles.subtitle}>Page not found</p>
       <p className={styles.blurb}>
-        The route you requested is not on this map. Plot a new course from the
-        links below.
+        The route you requested does not exist. Plot a new course from the links
+        below.
       </p>
 
       <nav className={styles.nav} aria-label="Site recovery">
