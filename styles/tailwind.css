@@ -56,6 +56,25 @@
 }
 
 @layer components {
+  /* Vertical spine: fade only at tips (stops are % of each half, not full timeline) */
+  .work-timeline::before {
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      theme(colors.timeline) 11%,
+      theme(colors.timeline) 100%
+    );
+  }
+
+  .work-timeline::after {
+    background: linear-gradient(
+      to bottom,
+      theme(colors.timeline) 0%,
+      theme(colors.timeline) 89%,
+      transparent 100%
+    );
+  }
+
   /* Work experience (About timeline): fixed rem ramp, ≥1.25 between title and caption date */
   .work-timeline__title {
     @apply m-0 font-header font-semibold text-header;

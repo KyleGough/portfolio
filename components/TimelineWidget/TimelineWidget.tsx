@@ -13,10 +13,8 @@ export const TimelineWidget: React.FC = () => (
       'relative my-10',
       'before:absolute before:content-[""] before:h-2/4 before:w-[3px]',
       'before:right-0 md:before:left-2/4',
-      'before:bg-timeline',
       'after:absolute after:content-[""] after:h-2/4 after:w-[3px]',
-      'after:top-2/4 after:right-0 md:after:left-2/4',
-      'after:bg-timeline'
+      'after:top-2/4 after:right-0 md:after:left-2/4'
     )}
   >
     <TimelineNode
