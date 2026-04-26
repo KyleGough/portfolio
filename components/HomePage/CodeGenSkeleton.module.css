@@ -6,8 +6,8 @@
   position: relative;
   flex: 0 0 auto;
   width: clamp(4.25rem, 11vw, 6.25rem);
-  height: clamp(7.5rem, 20vh, 10.5rem);
-  margin-inline-start: -0.15rem;
+  height: clamp(8.25rem, 22vh, 11.75rem);
+  margin-inline-start: 0;
   overflow: hidden;
   mask-image: linear-gradient(
     180deg,
@@ -85,10 +85,13 @@
 
 .token {
   --hue: 268;
+  --lightness: 82%;
+  --chroma: 0.075;
+  --alpha: 0.24;
   height: 100%;
   min-height: 3px;
   border-radius: 2px;
-  background: oklch(82% 0.06 var(--hue) / 0.2);
+  background: oklch(var(--lightness) var(--chroma) var(--hue) / var(--alpha));
   flex-shrink: 0;
 }
 

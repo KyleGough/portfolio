@@ -44,8 +44,24 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: clamp(0.05rem, 0.45vw, 0.4rem);
+  gap: clamp(0rem, 0.18vw, 0.16rem);
   width: 100%;
+}
+
+.codeGenDock {
+  display: inline-flex;
+  align-items: center;
+  /*
+   * Pull skeleton toward the actual wireframe drawing rather than relying
+   * on container gap alone.
+   */
+  margin-inline-start: clamp(-3.1rem, -6.4vw, -2rem);
+}
+
+@media (max-width: 719px) {
+  .codeGenDock {
+    margin-inline-start: clamp(-1.5rem, -4.8vw, -0.8rem);
+  }
 }
 
 .graphicStage .rocketFrame {

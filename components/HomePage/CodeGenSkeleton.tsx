@@ -38,7 +38,19 @@ const LINE_COUNT = ROW_FLEX.length;
 
 /** Hue spread for skeleton bars (muted, space-gothic adjacent). */
 function tokenHue(globalIndex: number): number {
-  return 248 + (globalIndex * 17) % 72;
+  return 238 + (globalIndex * 13) % 54;
+}
+
+function tokenLightness(globalIndex: number): string {
+  return `${79 + (globalIndex % 3)}%`;
+}
+
+function tokenChroma(globalIndex: number): string {
+  return (0.075 + (globalIndex % 3) * 0.01).toFixed(3);
+}
+
+function tokenAlpha(globalIndex: number): string {
+  return (0.2 + (globalIndex % 3) * 0.04).toFixed(3);
 }
 
 function SkeletonBlock({ blockKey }: { blockKey: string }) {
@@ -64,6 +76,9 @@ function SkeletonBlock({ blockKey }: { blockKey: string }) {
                       flexGrow: flex,
                       flexBasis: 0,
                       '--hue': tokenHue(g),
+                      '--lightness': tokenLightness(g),
+                      '--chroma': tokenChroma(g),
+                      '--alpha': tokenAlpha(g),
                     } as React.CSSProperties
                   }
                 />

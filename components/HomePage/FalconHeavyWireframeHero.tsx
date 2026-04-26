@@ -147,7 +147,8 @@ function buildRocket(
   const h1 = 3.12;
   const hi = 0.2;
   const h2 = 0.92;
-  const hf = 1.22;
+  /* Shorter fairing = blunter (less acute) nose than a tall cone */
+  const hf = 0.8;
   const boosterH = 2.95;
   /* Slightly closer to center core than 0.84; strut endpoints follow booster inner face */
   const boosterX = 0.72;
@@ -165,8 +166,9 @@ function buildRocket(
   // Second stage
   addCylinderEdges(body, wireMat, 0.2, 0.22, h2, 10, 0, h1 + hi + h2 / 2, 0);
   // Fairing
+  const fairingR = 0.22;
   const fairingY = h1 + hi + h2 + hf / 2;
-  addConeEdges(body, wireMat, 0.22, hf, 10, 0, fairingY, 0);
+  addConeEdges(body, wireMat, fairingR, hf, 10, 0, fairingY, 0);
 
   // Side boosters (parallel first stages)
   for (const sx of [-boosterX, boosterX] as const) {
@@ -181,17 +183,10 @@ function buildRocket(
       boosterH / 2,
       0
     );
-    const noseH = 0.52;
-    addConeEdges(
-      body,
-      wireMat,
-      boosterR * 0.95,
-      noseH,
-      8,
-      sx,
-      boosterH + noseH / 2,
-      0
-    );
+    /* Stubbier cap + base matches booster top radius (0.28) for a clean seam */
+    const noseH = 0.34;
+    const noseR = 0.28;
+    addConeEdges(body, wireMat, noseR, noseH, 8, sx, boosterH + noseH / 2, 0);
     // Booster octaweb (same 9-engine pattern, scaled to booster diameter)
     addOctawebEngines(body, wireMat, sx, 0, yMountCore, 0.152, 0.86);
   }

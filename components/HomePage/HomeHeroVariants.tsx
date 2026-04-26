@@ -37,7 +37,9 @@ export const HomeHeroVariants: React.FC = () => {
       >
         <div className={styles.graphicStage}>
           <FalconHeavyWireframeHero />
-          <CodeGenSkeleton />
+          <div className={styles.codeGenDock}>
+            <CodeGenSkeleton />
+          </div>
         </div>
       </div>
       <div className={styles.copy}>
