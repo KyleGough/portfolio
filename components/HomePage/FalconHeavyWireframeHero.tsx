@@ -149,7 +149,8 @@ function buildRocket(
   const h2 = 0.92;
   const hf = 1.22;
   const boosterH = 2.95;
-  const boosterX = 0.84;
+  /* Slightly closer to center core than 0.84; strut endpoints follow booster inner face */
+  const boosterX = 0.72;
   const coreR = 0.35;
   const boosterR = 0.3;
 
@@ -233,7 +234,11 @@ function fitPerspectiveCameraToObject(
 
   camera.near = Math.max(0.02, dist * 0.004);
   camera.far = dist * 40;
-  camera.position.set(center.x + dist * 0.58, center.y + dist * 0.36, center.z + dist * 0.72);
+  camera.position.set(
+    center.x + dist * 0.58,
+    center.y + dist * 0.36,
+    center.z + dist * 0.72
+  );
   camera.lookAt(center);
 }
 
