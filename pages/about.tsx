@@ -3,6 +3,7 @@ import { LabelledLogo } from '@components/LabelledLogo';
 import { Layout } from '@components/Layout';
 import { Section } from '@components/Section';
 import { SkillList } from '@components/SkillList';
+import { TimelineWidget } from '@components/TimelineWidget';
 import ActionsLogo from '@image/skill/github-actions.svg';
 import HaskellLogo from '@image/skill/haskell.svg';
 import LaTeXLogo from '@image/skill/latex.svg';
@@ -32,7 +33,14 @@ const About: React.FC = () => {
         </p>
       </Section>
 
-      <Divider />
+      <div className="min-h-0 border-y border-divider">
+        <Section id="work-experience">
+          <h2 className="mb-6 text-center project-header md:mb-8 md:text-left">
+            Work Experience
+          </h2>
+          <TimelineWidget />
+        </Section>
+      </div>
 
       <Section id="web-development">
         <h2 className="text-center project-header md:text-left">

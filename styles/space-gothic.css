@@ -801,3 +801,62 @@ footer.footer--space-gothic li.flex a.group:focus-visible svg {
   margin-top: 0.85rem;
 }
 
+/* Work experience timeline (About): compact, CV-style in void */
+.app-space-gothic .work-timeline__title {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--gothic-fg) !important;
+  line-height: 1.25;
+}
+
+@media (min-width: 640px) {
+  .app-space-gothic .work-timeline__title {
+    font-size: 1.125rem;
+  }
+}
+
+.app-space-gothic .work-timeline__role {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--gothic-muted) !important;
+}
+
+.app-space-gothic .work-timeline__date {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gothic-cyan) !important;
+}
+
+@media (min-width: 640px) {
+  .app-space-gothic .work-timeline__date {
+    font-size: 0.75rem;
+  }
+}
+
+.app-space-gothic .work-timeline__line {
+  background-color: oklch(100% 0 0 / 0.14) !important;
+  align-self: center;
+}
+
+.app-space-gothic .work-timeline__spine {
+  background: linear-gradient(
+    180deg,
+    oklch(0% 0 0 / 0),
+    var(--gothic-stroke) 6%,
+    var(--gothic-stroke) 94%,
+    oklch(0% 0 0 / 0)
+  );
+  opacity: 0.9;
+}
+
+.app-space-gothic .work-timeline__mark {
+  border-color: oklch(100% 0 0 / 0.2) !important;
+  background-color: var(--void-elevated) !important;
+  box-shadow: 0 0 0 1px oklch(0% 0 0 / 0.2);
+}

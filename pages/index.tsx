@@ -4,7 +4,6 @@ import { ArrowForwardIcon } from '@components/Icons';
 import { Layout } from '@components/Layout';
 import { ProjectCard } from '@components/ProjectCard';
 import { Section } from '@components/Section';
-import { TimelineWidget } from '@components/TimelineWidget';
 import { useObserveElement } from '@hooks/useObserveElement';
 import { useTypewriter } from '@hooks/useTypewriter';
 import imageCaveExploration from '@image/card-cave-exploration.jpg';
@@ -107,16 +106,7 @@ const Home: React.FC = () => {
         </Section>
       </div>
 
-      <div className="min-h-screen flex items-center border-b border-divider shadow">
-        <Section>
-          <h2 className="font-semibold text-6xl text-center mt-16 text-header max-w-reading">
-            Work Experience
-          </h2>
-          <TimelineWidget />
-        </Section>
-      </div>
-
-      <div className="bg-accent-blue min-h-screen flex items-center">
+      <div className="bg-circuits min-h-screen flex items-center border-t border-divider">
         <Section>
           <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-8">
             <Contact />
