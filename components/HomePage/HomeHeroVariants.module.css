@@ -23,6 +23,11 @@
 
 .graphic {
   position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   min-height: min(48vw, 20rem);
   width: 100%;
   max-width: 36rem;
@@ -38,17 +43,7 @@
   }
 }
 
-.graphicStage {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-  width: 100%;
-}
-
-.graphicStage .rocketFrame {
+.graphic .rocketFrame {
   margin-inline: 0;
   flex: 1 1 14rem;
   min-width: min(100%, 12rem);
@@ -112,15 +107,6 @@
   margin: 0 0 0.45rem;
 }
 
-.tag {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
-  font-size: clamp(1rem, 0.9rem + 0.35vw, 1.15rem);
-  color: var(--gothic-muted, oklch(72% 0.04 280));
-  font-weight: 500;
-  margin: 0 0 1rem;
-  letter-spacing: -0.01em;
-}
-
 .intro {
   font-family: 'Space Grotesk', system-ui, sans-serif;
   font-size: clamp(0.92rem, 0.86rem + 0.2vw, 1.02rem);
@@ -164,70 +150,7 @@
   outline: none;
 }
 
-.hint {
-  font-family: 'IBM Plex Mono', ui-monospace, monospace;
-  font-size: 0.62rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--gothic-faint, oklch(52% 0.03 280));
-  margin: 0;
-}
-
-.scroller {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-top: 1.75rem;
-  color: var(--gothic-faint, oklch(52% 0.03 280));
-  text-decoration: none;
-  outline: none;
-}
-
-.scroller:focus-visible {
-  outline: 2px solid var(--gothic-cyan, oklch(78% 0.12 200));
-  outline-offset: 0.2rem;
-  border-radius: 0.25rem;
-}
-
-.scrollerLabel {
-  font-family: 'IBM Plex Mono', ui-monospace, monospace;
-  font-size: 0.62rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-bottom: 0.45rem;
-}
-
-.scrollerLine {
-  width: 1px;
-  height: 2rem;
-  background: linear-gradient(
-    180deg,
-    var(--gothic-cyan, oklch(78% 0.12 200)) 0%,
-    transparent 100%
-  );
-  opacity: 0.45;
-  transform-origin: top center;
-  animation: vScrollPulse 2.2s cubic-bezier(0.22, 1, 0.36, 1) infinite
-    alternate;
-}
-
-@keyframes vScrollPulse {
-  from {
-    transform: scaleY(0.65);
-    opacity: 0.28;
-  }
-  to {
-    transform: scaleY(1);
-    opacity: 0.6;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .scrollerLine {
-    animation: none;
-    opacity: 0.4;
-  }
-
   .ctaButton:hover,
   .ctaButton:focus-visible {
     transform: none;

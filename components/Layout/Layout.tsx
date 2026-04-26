@@ -1,5 +1,5 @@
-import { Nav } from '@components//Nav';
 import { Footer } from '@components/Footer';
+import { Nav } from '@components/Nav';
 import { clsx } from 'clsx';
 import Head from 'next/head';
 import { useRouter } from 'next/router';

@@ -34,9 +34,7 @@ export const HomeHeroVariants: React.FC = () => {
         role="img"
         aria-label="Three-dimensional wireframe of a Falcon Heavy class rocket: one center core with two side boosters, nose cones, and nine-engine octawebs on each first stage."
       >
-        <div className={styles.graphicStage}>
-          <FalconHeavyWireframeHero />
-        </div>
+        <FalconHeavyWireframeHero />
       </div>
       <div className={styles.copy}>
         <h1 className={styles.name}>
