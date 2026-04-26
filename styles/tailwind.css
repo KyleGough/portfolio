@@ -122,6 +122,16 @@
     transform: translate(50%, -50%);
   }
 
+  /* Mobile: single-column rail; both rows keep the node on the left end of the
+     horizontal (md+ two-column uses spine-left for right column items) */
+  @media (max-width: 767px) {
+    .work-timeline__line--spine-left::after {
+      left: 0;
+      right: auto;
+      transform: translate(-50%, -50%);
+    }
+  }
+
   .contact-form__message-meter {
     @apply font-primary text-xs font-medium tabular-nums;
     color: rgb(66 66 66 / 0.55); /* theme header #424242 */
