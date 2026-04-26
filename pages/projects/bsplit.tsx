@@ -74,8 +74,8 @@ const BSplit: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Pagination
       previousTitle="To Do List"
       previousLink="/projects/todo-list"
-      nextTitle="Cavern Minesweeper"
-      nextLink="/projects/cavern-minesweeper"
+      nextTitle="Graph Algorithm Visualiser"
+      nextLink="/projects/graph-algorithm-visualiser"
     />
   </Layout>
 );

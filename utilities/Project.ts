@@ -2,12 +2,10 @@ import imageAISpaceTelescope from '@image/ai-space-telescope.jpg';
 import imageBookmarkLabeller from '@image/bookmark-labeller.jpg';
 import imageBSplit from '@image/card-bsplit.jpg';
 import imageCaveExploration from '@image/card-cave-exploration.jpg';
-import imageCavernMinesweeper from '@image/card-cavern-minesweeper.jpg';
 import imageDeliveryPlanner from '@image/card-delivery-route-planner.jpg';
 import imageGraphVisualiser from '@image/card-graph-algorithm-visualiser.jpg';
 import imageLucidLab from '@image/card-lucidlab.jpg';
 import imagePortfolio from '@image/card-portfolio.jpg';
-import imageReactMinesweeper from '@image/card-react-minesweeper.jpg';
 import imageRollerCoaster from '@image/card-roller-coaster.jpg';
 import imageRSCBot from '@image/card-rscbot.jpg';
 import imageSortingVisualiser from '@image/card-sorting-algorithm-visualiser.jpg';
@@ -239,30 +237,6 @@ export const projects: Project[] = [
     logo: logos.python,
   },
   {
-    id: 'react-minesweeper',
-    title: 'React Minesweeper',
-    date: {
-      start: {
-        month: 10,
-        year: 2019,
-      },
-    },
-    image: imageReactMinesweeper,
-    alt: 'React Minesweeper',
-    link: '/projects/react-minesweeper',
-    filters: [
-      ProjectFilter.JAVASCRIPT,
-      ProjectFilter.REACT,
-      ProjectFilter.PUZZLE,
-      ProjectFilter.WEB,
-    ],
-    description:
-      'Step back in time and relive the classic Minesweeper experience with this faithful clone, meticulously crafted in React. Featuring an 18x18 game board, it offers all the elements you love about the original game and more.',
-    github: 'https://github.com/KyleGough/react-minesweeper',
-    skills: ['React', 'JavaScript', 'CSS', 'Materialize'],
-    logo: logos.react,
-  },
-  {
     id: 'cave-exploration',
     title: 'Using Swarm AI to Map a Cave Network',
     subtitle: 'Dissertation',
@@ -384,25 +358,6 @@ export const projects: Project[] = [
     skills: ['JavaScript', 'Materialize'],
     logo: logos.javascript,
     liveLink: 'https://kylegough.github.io/graph-algorithm-visualiser/',
-  },
-  {
-    id: 'cavern-minesweeper',
-    title: 'Cavern Minesweeper',
-    date: {
-      start: {
-        month: 3,
-        year: 2017,
-      },
-    },
-    image: imageCavernMinesweeper,
-    alt: 'Cavern Minesweeper',
-    link: '/projects/cavern-minesweeper',
-    filters: [ProjectFilter.PUZZLE],
-    description:
-      'Cavern Minesweeper takes the classic Minesweeper game to new depths, introducing tiered mines (ores) that add an exciting twist to your mining adventure. You must strategically uncover enough squares to reach the required mining level. With three challenging difficulty levels, Cavern Minesweeper offers competitive players an exhilarating test of their skills.',
-    github: 'https://github.com/KyleGough/cavern-minesweeper',
-    skills: ['Ruby'],
-    logo: logos.ruby,
   },
   {
     id: 'bsplit',

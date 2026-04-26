@@ -227,8 +227,8 @@ const Sudoku: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Divider />
 
     <Pagination
-      previousTitle="React Minesweeper"
-      previousLink="/projects/react-minesweeper"
+      previousTitle="Cave Exploration"
+      previousLink="/projects/cave-exploration"
       nextTitle="LucidLab"
       nextLink="/projects/lucidlab"
     />

@@ -28,11 +28,11 @@ exports[`SkillItem component renders 1`] = `
           React
         </span>
          -
-         
+
         <span
           class="text-sm"
         >
-          Portfolio, LucidLab, Minesweeper
+          Portfolio, LucidLab
         </span>
       </p>
     </div>

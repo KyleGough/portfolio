@@ -71,8 +71,8 @@ const CaveExploration: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Pagination
       previousTitle="Roller Coaster"
       previousLink="/projects/roller-coaster"
-      nextTitle="React Minesweeper"
-      nextLink="/projects/react-minesweeper"
+      nextTitle="Logical Sudoku Solver"
+      nextLink="/projects/sudoku"
     />
   </Layout>
 );

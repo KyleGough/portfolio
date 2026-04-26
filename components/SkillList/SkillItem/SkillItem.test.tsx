@@ -6,7 +6,7 @@ import { SkillItem } from './SkillItem';
 
 const skill = {
   name: 'React',
-  description: 'Portfolio, LucidLab, Minesweeper',
+  description: 'Portfolio, LucidLab',
   logo: '/#logo',
 };
 
@@ -17,7 +17,7 @@ describe('SkillItem component', () => {
     const { container } = render(<SkillItem {...skill} />);
 
     expect(screen.getByText('React')).toBeVisible();
-    expect(screen.getByText('Portfolio, LucidLab, Minesweeper')).toBeVisible();
+    expect(screen.getByText('Portfolio, LucidLab')).toBeVisible();
     expect(container).toMatchSnapshot();
   });
 });
