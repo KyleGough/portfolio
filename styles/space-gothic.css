@@ -626,16 +626,6 @@ nav[aria-label='Main'] .slide-in a:focus {
     inset 0 -28px 40px -18px oklch(48% 0.16 310 / 0.14) !important;
 }
 
-/* bg-circuits: replace mauve circuit pattern with void haze */
-.app-space-gothic .bg-circuits,
-.app-space-gothic [class~='bg-circuits'] {
-  background-color: var(--void-mid) !important;
-  background-image: none !important;
-  border-top: 1px solid var(--gothic-stroke) !important;
-  border-bottom: 1px solid var(--gothic-stroke) !important;
-  box-shadow: inset 0 0 64px oklch(15% 0.08 290 / 0.25) !important;
-}
-
 /* Project cards in grid: glow frame + caption void */
 .app-space-gothic a .group {
   border-radius: 1rem;

@@ -20,7 +20,7 @@ const Home: React.FC = () => {
       <HomeMasonryShowcase />
       <Divider />
 
-      <div className="min-h-0 border-y border-divider">
+      <div className="min-h-0 border-t border-divider">
         <Section id="work-experience">
           <h2 className="mb-6 text-center project-header md:mb-8 md:text-left">
             Work Experience
@@ -29,7 +29,9 @@ const Home: React.FC = () => {
         </Section>
       </div>
 
-      <div className="bg-circuits min-h-screen flex items-center border-t border-divider">
+      <Divider />
+
+      <div className="min-h-screen flex items-center">
         <Section>
           <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-8">
             <Contact />
