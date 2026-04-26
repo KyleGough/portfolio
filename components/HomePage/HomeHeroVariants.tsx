@@ -3,6 +3,7 @@ import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
 import dynamic from 'next/dynamic';
 import React from 'react';
 
+import { HeroFlightTelemetry } from './HeroFlightTelemetry';
 import styles from './HomeHeroVariants.module.css';
 
 const INTRO =
@@ -32,9 +33,14 @@ export const HomeHeroVariants: React.FC = () => {
       <div
         className={styles.graphic}
         role="img"
-        aria-label="Three-dimensional wireframe of a Falcon Heavy class rocket: one center core with two side boosters, nose cones, and nine-engine octawebs on each first stage."
+        aria-label="Three-dimensional wireframe of a Falcon Heavy class rocket with a decorative mock GNC readout: fuel, velocity, pitch, and roll."
       >
-        <FalconHeavyWireframeHero />
+        <div className={styles.wireframeStage}>
+          <FalconHeavyWireframeHero />
+          <div className={styles.telemetryOverRocket}>
+            <HeroFlightTelemetry />
+          </div>
+        </div>
       </div>
       <div className={styles.copy}>
         <h1 className={styles.name}>

@@ -24,13 +24,10 @@
 .graphic {
   position: relative;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
   min-height: min(48vw, 20rem);
   width: 100%;
-  max-width: 36rem;
+  max-width: 40rem;
   margin-inline: auto;
   pointer-events: none;
 }
@@ -43,11 +40,43 @@
   }
 }
 
-.graphic .rocketFrame {
+/* Match rocket frame width; overlay is anchored to the wireframe, not the whole hero column */
+.wireframeStage {
+  position: relative;
+  z-index: 0;
+  width: min(100%, 36rem);
+  margin-inline: auto;
+}
+
+.wireframeStage .rocketFrame {
+  position: relative;
+  z-index: 0;
+  width: 100%;
   margin-inline: 0;
-  flex: 1 1 14rem;
-  min-width: min(100%, 12rem);
-  max-width: min(36rem, 100%);
+}
+
+/* Mock GNC: flush to the right edge of the wireframe (same box as the canvas) */
+.telemetryOverRocket {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: min(10.5rem, 40%);
+  min-width: 0;
+  max-height: 96%;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+@media (max-width: 519px) {
+  .telemetryOverRocket {
+    width: min(9.25rem, 46%);
+    right: 0;
+  }
 }
 
 .rocketFrame {
