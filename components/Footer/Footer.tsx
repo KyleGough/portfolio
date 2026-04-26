@@ -40,19 +40,18 @@ export const Footer: React.FC = () => (
             </p>
             <ul>
               <FooterLink href="/projects">All Projects</FooterLink>
+              <FooterLink href="/projects/solar-system">
+                Solar System Model
+              </FooterLink>
               <FooterLink href="/projects/sudoku">
                 Logical Sudoku Solver
+              </FooterLink>
+              <FooterLink href="/projects/ai-space-telescope">
+                AI Space Telescope
               </FooterLink>
               <FooterLink href="/projects/cave-exploration">
                 Cave Exploration
               </FooterLink>
-              <FooterLink href="/projects/sorting-algorithm-visualiser">
-                Sorting Algorithm Visualiser
-              </FooterLink>
-              <FooterLink href="/projects/graph-algorithm-visualiser">
-                Graph Algorithm Visualiser
-              </FooterLink>
-              <FooterLink href="/projects/bsplit">BSplit</FooterLink>
             </ul>
           </div>
           <div className="px-6 py-6 w-full sm:w-6/12 lg:w-4/12">
