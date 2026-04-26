@@ -40,6 +40,31 @@
 }
 
 @layer components {
+  /* Work experience (About timeline): fixed rem ramp, ≥1.25 between title and caption date */
+  .work-timeline__title {
+    @apply m-0 font-header font-semibold text-header;
+    font-size: clamp(1.125rem, 0.95rem + 0.55vw, 1.375rem);
+    line-height: 1.22;
+    letter-spacing: -0.02em;
+  }
+
+  .work-timeline__role {
+    @apply m-0 font-primary font-normal text-primary;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .work-timeline__date {
+    @apply m-0 font-primary tabular-nums text-header/70;
+    font-size: 0.8125rem;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+  }
+
+  .work-timeline__line {
+    @apply h-0.5 w-6 max-w-[12rem] grow bg-timeline self-center;
+  }
+
   /* Site nav: Lato, ≥16px, clear step above wordmark (1.25); wordmark = Merriweather to match page titles */
   .nav-wordmark {
     @apply font-header font-semibold leading-tight tracking-tight

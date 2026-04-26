@@ -9,6 +9,6 @@ describe('isNavPathActive', () => {
     expect(isNavPathActive('/projects/foo', '/projects')).toBe(true);
   });
   it('strips query and hash', () => {
-    expect(isNavPathActive('/about#x', '/about')).toBe(true);
+    expect(isNavPathActive('/projects#x', '/projects')).toBe(true);
   });
 });

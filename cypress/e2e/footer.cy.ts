@@ -1,11 +1,11 @@
 import { cy, it } from 'local-cypress';
 
 describe('Footer Navigation', () => {
-  it('Navigate to about page', () => {
-    cy.visit('/');
-    cy.get('footer a[href="/about"]').click();
-    cy.url().should('include', '/about');
-    cy.get('h1').should('have.text', 'About Me');
+  it('Navigate to home from footer', () => {
+    cy.visit('/projects');
+    cy.get('footer a[href="/"]').click();
+    cy.location('pathname').should('eq', '/');
+    cy.get('h1').should('have.text', 'Kyle Gough');
   });
 
   it('Navigate to projects page', () => {
@@ -16,10 +16,10 @@ describe('Footer Navigation', () => {
   });
 
   it('Navigate to privacy page', () => {
-    cy.visit('/about');
+    cy.visit('/');
     cy.get('footer a[href="/privacy"]').click();
     cy.url().should('include', '/privacy');
-    cy.get('h1').should('have.text', 'Privacy Policy');
+    cy.get('h1').should('have.text', 'Privacy');
   });
 });
 

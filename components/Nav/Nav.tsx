@@ -26,7 +26,6 @@ const ARIA_CURRENT_PAGE = (active: boolean) => (active ? 'page' : undefined);
 const BAR_LINKS = [
   { to: '/', label: 'Home' },
   { to: '/projects', label: 'Projects' },
-  { to: '/about', label: 'About Me' },
 ] as const;
 
 export const Nav: React.FC = () => {

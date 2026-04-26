@@ -1,0 +1,389 @@
+/* Hero: procedural entangled cores + warped grid (SVG + CSS motion) */
+.slot {
+  position: relative;
+  min-height: 88vh;
+  min-height: 88dvh;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 5rem 1.25rem 3.5rem;
+  overflow: hidden;
+  isolation: isolate;
+  border-bottom: 1px solid oklch(100% 0 0 / 0.08);
+}
+
+@media (min-width: 960px) {
+  .slot {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 2rem;
+    padding: 4rem 2rem 3.5rem;
+  }
+}
+
+.graphic {
+  position: relative;
+  min-height: min(48vw, 20rem);
+  width: 100%;
+  max-width: 36rem;
+  margin-inline: auto;
+  pointer-events: none;
+}
+
+@media (min-width: 960px) {
+  .graphic {
+    min-height: 24rem;
+    max-width: none;
+    margin-inline: 0;
+  }
+}
+
+.quantumFrame {
+  position: relative;
+  width: 100%;
+  min-height: 12rem;
+  aspect-ratio: 10 / 7;
+  max-height: min(70vh, 28rem);
+  margin-inline: auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px oklch(100% 0 0 / 0.1) inset,
+    0 0.5rem 0 oklch(0% 0 0 / 0.15), 0 1.5rem 3.5rem oklch(0% 0 0 / 0.5),
+    0 0 3rem oklch(50% 0.1 200 / 0.12);
+  background: oklch(8% 0.03 275);
+}
+
+.quantumScene {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.sceneVoid {
+  fill: oklch(9% 0.03 275);
+}
+
+.sceneVignette {
+  pointer-events: none;
+}
+
+.gridGroup {
+  animation: gridShimmer 5.5s cubic-bezier(0.22, 1, 0.36, 1) infinite
+    alternate;
+}
+
+.gridLineH,
+.gridLineV {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.gridLineH {
+  stroke: oklch(68% 0.11 230 / 0.32);
+  stroke-width: 0.55;
+}
+
+.gridLineV {
+  stroke: oklch(58% 0.09 250 / 0.22);
+  stroke-width: 0.45;
+}
+
+.beamPath {
+  stroke-dasharray: 14 10;
+  animation: beamFlow 2.8s cubic-bezier(0.22, 1, 0.36, 1) infinite linear;
+  filter: drop-shadow(0 0 4px oklch(75% 0.18 55 / 0.55));
+}
+
+.beamCore {
+  animation: beamGlow 1.8s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
+}
+
+.fieldRing,
+.fieldRingAlt {
+  transform-origin: 0 0;
+}
+
+.fieldRing {
+  animation: fieldSpin 32s linear infinite;
+}
+
+.fieldRingAlt {
+  animation: fieldSpinRev 26s linear infinite;
+}
+
+.glassHalo {
+  fill: oklch(22% 0.06 285 / 0.12);
+  stroke: oklch(100% 0 0 / 0.05);
+  stroke-width: 0.4;
+}
+
+.particleCore {
+  transform-origin: 0 0;
+  animation: corePulse 2.6s cubic-bezier(0.22, 1, 0.36, 1) infinite
+    alternate;
+}
+
+.sparkles circle {
+  animation: starTwinkle 3.2s cubic-bezier(0.22, 1, 0.36, 1) infinite
+    alternate;
+}
+
+.sparkles circle:nth-child(2) {
+  animation-delay: -0.6s;
+}
+.sparkles circle:nth-child(3) {
+  animation-delay: -1.2s;
+}
+.sparkles circle:nth-child(4) {
+  animation-delay: -0.9s;
+}
+.sparkles circle:nth-child(5) {
+  animation-delay: -1.8s;
+}
+
+@keyframes gridShimmer {
+  from {
+    opacity: 0.72;
+  }
+  to {
+    opacity: 0.95;
+  }
+}
+
+@keyframes beamFlow {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -48;
+  }
+}
+
+@keyframes beamGlow {
+  from {
+    stroke-opacity: 0.35;
+  }
+  to {
+    stroke-opacity: 0.85;
+  }
+}
+
+@keyframes fieldSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fieldSpinRev {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes corePulse {
+  from {
+    transform: scale(0.94);
+    opacity: 0.88;
+  }
+  to {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+@keyframes starTwinkle {
+  from {
+    opacity: 0.25;
+  }
+  to {
+    opacity: 0.95;
+  }
+}
+
+.copy {
+  position: relative;
+  z-index: 2;
+  max-width: 36rem;
+  width: 100%;
+  margin-inline: auto;
+}
+
+@media (min-width: 960px) {
+  .copy {
+    margin-inline: 0;
+    margin-left: auto;
+  }
+}
+
+.eyebrow {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gothic-cyan, oklch(78% 0.12 200));
+  margin: 0 0 0.75rem;
+}
+
+.name {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: clamp(2.1rem, 1rem + 4vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--gothic-fg, oklch(93% 0.02 280));
+  margin: 0 0 0.45rem;
+  text-shadow: 0 0 1.8rem oklch(50% 0.15 300 / 0.35);
+}
+
+.tag {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: clamp(1rem, 0.9rem + 0.35vw, 1.15rem);
+  color: var(--gothic-muted, oklch(72% 0.04 280));
+  font-weight: 500;
+  margin: 0 0 1rem;
+  letter-spacing: -0.01em;
+}
+
+.intro {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: clamp(0.92rem, 0.86rem + 0.2vw, 1.02rem);
+  line-height: 1.6;
+  color: var(--gothic-muted, oklch(72% 0.04 280));
+  margin: 0 0 1.75rem;
+  max-width: 38ch;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.45rem;
+}
+
+.ctaButton {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 0.55rem 1.45rem;
+  border-radius: 9999px;
+  color: var(--gothic-cyan, oklch(78% 0.12 200));
+  background: oklch(17% 0.04 280);
+  border: 1px solid oklch(100% 0 0 / 0.14);
+  text-decoration: none;
+  box-shadow: 0 0 0 1px oklch(0% 0 0 / 0.2) inset,
+    0 0 28px oklch(50% 0.12 200 / 0.1);
+  transition: color 0.28s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.28s,
+    box-shadow 0.28s, transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ctaButton:hover,
+.ctaButton:focus-visible {
+  color: var(--gothic-magenta, oklch(72% 0.2 310));
+  border-color: oklch(100% 0 0 / 0.22);
+  box-shadow: 0 0 0 1px oklch(0% 0 0 / 0.2) inset,
+    0 0 36px oklch(50% 0.14 300 / 0.16);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.hint {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gothic-faint, oklch(52% 0.03 280));
+  margin: 0;
+}
+
+.scroller {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 1.75rem;
+  color: var(--gothic-faint, oklch(52% 0.03 280));
+  text-decoration: none;
+  outline: none;
+}
+
+.scroller:focus-visible {
+  outline: 2px solid var(--gothic-cyan, oklch(78% 0.12 200));
+  outline-offset: 0.2rem;
+  border-radius: 0.25rem;
+}
+
+.scrollerLabel {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+
+.scrollerLine {
+  width: 1px;
+  height: 2rem;
+  background: linear-gradient(
+    180deg,
+    var(--gothic-cyan, oklch(78% 0.12 200)) 0%,
+    transparent 100%
+  );
+  opacity: 0.45;
+  transform-origin: top center;
+  animation: vScrollPulse 2.2s cubic-bezier(0.22, 1, 0.36, 1) infinite
+    alternate;
+}
+
+@keyframes vScrollPulse {
+  from {
+    transform: scaleY(0.65);
+    opacity: 0.28;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 0.6;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gridGroup,
+  .beamPath,
+  .beamCore,
+  .fieldRing,
+  .fieldRingAlt,
+  .particleCore,
+  .sparkles circle,
+  .scrollerLine {
+    animation: none;
+  }
+  .beamPath {
+    stroke-dashoffset: 0;
+    filter: none;
+  }
+  .beamCore {
+    stroke-opacity: 0.65;
+  }
+  .gridGroup {
+    opacity: 0.88;
+  }
+  .particleCore {
+    transform: none;
+    opacity: 1;
+  }
+  .sparkles circle {
+    opacity: 0.55;
+  }
+  .scrollerLine {
+    opacity: 0.4;
+  }
+  .fieldRing,
+  .fieldRingAlt {
+    transform: none;
+  }
+  .ctaButton:hover,
+  .ctaButton:focus-visible {
+    transform: none;
+  }
+}

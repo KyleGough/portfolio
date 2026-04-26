@@ -40,10 +40,6 @@ export const NotFoundScene: React.FC = () => (
         <span className={styles.sep} aria-hidden="true">
           ·
         </span>
-        <Link to="/about">About</Link>
-        <span className={styles.sep} aria-hidden="true">
-          ·
-        </span>
         <Link to="/projects">Projects</Link>
         <span className={styles.sep} aria-hidden="true">
           ·

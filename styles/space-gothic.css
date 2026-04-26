@@ -801,42 +801,36 @@ footer.footer--space-gothic li.flex a.group:focus-visible svg {
   margin-top: 0.85rem;
 }
 
-/* Work experience timeline (About): compact, CV-style in void */
+/* Work experience timeline (About): CV stack; title > role (≥1.25) > mono date caption */
 .app-space-gothic .work-timeline__title {
+  margin: 0;
   font-family: 'Space Grotesk', system-ui, sans-serif;
-  font-size: 1.0625rem;
+  font-size: clamp(1.125rem, 1.02rem + 0.35vw, 1.3125rem);
   font-weight: 600;
   letter-spacing: -0.02em;
+  line-height: 1.2;
   color: var(--gothic-fg) !important;
-  line-height: 1.25;
-}
-
-@media (min-width: 640px) {
-  .app-space-gothic .work-timeline__title {
-    font-size: 1.125rem;
-  }
 }
 
 .app-space-gothic .work-timeline__role {
+  margin: 0;
   font-family: 'Space Grotesk', system-ui, sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.4;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
   color: var(--gothic-muted) !important;
 }
 
 .app-space-gothic .work-timeline__date {
+  margin: 0;
   font-family: 'IBM Plex Mono', ui-monospace, monospace;
-  font-size: 0.6875rem;
+  font-size: clamp(0.75rem, 0.72rem + 0.1vw, 0.8125rem);
   font-weight: 500;
+  font-variant-numeric: tabular-nums;
   letter-spacing: 0.06em;
+  line-height: 1.4;
   text-transform: uppercase;
   color: var(--gothic-cyan) !important;
-}
-
-@media (min-width: 640px) {
-  .app-space-gothic .work-timeline__date {
-    font-size: 0.75rem;
-  }
 }
 
 .app-space-gothic .work-timeline__line {

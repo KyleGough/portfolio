@@ -26,10 +26,6 @@ body {
   src: url(../fonts/Merriweather-Regular.ttf) format('woff2');
 }
 
-.progress-programming::before {
-  background-color: #EF5350;
-}
-
 .progress-web::before {
   background-color: #42A5F5;
 }

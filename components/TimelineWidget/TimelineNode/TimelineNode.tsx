@@ -43,15 +43,18 @@ export const TimelineNode: React.FC<TimelineNodeProps> = ({
           </div>
         </FadeIn>
         <FadeIn
-          className={clsx('mr-8', {
-            'md:ml-8 md:mr-0 md:text-right': align === 'right',
-          })}
+          className={clsx(
+            'work-timeline__copy mr-8 flex min-w-0 flex-col gap-1.5',
+            {
+              'md:ml-8 md:mr-0 md:text-right': align === 'right',
+            }
+          )}
         >
-          <p className="text-3xl">{title}</p>
-          <p className="text-xl">{subtitle}</p>
-          <p>{date}</p>
+          <h3 className="work-timeline__title">{title}</h3>
+          <p className="work-timeline__role">{subtitle}</p>
+          <p className="work-timeline__date">{date}</p>
         </FadeIn>
-        <div className="h-[2px] bg-timeline w-6 max-w-[12rem] grow"></div>
+        <div className="work-timeline__line" aria-hidden />
       </div>
       {align === 'left' && <div className="hidden md:block"></div>}
     </>

@@ -61,7 +61,7 @@ export const Footer: React.FC = () => (
               </span>
             </p>
             <ul>
-              <FooterLink href="/about">About Me</FooterLink>
+              <FooterLink href="/">Home</FooterLink>
               <FooterLink href="/projects">Projects</FooterLink>
               <FooterLink href="/privacy">Privacy</FooterLink>
               <li className="flex justify-center text-center">
