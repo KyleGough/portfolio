@@ -447,6 +447,38 @@ nav[aria-label='Main'] .slide-in a:focus {
   color: #ee3003 !important;
 }
 
+.app-space-gothic .contact-form__message-meter {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace !important;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gothic-faint) !important;
+  text-shadow: 0 0 0.75rem oklch(55% 0.12 200 / 0.12);
+  transition:
+    color 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    text-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.app-space-gothic .contact-form__message-meter .tabular-nums {
+  color: var(--gothic-cyan) !important;
+  text-shadow: 0 0 0.65rem oklch(60% 0.14 200 / 0.35);
+}
+
+.app-space-gothic .contact-form__message-meter--warn,
+.app-space-gothic .contact-form__message-meter--warn .tabular-nums {
+  color: oklch(82% 0.16 75 / 0.98) !important;
+  text-shadow:
+    0 0 0.5rem oklch(70% 0.14 75 / 0.45),
+    0 0 1.25rem oklch(55% 0.12 55 / 0.25) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-space-gothic .contact-form__message-meter {
+    transition: none;
+  }
+}
+
 /* Contact send CTA: same strip language as ProjectItem “View project” */
 .app-space-gothic button.contact-send-cta {
   font-family: 'IBM Plex Mono', ui-monospace, monospace !important;

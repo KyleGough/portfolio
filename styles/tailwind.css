@@ -65,6 +65,16 @@
     @apply h-0.5 w-6 max-w-[12rem] grow bg-timeline self-center;
   }
 
+  .contact-form__message-meter {
+    @apply font-primary text-xs font-medium tabular-nums;
+    color: rgb(66 66 66 / 0.55); /* theme header #424242 */
+    letter-spacing: 0.04em;
+  }
+
+  .contact-form__message-meter--warn {
+    @apply text-amber-800;
+  }
+
   /* Site nav: Lato, ≥16px, clear step above wordmark (1.25); wordmark = Merriweather to match page titles */
   .nav-wordmark {
     @apply font-header font-semibold leading-tight tracking-tight

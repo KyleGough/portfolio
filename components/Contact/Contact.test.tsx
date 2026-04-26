@@ -5,10 +5,23 @@ import React from 'react';
 
 import { Contact } from './Contact';
 
+const MESSAGE_METER_TEST_ID = 'contact-form-message-meter';
+
 describe('Contact component', () => {
   beforeEach(mockIntersectionObserver);
   afterEach(() => {
     jest.restoreAllMocks();
+  });
+
+  it('shows message character count and updates when typing', () => {
+    render(<Contact />);
+    const message = screen.getByTestId('contact-form-message');
+    expect(screen.getByTestId(MESSAGE_METER_TEST_ID)).toHaveTextContent('0');
+    expect(screen.getByTestId(MESSAGE_METER_TEST_ID)).toHaveTextContent('1024');
+    act(() => {
+      fireEvent.change(message, { target: { value: 'hello' } });
+    });
+    expect(screen.getByTestId(MESSAGE_METER_TEST_ID)).toHaveTextContent('5');
   });
 
   it('contact form shows errors when required fields are empty', () => {
