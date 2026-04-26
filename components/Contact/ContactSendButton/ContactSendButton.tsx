@@ -1,21 +1,17 @@
+import heroStyles from '@components/HomePage/HomeHeroVariants.module.css';
 import { RestartIcon, SendIcon, TickIcon } from '@components/Icons';
 import { clsx } from 'clsx';
 import React from 'react';
 
 import { EmailStatus } from '../Contact.types';
+import styles from './ContactSendButton.module.css';
 
 interface ContactSendButtonProps {
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
   status: EmailStatus;
 }
 
-const iconWrap = clsx(
-  'inline-flex h-3.5 w-3.5 shrink-0 items-center justify-center opacity-55',
-  'transition-[transform,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]',
-  'motion-reduce:transition-none',
-  'motion-safe:enabled:group-hover:translate-x-1 motion-safe:enabled:group-focus-visible:translate-x-1',
-  'motion-safe:enabled:group-hover:opacity-100 motion-safe:enabled:group-focus-visible:opacity-100'
-);
+const sendIcon = clsx(styles.sendIcon, 'h-[1.1em] w-[1.1em]');
 
 export const ContactSendButton: React.FC<ContactSendButtonProps> = ({
   onClick,
@@ -24,16 +20,13 @@ export const ContactSendButton: React.FC<ContactSendButtonProps> = ({
   const getButtonStyle = (status: EmailStatus) => {
     switch (status) {
       case EmailStatus.SENT:
-        return 'cursor-default border-white/20 text-link-hover';
+        return 'cursor-default !border-[oklch(100%_0_0_/_0.2)] !text-[oklch(72%_0.04_280)] opacity-90';
       case EmailStatus.LOADING:
-        return 'cursor-wait border-white/15 text-disabled';
+        return 'cursor-wait !border-[oklch(100%_0_0_/_0.12)] !text-[oklch(52%_0.03_280)] opacity-85';
       case EmailStatus.FAIL:
-        return 'cursor-pointer border-error text-error';
+        return 'cursor-pointer !border-error !text-error shadow-[0_0_0_1px_#0003_inset] hover:!text-[#ff4d4d] hover:!border-[#ff4d4d]';
       default:
-        return clsx(
-          'cursor-pointer border-white/25 text-link',
-          'enabled:hover:text-link-hover enabled:focus-visible:text-link-hover'
-        );
+        return 'cursor-pointer';
     }
   };
 
@@ -58,33 +51,33 @@ export const ContactSendButton: React.FC<ContactSendButtonProps> = ({
       disabled={inactive}
       onClick={onClick}
       className={clsx(
-        'contact-send-cta group relative mx-auto my-8 flex w-full max-w-md items-center justify-center gap-2.5',
-        'rounded-lg border-2 bg-background px-5 py-3.5',
-        'font-mono text-[0.6875rem] font-semibold uppercase tracking-[0.2em]',
-        'shadow transition-[color,box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]',
+        'contact-send-cta group relative mx-auto mt-2 mb-6',
+        styles.pill,
+        heroStyles.ctaButton,
+        styles.sendRow,
+        'transition-[color,box-shadow,opacity,border-color,filter] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)]',
         'motion-reduce:transition-none',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link-hover focus-visible:ring-offset-2 focus-visible:ring-offset-background',
         getButtonStyle(status)
       )}
     >
       <span>{getButtonText(status)}</span>
       {status === EmailStatus.IDLE && (
-        <span aria-hidden className={iconWrap}>
+        <span aria-hidden className={sendIcon}>
           <SendIcon className="h-full w-full fill-current" />
         </span>
       )}
       {status === EmailStatus.SENT && (
-        <span aria-hidden className={iconWrap}>
+        <span aria-hidden className={sendIcon}>
           <TickIcon className="h-full w-full fill-current" />
         </span>
       )}
       {status === EmailStatus.FAIL && (
-        <span aria-hidden className={iconWrap}>
+        <span aria-hidden className={sendIcon}>
           <RestartIcon className="h-full w-full fill-current" />
         </span>
       )}
       {status === EmailStatus.LOADING && (
-        <span aria-hidden className={clsx(iconWrap, 'opacity-100')}>
+        <span aria-hidden className={sendIcon}>
           <RestartIcon className="h-full w-full animate-spin fill-current" />
         </span>
       )}

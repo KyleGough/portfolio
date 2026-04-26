@@ -181,7 +181,7 @@ export const Contact: React.FC = () => {
             id="message-meter"
             data-testid="contact-form-message-meter"
             className={clsx(
-              'contact-form__message-meter mb-6 text-right',
+              'contact-form__message-meter mb-2 text-right',
               messageNearLimit && 'contact-form__message-meter--warn'
             )}
           >
