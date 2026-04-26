@@ -1,5 +1,4 @@
 import { Divider } from '@components/Divider';
-import { GoalsWidget } from '@components/GoalsWidget';
 import { LabelledLogo } from '@components/LabelledLogo';
 import { Layout } from '@components/Layout';
 import { Section } from '@components/Section';
@@ -89,10 +88,6 @@ const About: React.FC = () => {
           <LabelledLogo name="Webix" logo={WebixLogo as string} />
         </div>
       </Section>
-
-      <Divider />
-
-      <GoalsWidget />
     </Layout>
   );
 };

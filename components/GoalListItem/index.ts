@@ -1,1 +1,0 @@
-export { GoalListItem } from './GoalListItem';
