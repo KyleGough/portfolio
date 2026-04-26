@@ -1,6 +1,6 @@
 import { FadeIn } from '@components/FadeIn';
-import imageSudoku from '@image/card-sudoku.jpg';
 import imageMars from '@image/mars.png';
+import imageSudoku from '@image/sudoku1.jpg';
 import { getDateRange } from '@utilities/date';
 import { getProjectData } from '@utilities/Project';
 import { clsx } from 'clsx';
