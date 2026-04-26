@@ -754,43 +754,6 @@ footer.footer--space-gothic li.flex a.group:focus-visible svg {
   padding-bottom: clamp(0.5rem, 0.2rem + 1.5vw, 1.25rem);
 }
 
-.app-space-gothic .privacy-page::before {
-  content: '';
-  position: absolute;
-  inset: -0.5rem -0.25rem 0;
-  z-index: 0;
-  pointer-events: none;
-  border-radius: 0.75rem;
-  background-image: linear-gradient(
-      90deg,
-      oklch(100% 0 0 / 0.05) 0,
-      oklch(100% 0 0 / 0.05) 1px,
-      transparent 1px,
-      transparent 32px
-    ),
-    linear-gradient(
-      180deg,
-      oklch(100% 0 0 / 0.04) 0,
-      oklch(100% 0 0 / 0.04) 1px,
-      transparent 1px,
-      transparent 32px
-    );
-  background-size: 32px 32px;
-  mask-image: linear-gradient(
-    180deg,
-    white 0%,
-    white 40%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  opacity: 0.5;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .app-space-gothic .privacy-page::before {
-    opacity: 0.3;
-  }
-}
-
 .app-space-gothic .privacy-page__header,
 .app-space-gothic .privacy-page__content {
   position: relative;
