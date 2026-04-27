@@ -5,6 +5,8 @@ import {
   getHeroMissionSec,
   HERO_BOOSTER_FADE_AT_MISSION_SEC,
   HERO_BOOSTER_FADE_WALL_MS,
+  HERO_BOOSTER_SEP_DURATION_MS,
+  HERO_BOOSTER_WIREFRAME_FADE_WALL_MS,
 } from './heroMissionTime';
 import styles from './HomeHeroVariants.module.css';
 
@@ -16,6 +18,14 @@ const Y_MOUNT_CORE = 0.03;
 const PLUME_ORANGE = 0xff5a1a;
 const PLUME_GOLD = 0xffb040;
 const PLUME_CORE = 0xfff4d4;
+
+/** Booster first-stage local origin — body space X offset for each side booster. */
+const BOOSTER_STAGE_X = 0.7;
+const BOOSTER_SEP_EXTRA_X = 0.38;
+/** Slight +Y with separation (lateral drift up). */
+const BOOSTER_SEP_EXTRA_Y = 0.14;
+/** Outward roll about Z, max at separationK = 1. */
+const BOOSTER_SEP_SPLAY_RAD = 0.55;
 
 function addCylinderEdges(
   parent: THREE.Group,
@@ -78,12 +88,12 @@ function addStrut(
 /**
  * Outboard grid fin: top edge (yAttach) lies on the tank, bottom (yFlare) is
  * canted out in +radial and slightly wider in z (hinged / fanned look).
- * y: booster base = 0, up = +Y.
+ * y: booster base = 0, up = +Y. Booster origin at center: `outward` = −1 = toward −X, +1 = toward +X.
  */
 function addSideBoosterGridFins(
   parent: THREE.Group,
   mat: THREE.LineBasicMaterial,
-  sx: number,
+  outward: 1 | -1,
   boosterR: number,
   yFlare: number,
   yAttach: number,
@@ -93,10 +103,10 @@ function addSideBoosterGridFins(
   nCols: number,
   nRows: number
 ): void {
-  const outDir = sx > 0 ? 1 : -1;
+  const outDir = outward;
   const skin = 0.002;
-  const xAttach = sx + outDir * (boosterR + skin);
-  const xFlare = sx + outDir * (boosterR + radialFlare);
+  const xAttach = outDir * (boosterR + skin);
+  const xFlare = outDir * (boosterR + radialFlare);
   for (let j = 0; j <= nRows; j += 1) {
     const t = j / nRows;
     const y = THREE.MathUtils.lerp(yFlare, yAttach, t);
@@ -330,8 +340,9 @@ function makeEnginePlumeGroup(
 function buildAllPlumes(
   yMount: number,
   coreRingR: number,
-  boosterX: number,
   boosterRingR: number,
+  leftBooster: THREE.Group,
+  rightBooster: THREE.Group,
   reducedMotion: boolean
 ): { allLayers: PlumeLayer[]; disposers: (() => void)[]; plumes: THREE.Group } {
   const allLayers: PlumeLayer[] = [];
@@ -342,6 +353,7 @@ function buildAllPlumes(
   let phase = 0;
 
   const addCluster = (
+    parent: THREE.Object3D,
     centerX: number,
     ringR: number,
     s: number,
@@ -354,15 +366,15 @@ function buildAllPlumes(
         { isBooster, phase: p, scale: s, x, y: exhaustY, z },
         reducedMotion
       );
-      plumes.add(group);
+      parent.add(group);
       allLayers.push(...layers);
       disposers.push(dispose);
     });
   };
 
-  addCluster(0, coreRingR, 1, exhaustCore, false);
-  addCluster(boosterX, boosterRingR, 0.86, exhaustBooster, true);
-  addCluster(-boosterX, boosterRingR, 0.86, exhaustBooster, true);
+  addCluster(plumes, 0, coreRingR, 1, exhaustCore, false);
+  addCluster(leftBooster, 0, boosterRingR, 0.86, exhaustBooster, true);
+  addCluster(rightBooster, 0, boosterRingR, 0.86, exhaustBooster, true);
 
   return { allLayers, disposers, plumes };
 }
@@ -370,8 +382,16 @@ function buildAllPlumes(
 function buildRocket(
   wireMat: THREE.LineBasicMaterial,
   strutMat: THREE.LineBasicMaterial
-): { body: THREE.Group } {
+): {
+  body: THREE.Group;
+  leftBooster: THREE.Group;
+  rightBooster: THREE.Group;
+  strutsGroup: THREE.Group;
+} {
   const body = new THREE.Group();
+  const leftBooster = new THREE.Group();
+  const rightBooster = new THREE.Group();
+  const strutsGroup = new THREE.Group();
 
   const h1 = 3.12;
   const hi = 0.2;
@@ -379,8 +399,6 @@ function buildRocket(
   /* Shorter fairing = blunter (less acute) nose than a tall cone */
   const hf = 0.8;
   const boosterH = 2.95;
-  /* Slightly closer to center core than 0.84; strut endpoints follow booster inner face */
-  const boosterX = 0.7;
   const coreR = 0.35;
   const boosterR = 0.25;
   const boosterRTop = 0.24; /* tapers: narrow toward second-stage joint */
@@ -400,40 +418,41 @@ function buildRocket(
   const fairingY = h1 + hi + h2 + hf / 2;
   addConeEdges(body, wireMat, fairingR, hf, 10, 0, fairingY, 0);
 
-  // Side boosters (parallel first stages)
-  for (const sx of [-boosterX, boosterX] as const) {
+  // Side boosters: local origin at stage center; body-space offset on each group
+  for (const { b, outward } of [
+    { b: leftBooster, outward: -1 as const },
+    { b: rightBooster, outward: 1 as const },
+  ]) {
+    b.position.set(outward * BOOSTER_STAGE_X, 0, 0);
     addCylinderEdges(
-      body,
+      b,
       wireMat,
       boosterRTop,
       boosterR,
       boosterH,
       10,
-      sx,
+      0,
       boosterH / 2,
       0
     );
-    /* Nose cap matches top-of-stage radius */
     const noseH = 0.34;
     const noseR = boosterRTop;
-    addConeEdges(body, wireMat, noseR, noseH, 8, sx, boosterH + noseH / 2, 0);
-    // Booster octaweb (same 9-engine pattern, scaled to booster diameter)
+    addConeEdges(b, wireMat, noseR, noseH, 8, 0, boosterH + noseH / 2, 0);
     addOctawebEngines(
-      body,
+      b,
       wireMat,
-      sx,
+      0,
       0,
       Y_MOUNT_CORE,
       boosterOctawebRingR,
       0.86
     );
-    // Outboard grid fin: top against hull, bottom flared out
     const finYFlare = 0.12;
     const finYAttach = 0.46;
     addSideBoosterGridFins(
-      body,
+      b,
       wireMat,
-      sx,
+      outward,
       boosterR,
       finYFlare,
       finYAttach,
@@ -445,14 +464,28 @@ function buildRocket(
     );
   }
 
-  // Struts (center core to side boosters)
+  body.add(leftBooster, rightBooster, strutsGroup);
+
+  // Struts (center core to side boosters), world space in body
   const strutYs = [1.05, 1.95, 2.55];
   for (const y of strutYs) {
-    addStrut(body, strutMat, -coreR * 0.92, y, -boosterX + boosterR * 0.88);
-    addStrut(body, strutMat, coreR * 0.92, y, boosterX - boosterR * 0.88);
+    addStrut(
+      strutsGroup,
+      strutMat,
+      -coreR * 0.92,
+      y,
+      -BOOSTER_STAGE_X + boosterR * 0.88
+    );
+    addStrut(
+      strutsGroup,
+      strutMat,
+      coreR * 0.92,
+      y,
+      BOOSTER_STAGE_X - boosterR * 0.88
+    );
   }
 
-  return { body };
+  return { body, leftBooster, rightBooster, strutsGroup };
 }
 
 function centerObjectAtOrigin(object: THREE.Object3D): void {
@@ -491,25 +524,96 @@ function fitPerspectiveCameraToObject(
   camera.lookAt(center);
 }
 
-function nextBoosterPlumeFade(
+function setGroupLineOpacityFactor(root: THREE.Object3D, factor: number): void {
+  root.traverse((obj) => {
+    if (!(obj instanceof THREE.Line || obj instanceof THREE.LineSegments)) {
+      return;
+    }
+    const m = obj.material as THREE.Material;
+    if (obj.userData.baseLineOpacity === undefined) {
+      obj.userData.baseLineOpacity = m.opacity;
+    }
+    const base = obj.userData.baseLineOpacity as number;
+    const next = base * factor;
+    m.transparent = next < 0.999;
+    m.opacity = next;
+  });
+}
+
+function t2EventProgress(
   now: number,
   wallS: number,
-  previousWall0: number | null
-): { boosterMul: number; nextWall0: number | null } {
+  previousT2Wall: number | null
+): {
+  plumeMul: number;
+  rotSplayK: number;
+  separationK: number;
+  t2Wall: number | null;
+  wireAlpha: number;
+} {
   const missionSec = getHeroMissionSec(wallS);
-  let nextWall0 = previousWall0;
+  let t2Wall = previousT2Wall;
   if (missionSec >= HERO_BOOSTER_FADE_AT_MISSION_SEC) {
-    if (nextWall0 === null) {
-      nextWall0 = now;
+    if (t2Wall === null) {
+      t2Wall = now;
     }
   } else {
-    nextWall0 = null;
+    t2Wall = null;
   }
-  const boosterMul =
-    nextWall0 === null
-      ? 1
-      : Math.max(0, 1 - (now - nextWall0) / HERO_BOOSTER_FADE_WALL_MS);
-  return { boosterMul, nextWall0 };
+  if (t2Wall === null) {
+    return {
+      plumeMul: 1,
+      rotSplayK: 0,
+      separationK: 0,
+      t2Wall: null,
+      wireAlpha: 1,
+    };
+  }
+  const d = now - t2Wall;
+  const plumeMul = Math.max(0, 1 - d / HERO_BOOSTER_FADE_WALL_MS);
+  const wireAlpha = Math.max(
+    0,
+    1 - d / HERO_BOOSTER_WIREFRAME_FADE_WALL_MS
+  );
+  const uOffset = Math.min(1, d / HERO_BOOSTER_SEP_DURATION_MS);
+  const separationK = 1 - (1 - uOffset) * (1 - uOffset);
+  /** Splay continues over the full wireframe fade, max roll when fully transparent. */
+  const uRot = Math.min(1, d / HERO_BOOSTER_WIREFRAME_FADE_WALL_MS);
+  const rotSplayK = 1 - (1 - uRot) * (1 - uRot);
+  return { plumeMul, rotSplayK, separationK, t2Wall, wireAlpha };
+}
+
+function applyBoosterSeparationPose(
+  separationK: number,
+  rotSplayK: number,
+  wireAlpha: number,
+  leftBooster: THREE.Group,
+  rightBooster: THREE.Group,
+  strutsGroup: THREE.Object3D
+): void {
+  const extraX = BOOSTER_SEP_EXTRA_X * separationK;
+  const extraY = BOOSTER_SEP_EXTRA_Y * separationK;
+  leftBooster.position.set(-BOOSTER_STAGE_X - extraX, extraY, 0);
+  rightBooster.position.set(BOOSTER_STAGE_X + extraX, extraY, 0);
+  leftBooster.rotation.z = BOOSTER_SEP_SPLAY_RAD * rotSplayK;
+  rightBooster.rotation.z = -BOOSTER_SEP_SPLAY_RAD * rotSplayK;
+  setGroupLineOpacityFactor(leftBooster, wireAlpha);
+  setGroupLineOpacityFactor(rightBooster, wireAlpha);
+  setGroupLineOpacityFactor(strutsGroup, wireAlpha);
+}
+
+function resetBoosterSeparationPose(
+  leftBooster: THREE.Group,
+  rightBooster: THREE.Group,
+  strutsGroup: THREE.Object3D
+): void {
+  leftBooster.position.set(-BOOSTER_STAGE_X, 0, 0);
+  rightBooster.position.set(BOOSTER_STAGE_X, 0, 0);
+  leftBooster.rotation.set(0, 0, 0);
+  rightBooster.rotation.set(0, 0, 0);
+  setGroupLineOpacityFactor(leftBooster, 1);
+  setGroupLineOpacityFactor(rightBooster, 1);
+  setGroupLineOpacityFactor(strutsGroup, 1);
 }
 
 function disposeWireframeScene(scene: THREE.Scene): void {
@@ -558,17 +662,21 @@ function attachRocketViewport(mount: HTMLElement): () => void {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setClearColor(0x000000, 0);
 
-  const { body } = buildRocket(wireMat, strutMat);
-  centerObjectAtOrigin(body);
+  const { body, leftBooster, rightBooster, strutsGroup } = buildRocket(
+    wireMat,
+    strutMat
+  );
 
   const { allLayers, disposers: plumeDisposers, plumes } = buildAllPlumes(
     Y_MOUNT_CORE,
     0.2,
-    0.7,
     0.127,
+    leftBooster,
+    rightBooster,
     reducedMotion
   );
   body.add(plumes);
+  centerObjectAtOrigin(body);
 
   const pivot = new THREE.Group();
   pivot.add(body);
@@ -590,17 +698,27 @@ function attachRocketViewport(mount: HTMLElement): () => void {
   mount.appendChild(renderer.domElement);
 
   const time0 = performance.now();
-  let boosterFadeWall0: number | null = null;
+  let t2EventWall0: number | null = null;
   let rafId = 0;
   const tick = () => {
     const now = performance.now();
     const wallS = (now - time0) * 0.001;
-    const { boosterMul, nextWall0 } = nextBoosterPlumeFade(
-      now,
-      wallS,
-      boosterFadeWall0
-    );
-    boosterFadeWall0 = nextWall0;
+    const { plumeMul, rotSplayK, separationK, t2Wall, wireAlpha } =
+      t2EventProgress(now, wallS, t2EventWall0);
+    t2EventWall0 = t2Wall;
+
+    if (t2Wall === null) {
+      resetBoosterSeparationPose(leftBooster, rightBooster, strutsGroup);
+    } else {
+      applyBoosterSeparationPose(
+        separationK,
+        rotSplayK,
+        wireAlpha,
+        leftBooster,
+        rightBooster,
+        strutsGroup
+      );
+    }
 
     if (!reducedMotion) {
       pivot.rotation.y += 0.0028;
@@ -609,7 +727,7 @@ function attachRocketViewport(mount: HTMLElement): () => void {
         const f = Math.sin(t * 19.5 + layer.phase);
         const g = 0.5 + 0.5 * Math.sin(t * 29 + layer.phase * 1.63);
         const flicker = 0.72 + 0.28 * g;
-        const b = layer.isBooster ? boosterMul : 1;
+        const b = layer.isBooster ? plumeMul : 1;
         layer.mat.opacity = layer.baseOpacity * flicker * b;
         const pulse = 1 + 0.1 * f;
         const breath = 0.94 + 0.12 * g;
@@ -618,7 +736,7 @@ function attachRocketViewport(mount: HTMLElement): () => void {
     } else {
       for (const layer of allLayers) {
         if (layer.isBooster) {
-          layer.mat.opacity = layer.baseOpacity * boosterMul;
+          layer.mat.opacity = layer.baseOpacity * plumeMul;
         }
       }
     }

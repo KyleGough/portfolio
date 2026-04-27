@@ -14,7 +14,19 @@ export const HERO_MISSION_RATE = 0.85;
 /** Booster engine plumes begin fade when mission clock passes T+2:00.0 (120 s) */
 export const HERO_BOOSTER_FADE_AT_MISSION_SEC = 120;
 
-export const HERO_BOOSTER_FADE_WALL_MS = 5000;
+/** Booster plume mesh opacity: 0 over this wall time from T+2. */
+export const HERO_BOOSTER_FADE_WALL_MS = 3500;
+
+/**
+ * Side-booster wire + strut opacity: 0 at end of this wall time from T+2.
+ */
+export const HERO_BOOSTER_WIREFRAME_FADE_WALL_MS = 5000;
+
+/**
+ * Horizontal, vertical, and roll separation eases in over this wall time from T+2.
+ * Shorter = boosters “reach” splay/offset faster.
+ */
+export const HERO_BOOSTER_SEP_DURATION_MS = 5000;
 
 export function getHeroMissionSec(wallSecSinceStart: number): number {
   return HERO_MISSION_T0 + wallSecSinceStart * HERO_MISSION_RATE;
