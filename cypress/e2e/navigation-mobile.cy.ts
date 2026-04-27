@@ -16,7 +16,7 @@ describe('Mobile Navigation', () => {
   it('Navigate to homepage', () => {
     cy.visit('/projects');
     cy.toggleNavigation();
-    cy.get('nav a[href="/"]:visible').contains('Home').click();
+    cy.get('nav .nav-drawer__link[href="/"]:visible').contains('Home').click();
     cy.location('pathname').should('eq', '/');
     cy.get('h1').should('have.text', 'Kyle Gough');
   });

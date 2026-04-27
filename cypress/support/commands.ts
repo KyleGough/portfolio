@@ -14,7 +14,7 @@ declare global {
 }
 
 Cypress.Commands.add('toggleNavigation', () => {
-  cy.get('nav button[aria-label="Toggle Navigation"]').click();
+  cy.get('nav button[aria-label="Toggle navigation" i]').click();
 });
 
 Cypress.Commands.add('getSubmitButton', () => {
