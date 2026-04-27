@@ -1,6 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
+import {
+  getHeroMissionSec,
+  HERO_BOOSTER_FADE_AT_MISSION_SEC,
+  HERO_BOOSTER_FADE_WALL_MS,
+} from './heroMissionTime';
 import styles from './HomeHeroVariants.module.css';
 
 const CYAN = 0x5bd4ea;
@@ -214,12 +219,20 @@ function forEachOctawebEngine(
 
 type PlumeLayer = {
   baseOpacity: number;
+  isBooster: boolean;
   mat: THREE.MeshBasicMaterial;
   mesh: THREE.Mesh;
   phase: number;
 };
 
-type PlumeSpec = { phase: number; scale: number; x: number; y: number; z: number };
+type PlumeSpec = {
+  isBooster: boolean;
+  phase: number;
+  scale: number;
+  x: number;
+  y: number;
+  z: number;
+};
 
 /**
  * Stacked soft cones = flame: tip at nozzle, flares then tapers; animated like exhaust.
@@ -264,6 +277,7 @@ function makeEnginePlumeGroup(
     group.add(mesh);
     layers.push({
       baseOpacity,
+      isBooster: spec.isBooster,
       mat,
       mesh,
       phase: phase + j * 0.37,
@@ -327,11 +341,17 @@ function buildAllPlumes(
   const exhaustBooster = merlinExhaustY(yMount, 0.86);
   let phase = 0;
 
-  const addCluster = (centerX: number, ringR: number, s: number, exhaustY: number) => {
+  const addCluster = (
+    centerX: number,
+    ringR: number,
+    s: number,
+    exhaustY: number,
+    isBooster: boolean
+  ) => {
     forEachOctawebEngine(centerX, 0, ringR, s, (x, z) => {
       const p = (phase += 0.21) % 12.5;
       const { group, layers, dispose } = makeEnginePlumeGroup(
-        { phase: p, scale: s, x, y: exhaustY, z },
+        { isBooster, phase: p, scale: s, x, y: exhaustY, z },
         reducedMotion
       );
       plumes.add(group);
@@ -340,9 +360,9 @@ function buildAllPlumes(
     });
   };
 
-  addCluster(0, coreRingR, 1, exhaustCore);
-  addCluster(boosterX, boosterRingR, 0.86, exhaustBooster);
-  addCluster(-boosterX, boosterRingR, 0.86, exhaustBooster);
+  addCluster(0, coreRingR, 1, exhaustCore, false);
+  addCluster(boosterX, boosterRingR, 0.86, exhaustBooster, true);
+  addCluster(-boosterX, boosterRingR, 0.86, exhaustBooster, true);
 
   return { allLayers, disposers, plumes };
 }
@@ -471,6 +491,27 @@ function fitPerspectiveCameraToObject(
   camera.lookAt(center);
 }
 
+function nextBoosterPlumeFade(
+  now: number,
+  wallS: number,
+  previousWall0: number | null
+): { boosterMul: number; nextWall0: number | null } {
+  const missionSec = getHeroMissionSec(wallS);
+  let nextWall0 = previousWall0;
+  if (missionSec >= HERO_BOOSTER_FADE_AT_MISSION_SEC) {
+    if (nextWall0 === null) {
+      nextWall0 = now;
+    }
+  } else {
+    nextWall0 = null;
+  }
+  const boosterMul =
+    nextWall0 === null
+      ? 1
+      : Math.max(0, 1 - (now - nextWall0) / HERO_BOOSTER_FADE_WALL_MS);
+  return { boosterMul, nextWall0 };
+}
+
 function disposeWireframeScene(scene: THREE.Scene): void {
   scene.traverse((obj) => {
     if (!(obj instanceof THREE.Line || obj instanceof THREE.LineSegments)) {
@@ -549,18 +590,36 @@ function attachRocketViewport(mount: HTMLElement): () => void {
   mount.appendChild(renderer.domElement);
 
   const time0 = performance.now();
+  let boosterFadeWall0: number | null = null;
   let rafId = 0;
   const tick = () => {
+    const now = performance.now();
+    const wallS = (now - time0) * 0.001;
+    const { boosterMul, nextWall0 } = nextBoosterPlumeFade(
+      now,
+      wallS,
+      boosterFadeWall0
+    );
+    boosterFadeWall0 = nextWall0;
+
     if (!reducedMotion) {
       pivot.rotation.y += 0.0028;
-      const t = (performance.now() - time0) * 0.001;
+      const t = wallS;
       for (const layer of allLayers) {
         const f = Math.sin(t * 19.5 + layer.phase);
         const g = 0.5 + 0.5 * Math.sin(t * 29 + layer.phase * 1.63);
-        layer.mat.opacity = layer.baseOpacity * (0.72 + 0.28 * g);
+        const flicker = 0.72 + 0.28 * g;
+        const b = layer.isBooster ? boosterMul : 1;
+        layer.mat.opacity = layer.baseOpacity * flicker * b;
         const pulse = 1 + 0.1 * f;
         const breath = 0.94 + 0.12 * g;
         layer.mesh.scale.set(pulse, breath, pulse);
+      }
+    } else {
+      for (const layer of allLayers) {
+        if (layer.isBooster) {
+          layer.mat.opacity = layer.baseOpacity * boosterMul;
+        }
       }
     }
     renderer.render(scene, camera);

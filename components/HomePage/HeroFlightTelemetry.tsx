@@ -1,10 +1,9 @@
 import React, { useEffect, useMemo, useState } from 'react';
 
 import styles from './HeroFlightTelemetry.module.css';
+import { getHeroMissionSec } from './heroMissionTime';
 
 const TICK_MS = 120;
-/** Base mission elapsed time (s) for T+ display: ~4:12.6 from lift-off */
-const T0 = 4 * 60 + 12.6;
 
 function formatTPlus(totalSec: number): string {
   const h = Math.floor(totalSec / 3600);
@@ -45,7 +44,7 @@ export const HeroFlightTelemetry: React.FC = () => {
 
   const { missionSec, fuelPct, vrel, pitch, roll, chartPoints, pitchX, rollX } =
     useMemo(() => {
-      const missionSec = T0 + t * 0.85;
+      const missionSec = getHeroMissionSec(t);
       /* Monotonic drain only — no upward wobble (LOX/CH4) */
       const fuelPct = Math.max(6, 72 - t * 0.09);
 
