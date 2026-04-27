@@ -5,6 +5,12 @@ import styles from './HomeHeroVariants.module.css';
 
 const CYAN = 0x5bd4ea;
 const CYAN_DIM = 0x3d7a8a;
+/** Y mount for all octaweb engine clusters in buildRocket. */
+const Y_MOUNT_CORE = 0.03;
+
+const PLUME_ORANGE = 0xff5a1a;
+const PLUME_GOLD = 0xffb040;
+const PLUME_CORE = 0xfff4d4;
 
 function addCylinderEdges(
   parent: THREE.Group,
@@ -183,6 +189,164 @@ function addOctawebEngines(
   }
 }
 
+/** Y at the engine bell exhaust (wide opening), matches addMerlinCluster + addInvertedConeEdges. */
+function merlinExhaustY(yMount: number, scale: number): number {
+  const hStem = 0.052 * scale;
+  return yMount - hStem;
+}
+
+/**
+ * Pushes the (x, z) of each engine in an octaweb; center (centerX, centerZ), ring, scale.
+ */
+function forEachOctawebEngine(
+  centerX: number,
+  centerZ: number,
+  ringRadius: number,
+  scale: number,
+  fn: (x: number, z: number) => void
+): void {
+  fn(centerX, centerZ);
+  for (let i = 0; i < 8; i += 1) {
+    const a = (i * Math.PI) / 4;
+    fn(centerX + Math.cos(a) * ringRadius, centerZ + Math.sin(a) * ringRadius);
+  }
+}
+
+type PlumeLayer = {
+  baseOpacity: number;
+  mat: THREE.MeshBasicMaterial;
+  mesh: THREE.Mesh;
+  phase: number;
+};
+
+type PlumeSpec = { phase: number; scale: number; x: number; y: number; z: number };
+
+/**
+ * Stacked soft cones = flame: tip at nozzle, flares then tapers; animated like exhaust.
+ */
+function makeEnginePlumeGroup(
+  spec: PlumeSpec,
+  reducedMotion: boolean
+): { dispose: () => void; group: THREE.Group; layers: PlumeLayer[] } {
+  const s = spec.scale;
+  const tipY = spec.y;
+  const phase = spec.phase;
+  // Frustum: narrow at nozzle (top, +Y), flares down (-Y) like real exhaust
+  const r0 = 0.022 * s;
+  const hOuter = 0.42 * s;
+  const hGold = 0.28 * s;
+  const hCore = 0.14 * s;
+  const layers: PlumeLayer[] = [];
+  const group = new THREE.Group();
+  group.position.set(spec.x, 0, spec.z);
+
+  const addLayer = (
+    height: number,
+    rTop: number,
+    rBottom: number,
+    color: number,
+    baseOpacity: number,
+    j: number
+  ): void => {
+    const geom = new THREE.CylinderGeometry(rTop, rBottom, height, 8, 1, true);
+    const mat = new THREE.MeshBasicMaterial({
+      color,
+      transparent: true,
+      opacity: baseOpacity,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+    });
+    const mesh = new THREE.Mesh(geom, mat);
+    // Cylinder: top (small) at y = +h/2, large bottom at y = -h/2 — top sits at engine exhaust
+    const cy = tipY - height * 0.5;
+    mesh.position.y = cy;
+    mat.side = THREE.DoubleSide;
+    group.add(mesh);
+    layers.push({
+      baseOpacity,
+      mat,
+      mesh,
+      phase: phase + j * 0.37,
+    });
+  };
+
+  // Wider, softer outer
+  addLayer(
+    hOuter,
+    r0 * 0.55,
+    r0 * 2.6,
+    PLUME_ORANGE,
+    reducedMotion ? 0.14 : 0.22,
+    0
+  );
+  // Mid bright
+  addLayer(
+    hGold,
+    r0 * 0.35,
+    r0 * 1.4,
+    PLUME_GOLD,
+    reducedMotion ? 0.18 : 0.3,
+    1
+  );
+  // Hot core
+  addLayer(
+    hCore,
+    r0 * 0.12,
+    r0 * 0.5,
+    PLUME_CORE,
+    reducedMotion ? 0.35 : 0.55,
+    2
+  );
+
+  return {
+    group,
+    layers,
+    dispose: () => {
+      for (const layer of layers) {
+        layer.mat.dispose();
+        layer.mesh.geometry.dispose();
+      }
+      if (group.parent) {
+        group.removeFromParent();
+      }
+    },
+  };
+}
+
+function buildAllPlumes(
+  yMount: number,
+  coreRingR: number,
+  boosterX: number,
+  boosterRingR: number,
+  reducedMotion: boolean
+): { allLayers: PlumeLayer[]; disposers: (() => void)[]; plumes: THREE.Group } {
+  const allLayers: PlumeLayer[] = [];
+  const plumes = new THREE.Group();
+  const disposers: (() => void)[] = [];
+  const exhaustCore = merlinExhaustY(yMount, 1);
+  const exhaustBooster = merlinExhaustY(yMount, 0.86);
+  let phase = 0;
+
+  const addCluster = (centerX: number, ringR: number, s: number, exhaustY: number) => {
+    forEachOctawebEngine(centerX, 0, ringR, s, (x, z) => {
+      const p = (phase += 0.21) % 12.5;
+      const { group, layers, dispose } = makeEnginePlumeGroup(
+        { phase: p, scale: s, x, y: exhaustY, z },
+        reducedMotion
+      );
+      plumes.add(group);
+      allLayers.push(...layers);
+      disposers.push(dispose);
+    });
+  };
+
+  addCluster(0, coreRingR, 1, exhaustCore);
+  addCluster(boosterX, boosterRingR, 0.86, exhaustBooster);
+  addCluster(-boosterX, boosterRingR, 0.86, exhaustBooster);
+
+  return { allLayers, disposers, plumes };
+}
+
 function buildRocket(
   wireMat: THREE.LineBasicMaterial,
   strutMat: THREE.LineBasicMaterial
@@ -205,8 +369,7 @@ function buildRocket(
   // Center: first stage
   addCylinderEdges(body, wireMat, 0.32, coreR, h1, 10, 0, h1 / 2, 0);
   // Core octaweb (9 Merlins)
-  const yMountCore = 0.03;
-  addOctawebEngines(body, wireMat, 0, 0, yMountCore, 0.2, 1);
+  addOctawebEngines(body, wireMat, 0, 0, Y_MOUNT_CORE, 0.2, 1);
 
   // Interstage
   addCylinderEdges(body, wireMat, 0.3, 0.32, hi, 10, 0, h1 + hi / 2, 0);
@@ -240,7 +403,7 @@ function buildRocket(
       wireMat,
       sx,
       0,
-      yMountCore,
+      Y_MOUNT_CORE,
       boosterOctawebRingR,
       0.86
     );
@@ -357,6 +520,15 @@ function attachRocketViewport(mount: HTMLElement): () => void {
   const { body } = buildRocket(wireMat, strutMat);
   centerObjectAtOrigin(body);
 
+  const { allLayers, disposers: plumeDisposers, plumes } = buildAllPlumes(
+    Y_MOUNT_CORE,
+    0.2,
+    0.7,
+    0.127,
+    reducedMotion
+  );
+  body.add(plumes);
+
   const pivot = new THREE.Group();
   pivot.add(body);
   scene.add(pivot);
@@ -376,10 +548,20 @@ function attachRocketViewport(mount: HTMLElement): () => void {
   setSize();
   mount.appendChild(renderer.domElement);
 
+  const time0 = performance.now();
   let rafId = 0;
   const tick = () => {
     if (!reducedMotion) {
       pivot.rotation.y += 0.0028;
+      const t = (performance.now() - time0) * 0.001;
+      for (const layer of allLayers) {
+        const f = Math.sin(t * 19.5 + layer.phase);
+        const g = 0.5 + 0.5 * Math.sin(t * 29 + layer.phase * 1.63);
+        layer.mat.opacity = layer.baseOpacity * (0.72 + 0.28 * g);
+        const pulse = 1 + 0.1 * f;
+        const breath = 0.94 + 0.12 * g;
+        layer.mesh.scale.set(pulse, breath, pulse);
+      }
     }
     renderer.render(scene, camera);
     rafId = window.requestAnimationFrame(tick);
@@ -396,6 +578,9 @@ function attachRocketViewport(mount: HTMLElement): () => void {
       mount.removeChild(renderer.domElement);
     }
     renderer.dispose();
+    plumeDisposers.forEach((d) => {
+      d();
+    });
     disposeWireframeScene(scene);
     wireMat.dispose();
     strutMat.dispose();

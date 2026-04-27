@@ -33,7 +33,7 @@ export const HomeHeroVariants: React.FC = () => {
       <div
         className={styles.graphic}
         role="img"
-        aria-label="Three-dimensional wireframe of a Falcon Heavy class rocket with a decorative mock GNC readout: fuel, velocity, pitch, and roll."
+        aria-label="Three-dimensional wireframe of a Falcon Heavy class rocket with animated engine plumes, plus a decorative mock GNC readout: fuel, velocity, pitch, and roll."
       >
         <div className={styles.wireframeStage}>
           <FalconHeavyWireframeHero />
