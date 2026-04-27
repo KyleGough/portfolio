@@ -19,4 +19,17 @@ describe('Link component', () => {
     expect(screen.getByRole('link')).toHaveAttribute('href', '/test');
     expect(screen.getByText('Link')).toBeVisible();
   });
+
+  it('passes ariaLabel to internal NextLink as aria-label', () => {
+    render(
+      <Link ariaLabel="Custom home" to="/">
+        <span>Home</span>
+      </Link>
+    );
+
+    expect(screen.getByRole('link', { name: 'Custom home' })).toHaveAttribute(
+      'href',
+      '/'
+    );
+  });
 });
