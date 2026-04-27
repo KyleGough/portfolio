@@ -85,8 +85,8 @@ const GraphVisualiser: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Divider />
 
     <Pagination
-      previousTitle="Cavern Minesweeper"
-      previousLink="/projects/cavern-minesweeper"
+      previousTitle="BSplit"
+      previousLink="/projects/bsplit"
       nextTitle="URL Shortener"
       nextLink="/projects/url-shortener"
     />

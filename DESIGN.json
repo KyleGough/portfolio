@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-04-24T22:33:21Z",
+  "title": "Design System: Kyle Gough Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "link-cyan": {
+        "role": "primary",
+        "displayName": "Cyan action",
+        "canonical": "oklch(72% 0.12 230)",
+        "tonalRamp": [
+          "oklch(28% 0.08 230)",
+          "oklch(35% 0.10 230)",
+          "oklch(45% 0.11 230)",
+          "oklch(55% 0.12 230)",
+          "oklch(65% 0.11 230)",
+          "oklch(75% 0.09 230)",
+          "oklch(86% 0.05 230)",
+          "oklch(95% 0.02 230)"
+        ]
+      },
+      "link-hover-green": {
+        "role": "primary",
+        "displayName": "Success hover",
+        "canonical": "oklch(70% 0.18 145)",
+        "tonalRamp": [
+          "oklch(30% 0.10 145)",
+          "oklch(38% 0.12 145)",
+          "oklch(45% 0.14 145)",
+          "oklch(52% 0.16 145)",
+          "oklch(60% 0.17 145)",
+          "oklch(68% 0.18 145)",
+          "oklch(78% 0.14 145)",
+          "oklch(92% 0.06 145)"
+        ]
+      },
+      "header-ink": {
+        "role": "neutral",
+        "displayName": "Header ink",
+        "canonical": "oklch(32% 0.01 260)",
+        "tonalRamp": [
+          "oklch(12% 0.01 260)",
+          "oklch(18% 0.01 260)",
+          "oklch(25% 0.01 260)",
+          "oklch(32% 0.01 260)",
+          "oklch(40% 0.01 260)",
+          "oklch(52% 0.01 260)",
+          "oklch(65% 0.01 260)",
+          "oklch(84% 0.01 260)"
+        ]
+      },
+      "chip-indigo": {
+        "role": "secondary",
+        "displayName": "Indigo chip",
+        "canonical": "oklch(48% 0.19 275)",
+        "tonalRamp": [
+          "oklch(22% 0.12 275)",
+          "oklch(30% 0.15 275)",
+          "oklch(38% 0.17 275)",
+          "oklch(45% 0.18 275)",
+          "oklch(52% 0.19 275)",
+          "oklch(65% 0.14 275)",
+          "oklch(78% 0.08 275)",
+          "oklch(92% 0.03 275)"
+        ]
+      },
+      "chip-wash": {
+        "role": "neutral",
+        "displayName": "Indigo 10% wash",
+        "canonical": "oklch(95% 0.02 275)",
+        "tonalRamp": [
+          "oklch(20% 0.02 275)",
+          "oklch(35% 0.04 275)",
+          "oklch(50% 0.06 275)",
+          "oklch(62% 0.05 275)",
+          "oklch(75% 0.04 275)",
+          "oklch(85% 0.03 275)",
+          "oklch(92% 0.02 275)",
+          "oklch(96% 0.01 275)"
+        ]
+      }
+    },
+    "shadows": [
+      {
+        "name": "field",
+        "value": "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
+        "purpose": "Default Tailwind `shadow` on form fields and send button base."
+      },
+      {
+        "name": "project-card",
+        "value": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+        "purpose": "Tailwind `drop-shadow-lg` on project card outer wrapper."
+      },
+      {
+        "name": "header-band",
+        "value": "0 1px 2px rgba(0, 0, 0, 0.5)",
+        "purpose": "Custom `drop-shadow-header` for section title bars where applied."
+      }
+    ],
+    "motion": [
+      {
+        "name": "nav-slide",
+        "value": "800ms ease 1",
+        "purpose": "Mobile nav panel: `.slide-in` from globals.css (translateY + opacity)."
+      },
+      {
+        "name": "border-underline",
+        "value": "200ms cubic-bezier(0.25, 0.44, 0, 1.01)",
+        "purpose": "`.border-bottom-slide::after` width for desktop nav underlines."
+      },
+      {
+        "name": "form-border",
+        "value": "200ms color transition (transition-colours in Tailwind config)",
+        "purpose": "Contact field and label state changes."
+      },
+      {
+        "name": "shimmer-sweep",
+        "value": "500ms 1 (`.shimmer:hover::before`)",
+        "purpose": "One-shot diagonal highlight on contact send button."
+      }
+    ],
+    "breakpoints": [
+      { "name": "xs", "value": "480px" },
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Inline text link",
+      "kind": "custom",
+      "refersTo": "text-link",
+      "description": "Default in-app and external link styling via `Link` component.",
+      "html": "<a class=\"ds-text-link\" href=\"#\">Read the case study</a>",
+      "css": "a.ds-text-link { color: #03B0EE; text-decoration: none; transition: color 200ms ease; } a.ds-text-link:hover, a.ds-text-link:focus { color: #4CAF50; outline: none; } a.ds-text-link:focus-visible { outline: 2px solid #03B0EE; outline-offset: 2px; }"
+    },
+    {
+      "name": "Filter chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Projects list filter; indigo on pale wash, pill shape.",
+      "html": "<div class=\"ds-chip\">Web</div>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; height: 2rem; padding: 0.125rem 1rem; border-radius: 1rem; font-family: Lato, system-ui, sans-serif; font-size: 0.75rem; font-weight: 800; line-height: 1.7rem; color: #3F51B5; background: #E8EAF6; }"
+    },
+    {
+      "name": "Text field (contact)",
+      "kind": "input",
+      "refersTo": "form-input",
+      "description": "Bordered field with link-colored ring in valid state; 16px radius; max width 25rem on larger breakpoints.",
+      "html": "<input class=\"ds-input\" type=\"text\" placeholder=\"Name\" />",
+      "css": ".ds-input { display: block; width: 100%; max-width: 25rem; margin-top: 0.5rem; margin-bottom: 2rem; padding: 0.5rem 1rem; font-family: Lato, system-ui, sans-serif; font-size: 15px; line-height: 1.5; color: #212121; background: #FAFAFA; border: 2px solid #03B0EE; border-radius: 1rem; box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1); outline: none; caret-color: #4CAF50; } .ds-input:focus { border-color: #4CAF50; }"
+    },
+    {
+      "name": "Send message button",
+      "kind": "button",
+      "refersTo": "submit-pill",
+      "description": "Full pill, cyan border, shimmer on hover, icon slot for send.",
+      "html": "<button type=\"button\" class=\"ds-btn-send\">Send Message<span class=\"ds-btn-send__icon\" aria-hidden=\"true\"></span></button>",
+      "css": ".ds-btn-send { display: flex; align-items: center; margin: 2rem auto; padding: 1rem 3rem; font-family: Lato, system-ui, sans-serif; background: #FAFAFA; color: #03B0EE; border: 2px solid #03B0EE; border-radius: 9999px; box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1); cursor: pointer; transition: color 200ms ease, border-color 200ms ease; } .ds-btn-send:hover, .ds-btn-send:focus { color: #4CAF50; border-color: #4CAF50; } .ds-btn-send:focus-visible { outline: 2px solid #4CAF50; outline-offset: 2px; }"
+    },
+    {
+      "name": "Project image card",
+      "kind": "card",
+      "refersTo": "project-tile",
+      "description": "Linked tile: image, white seam border, large drop shadow, dark caption strip.",
+      "html": "<a class=\"ds-card\" href=\"/projects/example\"><div class=\"ds-card__image\"></div><div class=\"ds-card__bar\"><div class=\"ds-card__date\">1 Jan 2020</div></div></a>",
+      "css": "a.ds-card { display: block; overflow: hidden; border-radius: 1rem; border: 2px solid #ffffff; filter: drop-shadow(0 10px 15px rgb(0 0 0 / 0.1)) drop-shadow(0 4px 6px rgb(0 0 0 / 0.1)); text-decoration: none; } .ds-card__image { min-height: 8rem; background: #DADADA; } .ds-card__bar { padding: 1rem; background: #424242; color: #ffffff; font-weight: 700; font-family: Lato, system-ui, sans-serif; } a.ds-card:hover .ds-card__bar, a.ds-card:focus .ds-card__bar { filter: brightness(1.25); }"
+    },
+    {
+      "name": "GitHub / Live CTA",
+      "kind": "button",
+      "refersTo": "cta-outlined",
+      "description": "Small outlined action next to project description.",
+      "html": "<a class=\"ds-cta\" href=\"#\">GitHub</a>",
+      "css": "a.ds-cta { display: inline-flex; align-items: center; margin: 0.5rem 0.5rem 0.5rem 0; padding: 0.5rem 1rem; border: 2px solid #03B0EE; border-radius: 8px; background: #FAFAFA; color: #03B0EE; font-family: Lato, system-ui, sans-serif; text-decoration: none; } a.ds-cta:hover, a.ds-cta:focus { color: #4CAF50; border-color: #4CAF50; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Calibrated Workshop",
+    "overview": "The interface reads as a well-lit workbench: a paper-like field (#FAFAFA), high-contrast body text, and a single cool path for interactivity: cyan links that warm to green on hover or success. The surface is a personal proof-of-work site, not a product dashboard, so visuals defer to project media and long-form case content. The layout is container-centered with responsive padding steps. Readability is enforced with max-w-reading and max-w-field. Motion is local and functional. Nothing competes with scanning.",
+    "keyCharacteristics": [
+      "Restrained neutrals, one link accent family, indigo only for filter chips and tags.",
+      "Merriweather for project and page titles; Lato for UI and body.",
+      "Flat or lightly lifted surfaces: default shadow on form fields, stronger drop-shadow-lg on project image cards, header drop-shadow on section chrome where defined."
+    ],
+    "rules": [
+      { "name": "The one cool family rule", "body": "Cyan and green own interactive feedback; do not add extra saturated hues for “decoration” on the same screen.", "section": "colors" },
+      { "name": "The indigo is for tags rule", "body": "Full-strength indigo and its 10% wash are reserved for chips and tags, not primary CTAs, so filters stay scannable and links stay the action color.", "section": "colors" },
+      { "name": "The long-measure rule", "body": "Keep paragraphs in max-w-reading on wide viewports. Do not stretch body copy to full 1280px width.", "section": "typography" },
+      { "name": "The flat-caption rule", "body": "Project card metadata is a full-width band, not a nested card with a second box shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the canvas in the off-white / grey-ink system and one link accent path for interactivity.",
+      "Do use project-title and project-subtitle (Merriweather) for case-study and page heroes.",
+      "Do keep chips indigo and links cyan/green so “filter” and “go” are visually distinct.",
+      "Do preserve max-w-reading and max-w-field for long copy and the contact form."
+    ],
+    "donts": [
+      "Don't produce a generic \"AI portfolio\" or template lookalike with identical card grids, meaningless hero metrics, or decorative gradients; prefer varied project presentation and real content hierarchy.",
+      "Don't use dark mode for cool alone or neon-on-black tech clichés without a concrete scene and user need that justify them.",
+      "Don't ship dense walls of unbroken text or unreadable case studies; break with spacing, subheads, and line length.",
+      "Don't reach for a modal or heavy chrome where inline or a dedicated route is enough.",
+      "Don't use gradient text (background-clip: text with a gradient) or glassmorphism as a default.",
+      "Don't use a colored left or right border strip (thick accent border-left / border-right on list rows or callouts) as the primary affordance; use full borders, tints, or typography.",
+      "Don't stack card inside card for the same content tier."
+    ]
+  }
+}

@@ -3,7 +3,7 @@
 exports[`ContactLabel component renders 1`] = `
 <div>
   <label
-    class="text-link-hover transition-colours duration-200 text-lg mt-8 mb-2 mr-2"
+    class="text-link-hover block font-primary text-lg font-medium leading-snug tracking-wide transition-colors duration-200 mt-6 mb-1.5"
     for="email"
   >
     Email

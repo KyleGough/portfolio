@@ -1,8 +1,9 @@
 import { Divider } from '@components/Divider';
 import { Layout } from '@components/Layout';
-import { ProjectFilter } from '@components/ProjectFilter';
 import { ProjectItem } from '@components/ProjectItem';
+import { ProjectsFilterPanel } from '@components/ProjectsFilterPanel';
 import { Section } from '@components/Section';
+import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
 import { projects } from '@utilities/Project';
 import { Project } from '@utilities/types';
 import React, { useState } from 'react';
@@ -17,19 +18,12 @@ const Projects: React.FC = () => {
   return (
     <Layout title="Project List - Kyle Gough">
       <Section>
-        <h1 className="project-title mb-8 text-center md:text-left">
-          Projects
+        <h1 className="projects-list-page-title mb-8 mt-12 text-center md:text-left">
+          <span className={extruded.nameExtruded}>Projects</span>
         </h1>
       </Section>
 
-      <hr className="mt-8 h-px bg-divider" />
-
-      <div className="bg-circuits">
-        <Section overrideTopPadding={true}>
-          <ProjectFilter filter={filter} setFilterCallback={setFilter} />
-        </Section>
-        <hr className="mb-8 h-px bg-divider" />
-      </div>
+      <ProjectsFilterPanel filter={filter} setFilter={setFilter} />
 
       {projects
         .filter((project) => filterProjects(project))

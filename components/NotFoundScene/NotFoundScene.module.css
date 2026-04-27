@@ -1,0 +1,216 @@
+/* Scoped 404 void scene: 3D grid floor + extruded type (solid fills, no gradient text). */
+
+.root {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: min(88dvh, 56rem);
+  padding: clamp(1.5rem, 5vw, 3rem) 1rem 4rem;
+  overflow: hidden;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Perspective floor: animated 3D grid */
+.perspective {
+  position: absolute;
+  left: -15%;
+  right: -15%;
+  bottom: -5%;
+  height: 62%;
+  perspective: 920px;
+  perspective-origin: 50% 28%;
+}
+
+.gridFloor {
+  position: absolute;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  bottom: -35%;
+  transform-origin: 50% 100%;
+  transform-style: preserve-3d;
+  will-change: transform;
+  background-image:
+    linear-gradient(
+      90deg,
+      oklch(100% 0 0 / 0.045) 0,
+      oklch(100% 0 0 / 0.045) 1px,
+      transparent 1px,
+      transparent 56px
+    ),
+    linear-gradient(
+      0deg,
+      oklch(100% 0 0 / 0.045) 0,
+      oklch(100% 0 0 / 0.045) 1px,
+      transparent 1px,
+      transparent 56px
+    ),
+    linear-gradient(
+      90deg,
+      oklch(78% 0.12 200 / 0.07) 0,
+      oklch(78% 0.12 200 / 0.07) 1px,
+      transparent 1px,
+      transparent 168px
+    ),
+    linear-gradient(
+      0deg,
+      oklch(72% 0.2 310 / 0.05) 0,
+      oklch(72% 0.2 310 / 0.05) 1px,
+      transparent 1px,
+      transparent 168px
+    );
+  background-size:
+    56px 56px,
+    56px 56px,
+    168px 168px,
+    168px 168px;
+  background-position: center bottom;
+  mask-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.95) 38%,
+    white 100%
+  );
+  border-top: 1px solid oklch(65% 0.15 290 / 0.22);
+  animation: gridDrift 18s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
+}
+
+@keyframes gridDrift {
+  0% {
+    transform: rotateX(74deg) translateZ(-140px) translateY(0) scale(1);
+    opacity: 0.55;
+  }
+  100% {
+    transform: rotateX(80deg) translateZ(-96px) translateY(-3%) scale(1.02);
+    opacity: 0.88;
+  }
+}
+
+/* Foreground */
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 36rem;
+}
+
+.signal {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gothic-faint, oklch(52% 0.03 280));
+  margin-bottom: 0.75rem;
+}
+
+.titleBlock {
+  margin: 0 0 1rem;
+}
+
+.digit {
+  display: inline-block;
+  transform-style: preserve-3d;
+  animation: digitEase 2.8s cubic-bezier(0.22, 1, 0.36, 1) 1 both;
+}
+
+.digitInner {
+  display: inline-block;
+  transform-style: preserve-3d;
+}
+
+.digit:nth-child(1) .digitInner {
+  transform: translateZ(16px);
+}
+
+.digit:nth-child(2) .digitInner {
+  transform: translateZ(0);
+}
+
+.digit:nth-child(3) .digitInner {
+  transform: translateZ(10px);
+}
+
+.digit:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+.digit:nth-child(2) {
+  animation-delay: 80ms;
+}
+
+.digit:nth-child(3) {
+  animation-delay: 160ms;
+}
+
+@keyframes digitEase {
+  0% {
+    opacity: 0;
+    transform: translateZ(-40px) translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateZ(0) translateY(0);
+  }
+}
+
+.subtitle {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: clamp(1.35rem, 4vw, 2rem);
+  font-weight: 600;
+  color: var(--gothic-fg, oklch(93% 0.02 280));
+  letter-spacing: -0.03em;
+  margin: 0 0 0.5rem;
+}
+
+.blurb {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--gothic-muted, oklch(72% 0.04 280));
+  margin: 0 auto 2rem;
+  max-width: 28rem;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.5rem;
+}
+
+.nav a {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+}
+
+.sep {
+  color: oklch(52% 0.03 280);
+  font-size: 0.65rem;
+  user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gridFloor {
+    animation: none !important;
+    transform: rotateX(78deg) translateZ(-120px);
+    opacity: 0.65;
+  }
+
+  .digit {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

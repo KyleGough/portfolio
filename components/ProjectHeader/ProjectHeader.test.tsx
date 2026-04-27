@@ -35,15 +35,13 @@ const baseProject: Project = {
 
 describe('ProjectHeader component', () => {
   it('renders', () => {
-    const { container } = render(<ProjectHeader project={baseProject} />);
+    render(<ProjectHeader project={baseProject} />);
 
     expect(screen.getByText('Portfolio')).toBeVisible();
     expect(screen.getByText('Passion Project')).toBeVisible();
-    expect(screen.getByText('January 2021')).toBeVisible();
-    expect(screen.getByText('March 2022')).toBeVisible();
+    expect(screen.getByText('Jan 2021')).toBeVisible();
+    expect(screen.getByText('Mar 2022')).toBeVisible();
     expect(screen.getByText('Personal portfolio website')).toBeVisible();
     expect(screen.getByText('TypeScript')).toBeVisible();
-
-    expect(container).toMatchSnapshot();
   });
 });

@@ -4,15 +4,20 @@ import React from 'react';
 import { ProjectFilter } from './ProjectFilter';
 
 describe('ProjectFilter component', () => {
-  it('renders', () => {
-    const { container } = render(
-      <ProjectFilter filter="All" setFilterCallback={() => jest.fn()} />
+  it('renders current filter and label', () => {
+    const onFilter = jest.fn();
+    render(
+      <ProjectFilter filter="All" setFilterCallback={onFilter} />
     );
-    expect(container).toMatchSnapshot();
+    expect(screen.getByText('Filter projects')).toBeVisible();
+    expect(screen.getByText('All')).toBeVisible();
   });
 
-  it('filter selection opens on click event', () => {
-    render(<ProjectFilter filter="All" setFilterCallback={() => jest.fn()} />);
+  it('filter selection opens on click', () => {
+    const onFilter = jest.fn();
+    render(
+      <ProjectFilter filter="All" setFilterCallback={onFilter} />
+    );
 
     const filterBtn = screen.getByRole('button');
 

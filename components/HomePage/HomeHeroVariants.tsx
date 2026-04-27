@@ -1,0 +1,59 @@
+import { Link } from '@components/Link';
+import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
+import dynamic from 'next/dynamic';
+import React from 'react';
+
+import { HeroFlightTelemetry } from './HeroFlightTelemetry';
+import styles from './HomeHeroVariants.module.css';
+
+const INTRO =
+  'Specialising in building scalable, performant web applications with TypeScript and React. My interests lie in cosmology, science-fiction, cycling, guitar, and board games.';
+
+const FalconHeavyWireframeHero = dynamic(
+  () =>
+    import('./FalconHeavyWireframeHero').then(
+      (m) => m.FalconHeavyWireframeHero
+    ),
+  {
+    ssr: false,
+    loading: () => (
+      <div className={styles.rocketFrame} aria-hidden>
+        <div className={styles.rocketCanvasHost} />
+      </div>
+    ),
+  }
+);
+
+/**
+ * Home hero: Falcon Heavy style wireframe (Three.js) + copy (space-gothic).
+ */
+export const HomeHeroVariants: React.FC = () => {
+  return (
+    <header className={styles.slot} aria-label="Welcome">
+      <div
+        className={styles.graphic}
+        role="img"
+        aria-label="Three-dimensional wireframe of a Falcon Heavy class rocket with a decorative mock GNC readout: fuel, velocity, pitch, and roll."
+      >
+        <div className={styles.wireframeStage}>
+          <FalconHeavyWireframeHero />
+          <div className={styles.telemetryOverRocket}>
+            <HeroFlightTelemetry />
+          </div>
+        </div>
+      </div>
+      <div className={styles.copy}>
+        <h1 className={styles.name}>
+          <span className={extruded.nameExtruded}>Kyle Gough</span>
+        </h1>
+        <p className={styles.eyebrow}>Senior Front-End Engineer</p>
+        <p className={styles.intro}>{INTRO}</p>
+        <div className={styles.cta}>
+          <Link className={styles.ctaButton} to="/projects">
+            View Projects
+          </Link>
+        </div>
+      </div>
+    </header>
+  );
+};

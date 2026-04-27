@@ -56,8 +56,8 @@ const DeliveryPlanner: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Pagination
       previousTitle="Sorting Algorithm Visualiser"
       previousLink="/projects/sorting-algorithm-visualiser"
-      nextTitle="To Do List"
-      nextLink="/projects/todo-list"
+      nextTitle="BSplit"
+      nextLink="/projects/bsplit"
     />
   </Layout>
 );

@@ -2,17 +2,13 @@ import imageAISpaceTelescope from '@image/ai-space-telescope.jpg';
 import imageBookmarkLabeller from '@image/bookmark-labeller.jpg';
 import imageBSplit from '@image/card-bsplit.jpg';
 import imageCaveExploration from '@image/card-cave-exploration.jpg';
-import imageCavernMinesweeper from '@image/card-cavern-minesweeper.jpg';
 import imageDeliveryPlanner from '@image/card-delivery-route-planner.jpg';
 import imageGraphVisualiser from '@image/card-graph-algorithm-visualiser.jpg';
 import imageLucidLab from '@image/card-lucidlab.jpg';
 import imagePortfolio from '@image/card-portfolio.jpg';
-import imageReactMinesweeper from '@image/card-react-minesweeper.jpg';
-import imageRollerCoaster from '@image/card-roller-coaster.jpg';
 import imageRSCBot from '@image/card-rscbot.jpg';
 import imageSortingVisualiser from '@image/card-sorting-algorithm-visualiser.jpg';
 import imageSudoku from '@image/card-sudoku.jpg';
-import imageToDoList from '@image/card-todo.jpg';
 import imageURLShortener from '@image/card-url-shortener.jpg';
 import imageMars from '@image/mars.png';
 import CPlusPlusLogo from '@image/skill/cplusplus.svg';
@@ -239,30 +235,6 @@ export const projects: Project[] = [
     logo: logos.python,
   },
   {
-    id: 'react-minesweeper',
-    title: 'React Minesweeper',
-    date: {
-      start: {
-        month: 10,
-        year: 2019,
-      },
-    },
-    image: imageReactMinesweeper,
-    alt: 'React Minesweeper',
-    link: '/projects/react-minesweeper',
-    filters: [
-      ProjectFilter.JAVASCRIPT,
-      ProjectFilter.REACT,
-      ProjectFilter.PUZZLE,
-      ProjectFilter.WEB,
-    ],
-    description:
-      'Step back in time and relive the classic Minesweeper experience with this faithful clone, meticulously crafted in React. Featuring an 18x18 game board, it offers all the elements you love about the original game and more.',
-    github: 'https://github.com/KyleGough/react-minesweeper',
-    skills: ['React', 'JavaScript', 'CSS', 'Materialize'],
-    logo: logos.react,
-  },
-  {
     id: 'cave-exploration',
     title: 'Using Swarm AI to Map a Cave Network',
     subtitle: 'Dissertation',
@@ -284,29 +256,6 @@ export const projects: Project[] = [
       "Cave exploration poses a unique set of challenges - it's both dangerous and time-consuming. This project showcases the potential of swarm AI through a fleet of autonomous flying drones, navigating and exploring caves with improved efficiency. In addition, the simulation utilises a cave environment generation system to ensure each simulation unfolds in a realistic and captivating landscape.",
 
     github: 'https://github.com/KyleGough/CS310-Dissertation',
-    skills: ['C++', 'GLUT'],
-    logo: logos.cplusplus,
-  },
-  {
-    id: 'roller-coaster',
-    title: 'Roller Coaster',
-    subtitle: 'Computer Graphics Coursework',
-    date: {
-      start: {
-        month: 12,
-        year: 2018,
-      },
-      end: {
-        month: 1,
-        year: 2019,
-      },
-    },
-    image: imageRollerCoaster,
-    alt: 'Roller coaster',
-    link: '/projects/roller-coaster',
-    filters: [ProjectFilter.CPLUSPLUS],
-    description:
-      'Simulation of a 3-car roller coaster which traverses a small looped track featuring a lift hill, drop, loop-the-loop and turns. The coaster can be viewed from a first-person perspective in each of the carts, as well as additional views that track the carts round the track.',
     skills: ['C++', 'GLUT'],
     logo: logos.cplusplus,
   },
@@ -386,25 +335,6 @@ export const projects: Project[] = [
     liveLink: 'https://kylegough.github.io/graph-algorithm-visualiser/',
   },
   {
-    id: 'cavern-minesweeper',
-    title: 'Cavern Minesweeper',
-    date: {
-      start: {
-        month: 3,
-        year: 2017,
-      },
-    },
-    image: imageCavernMinesweeper,
-    alt: 'Cavern Minesweeper',
-    link: '/projects/cavern-minesweeper',
-    filters: [ProjectFilter.PUZZLE],
-    description:
-      'Cavern Minesweeper takes the classic Minesweeper game to new depths, introducing tiered mines (ores) that add an exciting twist to your mining adventure. You must strategically uncover enough squares to reach the required mining level. With three challenging difficulty levels, Cavern Minesweeper offers competitive players an exhilarating test of their skills.',
-    github: 'https://github.com/KyleGough/cavern-minesweeper',
-    skills: ['Ruby'],
-    logo: logos.ruby,
-  },
-  {
     id: 'bsplit',
     title: 'BSplit',
     subtitle: 'Web Development Technologies Coursework',
@@ -430,35 +360,6 @@ export const projects: Project[] = [
     description:
       'Meet BSplit, your all-in-one web application designed to simplify the process of splitting bills and settling payments among friends and housemates. With user-friendly features and a commitment to enhancing the user experience, BSplit makes managing shared expenses a breeze.',
     skills: ['PHP', 'JavaScript', 'jQuery', 'SQL', 'HTML', 'CSS', 'Bootstrap'],
-    logo: logos.javascript,
-  },
-  {
-    id: 'todo-list',
-    title: 'To Do List',
-    subtitle: 'Web Development Technologies Lab Work',
-    date: {
-      start: {
-        month: 1,
-        year: 2017,
-      },
-      end: {
-        month: 2,
-        year: 2017,
-      },
-    },
-    image: imageToDoList,
-    alt: 'To Do List',
-    link: '/projects/todo-list',
-    filters: [
-      ProjectFilter.JAVASCRIPT,
-      ProjectFilter.PHP,
-      ProjectFilter.SQL,
-      ProjectFilter.GROUP_PROJECT,
-      ProjectFilter.WEB,
-    ],
-    description:
-      'Web application that empowers users to efficiently manage their tasks and to-do lists. This project was an educational journey in which I acquired proficiency in PHP and SQL to implement secure data storage and retrieval, safeguarding the application against SQL injection and cross-site scripting vulnerabilities.',
-    skills: ['PHP', 'JavaScript', 'jQuery', 'SQL', 'HTML', 'CSS'],
     logo: logos.javascript,
   },
   {

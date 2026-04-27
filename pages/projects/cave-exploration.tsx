@@ -18,7 +18,7 @@ import { GetStaticProps } from 'next';
 import React from 'react';
 
 const CaveExploration: React.FC<ProjectPageProps> = ({ images, project }) => (
-  <Layout title="Cave Exploration - Improving and Simulating Cave Explortation with Swarm AI">
+  <Layout title="Cave Exploration - Improving and Simulating Cave Exploration with Swarm AI">
     <ProjectHeader project={project} />
 
     <Divider />
@@ -69,10 +69,10 @@ const CaveExploration: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Divider />
 
     <Pagination
-      previousTitle="Roller Coaster"
-      previousLink="/projects/roller-coaster"
-      nextTitle="React Minesweeper"
-      nextLink="/projects/react-minesweeper"
+      previousTitle="RSCBot"
+      previousLink="/projects/rscbot"
+      nextTitle="Logical Sudoku Solver"
+      nextLink="/projects/sudoku"
     />
   </Layout>
 );

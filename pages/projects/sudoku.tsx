@@ -7,14 +7,22 @@ import { Screenshots } from '@components/Screenshots';
 import { Section } from '@components/Section';
 import imageExample1 from '@image/sudoku1.jpg';
 import imageExample2 from '@image/sudoku2.jpg';
+import { fetchGitHubStargazerCount } from '@utilities/fetchGitHubStargazerCount';
 import { getProjectData } from '@utilities/Project';
 import { ProjectPageProps } from '@utilities/types';
 import { GetStaticProps } from 'next';
 import React from 'react';
 
-const Sudoku: React.FC<ProjectPageProps> = ({ images, project }) => (
+const Sudoku: React.FC<ProjectPageProps> = ({
+  images,
+  project,
+  githubStargazerCount,
+}) => (
   <Layout title="Logical Sudoku Solver - In-Depth Step-by-Step Sudoku Solver">
-    <ProjectHeader project={project} />
+    <ProjectHeader
+      project={project}
+      githubStargazerCount={githubStargazerCount}
+    />
 
     <Divider />
 
@@ -227,25 +235,29 @@ const Sudoku: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Divider />
 
     <Pagination
-      previousTitle="React Minesweeper"
-      previousLink="/projects/react-minesweeper"
+      previousTitle="Cave Exploration"
+      previousLink="/projects/cave-exploration"
       nextTitle="LucidLab"
       nextLink="/projects/lucidlab"
     />
   </Layout>
 );
 
-export const getStaticProps: GetStaticProps = () => {
+export const getStaticProps: GetStaticProps<ProjectPageProps> = async () => {
   const images = [
     { imageData: imageExample1, alt: 'X-Wing example' },
     { imageData: imageExample2, alt: 'XYZ-Wing example' },
   ];
 
+  const githubStargazerCount = await fetchGitHubStargazerCount('sudoku');
+
   return {
     props: {
       images: images,
       project: getProjectData('sudoku'),
+      ...(githubStargazerCount !== undefined && { githubStargazerCount }),
     },
+    revalidate: 3600,
   };
 };
 

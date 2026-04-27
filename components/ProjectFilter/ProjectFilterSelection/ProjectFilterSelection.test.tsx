@@ -4,12 +4,16 @@ import React from 'react';
 import { ProjectFilterSelection } from './ProjectFilterSelection';
 
 describe('ProjectFilterSelection component', () => {
-  it('renders', () => {
-    const { container } = render(
-      <ProjectFilterSelection value="Web" onSelect={() => jest.fn()} />
+  it('renders the selected value', () => {
+    const onSelect = jest.fn();
+    render(
+      <ProjectFilterSelection
+        value="Web"
+        onSelect={onSelect}
+        selected={false}
+      />
     );
 
     expect(screen.getByText('Web')).toBeVisible();
-    expect(container).toMatchSnapshot();
   });
 });

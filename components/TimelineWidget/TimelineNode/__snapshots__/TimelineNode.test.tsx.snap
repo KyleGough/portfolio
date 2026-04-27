@@ -3,7 +3,7 @@
 exports[`TimelineNode component renders 1`] = `
 <div>
   <div
-    class="flex items-center justify-end h-48"
+    class="flex items-center justify-end h-36 md:h-40"
   >
     <div
       class="opacity-0 transition-opacity duration-1000"
@@ -25,24 +25,27 @@ exports[`TimelineNode component renders 1`] = `
       </div>
     </div>
     <div
-      class="mr-8 opacity-0 transition-opacity duration-1000"
+      class="work-timeline__copy mr-8 flex min-w-0 flex-col gap-1 opacity-0 transition-opacity duration-1000"
     >
-      <p
-        class="text-3xl"
+      <h3
+        class="work-timeline__title"
       >
         Acme
-      </p>
+      </h3>
       <p
-        class="text-xl"
+        class="work-timeline__role"
       >
         CEO
       </p>
-      <p>
+      <p
+        class="work-timeline__date"
+      >
         January 2000 - Present
       </p>
     </div>
     <div
-      class="h-[2px] bg-timeline w-6 max-w-[12rem] grow"
+      aria-hidden="true"
+      class="work-timeline__line work-timeline__line--spine-right"
     />
   </div>
   <div

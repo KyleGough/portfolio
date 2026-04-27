@@ -5,35 +5,345 @@
 @tailwind utilities;
 
 @layer base {
+  /* Case study / project page stack: fluid display (brand), fixed-feeling body via 1rem root. */
   .project-title {
-    @apply text-5xl;
-    @apply font-semibold;
-    @apply text-header;
-    @apply mt-12;
-    @apply tracking-tight;
+    @apply font-header font-semibold text-header mt-12 tracking-tight;
+    font-size: clamp(2.125rem, 0.55rem + 3.6vw, 3.25rem);
+    line-height: 1.12;
+    text-wrap: balance;
   }
 
   .project-subtitle {
-    @apply text-xl;
-    @apply font-light;
-    @apply mt-4;
+    @apply font-header font-normal text-header mt-3 max-w-reading;
+    font-size: clamp(1.25rem, 0.4rem + 1.9vw, 1.75rem);
+    line-height: 1.35;
   }
 
   .project-header {
-    @apply text-3xl;
-    @apply mb-8;
-    @apply font-semibold;
-    @apply text-header;
+    @apply font-header font-semibold text-header mb-8 tracking-tight;
+    font-size: clamp(1.3125rem, 0.5rem + 1.5vw, 1.75rem);
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+
+  /* Project list row: reading column + media (typeset with timeline / project stack) */
+  .project-item__row {
+    @apply grid grid-cols-12 gap-x-8 gap-y-10 lg:grid-flow-row lg:items-start lg:gap-x-16 lg:gap-y-0;
+  }
+
+  .project-item__text {
+    @apply flex min-w-0 flex-col text-left;
+  }
+
+  .project-item__desc {
+    @apply m-0 max-w-reading font-primary text-primary;
+    font-size: clamp(0.9375rem, 0.88rem + 0.18vw, 1.02rem);
+    line-height: 1.68;
+    letter-spacing: 0.012em;
   }
 
   .project-list {
-    @apply list-disc;
-    @apply list-outside;
-    @apply ml-4;
+    @apply list-disc list-outside ml-5 pl-0.5 font-primary text-primary text-base leading-[1.7] max-w-reading marker:text-header;
   }
 
   .project-list li {
     @apply mb-4;
+  }
+
+  .project-list strong {
+    @apply font-semibold text-header;
+  }
+}
+
+@layer components {
+  /* Vertical spine: fade only at tips (stops are % of each half, not full timeline) */
+  .work-timeline::before {
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      theme(colors.timeline) 11%,
+      theme(colors.timeline) 100%
+    );
+  }
+
+  .work-timeline::after {
+    background: linear-gradient(
+      to bottom,
+      theme(colors.timeline) 0%,
+      theme(colors.timeline) 89%,
+      transparent 100%
+    );
+  }
+
+  /* Work experience (About timeline): fixed rem ramp, ≥1.25 between title and caption date */
+  .work-timeline__title {
+    @apply m-0 font-header font-semibold text-header;
+    font-size: clamp(1.125rem, 0.95rem + 0.55vw, 1.375rem);
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+  }
+
+  .work-timeline__role {
+    @apply m-0 font-primary font-normal text-primary;
+    font-size: 1rem;
+    line-height: 1.42;
+  }
+
+  .work-timeline__date {
+    @apply m-0 font-primary tabular-nums text-header/70;
+    font-size: 0.8125rem;
+    line-height: 1.35;
+    letter-spacing: 0.02em;
+  }
+
+  .work-timeline__line {
+    @apply relative h-[3px] w-6 max-w-[12rem] grow bg-timeline self-center;
+  }
+
+  /* Circular node on card end only (spine end omitted so it does not sit on the vertical rail) */
+  .work-timeline__line::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    width: 10px;
+    height: 10px;
+    border-radius: 9999px;
+    @apply bg-timeline;
+  }
+
+  .work-timeline__line--spine-right::after {
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  .work-timeline__line--spine-left::after {
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+
+  /* Mobile: single-column rail; both rows keep the node on the left end of the
+     horizontal (md+ two-column uses spine-left for right column items) */
+  @media (max-width: 767px) {
+    .work-timeline__line--spine-left::after {
+      left: 0;
+      right: auto;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .contact-form__message-meter {
+    @apply font-primary text-xs font-medium tabular-nums;
+    color: rgb(66 66 66 / 0.55); /* theme header #424242 */
+    letter-spacing: 0.04em;
+  }
+
+  .contact-form__message-meter--warn {
+    @apply text-amber-800;
+  }
+
+  /* Site nav: Lato, ≥16px, clear step above wordmark (1.25); wordmark = Merriweather to match page titles */
+  .nav-wordmark {
+    @apply font-header font-semibold leading-tight tracking-tight
+      text-lg
+      text-white
+      md:text-xl;
+  }
+  /* Wordmark stays white on every route (active state is typographic only if needed). */
+  .nav-wordmark--active {
+    @apply text-white;
+  }
+  .nav-link--bar {
+    @apply font-primary text-base font-medium text-white/90
+      transition-colors duration-200
+      focus-visible:rounded-sm
+      focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+      focus-visible:outline-link/50;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+  }
+  .nav-link--bar:hover,
+  .nav-link--bar:focus-visible {
+    @apply text-link;
+  }
+  .nav-link--bar--active {
+    @apply font-semibold text-link;
+  }
+  /* Hairline: brand cyan; active = full-width bar */
+  a.nav-link--bar.border-bottom-slide:hover::after,
+  a.nav-link--bar.border-bottom-slide:focus-visible::after,
+  a.nav-gh.border-bottom-slide:hover::after,
+  a.nav-gh.border-bottom-slide:focus-visible::after,
+  button.nav-gh.border-bottom-slide:hover::after,
+  button.nav-gh.border-bottom-slide:focus-visible::after {
+    left: 0 !important;
+    right: 0 !important;
+    background-color: #03b0ee !important;
+  }
+  a.nav-link--bar--active.border-bottom-slide::after {
+    left: 0 !important;
+    right: 0 !important;
+    background-color: #03b0ee !important;
+  }
+  .nav-drawer__link {
+    @apply block w-full text-left font-primary text-base font-medium;
+    line-height: 1.75;
+    letter-spacing: 0.015em;
+  }
+  .nav-drawer__link--active {
+    @apply bg-link/[0.1] text-link font-semibold;
+  }
+  .nav-gh {
+    @apply font-primary;
+  }
+  /* Nav: optional translucence + depth after scroll (purposeful; not default glass) */
+  .nav-bar--shell {
+    @apply border-b border-transparent
+      transition duration-300
+      [transition-property:background-color,box-shadow,backdrop-filter,-webkit-backdrop-filter,border-color]
+      [transition-timing-function:cubic-bezier(0.25,1,0.5,1)]
+      motion-reduce:duration-75
+      motion-reduce:transition-colors;
+  }
+  .nav-bar--shell.nav-bar--scrolled {
+    @apply border-b border-header/10
+      bg-nav-light/80
+      shadow-md
+      backdrop-blur-md;
+  }
+  /* Nav overdrive: scroll-quantized chroma sweep + top signal (CSS var from JS; GPU-friendly) */
+  .nav-bar--overdrive {
+    --nav-scroll: 0;
+    isolation: isolate;
+  }
+  .nav-bar--overdrive::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: calc(0.08 + var(--nav-scroll) * 0.42);
+    background: linear-gradient(
+      102deg,
+      rgba(3, 176, 238, 0) 0%,
+      rgba(3, 176, 238, 0.18) 46%,
+      rgba(76, 175, 80, 0.1) 72%,
+      rgba(3, 176, 238, 0) 100%
+    );
+    background-size: 220% 100%;
+    background-position: calc(-5% + var(--nav-scroll) * 38%) 50%;
+    mix-blend-mode: screen;
+    transition: opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .nav-bar--overdrive::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    height: 1px;
+    pointer-events: none;
+    opacity: calc(0.05 + var(--nav-scroll) * 0.85);
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(3, 176, 238, 0.55) 48%,
+      rgba(76, 175, 80, 0.35) 62%,
+      transparent 100%
+    );
+    filter: blur(0.5px);
+    transition: opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .nav-bar--overdrive::before,
+    .nav-bar--overdrive::after {
+      opacity: 0 !important;
+      transition: none;
+    }
+  }
+
+  /* GitHub / Website on case studies: soft pill, not harsh outlined square */
+  .project-header-cta {
+    @apply my-2 inline-flex items-center gap-2 rounded-full font-primary text-sm font-medium
+      text-link
+      border border-header/10
+      bg-background/90
+      px-5 py-2.5
+      shadow-sm
+      transition duration-200 ease-out
+      motion-safe:hover:-translate-y-px
+      motion-safe:hover:shadow
+      motion-safe:active:translate-y-0
+      active:shadow-sm
+      focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-link/40;
+  }
+  .project-header-cta:hover {
+    @apply border-link/20 text-link-hover;
+  }
+  .project-header-cta .project-header-cta__icon {
+    @apply h-5 w-5 shrink-0 fill-link transition-colors duration-200;
+  }
+  .project-header-cta:hover .project-header-cta__icon,
+  .project-header-cta:focus-visible .project-header-cta__icon {
+    @apply fill-link-hover;
+  }
+
+  /* Stargazer count: right segment attached to GitHub (single pill) */
+  .project-header-cta-pair {
+    @apply my-2 inline-flex items-stretch;
+  }
+  .project-header-cta--firstOfPair {
+    @apply my-0 !rounded-l-full !rounded-r-none;
+  }
+  .project-header-cta--firstOfPair:not(:only-child) {
+    @apply -mr-px pr-4;
+  }
+  .project-header-cta--secondOfPair {
+    @apply my-0 !-ml-px !gap-1.5 !rounded-l-none !rounded-r-full border-l pl-3
+      text-[0.8125rem] font-medium leading-tight;
+    border-left-color: oklch(100% 0 0 / 0.12);
+  }
+  .project-header-cta--secondOfPair .project-header-cta__icon {
+    @apply h-4 w-4;
+  }
+
+  /* Case-study screenshot grid: workbench frame + lift, not generic bordered thumbs */
+  .project-screenshots__grid {
+    @apply w-full;
+  }
+  .screenshot-tile__trigger {
+    @apply relative block w-full cursor-pointer overflow-hidden rounded-md border border-header/10
+      bg-header/[0.02] p-0 text-left shadow
+      transition duration-200 [transition-property:box-shadow,transform,border-color]
+      motion-safe:group-hover:-translate-y-0.5 motion-safe:group-hover:shadow-md motion-safe:group-hover:border-link/30
+      focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-link/40;
+  }
+  .screenshot-tile__caption {
+    @apply font-primary font-normal;
+  }
+
+  /* Project pagination: staggered entry (transform + opacity only) */
+  @keyframes project-pagination-enter {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 0.4rem, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .project-pagination__grid > * {
+    animation: project-pagination-enter 0.42s cubic-bezier(0.25, 1, 0.5, 1) both;
+  }
+  .project-pagination__grid > *:nth-child(2) {
+    animation-delay: 75ms;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .project-pagination__grid > * {
+      animation: none;
+    }
   }
 }
 

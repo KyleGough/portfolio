@@ -30,13 +30,8 @@ export interface Date {
   year: number;
 }
 
-export interface Skill {
-  description: string;
-  logo: string;
-  name: string;
-}
-
 export interface ProjectPageProps {
+  githubStargazerCount?: number | null;
   images: {
     alt: string;
     imageData: StaticImageData;

@@ -4,20 +4,21 @@ import React from 'react';
 import { Section } from './Section';
 
 describe('Section component', () => {
-  it('renders', () => {
-    const { container } = render(<Section>Test</Section>);
-    expect(screen.getByText('Test')).toBeVisible();
-    expect(container).toMatchSnapshot();
+  it('renders children in a container', () => {
+    render(<Section>Test</Section>);
+    const section = screen.getByText('Test');
+    expect(section).toBeVisible();
+    expect(section).toHaveClass('container', 'text-primary', 'py-8');
   });
 
-  it('component overrides top padding', () => {
+  it('omits top padding override class when overrideTopPadding is set', () => {
     render(
-      <Section id="test" overrideTopPadding={true}>
+      <Section id="test" overrideTopPadding>
         Test
       </Section>
     );
 
-    const section = screen.getByText('Test');
-    expect(section.className.includes('first:pt-24')).toBe(false);
+    const block = screen.getByText('Test');
+    expect(block).not.toHaveClass('first:pt-24');
   });
 });

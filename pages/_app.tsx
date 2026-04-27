@@ -1,4 +1,5 @@
 import 'styles/globals.css';
+import 'styles/space-gothic.css';
 import 'styles/tailwind.css';
 
 import { Analytics } from '@vercel/analytics/react';

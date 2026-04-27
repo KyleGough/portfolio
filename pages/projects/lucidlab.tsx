@@ -57,7 +57,7 @@ const LucidLab: React.FC<ProjectPageProps> = ({ images, project }) => (
         actuation of IoT devices. The proposed implementation provides a
         practical system combining IoT and WSN devices whilst offering a simple
         and intuitive deployment process, thereby enabling rapid testing of the
-        applications forming the backbone of “smart”homes and cities
+        applications forming the backbone of “smart” homes and cities.
       </p>
     </Section>
 

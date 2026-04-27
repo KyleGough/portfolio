@@ -75,8 +75,8 @@ const RSCBot: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Pagination
       previousTitle="URL Shortener"
       previousLink="/projects/url-shortener"
-      nextTitle="Roller Coaster"
-      nextLink="/projects/roller-coaster"
+      nextTitle="Cave Exploration"
+      nextLink="/projects/cave-exploration"
     />
   </Layout>
 );

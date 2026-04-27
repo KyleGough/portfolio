@@ -6,6 +6,7 @@ export { LinkedInIcon } from './LinkedInIcon';
 export { MenuIcon } from './MenuIcon';
 export { RestartIcon } from './RestartIcon';
 export { SendIcon } from './SendIcon';
+export { StarIcon } from './StarIcon';
 export { TickIcon } from './TickIcon';
 export { UnfoldIcon } from './UnfoldIcon';
 export { WebsiteIcon } from './WebsiteIcon';

@@ -1,0 +1,27 @@
+/* Reassert focus ring: hero .ctaButton sets outline: none on :focus-visible (meant for links) */
+.pill {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pill:focus-visible {
+  outline: 2px solid var(--gothic-cyan, oklch(78% 0.12 200)) !important;
+  outline-offset: 0.2rem;
+}
+
+/* Inline label + icon: matches HomeMasonry “View All Projects” (viewAllInline) */
+.sendRow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  width: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.sendIcon {
+  display: inline-flex;
+  flex-shrink: 0;
+  line-height: 0;
+  color: inherit;
+}

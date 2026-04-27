@@ -1,1 +1,6 @@
-export { getDateRange, getFormattedDate, getShortDate } from './date';
+export {
+  getDateRange,
+  getFormattedDate,
+  getProjectStartDateTime,
+  getShortDate,
+} from './date';

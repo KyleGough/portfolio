@@ -9,6 +9,8 @@ import { ContactFieldError } from './ContactFieldError';
 import { ContactLabel } from './ContactLabel';
 import { ContactSendButton } from './ContactSendButton';
 
+const MESSAGE_MAX_LENGTH = 1024;
+
 export const Contact: React.FC = () => {
   // Form input text content.
   const [name, setName] = useState('');
@@ -26,6 +28,7 @@ export const Contact: React.FC = () => {
 
   const isSent = status === EmailStatus.SENT;
   const isLoading = status === EmailStatus.LOADING;
+  const messageNearLimit = message.length >= MESSAGE_MAX_LENGTH * 0.9;
 
   // Form field change event handlers.
   const onNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -90,19 +93,20 @@ export const Contact: React.FC = () => {
     event.currentTarget.blur();
   };
 
-  const inputCommonStyles = clsx(
-    'block shadow',
-    'transition-colours duration-200',
-    'mt-2 mb-8 px-4 py-2',
-    'w-full xs:w-field',
+  const inputBaseStyles = clsx(
+    'block w-full',
+    'font-primary text-base leading-relaxed',
+    'shadow transition-colors duration-200',
+    'mt-2 px-4 py-2.5',
     'border-2 rounded-2xl',
     'outline-none caret-link-hover bg-background'
   );
+  const inputFieldStyles = clsx(inputBaseStyles, 'mb-6');
 
   return (
-    <form className="flex justify-center">
-      <fieldset>
-        <legend className="font-semibold text-6xl text-center w-full mb-16 text-header">
+    <form className="contact-form flex w-full justify-center">
+      <fieldset className="w-full max-w-field">
+        <legend className="project-header mb-10 w-full text-center lg:text-left">
           Contact Me
         </legend>
 
@@ -115,7 +119,7 @@ export const Contact: React.FC = () => {
             onChange={onNameChange}
             className={clsx(
               getFieldBorderStyle(!nameError, isSent),
-              inputCommonStyles
+              inputFieldStyles
             )}
             type="text"
             id="name"
@@ -141,7 +145,7 @@ export const Contact: React.FC = () => {
             onChange={onEmailChange}
             className={clsx(
               getFieldBorderStyle(!emailError && !emailValidError, isSent),
-              inputCommonStyles
+              inputFieldStyles
             )}
             type="email"
             id="email"
@@ -162,18 +166,32 @@ export const Contact: React.FC = () => {
             onChange={onMessageChange}
             className={clsx(
               getFieldBorderStyle(!messageError, isSent),
-              inputCommonStyles,
-              'max-h-48',
-              'h-48',
-              'resize-none'
+              inputBaseStyles,
+              'mb-2 h-40 max-h-52 min-h-[10rem] resize-y'
             )}
             id="message"
             name="message"
             required
-            maxLength={1024}
+            maxLength={MESSAGE_MAX_LENGTH}
             readOnly={isLoading || isSent}
             data-testid="contact-form-message"
+            aria-describedby="message-meter"
           />
+          <p
+            id="message-meter"
+            data-testid="contact-form-message-meter"
+            className={clsx(
+              'contact-form__message-meter mb-2 text-right',
+              messageNearLimit && 'contact-form__message-meter--warn'
+            )}
+          >
+            <span className="tabular-nums">{message.length}</span>
+            <span className="opacity-70"> / {MESSAGE_MAX_LENGTH}</span>
+            <span className="sr-only">
+              {' '}
+              characters used in message (maximum {MESSAGE_MAX_LENGTH})
+            </span>
+          </p>
         </FadeIn>
 
         <FadeIn>

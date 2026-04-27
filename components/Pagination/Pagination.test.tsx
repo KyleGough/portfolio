@@ -9,8 +9,8 @@ describe('Pagination component', () => {
       <Pagination
         previousTitle="Sorting Algorithm Visualiser"
         previousLink="/projects/sorting-algorithm-visualiser"
-        nextTitle="To Do List"
-        nextLink="/projects/todo-list"
+        nextTitle="BSplit"
+        nextLink="/projects/bsplit"
       />
     );
 

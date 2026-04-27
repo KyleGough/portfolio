@@ -9,14 +9,22 @@ import imageEarth from '@image/earth.png';
 import imageMars from '@image/mars.png';
 import imageMoon from '@image/moon.png';
 import imageSun from '@image/sun.png';
+import { fetchGitHubStargazerCount } from '@utilities/fetchGitHubStargazerCount';
 import { getProjectData } from '@utilities/Project';
 import { ProjectPageProps } from '@utilities/types';
 import { GetStaticProps } from 'next';
 import React from 'react';
 
-const SolarSystem: React.FC<ProjectPageProps> = ({ images, project }) => (
+const SolarSystem: React.FC<ProjectPageProps> = ({
+  images,
+  project,
+  githubStargazerCount,
+}) => (
   <Layout title="Solar System Model">
-    <ProjectHeader project={project} />
+    <ProjectHeader
+      project={project}
+      githubStargazerCount={githubStargazerCount}
+    />
 
     <Divider />
 
@@ -77,7 +85,7 @@ const SolarSystem: React.FC<ProjectPageProps> = ({ images, project }) => (
   </Layout>
 );
 
-export const getStaticProps: GetStaticProps = () => {
+export const getStaticProps: GetStaticProps<ProjectPageProps> = async () => {
   const images = [
     {
       imageData: imageMars,
@@ -97,11 +105,15 @@ export const getStaticProps: GetStaticProps = () => {
     },
   ];
 
+  const githubStargazerCount = await fetchGitHubStargazerCount('solar-system');
+
   return {
     props: {
       images: images,
       project: getProjectData('solar-system'),
+      ...(githubStargazerCount !== undefined && { githubStargazerCount }),
     },
+    revalidate: 3600,
   };
 };
 
