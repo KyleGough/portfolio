@@ -105,10 +105,7 @@ export const getStaticProps: GetStaticProps<ProjectPageProps> = async () => {
     },
   ];
 
-  const githubStargazerCount = await fetchGitHubStargazerCount(
-    'KyleGough',
-    'solar-system'
-  );
+  const githubStargazerCount = await fetchGitHubStargazerCount('solar-system');
 
   return {
     props: {

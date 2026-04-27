@@ -2,17 +2,13 @@
  * Reads `stargazers_count` from the public GitHub API (no auth). Returns
  * `undefined` if the request fails or the field is missing.
  */
-export async function fetchGitHubStargazerCount(
-  owner: string,
+export const fetchGitHubStargazerCount = async (
   repo: string
-): Promise<number | undefined> {
+): Promise<number | undefined> => {
   try {
-    const res = await fetch(
-      `https://api.github.com/repos/${owner}/${repo}`,
-      {
-        headers: { Accept: 'application/vnd.github+json' },
-      }
-    );
+    const res = await fetch(`https://api.github.com/repos/KyleGough/${repo}`, {
+      headers: { Accept: 'application/vnd.github+json' },
+    });
     if (!res.ok) {
       return undefined;
     }
@@ -24,4 +20,4 @@ export async function fetchGitHubStargazerCount(
     // Build continues without the stargazer pill
   }
   return undefined;
-}
+};

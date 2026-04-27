@@ -31,11 +31,10 @@ export interface Date {
 }
 
 export interface ProjectPageProps {
+  githubStargazerCount?: number | null;
   images: {
     alt: string;
     imageData: StaticImageData;
   }[];
   project: Project;
-  /** Live count from api.github.com when the page fetches it (e.g. solar system). */
-  githubStargazerCount?: number | null;
 }

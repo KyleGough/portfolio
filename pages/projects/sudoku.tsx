@@ -249,10 +249,7 @@ export const getStaticProps: GetStaticProps<ProjectPageProps> = async () => {
     { imageData: imageExample2, alt: 'XYZ-Wing example' },
   ];
 
-  const githubStargazerCount = await fetchGitHubStargazerCount(
-    'KyleGough',
-    'sudoku'
-  );
+  const githubStargazerCount = await fetchGitHubStargazerCount('sudoku');
 
   return {
     props: {
