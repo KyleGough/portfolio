@@ -89,7 +89,7 @@ export const ProjectHeader: React.FC<ProjectHeaderProps> = ({
 
       <div className="mt-8 flex flex-row flex-wrap items-center gap-4">
         {project.skills.map((skill) => (
-          <Chip key={skill} name={skill} />
+          <Chip key={skill}>{skill}</Chip>
         ))}
       </div>
     </Section>
