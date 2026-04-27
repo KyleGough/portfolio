@@ -28,7 +28,7 @@ export const Footer: React.FC = () => (
                 href="mailto:kylegough98@gmail.com"
               >
                 <EmailIcon className="mr-2 w-6 h-6" />
-                <p className="ml-1">kylegough98@gmail.com</p>
+                <span className="ml-1">kylegough98@gmail.com</span>
               </Link>
             </div>
           </div>

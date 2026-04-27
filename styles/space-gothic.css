@@ -755,11 +755,11 @@ footer.footer--space-gothic [class~='fill-white'] {
   fill: var(--gothic-cyan) !important;
 }
 
-/* GitHub / LinkedIn row: icon fill matches link hover (magenta), not legacy nav-hover grey */
-.app-space-gothic footer li.flex a.group:hover svg,
-.app-space-gothic footer li.flex a.group:focus-visible svg,
-footer.footer--space-gothic li.flex a.group:hover svg,
-footer.footer--space-gothic li.flex a.group:focus-visible svg {
+/* Footer link icons: magenta on hover to match text (email row, social row, or any a + svg) */
+.app-space-gothic footer a[href]:hover svg,
+.app-space-gothic footer a[href]:focus-visible svg,
+footer.footer--space-gothic a[href]:hover svg,
+footer.footer--space-gothic a[href]:focus-visible svg {
   fill: var(--gothic-magenta) !important;
 }
 
