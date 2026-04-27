@@ -25,6 +25,7 @@ export const Link: React.FC<LinkProps> = ({
       {to ? (
         <NextLink
           aria-current={ariaCurrent}
+          aria-label={ariaLabel}
           className={className}
           href={to}
           onClick={onClick}
