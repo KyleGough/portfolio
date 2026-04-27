@@ -110,10 +110,7 @@ export const HomeMasonryShowcase: React.FC = () => {
             className={`${heroStyles.ctaButton} ${styles.viewAllInline}`}
             href="/projects"
           >
-            <span>View All Projects</span>
-            <span className={styles.viewAllIcon} aria-hidden>
-              <ArrowForwardIcon className="h-[1.125rem] w-[1.125rem] fill-current" />
-            </span>
+            View All Projects
           </Link>
         </p>
       </div>
