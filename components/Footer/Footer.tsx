@@ -12,11 +12,11 @@ export const Footer: React.FC = () => (
       <div className="container px-0 pt-12 mx-auto">
         <div className="flex flex-wrap justify-center px-4 w-full">
           <div className="px-6 py-6 w-full text-center lg:w-4/12 lg:text-left">
-            <p className="pb-5">
+            <h2 className="m-0 pb-5">
               <span className={extruded.perspectiveWrapFooter}>
                 <span className={extruded.footerTitle}>About Me</span>
               </span>
-            </p>
+            </h2>
             <p className="pb-4">
               Senior Front-End Engineer at Ripjar. Computer Science MEng
               graduate of Warwick University. Programmer and Web Developer with
@@ -33,11 +33,11 @@ export const Footer: React.FC = () => (
             </div>
           </div>
           <div className="px-6 py-6 w-full sm:w-6/12 lg:w-4/12">
-            <p className="pb-5">
+            <h2 className="m-0 pb-5">
               <span className={extruded.perspectiveWrapFooter}>
                 <span className={extruded.footerTitle}>Projects</span>
               </span>
-            </p>
+            </h2>
             <ul>
               <FooterLink href="/projects">All Projects</FooterLink>
               <FooterLink href="/projects/solar-system">
@@ -55,11 +55,11 @@ export const Footer: React.FC = () => (
             </ul>
           </div>
           <div className="px-6 py-6 w-full sm:w-6/12 lg:w-4/12">
-            <p className="pb-5">
+            <h2 className="m-0 pb-5">
               <span className={extruded.perspectiveWrapFooter}>
                 <span className={extruded.footerTitle}>Website</span>
               </span>
-            </p>
+            </h2>
             <ul>
               <FooterLink href="/">Home</FooterLink>
               <FooterLink href="/projects">Projects</FooterLink>
