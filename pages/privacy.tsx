@@ -5,7 +5,7 @@ import React from 'react';
 
 const Privacy: React.FC = () => {
   return (
-    <Layout title="Privacy - Kyle Gough" theme="space-gothic">
+    <Layout title="Privacy - Kyle Gough">
       <Section>
         <article className="privacy-page">
           <header className="privacy-page__header">

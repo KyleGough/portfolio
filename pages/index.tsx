@@ -15,7 +15,7 @@ const Home: React.FC = () => {
   });
 
   return (
-    <Layout title="Portfolio - Kyle Gough" theme="space-gothic">
+    <Layout title="Portfolio - Kyle Gough">
       <HomeHeroVariants />
       <HomeMasonryShowcase />
       <Divider />
