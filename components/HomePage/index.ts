@@ -1,1 +1,1 @@
-export { HomeHeroVariants } from './HomeHeroVariants';
+export { HomeHero } from './HomeHero';

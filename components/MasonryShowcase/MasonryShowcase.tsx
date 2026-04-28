@@ -1,5 +1,5 @@
 import { FadeIn } from '@components/FadeIn';
-import heroStyles from '@components/HomePage/HomeHeroVariants.module.css';
+import heroStyles from '@components/HomePage/HomeHero.module.css';
 import { ArrowForwardIcon } from '@components/Icons';
 import imageMars from '@image/mars.png';
 import imageSudoku from '@image/sudoku1.jpg';

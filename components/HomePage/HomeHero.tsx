@@ -4,16 +4,13 @@ import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
 import dynamic from 'next/dynamic';
 import React from 'react';
 
-import styles from './HomeHeroVariants.module.css';
+import styles from './HomeHero.module.css';
 
 const INTRO =
   'Specialising in building scalable, performant web applications with TypeScript and React. Passionate about cosmology, sci-fi, cycling, guitar, and board games.';
 
-const FalconHeavyWireframeHero = dynamic(
-  () =>
-    import('./FalconHeavyWireframeHero').then(
-      (m) => m.FalconHeavyWireframeHero
-    ),
+const FalconHeavyWireframe = dynamic(
+  () => import('./FalconHeavyWireframe').then((m) => m.FalconHeavyWireframe),
   {
     ssr: false,
     loading: () => (
@@ -24,7 +21,7 @@ const FalconHeavyWireframeHero = dynamic(
   }
 );
 
-export const HomeHeroVariants: React.FC = () => {
+export const HomeHero: React.FC = () => {
   return (
     <header className={styles.slot} aria-label="Welcome">
       <div
@@ -33,7 +30,7 @@ export const HomeHeroVariants: React.FC = () => {
         aria-label="Three-dimensional wireframe of a Falcon Heavy class rocket with animated engine plumes, plus a decorative mock GNC readout: fuel, velocity, pitch, and roll."
       >
         <div className={styles.wireframeStage}>
-          <FalconHeavyWireframeHero />
+          <FalconHeavyWireframe />
           <div className={styles.telemetryOverRocket}>
             <FlightTelemetry />
           </div>

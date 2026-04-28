@@ -12,7 +12,7 @@ import {
   HERO_S2_PLUME_AT_MISSION_SEC,
   HERO_S2_PLUME_FADEIN_WALL_MS,
 } from './heroMissionTime';
-import styles from './HomeHeroVariants.module.css';
+import styles from './HomeHero.module.css';
 
 const CYAN = 0x5bd4ea;
 const CYAN_DIM = 0x3d7a8a;
@@ -1058,7 +1058,7 @@ function attachRocketViewport(mount: HTMLElement): () => void {
 /**
  * Client-only WebGL: Falcon Heavy style triple-body wireframe (main stage + two boosters).
  */
-export const FalconHeavyWireframeHero: React.FC = () => {
+export const FalconHeavyWireframe: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
