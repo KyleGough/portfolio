@@ -1,11 +1,11 @@
+import { getHeroMissionSec } from '@components/HomePage/heroMissionTime';
 import React, { useEffect, useMemo, useState } from 'react';
 
-import styles from './HeroFlightTelemetry.module.css';
-import { getHeroMissionSec } from './heroMissionTime';
+import styles from './FlightTelemetry.module.css';
 
 const TICK_MS = 120;
 
-function formatTPlus(totalSec: number): string {
+const formatTPlus = (totalSec: number): string => {
   const h = Math.floor(totalSec / 3600);
   const rem1 = totalSec - h * 3600;
   const m = Math.floor(rem1 / 60);
@@ -13,13 +13,13 @@ function formatTPlus(totalSec: number): string {
   return `T+ ${h}:${String(m).padStart(2, '0')}:${s
     .toFixed(1)
     .padStart(4, '0')}`;
-}
+};
 
-function clamp(n: number, a: number, b: number): number {
+const clamp = (n: number, a: number, b: number): number => {
   return Math.min(b, Math.max(a, n));
-}
+};
 
-function useSimTime(): number {
+const useSimTime = (): number => {
   const [t, setT] = useState(0);
 
   useEffect(() => {
@@ -33,20 +33,20 @@ function useSimTime(): number {
   }, []);
 
   return t;
-}
+};
 
 /**
  * Mock flight telemetry in three separate windown:
  * Clock/propellant, velocity/trace, pitch/roll.
  */
-export const HeroFlightTelemetry: React.FC = () => {
+export const FlightTelemetry: React.FC = () => {
   const t = useSimTime();
 
   const { missionSec, fuelPct, vrel, pitch, roll, chartPoints, pitchX, rollX } =
     useMemo(() => {
       const missionSec = getHeroMissionSec(t);
       /* Monotonic drain only — no upward wobble (LOX/CH4) */
-      const fuelPct = Math.max(6, 72 - t * 0.09);
+      const fuelPct = Math.max(5, 80 - t * 0.2);
 
       const vrel = Math.round(
         1820 + 55 * Math.sin(t * 0.22) + 20 * Math.cos(t * 0.4)

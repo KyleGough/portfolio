@@ -1,9 +1,9 @@
+import { FlightTelemetry } from '@components/FlightTelemetry';
 import { Link } from '@components/Link';
 import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
 import dynamic from 'next/dynamic';
 import React from 'react';
 
-import { HeroFlightTelemetry } from './HeroFlightTelemetry';
 import styles from './HomeHeroVariants.module.css';
 
 const INTRO =
@@ -35,7 +35,7 @@ export const HomeHeroVariants: React.FC = () => {
         <div className={styles.wireframeStage}>
           <FalconHeavyWireframeHero />
           <div className={styles.telemetryOverRocket}>
-            <HeroFlightTelemetry />
+            <FlightTelemetry />
           </div>
         </div>
       </div>
