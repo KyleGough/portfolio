@@ -1,7 +1,8 @@
 import { Contact } from '@components/Contact';
 import { Divider } from '@components/Divider';
-import { HomeHeroVariants, HomeMasonryShowcase } from '@components/HomePage';
+import { HomeHeroVariants } from '@components/HomePage';
 import { Layout } from '@components/Layout';
+import { MasonryShowcase } from '@components/MasonryShowcase';
 import { Section } from '@components/Section';
 import { TimelineWidget } from '@components/TimelineWidget';
 import { useObserveElement } from '@hooks/useObserveElement';
@@ -17,7 +18,7 @@ const Home: React.FC = () => {
   return (
     <Layout title="Portfolio - Kyle Gough">
       <HomeHeroVariants />
-      <HomeMasonryShowcase />
+      <MasonryShowcase />
       <Divider />
 
       <div className="min-h-0 border-t border-divider">

@@ -36,8 +36,8 @@ function useSimTime(): number {
 }
 
 /**
- * Mock flight telemetry in three separate “windows”: animated decorative
- * readouts (clock/propellant, velocity/trace, pitch/roll).
+ * Mock flight telemetry in three separate windown:
+ * Clock/propellant, velocity/trace, pitch/roll.
  */
 export const HeroFlightTelemetry: React.FC = () => {
   const t = useSimTime();
@@ -48,7 +48,9 @@ export const HeroFlightTelemetry: React.FC = () => {
       /* Monotonic drain only — no upward wobble (LOX/CH4) */
       const fuelPct = Math.max(6, 72 - t * 0.09);
 
-      const vrel = Math.round(1820 + 55 * Math.sin(t * 0.22) + 20 * Math.cos(t * 0.4));
+      const vrel = Math.round(
+        1820 + 55 * Math.sin(t * 0.22) + 20 * Math.cos(t * 0.4)
+      );
 
       const pitch = 12 + 2.1 * Math.sin(t * 0.31) + 0.6 * Math.sin(t * 0.9);
       const roll = -0.4 + 0.9 * Math.cos(t * 0.37) + 0.25 * Math.sin(t * 1.1);
@@ -61,7 +63,11 @@ export const HeroFlightTelemetry: React.FC = () => {
           0.5 +
           0.4 * Math.sin(t * 0.28 + i * 0.45) +
           0.12 * Math.sin(t * 0.5 + i * 1.2);
-        const y = clamp(2 + (1 - yNorm) * 16 + Math.sin(t * 0.2 + i) * 0.5, 0.5, 19.2);
+        const y = clamp(
+          2 + (1 - yNorm) * 16 + Math.sin(t * 0.2 + i) * 0.5,
+          0.5,
+          19.2
+        );
         points.push(`${x},${y.toFixed(2)}`);
       }
 
@@ -93,9 +99,7 @@ export const HeroFlightTelemetry: React.FC = () => {
         <div className={styles.block}>
           <div className={styles.labelRow}>
             <span className={styles.label}>LOX / CH4</span>
-            <span className={styles.value}>
-              {fuelPct.toFixed(0)}%
-            </span>
+            <span className={styles.value}>{fuelPct.toFixed(0)}%</span>
           </div>
           <div className={styles.meter}>
             <div
@@ -112,7 +116,7 @@ export const HeroFlightTelemetry: React.FC = () => {
           <div className={styles.labelRow}>
             <span className={styles.label}>Vrel</span>
             <span className={styles.value}>
-              {vrel.toLocaleString('en-GB', { useGrouping: true }).replace(/,/g, ' ')}
+              {vrel.toLocaleString('en-GB', { useGrouping: true })}
               <span className={styles.units}>m·s⁻¹</span>
             </span>
           </div>

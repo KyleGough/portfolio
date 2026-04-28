@@ -7,7 +7,7 @@ import { HeroFlightTelemetry } from './HeroFlightTelemetry';
 import styles from './HomeHeroVariants.module.css';
 
 const INTRO =
-  'Specialising in building scalable, performant web applications with TypeScript and React. My interests lie in cosmology, science-fiction, cycling, guitar, and board games.';
+  'Specialising in building scalable, performant web applications with TypeScript and React. Passionate about cosmology, sci-fi, cycling, guitar, and board games.';
 
 const FalconHeavyWireframeHero = dynamic(
   () =>
@@ -24,9 +24,6 @@ const FalconHeavyWireframeHero = dynamic(
   }
 );
 
-/**
- * Home hero: Falcon Heavy style wireframe (Three.js) + copy (space-gothic).
- */
 export const HomeHeroVariants: React.FC = () => {
   return (
     <header className={styles.slot} aria-label="Welcome">
