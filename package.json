@@ -13,11 +13,14 @@
     "url": "https://github.com/KyleGough/portfolio"
   },
   "private": true,
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "@types/node": "^16.11.22",
+    "@types/node": "^20.14.0",
     "@types/react": "^18.3.28",
     "@types/react-dom": "^18.3.7",
     "@vercel/analytics": "^0.1.5",
@@ -31,8 +34,7 @@
     "resend": "^4.0.1",
     "sharp": "^0.32.6",
     "three": "^0.160.0",
-    "typescript": "^4.5.5",
-    "web-vitals": "^2.1.4"
+    "typescript": "^4.5.5"
   },
   "scripts": {
     "start": "next start",
@@ -66,7 +68,7 @@
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
     "autoprefixer": "^10.4.2",
-    "cypress": "^11.2.0",
+    "cypress": "^13.15.0",
     "eslint": "^8.23.1",
     "eslint-config-next": "^13.0.5",
     "eslint-plugin-cypress": "^2.12.1",
