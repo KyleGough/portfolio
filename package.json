@@ -31,8 +31,7 @@
     "resend": "^4.0.1",
     "sharp": "^0.32.6",
     "three": "^0.160.0",
-    "typescript": "^4.5.5",
-    "web-vitals": "^2.1.4"
+    "typescript": "^4.5.5"
   },
   "scripts": {
     "start": "next start",
