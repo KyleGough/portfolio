@@ -1,6 +1,5 @@
 import mockIntersectionObserver from '@mocks/mockIntersectionObserver';
 import { act, fireEvent, render, screen } from '@testing-library/react';
-import axios from 'axios';
 import React from 'react';
 
 import { Contact } from './Contact';
@@ -8,7 +7,10 @@ import { Contact } from './Contact';
 const MESSAGE_METER_TEST_ID = 'contact-form-message-meter';
 
 describe('Contact component', () => {
-  beforeEach(mockIntersectionObserver);
+  beforeEach(() => {
+    mockIntersectionObserver();
+    global.fetch = jest.fn();
+  });
   afterEach(() => {
     jest.restoreAllMocks();
   });
@@ -25,7 +27,6 @@ describe('Contact component', () => {
   });
 
   it('contact form shows errors when required fields are empty', () => {
-    const spy = jest.spyOn(axios, 'post');
     render(<Contact />);
 
     // Send message.
@@ -38,11 +39,10 @@ describe('Contact component', () => {
     expect(screen.getAllByText('Required!')).toHaveLength(3);
 
     // Email API should not have been called.
-    expect(spy).toHaveBeenCalledTimes(0);
+    expect(global.fetch).toHaveBeenCalledTimes(0);
   });
 
   it('contact form shows error when given invalid email', () => {
-    const spy = jest.spyOn(axios, 'post');
     render(<Contact />);
 
     // Update email field.
@@ -64,14 +64,14 @@ describe('Contact component', () => {
     expect(screen.getAllByText('Required!')).toHaveLength(2);
 
     // Email API should not have been called.
-    expect(spy).toHaveBeenCalledTimes(0);
+    expect(global.fetch).toHaveBeenCalledTimes(0);
   });
 
   it('contact form submits on valid inputs', () => {
-    // Pending promise: we only assert axios was invoked; no async state flush needed.
-    const axiosMock = jest
-      .spyOn(axios, 'post')
-      .mockReturnValue(new Promise<never>(() => undefined));
+    // Pending promise: we only assert fetch was invoked; no async state flush needed.
+    (global.fetch as jest.Mock).mockReturnValue(
+      new Promise<never>(() => undefined)
+    );
 
     render(<Contact />);
 
@@ -103,11 +103,15 @@ describe('Contact component', () => {
     });
 
     // Email API should have been called.
-    expect(axiosMock).toHaveBeenCalledTimes(1);
-    expect(axiosMock).toHaveBeenCalledWith('/api/send', {
-      name: 'Kyle Gough',
-      email: 'foo.bar@baz.com',
-      message: 'Custom Message',
+    expect(global.fetch).toHaveBeenCalledTimes(1);
+    expect(global.fetch).toHaveBeenCalledWith('/api/send', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: 'Kyle Gough',
+        email: 'foo.bar@baz.com',
+        message: 'Custom Message',
+      }),
     });
   });
 });
