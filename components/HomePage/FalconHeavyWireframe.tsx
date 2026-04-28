@@ -118,7 +118,7 @@ function addNorthHemisphereCapEdges(
 }
 
 /**
- * Cyl shoulder + spherical cap. Total height = shoulderH + capRadius (``FAIRING_H``).
+ * Cyl shoulder + spherical cap. Total height = shoulderH + capRadius (`FAIRING_H`).
  */
 function addRoundedPayloadFairingEdges(
   parent: THREE.Group,
@@ -656,7 +656,14 @@ function buildRocket(
     );
   }
 
-  return { body, coreLower, coreUpper, leftBooster, rightBooster, strutsGroup };
+  return {
+    body,
+    coreLower,
+    coreUpper,
+    leftBooster,
+    rightBooster,
+    strutsGroup,
+  };
 }
 
 function centerObjectAtOrigin(object: THREE.Object3D): void {
@@ -1001,7 +1008,6 @@ function attachRocketViewport(mount: HTMLElement): () => void {
       s2PlumeEventWall0
     );
     s2PlumeEventWall0 = s2PlumeWall;
-
     if (t2Wall === null) {
       resetBoosterSeparationPose(leftBooster, rightBooster, strutsGroup);
     } else {

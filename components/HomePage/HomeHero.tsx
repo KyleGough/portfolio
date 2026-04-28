@@ -6,9 +6,6 @@ import React from 'react';
 
 import styles from './HomeHero.module.css';
 
-const INTRO =
-  'Specialising in building scalable, performant web applications with TypeScript and React. Passionate about cosmology, sci-fi, cycling, guitar, and board games.';
-
 const FalconHeavyWireframe = dynamic(
   () => import('./FalconHeavyWireframe').then((m) => m.FalconHeavyWireframe),
   {
@@ -41,7 +38,11 @@ export const HomeHero: React.FC = () => {
           <span className={extruded.nameExtruded}>Kyle Gough</span>
         </h1>
         <p className={styles.eyebrow}>Senior Front-End Engineer</p>
-        <p className={styles.intro}>{INTRO}</p>
+        <p className={styles.intro}>
+          Specialising in building scalable, performant web applications with
+          TypeScript and React. Passionate about cosmology, sci-fi, cycling,
+          guitar, and board games.
+        </p>
         <div className={styles.cta}>
           <Link className={styles.ctaButton} to="/projects">
             View Projects
