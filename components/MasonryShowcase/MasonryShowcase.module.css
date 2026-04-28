@@ -97,8 +97,8 @@
   text-align: left;
   overflow: hidden;
   color: inherit;
-  transition: box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 0.3s, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s,
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   outline: none;
   contain: content;
 }
@@ -147,7 +147,11 @@
   flex: 1;
   flex-direction: column;
   padding: 0.9rem 1.1rem 1.1rem;
-  background: linear-gradient(180deg, oklch(6% 0.02 280) 0%, var(--void-deep) 100%);
+  background: linear-gradient(
+    180deg,
+    oklch(6% 0.02 280) 0%,
+    var(--void-deep) 100%
+  );
   border-top: 1px solid oklch(100% 0 0 / 0.08);
 }
 
@@ -211,8 +215,7 @@
   .tile:hover,
   .tile:focus-visible {
     box-shadow: 0 0 0 1px oklch(0% 0 0 / 0.2) inset,
-      0 0 0 1px oklch(100% 0 0 / 0.12) inset,
-      0 20px 48px oklch(0% 0 0 / 0.4),
+      0 0 0 1px oklch(100% 0 0 / 0.12) inset, 0 20px 48px oklch(0% 0 0 / 0.4),
       0 0 50px oklch(50% 0.12 200 / 0.1);
     border-color: oklch(100% 0 0 / 0.2);
   }
@@ -244,7 +247,7 @@
   margin-top: 2.75rem;
 }
 
-/* Pill chrome + hover: shared with hero “View Projects” via HomeHeroVariants.ctaButton */
+/* Pill chrome + hover: shared with hero "View Projects" via HomeHero.ctaButton */
 .viewAllInline {
   display: inline-flex;
   align-items: center;

@@ -1,12 +1,11 @@
+import { getHeroMissionSec } from '@components/HomePage/heroMissionTime';
 import React, { useEffect, useMemo, useState } from 'react';
 
-import styles from './HeroFlightTelemetry.module.css';
+import styles from './FlightTelemetry.module.css';
 
 const TICK_MS = 120;
-/** Base mission elapsed time (s) for T+ display: ~4:12.6 from lift-off */
-const T0 = 4 * 60 + 12.6;
 
-function formatTPlus(totalSec: number): string {
+const formatTPlus = (totalSec: number): string => {
   const h = Math.floor(totalSec / 3600);
   const rem1 = totalSec - h * 3600;
   const m = Math.floor(rem1 / 60);
@@ -14,13 +13,13 @@ function formatTPlus(totalSec: number): string {
   return `T+ ${h}:${String(m).padStart(2, '0')}:${s
     .toFixed(1)
     .padStart(4, '0')}`;
-}
+};
 
-function clamp(n: number, a: number, b: number): number {
+const clamp = (n: number, a: number, b: number): number => {
   return Math.min(b, Math.max(a, n));
-}
+};
 
-function useSimTime(): number {
+const useSimTime = (): number => {
   const [t, setT] = useState(0);
 
   useEffect(() => {
@@ -34,22 +33,24 @@ function useSimTime(): number {
   }, []);
 
   return t;
-}
+};
 
 /**
- * Mock flight telemetry in three separate “windows”: animated decorative
- * readouts (clock/propellant, velocity/trace, pitch/roll).
+ * Mock flight telemetry in three separate windown:
+ * Clock/propellant, velocity/trace, pitch/roll.
  */
-export const HeroFlightTelemetry: React.FC = () => {
+export const FlightTelemetry: React.FC = () => {
   const t = useSimTime();
 
   const { missionSec, fuelPct, vrel, pitch, roll, chartPoints, pitchX, rollX } =
     useMemo(() => {
-      const missionSec = T0 + t * 0.85;
+      const missionSec = getHeroMissionSec(t);
       /* Monotonic drain only — no upward wobble (LOX/CH4) */
-      const fuelPct = Math.max(6, 72 - t * 0.09);
+      const fuelPct = Math.max(5, 80 - t * 0.2);
 
-      const vrel = Math.round(1820 + 55 * Math.sin(t * 0.22) + 20 * Math.cos(t * 0.4));
+      const vrel = Math.round(
+        1820 + 55 * Math.sin(t * 0.22) + 20 * Math.cos(t * 0.4)
+      );
 
       const pitch = 12 + 2.1 * Math.sin(t * 0.31) + 0.6 * Math.sin(t * 0.9);
       const roll = -0.4 + 0.9 * Math.cos(t * 0.37) + 0.25 * Math.sin(t * 1.1);
@@ -62,7 +63,11 @@ export const HeroFlightTelemetry: React.FC = () => {
           0.5 +
           0.4 * Math.sin(t * 0.28 + i * 0.45) +
           0.12 * Math.sin(t * 0.5 + i * 1.2);
-        const y = clamp(2 + (1 - yNorm) * 16 + Math.sin(t * 0.2 + i) * 0.5, 0.5, 19.2);
+        const y = clamp(
+          2 + (1 - yNorm) * 16 + Math.sin(t * 0.2 + i) * 0.5,
+          0.5,
+          19.2
+        );
         points.push(`${x},${y.toFixed(2)}`);
       }
 
@@ -94,9 +99,7 @@ export const HeroFlightTelemetry: React.FC = () => {
         <div className={styles.block}>
           <div className={styles.labelRow}>
             <span className={styles.label}>LOX / CH4</span>
-            <span className={styles.value}>
-              {fuelPct.toFixed(0)}%
-            </span>
+            <span className={styles.value}>{fuelPct.toFixed(0)}%</span>
           </div>
           <div className={styles.meter}>
             <div
@@ -113,7 +116,7 @@ export const HeroFlightTelemetry: React.FC = () => {
           <div className={styles.labelRow}>
             <span className={styles.label}>Vrel</span>
             <span className={styles.value}>
-              {vrel.toLocaleString('en-GB', { useGrouping: true }).replace(/,/g, ' ')}
+              {vrel.toLocaleString('en-GB', { useGrouping: true })}
               <span className={styles.units}>m·s⁻¹</span>
             </span>
           </div>

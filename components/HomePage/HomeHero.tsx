@@ -1,19 +1,13 @@
+import { FlightTelemetry } from '@components/FlightTelemetry';
 import { Link } from '@components/Link';
 import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
 import dynamic from 'next/dynamic';
 import React from 'react';
 
-import { HeroFlightTelemetry } from './HeroFlightTelemetry';
-import styles from './HomeHeroVariants.module.css';
+import styles from './HomeHero.module.css';
 
-const INTRO =
-  'Specialising in building scalable, performant web applications with TypeScript and React. My interests lie in cosmology, science-fiction, cycling, guitar, and board games.';
-
-const FalconHeavyWireframeHero = dynamic(
-  () =>
-    import('./FalconHeavyWireframeHero').then(
-      (m) => m.FalconHeavyWireframeHero
-    ),
+const FalconHeavyWireframe = dynamic(
+  () => import('./FalconHeavyWireframe').then((m) => m.FalconHeavyWireframe),
   {
     ssr: false,
     loading: () => (
@@ -24,21 +18,18 @@ const FalconHeavyWireframeHero = dynamic(
   }
 );
 
-/**
- * Home hero: Falcon Heavy style wireframe (Three.js) + copy (space-gothic).
- */
-export const HomeHeroVariants: React.FC = () => {
+export const HomeHero: React.FC = () => {
   return (
     <header className={styles.slot} aria-label="Welcome">
       <div
         className={styles.graphic}
         role="img"
-        aria-label="Three-dimensional wireframe of a Falcon Heavy class rocket with a decorative mock GNC readout: fuel, velocity, pitch, and roll."
+        aria-label="Three-dimensional wireframe of a Falcon Heavy class rocket with animated engine plumes, plus a decorative mock GNC readout: fuel, velocity, pitch, and roll."
       >
         <div className={styles.wireframeStage}>
-          <FalconHeavyWireframeHero />
+          <FalconHeavyWireframe />
           <div className={styles.telemetryOverRocket}>
-            <HeroFlightTelemetry />
+            <FlightTelemetry />
           </div>
         </div>
       </div>
@@ -47,7 +38,11 @@ export const HomeHeroVariants: React.FC = () => {
           <span className={extruded.nameExtruded}>Kyle Gough</span>
         </h1>
         <p className={styles.eyebrow}>Senior Front-End Engineer</p>
-        <p className={styles.intro}>{INTRO}</p>
+        <p className={styles.intro}>
+          Specialising in building scalable, performant web applications with
+          TypeScript and React. Passionate about cosmology, sci-fi, cycling,
+          guitar, and board games.
+        </p>
         <div className={styles.cta}>
           <Link className={styles.ctaButton} to="/projects">
             View Projects

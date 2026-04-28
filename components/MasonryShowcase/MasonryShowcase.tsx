@@ -1,4 +1,5 @@
 import { FadeIn } from '@components/FadeIn';
+import heroStyles from '@components/HomePage/HomeHero.module.css';
 import { ArrowForwardIcon } from '@components/Icons';
 import imageMars from '@image/mars.png';
 import imageSudoku from '@image/sudoku1.jpg';
@@ -9,8 +10,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-import heroStyles from './HomeHeroVariants.module.css';
-import styles from './HomeMasonryShowcase.module.css';
+import styles from './MasonryShowcase.module.css';
 
 const EXCERPTS: Record<string, string> = {
   'solar-system':
@@ -75,7 +75,7 @@ const Tile: React.FC<{
 /**
  * Two-column bento: tall feature + matching-height tile. All link to case studies.
  */
-export const HomeMasonryShowcase: React.FC = () => {
+export const MasonryShowcase: React.FC = () => {
   return (
     <section
       aria-labelledby="featured-heading"

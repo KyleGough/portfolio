@@ -1,4 +1,4 @@
-import heroStyles from '@components/HomePage/HomeHeroVariants.module.css';
+import heroStyles from '@components/HomePage/HomeHero.module.css';
 import { RestartIcon, SendIcon, TickIcon } from '@components/Icons';
 import { clsx } from 'clsx';
 import React from 'react';
@@ -40,7 +40,8 @@ export const ContactSendButton: React.FC<ContactSendButtonProps> = ({
     }
   };
 
-  const inactive = status === EmailStatus.SENT || status === EmailStatus.LOADING;
+  const inactive =
+    status === EmailStatus.SENT || status === EmailStatus.LOADING;
   const tone = status === EmailStatus.IDLE ? 'idle' : 'other';
 
   return (
