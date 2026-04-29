@@ -16,6 +16,9 @@ import {
   CORE_BOTTOM_STAGING_WALL_MS,
   CORE_STAGING_AT_MISSION_SEC,
   getMissionSec,
+  LOOP_FADE_IN_MISSION_SEC,
+  LOOP_PERIOD_MISSION_SEC,
+  LOOP_UPPER_EXIT_START_MISSION_SEC,
   S2_PLUME_AT_MISSION_SEC,
   S2_PLUME_FADEIN_WALL_MS,
 } from './MissionTime';
@@ -35,12 +38,14 @@ const Y_MOUNT_CORE = 0.03;
 /** Booster first-stage local origin — body space X offset for each side booster. */
 const BOOSTER_STAGE_X = 0.7;
 const BOOSTER_SEP_EXTRA_X = 0.38;
-/** Slight +Y with separation (lateral drift up). */
-const BOOSTER_SEP_EXTRA_Y = 0.14;
-/** Outward roll about Z, max at separationK = 1. */
+/** Max downward Y (body space) while side boosters fade; scales 0–1 with wireframe fade. */
+const BOOSTER_SEP_FALL_MAX = 0.5;
+/** Outward roll about Z, max at rotSplayK = 1. */
 const BOOSTER_SEP_SPLAY_RAD = 0.55;
 
 const CORE_FALL_DY = 0.55;
+/** Second stage + fairing rise (body +Y) during T+2:05–T+2:10 loop exit. */
+const CORE_UPPER_RISE = 1.15;
 
 /** First stage height; joint with interstage is the natural “line” for stack separation. */
 const S1_H = 3.12;
@@ -258,20 +263,42 @@ const setGroupLineOpacityFactor = (
   });
 };
 
+const loopFadeFromPhaseSec = (phaseSec: number): number => {
+  if (phaseSec >= LOOP_FADE_IN_MISSION_SEC) {
+    return 1;
+  }
+  const t = phaseSec / LOOP_FADE_IN_MISSION_SEC;
+  return 1 - (1 - t) * (1 - t);
+};
+
+const upperStackExitFromPhaseSec = (phaseSec: number): {
+  riseY: number;
+  stackFadeK: number;
+} => {
+  if (phaseSec < LOOP_UPPER_EXIT_START_MISSION_SEC) {
+    return { riseY: 0, stackFadeK: 1 };
+  }
+  const span = LOOP_PERIOD_MISSION_SEC - LOOP_UPPER_EXIT_START_MISSION_SEC;
+  const u = Math.min(1, Math.max(0, (phaseSec - LOOP_UPPER_EXIT_START_MISSION_SEC) / span));
+  const riseY = CORE_UPPER_RISE * u * u * u;
+  const stackFadeK = 1 - u;
+  return { riseY, stackFadeK };
+};
+
 const t2EventProgress = (
   now: number,
-  wallS: number,
+  phaseMissionSec: number,
   previousT2Wall: number | null
 ): {
+  boosterFallK: number;
   plumeMul: number;
   rotSplayK: number;
   separationK: number;
   t2Wall: number | null;
   wireAlpha: number;
 } => {
-  const missionSec = getMissionSec(wallS);
   let t2Wall = previousT2Wall;
-  if (missionSec >= BOOSTER_FADE_AT_MISSION_SEC) {
+  if (phaseMissionSec >= BOOSTER_FADE_AT_MISSION_SEC) {
     if (t2Wall === null) {
       t2Wall = now;
     }
@@ -280,6 +307,7 @@ const t2EventProgress = (
   }
   if (t2Wall === null) {
     return {
+      boosterFallK: 0,
       plumeMul: 1,
       rotSplayK: 0,
       separationK: 0,
@@ -292,32 +320,37 @@ const t2EventProgress = (
   const wireAlpha = Math.max(0, 1 - d / BOOSTER_WIREFRAME_FADE_WALL_MS);
   const uOffset = Math.min(1, d / BOOSTER_SEP_DURATION_MS);
   const separationK = 1 - (1 - uOffset) * (1 - uOffset);
-  /** Splay continues over the full wireframe fade, max roll when fully transparent. */
+  /** Same timeline as wire fade; rotation uses cubic ease-in (slow roll-up → faster). */
   const uRot = Math.min(1, d / BOOSTER_WIREFRAME_FADE_WALL_MS);
-  const rotSplayK = 1 - (1 - uRot) * (1 - uRot);
-  return { plumeMul, rotSplayK, separationK, t2Wall, wireAlpha };
+  const rotSplayK = uRot * uRot * uRot;
+  const boosterFallK = uRot;
+  return { boosterFallK, plumeMul, rotSplayK, separationK, t2Wall, wireAlpha };
 };
 
 const applyBoosterSeparationPose = (
   separationK: number,
   rotSplayK: number,
+  boosterFallK: number,
   wireAlpha: number,
+  loopFadeK: number,
   leftBooster: THREE.Group,
   rightBooster: THREE.Group,
   strutsGroup: THREE.Object3D
 ): void => {
   const extraX = BOOSTER_SEP_EXTRA_X * separationK;
-  const extraY = BOOSTER_SEP_EXTRA_Y * separationK;
+  const extraY = -BOOSTER_SEP_FALL_MAX * boosterFallK;
+  const lineK = wireAlpha * loopFadeK;
   leftBooster.position.set(-BOOSTER_STAGE_X - extraX, extraY, 0);
   rightBooster.position.set(BOOSTER_STAGE_X + extraX, extraY, 0);
   leftBooster.rotation.z = BOOSTER_SEP_SPLAY_RAD * rotSplayK;
   rightBooster.rotation.z = -BOOSTER_SEP_SPLAY_RAD * rotSplayK;
-  setGroupLineOpacityFactor(leftBooster, wireAlpha);
-  setGroupLineOpacityFactor(rightBooster, wireAlpha);
-  setGroupLineOpacityFactor(strutsGroup, wireAlpha);
+  setGroupLineOpacityFactor(leftBooster, lineK);
+  setGroupLineOpacityFactor(rightBooster, lineK);
+  setGroupLineOpacityFactor(strutsGroup, lineK);
 };
 
 const resetBoosterSeparationPose = (
+  loopFadeK: number,
   leftBooster: THREE.Group,
   rightBooster: THREE.Group,
   strutsGroup: THREE.Object3D
@@ -326,14 +359,14 @@ const resetBoosterSeparationPose = (
   rightBooster.position.set(BOOSTER_STAGE_X, 0, 0);
   leftBooster.rotation.set(0, 0, 0);
   rightBooster.rotation.set(0, 0, 0);
-  setGroupLineOpacityFactor(leftBooster, 1);
-  setGroupLineOpacityFactor(rightBooster, 1);
-  setGroupLineOpacityFactor(strutsGroup, 1);
+  setGroupLineOpacityFactor(leftBooster, loopFadeK);
+  setGroupLineOpacityFactor(rightBooster, loopFadeK);
+  setGroupLineOpacityFactor(strutsGroup, loopFadeK);
 };
 
 const t3EventProgress = (
   now: number,
-  wallS: number,
+  phaseMissionSec: number,
   previousT3: number | null
 ): {
   coreLowerK: number;
@@ -341,9 +374,8 @@ const t3EventProgress = (
   motionK: number;
   t3Wall: number | null;
 } => {
-  const missionSec = getMissionSec(wallS);
   let t3Wall = previousT3;
-  if (missionSec >= CORE_STAGING_AT_MISSION_SEC) {
+  if (phaseMissionSec >= CORE_STAGING_AT_MISSION_SEC) {
     if (t3Wall === null) {
       t3Wall = now;
     }
@@ -365,12 +397,11 @@ const t3EventProgress = (
  */
 const s2PlumeProgress = (
   now: number,
-  wallS: number,
+  phaseMissionSec: number,
   previousS2Wall: number | null
 ): { s2PlumeK: number; s2Wall: number | null } => {
-  const missionSec = getMissionSec(wallS);
   let s2Wall = previousS2Wall;
-  if (missionSec >= S2_PLUME_AT_MISSION_SEC) {
+  if (phaseMissionSec >= S2_PLUME_AT_MISSION_SEC) {
     if (s2Wall === null) {
       s2Wall = now;
     }
@@ -389,15 +420,16 @@ const s2PlumeProgress = (
 const applyCoreStagingPose = (
   coreLowerK: number,
   motionK: number,
+  loopFadeK: number,
   coreLower: THREE.Group
 ): void => {
   coreLower.position.set(0, -CORE_FALL_DY * motionK, 0);
-  setGroupLineOpacityFactor(coreLower, coreLowerK);
+  setGroupLineOpacityFactor(coreLower, coreLowerK * loopFadeK);
 };
 
-const resetCoreStagingPose = (coreLower: THREE.Group): void => {
+const resetCoreStagingPose = (loopFadeK: number, coreLower: THREE.Group): void => {
   coreLower.position.set(0, 0, 0);
-  setGroupLineOpacityFactor(coreLower, 1);
+  setGroupLineOpacityFactor(coreLower, loopFadeK);
 };
 
 const disposeWireframeScene = (scene: THREE.Scene): void => {
@@ -484,41 +516,71 @@ const attachRocketViewport = (mount: HTMLElement): (() => void) => {
   let t2EventWall0: number | null = null;
   let t3EventWall0: number | null = null;
   let s2PlumeEventWall0: number | null = null;
+  let prevCycleIndex = 0;
   let rafId = 0;
   const tick = () => {
     const now = performance.now();
     const wallS = (now - time0) * 0.001;
-    const { plumeMul, rotSplayK, separationK, t2Wall, wireAlpha } =
-      t2EventProgress(now, wallS, t2EventWall0);
+    const missionSec = getMissionSec(wallS);
+    const phaseSec =
+      missionSec -
+      Math.floor(missionSec / LOOP_PERIOD_MISSION_SEC) *
+        LOOP_PERIOD_MISSION_SEC;
+    const cycleIndex = Math.floor(missionSec / LOOP_PERIOD_MISSION_SEC);
+    if (cycleIndex > prevCycleIndex) {
+      t2EventWall0 = null;
+      t3EventWall0 = null;
+      s2PlumeEventWall0 = null;
+      prevCycleIndex = cycleIndex;
+    }
+
+    const loopFadeK = loopFadeFromPhaseSec(phaseSec);
+    const { riseY: coreUpperRiseY, stackFadeK: upperStackFadeK } =
+      upperStackExitFromPhaseSec(phaseSec);
+
+    const {
+      boosterFallK,
+      plumeMul,
+      rotSplayK,
+      separationK,
+      t2Wall,
+      wireAlpha,
+    } = t2EventProgress(now, phaseSec, t2EventWall0);
     t2EventWall0 = t2Wall;
     const { coreLowerK, corePlumeK, motionK, t3Wall } = t3EventProgress(
       now,
-      wallS,
+      phaseSec,
       t3EventWall0
     );
     t3EventWall0 = t3Wall;
     const { s2PlumeK, s2Wall: s2PlumeWall } = s2PlumeProgress(
       now,
-      wallS,
+      phaseSec,
       s2PlumeEventWall0
     );
     s2PlumeEventWall0 = s2PlumeWall;
+
+    coreUpper.position.y = coreUpperRiseY;
+    setGroupLineOpacityFactor(coreUpper, upperStackFadeK * loopFadeK);
+
     if (t2Wall === null) {
-      resetBoosterSeparationPose(leftBooster, rightBooster, strutsGroup);
+      resetBoosterSeparationPose(loopFadeK, leftBooster, rightBooster, strutsGroup);
     } else {
       applyBoosterSeparationPose(
         separationK,
         rotSplayK,
+        boosterFallK,
         wireAlpha,
+        loopFadeK,
         leftBooster,
         rightBooster,
         strutsGroup
       );
     }
     if (t3Wall === null) {
-      resetCoreStagingPose(coreLower);
+      resetCoreStagingPose(loopFadeK, coreLower);
     } else {
-      applyCoreStagingPose(coreLowerK, motionK, coreLower);
+      applyCoreStagingPose(coreLowerK, motionK, loopFadeK, coreLower);
     }
 
     if (!reducedMotion) {
@@ -530,7 +592,9 @@ const attachRocketViewport = (mount: HTMLElement): (() => void) => {
       corePlumeK,
       plumeMul,
       s2PlumeK,
-      reducedMotion
+      reducedMotion,
+      loopFadeK,
+      upperStackFadeK
     );
     renderer.render(scene, camera);
     rafId = window.requestAnimationFrame(tick);

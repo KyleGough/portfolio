@@ -323,12 +323,24 @@ export const updatePlumeLayersForTick = (
   corePlumeK: number,
   plumeMul: number,
   s2PlumeK: number,
-  reducedMotion: boolean
+  reducedMotion: boolean,
+  loopFadeK = 1,
+  upperStackFadeK = 1
 ): void => {
+  const plumeMulOnly = (layer: PlumeLayer): number =>
+    plumeLayerMul(layer, corePlumeK, plumeMul, s2PlumeK) *
+    (layer.isUpperStage ? upperStackFadeK : 1);
+
+  const setOpacity = (layer: PlumeLayer, flicker: number): void => {
+    const o =
+      layer.baseOpacity * flicker * plumeMulOnly(layer) * loopFadeK;
+    layer.mat.opacity = o;
+    layer.mesh.visible = o > 0.002;
+  };
+
   if (reducedMotion) {
     for (const layer of layers) {
-      const m = plumeLayerMul(layer, corePlumeK, plumeMul, s2PlumeK);
-      layer.mat.opacity = layer.baseOpacity * m;
+      setOpacity(layer, 1);
     }
     return;
   }
@@ -336,8 +348,7 @@ export const updatePlumeLayersForTick = (
     const f = Math.sin(wallS * 19.5 + layer.phase);
     const g = 0.5 + 0.5 * Math.sin(wallS * 29 + layer.phase * 1.63);
     const flicker = 0.72 + 0.28 * g;
-    const pMul = plumeLayerMul(layer, corePlumeK, plumeMul, s2PlumeK);
-    layer.mat.opacity = layer.baseOpacity * flicker * pMul;
+    setOpacity(layer, flicker);
     const pulse = 1 + 0.1 * f;
     const breath = 0.94 + 0.12 * g;
     layer.mesh.scale.set(pulse, breath, pulse);
