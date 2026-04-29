@@ -21,7 +21,6 @@ describe('ProjectItem component', () => {
           blurDataURL: '/#blur',
         }}
         alt="Test Alt Text"
-        logo={{ src: '/#logo', alt: 'Logo' }}
       />
     );
     expect(screen.getByText('Jan 2021 - Jun 2022')).toBeVisible();

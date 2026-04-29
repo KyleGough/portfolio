@@ -27,10 +27,6 @@ const baseProject: Project = {
   description: 'Personal portfolio website',
   github: 'https://github.com/KyleGough/portfolio',
   skills: ['TypeScript', 'JavaScript'],
-  logo: {
-    src: '/#logo',
-    alt: 'Logo',
-  },
 };
 
 describe('ProjectHeader component', () => {

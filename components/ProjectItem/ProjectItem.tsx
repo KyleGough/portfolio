@@ -12,10 +12,6 @@ interface ProjectItemProps {
   description: string;
   image: StaticImageData;
   link: string;
-  logo: {
-    alt: string;
-    src: string;
-  };
   title: string;
 }
 
@@ -26,7 +22,6 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
   link,
   image,
   alt,
-  logo,
 }) => (
   <Section>
     <div className="project-item__row">
@@ -56,9 +51,6 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
                 placeholder="blur"
                 blurDataURL={image.blurDataURL}
               />
-              <div className="absolute right-2 top-2 h-8 w-8 drop-shadow">
-                <Image src={logo.src} alt={logo.alt} width={30} height={30} />
-              </div>
             </div>
             <div className="project-item-cta relative flex items-center justify-center gap-2.5 border-t border-white/25 bg-background px-5 py-3.5 font-mono text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-link transition-[color,box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none group-hover:text-link-hover group-focus-visible:text-link-hover">
               <span>View project</span>
