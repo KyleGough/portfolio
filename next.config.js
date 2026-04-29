@@ -1,3 +1,5 @@
+const path = require('path');
+
 const contentSecurityPolicy = `
   default-src 'self';
   base-uri 'self';
@@ -95,6 +97,8 @@ const securityHeaders = [
 ];
 
 module.exports = {
+  // Parent dirs may contain other lockfiles; trace deps from this app root.
+  outputFileTracingRoot: path.join(__dirname),
   async headers() {
     return [
       {
