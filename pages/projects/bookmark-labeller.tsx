@@ -1,4 +1,5 @@
 import { Divider } from '@components/Divider';
+import { ArrowForwardIcon } from '@components/Icons';
 import { ImageFigure } from '@components/ImageFigure';
 import { Layout } from '@components/Layout';
 import { Link } from '@components/Link';
@@ -15,6 +16,8 @@ import { GetStaticProps } from 'next';
 import Image from 'next/image';
 import React from 'react';
 
+import styles from './bookmark-labeller.module.css';
+
 const BookmarkLabeller: React.FC<ProjectPageProps> = ({ images, project }) => (
   <Layout title="Bookmark Labeller Extension">
     <ProjectHeader project={project} />
@@ -26,20 +29,30 @@ const BookmarkLabeller: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Divider />
 
     <Section>
-      <div className="flex">
-        <div className="w-8 h-8 mr-2">
-          <Image
-            src={FirefoxLogo as string}
-            alt="Firefox Logo"
-            width={30}
-            height={30}
-          />
-        </div>
+      <div className={styles.ctaBlock}>
         <Link
-          className="text-2xl text-link hover:text-link-hover focus:text-link-hover"
+          ariaLabel="Install Bookmark Labeller from Mozilla Add-ons. Opens in a new tab."
+          className={styles.cta}
           href="https://addons.mozilla.org/en-US/firefox/addon/bookmark-labeller/"
         >
-          Install from the Mozilla Add-On Marketplace
+          <span className={styles.ctaIcon}>
+            <Image
+              src={FirefoxLogo as string}
+              alt="Firefox Logo"
+              width={28}
+              height={28}
+              aria-hidden
+            />
+          </span>
+          <span className={styles.ctaText}>
+            <span className={styles.ctaTitle}>
+              Install from Mozilla Add-ons
+            </span>
+          </span>
+          <ArrowForwardIcon
+            aria-hidden
+            className={`${styles.ctaArrow} h-4 w-4 fill-current`}
+          />
         </Link>
       </div>
     </Section>
