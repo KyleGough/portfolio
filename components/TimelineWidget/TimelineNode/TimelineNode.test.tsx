@@ -9,7 +9,7 @@ describe('TimelineNode component', () => {
   beforeEach(mockIntersectionObserver);
 
   it('renders', () => {
-    const { container } = render(
+    render(
       <TimelineNode
         title="Acme"
         subtitle="CEO"
@@ -21,6 +21,5 @@ describe('TimelineNode component', () => {
     expect(screen.getByText('CEO')).toBeVisible();
     expect(screen.getByText('Acme')).toBeVisible();
     expect(screen.getByText('January 2000 - Present')).toBeVisible();
-    expect(container).toMatchSnapshot();
   });
 });

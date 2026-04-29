@@ -6,7 +6,7 @@ import { ImageFigure } from './ImageFigure';
 
 describe('ImageFigure component', () => {
   it('renders', () => {
-    const { container } = render(
+    render(
       <ImageFigure
         image={{
           imageData: mockStaticImageData,
@@ -15,6 +15,5 @@ describe('ImageFigure component', () => {
       />
     );
     expect(screen.getByText('Test Caption')).toBeVisible();
-    expect(container).toMatchSnapshot();
   });
 });

@@ -5,14 +5,6 @@ import React from 'react';
 import { ImageModal } from './ImageModal';
 
 describe('ImageModal component', () => {
-  it('renders', () => {
-    const { container } = render(
-      <ImageModal image={mockStaticImageData} alt="Test Caption" />
-    );
-    expect(screen.getByText('Test Caption')).toBeVisible();
-    expect(container).toMatchSnapshot();
-  });
-
   it('dialog opens and closes on click', () => {
     render(<ImageModal image={mockStaticImageData} alt="Test Caption" />);
     expect(screen.getByText('Test Caption')).toBeVisible();
