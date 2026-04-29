@@ -60,7 +60,7 @@
     ]
   },
   "devDependencies": {
-    "@jest/globals": "^29.5.0",
+    "@jest/globals": "^30.3.0",
     "@next/eslint-plugin-next": "^15.5.15",
     "@types/three": "^0.160.0",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
@@ -74,7 +74,7 @@
     "eslint-plugin-sonarjs": "^0.15.0",
     "eslint-plugin-typescript-sort-keys": "^2.3.0",
     "husky": "^8.0.1",
-    "jest": "^29.3.1",
+    "jest": "^30.3.0",
     "jest-environment-jsdom": "^30.3.0",
     "local-cypress": "^1.2.6",
     "postcss": "^8.5.10",
