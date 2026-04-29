@@ -109,7 +109,6 @@ export const FlightTelemetry: React.FC = () => {
   return (
     <div className={styles.root} aria-hidden>
       <section className={styles.window} aria-hidden>
-        <h2 className={styles.windowHeader}>Clk · prop</h2>
         <p className={styles.clock}>{formatTPlus(missionSec)}</p>
         <div className={styles.block}>
           <div className={styles.labelRow}>
@@ -126,7 +125,6 @@ export const FlightTelemetry: React.FC = () => {
       </section>
 
       <section className={styles.window} aria-hidden>
-        <h2 className={styles.windowHeader}>Nav · inertial</h2>
         <div className={styles.block}>
           <div className={styles.labelRow}>
             <span className={styles.label}>Vrel</span>
@@ -183,7 +181,6 @@ export const FlightTelemetry: React.FC = () => {
       </section>
 
       <section className={styles.window} aria-hidden>
-        <h2 className={styles.windowHeader}>GNC · att</h2>
         <div className={styles.pitchRow}>
           <div>
             <div className={styles.labelRow}>
@@ -210,7 +207,6 @@ export const FlightTelemetry: React.FC = () => {
             </div>
           </div>
         </div>
-        <p className={styles.footnote}>sim · not live</p>
       </section>
     </div>
   );
