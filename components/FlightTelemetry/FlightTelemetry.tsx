@@ -48,8 +48,8 @@ const useSimTime = (): number => {
 };
 
 /**
- * Mock flight telemetry in three separate windown:
- * Clock/propellant, velocity/trace, pitch/roll.
+ * Mock flight telemetry in three windows: clock/propellant, velocity trace,
+ * pitch/roll.
  */
 export const FlightTelemetry: React.FC = () => {
   const t = useSimTime();
