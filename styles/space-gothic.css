@@ -612,6 +612,14 @@ footer.footer--space-gothic {
   --gothic-stroke-bright: oklch(65% 0.15 290 / 0.45);
 }
 
+/* Upper footer band only: blurb, email, nav/social links — Lato (headings + copyright strip unchanged). */
+.app-space-gothic footer .bg-nav-light p,
+footer.footer--space-gothic .bg-nav-light p,
+.app-space-gothic footer .bg-nav-light a[href],
+footer.footer--space-gothic .bg-nav-light a[href] {
+  font-family: var(--font-lato), ui-sans-serif, sans-serif !important;
+}
+
 .app-space-gothic footer [class~='bg-background'],
 footer.footer--space-gothic[class~='bg-background'] {
   background: var(--void-deep) !important;
