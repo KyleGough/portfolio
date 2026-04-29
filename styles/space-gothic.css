@@ -77,19 +77,14 @@
       oklch(22% 0.09 328 / 0.18),
       transparent 54%
     ),
-    radial-gradient(
-      ellipse 52% 58% at 48% 48%,
-      oklch(18% 0.065 102 / 0.11),
-      transparent 64%
-    ),
     linear-gradient(180deg, var(--void-mid) 0%, var(--void-deep) 100%);
   /* Radials fixed to viewport so purple / neon glows don’t scroll away on long pages */
   background-attachment: fixed, fixed, fixed, fixed, fixed, fixed, fixed, fixed,
-    fixed, fixed, scroll;
+    fixed, scroll;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-blend-mode: screen, screen, screen, screen, screen, screen, screen,
-    screen, screen, screen, normal;
+    screen, screen, normal;
   /* Slight black vignette + whisper of violet at the edges */
   box-shadow: inset 0 0 110px oklch(0% 0 0 / 0.38),
     inset 0 0 200px oklch(26% 0.09 300 / 0.045);
