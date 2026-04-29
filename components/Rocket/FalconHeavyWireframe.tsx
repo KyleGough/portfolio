@@ -96,12 +96,9 @@ const buildRocket = (
     S1_H * 0.5,
     0
   );
-  addOctawebEngines(coreEngineWire, wireMat, Y_MOUNT_CORE, 0.2, 1);
-  coreLower.add(coreEngineWire);
-
-  // Interstage, second stage, fairing, and single S2 engine (MVAC) — all above the split
+  // Interstage stays with the first stage through separation (bottom stack).
   addCylinderEdges(
-    coreUpper,
+    coreLower,
     wireMat,
     0.3,
     0.32,
@@ -111,6 +108,10 @@ const buildRocket = (
     S1_H + INTERSTAGE_H / 2,
     0
   );
+  addOctawebEngines(coreEngineWire, wireMat, Y_MOUNT_CORE, 0.2, 1);
+  coreLower.add(coreEngineWire);
+
+  // Second stage, fairing, and single S2 engine (MVAC) — above interstage / seam
   addCylinderEdges(
     coreUpper,
     wireMat,
