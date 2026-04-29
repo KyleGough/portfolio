@@ -6,18 +6,19 @@ import {
   addAllEnginePlumes,
   addEngineNozzle,
   addOctawebEngines,
+  updatePlumeLayersForTick,
 } from './engine';
 import {
-  getHeroMissionSec,
-  HERO_BOOSTER_FADE_AT_MISSION_SEC,
-  HERO_BOOSTER_FADE_WALL_MS,
-  HERO_BOOSTER_SEP_DURATION_MS,
-  HERO_BOOSTER_WIREFRAME_FADE_WALL_MS,
-  HERO_CORE_BOTTOM_STAGING_WALL_MS,
-  HERO_CORE_STAGING_AT_MISSION_SEC,
-  HERO_S2_PLUME_AT_MISSION_SEC,
-  HERO_S2_PLUME_FADEIN_WALL_MS,
-} from './heroMissionTime';
+  BOOSTER_FADE_AT_MISSION_SEC,
+  BOOSTER_FADE_WALL_MS,
+  BOOSTER_SEP_DURATION_MS,
+  BOOSTER_WIREFRAME_FADE_WALL_MS,
+  CORE_BOTTOM_STAGING_WALL_MS,
+  CORE_STAGING_AT_MISSION_SEC,
+  getMissionSec,
+  S2_PLUME_AT_MISSION_SEC,
+  S2_PLUME_FADEIN_WALL_MS,
+} from './MissionTime';
 import {
   addBoosterGridFins,
   addConeEdges,
@@ -52,17 +53,7 @@ const S1_BASE_R = 0.35;
 const S2_ENGINE_SCALE = 0.72;
 const S2_ENGINE_Y_MOUNT = S1_H + INTERSTAGE_H;
 
-type PlumeLayer = {
-  baseOpacity: number;
-  isBooster: boolean;
-  isCore: boolean;
-  isUpperStage: boolean;
-  mat: THREE.MeshBasicMaterial;
-  mesh: THREE.Mesh;
-  phase: number;
-};
-
-function buildRocket(
+const buildRocket = (
   wireMat: THREE.LineBasicMaterial,
   strutMat: THREE.LineBasicMaterial
 ): {
@@ -72,7 +63,7 @@ function buildRocket(
   leftBooster: THREE.Group;
   rightBooster: THREE.Group;
   strutsGroup: THREE.Group;
-} {
+} => {
   const body = new THREE.Group();
   const coreLower = new THREE.Group();
   const coreUpper = new THREE.Group();
@@ -210,7 +201,7 @@ function buildRocket(
     rightBooster,
     strutsGroup,
   };
-}
+};
 
 const centerObjectAtOrigin = (object: THREE.Object3D): void => {
   const box = new THREE.Box3().setFromObject(object);
@@ -219,11 +210,11 @@ const centerObjectAtOrigin = (object: THREE.Object3D): void => {
   object.position.sub(center);
 };
 
-function fitPerspectiveCameraToObject(
+const fitPerspectiveCameraToObject = (
   camera: THREE.PerspectiveCamera,
   object: THREE.Object3D,
   margin: number
-): void {
+): void => {
   const box = new THREE.Box3().setFromObject(object);
   const size = new THREE.Vector3();
   box.getSize(size);
@@ -246,9 +237,12 @@ function fitPerspectiveCameraToObject(
     center.z + dist * 0.72
   );
   camera.lookAt(center);
-}
+};
 
-function setGroupLineOpacityFactor(root: THREE.Object3D, factor: number): void {
+const setGroupLineOpacityFactor = (
+  root: THREE.Object3D,
+  factor: number
+): void => {
   root.traverse((obj) => {
     if (!(obj instanceof THREE.Line || obj instanceof THREE.LineSegments)) {
       return;
@@ -262,9 +256,9 @@ function setGroupLineOpacityFactor(root: THREE.Object3D, factor: number): void {
     m.transparent = next < 0.999;
     m.opacity = next;
   });
-}
+};
 
-function t2EventProgress(
+const t2EventProgress = (
   now: number,
   wallS: number,
   previousT2Wall: number | null
@@ -274,10 +268,10 @@ function t2EventProgress(
   separationK: number;
   t2Wall: number | null;
   wireAlpha: number;
-} {
-  const missionSec = getHeroMissionSec(wallS);
+} => {
+  const missionSec = getMissionSec(wallS);
   let t2Wall = previousT2Wall;
-  if (missionSec >= HERO_BOOSTER_FADE_AT_MISSION_SEC) {
+  if (missionSec >= BOOSTER_FADE_AT_MISSION_SEC) {
     if (t2Wall === null) {
       t2Wall = now;
     }
@@ -294,24 +288,24 @@ function t2EventProgress(
     };
   }
   const d = now - t2Wall;
-  const plumeMul = Math.max(0, 1 - d / HERO_BOOSTER_FADE_WALL_MS);
-  const wireAlpha = Math.max(0, 1 - d / HERO_BOOSTER_WIREFRAME_FADE_WALL_MS);
-  const uOffset = Math.min(1, d / HERO_BOOSTER_SEP_DURATION_MS);
+  const plumeMul = Math.max(0, 1 - d / BOOSTER_FADE_WALL_MS);
+  const wireAlpha = Math.max(0, 1 - d / BOOSTER_WIREFRAME_FADE_WALL_MS);
+  const uOffset = Math.min(1, d / BOOSTER_SEP_DURATION_MS);
   const separationK = 1 - (1 - uOffset) * (1 - uOffset);
   /** Splay continues over the full wireframe fade, max roll when fully transparent. */
-  const uRot = Math.min(1, d / HERO_BOOSTER_WIREFRAME_FADE_WALL_MS);
+  const uRot = Math.min(1, d / BOOSTER_WIREFRAME_FADE_WALL_MS);
   const rotSplayK = 1 - (1 - uRot) * (1 - uRot);
   return { plumeMul, rotSplayK, separationK, t2Wall, wireAlpha };
-}
+};
 
-function applyBoosterSeparationPose(
+const applyBoosterSeparationPose = (
   separationK: number,
   rotSplayK: number,
   wireAlpha: number,
   leftBooster: THREE.Group,
   rightBooster: THREE.Group,
   strutsGroup: THREE.Object3D
-): void {
+): void => {
   const extraX = BOOSTER_SEP_EXTRA_X * separationK;
   const extraY = BOOSTER_SEP_EXTRA_Y * separationK;
   leftBooster.position.set(-BOOSTER_STAGE_X - extraX, extraY, 0);
@@ -321,13 +315,13 @@ function applyBoosterSeparationPose(
   setGroupLineOpacityFactor(leftBooster, wireAlpha);
   setGroupLineOpacityFactor(rightBooster, wireAlpha);
   setGroupLineOpacityFactor(strutsGroup, wireAlpha);
-}
+};
 
-function resetBoosterSeparationPose(
+const resetBoosterSeparationPose = (
   leftBooster: THREE.Group,
   rightBooster: THREE.Group,
   strutsGroup: THREE.Object3D
-): void {
+): void => {
   leftBooster.position.set(-BOOSTER_STAGE_X, 0, 0);
   rightBooster.position.set(BOOSTER_STAGE_X, 0, 0);
   leftBooster.rotation.set(0, 0, 0);
@@ -335,9 +329,9 @@ function resetBoosterSeparationPose(
   setGroupLineOpacityFactor(leftBooster, 1);
   setGroupLineOpacityFactor(rightBooster, 1);
   setGroupLineOpacityFactor(strutsGroup, 1);
-}
+};
 
-function t3EventProgress(
+const t3EventProgress = (
   now: number,
   wallS: number,
   previousT3: number | null
@@ -346,10 +340,10 @@ function t3EventProgress(
   corePlumeK: number;
   motionK: number;
   t3Wall: number | null;
-} {
-  const missionSec = getHeroMissionSec(wallS);
+} => {
+  const missionSec = getMissionSec(wallS);
   let t3Wall = previousT3;
-  if (missionSec >= HERO_CORE_STAGING_AT_MISSION_SEC) {
+  if (missionSec >= CORE_STAGING_AT_MISSION_SEC) {
     if (t3Wall === null) {
       t3Wall = now;
     }
@@ -360,23 +354,23 @@ function t3EventProgress(
     return { coreLowerK: 1, corePlumeK: 1, motionK: 0, t3Wall: null };
   }
   const d = now - t3Wall;
-  const u = Math.min(1, d / HERO_CORE_BOTTOM_STAGING_WALL_MS);
+  const u = Math.min(1, d / CORE_BOTTOM_STAGING_WALL_MS);
   const motionK = 1 - (1 - u) * (1 - u);
-  const k = Math.max(0, 1 - d / HERO_CORE_BOTTOM_STAGING_WALL_MS);
+  const k = Math.max(0, 1 - d / CORE_BOTTOM_STAGING_WALL_MS);
   return { coreLowerK: k, corePlumeK: k, motionK, t3Wall };
-}
+};
 
 /**
- * S2 (single) plume: off until T+3:05, then 0 → 1 over HERO_S2_PLUME_FADEIN_WALL_MS.
+ * S2 (single) plume: off until T+2:02, then 0 → 1 over S2_PLUME_FADEIN_WALL_MS.
  */
-function s2PlumeProgress(
+const s2PlumeProgress = (
   now: number,
   wallS: number,
   previousS2Wall: number | null
-): { s2PlumeK: number; s2Wall: number | null } {
-  const missionSec = getHeroMissionSec(wallS);
+): { s2PlumeK: number; s2Wall: number | null } => {
+  const missionSec = getMissionSec(wallS);
   let s2Wall = previousS2Wall;
-  if (missionSec >= HERO_S2_PLUME_AT_MISSION_SEC) {
+  if (missionSec >= S2_PLUME_AT_MISSION_SEC) {
     if (s2Wall === null) {
       s2Wall = now;
     }
@@ -387,69 +381,24 @@ function s2PlumeProgress(
     return { s2PlumeK: 0, s2Wall: null };
   }
   const d = now - s2Wall;
-  const u = Math.min(1, d / HERO_S2_PLUME_FADEIN_WALL_MS);
+  const u = Math.min(1, d / S2_PLUME_FADEIN_WALL_MS);
   const s2PlumeK = 1 - (1 - u) * (1 - u);
   return { s2PlumeK, s2Wall };
-}
+};
 
-function applyCoreStagingPose(
+const applyCoreStagingPose = (
   coreLowerK: number,
   motionK: number,
   coreLower: THREE.Group
-): void {
+): void => {
   coreLower.position.set(0, -CORE_FALL_DY * motionK, 0);
   setGroupLineOpacityFactor(coreLower, coreLowerK);
-}
+};
 
-function resetCoreStagingPose(coreLower: THREE.Group): void {
+const resetCoreStagingPose = (coreLower: THREE.Group): void => {
   coreLower.position.set(0, 0, 0);
   setGroupLineOpacityFactor(coreLower, 1);
-}
-
-function plumeLayerMul(
-  layer: PlumeLayer,
-  corePlumeK: number,
-  plumeMul: number,
-  s2PlumeK: number
-): number {
-  if (layer.isCore) {
-    return corePlumeK;
-  }
-  if (layer.isBooster) {
-    return plumeMul;
-  }
-  if (layer.isUpperStage) {
-    return s2PlumeK;
-  }
-  return 1;
-}
-
-function updatePlumeLayersForTick(
-  layers: readonly PlumeLayer[],
-  wallS: number,
-  corePlumeK: number,
-  plumeMul: number,
-  s2PlumeK: number,
-  reducedMotion: boolean
-): void {
-  if (reducedMotion) {
-    for (const layer of layers) {
-      const m = plumeLayerMul(layer, corePlumeK, plumeMul, s2PlumeK);
-      layer.mat.opacity = layer.baseOpacity * m;
-    }
-    return;
-  }
-  for (const layer of layers) {
-    const f = Math.sin(wallS * 19.5 + layer.phase);
-    const g = 0.5 + 0.5 * Math.sin(wallS * 29 + layer.phase * 1.63);
-    const flicker = 0.72 + 0.28 * g;
-    const pMul = plumeLayerMul(layer, corePlumeK, plumeMul, s2PlumeK);
-    layer.mat.opacity = layer.baseOpacity * flicker * pMul;
-    const pulse = 1 + 0.1 * f;
-    const breath = 0.94 + 0.12 * g;
-    layer.mesh.scale.set(pulse, breath, pulse);
-  }
-}
+};
 
 const disposeWireframeScene = (scene: THREE.Scene): void => {
   scene.traverse((obj) => {
@@ -468,7 +417,7 @@ const disposeWireframeScene = (scene: THREE.Scene): void => {
   });
 };
 
-function attachRocketViewport(mount: HTMLElement): () => void {
+const attachRocketViewport = (mount: HTMLElement): (() => void) => {
   const reducedMotion = window.matchMedia(
     '(prefers-reduced-motion: reduce)'
   ).matches;
@@ -605,7 +554,7 @@ function attachRocketViewport(mount: HTMLElement): () => void {
     wireMat.dispose();
     strutMat.dispose();
   };
-}
+};
 
 /**
  * Client-only WebGL: Falcon Heavy style triple-body wireframe (main stage + two boosters).

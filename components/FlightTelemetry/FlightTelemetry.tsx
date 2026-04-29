@@ -1,4 +1,4 @@
-import { getHeroMissionSec } from '@components/Rocket/heroMissionTime';
+import { getMissionSec } from '@components/Rocket/MissionTime';
 import React, { useEffect, useMemo, useState } from 'react';
 
 import styles from './FlightTelemetry.module.css';
@@ -44,7 +44,7 @@ export const FlightTelemetry: React.FC = () => {
 
   const { missionSec, fuelPct, vrel, pitch, roll, chartPoints, pitchX, rollX } =
     useMemo(() => {
-      const missionSec = getHeroMissionSec(t);
+      const missionSec = getMissionSec(t);
       /* Monotonic drain only — no upward wobble (LOX/CH4) */
       const fuelPct = Math.max(5, 80 - t * 0.2);
 

@@ -16,7 +16,7 @@ const INTERSTAGE_H = 0.2;
 const S2_ENGINE_SCALE = 0.72;
 const S2_ENGINE_Y_MOUNT = S1_H + INTERSTAGE_H;
 
-type PlumeLayer = {
+export type PlumeLayer = {
   baseOpacity: number;
   isBooster: boolean;
   isCore: boolean;
@@ -297,4 +297,49 @@ export const addAllEnginePlumes = (
   }
 
   return { allLayers, disposers };
+};
+
+const plumeLayerMul = (
+  layer: PlumeLayer,
+  corePlumeK: number,
+  plumeMul: number,
+  s2PlumeK: number
+): number => {
+  if (layer.isCore) {
+    return corePlumeK;
+  }
+  if (layer.isBooster) {
+    return plumeMul;
+  }
+  if (layer.isUpperStage) {
+    return s2PlumeK;
+  }
+  return 1;
+};
+
+export const updatePlumeLayersForTick = (
+  layers: readonly PlumeLayer[],
+  wallS: number,
+  corePlumeK: number,
+  plumeMul: number,
+  s2PlumeK: number,
+  reducedMotion: boolean
+): void => {
+  if (reducedMotion) {
+    for (const layer of layers) {
+      const m = plumeLayerMul(layer, corePlumeK, plumeMul, s2PlumeK);
+      layer.mat.opacity = layer.baseOpacity * m;
+    }
+    return;
+  }
+  for (const layer of layers) {
+    const f = Math.sin(wallS * 19.5 + layer.phase);
+    const g = 0.5 + 0.5 * Math.sin(wallS * 29 + layer.phase * 1.63);
+    const flicker = 0.72 + 0.28 * g;
+    const pMul = plumeLayerMul(layer, corePlumeK, plumeMul, s2PlumeK);
+    layer.mat.opacity = layer.baseOpacity * flicker * pMul;
+    const pulse = 1 + 0.1 * f;
+    const breath = 0.94 + 0.12 * g;
+    layer.mesh.scale.set(pulse, breath, pulse);
+  }
 };
