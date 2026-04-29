@@ -69,7 +69,16 @@
       transparent 72%
     ),
     linear-gradient(180deg, var(--void-mid) 0%, var(--void-deep) 100%);
-  background-attachment: scroll;
+  /* Radials fixed to viewport so purple / neon glows don’t scroll away on long pages */
+  background-attachment:
+    fixed,
+    fixed,
+    fixed,
+    fixed,
+    fixed,
+    fixed,
+    fixed,
+    scroll;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-blend-mode: screen, screen, screen, screen, screen, screen, screen, normal;
