@@ -3,11 +3,12 @@ import * as THREE from 'three';
 
 import styles from '../Hero/Hero.module.css';
 import {
+  type AddAllEnginePlumesResult,
   addAllEnginePlumes,
   addEngineNozzle,
   addOctawebEngines,
   updatePlumeLayersForTick,
-} from './engine';
+} from './Engine';
 import {
   BOOSTER_FADE_AT_MISSION_SEC,
   BOOSTER_FADE_WALL_MS,
@@ -28,7 +29,7 @@ import {
   addCylinderEdges,
   addRoundedPayloadFairingEdges,
   addStrut,
-} from './wireframe';
+} from './Wireframe';
 
 const CYAN = 0x5bd4ea;
 const CYAN_DIM = 0x3d7a8a;
@@ -481,7 +482,7 @@ const attachRocketViewport = (mount: HTMLElement): (() => void) => {
   const { body, coreLower, coreUpper, leftBooster, rightBooster, strutsGroup } =
     buildRocket(wireMat, strutMat);
 
-  const { allLayers, disposers: plumeDisposers } = addAllEnginePlumes(
+  const plumeSetup: AddAllEnginePlumesResult = addAllEnginePlumes(
     Y_MOUNT_CORE,
     0.2,
     0.127,
@@ -491,6 +492,7 @@ const attachRocketViewport = (mount: HTMLElement): (() => void) => {
     rightBooster,
     reducedMotion
   );
+  const { allLayers, disposers: plumeDisposers } = plumeSetup;
   centerObjectAtOrigin(body);
 
   const pivot = new THREE.Group();
@@ -611,9 +613,9 @@ const attachRocketViewport = (mount: HTMLElement): (() => void) => {
       mount.removeChild(renderer.domElement);
     }
     renderer.dispose();
-    plumeDisposers.forEach((d) => {
-      d();
-    });
+    for (const dispose of plumeDisposers) {
+      dispose();
+    }
     disposeWireframeScene(scene);
     wireMat.dispose();
     strutMat.dispose();

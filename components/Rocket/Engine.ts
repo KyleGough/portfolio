@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-import { addCylinderEdges } from './wireframe';
+import { addCylinderEdges } from './Wireframe';
 
 const CONE_SEGMENTS = 8;
 
@@ -24,6 +24,11 @@ export type PlumeLayer = {
   mat: THREE.MeshBasicMaterial;
   mesh: THREE.Mesh;
   phase: number;
+};
+
+export type AddAllEnginePlumesResult = {
+  allLayers: PlumeLayer[];
+  disposers: (() => void)[];
 };
 
 type PlumeSpec = {
@@ -234,7 +239,7 @@ export const addAllEnginePlumes = (
   leftBooster: THREE.Group,
   rightBooster: THREE.Group,
   reducedMotion: boolean
-): { allLayers: PlumeLayer[]; disposers: (() => void)[] } => {
+): AddAllEnginePlumesResult => {
   const allLayers: PlumeLayer[] = [];
   const disposers: (() => void)[] = [];
   const exhaustCore = merlinExhaustY(yMount, 1);
