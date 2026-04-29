@@ -1,10 +1,12 @@
 import { FlightTelemetry } from '@components/FlightTelemetry';
 import { Link } from '@components/Link';
 import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
+import { useObserveHeroAnimationActive } from '@hooks/useObserveHeroAnimationActive';
 import dynamic from 'next/dynamic';
-import React from 'react';
+import React, { useRef } from 'react';
 
 import styles from './Hero.module.css';
+import { HeroAnimationActiveContext } from './HeroAnimationContext';
 
 const FalconHeavyWireframe = dynamic(
   () =>
@@ -22,6 +24,9 @@ const FalconHeavyWireframe = dynamic(
 );
 
 export const Hero: React.FC = () => {
+  const wireframeStageRef = useRef<HTMLDivElement>(null);
+  const animationActive = useObserveHeroAnimationActive(wireframeStageRef);
+
   return (
     <header className={styles.slot} aria-label="Welcome">
       <div
@@ -29,12 +34,14 @@ export const Hero: React.FC = () => {
         role="img"
         aria-label="Three-dimensional wireframe of a Falcon Heavy class rocket with animated engine plumes, plus a decorative mock GNC readout: fuel, velocity, pitch, and roll."
       >
-        <div className={styles.wireframeStage}>
-          <FalconHeavyWireframe />
-          <div className={styles.telemetryOverRocket}>
-            <FlightTelemetry />
+        <HeroAnimationActiveContext.Provider value={animationActive}>
+          <div ref={wireframeStageRef} className={styles.wireframeStage}>
+            <FalconHeavyWireframe />
+            <div className={styles.telemetryOverRocket}>
+              <FlightTelemetry />
+            </div>
           </div>
-        </div>
+        </HeroAnimationActiveContext.Provider>
       </div>
       <div className={styles.copy}>
         <h1 className={styles.name}>
