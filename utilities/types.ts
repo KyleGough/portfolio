@@ -10,10 +10,6 @@ export interface Project {
   image: StaticImageData;
   link: string;
   liveLink?: string;
-  logo: {
-    alt: string;
-    src: string;
-  };
   skills: string[];
   subtitle?: string;
   title: string;
