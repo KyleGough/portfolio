@@ -1,6 +1,6 @@
 import { Contact } from '@components/Contact';
 import { Divider } from '@components/Divider';
-import { HomeHero } from '@components/HomePage';
+import { Hero } from '@components/Hero';
 import { Layout } from '@components/Layout';
 import { MasonryShowcase } from '@components/MasonryShowcase';
 import { Section } from '@components/Section';
@@ -17,7 +17,7 @@ const Home: React.FC = () => {
 
   return (
     <Layout title="Portfolio - Kyle Gough">
-      <HomeHero />
+      <Hero />
       <MasonryShowcase />
       <Divider />
 

@@ -1,4 +1,4 @@
-import heroStyles from '@components/HomePage/HomeHero.module.css';
+import heroStyles from '@components/Hero/Hero.module.css';
 import { RestartIcon, SendIcon, TickIcon } from '@components/Icons';
 import { clsx } from 'clsx';
 import React from 'react';

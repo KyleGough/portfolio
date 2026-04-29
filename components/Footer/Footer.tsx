@@ -18,9 +18,9 @@ export const Footer: React.FC = () => (
               </span>
             </h2>
             <p className="pb-4">
-              Senior Front-End Engineer at Ripjar. Computer Science MEng
-              graduate of Warwick University. Programmer and Web Developer with
-              interests in Physics, Cycling, Guitar, and Movies.
+              Specialising in building scalable, performant web applications
+              with TypeScript and React. Passionate about cosmology, sci-fi,
+              cycling, guitar, and board games.
             </p>
             <div className="flex flex-row justify-center lg:justify-start">
               <Link
