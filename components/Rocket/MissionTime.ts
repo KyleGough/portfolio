@@ -56,10 +56,13 @@ export const getMissionSec = (wallSecSinceStart: number): number =>
  * Falcon wireframe loop: mission timeline repeats every `LOOP_PERIOD_MISSION_SEC`.
  * T+1:05 — upper stack exits; T+1:10 — full reset + fade-in from T+0.
  */
-export const LOOP_PERIOD_MISSION_SEC = 60 + 10; // 130 — T+1:10
+export const LOOP_PERIOD_MISSION_SEC = 60 + 10; // 70 — T+1:10 (rocket loop reset)
 
 /** Upper stack (S2 + fairing) rises + fades out from this mission second (T+1:05). */
-export const LOOP_UPPER_EXIT_START_MISSION_SEC = 60 + 5; // 125
+export const LOOP_UPPER_EXIT_START_MISSION_SEC = 60 + 5; // 65 — T+1:05
+
+/** Flight telemetry fuel gauge: 100% at loop start → this % at loop reset (same instant as wireframe). */
+export const TELEMETRY_FUEL_MIN_PCT = 9;
 
 /** Fade entire rocket in over this many mission seconds after each loop reset (from T+0). */
 export const LOOP_FADE_IN_MISSION_SEC = 5;
