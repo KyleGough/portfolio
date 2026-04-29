@@ -61,12 +61,6 @@
       oklch(19% 0.09 310 / 0.24),
       transparent 52%
     ),
-    /* Center mist: soft fill across the scroll column */
-      radial-gradient(
-        ellipse 60% 48% at 50% 44%,
-        oklch(14% 0.06 288 / 0.14),
-        transparent 72%
-      ),
     /* Pink / lemon washes — same depth & chroma band as violet layers */
       radial-gradient(
         ellipse 74% 46% at 70% 16%,
@@ -91,11 +85,11 @@
     linear-gradient(180deg, var(--void-mid) 0%, var(--void-deep) 100%);
   /* Radials fixed to viewport so purple / neon glows don’t scroll away on long pages */
   background-attachment: fixed, fixed, fixed, fixed, fixed, fixed, fixed, fixed,
-    fixed, fixed, fixed, scroll;
+    fixed, fixed, scroll;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-blend-mode: screen, screen, screen, screen, screen, screen, screen,
-    screen, screen, screen, screen, normal;
+    screen, screen, screen, normal;
   /* Slight black vignette + whisper of violet at the edges */
   box-shadow: inset 0 0 110px oklch(0% 0 0 / 0.38),
     inset 0 0 200px oklch(26% 0.09 300 / 0.045);
