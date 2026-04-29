@@ -56,17 +56,6 @@
         oklch(18% 0.08 295 / 0.22),
         transparent 53%
       ),
-    radial-gradient(
-      ellipse 40% 52% at 102% 62%,
-      oklch(19% 0.09 310 / 0.24),
-      transparent 52%
-    ),
-    /* Center mist: soft fill across the scroll column */
-      radial-gradient(
-        ellipse 60% 48% at 50% 44%,
-        oklch(14% 0.06 288 / 0.14),
-        transparent 72%
-      ),
     /* Pink / lemon washes — same depth & chroma band as violet layers */
       radial-gradient(
         ellipse 74% 46% at 70% 16%,
@@ -83,19 +72,14 @@
       oklch(22% 0.09 328 / 0.18),
       transparent 54%
     ),
-    radial-gradient(
-      ellipse 52% 58% at 48% 48%,
-      oklch(18% 0.065 102 / 0.11),
-      transparent 64%
-    ),
     linear-gradient(180deg, var(--void-mid) 0%, var(--void-deep) 100%);
   /* Radials fixed to viewport so purple / neon glows don’t scroll away on long pages */
   background-attachment: fixed, fixed, fixed, fixed, fixed, fixed, fixed, fixed,
-    fixed, fixed, fixed, scroll;
+    scroll;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-blend-mode: screen, screen, screen, screen, screen, screen, screen,
-    screen, screen, screen, screen, normal;
+    screen, normal;
   /* Slight black vignette + whisper of violet at the edges */
   box-shadow: inset 0 0 110px oklch(0% 0 0 / 0.38),
     inset 0 0 200px oklch(26% 0.09 300 / 0.045);
@@ -610,6 +594,14 @@ footer.footer--space-gothic {
   --gothic-magenta: oklch(72% 0.2 310);
   --gothic-stroke: oklch(100% 0 0 / 0.12);
   --gothic-stroke-bright: oklch(65% 0.15 290 / 0.45);
+}
+
+/* Upper footer band only: blurb, email, nav/social links — Lato (headings + copyright strip unchanged). */
+.app-space-gothic footer .bg-nav-light p,
+footer.footer--space-gothic .bg-nav-light p,
+.app-space-gothic footer .bg-nav-light a[href],
+footer.footer--space-gothic .bg-nav-light a[href] {
+  font-family: var(--font-lato), ui-sans-serif, sans-serif !important;
 }
 
 .app-space-gothic footer [class~='bg-background'],
