@@ -21,7 +21,7 @@
   --gothic-stroke-bright: oklch(65% 0.15 290 / 0.45);
 }
 
-/* Main canvas: layered radii + grid parallax (stars animate unless reduced-motion) */
+/* Main canvas: layered radii + grid parallax (::before) */
 .app-space-gothic main {
   position: relative;
   z-index: 0;
@@ -143,129 +143,6 @@
     opacity: 0.3;
     transform: none;
     will-change: auto;
-  }
-}
-
-/* Starfield above the grid: repeating 300px tile (~10× prior star count on a typical viewport). */
-.app-space-gothic main::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background-image: radial-gradient(
-      1.2px 1.2px at 12px 8px,
-      oklch(90% 0.04 275 / 0.26),
-      transparent
-    ),
-    radial-gradient(
-      1px 1px at 62px 68px,
-      oklch(97% 0.04 294 / 0.3),
-      transparent
-    ),
-    radial-gradient(
-      1px 1px at 138px 142px,
-      oklch(96% 0.04 313 / 0.34),
-      transparent
-    ),
-    radial-gradient(
-      1.2px 1.2px at 240px 230px,
-      oklch(95% 0.04 287 / 0.38),
-      transparent
-    ),
-    radial-gradient(
-      1px 1px at 92px 52px,
-      oklch(94% 0.04 306 / 0.42),
-      transparent
-    ),
-    radial-gradient(
-      1px 1px at 246px 168px,
-      oklch(93% 0.04 280 / 0.26),
-      transparent
-    ),
-    radial-gradient(
-      1.2px 1.2px at 150px 18px,
-      oklch(92% 0.04 299 / 0.3),
-      transparent
-    ),
-    radial-gradient(
-      1px 1px at 80px 162px,
-      oklch(91% 0.04 318 / 0.34),
-      transparent
-    ),
-    radial-gradient(
-      1px 1px at 36px 40px,
-      oklch(90% 0.04 292 / 0.38),
-      transparent
-    ),
-    radial-gradient(
-      1.2px 1.2px at 18px 212px,
-      oklch(97% 0.04 311 / 0.42),
-      transparent
-    ),
-    radial-gradient(
-      1px 1px at 200px 96px,
-      oklch(93% 0.04 285 / 0.28),
-      transparent
-    ),
-    radial-gradient(
-      1px 1px at 278px 44px,
-      oklch(96% 0.04 302 / 0.32),
-      transparent
-    ),
-    radial-gradient(
-      1.2px 1.2px at 172px 268px,
-      oklch(94% 0.04 308 / 0.36),
-      transparent
-    ),
-    radial-gradient(
-      1px 1px at 52px 244px,
-      oklch(98% 0.04 278 / 0.3),
-      transparent
-    ),
-    radial-gradient(
-      1px 1px at 288px 188px,
-      oklch(91% 0.04 295 / 0.34),
-      transparent
-    );
-  background-repeat: repeat;
-  background-size: 300px 300px;
-  mask-image: linear-gradient(
-    180deg,
-    white 0%,
-    white 48%,
-    rgba(255, 255, 255, 0.55) 72%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  opacity: 0.42;
-  animation: starfieldTwinkle 5.2s cubic-bezier(0.22, 1, 0.36, 1) infinite
-      alternate,
-    starfieldGlow 8s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
-}
-
-@keyframes starfieldTwinkle {
-  from {
-    opacity: 0.28;
-  }
-  to {
-    opacity: 0.62;
-  }
-}
-
-@keyframes starfieldGlow {
-  from {
-    filter: brightness(0.9);
-  }
-  to {
-    filter: brightness(1.14);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .app-space-gothic main::after {
-    animation: none;
-    opacity: 0.22;
-    filter: none;
   }
 }
 
