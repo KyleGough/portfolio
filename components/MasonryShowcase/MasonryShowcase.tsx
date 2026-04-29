@@ -1,10 +1,11 @@
 import { FadeIn } from '@components/FadeIn';
 import heroStyles from '@components/Hero/Hero.module.css';
 import { ArrowForwardIcon } from '@components/Icons';
-import imageMars from '@image/mars.png';
-import imageSudoku from '@image/sudoku1.jpg';
 import { getDateRange } from '@utilities/date';
-import { getProjectData } from '@utilities/Project';
+import {
+  type FeaturedCaseStudy,
+  FEATURED_CASE_STUDIES,
+} from '@utilities/featuredCaseStudies';
 import { clsx } from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -12,55 +13,38 @@ import React from 'react';
 
 import styles from './MasonryShowcase.module.css';
 
-const EXCERPTS: Record<string, string> = {
-  'solar-system':
-    'Interactive 3D solar system in the browser, with orbits, lighting, and a careful balance of performance and feel.',
-  sudoku:
-    'A Sudoku engine that works without backtracking, with stepwise explanations of every deduction.',
-};
-
-type Placed = { image: typeof imageMars; key: string };
-
-const LAYOUT: Placed[] = [
-  { image: imageMars, key: 'solar-system' },
-  { image: imageSudoku, key: 'sudoku' },
-];
-
 const Tile: React.FC<{
-  excerpt: string;
-  label: string;
+  featured: FeaturedCaseStudy;
   priority: boolean;
-  projectKey: string;
-  src: typeof imageMars;
-}> = ({ projectKey, src, excerpt, label, priority }) => {
-  const p = getProjectData(projectKey);
-  const when = p.date ? getDateRange(p.date) : '';
-  const isSudoku = projectKey === 'sudoku';
+}> = ({ featured, priority }) => {
+  const when = getDateRange(featured.date);
+  const isSudoku = featured.id === 'sudoku';
+  const img = featured.image;
 
   return (
     <FadeIn className={styles.item}>
       <Link
         className={clsx(styles.tile, isSudoku && styles.tileSudoku)}
-        href={p.link}
+        href={featured.link}
       >
         <div className={styles.image}>
           <Image
             className="home-feature-img"
-            src={src.src}
-            alt={p.alt}
+            src={img}
+            alt={featured.alt}
             fill
             placeholder="blur"
-            blurDataURL={src.blurDataURL}
+            blurDataURL={img.blurDataURL}
             priority={priority}
             sizes="(max-width: 1023px) 100vw, 50vw"
           />
         </div>
         <div className={styles.body}>
-          <h3>{p.title}</h3>
-          <p className={styles.copy}>{excerpt}</p>
+          <h3>{featured.title}</h3>
+          <p className={styles.copy}>{featured.excerpt}</p>
           <div className={styles.foot}>
             <p className={styles.meta}>
-              {label} · {when}
+              Case study · {when}
             </p>
             <span className={styles.arrow} aria-hidden>
               <ArrowForwardIcon className="h-3.5 w-3.5 fill-current" />
@@ -92,13 +76,10 @@ export const MasonryShowcase: React.FC = () => {
 
         <div className={styles.masonryWrap}>
           <div className={styles.masonry}>
-            {LAYOUT.map((item, i) => (
+            {FEATURED_CASE_STUDIES.map((featured, i) => (
               <Tile
-                key={item.key}
-                projectKey={item.key}
-                src={item.image}
-                excerpt={EXCERPTS[item.key]}
-                label="Case study"
+                key={featured.id}
+                featured={featured}
                 priority={i === 0}
               />
             ))}

@@ -1,3 +1,4 @@
+/* Global CSS must load from _app (Next.js). Space Grotesk / IBM Plex Mono load via next/font in Layout. */
 import 'styles/globals.css';
 import 'styles/space-gothic.css';
 import 'styles/tailwind.css';

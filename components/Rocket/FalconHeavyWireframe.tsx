@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 import styles from '../Hero/Hero.module.css';
+import { useHeroAnimationActive } from '../Hero/HeroAnimationContext';
 import {
   type AddAllEnginePlumesResult,
   addAllEnginePlumes,
@@ -451,7 +452,10 @@ const disposeWireframeScene = (scene: THREE.Scene): void => {
   });
 };
 
-const attachRocketViewport = (mount: HTMLElement): (() => void) => {
+const attachRocketViewport = (
+  mount: HTMLElement,
+  getShouldAnimate: () => boolean
+): { dispose: () => void; resume: () => void } => {
   const reducedMotion = window.matchMedia(
     '(prefers-reduced-motion: reduce)'
   ).matches;
@@ -522,6 +526,9 @@ const attachRocketViewport = (mount: HTMLElement): (() => void) => {
   let prevCycleIndex = 0;
   let rafId = 0;
   const tick = () => {
+    if (!getShouldAnimate()) {
+      return;
+    }
     const now = performance.now();
     const wallS = (now - time0) * 0.001;
     const missionSec = getMissionSec(wallS);
@@ -602,12 +609,21 @@ const attachRocketViewport = (mount: HTMLElement): (() => void) => {
     renderer.render(scene, camera);
     rafId = window.requestAnimationFrame(tick);
   };
-  tick();
+
+  renderer.render(scene, camera);
+  rafId = window.requestAnimationFrame(tick);
 
   const ro = new ResizeObserver(() => setSize());
   ro.observe(mount);
 
-  return () => {
+  const resume = (): void => {
+    window.cancelAnimationFrame(rafId);
+    if (getShouldAnimate()) {
+      rafId = window.requestAnimationFrame(tick);
+    }
+  };
+
+  const disposeViewport = (): void => {
     window.cancelAnimationFrame(rafId);
     ro.disconnect();
     if (renderer.domElement.parentNode === mount) {
@@ -621,6 +637,8 @@ const attachRocketViewport = (mount: HTMLElement): (() => void) => {
     wireMat.dispose();
     strutMat.dispose();
   };
+
+  return { dispose: disposeViewport, resume };
 };
 
 /**
@@ -628,14 +646,28 @@ const attachRocketViewport = (mount: HTMLElement): (() => void) => {
  */
 export const FalconHeavyWireframe: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const animationActive = useHeroAnimationActive();
+  const activeRef = useRef(animationActive);
+  activeRef.current = animationActive;
+  const resumeRef = useRef<(() => void) | null>(null);
 
   useEffect(() => {
     const mount = mountRef.current;
     if (!mount) {
       return undefined;
     }
-    return attachRocketViewport(mount);
+    const { dispose, resume } = attachRocketViewport(mount, () =>
+      activeRef.current
+    );
+    resumeRef.current = resume;
+    return dispose;
   }, []);
+
+  useEffect(() => {
+    if (animationActive) {
+      resumeRef.current?.();
+    }
+  }, [animationActive]);
 
   return (
     <div className={styles.rocketFrame}>

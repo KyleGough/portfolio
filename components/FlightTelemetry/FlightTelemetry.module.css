@@ -27,7 +27,7 @@
 }
 
 .clock {
-  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
   font-size: 0.7rem;
   font-weight: 500;
   color: var(--gothic-cyan, oklch(78% 0.12 200));
@@ -49,7 +49,7 @@
 }
 
 .label {
-  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
   font-size: 0.5rem;
   font-weight: 500;
   letter-spacing: 0.12em;
@@ -58,7 +58,7 @@
 }
 
 .value {
-  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
   font-size: 0.6rem;
   color: var(--gothic-cyan, oklch(78% 0.12 200));
   letter-spacing: 0.02em;

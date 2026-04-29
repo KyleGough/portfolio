@@ -6,8 +6,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'primary': ['Lato', 'sans-serif'],
-      'header': ['Merriweather', 'serif']
+      primary: ['var(--font-lato)', 'ui-sans-serif', 'sans-serif'],
+      header: ['var(--font-merriweather)', 'ui-serif', 'serif'],
     },
     screens: {
       sm: '640px',

@@ -3,27 +3,11 @@ html {
   font-size: 16px;
 }
 
-/* Removes browser default margin and sets font. */
+/* Removes browser default margin and sets font (next/font on `<Html>` in `_document`). */
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: var(--font-lato), ui-sans-serif, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(../fonts/Lato-Regular.ttf) format('woff2');
-}
-
-@font-face {
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(../fonts/Merriweather-Regular.ttf) format('woff2');
 }
 
 /* Custom slide in animation for mobile nav. */

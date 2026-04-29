@@ -1,13 +1,13 @@
+import { useHeroAnimationActive } from '@components/Hero/HeroAnimationContext';
 import {
   getMissionSec,
   LOOP_PERIOD_MISSION_SEC,
   TELEMETRY_FUEL_MIN_PCT,
 } from '@components/Rocket/MissionTime';
-import React, { useEffect, useMemo, useState } from 'react';
+import { useHeroTelemetryWallSeconds } from '@hooks/useHeroTelemetryWallSeconds';
+import React, { useMemo } from 'react';
 
 import styles from './FlightTelemetry.module.css';
-
-const TICK_MS = 120;
 
 const formatTPlus = (totalSec: number): string => {
   const h = Math.floor(totalSec / 3600);
@@ -31,28 +31,13 @@ const fuelPctForRocketLoop = (missionSec: number): number => {
   return 100 + (TELEMETRY_FUEL_MIN_PCT - 100) * u;
 };
 
-const useSimTime = (): number => {
-  const [t, setT] = useState(0);
-
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (mq.matches) return;
-
-    const id = window.setInterval(() => {
-      setT((prev) => prev + TICK_MS / 1000);
-    }, TICK_MS);
-    return () => window.clearInterval(id);
-  }, []);
-
-  return t;
-};
-
 /**
  * Mock flight telemetry in three windows: clock/propellant, velocity trace,
  * pitch/roll.
  */
 export const FlightTelemetry: React.FC = () => {
-  const t = useSimTime();
+  const animationActive = useHeroAnimationActive();
+  const t = useHeroTelemetryWallSeconds(animationActive);
 
   const { missionSec, fuelPct, vrel, pitch, roll, chartPoints, pitchX, rollX } =
     useMemo(() => {
