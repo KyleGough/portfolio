@@ -39,7 +39,16 @@ export const FlightTelemetry: React.FC = () => {
   const animationActive = useHeroAnimationActive();
   const t = useHeroTelemetryWallSeconds(animationActive);
 
-  const { missionSec, fuelPct, vrel, pitch, roll, chartPoints, pitchX, rollX } =
+  const {
+    missionSec,
+    fuelPctDisplay,
+    vrel,
+    pitch,
+    roll,
+    chartPoints,
+    pitchX,
+    rollX,
+  } =
     useMemo(() => {
       const wallMissionSec = getMissionSec(t);
       const missionSec =
@@ -47,6 +56,8 @@ export const FlightTelemetry: React.FC = () => {
         Math.floor(wallMissionSec / LOOP_PERIOD_MISSION_SEC) *
           LOOP_PERIOD_MISSION_SEC;
       const fuelPct = fuelPctForRocketLoop(wallMissionSec);
+      /* Same value as shown in the label — avoids bar vs % rounding mismatch */
+      const fuelPctDisplay = Number(fuelPct.toFixed(0));
 
       const vrel = Math.round(
         1820 + 55 * Math.sin(t * 0.22) + 20 * Math.cos(t * 0.4)
@@ -76,7 +87,7 @@ export const FlightTelemetry: React.FC = () => {
 
       return {
         missionSec,
-        fuelPct,
+        fuelPctDisplay,
         vrel,
         pitch,
         roll,
@@ -98,12 +109,12 @@ export const FlightTelemetry: React.FC = () => {
         <div className={styles.block}>
           <div className={styles.labelRow}>
             <span className={styles.label}>LOX / CH4</span>
-            <span className={styles.value}>{fuelPct.toFixed(0)}%</span>
+            <span className={styles.value}>{fuelPctDisplay}%</span>
           </div>
           <div className={styles.meter}>
             <div
               className={styles.meterFill}
-              style={{ width: `${fuelPct}%` }}
+              style={{ width: `${fuelPctDisplay}%` }}
             />
           </div>
         </div>
