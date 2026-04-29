@@ -50,6 +50,7 @@ const Home: React.FC = () => {
                   alt="Avatar"
                   width={240}
                   height={240}
+                  priority={false}
                 />
               </div>
             </div>
