@@ -1,4 +1,4 @@
-import { getHeroMissionSec } from '@components/HomePage/heroMissionTime';
+import { getHeroMissionSec } from '@components/Rocket/heroMissionTime';
 import React, { useEffect, useMemo, useState } from 'react';
 
 import styles from './FlightTelemetry.module.css';

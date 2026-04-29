@@ -4,10 +4,13 @@ import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
 import dynamic from 'next/dynamic';
 import React from 'react';
 
-import styles from './HomeHero.module.css';
+import styles from './Hero.module.css';
 
 const FalconHeavyWireframe = dynamic(
-  () => import('./FalconHeavyWireframe').then((m) => m.FalconHeavyWireframe),
+  () =>
+    import('../Rocket/FalconHeavyWireframe').then(
+      (m) => m.FalconHeavyWireframe
+    ),
   {
     ssr: false,
     loading: () => (
@@ -18,7 +21,7 @@ const FalconHeavyWireframe = dynamic(
   }
 );
 
-export const HomeHero: React.FC = () => {
+export const Hero: React.FC = () => {
   return (
     <header className={styles.slot} aria-label="Welcome">
       <div
