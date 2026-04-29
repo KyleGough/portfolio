@@ -14,13 +14,33 @@ const contentSecurityPolicy = `
 `;
 
 const permissionsPolicy = [
-  'accelerometer=()', 'ambient-light-sensor=()', 'autoplay=()', 'battery=()', 'camera=()',
-  'cross-origin-isolated=()', 'display-capture=()', 'document-domain=()', 'encrypted-media=()',
-  'execution-while-not-rendered=()', 'execution-while-out-of-viewport=()', 'fullscreen=()',
-  'geolocation=()', 'gyroscope=()', 'keyboard-map=()', 'magnetometer=()', 'microphone=()',
-  'midi=()', 'navigation-override=()', 'payment=()', 'picture-in-picture=()',
-  'publickey-credentials-get=()', 'screen-wake-lock=()', 'sync-xhr=()', 'usb=()',
-  'web-share=()', 'xr-spatial-tracking=()',
+  'accelerometer=()',
+  'ambient-light-sensor=()',
+  'autoplay=()',
+  'battery=()',
+  'camera=()',
+  'cross-origin-isolated=()',
+  'display-capture=()',
+  'document-domain=()',
+  'encrypted-media=()',
+  'execution-while-not-rendered=()',
+  'execution-while-out-of-viewport=()',
+  'fullscreen=()',
+  'geolocation=()',
+  'gyroscope=()',
+  'keyboard-map=()',
+  'magnetometer=()',
+  'microphone=()',
+  'midi=()',
+  'navigation-override=()',
+  'payment=()',
+  'picture-in-picture=()',
+  'publickey-credentials-get=()',
+  'screen-wake-lock=()',
+  'sync-xhr=()',
+  'usb=()',
+  'web-share=()',
+  'xr-spatial-tracking=()',
 ];
 
 const securityHeaders = [
@@ -29,10 +49,14 @@ const securityHeaders = [
     key: 'Strict-Transport-Security',
     value: 'max-age=63072000; includeSubDomains; preload',
   },
-  ...(process.env.NODE_ENV === 'production' ? [{
-    key: 'Content-Security-Policy',
-    value: contentSecurityPolicy.replace(/\s{2,}/g, ' ').trim(),
-  }] : []),
+  ...(process.env.NODE_ENV === 'production'
+    ? [
+        {
+          key: 'Content-Security-Policy',
+          value: contentSecurityPolicy.replace(/\s{2,}/g, ' ').trim(),
+        },
+      ]
+    : []),
   // Disable all browser features.
   {
     key: 'Permissions-Policy',
@@ -80,5 +104,4 @@ module.exports = {
       },
     ];
   },
-  swcMinify: true,
 };
