@@ -1,6 +1,7 @@
 import { EmailTemplate } from '@components/EmailTemplate';
 import joi from 'joi';
 import type { NextApiRequest, NextApiResponse } from 'next';
+import React from 'react';
 import { Resend } from 'resend';
 
 interface Email {
@@ -41,7 +42,7 @@ const send = async (req: NextApiRequest, res: NextApiResponse) => {
       to: recipient,
       subject: `Portfolio Message from ${body.name}`,
       html: '<strong>Portfolio message</strong>',
-      react: EmailTemplate(body),
+      react: React.createElement(EmailTemplate, body),
     });
 
     res.status(200).json(data);

@@ -2,7 +2,7 @@ import { RefObject, useEffect, useRef, useState } from 'react';
 
 export function useObserveElement<T extends HTMLElement>(
   options: IntersectionObserverInit
-): [RefObject<T>, boolean] {
+): [RefObject<T | null>, boolean] {
   const elementRef = useRef<T>(null);
   const [isVisible, setVisible] = useState(false);
 
