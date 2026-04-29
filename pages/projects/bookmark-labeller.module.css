@@ -15,15 +15,12 @@
   border-radius: 999px;
   border: 1px solid oklch(68% 0.14 52 / 0.42);
   background: oklch(15% 0.04 278 / 0.92);
-  box-shadow:
-    0 0 0 1px oklch(0% 0 0 / 0.22) inset,
+  box-shadow: 0 0 0 1px oklch(0% 0 0 / 0.22) inset,
     0 6px 28px oklch(58% 0.1 52 / 0.09);
   color: oklch(93% 0.02 280);
   text-decoration: none;
-  transition:
-    transform 0.24s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 0.2s ease,
-    box-shadow 0.24s cubic-bezier(0.22, 1, 0.36, 1),
+  transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.2s ease, box-shadow 0.24s cubic-bezier(0.22, 1, 0.36, 1),
     background 0.2s ease;
 }
 
@@ -31,16 +28,13 @@
   transform: translateY(-2px);
   border-color: oklch(72% 0.16 48 / 0.62);
   background: oklch(18% 0.05 282 / 0.96);
-  box-shadow:
-    0 0 0 1px oklch(0% 0 0 / 0.12) inset,
+  box-shadow: 0 0 0 1px oklch(0% 0 0 / 0.12) inset,
     0 10px 36px oklch(62% 0.12 48 / 0.16);
 }
 
 .cta:focus-visible {
   outline: none;
-  box-shadow:
-    0 0 0 2px oklch(11% 0.03 280),
-    0 0 0 5px oklch(72% 0.14 52 / 0.45);
+  box-shadow: 0 0 0 2px oklch(11% 0.03 280), 0 0 0 5px oklch(72% 0.14 52 / 0.45);
 }
 
 .ctaIcon {
@@ -70,7 +64,7 @@
 }
 
 .ctaTitle {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
   font-size: clamp(0.95rem, 0.88rem + 0.25vw, 1.05rem);
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -79,7 +73,7 @@
 }
 
 .ctaHint {
-  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
   font-size: 0.65rem;
   font-weight: 500;
   letter-spacing: 0.12em;

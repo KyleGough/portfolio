@@ -1,6 +1,5 @@
-/* Space-gothic: main canvas + components scoped to .app-space-gothic ( /projects/* ).
-   Header nav + void footer: global (nav below; footer uses .footer--space-gothic on all routes). */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+/* Space-gothic: main canvas + components scoped to .app-space-gothic.
+   Fonts load via next/font in Layout (`utilities/siteFonts.ts`); no render-blocking @import. */
 
 /* Scroll-linked parallax for grid (see SpaceGothicScrollVars.tsx) */
 :root {
@@ -46,34 +45,34 @@
       transparent 54%
     ),
     /* Lower bloom: lifts mid / footer void */
-    radial-gradient(
-      ellipse 96% 46% at 50% 104%,
-      oklch(21% 0.09 305 / 0.26),
-      transparent 56%
-    ),
+      radial-gradient(
+        ellipse 96% 46% at 50% 104%,
+        oklch(21% 0.09 305 / 0.26),
+        transparent 56%
+      ),
     /* Sides: vertical violet wash so edges aren’t flat black */
-    radial-gradient(
-      ellipse 36% 56% at -3% 48%,
-      oklch(18% 0.08 295 / 0.22),
-      transparent 53%
-    ),
+      radial-gradient(
+        ellipse 36% 56% at -3% 48%,
+        oklch(18% 0.08 295 / 0.22),
+        transparent 53%
+      ),
     radial-gradient(
       ellipse 40% 52% at 102% 62%,
       oklch(19% 0.09 310 / 0.24),
       transparent 52%
     ),
     /* Center mist: soft fill across the scroll column */
-    radial-gradient(
-      ellipse 60% 48% at 50% 44%,
-      oklch(14% 0.06 288 / 0.14),
-      transparent 72%
-    ),
+      radial-gradient(
+        ellipse 60% 48% at 50% 44%,
+        oklch(14% 0.06 288 / 0.14),
+        transparent 72%
+      ),
     /* Pink / lemon washes — same depth & chroma band as violet layers */
-    radial-gradient(
-      ellipse 74% 46% at 70% 16%,
-      oklch(25% 0.09 322 / 0.19),
-      transparent 58%
-    ),
+      radial-gradient(
+        ellipse 74% 46% at 70% 16%,
+        oklch(25% 0.09 322 / 0.19),
+        transparent 58%
+      ),
     radial-gradient(
       ellipse 70% 42% at 12% 68%,
       oklch(23% 0.08 108 / 0.17),
@@ -91,37 +90,14 @@
     ),
     linear-gradient(180deg, var(--void-mid) 0%, var(--void-deep) 100%);
   /* Radials fixed to viewport so purple / neon glows don’t scroll away on long pages */
-  background-attachment:
-    fixed,
-    fixed,
-    fixed,
-    fixed,
-    fixed,
-    fixed,
-    fixed,
-    fixed,
-    fixed,
-    fixed,
-    fixed,
-    scroll;
+  background-attachment: fixed, fixed, fixed, fixed, fixed, fixed, fixed, fixed,
+    fixed, fixed, fixed, scroll;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  background-blend-mode:
-    screen,
-    screen,
-    screen,
-    screen,
-    screen,
-    screen,
-    screen,
-    screen,
-    screen,
-    screen,
-    screen,
-    normal;
+  background-blend-mode: screen, screen, screen, screen, screen, screen, screen,
+    screen, screen, screen, screen, normal;
   /* Slight black vignette + whisper of violet at the edges */
-  box-shadow:
-    inset 0 0 110px oklch(0% 0 0 / 0.38),
+  box-shadow: inset 0 0 110px oklch(0% 0 0 / 0.38),
     inset 0 0 200px oklch(26% 0.09 300 / 0.045);
 }
 
@@ -366,7 +342,7 @@ nav[aria-label='Main'] .nav-bar--overdrive::after {
 /* Nav type: void chrome (not Merriweather); wordmark always white on all routes */
 nav[aria-label='Main'] .nav-wordmark,
 nav[aria-label='Main'] .nav-wordmark--active {
-  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif !important;
   font-weight: 600;
   letter-spacing: -0.03em;
   color: oklch(100% 0 0 / 0.98) !important;
@@ -378,7 +354,7 @@ nav[aria-label='Main'] a.group:focus-visible .nav-wordmark {
 nav[aria-label='Main'] .nav-link--bar,
 nav[aria-label='Main'] .nav-gh,
 nav[aria-label='Main'] .nav-drawer__link {
-  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif !important;
   font-weight: 500;
   letter-spacing: 0.02em;
 }
@@ -452,32 +428,32 @@ nav[aria-label='Main'] .slide-in a:focus {
   font-size: clamp(2.1rem, 1rem + 4vw, 3.25rem);
   line-height: 1.05;
   letter-spacing: -0.04em;
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
   text-wrap: balance;
 }
 
 /* Headings: Space Grotesk, crisp glow, solid fills (no gradient text) */
 .app-space-gothic .project-title {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
   color: var(--gothic-fg) !important;
   text-shadow: 0 0 2rem oklch(65% 0.2 300 / 0.35);
   font-weight: 600;
   letter-spacing: -0.03em;
 }
 .app-space-gothic .project-subtitle {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
   color: var(--gothic-muted) !important;
   font-weight: 400;
 }
 .app-space-gothic .project-header {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
   color: var(--gothic-fg) !important;
   text-shadow: 0 0 1.5rem oklch(50% 0.15 300 / 0.25);
 }
 
 /* Project list index: body under title + date */
 .app-space-gothic .project-item__desc {
-  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif !important;
   color: var(--gothic-muted) !important;
   line-height: 1.7 !important;
 }
@@ -485,7 +461,7 @@ nav[aria-label='Main'] .slide-in a:focus {
 /* Lists: mono markers feel technical (scoped, not all font-primary) */
 .app-space-gothic .project-list,
 .app-space-gothic .project-list li {
-  font-family: 'IBM Plex Mono', ui-monospace, monospace !important;
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace !important;
   font-size: 0.9375rem;
   line-height: 1.7;
   color: var(--gothic-muted) !important;
@@ -503,7 +479,7 @@ nav[aria-label='Main'] .slide-in a:focus {
 /* Date / meta: mono + cold accent (category-reflex check: we avoid generic “crypto neon”) */
 .app-space-gothic p.font-primary.text-sm,
 .app-space-gothic p[class*='tabular-nums'] {
-  font-family: 'IBM Plex Mono', monospace !important;
+  font-family: var(--font-ibm-plex-mono), monospace !important;
   color: var(--gothic-cyan) !important;
   text-shadow: 0 0 0.5rem oklch(60% 0.15 200 / 0.2);
 }
@@ -522,14 +498,14 @@ nav[aria-label='Main'] .slide-in a:focus {
 .app-space-gothic p.max-w-reading.leading-relaxed,
 .app-space-gothic p.leading-relaxed {
   color: var(--gothic-fg) !important;
-  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif !important;
   font-size: 1rem;
   line-height: 1.7 !important;
   letter-spacing: 0.01em;
 }
 .app-space-gothic p.max-w-reading {
   color: var(--gothic-fg) !important;
-  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif !important;
   line-height: 1.65;
 }
 .app-space-gothic .max-w-reading:not(.project-list) {
@@ -539,11 +515,11 @@ nav[aria-label='Main'] .slide-in a:focus {
 
 /* Contact form: match void stack; readable 1rem controls */
 .app-space-gothic .contact-form label {
-  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif !important;
 }
 .app-space-gothic .contact-form input,
 .app-space-gothic .contact-form textarea {
-  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif !important;
   color: var(--gothic-fg) !important;
 }
 .app-space-gothic .contact-form textarea::placeholder,
@@ -555,15 +531,14 @@ nav[aria-label='Main'] .slide-in a:focus {
 }
 
 .app-space-gothic .contact-form__message-meter {
-  font-family: 'IBM Plex Mono', ui-monospace, monospace !important;
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace !important;
   font-size: 0.6875rem;
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--gothic-faint) !important;
   text-shadow: 0 0 0.75rem oklch(55% 0.12 200 / 0.12);
-  transition:
-    color 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+  transition: color 0.35s cubic-bezier(0.22, 1, 0.36, 1),
     text-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -575,8 +550,7 @@ nav[aria-label='Main'] .slide-in a:focus {
 .app-space-gothic .contact-form__message-meter--warn,
 .app-space-gothic .contact-form__message-meter--warn .tabular-nums {
   color: oklch(82% 0.16 75 / 0.98) !important;
-  text-shadow:
-    0 0 0.5rem oklch(70% 0.14 75 / 0.45),
+  text-shadow: 0 0 0.5rem oklch(70% 0.14 75 / 0.45),
     0 0 1.25rem oklch(55% 0.12 55 / 0.25) !important;
 }
 
@@ -605,7 +579,7 @@ nav[aria-label='Main'] .slide-in a:focus {
   border: 1px solid oklch(60% 0.18 310 / 0.4);
   background: oklch(20% 0.06 300 / 0.6) !important;
   box-shadow: 0 0 12px oklch(50% 0.15 310 / 0.2);
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-ibm-plex-mono), monospace;
 }
 
 /* Section containers */
@@ -648,10 +622,8 @@ nav[aria-label='Main'] .slide-in a:focus {
 @media (prefers-reduced-motion: no-preference) {
   .app-space-gothic a.project-item-link:hover .project-item-card,
   .app-space-gothic a.project-item-link:focus-visible .project-item-card {
-    box-shadow:
-      0 0 0 1px oklch(100% 0 0 / 0.2),
-      0 0 36px oklch(58% 0.14 200 / 0.22),
-      0 20px 52px oklch(0% 0 0 / 0.55) !important;
+    box-shadow: 0 0 0 1px oklch(100% 0 0 / 0.2),
+      0 0 36px oklch(58% 0.14 200 / 0.22), 0 20px 52px oklch(0% 0 0 / 0.55) !important;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -661,19 +633,17 @@ nav[aria-label='Main'] .slide-in a:focus {
 }
 
 .app-space-gothic a.project-item-link .project-item-cta {
-  font-family: 'IBM Plex Mono', ui-monospace, monospace !important;
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace !important;
   letter-spacing: 0.2em !important;
   border-top-color: oklch(100% 0 0 / 0.16) !important;
-  transition:
-    color 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+  transition: color 0.28s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
 
 .app-space-gothic a.project-item-link:hover .project-item-cta,
 .app-space-gothic a.project-item-link:focus-visible .project-item-cta {
   color: var(--gothic-magenta) !important;
-  box-shadow:
-    inset 0 1px 0 0 oklch(100% 0 0 / 0.1),
+  box-shadow: inset 0 1px 0 0 oklch(100% 0 0 / 0.1),
     inset 0 -28px 40px -18px oklch(48% 0.16 310 / 0.14) !important;
 }
 
@@ -864,9 +834,7 @@ footer.footer--space-gothic a[href]:focus-visible svg {
   border-left: 1px solid oklch(100% 0 0 / 0.14) !important;
   font-size: 0.8125rem !important;
 }
-.app-space-gothic
-  a.project-header-cta--secondOfPair
-  .project-header-cta__icon {
+.app-space-gothic a.project-header-cta--secondOfPair .project-header-cta__icon {
   width: 1rem !important;
   height: 1rem !important;
 }
@@ -946,7 +914,7 @@ footer.footer--space-gothic a[href]:focus-visible svg {
 
 .app-space-gothic .privacy-page__meta {
   margin: 0;
-  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
   font-size: 0.8125rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -972,7 +940,7 @@ footer.footer--space-gothic a[href]:focus-visible svg {
 .app-space-gothic .privacy-page__prose {
   margin: 0;
   max-width: min(68ch, 100%);
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
   font-size: clamp(0.9375rem, 0.88rem + 0.16vw, 1.02rem);
   line-height: 1.72;
   letter-spacing: 0.014em;
@@ -986,7 +954,7 @@ footer.footer--space-gothic a[href]:focus-visible svg {
 .app-space-gothic .privacy-page__outro {
   margin: 0;
   max-width: min(68ch, 100%);
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
   font-size: clamp(0.9375rem, 0.88rem + 0.16vw, 1.02rem);
   line-height: 1.72;
   letter-spacing: 0.014em;
@@ -1006,7 +974,7 @@ footer.footer--space-gothic a[href]:focus-visible svg {
 /* Work experience timeline (About): CV stack; title > role (≥1.25) > mono date caption */
 .app-space-gothic .work-timeline__title {
   margin: 0;
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
   font-size: clamp(1.125rem, 1.02rem + 0.35vw, 1.3125rem);
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -1016,7 +984,7 @@ footer.footer--space-gothic a[href]:focus-visible svg {
 
 .app-space-gothic .work-timeline__role {
   margin: 0;
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.42;
@@ -1025,7 +993,7 @@ footer.footer--space-gothic a[href]:focus-visible svg {
 
 .app-space-gothic .work-timeline__date {
   margin: 0;
-  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
   font-size: clamp(0.75rem, 0.72rem + 0.1vw, 0.8125rem);
   font-weight: 500;
   font-variant-numeric: tabular-nums;

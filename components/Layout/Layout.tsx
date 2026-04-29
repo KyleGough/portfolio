@@ -1,5 +1,7 @@
 import { Footer } from '@components/Footer';
 import { Nav } from '@components/Nav';
+import { fontIbmPlexMono, fontSpaceGrotesk } from '@utilities/siteFonts';
+import { clsx } from 'clsx';
 import Head from 'next/head';
 import React from 'react';
 
@@ -18,7 +20,13 @@ export const Layout: React.FC<LayoutProps> = ({
   title = 'Kyle Gough - Portfolio',
 }) => {
   return (
-    <div className="App app-space-gothic">
+    <div
+      className={clsx(
+        'App app-space-gothic',
+        fontSpaceGrotesk.variable,
+        fontIbmPlexMono.variable
+      )}
+    >
       <SpaceGothicScrollVars />
       <Head>
         <meta charSet="utf-8" />

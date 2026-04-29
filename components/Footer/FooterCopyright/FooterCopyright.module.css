@@ -10,7 +10,7 @@
   margin: 0;
   max-width: 100%;
   padding: 1rem 1.25rem 0;
-  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
   font-size: 0.8125rem;
   line-height: 1.4;
   letter-spacing: 0.06em;

@@ -1,7 +1,7 @@
 .option {
   margin: 0.12rem 0.4rem;
   padding: 0.5rem 0.75rem;
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
   font-size: 0.875rem;
   line-height: 1.35;
   letter-spacing: 0.02em;
