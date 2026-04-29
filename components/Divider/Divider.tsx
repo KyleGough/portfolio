@@ -1,3 +1,3 @@
 import React from 'react';
 
-export const Divider: React.FC = () => <hr className="m-8 h-px bg-divider" />;
+export const Divider: React.FC = () => <hr className="my-8 mx-auto h-0" />;

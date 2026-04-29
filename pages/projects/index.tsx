@@ -38,7 +38,6 @@ const Projects: React.FC = () => {
                 image={project.image}
                 alt={project.alt}
                 link={project.link}
-                logo={project.logo}
               />
             </React.Fragment>
           );

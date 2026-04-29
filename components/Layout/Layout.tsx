@@ -5,6 +5,7 @@ import React from 'react';
 
 import { OpenGraphMeta } from './OpenGraphMeta';
 import { socialMeta } from './SocialMeta';
+import { SpaceGothicScrollVars } from './SpaceGothicScrollVars';
 import { TwitterMeta } from './TwitterMeta';
 
 interface LayoutProps {
@@ -18,6 +19,7 @@ export const Layout: React.FC<LayoutProps> = ({
 }) => {
   return (
     <div className="App app-space-gothic">
+      <SpaceGothicScrollVars />
       <Head>
         <meta charSet="utf-8" />
         <meta name="author" content="Kyle Gough" />

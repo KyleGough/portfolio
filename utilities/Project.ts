@@ -11,14 +11,6 @@ import imageSortingVisualiser from '@image/card-sorting-algorithm-visualiser.jpg
 import imageSudoku from '@image/card-sudoku.jpg';
 import imageURLShortener from '@image/card-url-shortener.jpg';
 import imageMars from '@image/mars.png';
-import CPlusPlusLogo from '@image/skill/cplusplus.svg';
-import CSharpLogo from '@image/skill/csharp.svg';
-import JavaScriptLogo from '@image/skill/javascript.svg';
-import PythonLogo from '@image/skill/python.svg';
-import ReactLogo from '@image/skill/react.svg';
-import RubyLogo from '@image/skill/ruby.svg';
-import ThreeLogo from '@image/skill/three.svg';
-import TypeScriptLogo from '@image/skill/typescript.svg';
 
 import { Project } from './types';
 
@@ -39,41 +31,6 @@ enum ProjectFilter {
   WEB = 'Web',
 }
 
-const logos = {
-  typescript: {
-    src: TypeScriptLogo,
-    alt: 'TypeScript Logo',
-  },
-  javascript: {
-    src: JavaScriptLogo,
-    alt: 'JavaScript Logo',
-  },
-  python: {
-    src: PythonLogo,
-    alt: 'Python Logo',
-  },
-  react: {
-    src: ReactLogo,
-    alt: 'React Logo',
-  },
-  ruby: {
-    src: RubyLogo,
-    alt: 'Ruby Logo',
-  },
-  cplusplus: {
-    src: CPlusPlusLogo,
-    alt: 'C++ Logo',
-  },
-  csharp: {
-    src: CSharpLogo,
-    alt: 'C# Logo',
-  },
-  three: {
-    src: ThreeLogo,
-    alt: 'Three.js Logo',
-  },
-};
-
 export const projects: Project[] = [
   {
     id: 'solar-system',
@@ -92,7 +49,6 @@ export const projects: Project[] = [
       'Dive into a stunningly rendered model of the solar system created using Three.js and TypeScript. This interactive visualization showcases the planets and their moons orbiting in a dynamic environment, complete with realistic lighting and detailed bump maps for an immersive experience.',
     github: 'https://github.com/KyleGough/solar-system',
     skills: ['Three.js', 'TypeScript'],
-    logo: logos.three,
     liveLink: 'https://kylegough.github.io/solar-system/',
   },
   {
@@ -116,7 +72,6 @@ export const projects: Project[] = [
       'Curated gallery of science-fiction themed images generated using text-to-image AI models. This project explores the capabilities, limitations, and artistic creativity of current AI technologies.',
     github: 'https://github.com/KyleGough/ai-space-telescope',
     skills: ['React', 'TypeScript', 'TailwindCSS'],
-    logo: logos.typescript,
     liveLink: 'https://ai-space-telescope.com',
   },
   {
@@ -136,7 +91,6 @@ export const projects: Project[] = [
       'Firefox browser extension that brings a touch of personalization to your bookmarks. This lightweight and minimalist tool empowers you to effortlessly label your bookmarks with your favorite emojis, adding a fun and visual twist to your browsing experience.',
     github: 'https://github.com/KyleGough/bookmark-labeller-extension',
     skills: ['JavaScript', 'WebExtensions API', 'HTML', 'CSS'],
-    logo: logos.javascript,
   },
   {
     id: 'portfolio',
@@ -169,7 +123,6 @@ export const projects: Project[] = [
       'Jest',
       'Cypress',
     ],
-    logo: logos.typescript,
   },
   {
     id: 'lucidlab',
@@ -209,7 +162,6 @@ export const projects: Project[] = [
       'C',
       'SQL',
     ],
-    logo: logos.javascript,
   },
   {
     id: 'sudoku',
@@ -232,7 +184,6 @@ export const projects: Project[] = [
       'A powerful algorithmic tool designed to conquer even the most challenging Sudoku puzzles without resorting to brute force, guessing, or backtracking. This solver showcases a refined approach to puzzle solving, providing users with detailed insights at every step.',
     github: 'https://github.com/KyleGough/sudoku',
     skills: ['Python'],
-    logo: logos.python,
   },
   {
     id: 'cave-exploration',
@@ -257,7 +208,6 @@ export const projects: Project[] = [
 
     github: 'https://github.com/KyleGough/CS310-Dissertation',
     skills: ['C++', 'GLUT'],
-    logo: logos.cplusplus,
   },
   {
     id: 'rscbot',
@@ -294,7 +244,6 @@ export const projects: Project[] = [
       'PHP',
       'SQL',
     ],
-    logo: logos.javascript,
   },
   {
     id: 'url-shortener',
@@ -312,7 +261,6 @@ export const projects: Project[] = [
     description:
       'Simple yet powerful URL shortening tool that is designed to simplify link management while ensuring efficient and reliable shortening. The project marks my debut in harnessing the capabilities of Node.js, Express.js, and MongoDB to create a seamless user experience.',
     skills: ['JavaScript', 'MongoDB', 'jQuery', 'HTML', 'CSS', 'Materialize'],
-    logo: logos.javascript,
   },
   {
     id: 'graph-algorithm-visualiser',
@@ -331,7 +279,6 @@ export const projects: Project[] = [
       'Dive into the captivating world of graph algorithms with a web application, designed to provide a visual and interactive experience. Explore the intricate elegance of algorithms on randomised nodes, offering an illuminating understanding of their real-world applications.',
     github: 'https://github.com/KyleGough/graph-algorithm-visualiser',
     skills: ['JavaScript', 'Materialize'],
-    logo: logos.javascript,
     liveLink: 'https://kylegough.github.io/graph-algorithm-visualiser/',
   },
   {
@@ -360,7 +307,6 @@ export const projects: Project[] = [
     description:
       'Meet BSplit, your all-in-one web application designed to simplify the process of splitting bills and settling payments among friends and housemates. With user-friendly features and a commitment to enhancing the user experience, BSplit makes managing shared expenses a breeze.',
     skills: ['PHP', 'JavaScript', 'jQuery', 'SQL', 'HTML', 'CSS', 'Bootstrap'],
-    logo: logos.javascript,
   },
   {
     id: 'delivery-route-planner',
@@ -383,7 +329,6 @@ export const projects: Project[] = [
     description:
       'Delivery route planner designed for efficiency and precision. Seamlessly links multiple delivery locations, minimising travel time and maximising resource utilisation. Gain comprehensive insights with detailed reports that illuminate the delivery route, item inclusions, and estimated time of arrival.',
     skills: ['C#', 'SQL'],
-    logo: logos.csharp,
   },
   {
     id: 'sorting-algorithm-visualiser',
@@ -405,6 +350,5 @@ export const projects: Project[] = [
     description:
       "Journey into the mesmerizing world of data sorting with a visualisation tool designed to demystify the intricate sorting process. This versatile platform empowers you to not only witness but deeply understand how data transforms when processed by sorting algorithms. Featuring a vast array of options and capabilities, it's your gateway to exploring the fascinating realm of data organisation.",
     skills: ['C#'],
-    logo: logos.csharp,
   },
 ];
