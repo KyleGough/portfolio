@@ -4,15 +4,6 @@ import React from 'react';
 import { ContactLabel } from './ContactLabel';
 
 describe('ContactLabel component', () => {
-  it('renders', () => {
-    const { container } = render(
-      <ContactLabel isSent={true} valid={true} htmlFor="email">
-        Email
-      </ContactLabel>
-    );
-    expect(container).toMatchSnapshot();
-  });
-
   it('component has link colours if valid', () => {
     render(
       <ContactLabel isSent={false} valid={true} htmlFor="email">

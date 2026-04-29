@@ -60,16 +60,10 @@ npm run build
 
 ### Unit Tests
 
-The portfolio uses [Jest](https://jestjs.io/) as the test runner for unit tests. Each component has a corresponding unit tests including snapshots saved in the format `*.test.tsx` or `*.test.ts`. To run all unit tests, run the following command:
+The portfolio uses [Jest](https://jestjs.io/) as the test runner for unit tests. Each component has a corresponding unit tests saved in the format `*.test.tsx` or `*.test.ts`. To run all unit tests, run the following command:
 
 ```sh
 npm run test:ci
-```
-
-To run all unit tests whilst updating unit test snapshots:
-
-```sh
-npm run test:ci -- -u
 ```
 
 ### e2e Tests
