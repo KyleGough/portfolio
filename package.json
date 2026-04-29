@@ -13,11 +13,14 @@
     "url": "https://github.com/KyleGough/portfolio"
   },
   "private": true,
+  "engines": {
+    "node": ">=18.17.0"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "@types/node": "^16.11.22",
+    "@types/node": "^18.19.0",
     "@types/react": "^18.3.28",
     "@types/react-dom": "^18.3.7",
     "@vercel/analytics": "^0.1.5",
