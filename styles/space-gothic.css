@@ -314,7 +314,6 @@ nav[aria-label='Main'] .slide-in a:focus {
 
 /* Project list index: body under title + date */
 .app-space-gothic .project-item__desc {
-  font-family: var(--font-space-grotesk), system-ui, sans-serif !important;
   color: var(--gothic-muted) !important;
   line-height: 1.7 !important;
 }
