@@ -39,7 +39,7 @@ export const ProjectHeader: React.FC<ProjectHeaderProps> = ({
           </>
         )}
       </p>
-      <p className="mb-4 max-w-reading text-base leading-relaxed text-primary">
+      <p className="mb-4 max-w-reading font-primary text-base leading-relaxed text-primary">
         {project.description}
       </p>
 
