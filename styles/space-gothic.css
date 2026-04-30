@@ -324,7 +324,6 @@ nav[aria-label='Main'] .slide-in a:focus {
 /* Lists: mono markers feel technical (scoped, not all font-primary) */
 .app-space-gothic .project-list,
 .app-space-gothic .project-list li {
-  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace !important;
   font-size: 0.9375rem;
   line-height: 1.7;
   color: var(--gothic-muted) !important;
@@ -361,14 +360,12 @@ nav[aria-label='Main'] .slide-in a:focus {
 .app-space-gothic p.max-w-reading.leading-relaxed,
 .app-space-gothic p.leading-relaxed {
   color: var(--gothic-fg) !important;
-  font-family: var(--font-space-grotesk), system-ui, sans-serif !important;
   font-size: 1rem;
   line-height: 1.7 !important;
   letter-spacing: 0.01em;
 }
 .app-space-gothic p.max-w-reading {
   color: var(--gothic-fg) !important;
-  font-family: var(--font-space-grotesk), system-ui, sans-serif !important;
   line-height: 1.65;
 }
 .app-space-gothic .max-w-reading:not(.project-list) {

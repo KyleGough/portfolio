@@ -28,7 +28,7 @@ export const FEATURED_CASE_STUDIES: readonly FeaturedCaseStudy[] = [
     date: { start: { month: 7, year: 2023 } },
     image: imageMars,
     excerpt:
-      'Interactive 3D solar system in the browser, with orbits, lighting, and a careful balance of performance and feel.',
+      'Interactive 3D solar system in the browser, with orbital mechanics inspired motion, cinematic camera controls, and educational waypoints.',
   },
   {
     id: 'sudoku',
