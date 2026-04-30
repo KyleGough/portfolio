@@ -88,7 +88,7 @@
 }
 
 .app-space-gothic main::before {
-  content: '';
+  content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
@@ -145,7 +145,7 @@
 }
 
 /* —— Main site header: void chrome + Space Grotesk (all routes; matches former /projects look) */
-nav[aria-label='Main'] {
+nav[aria-label="Main"] {
   --gothic-fg: oklch(93% 0.02 280);
   --gothic-cyan: oklch(78% 0.12 200);
   --gothic-magenta: oklch(72% 0.2 310);
@@ -155,8 +155,8 @@ nav[aria-label='Main'] {
 }
 
 /* Sleek bar with violet hairline, purposeful blur (not a glass card) */
-nav[aria-label='Main'] .nav-bar--shell,
-nav[aria-label='Main'] [class~='nav-bar--shell'] {
+nav[aria-label="Main"] .nav-bar--shell,
+nav[aria-label="Main"] [class~="nav-bar--shell"] {
   background-color: oklch(11% 0.03 280) !important;
   border-bottom: 1px solid var(--gothic-stroke-bright) !important;
   box-shadow: 0 0 32px oklch(50% 0.15 290 / 0.12);
@@ -164,7 +164,7 @@ nav[aria-label='Main'] [class~='nav-bar--shell'] {
 }
 
 /* Scrolled: lighter veil, stronger depth (still a signal layer, not decorative glass) */
-nav[aria-label='Main'] .nav-bar--shell.nav-bar--scrolled {
+nav[aria-label="Main"] .nav-bar--shell.nav-bar--scrolled {
   background-color: oklch(11% 0.03 280 / 0.7) !important;
   border-bottom: 1px solid oklch(100% 0 0 / 0.1) !important;
   box-shadow: 0 4px 28px oklch(0% 0 0 / 0.35) !important;
@@ -173,7 +173,7 @@ nav[aria-label='Main'] .nav-bar--shell.nav-bar--scrolled {
 }
 
 /* Nav overdrive: cold cyan + violet signal in the void */
-nav[aria-label='Main'] .nav-bar--overdrive::before {
+nav[aria-label="Main"] .nav-bar--overdrive::before {
   background: linear-gradient(
     102deg,
     oklch(15% 0.04 280 / 0) 0%,
@@ -185,7 +185,7 @@ nav[aria-label='Main'] .nav-bar--overdrive::before {
   mix-blend-mode: plus-lighter !important;
   opacity: calc(0.14 + var(--nav-scroll) * 0.52) !important;
 }
-nav[aria-label='Main'] .nav-bar--overdrive::after {
+nav[aria-label="Main"] .nav-bar--overdrive::after {
   background: linear-gradient(
     90deg,
     transparent 0%,
@@ -197,85 +197,85 @@ nav[aria-label='Main'] .nav-bar--overdrive::after {
   opacity: calc(0.08 + var(--nav-scroll) * 0.88) !important;
 }
 @media (prefers-reduced-motion: reduce) {
-  nav[aria-label='Main'] .nav-bar--overdrive::before,
-  nav[aria-label='Main'] .nav-bar--overdrive::after {
+  nav[aria-label="Main"] .nav-bar--overdrive::before,
+  nav[aria-label="Main"] .nav-bar--overdrive::after {
     opacity: 0 !important;
   }
 }
 
 /* Nav type: void chrome (not Merriweather); wordmark always white on all routes */
-nav[aria-label='Main'] .nav-wordmark,
-nav[aria-label='Main'] .nav-wordmark--active {
+nav[aria-label="Main"] .nav-wordmark,
+nav[aria-label="Main"] .nav-wordmark--active {
   font-family: var(--font-space-grotesk), system-ui, sans-serif !important;
   font-weight: 600;
   letter-spacing: -0.03em;
   color: oklch(100% 0 0 / 0.98) !important;
 }
-nav[aria-label='Main'] a.group:hover .nav-wordmark,
-nav[aria-label='Main'] a.group:focus-visible .nav-wordmark {
+nav[aria-label="Main"] a.group:hover .nav-wordmark,
+nav[aria-label="Main"] a.group:focus-visible .nav-wordmark {
   color: oklch(100% 0 0 / 0.98) !important;
 }
-nav[aria-label='Main'] .nav-link--bar,
-nav[aria-label='Main'] .nav-gh,
-nav[aria-label='Main'] .nav-drawer__link {
+nav[aria-label="Main"] .nav-link--bar,
+nav[aria-label="Main"] .nav-gh,
+nav[aria-label="Main"] .nav-drawer__link {
   font-family: var(--font-space-grotesk), system-ui, sans-serif !important;
   font-weight: 500;
   letter-spacing: 0.02em;
 }
-nav[aria-label='Main'] a.nav-link--bar {
+nav[aria-label="Main"] a.nav-link--bar {
   color: var(--gothic-fg) !important;
 }
-nav[aria-label='Main'] a.nav-gh,
-nav[aria-label='Main'] button.nav-gh {
+nav[aria-label="Main"] a.nav-gh,
+nav[aria-label="Main"] button.nav-gh {
   color: var(--gothic-fg) !important;
 }
-nav[aria-label='Main'] a.nav-link--bar--active {
+nav[aria-label="Main"] a.nav-link--bar--active {
   color: var(--gothic-cyan) !important;
 }
-nav[aria-label='Main'] a.nav-link--bar:hover,
-nav[aria-label='Main'] a.nav-link--bar:focus-visible {
+nav[aria-label="Main"] a.nav-link--bar:hover,
+nav[aria-label="Main"] a.nav-link--bar:focus-visible {
   color: var(--gothic-cyan) !important;
 }
-nav[aria-label='Main'] a.nav-link--bar--active:hover,
-nav[aria-label='Main'] a.nav-link--bar--active:focus-visible {
+nav[aria-label="Main"] a.nav-link--bar--active:hover,
+nav[aria-label="Main"] a.nav-link--bar--active:focus-visible {
   color: var(--gothic-magenta) !important;
 }
-nav[aria-label='Main'] .nav-drawer__link--active {
+nav[aria-label="Main"] .nav-drawer__link--active {
   background: oklch(22% 0.08 200 / 0.35) !important;
   color: var(--gothic-cyan) !important;
   box-shadow: inset 0 0 0 1px oklch(65% 0.1 200 / 0.4) !important;
 }
 
 /* Mobile nav drawer */
-nav[aria-label='Main'] [class~='text-link'] {
+nav[aria-label="Main"] [class~="text-link"] {
   color: var(--gothic-cyan) !important;
 }
-nav[aria-label='Main'] a.border-bottom-slide,
-nav[aria-label='Main'] a[class~='text-link'] {
+nav[aria-label="Main"] a.border-bottom-slide,
+nav[aria-label="Main"] a[class~="text-link"] {
   color: var(--gothic-cyan) !important;
 }
-nav[aria-label='Main'] a.text-link:hover,
-nav[aria-label='Main'] a.text-link:focus {
+nav[aria-label="Main"] a.text-link:hover,
+nav[aria-label="Main"] a.text-link:focus {
   color: var(--gothic-magenta) !important;
 }
 
-nav[aria-label='Main'] .slide-in .bg-background {
+nav[aria-label="Main"] .slide-in .bg-background {
   background-color: var(--void-elevated) !important;
   border-top: 1px solid var(--gothic-stroke) !important;
   box-shadow: 0 16px 48px oklch(0% 0 0 / 0.45);
 }
-nav[aria-label='Main'] .slide-in .text-link,
-nav[aria-label='Main'] .slide-in a {
+nav[aria-label="Main"] .slide-in .text-link,
+nav[aria-label="Main"] .slide-in a {
   color: var(--gothic-cyan) !important;
   border-color: var(--gothic-stroke) !important;
 }
-nav[aria-label='Main'] .slide-in a:hover,
-nav[aria-label='Main'] .slide-in a:focus {
+nav[aria-label="Main"] .slide-in a:hover,
+nav[aria-label="Main"] .slide-in a:focus {
   color: var(--gothic-magenta) !important;
 }
 
 /* /projects: project card lower strip still uses void bg (not the global #424242 bar look) */
-.app-space-gothic main a [class~='bg-nav-light'] {
+.app-space-gothic main a [class~="bg-nav-light"] {
   background-color: oklch(11% 0.03 280) !important;
   border-bottom: 1px solid var(--gothic-stroke-bright) !important;
   box-shadow: 0 0 32px oklch(50% 0.15 290 / 0.12);
@@ -340,7 +340,7 @@ nav[aria-label='Main'] .slide-in a:focus {
 
 /* Date / meta: mono + cold accent (category-reflex check: we avoid generic “crypto neon”) */
 .app-space-gothic p.font-primary.text-sm,
-.app-space-gothic p[class*='tabular-nums'] {
+.app-space-gothic p[class*="tabular-nums"] {
   font-family: var(--font-ibm-plex-mono), monospace !important;
   color: var(--gothic-cyan) !important;
   text-shadow: 0 0 0.5rem oklch(60% 0.15 200 / 0.2);
@@ -350,7 +350,7 @@ nav[aria-label='Main'] .slide-in a:focus {
   color: var(--gothic-cyan) !important;
 }
 .app-space-gothic a.text-link,
-.app-space-gothic a[class~='text-link'] {
+.app-space-gothic a[class~="text-link"] {
   color: var(--gothic-cyan) !important;
 }
 .app-space-gothic a.text-link:hover,
@@ -386,7 +386,7 @@ nav[aria-label='Main'] .slide-in a:focus {
 .app-space-gothic .contact-form input::placeholder {
   color: var(--gothic-faint) !important;
 }
-.app-space-gothic .contact-form [class~='text-error'] {
+.app-space-gothic .contact-form [class~="text-error"] {
   color: #ee3003 !important;
 }
 
@@ -423,20 +423,20 @@ nav[aria-label='Main'] .slide-in a:focus {
 }
 
 /* Contact send: uses Home hero .ctaButton; keep fail border visible with Tailwind .border-error */
-.app-space-gothic button.contact-send-cta[class~='border-error'] {
+.app-space-gothic button.contact-send-cta[class~="border-error"] {
   border-color: #ee3003 !important;
 }
 
 /* Dividers */
 .app-space-gothic .bg-divider,
 .app-space-gothic hr,
-.app-space-gothic [class~='bg-divider'] {
+.app-space-gothic [class~="bg-divider"] {
   background-color: var(--gothic-stroke) !important;
   border: none;
 }
 
 /* Chips: outlined signal, not flat AI slop */
-.app-space-gothic [class~='text-chip'] {
+.app-space-gothic [class~="text-chip"] {
   color: var(--gothic-magenta) !important;
   border: 1px solid oklch(60% 0.18 310 / 0.4);
   background: oklch(20% 0.06 300 / 0.6) !important;
@@ -445,34 +445,34 @@ nav[aria-label='Main'] .slide-in a:focus {
 }
 
 /* Section containers */
-.app-space-gothic [class~='container'] {
+.app-space-gothic [class~="container"] {
   --tw-prose-bullets: var(--gothic-cyan);
 }
 
 /* Image figures & captions */
-.app-space-gothic [class~='text-light'] {
+.app-space-gothic [class~="text-light"] {
   color: var(--gothic-faint) !important;
 }
-.app-space-gothic [class~='text-sm'],
+.app-space-gothic [class~="text-sm"],
 .app-space-gothic p.text-sm {
   color: var(--gothic-muted) !important;
 }
-.app-space-gothic [class~='font-thin'] {
+.app-space-gothic [class~="font-thin"] {
   color: var(--gothic-faint) !important;
 }
 .app-space-gothic .border-light,
-.app-space-gothic [class~='border-white'] {
+.app-space-gothic [class~="border-white"] {
   border-color: var(--gothic-stroke) !important;
   box-shadow: 0 0 32px oklch(0% 0 0 / 0.3);
 }
 
 /* Project list index (View Project button) */
-.app-space-gothic [class~='bg-background'] {
+.app-space-gothic [class~="bg-background"] {
   background-color: var(--void-elevated) !important;
   color: var(--gothic-fg) !important;
 }
 .app-space-gothic a .bg-background,
-.app-space-gothic a [class~='text-link'] {
+.app-space-gothic a [class~="text-link"] {
   border-color: var(--gothic-stroke-bright) !important;
   color: var(--gothic-cyan) !important;
 }
@@ -522,7 +522,7 @@ nav[aria-label='Main'] .slide-in a:focus {
     0 8px 40px oklch(0% 0 0 / 0.45) !important;
   border-color: oklch(100% 0 0 / 0.18) !important;
 }
-.app-space-gothic a .group [class~='text-white'] {
+.app-space-gothic a .group [class~="text-white"] {
   background: linear-gradient(
     180deg,
     var(--void-elevated) 0%,
@@ -532,7 +532,7 @@ nav[aria-label='Main'] .slide-in a:focus {
   border: 1px solid var(--gothic-stroke) !important;
   box-shadow: 0 0 24px oklch(15% 0.06 300 / 0.35);
 }
-.app-space-gothic a .group [class~='text-white'] [class~='opacity-80'] {
+.app-space-gothic a .group [class~="text-white"] [class~="opacity-80"] {
   color: var(--gothic-muted) !important;
   opacity: 0.9 !important;
 }
@@ -587,7 +587,7 @@ nav[aria-label='Main'] .slide-in a:focus {
 .app-space-gothic a:focus .fill-link-hover {
   fill: var(--gothic-magenta) !important;
 }
-.app-space-gothic a.project-pagination__card:hover [class*='fill-link'] {
+.app-space-gothic a.project-pagination__card:hover [class*="fill-link"] {
   fill: var(--gothic-magenta) !important;
 }
 
@@ -613,16 +613,16 @@ footer.footer--space-gothic .bg-nav-light a[href] {
   font-family: var(--font-lato), ui-sans-serif, sans-serif !important;
 }
 
-.app-space-gothic footer [class~='bg-background'],
-footer.footer--space-gothic[class~='bg-background'] {
+.app-space-gothic footer [class~="bg-background"],
+footer.footer--space-gothic[class~="bg-background"] {
   background: var(--void-deep) !important;
 }
-.app-space-gothic footer [class~='text-white'][class~='bg-nav-light'],
+.app-space-gothic footer [class~="text-white"][class~="bg-nav-light"],
 .app-space-gothic footer .bg-nav-light,
-.app-space-gothic footer [class~='bg-nav-light'],
-footer.footer--space-gothic [class~='text-white'][class~='bg-nav-light'],
+.app-space-gothic footer [class~="bg-nav-light"],
+footer.footer--space-gothic [class~="text-white"][class~="bg-nav-light"],
 footer.footer--space-gothic .bg-nav-light,
-footer.footer--space-gothic [class~='bg-nav-light'] {
+footer.footer--space-gothic [class~="bg-nav-light"] {
   background: linear-gradient(
     180deg,
     var(--void-elevated) 0%,
@@ -639,9 +639,9 @@ footer.footer--space-gothic .font-header {
   color: var(--gothic-fg) !important;
 }
 .app-space-gothic footer .bg-nav-dark,
-.app-space-gothic footer [class~='bg-nav-dark'],
+.app-space-gothic footer [class~="bg-nav-dark"],
 footer.footer--space-gothic .bg-nav-dark,
-footer.footer--space-gothic [class~='bg-nav-dark'] {
+footer.footer--space-gothic [class~="bg-nav-dark"] {
   background: oklch(5% 0.02 280) !important;
   border-top: none !important;
   color: var(--gothic-muted) !important;
@@ -657,9 +657,9 @@ footer.footer--space-gothic a[href]:focus {
   color: var(--gothic-magenta) !important;
 }
 .app-space-gothic footer .group.fill-white,
-.app-space-gothic footer [class~='fill-white'],
+.app-space-gothic footer [class~="fill-white"],
 footer.footer--space-gothic .group.fill-white,
-footer.footer--space-gothic [class~='fill-white'] {
+footer.footer--space-gothic [class~="fill-white"] {
   color: var(--gothic-cyan) !important;
   fill: var(--gothic-cyan) !important;
 }
@@ -756,23 +756,23 @@ footer.footer--space-gothic a[href]:focus-visible svg {
 }
 
 /* Screenshots / carousel: subtle frame (project cards; exclude case-study tiles) */
-.app-space-gothic [class~='shadow']:not(.screenshot-tile__trigger),
-.app-space-gothic [class~='drop-shadow-lg'] {
+.app-space-gothic [class~="shadow"]:not(.screenshot-tile__trigger),
+.app-space-gothic [class~="drop-shadow-lg"] {
   box-shadow:
     0 12px 40px oklch(0% 0 0 / 0.4),
     0 0 0 1px var(--gothic-stroke) !important;
 }
 
 /* Disabled / pagination */
-.app-space-gothic [class~='text-disabled'] {
+.app-space-gothic [class~="text-disabled"] {
   color: var(--gothic-faint) !important;
 }
 
 /* Filter select button area */
-.app-space-gothic [class~='text-nav-dark'] {
+.app-space-gothic [class~="text-nav-dark"] {
   color: var(--gothic-fg) !important;
 }
-.app-space-gothic [class~='text-nav-light'] {
+.app-space-gothic [class~="text-nav-light"] {
   color: var(--gothic-muted) !important;
 }
 

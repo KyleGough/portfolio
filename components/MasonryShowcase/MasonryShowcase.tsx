@@ -1,24 +1,24 @@
-import { FadeIn } from '@components/FadeIn';
-import heroStyles from '@components/Hero/Hero.module.css';
-import { ArrowForwardIcon } from '@components/Icons';
-import { getDateRange } from '@utilities/date';
+import { FadeIn } from "@components/FadeIn";
+import heroStyles from "@components/Hero/Hero.module.css";
+import { ArrowForwardIcon } from "@components/Icons";
+import { getDateRange } from "@utilities/date";
 import {
   FEATURED_CASE_STUDIES,
   type FeaturedCaseStudy,
-} from '@utilities/featuredCaseStudies';
-import { clsx } from 'clsx';
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+} from "@utilities/featuredCaseStudies";
+import { clsx } from "clsx";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
-import styles from './MasonryShowcase.module.css';
+import styles from "./MasonryShowcase.module.css";
 
 const Tile: React.FC<{
   featured: FeaturedCaseStudy;
   priority: boolean;
 }> = ({ featured, priority }) => {
   const when = getDateRange(featured.date);
-  const isSudoku = featured.id === 'sudoku';
+  const isSudoku = featured.id === "sudoku";
   const img = featured.image;
 
   return (

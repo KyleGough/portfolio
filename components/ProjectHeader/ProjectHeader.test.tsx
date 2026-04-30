@@ -1,14 +1,14 @@
-import mockStaticImageData from '@mocks/mockStaticImageData';
-import { render, screen } from '@testing-library/react';
-import { Project } from '@utilities/types';
-import React from 'react';
+import mockStaticImageData from "@mocks/mockStaticImageData";
+import { render, screen } from "@testing-library/react";
+import { Project } from "@utilities/types";
+import React from "react";
 
-import { ProjectHeader } from './ProjectHeader';
+import { ProjectHeader } from "./ProjectHeader";
 
 const baseProject: Project = {
-  id: 'portfolio',
-  title: 'Portfolio',
-  subtitle: 'Passion Project',
+  id: "portfolio",
+  title: "Portfolio",
+  subtitle: "Passion Project",
   date: {
     start: {
       month: 1,
@@ -19,25 +19,25 @@ const baseProject: Project = {
       year: 2022,
     },
   },
-  video: '/#video',
+  video: "/#video",
   image: mockStaticImageData,
-  alt: 'Portfolio Homepage',
-  link: '/projects/portfolio',
-  filters: ['JavaScript', 'Web'],
-  description: 'Personal portfolio website',
-  github: 'https://github.com/KyleGough/portfolio',
-  skills: ['TypeScript', 'JavaScript'],
+  alt: "Portfolio Homepage",
+  link: "/projects/portfolio",
+  filters: ["JavaScript", "Web"],
+  description: "Personal portfolio website",
+  github: "https://github.com/KyleGough/portfolio",
+  skills: ["TypeScript", "JavaScript"],
 };
 
-describe('ProjectHeader component', () => {
-  it('renders', () => {
+describe("ProjectHeader component", () => {
+  it("renders", () => {
     render(<ProjectHeader project={baseProject} />);
 
-    expect(screen.getByText('Portfolio')).toBeVisible();
-    expect(screen.getByText('Passion Project')).toBeVisible();
-    expect(screen.getByText('Jan 2021')).toBeVisible();
-    expect(screen.getByText('Mar 2022')).toBeVisible();
-    expect(screen.getByText('Personal portfolio website')).toBeVisible();
-    expect(screen.getByText('TypeScript')).toBeVisible();
+    expect(screen.getByText("Portfolio")).toBeVisible();
+    expect(screen.getByText("Passion Project")).toBeVisible();
+    expect(screen.getByText("Jan 2021")).toBeVisible();
+    expect(screen.getByText("Mar 2022")).toBeVisible();
+    expect(screen.getByText("Personal portfolio website")).toBeVisible();
+    expect(screen.getByText("TypeScript")).toBeVisible();
   });
 });

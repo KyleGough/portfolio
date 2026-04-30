@@ -1,5 +1,5 @@
-import { clsx } from 'clsx';
-import React, { forwardRef } from 'react';
+import { clsx } from "clsx";
+import React, { forwardRef } from "react";
 
 interface SectionProps {
   children?: React.ReactNode;
@@ -13,8 +13,8 @@ const Section = forwardRef<HTMLDivElement, SectionProps>(
       id={id}
       ref={ref}
       className={clsx(
-        { 'first:pt-24': !overrideTopPadding },
-        'container text-primary py-8 last:pb-16',
+        { "first:pt-24": !overrideTopPadding },
+        "container text-primary py-8 last:pb-16",
       )}
     >
       {children}
@@ -22,5 +22,5 @@ const Section = forwardRef<HTMLDivElement, SectionProps>(
   ),
 );
 
-Section.displayName = 'Section';
+Section.displayName = "Section";
 export { Section };

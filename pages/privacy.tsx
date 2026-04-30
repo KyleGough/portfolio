@@ -1,10 +1,10 @@
-import { Layout } from '@components/Layout';
-import { Link } from '@components/Link';
-import { Section } from '@components/Section';
-import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
-import React from 'react';
+import { Layout } from "@components/Layout";
+import { Link } from "@components/Link";
+import { Section } from "@components/Section";
+import extruded from "@components/SpaceExtrudedTitle/extrudedTitle.module.css";
+import React from "react";
 
-import styles from './privacy.module.css';
+import styles from "./privacy.module.css";
 
 const Privacy: React.FC = () => {
   return (

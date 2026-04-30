@@ -1,14 +1,14 @@
-import mockIntersectionObserver from '@mocks/mockIntersectionObserver';
-import mockStaticImageData from '@mocks/mockStaticImageData';
-import { render, screen } from '@testing-library/react';
-import React from 'react';
+import mockIntersectionObserver from "@mocks/mockIntersectionObserver";
+import mockStaticImageData from "@mocks/mockStaticImageData";
+import { render, screen } from "@testing-library/react";
+import React from "react";
 
-import { TimelineNode } from './TimelineNode';
+import { TimelineNode } from "./TimelineNode";
 
-describe('TimelineNode component', () => {
+describe("TimelineNode component", () => {
   beforeEach(mockIntersectionObserver);
 
-  it('renders', () => {
+  it("renders", () => {
     render(
       <TimelineNode
         title="Acme"
@@ -18,8 +18,8 @@ describe('TimelineNode component', () => {
         logo={mockStaticImageData}
       />,
     );
-    expect(screen.getByText('CEO')).toBeVisible();
-    expect(screen.getByText('Acme')).toBeVisible();
-    expect(screen.getByText('January 2000 - Present')).toBeVisible();
+    expect(screen.getByText("CEO")).toBeVisible();
+    expect(screen.getByText("Acme")).toBeVisible();
+    expect(screen.getByText("January 2000 - Present")).toBeVisible();
   });
 });

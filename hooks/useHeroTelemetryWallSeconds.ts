@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 /**
  * Wall-clock seconds since mount, driven by rAF while `animationActive`. Pauses when false.
@@ -9,8 +9,8 @@ export function useHeroTelemetryWallSeconds(animationActive: boolean): number {
   const time0Ref = useRef<number | null>(null);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (typeof window === "undefined") return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       return undefined;
     }
     if (time0Ref.current === null) {
@@ -20,8 +20,8 @@ export function useHeroTelemetryWallSeconds(animationActive: boolean): number {
   }, []);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (typeof window === "undefined") return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       return undefined;
     }
     if (!animationActive) {

@@ -1,8 +1,8 @@
-import { ArrowBackIcon, ArrowForwardIcon } from '@components/Icons';
-import { Section } from '@components/Section';
-import { clsx } from 'clsx';
-import Link from 'next/link';
-import React from 'react';
+import { ArrowBackIcon, ArrowForwardIcon } from "@components/Icons";
+import { Section } from "@components/Section";
+import { clsx } from "clsx";
+import Link from "next/link";
+import React from "react";
 
 interface PaginationProps {
   nextLink?: string;
@@ -13,22 +13,22 @@ interface PaginationProps {
 
 const linkCardClass = (enabled: boolean) =>
   clsx(
-    'project-pagination__card',
+    "project-pagination__card",
     /* Full width of grid track so the pair stays symmetric and centered in the wrapper. */
-    'flex w-full min-h-[4.75rem] items-center gap-3 rounded-2xl border p-3.5 text-left no-underline',
-    'transition [transition-property:box-shadow,transform,opacity] duration-200 [transition-timing-function:cubic-bezier(0.25,1,0.5,1)]',
-    'sm:min-h-0 sm:gap-4 sm:p-4',
+    "flex w-full min-h-[4.75rem] items-center gap-3 rounded-2xl border p-3.5 text-left no-underline",
+    "transition [transition-property:box-shadow,transform,opacity] duration-200 [transition-timing-function:cubic-bezier(0.25,1,0.5,1)]",
+    "sm:min-h-0 sm:gap-4 sm:p-4",
     enabled && [
-      'group border-header/10 bg-background/90 text-link',
-      'shadow-sm',
-      'hover:border-link/25 hover:shadow-md',
-      'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-link/40',
-      'motion-safe:hover:-translate-y-0.5',
-      'motion-safe:active:translate-y-0 motion-safe:active:scale-[0.985]',
+      "group border-header/10 bg-background/90 text-link",
+      "shadow-sm",
+      "hover:border-link/25 hover:shadow-md",
+      "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-link/40",
+      "motion-safe:hover:-translate-y-0.5",
+      "motion-safe:active:translate-y-0 motion-safe:active:scale-[0.985]",
     ],
     !enabled && [
-      'cursor-not-allowed border border-black/[0.06] bg-header/[0.04] text-disabled',
-      'pointer-events-none opacity-[0.72]',
+      "cursor-not-allowed border border-black/[0.06] bg-header/[0.04] text-disabled",
+      "pointer-events-none opacity-[0.72]",
     ],
   );
 

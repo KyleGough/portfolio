@@ -3,4 +3,4 @@ export {
   getFormattedDate,
   getProjectStartDateTime,
   getShortDate,
-} from './date';
+} from "./date";

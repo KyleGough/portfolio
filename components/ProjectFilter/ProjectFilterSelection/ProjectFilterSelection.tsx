@@ -1,7 +1,7 @@
-import { clsx } from 'clsx';
-import React, { KeyboardEvent } from 'react';
+import { clsx } from "clsx";
+import React, { KeyboardEvent } from "react";
 
-import styles from './ProjectFilterSelection.module.css';
+import styles from "./ProjectFilterSelection.module.css";
 
 interface ProjectFilterSelectionProps {
   onSelect: (a: string) => void;
@@ -15,7 +15,7 @@ export const ProjectFilterSelection: React.FC<ProjectFilterSelectionProps> = ({
   selected,
 }) => {
   const onKey = (v: string, event: KeyboardEvent<HTMLLIElement>) => {
-    if (event.key === 'Enter' || event.key === ' ') {
+    if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
       onSelect(v);
     }

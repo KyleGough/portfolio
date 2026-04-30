@@ -1,19 +1,19 @@
-import { Divider } from '@components/Divider';
-import { ImageFigure } from '@components/ImageFigure';
-import { Layout } from '@components/Layout';
-import { Pagination } from '@components/Pagination';
-import { ProjectHeader } from '@components/ProjectHeader';
-import { Screenshots } from '@components/Screenshots';
-import { Section } from '@components/Section';
-import imageBillList from '@image/bsplit1.jpg';
-import imageHomepage from '@image/bsplit2.jpg';
-import imageNewBill from '@image/bsplit3.jpg';
-import imageGroupList from '@image/bsplit4.jpg';
-import imageNewGroup from '@image/bsplit5.jpg';
-import { getProjectData } from '@utilities/Project';
-import { ProjectPageProps } from '@utilities/types';
-import { GetStaticProps } from 'next';
-import React from 'react';
+import { Divider } from "@components/Divider";
+import { ImageFigure } from "@components/ImageFigure";
+import { Layout } from "@components/Layout";
+import { Pagination } from "@components/Pagination";
+import { ProjectHeader } from "@components/ProjectHeader";
+import { Screenshots } from "@components/Screenshots";
+import { Section } from "@components/Section";
+import imageBillList from "@image/bsplit1.jpg";
+import imageHomepage from "@image/bsplit2.jpg";
+import imageNewBill from "@image/bsplit3.jpg";
+import imageGroupList from "@image/bsplit4.jpg";
+import imageNewGroup from "@image/bsplit5.jpg";
+import { getProjectData } from "@utilities/Project";
+import { ProjectPageProps } from "@utilities/types";
+import { GetStaticProps } from "next";
+import React from "react";
 
 const BSplit: React.FC<ProjectPageProps> = ({ images, project }) => (
   <Layout title="BSplit: Bill Splitter Web Application">
@@ -82,17 +82,17 @@ const BSplit: React.FC<ProjectPageProps> = ({ images, project }) => (
 
 export const getStaticProps: GetStaticProps = () => {
   const images = [
-    { imageData: imageBillList, alt: 'Bill list' },
-    { imageData: imageHomepage, alt: 'Homepage' },
-    { imageData: imageNewBill, alt: 'New bill form' },
-    { imageData: imageGroupList, alt: 'Group list' },
-    { imageData: imageNewGroup, alt: 'New group form' },
+    { imageData: imageBillList, alt: "Bill list" },
+    { imageData: imageHomepage, alt: "Homepage" },
+    { imageData: imageNewBill, alt: "New bill form" },
+    { imageData: imageGroupList, alt: "Group list" },
+    { imageData: imageNewGroup, alt: "New group form" },
   ];
 
   return {
     props: {
       images: images,
-      project: getProjectData('bsplit'),
+      project: getProjectData("bsplit"),
     },
   };
 };

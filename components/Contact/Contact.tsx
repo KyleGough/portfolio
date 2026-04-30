@@ -1,20 +1,20 @@
-import { FadeIn } from '@components/FadeIn';
-import { clsx } from 'clsx';
-import React, { useState } from 'react';
+import { FadeIn } from "@components/FadeIn";
+import { clsx } from "clsx";
+import React, { useState } from "react";
 
-import { getFieldBorderStyle, validateEmail } from './Contact.helper';
-import { EmailStatus } from './Contact.types';
-import { ContactFieldError } from './ContactFieldError';
-import { ContactLabel } from './ContactLabel';
-import { ContactSendButton } from './ContactSendButton';
+import { getFieldBorderStyle, validateEmail } from "./Contact.helper";
+import { EmailStatus } from "./Contact.types";
+import { ContactFieldError } from "./ContactFieldError";
+import { ContactLabel } from "./ContactLabel";
+import { ContactSendButton } from "./ContactSendButton";
 
 const MESSAGE_MAX_LENGTH = 1024;
 
 export const Contact: React.FC = () => {
   // Form input text content.
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   // Form input error flags.
   const [nameError, setNameError] = useState(false);
@@ -75,9 +75,9 @@ export const Contact: React.FC = () => {
     }
 
     // Send Email.
-    fetch('/api/send', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+    fetch("/api/send", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, message }),
     })
       .then((res) => {
@@ -93,14 +93,14 @@ export const Contact: React.FC = () => {
   };
 
   const inputBaseStyles = clsx(
-    'block w-full',
-    'font-primary text-base leading-relaxed',
-    'shadow transition-colors duration-200',
-    'mt-2 px-4 py-2.5',
-    'border-2 rounded-2xl',
-    'outline-none caret-link-hover bg-background',
+    "block w-full",
+    "font-primary text-base leading-relaxed",
+    "shadow transition-colors duration-200",
+    "mt-2 px-4 py-2.5",
+    "border-2 rounded-2xl",
+    "outline-none caret-link-hover bg-background",
   );
-  const inputFieldStyles = clsx(inputBaseStyles, 'mb-6');
+  const inputFieldStyles = clsx(inputBaseStyles, "mb-6");
 
   return (
     <form className="contact-form flex w-full justify-center">
@@ -166,7 +166,7 @@ export const Contact: React.FC = () => {
             className={clsx(
               getFieldBorderStyle(!messageError, isSent),
               inputBaseStyles,
-              'mb-2 h-40 max-h-52 min-h-[10rem] resize-y',
+              "mb-2 h-40 max-h-52 min-h-[10rem] resize-y",
             )}
             id="message"
             name="message"
@@ -180,14 +180,14 @@ export const Contact: React.FC = () => {
             id="message-meter"
             data-testid="contact-form-message-meter"
             className={clsx(
-              'contact-form__message-meter mb-2 text-right',
-              messageNearLimit && 'contact-form__message-meter--warn',
+              "contact-form__message-meter mb-2 text-right",
+              messageNearLimit && "contact-form__message-meter--warn",
             )}
           >
             <span className="tabular-nums">{message.length}</span>
             <span className="opacity-70"> / {MESSAGE_MAX_LENGTH}</span>
             <span className="sr-only">
-              {' '}
+              {" "}
               characters used in message (maximum {MESSAGE_MAX_LENGTH})
             </span>
           </p>

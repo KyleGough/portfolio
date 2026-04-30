@@ -1,10 +1,10 @@
-import { render, screen } from '@testing-library/react';
-import React from 'react';
+import { render, screen } from "@testing-library/react";
+import React from "react";
 
-import { ProjectItem } from './ProjectItem';
+import { ProjectItem } from "./ProjectItem";
 
-describe('ProjectItem component', () => {
-  it('renders', () => {
+describe("ProjectItem component", () => {
+  it("renders", () => {
     render(
       <ProjectItem
         title="New Project"
@@ -15,14 +15,14 @@ describe('ProjectItem component', () => {
         description="Sample Description"
         link="/#project"
         image={{
-          src: '/#image',
+          src: "/#image",
           height: 100,
           width: 100,
-          blurDataURL: '/#blur',
+          blurDataURL: "/#blur",
         }}
         alt="Test Alt Text"
       />,
     );
-    expect(screen.getByText('Jan 2021 - Jun 2022')).toBeVisible();
+    expect(screen.getByText("Jan 2021 - Jun 2022")).toBeVisible();
   });
 });

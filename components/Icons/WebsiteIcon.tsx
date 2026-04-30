@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { IconProps } from './IconInterface';
+import { IconProps } from "./IconInterface";
 
 export const WebsiteIcon: React.FC<IconProps> = ({ className }) => (
   <svg

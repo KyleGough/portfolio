@@ -1,20 +1,20 @@
-import { Divider } from '@components/Divider';
-import { ImageFigure } from '@components/ImageFigure';
-import { Layout } from '@components/Layout';
-import { Pagination } from '@components/Pagination';
-import { ProjectHeader } from '@components/ProjectHeader';
-import { Screenshots } from '@components/Screenshots';
-import { Section } from '@components/Section';
-import imageStockQuery from '@image/rscbot1.jpg';
-import imageNewsfeed from '@image/rscbot2.jpg';
-import imageFavourites from '@image/rscbot3.jpg';
-import imageNewsQuery from '@image/rscbot4.jpg';
-import imageOther from '@image/rscbot5.jpg';
-import imageHelp from '@image/rscbot6.jpg';
-import { getProjectData } from '@utilities/Project';
-import { ProjectPageProps } from '@utilities/types';
-import { GetStaticProps } from 'next';
-import React from 'react';
+import { Divider } from "@components/Divider";
+import { ImageFigure } from "@components/ImageFigure";
+import { Layout } from "@components/Layout";
+import { Pagination } from "@components/Pagination";
+import { ProjectHeader } from "@components/ProjectHeader";
+import { Screenshots } from "@components/Screenshots";
+import { Section } from "@components/Section";
+import imageStockQuery from "@image/rscbot1.jpg";
+import imageNewsfeed from "@image/rscbot2.jpg";
+import imageFavourites from "@image/rscbot3.jpg";
+import imageNewsQuery from "@image/rscbot4.jpg";
+import imageOther from "@image/rscbot5.jpg";
+import imageHelp from "@image/rscbot6.jpg";
+import { getProjectData } from "@utilities/Project";
+import { ProjectPageProps } from "@utilities/types";
+import { GetStaticProps } from "next";
+import React from "react";
 
 const RSCBot: React.FC<ProjectPageProps> = ({ images, project }) => (
   <Layout title="RSCBot - Personalisable Trader ChatBot">
@@ -83,21 +83,21 @@ const RSCBot: React.FC<ProjectPageProps> = ({ images, project }) => (
 
 export const getStaticProps: GetStaticProps = () => {
   const images = [
-    { imageData: imageStockQuery, alt: 'Stock query' },
+    { imageData: imageStockQuery, alt: "Stock query" },
     {
       imageData: imageNewsfeed,
-      alt: 'Hourly newsfeed with natural language processing',
+      alt: "Hourly newsfeed with natural language processing",
     },
-    { imageData: imageFavourites, alt: 'Favourites selection' },
-    { imageData: imageNewsQuery, alt: 'News query' },
-    { imageData: imageOther, alt: 'Other queries' },
-    { imageData: imageHelp, alt: 'Help modal' },
+    { imageData: imageFavourites, alt: "Favourites selection" },
+    { imageData: imageNewsQuery, alt: "News query" },
+    { imageData: imageOther, alt: "Other queries" },
+    { imageData: imageHelp, alt: "Help modal" },
   ];
 
   return {
     props: {
       images: images,
-      project: getProjectData('rscbot'),
+      project: getProjectData("rscbot"),
     },
   };
 };

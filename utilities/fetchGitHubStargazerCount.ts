@@ -7,13 +7,13 @@ export const fetchGitHubStargazerCount = async (
 ): Promise<number | undefined> => {
   try {
     const res = await fetch(`https://api.github.com/repos/KyleGough/${repo}`, {
-      headers: { Accept: 'application/vnd.github+json' },
+      headers: { Accept: "application/vnd.github+json" },
     });
     if (!res.ok) {
       return undefined;
     }
     const data = (await res.json()) as { stargazers_count?: unknown };
-    if (typeof data.stargazers_count === 'number') {
+    if (typeof data.stargazers_count === "number") {
       return data.stargazers_count;
     }
   } catch {

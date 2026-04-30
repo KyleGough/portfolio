@@ -1,1 +1,1 @@
-export { OpenGraphMeta } from './OpenGraphMeta';
+export { OpenGraphMeta } from "./OpenGraphMeta";

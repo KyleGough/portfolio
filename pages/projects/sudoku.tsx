@@ -1,17 +1,17 @@
-import { Divider } from '@components/Divider';
-import { ImageFigure } from '@components/ImageFigure';
-import { Layout } from '@components/Layout';
-import { Pagination } from '@components/Pagination';
-import { ProjectHeader } from '@components/ProjectHeader';
-import { Screenshots } from '@components/Screenshots';
-import { Section } from '@components/Section';
-import imageExample1 from '@image/sudoku1.jpg';
-import imageExample2 from '@image/sudoku2.jpg';
-import { fetchGitHubStargazerCount } from '@utilities/fetchGitHubStargazerCount';
-import { getProjectData } from '@utilities/Project';
-import { ProjectPageProps } from '@utilities/types';
-import { GetStaticProps } from 'next';
-import React from 'react';
+import { Divider } from "@components/Divider";
+import { ImageFigure } from "@components/ImageFigure";
+import { Layout } from "@components/Layout";
+import { Pagination } from "@components/Pagination";
+import { ProjectHeader } from "@components/ProjectHeader";
+import { Screenshots } from "@components/Screenshots";
+import { Section } from "@components/Section";
+import imageExample1 from "@image/sudoku1.jpg";
+import imageExample2 from "@image/sudoku2.jpg";
+import { fetchGitHubStargazerCount } from "@utilities/fetchGitHubStargazerCount";
+import { getProjectData } from "@utilities/Project";
+import { ProjectPageProps } from "@utilities/types";
+import { GetStaticProps } from "next";
+import React from "react";
 
 const Sudoku: React.FC<ProjectPageProps> = ({
   images,
@@ -245,16 +245,16 @@ const Sudoku: React.FC<ProjectPageProps> = ({
 
 export const getStaticProps: GetStaticProps<ProjectPageProps> = async () => {
   const images = [
-    { imageData: imageExample1, alt: 'X-Wing example' },
-    { imageData: imageExample2, alt: 'XYZ-Wing example' },
+    { imageData: imageExample1, alt: "X-Wing example" },
+    { imageData: imageExample2, alt: "XYZ-Wing example" },
   ];
 
-  const githubStargazerCount = await fetchGitHubStargazerCount('sudoku');
+  const githubStargazerCount = await fetchGitHubStargazerCount("sudoku");
 
   return {
     props: {
       images: images,
-      project: getProjectData('sudoku'),
+      project: getProjectData("sudoku"),
       ...(githubStargazerCount !== undefined && { githubStargazerCount }),
     },
     revalidate: 3600,

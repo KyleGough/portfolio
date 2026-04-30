@@ -1,24 +1,24 @@
-import { cy, it } from 'local-cypress';
+import { cy, it } from "local-cypress";
 
-describe('Mobile Navigation', () => {
+describe("Mobile Navigation", () => {
   beforeEach(() => {
     cy.viewport(375, 812);
   });
 
-  it('Navigate to projects page', () => {
-    cy.visit('/');
+  it("Navigate to projects page", () => {
+    cy.visit("/");
     cy.toggleNavigation();
     cy.get('nav a[href="/projects"]:visible').click();
-    cy.url().should('include', '/projects');
-    cy.get('h1').should('have.text', 'Projects');
+    cy.url().should("include", "/projects");
+    cy.get("h1").should("have.text", "Projects");
   });
 
-  it('Navigate to homepage', () => {
-    cy.visit('/projects');
+  it("Navigate to homepage", () => {
+    cy.visit("/projects");
     cy.toggleNavigation();
-    cy.get('nav .nav-drawer__link[href="/"]:visible').contains('Home').click();
-    cy.location('pathname').should('eq', '/');
-    cy.get('h1').should('have.text', 'Kyle Gough');
+    cy.get('nav .nav-drawer__link[href="/"]:visible').contains("Home").click();
+    cy.location("pathname").should("eq", "/");
+    cy.get("h1").should("have.text", "Kyle Gough");
   });
 });
 

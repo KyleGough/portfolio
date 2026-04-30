@@ -1,5 +1,5 @@
-import Image, { StaticImageData } from 'next/image';
-import React, { useEffect, useState } from 'react';
+import Image, { StaticImageData } from "next/image";
+import React, { useEffect, useState } from "react";
 
 let screenshotLightboxId = 0;
 
@@ -25,13 +25,13 @@ export const ImageModal: React.FC<ImageModalProps> = ({ image, alt }) => {
       return undefined;
     }
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         e.preventDefault();
         setOpen(false);
       }
     };
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
   return (
@@ -58,10 +58,10 @@ export const ImageModal: React.FC<ImageModalProps> = ({ image, alt }) => {
           />
           {(
             [
-              'top-2.5 left-2.5 border-t-2 border-l-2',
-              'top-2.5 right-2.5 border-t-2 border-r-2',
-              'bottom-2.5 left-2.5 border-b-2 border-l-2',
-              'bottom-2.5 right-2.5 border-b-2 border-r-2',
+              "top-2.5 left-2.5 border-t-2 border-l-2",
+              "top-2.5 right-2.5 border-t-2 border-r-2",
+              "bottom-2.5 left-2.5 border-b-2 border-l-2",
+              "bottom-2.5 right-2.5 border-b-2 border-r-2",
             ] as const
           ).map((corners) => (
             <span

@@ -1,9 +1,8 @@
 /// <reference types="cypress" />
 
-import { cy, Cypress } from 'local-cypress';
+import { cy, Cypress } from "local-cypress";
 
 declare global {
-   
   namespace Cypress {
     interface Chainable {
       toggleNavigation(): Chainable<Element>;
@@ -13,15 +12,15 @@ declare global {
   }
 }
 
-Cypress.Commands.add('toggleNavigation', () => {
+Cypress.Commands.add("toggleNavigation", () => {
   cy.get('nav button[aria-label="Toggle navigation" i]').click();
 });
 
-Cypress.Commands.add('getSubmitButton', () => {
-  cy.get('button#submit');
+Cypress.Commands.add("getSubmitButton", () => {
+  cy.get("button#submit");
 });
 
-Cypress.Commands.add('getFormLabel', (label: string) => {
+Cypress.Commands.add("getFormLabel", (label: string) => {
   cy.get(`label[for="${label}"]`).siblings().first();
 });
 

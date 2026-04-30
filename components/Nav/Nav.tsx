@@ -1,31 +1,31 @@
-import { GitHubIcon, MenuIcon } from '@components/Icons';
-import { Link } from '@components/Link';
-import Logo from '@image/logo.png';
-import { isNavPathActive } from '@utilities/isNavPathActive';
-import { clsx } from 'clsx';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { GitHubIcon, MenuIcon } from "@components/Icons";
+import { Link } from "@components/Link";
+import Logo from "@image/logo.png";
+import { isNavPathActive } from "@utilities/isNavPathActive";
+import { clsx } from "clsx";
+import Image from "next/image";
+import { useRouter } from "next/router";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 /** useLayoutEffect warns on SSR; on the server, use `useEffect` (effects still run only in the browser). */
 const useIsomorphicLayoutEffect =
-  typeof window !== 'undefined' ? useLayoutEffect : useEffect;
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 const SCROLL_ELEVATE_PX = 8;
 /** 0–1: ramp over first ~220px of scroll (drives overdrive layer intensity). */
 const SCROLL_RAMP_PX = 220;
 
 const BAR_LINK_BASE =
-  'nav-link--bar border-bottom-slide mt-0 inline-block px-5 py-5';
+  "nav-link--bar border-bottom-slide mt-0 inline-block px-5 py-5";
 const DRAWER_LINK_BASE =
-  'nav-drawer__link text-inherit hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm';
+  "nav-drawer__link text-inherit hover:text-link-hover focus:text-link-hover py-4 px-8 shadow-sm";
 const FOCUS_CHROME_RINGS =
-  'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-link/40';
-const ARIA_CURRENT_PAGE = (active: boolean) => (active ? 'page' : undefined);
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-link/40";
+const ARIA_CURRENT_PAGE = (active: boolean) => (active ? "page" : undefined);
 
 const BAR_LINKS = [
-  { to: '/', label: 'Home' },
-  { to: '/projects', label: 'Projects' },
+  { to: "/", label: "Home" },
+  { to: "/projects", label: "Projects" },
 ] as const;
 
 export const Nav: React.FC = () => {
@@ -45,12 +45,12 @@ export const Nav: React.FC = () => {
       const y = window.scrollY;
       setNavScrolled(y > SCROLL_ELEVATE_PX);
       const t = Math.min(1, Math.max(0, y / SCROLL_RAMP_PX));
-      shellRef.current?.style.setProperty('--nav-scroll', t.toFixed(4));
+      shellRef.current?.style.setProperty("--nav-scroll", t.toFixed(4));
     };
     sync();
-    window.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener("scroll", sync, { passive: true });
     return () => {
-      window.removeEventListener('scroll', sync);
+      window.removeEventListener("scroll", sync);
     };
   }, []);
 
@@ -67,10 +67,10 @@ export const Nav: React.FC = () => {
       }
     };
     // Add listener on mount.
-    document.addEventListener('click', checkClickOutside);
+    document.addEventListener("click", checkClickOutside);
     // Remove listener on unmount.
     return () => {
-      document.removeEventListener('click', checkClickOutside);
+      document.removeEventListener("click", checkClickOutside);
     };
   }, []);
 
@@ -83,10 +83,10 @@ export const Nav: React.FC = () => {
       <div
         ref={shellRef}
         className={clsx(
-          'nav-bar--shell nav-bar--overdrive bg-nav-light relative z-[200] text-white',
-          navScrolled && 'nav-bar--scrolled',
+          "nav-bar--shell nav-bar--overdrive bg-nav-light relative z-[200] text-white",
+          navScrolled && "nav-bar--scrolled",
         )}
-        data-nav-elevated={navScrolled ? 'true' : undefined}
+        data-nav-elevated={navScrolled ? "true" : undefined}
       >
         <div className="nav-bar--inner relative z-10 flex w-full flex-wrap items-center justify-between px-2">
           <Link
@@ -95,7 +95,7 @@ export const Nav: React.FC = () => {
             className="group mx-5 flex flex-shrink-0 items-center rounded-sm text-inherit no-underline
             focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
             focus-visible:outline-link/50"
-            aria-current={isNavPathActive(asPath, '/') ? 'page' : undefined}
+            aria-current={isNavPathActive(asPath, "/") ? "page" : undefined}
           >
             <div className="mr-4 h-8 w-8">
               <Image
@@ -110,10 +110,10 @@ export const Nav: React.FC = () => {
             </div>
             <span
               className={clsx(
-                'nav-wordmark text-white transition-colors duration-200',
-                isNavPathActive(asPath, '/') && 'nav-wordmark--active',
+                "nav-wordmark text-white transition-colors duration-200",
+                isNavPathActive(asPath, "/") && "nav-wordmark--active",
                 /* Keep wordmark white on logo row hover/focus (do not follow link accent) */
-                'group-hover:text-white group-focus-visible:text-white',
+                "group-hover:text-white group-focus-visible:text-white",
               )}
             >
               Kyle Gough
@@ -124,10 +124,10 @@ export const Nav: React.FC = () => {
             ref={menuBtnRef}
             onClick={toggleDrawer}
             className={clsx(
-              'nav-gh border-bottom-slide text-white block transition-colors duration-200',
-              'hover:text-link focus-visible:text-link',
+              "nav-gh border-bottom-slide text-white block transition-colors duration-200",
+              "hover:text-link focus-visible:text-link",
               FOCUS_CHROME_RINGS,
-              'md:hidden px-6 py-5',
+              "md:hidden px-6 py-5",
             )}
             aria-label="Toggle navigation"
           >
@@ -142,7 +142,7 @@ export const Nav: React.FC = () => {
                     key={to}
                     className={clsx(
                       BAR_LINK_BASE,
-                      active && 'nav-link--bar--active',
+                      active && "nav-link--bar--active",
                     )}
                     to={to}
                     aria-current={ARIA_CURRENT_PAGE(active)}
@@ -155,10 +155,10 @@ export const Nav: React.FC = () => {
           </div>
           <Link
             className={clsx(
-              'nav-gh border-bottom-slide items-center justify-center text-white',
-              'hidden transition-colors duration-200 hover:text-link',
+              "nav-gh border-bottom-slide items-center justify-center text-white",
+              "hidden transition-colors duration-200 hover:text-link",
               FOCUS_CHROME_RINGS,
-              'focus-visible:text-link md:inline-flex md:px-6 py-5',
+              "focus-visible:text-link md:inline-flex md:px-6 py-5",
             )}
             href="https://github.com/KyleGough"
             ariaLabel="GitHub Profile"
@@ -172,8 +172,8 @@ export const Nav: React.FC = () => {
         className={clsx(
           { absolute: drawerOpen },
           { hidden: !drawerOpen },
-          'slide-in z-[100] drop-shadow',
-          'w-full md:hidden flex-grow',
+          "slide-in z-[100] drop-shadow",
+          "w-full md:hidden flex-grow",
         )}
       >
         <div className="text-link bg-background text-base">
@@ -184,7 +184,7 @@ export const Nav: React.FC = () => {
                 key={to}
                 className={clsx(
                   DRAWER_LINK_BASE,
-                  active && 'nav-drawer__link--active',
+                  active && "nav-drawer__link--active",
                 )}
                 to={to}
                 onClick={closeDrawer}

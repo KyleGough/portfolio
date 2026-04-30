@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { SocialMetaProps } from '../SocialMeta';
+import { SocialMetaProps } from "../SocialMeta";
 
 export const TwitterMeta: React.FC<SocialMetaProps> = ({
   url,

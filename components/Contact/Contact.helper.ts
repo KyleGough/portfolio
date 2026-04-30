@@ -6,8 +6,8 @@ export const validateEmail = (email: string) => {
 
 export const getFieldBorderStyle = (valid: boolean, sent: boolean) => {
   if (sent) {
-    return 'border-link-hover';
+    return "border-link-hover";
   } else {
-    return valid ? 'border-link focus:border-link-hover' : 'border-error';
+    return valid ? "border-link focus:border-link-hover" : "border-error";
   }
 };

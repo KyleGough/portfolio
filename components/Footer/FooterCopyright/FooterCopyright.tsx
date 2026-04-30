@@ -1,7 +1,7 @@
-import dayjs from 'dayjs';
-import React from 'react';
+import dayjs from "dayjs";
+import React from "react";
 
-import styles from './FooterCopyright.module.css';
+import styles from "./FooterCopyright.module.css";
 
 const COPYRIGHT_START = 2016;
 
@@ -21,7 +21,7 @@ export const FooterCopyright: React.FC = () => {
         <time className={styles.years} dateTime={String(yearEnd)}>
           {yearEnd}
         </time>
-        {', '}
+        {", "}
         <span className={styles.name}>Kyle Gough</span>
       </div>
     </div>

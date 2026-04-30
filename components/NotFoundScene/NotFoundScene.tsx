@@ -1,8 +1,8 @@
-import { Link } from '@components/Link';
-import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
-import React from 'react';
+import { Link } from "@components/Link";
+import extruded from "@components/SpaceExtrudedTitle/extrudedTitle.module.css";
+import React from "react";
 
-import styles from './NotFoundScene.module.css';
+import styles from "./NotFoundScene.module.css";
 
 export const NotFoundScene: React.FC = () => (
   <div className={styles.root}>

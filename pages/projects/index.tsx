@@ -1,18 +1,18 @@
-import { Divider } from '@components/Divider';
-import { Layout } from '@components/Layout';
-import { ProjectItem } from '@components/ProjectItem';
-import { ProjectsFilterPanel } from '@components/ProjectsFilterPanel';
-import { Section } from '@components/Section';
-import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
-import { projects } from '@utilities/Project';
-import { Project } from '@utilities/types';
-import React, { useState } from 'react';
+import { Divider } from "@components/Divider";
+import { Layout } from "@components/Layout";
+import { ProjectItem } from "@components/ProjectItem";
+import { ProjectsFilterPanel } from "@components/ProjectsFilterPanel";
+import { Section } from "@components/Section";
+import extruded from "@components/SpaceExtrudedTitle/extrudedTitle.module.css";
+import { projects } from "@utilities/Project";
+import { Project } from "@utilities/types";
+import React, { useState } from "react";
 
 const Projects: React.FC = () => {
-  const [filter, setFilter] = useState('All');
+  const [filter, setFilter] = useState("All");
 
   const filterProjects = (project: Project): boolean => {
-    return filter === 'All' ? true : project.filters.includes(filter);
+    return filter === "All" ? true : project.filters.includes(filter);
   };
 
   return (

@@ -1,1 +1,1 @@
-export { ProjectsFilterPanel } from './ProjectsFilterPanel';
+export { ProjectsFilterPanel } from "./ProjectsFilterPanel";

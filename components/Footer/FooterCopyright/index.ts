@@ -1,1 +1,1 @@
-export { FooterCopyright } from './FooterCopyright';
+export { FooterCopyright } from "./FooterCopyright";

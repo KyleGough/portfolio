@@ -1,22 +1,22 @@
-import { Divider } from '@components/Divider';
-import { ArrowForwardIcon } from '@components/Icons';
-import { ImageFigure } from '@components/ImageFigure';
-import { Layout } from '@components/Layout';
-import { Link } from '@components/Link';
-import { Pagination } from '@components/Pagination';
-import { ProjectHeader } from '@components/ProjectHeader';
-import { Screenshots } from '@components/Screenshots';
-import { Section } from '@components/Section';
-import imagePopup from '@image/bookmark-labeller.jpg';
-import imageFolder from '@image/bookmark-labeller-folder.jpg';
-import FirefoxLogo from '@image/firefox.svg';
-import { getProjectData } from '@utilities/Project';
-import { ProjectPageProps } from '@utilities/types';
-import { GetStaticProps } from 'next';
-import Image from 'next/image';
-import React from 'react';
+import { Divider } from "@components/Divider";
+import { ArrowForwardIcon } from "@components/Icons";
+import { ImageFigure } from "@components/ImageFigure";
+import { Layout } from "@components/Layout";
+import { Link } from "@components/Link";
+import { Pagination } from "@components/Pagination";
+import { ProjectHeader } from "@components/ProjectHeader";
+import { Screenshots } from "@components/Screenshots";
+import { Section } from "@components/Section";
+import imagePopup from "@image/bookmark-labeller.jpg";
+import imageFolder from "@image/bookmark-labeller-folder.jpg";
+import FirefoxLogo from "@image/firefox.svg";
+import { getProjectData } from "@utilities/Project";
+import { ProjectPageProps } from "@utilities/types";
+import { GetStaticProps } from "next";
+import Image from "next/image";
+import React from "react";
 
-import styles from './bookmark-labeller.module.css';
+import styles from "./bookmark-labeller.module.css";
 
 const BookmarkLabeller: React.FC<ProjectPageProps> = ({ images, project }) => (
   <Layout title="Bookmark Labeller Extension">
@@ -101,18 +101,18 @@ export const getStaticProps: GetStaticProps = () => {
   const images = [
     {
       imageData: imagePopup,
-      alt: 'Bookmark Labeller Extension Popup',
+      alt: "Bookmark Labeller Extension Popup",
     },
     {
       imageData: imageFolder,
-      alt: 'Labelled bookmark folder',
+      alt: "Labelled bookmark folder",
     },
   ];
 
   return {
     props: {
       images: images,
-      project: getProjectData('bookmark-labeller'),
+      project: getProjectData("bookmark-labeller"),
     },
   };
 };

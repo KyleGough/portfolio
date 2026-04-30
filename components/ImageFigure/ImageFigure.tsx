@@ -1,6 +1,6 @@
-import { Section } from '@components/Section';
-import Image, { StaticImageData } from 'next/image';
-import React from 'react';
+import { Section } from "@components/Section";
+import Image, { StaticImageData } from "next/image";
+import React from "react";
 
 interface ImageFigureProps {
   image: {

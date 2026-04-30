@@ -1,5 +1,5 @@
-import { ProjectFilter } from '@components/ProjectFilter';
-import React from 'react';
+import { ProjectFilter } from "@components/ProjectFilter";
+import React from "react";
 
 interface ProjectsFilterPanelProps {
   filter: string;

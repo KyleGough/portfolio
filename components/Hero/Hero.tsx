@@ -1,16 +1,16 @@
-import { FlightTelemetry } from '@components/FlightTelemetry';
-import { Link } from '@components/Link';
-import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
-import { useObserveHeroAnimationActive } from '@hooks/useObserveHeroAnimationActive';
-import dynamic from 'next/dynamic';
-import React, { useRef } from 'react';
+import { FlightTelemetry } from "@components/FlightTelemetry";
+import { Link } from "@components/Link";
+import extruded from "@components/SpaceExtrudedTitle/extrudedTitle.module.css";
+import { useObserveHeroAnimationActive } from "@hooks/useObserveHeroAnimationActive";
+import dynamic from "next/dynamic";
+import React, { useRef } from "react";
 
-import styles from './Hero.module.css';
-import { HeroAnimationActiveContext } from './HeroAnimationContext';
+import styles from "./Hero.module.css";
+import { HeroAnimationActiveContext } from "./HeroAnimationContext";
 
 const FalconHeavyWireframe = dynamic(
   () =>
-    import('../Rocket/FalconHeavyWireframe').then(
+    import("../Rocket/FalconHeavyWireframe").then(
       (m) => m.FalconHeavyWireframe,
     ),
   {

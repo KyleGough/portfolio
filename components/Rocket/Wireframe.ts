@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import * as THREE from "three";
 
 /**
  * Cylinder edges used to render the rocket's body, core, and fairing.

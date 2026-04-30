@@ -1,19 +1,19 @@
-import { Divider } from '@components/Divider';
-import { ImageFigure } from '@components/ImageFigure';
-import { Layout } from '@components/Layout';
-import { Pagination } from '@components/Pagination';
-import { ProjectHeader } from '@components/ProjectHeader';
-import { Screenshots } from '@components/Screenshots';
-import { Section } from '@components/Section';
-import imageEarth from '@image/earth.png';
-import imageMars from '@image/mars.png';
-import imageMoon from '@image/moon.png';
-import imageSun from '@image/sun.png';
-import { fetchGitHubStargazerCount } from '@utilities/fetchGitHubStargazerCount';
-import { getProjectData } from '@utilities/Project';
-import { ProjectPageProps } from '@utilities/types';
-import { GetStaticProps } from 'next';
-import React from 'react';
+import { Divider } from "@components/Divider";
+import { ImageFigure } from "@components/ImageFigure";
+import { Layout } from "@components/Layout";
+import { Pagination } from "@components/Pagination";
+import { ProjectHeader } from "@components/ProjectHeader";
+import { Screenshots } from "@components/Screenshots";
+import { Section } from "@components/Section";
+import imageEarth from "@image/earth.png";
+import imageMars from "@image/mars.png";
+import imageMoon from "@image/moon.png";
+import imageSun from "@image/sun.png";
+import { fetchGitHubStargazerCount } from "@utilities/fetchGitHubStargazerCount";
+import { getProjectData } from "@utilities/Project";
+import { ProjectPageProps } from "@utilities/types";
+import { GetStaticProps } from "next";
+import React from "react";
 
 const SolarSystem: React.FC<ProjectPageProps> = ({
   images,
@@ -89,28 +89,28 @@ export const getStaticProps: GetStaticProps<ProjectPageProps> = async () => {
   const images = [
     {
       imageData: imageMars,
-      alt: 'Mars',
+      alt: "Mars",
     },
     {
       imageData: imageEarth,
-      alt: 'Earth',
+      alt: "Earth",
     },
     {
       imageData: imageMoon,
-      alt: 'Moon',
+      alt: "Moon",
     },
     {
       imageData: imageSun,
-      alt: 'Sun',
+      alt: "Sun",
     },
   ];
 
-  const githubStargazerCount = await fetchGitHubStargazerCount('solar-system');
+  const githubStargazerCount = await fetchGitHubStargazerCount("solar-system");
 
   return {
     props: {
       images: images,
-      project: getProjectData('solar-system'),
+      project: getProjectData("solar-system"),
       ...(githubStargazerCount !== undefined && { githubStargazerCount }),
     },
     revalidate: 3600,

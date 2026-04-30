@@ -1,8 +1,8 @@
-import { EmailTemplate } from '@components/EmailTemplate';
-import joi from 'joi';
-import type { NextApiRequest, NextApiResponse } from 'next';
-import React from 'react';
-import { Resend } from 'resend';
+import { EmailTemplate } from "@components/EmailTemplate";
+import joi from "joi";
+import type { NextApiRequest, NextApiResponse } from "next";
+import React from "react";
+import { Resend } from "resend";
 
 interface Email {
   email: string;
@@ -13,14 +13,14 @@ interface Email {
 const resend = new Resend(process.env.EMAIL_API_KEY);
 
 const recipient =
-  process.env.NODE_ENV === 'production'
-    ? 'kylegough98@gmail.com'
-    : 'delivered@resend.dev';
+  process.env.NODE_ENV === "production"
+    ? "kylegough98@gmail.com"
+    : "delivered@resend.dev";
 
 const send = async (req: NextApiRequest, res: NextApiResponse) => {
-  if (req.method !== 'POST') {
-    res.setHeader('Allow', ['POST']);
-    res.status(405).end(`Method ${req.method || 'UNKNOWN'} Not Allowed`);
+  if (req.method !== "POST") {
+    res.setHeader("Allow", ["POST"]);
+    res.status(405).end(`Method ${req.method || "UNKNOWN"} Not Allowed`);
     return;
   }
 
@@ -38,10 +38,10 @@ const send = async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     const data = await resend.emails.send({
-      from: 'contact@kylegough.co.uk',
+      from: "contact@kylegough.co.uk",
       to: recipient,
       subject: `Portfolio Message from ${body.name}`,
-      html: '<strong>Portfolio message</strong>',
+      html: "<strong>Portfolio message</strong>",
       react: React.createElement(EmailTemplate, body),
     });
 

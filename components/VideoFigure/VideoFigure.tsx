@@ -1,5 +1,5 @@
-import { Section } from '@components/Section';
-import React from 'react';
+import { Section } from "@components/Section";
+import React from "react";
 
 interface VideoFigureProps {
   caption: string;

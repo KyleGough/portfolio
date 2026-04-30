@@ -1,15 +1,15 @@
-import React, { useEffect, useRef } from 'react';
-import * as THREE from 'three';
+import React, { useEffect, useRef } from "react";
+import * as THREE from "three";
 
-import styles from '../Hero/Hero.module.css';
-import { useHeroAnimationActive } from '../Hero/HeroAnimationContext';
+import styles from "../Hero/Hero.module.css";
+import { useHeroAnimationActive } from "../Hero/HeroAnimationContext";
 import {
   addAllEnginePlumes,
   type AddAllEnginePlumesResult,
   addEngineNozzle,
   addOctawebEngines,
   updatePlumeLayersForTick,
-} from './Engine';
+} from "./Engine";
 import {
   BOOSTER_FADE_AT_MISSION_SEC,
   BOOSTER_FADE_WALL_MS,
@@ -23,14 +23,14 @@ import {
   LOOP_UPPER_EXIT_START_MISSION_SEC,
   S2_PLUME_AT_MISSION_SEC,
   S2_PLUME_FADEIN_WALL_MS,
-} from './MissionTime';
+} from "./MissionTime";
 import {
   addBoosterGridFins,
   addConeEdges,
   addCylinderEdges,
   addRoundedPayloadFairingEdges,
   addStrut,
-} from './Wireframe';
+} from "./Wireframe";
 
 const CYAN = 0x5bd4ea;
 const CYAN_DIM = 0x3d7a8a;
@@ -465,7 +465,7 @@ const attachRocketViewport = (
   getShouldAnimate: () => boolean,
 ): { dispose: () => void; resume: () => void } => {
   const reducedMotion = window.matchMedia(
-    '(prefers-reduced-motion: reduce)',
+    "(prefers-reduced-motion: reduce)",
   ).matches;
 
   const wireMat = new THREE.LineBasicMaterial({
@@ -487,7 +487,7 @@ const attachRocketViewport = (
   const renderer = new THREE.WebGLRenderer({
     antialias: true,
     alpha: true,
-    powerPreference: 'high-performance',
+    powerPreference: "high-performance",
   });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setClearColor(0x000000, 0);

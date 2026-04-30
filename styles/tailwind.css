@@ -102,7 +102,7 @@
 
   /* Circular node on card end only (spine end omitted so it does not sit on the vertical rail) */
   .work-timeline__line::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     z-index: 1;
@@ -217,7 +217,7 @@
     isolation: isolate;
   }
   .nav-bar--overdrive::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     z-index: 0;
@@ -236,7 +236,7 @@
     transition: opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1);
   }
   .nav-bar--overdrive::after {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     right: 0;

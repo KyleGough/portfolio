@@ -1,1 +1,1 @@
-export { TwitterMeta } from './TwitterMeta';
+export { TwitterMeta } from "./TwitterMeta";

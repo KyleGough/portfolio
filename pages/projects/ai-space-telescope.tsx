@@ -1,15 +1,15 @@
-import { Divider } from '@components/Divider';
-import { ImageFigure } from '@components/ImageFigure';
-import { Layout } from '@components/Layout';
-import { Pagination } from '@components/Pagination';
-import { ProjectHeader } from '@components/ProjectHeader';
-import { Screenshots } from '@components/Screenshots';
-import { Section } from '@components/Section';
-import imageWebsite from '@image/ai-space-telescope.jpg';
-import { getProjectData } from '@utilities/Project';
-import { ProjectPageProps } from '@utilities/types';
-import { GetStaticProps } from 'next';
-import React from 'react';
+import { Divider } from "@components/Divider";
+import { ImageFigure } from "@components/ImageFigure";
+import { Layout } from "@components/Layout";
+import { Pagination } from "@components/Pagination";
+import { ProjectHeader } from "@components/ProjectHeader";
+import { Screenshots } from "@components/Screenshots";
+import { Section } from "@components/Section";
+import imageWebsite from "@image/ai-space-telescope.jpg";
+import { getProjectData } from "@utilities/Project";
+import { ProjectPageProps } from "@utilities/types";
+import { GetStaticProps } from "next";
+import React from "react";
 
 const AISpaceTelescope: React.FC<ProjectPageProps> = ({ images, project }) => (
   <Layout title="AI Space Telescope">
@@ -60,14 +60,14 @@ export const getStaticProps: GetStaticProps = () => {
   const images = [
     {
       imageData: imageWebsite,
-      alt: 'AI Space Telescope Website',
+      alt: "AI Space Telescope Website",
     },
   ];
 
   return {
     props: {
       images: images,
-      project: getProjectData('ai-space-telescope'),
+      project: getProjectData("ai-space-telescope"),
     },
   };
 };

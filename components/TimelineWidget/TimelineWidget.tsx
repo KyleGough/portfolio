@@ -1,20 +1,20 @@
-import AtomLogo from '@image/atom.png';
-import BofaLogo from '@image/bofa.png';
-import RipjarLogo from '@image/ripjar.png';
-import { clsx } from 'clsx';
-import React from 'react';
+import AtomLogo from "@image/atom.png";
+import BofaLogo from "@image/bofa.png";
+import RipjarLogo from "@image/ripjar.png";
+import { clsx } from "clsx";
+import React from "react";
 
-import { TimelineNode } from './TimelineNode';
+import { TimelineNode } from "./TimelineNode";
 
 export const TimelineWidget: React.FC = () => (
   <div
     className={clsx(
-      'work-timeline grid grid-cols-1 md:grid-cols-2',
-      'relative my-10',
+      "work-timeline grid grid-cols-1 md:grid-cols-2",
+      "relative my-10",
       'before:absolute before:content-[""] before:h-2/4 before:w-[3px]',
-      'before:right-0 md:before:left-2/4',
+      "before:right-0 md:before:left-2/4",
       'after:absolute after:content-[""] after:h-2/4 after:w-[3px]',
-      'after:top-2/4 after:right-0 md:after:left-2/4',
+      "after:top-2/4 after:right-0 md:after:left-2/4",
     )}
   >
     <TimelineNode

@@ -1,7 +1,7 @@
-import { ImageModal } from '@components/ImageModal';
-import { Section } from '@components/Section';
-import { StaticImageData } from 'next/image';
-import React from 'react';
+import { ImageModal } from "@components/ImageModal";
+import { Section } from "@components/Section";
+import { StaticImageData } from "next/image";
+import React from "react";
 
 interface ScreenshotProps {
   images: {

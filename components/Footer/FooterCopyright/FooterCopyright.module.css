@@ -22,7 +22,7 @@
 }
 
 .inner::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0.15rem;
   right: 0.15rem;

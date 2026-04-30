@@ -1,19 +1,19 @@
-import { Divider } from '@components/Divider';
-import { ImageFigure } from '@components/ImageFigure';
-import { Layout } from '@components/Layout';
-import { Pagination } from '@components/Pagination';
-import { ProjectHeader } from '@components/ProjectHeader';
-import { Screenshots } from '@components/Screenshots';
-import { Section } from '@components/Section';
-import imageNN2Opt from '@image/graph-algorithm-visualiser1.jpg';
-import imageNodes from '@image/graph-algorithm-visualiser2.jpg';
-import imageInfo from '@image/graph-algorithm-visualiser3.jpg';
-import imageGrahamScan from '@image/graph-algorithm-visualiser4.jpg';
-import imageRandomRoute from '@image/graph-algorithm-visualiser5.jpg';
-import { getProjectData } from '@utilities/Project';
-import { ProjectPageProps } from '@utilities/types';
-import { GetStaticProps } from 'next';
-import React from 'react';
+import { Divider } from "@components/Divider";
+import { ImageFigure } from "@components/ImageFigure";
+import { Layout } from "@components/Layout";
+import { Pagination } from "@components/Pagination";
+import { ProjectHeader } from "@components/ProjectHeader";
+import { Screenshots } from "@components/Screenshots";
+import { Section } from "@components/Section";
+import imageNN2Opt from "@image/graph-algorithm-visualiser1.jpg";
+import imageNodes from "@image/graph-algorithm-visualiser2.jpg";
+import imageInfo from "@image/graph-algorithm-visualiser3.jpg";
+import imageGrahamScan from "@image/graph-algorithm-visualiser4.jpg";
+import imageRandomRoute from "@image/graph-algorithm-visualiser5.jpg";
+import { getProjectData } from "@utilities/Project";
+import { ProjectPageProps } from "@utilities/types";
+import { GetStaticProps } from "next";
+import React from "react";
 
 const GraphVisualiser: React.FC<ProjectPageProps> = ({ images, project }) => (
   <Layout title="Graph Algorithm Visualiser - Web App to Visualise Various Graph Algorithms">
@@ -97,24 +97,24 @@ export const getStaticProps: GetStaticProps = () => {
   const images = [
     {
       imageData: imageNN2Opt,
-      alt: 'Nearest Neighbour with 2-Opt',
+      alt: "Nearest Neighbour with 2-Opt",
     },
     {
       imageData: imageNodes,
-      alt: 'Randomly generated nodes',
+      alt: "Randomly generated nodes",
     },
     {
       imageData: imageInfo,
-      alt: 'Algorithm information',
+      alt: "Algorithm information",
     },
-    { imageData: imageGrahamScan, alt: 'Graham Scan' },
-    { imageData: imageRandomRoute, alt: 'Random route' },
+    { imageData: imageGrahamScan, alt: "Graham Scan" },
+    { imageData: imageRandomRoute, alt: "Random route" },
   ];
 
   return {
     props: {
       images: images,
-      project: getProjectData('graph-algorithm-visualiser'),
+      project: getProjectData("graph-algorithm-visualiser"),
     },
   };
 };

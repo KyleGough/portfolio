@@ -34,7 +34,7 @@ body {
 }
 
 .border-bottom-slide::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 51%;
   right: 51%;

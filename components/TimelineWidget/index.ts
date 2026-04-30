@@ -1,1 +1,1 @@
-export { TimelineWidget } from './TimelineWidget';
+export { TimelineWidget } from "./TimelineWidget";

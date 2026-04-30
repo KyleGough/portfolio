@@ -1,5 +1,5 @@
-import { clsx } from 'clsx';
-import React from 'react';
+import { clsx } from "clsx";
+import React from "react";
 
 interface ContactLabelProps {
   children: React.ReactNode;
@@ -16,12 +16,12 @@ export const ContactLabel: React.FC<ContactLabelProps> = ({
 }) => (
   <label
     className={clsx(
-      { 'text-link-hover': isSent },
-      { 'text-link group-focus-within:text-link-hover': valid && !isSent },
-      { 'text-error': !valid && !isSent },
-      'block font-primary text-lg font-medium leading-snug tracking-wide',
-      'transition-colors duration-200',
-      'mt-6 mb-1.5',
+      { "text-link-hover": isSent },
+      { "text-link group-focus-within:text-link-hover": valid && !isSent },
+      { "text-error": !valid && !isSent },
+      "block font-primary text-lg font-medium leading-snug tracking-wide",
+      "transition-colors duration-200",
+      "mt-6 mb-1.5",
     )}
     htmlFor={htmlFor}
   >

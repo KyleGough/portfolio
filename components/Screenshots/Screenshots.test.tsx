@@ -1,24 +1,24 @@
-import mockStaticImageData from '@mocks/mockStaticImageData';
-import { render, screen } from '@testing-library/react';
-import React from 'react';
+import mockStaticImageData from "@mocks/mockStaticImageData";
+import { render, screen } from "@testing-library/react";
+import React from "react";
 
-import { Screenshots } from './Screenshots';
+import { Screenshots } from "./Screenshots";
 
-describe('Screenshots component', () => {
-  it('renders', () => {
+describe("Screenshots component", () => {
+  it("renders", () => {
     render(
       <Screenshots
         images={[
-          { imageData: mockStaticImageData, alt: 'Image A' },
-          { imageData: mockStaticImageData, alt: 'Image B' },
+          { imageData: mockStaticImageData, alt: "Image A" },
+          { imageData: mockStaticImageData, alt: "Image B" },
         ]}
       />,
     );
 
-    expect(screen.getByText('Image A')).toBeVisible();
-    expect(screen.getByText('Image B')).toBeVisible();
+    expect(screen.getByText("Image A")).toBeVisible();
+    expect(screen.getByText("Image B")).toBeVisible();
     expect(
-      screen.getByRole('heading', { name: 'Screenshots' }),
+      screen.getByRole("heading", { name: "Screenshots" }),
     ).toBeInTheDocument();
   });
 });

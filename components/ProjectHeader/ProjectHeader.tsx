@@ -1,13 +1,13 @@
-import { Chip } from '@components/Chip';
-import { GitHubIcon, StarIcon, WebsiteIcon } from '@components/Icons';
-import { Link } from '@components/Link';
-import { Section } from '@components/Section';
-import { getFormattedDate, getShortDate } from '@utilities/date';
-import { Project } from '@utilities/types';
-import React from 'react';
+import { Chip } from "@components/Chip";
+import { GitHubIcon, StarIcon, WebsiteIcon } from "@components/Icons";
+import { Link } from "@components/Link";
+import { Section } from "@components/Section";
+import { getFormattedDate, getShortDate } from "@utilities/date";
+import { Project } from "@utilities/types";
+import React from "react";
 
 const githubStargazersUrl = (repoUrl: string): string => {
-  return repoUrl.replace(/\/$/, '') + '/stargazers';
+  return repoUrl.replace(/\/$/, "") + "/stargazers";
 };
 
 interface ProjectHeaderProps {
@@ -31,8 +31,8 @@ export const ProjectHeader: React.FC<ProjectHeaderProps> = ({
         </time>
         {project.date.end && (
           <>
-            {' '}
-            –{' '}
+            {" "}
+            –{" "}
             <time dateTime={getShortDate(project.date.end)}>
               {getFormattedDate(project.date.end)}
             </time>
@@ -47,7 +47,7 @@ export const ProjectHeader: React.FC<ProjectHeaderProps> = ({
         <div className="flex flex-col items-start gap-1 sm:flex-row sm:flex-wrap sm:gap-3">
           {project.github && (
             <>
-              {typeof githubStargazerCount === 'number' ? (
+              {typeof githubStargazerCount === "number" ? (
                 <div className="project-header-cta-pair w-fit self-start sm:self-auto">
                   <Link
                     className="project-header-cta project-header-cta--firstOfPair group w-fit"
@@ -61,7 +61,7 @@ export const ProjectHeader: React.FC<ProjectHeaderProps> = ({
                     href={githubStargazersUrl(project.github)}
                   >
                     <StarIcon className="project-header-cta__icon" />
-                    {githubStargazerCount.toLocaleString('en-GB')}
+                    {githubStargazerCount.toLocaleString("en-GB")}
                   </Link>
                 </div>
               ) : (

@@ -1,4 +1,4 @@
-import { createContext, useContext } from 'react';
+import { createContext, useContext } from "react";
 
 /**
  * When false, hero WebGL + telemetry pause (tab hidden or hero stage off-screen).

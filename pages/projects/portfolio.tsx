@@ -1,23 +1,23 @@
-import { Divider } from '@components/Divider';
-import { ImageFigure } from '@components/ImageFigure';
-import { Layout } from '@components/Layout';
-import { Link } from '@components/Link';
-import { Pagination } from '@components/Pagination';
-import { ProjectHeader } from '@components/ProjectHeader';
-import { Screenshots } from '@components/Screenshots';
-import { Section } from '@components/Section';
-import imageAbout from '@image/portfolio-about.jpg';
-import imageHomepage from '@image/portfolio-homepage.jpg';
-import imageShowcase from '@image/portfolio-project-showcase.jpg';
-import imageProjects from '@image/portfolio-projects.jpg';
-import imageV1Projects from '@image/portfolio-projects-v1a.jpg';
-import imageV1About from '@image/portfolio-projects-v1b.jpg';
-import imageV2Projects from '@image/portfolio-projects-v2.jpg';
-import imageV3Projects from '@image/portfolio-projects-v3.jpg';
-import { getProjectData } from '@utilities/Project';
-import { ProjectPageProps } from '@utilities/types';
-import { GetStaticProps } from 'next';
-import React from 'react';
+import { Divider } from "@components/Divider";
+import { ImageFigure } from "@components/ImageFigure";
+import { Layout } from "@components/Layout";
+import { Link } from "@components/Link";
+import { Pagination } from "@components/Pagination";
+import { ProjectHeader } from "@components/ProjectHeader";
+import { Screenshots } from "@components/Screenshots";
+import { Section } from "@components/Section";
+import imageAbout from "@image/portfolio-about.jpg";
+import imageHomepage from "@image/portfolio-homepage.jpg";
+import imageShowcase from "@image/portfolio-project-showcase.jpg";
+import imageProjects from "@image/portfolio-projects.jpg";
+import imageV1Projects from "@image/portfolio-projects-v1a.jpg";
+import imageV1About from "@image/portfolio-projects-v1b.jpg";
+import imageV2Projects from "@image/portfolio-projects-v2.jpg";
+import imageV3Projects from "@image/portfolio-projects-v3.jpg";
+import { getProjectData } from "@utilities/Project";
+import { ProjectPageProps } from "@utilities/types";
+import { GetStaticProps } from "next";
+import React from "react";
 
 const Portfolio: React.FC<ProjectPageProps> = ({ images, project }) => (
   <Layout title="Portfolio - Personal Portfolio Website">
@@ -61,7 +61,7 @@ const Portfolio: React.FC<ProjectPageProps> = ({ images, project }) => (
         <strong>Create React App, JavaScript, Materialize</strong>
       </h3>
       <p className="max-w-reading mb-2">
-        Migration of the website to React in{' '}
+        Migration of the website to React in{" "}
         <time dateTime="2020-05">May 2020</time> marked the start of my React
         journey. The site was built with create-react-app and effort was taken
         to replicate most of the previous functionality and styling. Materialize
@@ -120,42 +120,42 @@ export const getStaticProps: GetStaticProps = () => {
   const images = [
     {
       imageData: imageV1Projects,
-      alt: 'Portfolio project page version 1',
+      alt: "Portfolio project page version 1",
     },
     {
       imageData: imageV1About,
-      alt: 'Portfolio about page version 1',
+      alt: "Portfolio about page version 1",
     },
     {
       imageData: imageV2Projects,
-      alt: 'Portfolio project page version 2',
+      alt: "Portfolio project page version 2",
     },
     {
       imageData: imageV3Projects,
-      alt: 'Portfolio project page version 3',
+      alt: "Portfolio project page version 3",
     },
     {
       imageData: imageHomepage,
-      alt: 'Current Portfolio Homepage',
+      alt: "Current Portfolio Homepage",
     },
     {
       imageData: imageAbout,
-      alt: 'Current Portfolio About Page',
+      alt: "Current Portfolio About Page",
     },
     {
       imageData: imageProjects,
-      alt: 'Current Portfolio Projects Page',
+      alt: "Current Portfolio Projects Page",
     },
     {
       imageData: imageShowcase,
-      alt: 'Current Portfolio Project Showcase',
+      alt: "Current Portfolio Project Showcase",
     },
   ];
 
   return {
     props: {
       images: images,
-      project: getProjectData('portfolio'),
+      project: getProjectData("portfolio"),
     },
   };
 };

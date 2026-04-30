@@ -1,21 +1,21 @@
-import { Divider } from '@components/Divider';
-import { ImageFigure } from '@components/ImageFigure';
-import { Layout } from '@components/Layout';
-import { Pagination } from '@components/Pagination';
-import { ProjectHeader } from '@components/ProjectHeader';
-import { Screenshots } from '@components/Screenshots';
-import { Section } from '@components/Section';
-import imageMultiDrone from '@image/cave-exploration1.jpg';
-import imageSingleDroneA from '@image/cave-exploration2.jpg';
-import imageSingleDroneB from '@image/cave-exploration3.jpg';
-import imageCaveGen1 from '@image/cave-generation1.png';
-import imageCaveGen2 from '@image/cave-generation2.png';
-import imageCaveGen3 from '@image/cave-generation3.png';
-import imageCaveGen4 from '@image/cave-generation4.png';
-import { getProjectData } from '@utilities/Project';
-import { ProjectPageProps } from '@utilities/types';
-import { GetStaticProps } from 'next';
-import React from 'react';
+import { Divider } from "@components/Divider";
+import { ImageFigure } from "@components/ImageFigure";
+import { Layout } from "@components/Layout";
+import { Pagination } from "@components/Pagination";
+import { ProjectHeader } from "@components/ProjectHeader";
+import { Screenshots } from "@components/Screenshots";
+import { Section } from "@components/Section";
+import imageMultiDrone from "@image/cave-exploration1.jpg";
+import imageSingleDroneA from "@image/cave-exploration2.jpg";
+import imageSingleDroneB from "@image/cave-exploration3.jpg";
+import imageCaveGen1 from "@image/cave-generation1.png";
+import imageCaveGen2 from "@image/cave-generation2.png";
+import imageCaveGen3 from "@image/cave-generation3.png";
+import imageCaveGen4 from "@image/cave-generation4.png";
+import { getProjectData } from "@utilities/Project";
+import { ProjectPageProps } from "@utilities/types";
+import { GetStaticProps } from "next";
+import React from "react";
 
 const CaveExploration: React.FC<ProjectPageProps> = ({ images, project }) => (
   <Layout title="Cave Exploration - Improving and Simulating Cave Exploration with Swarm AI">
@@ -81,26 +81,26 @@ export const getStaticProps: GetStaticProps = () => {
   const images = [
     {
       imageData: imageMultiDrone,
-      alt: 'Multiple drone cave exploration',
+      alt: "Multiple drone cave exploration",
     },
     {
       imageData: imageSingleDroneA,
-      alt: 'Single drone cave exploration',
+      alt: "Single drone cave exploration",
     },
     {
       imageData: imageSingleDroneB,
-      alt: 'Single drone cave exploration',
+      alt: "Single drone cave exploration",
     },
-    { imageData: imageCaveGen1, alt: 'Cave generation step 1' },
-    { imageData: imageCaveGen2, alt: 'Cave generation step 2' },
-    { imageData: imageCaveGen3, alt: 'Cave generation step 3' },
-    { imageData: imageCaveGen4, alt: 'Cave generation step 4' },
+    { imageData: imageCaveGen1, alt: "Cave generation step 1" },
+    { imageData: imageCaveGen2, alt: "Cave generation step 2" },
+    { imageData: imageCaveGen3, alt: "Cave generation step 3" },
+    { imageData: imageCaveGen4, alt: "Cave generation step 4" },
   ];
 
   return {
     props: {
       images: images,
-      project: getProjectData('cave-exploration'),
+      project: getProjectData("cave-exploration"),
     },
   };
 };

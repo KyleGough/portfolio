@@ -1,8 +1,8 @@
 const mockStaticImageData = {
-  src: '/#image',
+  src: "/#image",
   width: 100,
   height: 100,
-  blurDataURL: '/#blur',
+  blurDataURL: "/#blur",
 };
 
 export default mockStaticImageData;

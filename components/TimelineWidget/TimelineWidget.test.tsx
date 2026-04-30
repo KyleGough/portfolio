@@ -1,14 +1,14 @@
-import mockIntersectionObserver from '@mocks/mockIntersectionObserver';
-import { render, screen } from '@testing-library/react';
-import React from 'react';
+import mockIntersectionObserver from "@mocks/mockIntersectionObserver";
+import { render, screen } from "@testing-library/react";
+import React from "react";
 
-import { TimelineWidget } from './TimelineWidget';
+import { TimelineWidget } from "./TimelineWidget";
 
-describe('TimelineWidget component', () => {
+describe("TimelineWidget component", () => {
   beforeEach(mockIntersectionObserver);
 
-  it('renders', () => {
+  it("renders", () => {
     render(<TimelineWidget />);
-    expect(screen.getByText('Ripjar')).toBeInTheDocument();
+    expect(screen.getByText("Ripjar")).toBeInTheDocument();
   });
 });

@@ -1,9 +1,9 @@
-import { UnfoldIcon } from '@components/Icons';
-import { clsx } from 'clsx';
-import React, { useEffect, useId, useRef, useState } from 'react';
+import { UnfoldIcon } from "@components/Icons";
+import { clsx } from "clsx";
+import React, { useEffect, useId, useRef, useState } from "react";
 
-import styles from './ProjectFilter.module.css';
-import { ProjectFilterSelection } from './ProjectFilterSelection';
+import styles from "./ProjectFilter.module.css";
+import { ProjectFilterSelection } from "./ProjectFilterSelection";
 
 interface ProjectFilterProps {
   filter: string;
@@ -11,16 +11,16 @@ interface ProjectFilterProps {
 }
 
 const filters = [
-  'All',
-  'C#',
-  'C++',
-  'JavaScript',
-  'PHP',
-  'Python',
-  'React',
-  'Games/Puzzles',
-  'Group Projects',
-  'Web',
+  "All",
+  "C#",
+  "C++",
+  "JavaScript",
+  "PHP",
+  "Python",
+  "React",
+  "Games/Puzzles",
+  "Group Projects",
+  "Web",
 ];
 
 export const ProjectFilter: React.FC<ProjectFilterProps> = ({
@@ -44,10 +44,10 @@ export const ProjectFilter: React.FC<ProjectFilterProps> = ({
       }
     };
     // Add listener on mount.
-    document.addEventListener('click', checkClickOutside);
+    document.addEventListener("click", checkClickOutside);
     // Remove listener on unmount.
     return () => {
-      document.removeEventListener('click', checkClickOutside);
+      document.removeEventListener("click", checkClickOutside);
     };
   }, []);
 

@@ -1,10 +1,10 @@
-import { ArrowForwardIcon } from '@components/Icons';
-import { Section } from '@components/Section';
-import { getDateRange, getProjectStartDateTime } from '@utilities/date';
-import { ProjectDate } from '@utilities/types';
-import Image, { StaticImageData } from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+import { ArrowForwardIcon } from "@components/Icons";
+import { Section } from "@components/Section";
+import { getDateRange, getProjectStartDateTime } from "@utilities/date";
+import { ProjectDate } from "@utilities/types";
+import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
+import React from "react";
 
 interface ProjectItemProps {
   alt: string;

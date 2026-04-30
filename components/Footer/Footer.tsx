@@ -1,10 +1,10 @@
-import { EmailIcon, GitHubIcon, LinkedInIcon } from '@components/Icons';
-import { Link } from '@components/Link';
-import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
-import React from 'react';
+import { EmailIcon, GitHubIcon, LinkedInIcon } from "@components/Icons";
+import { Link } from "@components/Link";
+import extruded from "@components/SpaceExtrudedTitle/extrudedTitle.module.css";
+import React from "react";
 
-import { FooterCopyright } from './FooterCopyright';
-import { FooterLink } from './FooterLink';
+import { FooterCopyright } from "./FooterCopyright";
+import { FooterLink } from "./FooterLink";
 
 export const Footer: React.FC = () => (
   <footer className="bg-background footer--space-gothic">

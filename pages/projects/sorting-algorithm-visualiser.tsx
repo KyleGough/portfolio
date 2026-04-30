@@ -1,20 +1,20 @@
-import { Divider } from '@components/Divider';
-import { Layout } from '@components/Layout';
-import { Pagination } from '@components/Pagination';
-import { ProjectHeader } from '@components/ProjectHeader';
-import { Screenshots } from '@components/Screenshots';
-import { Section } from '@components/Section';
-import { VideoFigure } from '@components/VideoFigure';
-import imageUnsorted from '@image/sorting-algorithm-visualiser1.jpg';
-import imageRandom from '@image/sorting-algorithm-visualiser2.jpg';
-import imageBitonic from '@image/sorting-algorithm-visualiser3.jpg';
-import imagePoints from '@image/sorting-algorithm-visualiser4.jpg';
-import imageInfo from '@image/sorting-algorithm-visualiser5.jpg';
-import algorithms from '@utilities/algorithms.json';
-import { getProjectData } from '@utilities/Project';
-import { ProjectPageProps } from '@utilities/types';
-import { GetStaticProps } from 'next';
-import React from 'react';
+import { Divider } from "@components/Divider";
+import { Layout } from "@components/Layout";
+import { Pagination } from "@components/Pagination";
+import { ProjectHeader } from "@components/ProjectHeader";
+import { Screenshots } from "@components/Screenshots";
+import { Section } from "@components/Section";
+import { VideoFigure } from "@components/VideoFigure";
+import imageUnsorted from "@image/sorting-algorithm-visualiser1.jpg";
+import imageRandom from "@image/sorting-algorithm-visualiser2.jpg";
+import imageBitonic from "@image/sorting-algorithm-visualiser3.jpg";
+import imagePoints from "@image/sorting-algorithm-visualiser4.jpg";
+import imageInfo from "@image/sorting-algorithm-visualiser5.jpg";
+import algorithms from "@utilities/algorithms.json";
+import { getProjectData } from "@utilities/Project";
+import { ProjectPageProps } from "@utilities/types";
+import { GetStaticProps } from "next";
+import React from "react";
 
 const SortingVisualiser: React.FC<ProjectPageProps> = ({ images, project }) => (
   <Layout title="Sorting Algorithm Visualiser - Visualise 20 Unique Sorting Algorithms">
@@ -95,30 +95,30 @@ export const getStaticProps: GetStaticProps = () => {
   const images = [
     {
       imageData: imageUnsorted,
-      alt: 'Unsorted Random Data',
+      alt: "Unsorted Random Data",
     },
     {
       imageData: imageRandom,
-      alt: 'Random and sinusoidal datasets',
+      alt: "Random and sinusoidal datasets",
     },
     {
       imageData: imageBitonic,
-      alt: 'Bitonic sort and sorted dataset',
+      alt: "Bitonic sort and sorted dataset",
     },
     {
       imageData: imagePoints,
-      alt: 'Dataset visualised as points',
+      alt: "Dataset visualised as points",
     },
     {
       imageData: imageInfo,
-      alt: 'Algorithm information table',
+      alt: "Algorithm information table",
     },
   ];
 
   return {
     props: {
       images: images,
-      project: getProjectData('sorting-algorithm-visualiser'),
+      project: getProjectData("sorting-algorithm-visualiser"),
     },
   };
 };

@@ -1,1 +1,1 @@
-export { ContactLabel } from './ContactLabel';
+export { ContactLabel } from "./ContactLabel";

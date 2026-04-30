@@ -1,10 +1,10 @@
-import { FadeIn } from '@components/FadeIn';
-import { clsx } from 'clsx';
-import Image, { StaticImageData } from 'next/image';
-import React from 'react';
+import { FadeIn } from "@components/FadeIn";
+import { clsx } from "clsx";
+import Image, { StaticImageData } from "next/image";
+import React from "react";
 
 interface TimelineNodeProps {
-  align: 'left' | 'right';
+  align: "left" | "right";
   date: string;
   logo: StaticImageData;
   subtitle: string;
@@ -20,16 +20,16 @@ export const TimelineNode: React.FC<TimelineNodeProps> = ({
 }) => {
   return (
     <>
-      {align === 'right' && <div className="hidden md:block"></div>}
+      {align === "right" && <div className="hidden md:block"></div>}
       <div
-        className={clsx('flex items-center justify-end h-36 md:h-40', {
-          'md:flex-row-reverse': align === 'right',
+        className={clsx("flex items-center justify-end h-36 md:h-40", {
+          "md:flex-row-reverse": align === "right",
         })}
       >
         <FadeIn>
           <div
-            className={clsx('relative w-16 md:w-24 lg:w-32 mr-8', {
-              'md:ml-8 md:mr-0': align === 'right',
+            className={clsx("relative w-16 md:w-24 lg:w-32 mr-8", {
+              "md:ml-8 md:mr-0": align === "right",
             })}
           >
             <Image
@@ -44,9 +44,9 @@ export const TimelineNode: React.FC<TimelineNodeProps> = ({
         </FadeIn>
         <FadeIn
           className={clsx(
-            'work-timeline__copy mr-8 flex min-w-0 flex-col gap-1',
+            "work-timeline__copy mr-8 flex min-w-0 flex-col gap-1",
             {
-              'md:ml-8 md:mr-0 md:text-right': align === 'right',
+              "md:ml-8 md:mr-0 md:text-right": align === "right",
             },
           )}
         >
@@ -56,15 +56,15 @@ export const TimelineNode: React.FC<TimelineNodeProps> = ({
         </FadeIn>
         <div
           className={clsx(
-            'work-timeline__line',
-            align === 'left'
-              ? 'work-timeline__line--spine-right'
-              : 'work-timeline__line--spine-left',
+            "work-timeline__line",
+            align === "left"
+              ? "work-timeline__line--spine-right"
+              : "work-timeline__line--spine-left",
           )}
           aria-hidden
         />
       </div>
-      {align === 'left' && <div className="hidden md:block"></div>}
+      {align === "left" && <div className="hidden md:block"></div>}
     </>
   );
 };

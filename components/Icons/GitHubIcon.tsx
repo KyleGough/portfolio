@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { IconProps } from './IconInterface';
+import { IconProps } from "./IconInterface";
 
 export const GitHubIcon: React.FC<IconProps> = ({ className }) => (
   <svg

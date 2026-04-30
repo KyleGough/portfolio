@@ -1,6 +1,6 @@
-import * as THREE from 'three';
+import * as THREE from "three";
 
-import { addCylinderEdges } from './Wireframe';
+import { addCylinderEdges } from "./Wireframe";
 
 const CONE_SEGMENTS = 8;
 

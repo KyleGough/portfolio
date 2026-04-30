@@ -1,22 +1,22 @@
-import { useHeroAnimationActive } from '@components/Hero/HeroAnimationContext';
+import { useHeroAnimationActive } from "@components/Hero/HeroAnimationContext";
 import {
   getMissionSec,
   LOOP_PERIOD_MISSION_SEC,
   TELEMETRY_FUEL_MIN_PCT,
-} from '@components/Rocket/MissionTime';
-import { useHeroTelemetryWallSeconds } from '@hooks/useHeroTelemetryWallSeconds';
-import React, { useMemo } from 'react';
+} from "@components/Rocket/MissionTime";
+import { useHeroTelemetryWallSeconds } from "@hooks/useHeroTelemetryWallSeconds";
+import React, { useMemo } from "react";
 
-import styles from './FlightTelemetry.module.css';
+import styles from "./FlightTelemetry.module.css";
 
 const formatTPlus = (totalSec: number): string => {
   const h = Math.floor(totalSec / 3600);
   const rem1 = totalSec - h * 3600;
   const m = Math.floor(rem1 / 60);
   const s = rem1 - m * 60;
-  return `T+ ${h}:${String(m).padStart(2, '0')}:${s
+  return `T+ ${h}:${String(m).padStart(2, "0")}:${s
     .toFixed(1)
-    .padStart(4, '0')}`;
+    .padStart(4, "0")}`;
 };
 
 const clamp = (n: number, a: number, b: number): number => {
@@ -90,14 +90,14 @@ export const FlightTelemetry: React.FC = () => {
       vrel,
       pitch,
       roll,
-      chartPoints: points.join(' '),
+      chartPoints: points.join(" "),
       pitchX,
       rollX,
     };
   }, [t]);
 
   const fmtDeg = (deg: number) =>
-    (deg >= 0 ? '+' : '−') + Math.abs(deg).toFixed(1);
+    (deg >= 0 ? "+" : "−") + Math.abs(deg).toFixed(1);
   const pitchStr = fmtDeg(pitch);
   const rollStr = fmtDeg(roll);
 
@@ -124,7 +124,7 @@ export const FlightTelemetry: React.FC = () => {
           <div className={styles.labelRow}>
             <span className={styles.label}>Vrel</span>
             <span className={styles.value}>
-              {vrel.toLocaleString('en-GB', { useGrouping: true })}
+              {vrel.toLocaleString("en-GB", { useGrouping: true })}
               <span className={styles.units}>m·s⁻¹</span>
             </span>
           </div>

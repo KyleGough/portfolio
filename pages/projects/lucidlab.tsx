@@ -1,19 +1,19 @@
-import { Divider } from '@components/Divider';
-import { ImageFigure } from '@components/ImageFigure';
-import { Layout } from '@components/Layout';
-import { Pagination } from '@components/Pagination';
-import { ProjectHeader } from '@components/ProjectHeader';
-import { Screenshots } from '@components/Screenshots';
-import { Section } from '@components/Section';
-import imageUploadTest from '@image/lucidlab1.jpg';
-import imageRSSI from '@image/lucidlab2.jpg';
-import imageCCA from '@image/lucidlab3.jpg';
-import imageUploadController from '@image/lucidlab4.jpg';
-import imageUploadImage from '@image/lucidlab5.jpg';
-import { getProjectData } from '@utilities/Project';
-import { ProjectPageProps } from '@utilities/types';
-import { GetStaticProps } from 'next';
-import React from 'react';
+import { Divider } from "@components/Divider";
+import { ImageFigure } from "@components/ImageFigure";
+import { Layout } from "@components/Layout";
+import { Pagination } from "@components/Pagination";
+import { ProjectHeader } from "@components/ProjectHeader";
+import { Screenshots } from "@components/Screenshots";
+import { Section } from "@components/Section";
+import imageUploadTest from "@image/lucidlab1.jpg";
+import imageRSSI from "@image/lucidlab2.jpg";
+import imageCCA from "@image/lucidlab3.jpg";
+import imageUploadController from "@image/lucidlab4.jpg";
+import imageUploadImage from "@image/lucidlab5.jpg";
+import { getProjectData } from "@utilities/Project";
+import { ProjectPageProps } from "@utilities/types";
+import { GetStaticProps } from "next";
+import React from "react";
 
 const LucidLab: React.FC<ProjectPageProps> = ({ images, project }) => (
   <Layout title="LucidLab - An Adaptable, Heterogeneous Internet-of-things Testbed">
@@ -78,17 +78,17 @@ const LucidLab: React.FC<ProjectPageProps> = ({ images, project }) => (
 
 export const getStaticProps: GetStaticProps = () => {
   const images = [
-    { imageData: imageUploadTest, alt: 'Upload test configuration page' },
-    { imageData: imageUploadController, alt: 'Upload IoT controller page' },
-    { imageData: imageUploadImage, alt: 'Upload image page' },
-    { imageData: imageRSSI, alt: 'Mote RSSI Map' },
-    { imageData: imageCCA, alt: 'Mote CCA Charts' },
+    { imageData: imageUploadTest, alt: "Upload test configuration page" },
+    { imageData: imageUploadController, alt: "Upload IoT controller page" },
+    { imageData: imageUploadImage, alt: "Upload image page" },
+    { imageData: imageRSSI, alt: "Mote RSSI Map" },
+    { imageData: imageCCA, alt: "Mote CCA Charts" },
   ];
 
   return {
     props: {
       images: images,
-      project: getProjectData('lucidlab'),
+      project: getProjectData("lucidlab"),
     },
   };
 };

@@ -1,14 +1,14 @@
-import { Contact } from '@components/Contact';
-import { Divider } from '@components/Divider';
-import { Hero } from '@components/Hero';
-import { Layout } from '@components/Layout';
-import { MasonryShowcase } from '@components/MasonryShowcase';
-import { Section } from '@components/Section';
-import { TimelineWidget } from '@components/TimelineWidget';
-import { useObserveElement } from '@hooks/useObserveElement';
-import { clsx } from 'clsx';
-import Image from 'next/image';
-import React from 'react';
+import { Contact } from "@components/Contact";
+import { Divider } from "@components/Divider";
+import { Hero } from "@components/Hero";
+import { Layout } from "@components/Layout";
+import { MasonryShowcase } from "@components/MasonryShowcase";
+import { Section } from "@components/Section";
+import { TimelineWidget } from "@components/TimelineWidget";
+import { useObserveElement } from "@hooks/useObserveElement";
+import { clsx } from "clsx";
+import Image from "next/image";
+import React from "react";
 
 const Home: React.FC = () => {
   const [imageRef, isVisible] = useObserveElement<HTMLDivElement>({
@@ -40,9 +40,9 @@ const Home: React.FC = () => {
               <div
                 ref={imageRef}
                 className={clsx(
-                  { 'opacity-100': isVisible },
-                  { 'opacity-0': !isVisible },
-                  'transition-opacity duration-1000 w-64 h-64 rounded-full relative',
+                  { "opacity-100": isVisible },
+                  { "opacity-0": !isVisible },
+                  "transition-opacity duration-1000 w-64 h-64 rounded-full relative",
                 )}
               >
                 <Image

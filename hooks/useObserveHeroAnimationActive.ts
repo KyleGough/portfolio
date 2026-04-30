@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useState } from 'react';
+import { RefObject, useEffect, useState } from "react";
 
 /**
  * True when the document tab is visible and `elementRef` intersects the viewport.
@@ -10,14 +10,14 @@ export function useObserveHeroAnimationActive(
 
   useEffect(() => {
     const el = elementRef.current;
-    if (!el || typeof document === 'undefined') {
+    if (!el || typeof document === "undefined") {
       return undefined;
     }
 
     let intersecting = true;
 
     const apply = (): void => {
-      const tabOk = document.visibilityState === 'visible';
+      const tabOk = document.visibilityState === "visible";
       setActive(tabOk && intersecting);
     };
 
@@ -30,15 +30,15 @@ export function useObserveHeroAnimationActive(
         intersecting = entries.some((entry) => entry.isIntersecting);
         apply();
       },
-      { root: null, rootMargin: '0px', threshold: 0 },
+      { root: null, rootMargin: "0px", threshold: 0 },
     );
 
     observer.observe(el);
-    document.addEventListener('visibilitychange', onVisibility);
+    document.addEventListener("visibilitychange", onVisibility);
     apply();
 
     return () => {
-      document.removeEventListener('visibilitychange', onVisibility);
+      document.removeEventListener("visibilitychange", onVisibility);
       observer.disconnect();
     };
   }, [elementRef]);

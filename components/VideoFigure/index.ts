@@ -1,1 +1,1 @@
-export { VideoFigure } from './VideoFigure';
+export { VideoFigure } from "./VideoFigure";

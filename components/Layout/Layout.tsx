@@ -1,14 +1,14 @@
-import { Footer } from '@components/Footer';
-import { Nav } from '@components/Nav';
-import { fontIbmPlexMono, fontSpaceGrotesk } from '@utilities/siteFonts';
-import { clsx } from 'clsx';
-import Head from 'next/head';
-import React from 'react';
+import { Footer } from "@components/Footer";
+import { Nav } from "@components/Nav";
+import { fontIbmPlexMono, fontSpaceGrotesk } from "@utilities/siteFonts";
+import { clsx } from "clsx";
+import Head from "next/head";
+import React from "react";
 
-import { OpenGraphMeta } from './OpenGraphMeta';
-import { socialMeta } from './SocialMeta';
-import { SpaceGothicScrollVars } from './SpaceGothicScrollVars';
-import { TwitterMeta } from './TwitterMeta';
+import { OpenGraphMeta } from "./OpenGraphMeta";
+import { socialMeta } from "./SocialMeta";
+import { SpaceGothicScrollVars } from "./SpaceGothicScrollVars";
+import { TwitterMeta } from "./TwitterMeta";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -17,12 +17,12 @@ interface LayoutProps {
 
 export const Layout: React.FC<LayoutProps> = ({
   children,
-  title = 'Kyle Gough - Portfolio',
+  title = "Kyle Gough - Portfolio",
 }) => {
   return (
     <div
       className={clsx(
-        'App app-space-gothic',
+        "App app-space-gothic",
         fontSpaceGrotesk.variable,
         fontIbmPlexMono.variable,
       )}

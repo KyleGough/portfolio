@@ -1,6 +1,6 @@
-import { useObserveElement } from '@hooks/useObserveElement';
-import { clsx } from 'clsx';
-import React, { useEffect, useState } from 'react';
+import { useObserveElement } from "@hooks/useObserveElement";
+import { clsx } from "clsx";
+import React, { useEffect, useState } from "react";
 
 interface FadeInProps {
   children: React.ReactNode;
@@ -22,9 +22,9 @@ export const FadeIn: React.FC<FadeInProps> = ({ className, children }) => {
       ref={elementRef}
       className={clsx(
         className,
-        { 'opacity-100': show },
-        { 'opacity-0': !show },
-        'transition-opacity duration-1000',
+        { "opacity-100": show },
+        { "opacity-0": !show },
+        "transition-opacity duration-1000",
       )}
     >
       {children}
