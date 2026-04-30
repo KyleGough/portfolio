@@ -70,7 +70,7 @@ describe('Contact component', () => {
   it('contact form submits on valid inputs', () => {
     // Pending promise: we only assert fetch was invoked; no async state flush needed.
     (global.fetch as jest.Mock).mockReturnValue(
-      new Promise<never>(() => undefined)
+      new Promise<never>(() => undefined),
     );
 
     render(<Contact />);

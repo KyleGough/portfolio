@@ -24,12 +24,12 @@ describe('Link component', () => {
     render(
       <Link ariaLabel="Custom home" to="/">
         <span>Home</span>
-      </Link>
+      </Link>,
     );
 
     expect(screen.getByRole('link', { name: 'Custom home' })).toHaveAttribute(
       'href',
-      '/'
+      '/',
     );
   });
 });

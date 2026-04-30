@@ -16,7 +16,7 @@ describe('TimelineNode component', () => {
         date="January 2000 - Present"
         align="left"
         logo={mockStaticImageData}
-      />
+      />,
     );
     expect(screen.getByText('CEO')).toBeVisible();
     expect(screen.getByText('Acme')).toBeVisible();

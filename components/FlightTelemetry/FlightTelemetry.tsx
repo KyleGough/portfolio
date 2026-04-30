@@ -48,54 +48,53 @@ export const FlightTelemetry: React.FC = () => {
     chartPoints,
     pitchX,
     rollX,
-  } =
-    useMemo(() => {
-      const wallMissionSec = getMissionSec(t);
-      const missionSec =
-        wallMissionSec -
-        Math.floor(wallMissionSec / LOOP_PERIOD_MISSION_SEC) *
-          LOOP_PERIOD_MISSION_SEC;
-      const fuelPct = fuelPctForRocketLoop(wallMissionSec);
-      /* Same value as shown in the label — avoids bar vs % rounding mismatch */
-      const fuelPctDisplay = Number(fuelPct.toFixed(0));
+  } = useMemo(() => {
+    const wallMissionSec = getMissionSec(t);
+    const missionSec =
+      wallMissionSec -
+      Math.floor(wallMissionSec / LOOP_PERIOD_MISSION_SEC) *
+        LOOP_PERIOD_MISSION_SEC;
+    const fuelPct = fuelPctForRocketLoop(wallMissionSec);
+    /* Same value as shown in the label — avoids bar vs % rounding mismatch */
+    const fuelPctDisplay = Number(fuelPct.toFixed(0));
 
-      const vrel = Math.round(
-        1820 + 55 * Math.sin(t * 0.22) + 20 * Math.cos(t * 0.4)
+    const vrel = Math.round(
+      1820 + 55 * Math.sin(t * 0.22) + 20 * Math.cos(t * 0.4),
+    );
+
+    const pitch = 12 + 2.1 * Math.sin(t * 0.31) + 0.6 * Math.sin(t * 0.9);
+    const roll = -0.4 + 0.9 * Math.cos(t * 0.37) + 0.25 * Math.sin(t * 1.1);
+
+    const n = 11;
+    const points: string[] = [];
+    for (let i = 0; i < n; i += 1) {
+      const x = (i / (n - 1)) * 100;
+      const yNorm =
+        0.5 +
+        0.4 * Math.sin(t * 0.28 + i * 0.45) +
+        0.12 * Math.sin(t * 0.5 + i * 1.2);
+      const y = clamp(
+        2 + (1 - yNorm) * 16 + Math.sin(t * 0.2 + i) * 0.5,
+        0.5,
+        19.2,
       );
+      points.push(`${x},${y.toFixed(2)}`);
+    }
 
-      const pitch = 12 + 2.1 * Math.sin(t * 0.31) + 0.6 * Math.sin(t * 0.9);
-      const roll = -0.4 + 0.9 * Math.cos(t * 0.37) + 0.25 * Math.sin(t * 1.1);
+    const pitchX = clamp(50 + (pitch / 22) * 38, 6, 94);
+    const rollX = clamp(50 + (roll / 1.4) * 28, 6, 94);
 
-      const n = 11;
-      const points: string[] = [];
-      for (let i = 0; i < n; i += 1) {
-        const x = (i / (n - 1)) * 100;
-        const yNorm =
-          0.5 +
-          0.4 * Math.sin(t * 0.28 + i * 0.45) +
-          0.12 * Math.sin(t * 0.5 + i * 1.2);
-        const y = clamp(
-          2 + (1 - yNorm) * 16 + Math.sin(t * 0.2 + i) * 0.5,
-          0.5,
-          19.2
-        );
-        points.push(`${x},${y.toFixed(2)}`);
-      }
-
-      const pitchX = clamp(50 + (pitch / 22) * 38, 6, 94);
-      const rollX = clamp(50 + (roll / 1.4) * 28, 6, 94);
-
-      return {
-        missionSec,
-        fuelPctDisplay,
-        vrel,
-        pitch,
-        roll,
-        chartPoints: points.join(' '),
-        pitchX,
-        rollX,
-      };
-    }, [t]);
+    return {
+      missionSec,
+      fuelPctDisplay,
+      vrel,
+      pitch,
+      roll,
+      chartPoints: points.join(' '),
+      pitchX,
+      rollX,
+    };
+  }, [t]);
 
   const fmtDeg = (deg: number) =>
     (deg >= 0 ? '+' : '−') + Math.abs(deg).toFixed(1);

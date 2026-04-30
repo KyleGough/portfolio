@@ -21,7 +21,7 @@ describe('ProjectItem component', () => {
           blurDataURL: '/#blur',
         }}
         alt="Test Alt Text"
-      />
+      />,
     );
     expect(screen.getByText('Jan 2021 - Jun 2022')).toBeVisible();
   });

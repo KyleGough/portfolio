@@ -24,7 +24,7 @@ export const Layout: React.FC<LayoutProps> = ({
       className={clsx(
         'App app-space-gothic',
         fontSpaceGrotesk.variable,
-        fontIbmPlexMono.variable
+        fontIbmPlexMono.variable,
       )}
     >
       <SpaceGothicScrollVars />
@@ -77,9 +77,7 @@ export const Layout: React.FC<LayoutProps> = ({
         <title>{title}</title>
       </Head>
       <Nav />
-      <main className="leading-[1.6rem] relative text-primary">
-        {children}
-      </main>
+      <main className="leading-[1.6rem] relative text-primary">{children}</main>
       <Footer />
     </div>
   );

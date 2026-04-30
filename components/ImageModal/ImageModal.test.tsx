@@ -14,7 +14,7 @@ describe('ImageModal component', () => {
 
     // Modal opens on thumbnail (button) activation.
     fireEvent.click(
-      screen.getByRole('button', { name: 'View larger version: Test Caption' })
+      screen.getByRole('button', { name: 'View larger version: Test Caption' }),
     );
     expect(screen.queryByRole('dialog')).toBeInTheDocument();
 

@@ -62,7 +62,7 @@ const S2_ENGINE_Y_MOUNT = S1_H + INTERSTAGE_H;
 
 const buildRocket = (
   wireMat: THREE.LineBasicMaterial,
-  strutMat: THREE.LineBasicMaterial
+  strutMat: THREE.LineBasicMaterial,
 ): {
   body: THREE.Group;
   coreLower: THREE.Group;
@@ -95,7 +95,7 @@ const buildRocket = (
     10,
     0,
     S1_H * 0.5,
-    0
+    0,
   );
   // Interstage stays with the first stage through separation (bottom stack).
   addCylinderEdges(
@@ -107,7 +107,7 @@ const buildRocket = (
     10,
     0,
     S1_H + INTERSTAGE_H / 2,
-    0
+    0,
   );
   addOctawebEngines(coreEngineWire, wireMat, Y_MOUNT_CORE, 0.2, 1);
   coreLower.add(coreEngineWire);
@@ -122,7 +122,7 @@ const buildRocket = (
     10,
     0,
     S1_H + INTERSTAGE_H + S2_H / 2,
-    0
+    0,
   );
   const fairingR = 0.22;
   const fairingYBase = S1_H + INTERSTAGE_H + S2_H;
@@ -136,7 +136,7 @@ const buildRocket = (
     fairingShoulderH,
     0,
     fairingYBase,
-    0
+    0,
   );
   addEngineNozzle(coreUpper, wireMat, 0, 0, S2_ENGINE_Y_MOUNT, S2_ENGINE_SCALE);
 
@@ -157,7 +157,7 @@ const buildRocket = (
       10,
       0,
       boosterH / 2,
-      0
+      0,
     );
     const noseH = 0.34;
     const noseR = boosterRTop;
@@ -176,7 +176,7 @@ const buildRocket = (
       0.05,
       0.04,
       4,
-      4
+      4,
     );
   }
 
@@ -190,14 +190,14 @@ const buildRocket = (
       strutMat,
       -coreR * 0.92,
       y,
-      -BOOSTER_STAGE_X + boosterR * 0.88
+      -BOOSTER_STAGE_X + boosterR * 0.88,
     );
     addStrut(
       strutsGroup,
       strutMat,
       coreR * 0.92,
       y,
-      BOOSTER_STAGE_X - boosterR * 0.88
+      BOOSTER_STAGE_X - boosterR * 0.88,
     );
   }
 
@@ -221,7 +221,7 @@ const centerObjectAtOrigin = (object: THREE.Object3D): void => {
 const fitPerspectiveCameraToObject = (
   camera: THREE.PerspectiveCamera,
   object: THREE.Object3D,
-  margin: number
+  margin: number,
 ): void => {
   const box = new THREE.Box3().setFromObject(object);
   const size = new THREE.Vector3();
@@ -242,14 +242,14 @@ const fitPerspectiveCameraToObject = (
   camera.position.set(
     center.x + dist * 0.58,
     center.y + dist * 0.36,
-    center.z + dist * 0.72
+    center.z + dist * 0.72,
   );
   camera.lookAt(center);
 };
 
 const setGroupLineOpacityFactor = (
   root: THREE.Object3D,
-  factor: number
+  factor: number,
 ): void => {
   root.traverse((obj) => {
     if (!(obj instanceof THREE.Line || obj instanceof THREE.LineSegments)) {
@@ -274,7 +274,9 @@ const loopFadeFromPhaseSec = (phaseSec: number): number => {
   return 1 - (1 - t) * (1 - t);
 };
 
-const upperStackExitFromPhaseSec = (phaseSec: number): {
+const upperStackExitFromPhaseSec = (
+  phaseSec: number,
+): {
   riseY: number;
   stackFadeK: number;
 } => {
@@ -282,7 +284,10 @@ const upperStackExitFromPhaseSec = (phaseSec: number): {
     return { riseY: 0, stackFadeK: 1 };
   }
   const span = LOOP_PERIOD_MISSION_SEC - LOOP_UPPER_EXIT_START_MISSION_SEC;
-  const u = Math.min(1, Math.max(0, (phaseSec - LOOP_UPPER_EXIT_START_MISSION_SEC) / span));
+  const u = Math.min(
+    1,
+    Math.max(0, (phaseSec - LOOP_UPPER_EXIT_START_MISSION_SEC) / span),
+  );
   const riseY = CORE_UPPER_RISE * u * u * u;
   const stackFadeK = 1 - u;
   return { riseY, stackFadeK };
@@ -291,7 +296,7 @@ const upperStackExitFromPhaseSec = (phaseSec: number): {
 const t2EventProgress = (
   now: number,
   phaseMissionSec: number,
-  previousT2Wall: number | null
+  previousT2Wall: number | null,
 ): {
   boosterFallK: number;
   plumeMul: number;
@@ -338,7 +343,7 @@ const applyBoosterSeparationPose = (
   loopFadeK: number,
   leftBooster: THREE.Group,
   rightBooster: THREE.Group,
-  strutsGroup: THREE.Object3D
+  strutsGroup: THREE.Object3D,
 ): void => {
   const extraX = BOOSTER_SEP_EXTRA_X * separationK;
   const extraY = -BOOSTER_SEP_FALL_MAX * boosterFallK;
@@ -356,7 +361,7 @@ const resetBoosterSeparationPose = (
   loopFadeK: number,
   leftBooster: THREE.Group,
   rightBooster: THREE.Group,
-  strutsGroup: THREE.Object3D
+  strutsGroup: THREE.Object3D,
 ): void => {
   leftBooster.position.set(-BOOSTER_STAGE_X, 0, 0);
   rightBooster.position.set(BOOSTER_STAGE_X, 0, 0);
@@ -370,7 +375,7 @@ const resetBoosterSeparationPose = (
 const t3EventProgress = (
   now: number,
   phaseMissionSec: number,
-  previousT3: number | null
+  previousT3: number | null,
 ): {
   coreLowerK: number;
   corePlumeK: number;
@@ -401,7 +406,7 @@ const t3EventProgress = (
 const s2PlumeProgress = (
   now: number,
   phaseMissionSec: number,
-  previousS2Wall: number | null
+  previousS2Wall: number | null,
 ): { s2PlumeK: number; s2Wall: number | null } => {
   let s2Wall = previousS2Wall;
   if (phaseMissionSec >= S2_PLUME_AT_MISSION_SEC) {
@@ -424,13 +429,16 @@ const applyCoreStagingPose = (
   coreLowerK: number,
   motionK: number,
   loopFadeK: number,
-  coreLower: THREE.Group
+  coreLower: THREE.Group,
 ): void => {
   coreLower.position.set(0, -CORE_FALL_DY * motionK, 0);
   setGroupLineOpacityFactor(coreLower, coreLowerK * loopFadeK);
 };
 
-const resetCoreStagingPose = (loopFadeK: number, coreLower: THREE.Group): void => {
+const resetCoreStagingPose = (
+  loopFadeK: number,
+  coreLower: THREE.Group,
+): void => {
   coreLower.position.set(0, 0, 0);
   setGroupLineOpacityFactor(coreLower, loopFadeK);
 };
@@ -454,10 +462,10 @@ const disposeWireframeScene = (scene: THREE.Scene): void => {
 
 const attachRocketViewport = (
   mount: HTMLElement,
-  getShouldAnimate: () => boolean
+  getShouldAnimate: () => boolean,
 ): { dispose: () => void; resume: () => void } => {
   const reducedMotion = window.matchMedia(
-    '(prefers-reduced-motion: reduce)'
+    '(prefers-reduced-motion: reduce)',
   ).matches;
 
   const wireMat = new THREE.LineBasicMaterial({
@@ -495,7 +503,7 @@ const attachRocketViewport = (
     coreUpper,
     leftBooster,
     rightBooster,
-    reducedMotion
+    reducedMotion,
   );
   const { allLayers, disposers: plumeDisposers } = plumeSetup;
   centerObjectAtOrigin(body);
@@ -560,13 +568,13 @@ const attachRocketViewport = (
     const { coreLowerK, corePlumeK, motionK, t3Wall } = t3EventProgress(
       now,
       phaseSec,
-      t3EventWall0
+      t3EventWall0,
     );
     t3EventWall0 = t3Wall;
     const { s2PlumeK, s2Wall: s2PlumeWall } = s2PlumeProgress(
       now,
       phaseSec,
-      s2PlumeEventWall0
+      s2PlumeEventWall0,
     );
     s2PlumeEventWall0 = s2PlumeWall;
 
@@ -574,7 +582,12 @@ const attachRocketViewport = (
     setGroupLineOpacityFactor(coreUpper, upperStackFadeK * loopFadeK);
 
     if (t2Wall === null) {
-      resetBoosterSeparationPose(loopFadeK, leftBooster, rightBooster, strutsGroup);
+      resetBoosterSeparationPose(
+        loopFadeK,
+        leftBooster,
+        rightBooster,
+        strutsGroup,
+      );
     } else {
       applyBoosterSeparationPose(
         separationK,
@@ -584,7 +597,7 @@ const attachRocketViewport = (
         loopFadeK,
         leftBooster,
         rightBooster,
-        strutsGroup
+        strutsGroup,
       );
     }
     if (t3Wall === null) {
@@ -604,7 +617,7 @@ const attachRocketViewport = (
       s2PlumeK,
       reducedMotion,
       loopFadeK,
-      upperStackFadeK
+      upperStackFadeK,
     );
     renderer.render(scene, camera);
     rafId = window.requestAnimationFrame(tick);
@@ -656,8 +669,9 @@ export const FalconHeavyWireframe: React.FC = () => {
     if (!mount) {
       return undefined;
     }
-    const { dispose, resume } = attachRocketViewport(mount, () =>
-      activeRef.current
+    const { dispose, resume } = attachRocketViewport(
+      mount,
+      () => activeRef.current,
     );
     resumeRef.current = resume;
     return dispose;

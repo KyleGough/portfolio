@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 jobs:
- cypress-run:
+  cypress-run:
     runs-on: ubuntu-latest
     container: cypress/included:11.2.0
     steps:
@@ -46,4 +46,3 @@ jobs:
           build: npm run build
           start: npm start
           browser: chrome
-

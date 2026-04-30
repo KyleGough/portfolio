@@ -22,7 +22,7 @@ describe('Nav component', () => {
   it('renders the main navigation landmark', () => {
     render(<Nav />);
     expect(
-      screen.getByRole('navigation', { name: 'Main' })
+      screen.getByRole('navigation', { name: 'Main' }),
     ).toBeInTheDocument();
   });
 

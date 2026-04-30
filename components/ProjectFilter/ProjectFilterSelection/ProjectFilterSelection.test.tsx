@@ -11,7 +11,7 @@ describe('ProjectFilterSelection component', () => {
         value="Web"
         onSelect={onSelect}
         selected={false}
-      />
+      />,
     );
 
     expect(screen.getByText('Web')).toBeVisible();

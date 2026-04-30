@@ -29,7 +29,7 @@ const linkCardClass = (enabled: boolean) =>
     !enabled && [
       'cursor-not-allowed border border-black/[0.06] bg-header/[0.04] text-disabled',
       'pointer-events-none opacity-[0.72]',
-    ]
+    ],
   );
 
 export const Pagination: React.FC<PaginationProps> = ({

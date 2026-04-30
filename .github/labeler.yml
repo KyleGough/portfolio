@@ -1,65 +1,65 @@
 # Frontend
 
 component:
-- components/**/*
+  - components/**/*
 
 font:
-- fonts/**/*
+  - fonts/**/*
 
 hooks:
-- hooks/**/*
+  - hooks/**/*
 
 icon:
-- components/icons/**/*
+  - components/icons/**/*
 
 pages:
-- pages/**/*
+  - pages/**/*
 
 utilities:
-- utilities/**/*
+  - utilities/**/*
 
 # Public
 
 img:
-- public/img/**/*
+  - public/img/**/*
 
 video:
-- public/video/**/*
+  - public/video/**/*
 
 # Styling
 
 tailwind:
-- styles/tailwind.css
-- tailwind.config.js
+  - styles/tailwind.css
+  - tailwind.config.js
 
 css:
-- styles/**/*
+  - styles/**/*
 
 # Config
 
 lint:
-- .eslintignore
-- .eslintrc.json
-- .editorconfig
-- .prettierrc
+  - .eslintignore
+  - .eslintrc.json
+  - .editorconfig
+  - .prettierrc
 
 config:
-- .gitignore
-- package.json
-- package-lock.json
-- postcss.config.js
-- tsconfig.json
-- jest.config.js
-- jest.setup.js
-- next.config.js
+  - .gitignore
+  - package.json
+  - package-lock.json
+  - postcss.config.js
+  - tsconfig.json
+  - jest.config.js
+  - jest.setup.js
+  - next.config.js
 
 ci:
-- .husky/**/*
-- .github/**/*.yaml
-- .github/**/*.yml
+  - .husky/**/*
+  - .github/**/*.yaml
+  - .github/**/*.yml
 
 vscode:
-- .vscode/**/*
+  - .vscode/**/*
 
 readme:
-- README.md
+  - README.md

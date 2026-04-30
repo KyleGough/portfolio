@@ -1,4 +1,9 @@
-import { IBM_Plex_Mono, Lato, Merriweather, Space_Grotesk } from 'next/font/google';
+import {
+  IBM_Plex_Mono,
+  Lato,
+  Merriweather,
+  Space_Grotesk,
+} from 'next/font/google';
 
 /**
  * Base body / heading fonts (Tailwind `font-primary`, `font-header`). Variables on

@@ -15,7 +15,7 @@ describe('Section component', () => {
     render(
       <Section id="test" overrideTopPadding>
         Test
-      </Section>
+      </Section>,
     );
 
     const block = screen.getByText('Test');

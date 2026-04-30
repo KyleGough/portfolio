@@ -11,7 +11,7 @@ import { HeroAnimationActiveContext } from './HeroAnimationContext';
 const FalconHeavyWireframe = dynamic(
   () =>
     import('../Rocket/FalconHeavyWireframe').then(
-      (m) => m.FalconHeavyWireframe
+      (m) => m.FalconHeavyWireframe,
     ),
   {
     ssr: false,
@@ -20,7 +20,7 @@ const FalconHeavyWireframe = dynamic(
         <div className={styles.rocketCanvasHost} />
       </div>
     ),
-  }
+  },
 );
 
 export const Hero: React.FC = () => {

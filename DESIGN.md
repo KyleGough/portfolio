@@ -2,94 +2,94 @@
 name: Kyle Gough Portfolio
 description: Personal Next.js portfolio; light, engineer-readable UI
 colors:
-  text-body: "#212121"
-  background: "#FAFAFA"
-  accent-surface: "#FAFAFF"
-  header-ink: "#424242"
-  link-cyan: "#03B0EE"
-  link-hover-green: "#4CAF50"
-  nav-bar: "#424242"
-  nav-deep: "#353535"
-  nav-hover-sheen: "#BBBBBB"
-  chip-indigo: "#3F51B5"
-  chip-wash: "#E8EAF6"
-  error: "#EE3003"
-  divider-hair: "#1F000000"
-  disabled-text: "#00000066"
-  timeline-rail: "#DADADA"
-  traffic-red: "#EF5350"
-  traffic-amber: "#FFB300"
-  traffic-green: "#4CAF50"
+  text-body: '#212121'
+  background: '#FAFAFA'
+  accent-surface: '#FAFAFF'
+  header-ink: '#424242'
+  link-cyan: '#03B0EE'
+  link-hover-green: '#4CAF50'
+  nav-bar: '#424242'
+  nav-deep: '#353535'
+  nav-hover-sheen: '#BBBBBB'
+  chip-indigo: '#3F51B5'
+  chip-wash: '#E8EAF6'
+  error: '#EE3003'
+  divider-hair: '#1F000000'
+  disabled-text: '#00000066'
+  timeline-rail: '#DADADA'
+  traffic-red: '#EF5350'
+  traffic-amber: '#FFB300'
+  traffic-green: '#4CAF50'
 typography:
   page-title:
-    fontFamily: "Merriweather, Georgia, serif"
-    fontSize: "3rem"
+    fontFamily: 'Merriweather, Georgia, serif'
+    fontSize: '3rem'
     fontWeight: 600
     lineHeight: 1.2
-    letterSpacing: "-0.025em"
+    letterSpacing: '-0.025em'
   body:
-    fontFamily: "Lato, system-ui, sans-serif"
-    fontSize: "15px"
+    fontFamily: 'Lato, system-ui, sans-serif'
+    fontSize: '15px'
     fontWeight: 400
     lineHeight: 1.5
   label:
-    fontFamily: "Lato, system-ui, sans-serif"
-    fontSize: "1.125rem"
+    fontFamily: 'Lato, system-ui, sans-serif'
+    fontSize: '1.125rem'
     fontWeight: 400
     lineHeight: 1.5
   mono:
-    fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace"
-    fontSize: "1em"
-    lineHeight: "1.75rem"
+    fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace'
+    fontSize: '1em'
+    lineHeight: '1.75rem'
   chip:
-    fontFamily: "Lato, system-ui, sans-serif"
-    fontSize: "0.75rem"
+    fontFamily: 'Lato, system-ui, sans-serif'
+    fontSize: '0.75rem'
     fontWeight: 800
-    lineHeight: "1.7rem"
+    lineHeight: '1.7rem'
 rounded:
-  sm: "8px"
-  md: "16px"
-  pill: "9999px"
+  sm: '8px'
+  md: '16px'
+  pill: '9999px'
 spacing:
-  container: "1rem"
-  container-sm: "1.5rem"
-  container-md: "2rem"
-  container-lg: "3rem"
-  container-xl: "4rem"
-  field-max: "25rem"
+  container: '1rem'
+  container-sm: '1.5rem'
+  container-md: '2rem'
+  container-lg: '3rem'
+  container-xl: '4rem'
+  field-max: '25rem'
 components:
   text-link:
-    textColor: "{colors.link-cyan}"
-    typography: "{typography.body}"
+    textColor: '{colors.link-cyan}'
+    typography: '{typography.body}'
   text-link-hover:
-    textColor: "{colors.link-hover-green}"
+    textColor: '{colors.link-hover-green}'
   chip:
-    backgroundColor: "{colors.chip-wash}"
-    textColor: "{colors.chip-indigo}"
-    padding: "0.125rem 1rem"
-    height: "2rem"
+    backgroundColor: '{colors.chip-wash}'
+    textColor: '{colors.chip-indigo}'
+    padding: '0.125rem 1rem'
+    height: '2rem'
   nav-bar:
-    backgroundColor: "{colors.nav-bar}"
-    textColor: "#ffffff"
+    backgroundColor: '{colors.nav-bar}'
+    textColor: '#ffffff'
   form-input:
-    textColor: "{colors.text-body}"
-    backgroundColor: "{colors.background}"
-    rounded: "{rounded.md}"
-    padding: "0.5rem 1rem"
+    textColor: '{colors.text-body}'
+    backgroundColor: '{colors.background}'
+    rounded: '{rounded.md}'
+    padding: '0.5rem 1rem'
   cta-outlined:
-    textColor: "{colors.link-cyan}"
-    backgroundColor: "{colors.background}"
-    rounded: "{rounded.sm}"
-    padding: "0.5rem 1rem"
+    textColor: '{colors.link-cyan}'
+    backgroundColor: '{colors.background}'
+    rounded: '{rounded.sm}'
+    padding: '0.5rem 1rem'
   submit-pill:
-    textColor: "{colors.link-cyan}"
-    backgroundColor: "{colors.background}"
-    rounded: "{rounded.pill}"
-    padding: "1rem 3rem"
+    textColor: '{colors.link-cyan}'
+    backgroundColor: '{colors.background}'
+    rounded: '{rounded.pill}'
+    padding: '1rem 3rem'
   project-tile:
-    textColor: "#ffffff"
-    backgroundColor: "{colors.nav-bar}"
-    rounded: "{rounded.md}"
+    textColor: '#ffffff'
+    backgroundColor: '{colors.nav-bar}'
+    rounded: '{rounded.md}'
 ---
 
 # Design System: Kyle Gough Portfolio

@@ -3,7 +3,7 @@
  * `undefined` if the request fails or the field is missing.
  */
 export const fetchGitHubStargazerCount = async (
-  repo: string
+  repo: string,
 ): Promise<number | undefined> => {
   try {
     const res = await fetch(`https://api.github.com/repos/KyleGough/${repo}`, {

@@ -14,12 +14,12 @@ const Section = forwardRef<HTMLDivElement, SectionProps>(
       ref={ref}
       className={clsx(
         { 'first:pt-24': !overrideTopPadding },
-        'container text-primary py-8 last:pb-16'
+        'container text-primary py-8 last:pb-16',
       )}
     >
       {children}
     </div>
-  )
+  ),
 );
 
 Section.displayName = 'Section';

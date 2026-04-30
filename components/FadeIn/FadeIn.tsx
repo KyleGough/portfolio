@@ -24,7 +24,7 @@ export const FadeIn: React.FC<FadeInProps> = ({ className, children }) => {
         className,
         { 'opacity-100': show },
         { 'opacity-0': !show },
-        'transition-opacity duration-1000'
+        'transition-opacity duration-1000',
       )}
     >
       {children}
