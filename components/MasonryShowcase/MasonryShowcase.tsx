@@ -3,8 +3,8 @@ import heroStyles from '@components/Hero/Hero.module.css';
 import { ArrowForwardIcon } from '@components/Icons';
 import { getDateRange } from '@utilities/date';
 import {
-  type FeaturedCaseStudy,
   FEATURED_CASE_STUDIES,
+  type FeaturedCaseStudy,
 } from '@utilities/featuredCaseStudies';
 import { clsx } from 'clsx';
 import Image from 'next/image';

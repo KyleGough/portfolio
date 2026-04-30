@@ -4,8 +4,8 @@ import * as THREE from 'three';
 import styles from '../Hero/Hero.module.css';
 import { useHeroAnimationActive } from '../Hero/HeroAnimationContext';
 import {
-  type AddAllEnginePlumesResult,
   addAllEnginePlumes,
+  type AddAllEnginePlumesResult,
   addEngineNozzle,
   addOctawebEngines,
   updatePlumeLayersForTick,
