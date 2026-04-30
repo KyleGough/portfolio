@@ -3,6 +3,8 @@
   position: relative;
   min-height: 88vh;
   min-height: 88dvh;
+  /* Last wins: svh uses the small viewport and avoids resize jitter when browser chrome toggles. */
+  min-height: 88svh;
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
@@ -10,6 +12,17 @@
   padding: 5rem 1.25rem 3.5rem;
   overflow: hidden;
   isolation: isolate;
+}
+
+/*
+ * Single-column hero: avoid stretching rows when min-height exceeds content — extra
+ * space belongs below the copy. Otherwise vh/dvh changes while scrolling redistribute
+ * space between the rocket column and the text block (perceived as gap “jitter”).
+ */
+@media (max-width: 959px) {
+  .slot {
+    align-content: start;
+  }
 }
 
 @media (min-width: 960px) {
@@ -84,6 +97,7 @@
   min-height: 12rem;
   aspect-ratio: 10 / 7;
   max-height: min(70vh, 28rem);
+  max-height: min(70svh, 28rem);
   margin-inline: auto;
   /* No border or shadow: wireframe blends into space-gothic main */
   background: transparent;
