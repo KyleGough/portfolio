@@ -14,8 +14,8 @@ const customJestConfig = {
     '^@hooks/(.*)$': '<rootDir>/hooks/$1',
     '^@image/(.*)$': '<rootDir>/public/img/$1',
     '^@mocks/(.*)$': '<rootDir>/utilities/mocks/$1',
-    '^@utilities/(.*)$': '<rootDir>/utilities/$1'
-  }
+    '^@utilities/(.*)$': '<rootDir>/utilities/$1',
+  },
 };
 
 module.exports = createJestConfig(customJestConfig);

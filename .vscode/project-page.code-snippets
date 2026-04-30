@@ -54,8 +54,8 @@
       "};",
       "",
       "export default ProjectPage;",
-      ""
+      "",
     ],
-    "description": "Template for project page components"
-  }
+    "description": "Template for project page components",
+  },
 }

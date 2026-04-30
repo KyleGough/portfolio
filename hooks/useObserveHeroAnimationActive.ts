@@ -4,7 +4,7 @@ import { RefObject, useEffect, useState } from 'react';
  * True when the document tab is visible and `elementRef` intersects the viewport.
  */
 export function useObserveHeroAnimationActive(
-  elementRef: RefObject<Element | null>
+  elementRef: RefObject<Element | null>,
 ): boolean {
   const [active, setActive] = useState(true);
 
@@ -30,7 +30,7 @@ export function useObserveHeroAnimationActive(
         intersecting = entries.some((entry) => entry.isIntersecting);
         apply();
       },
-      { root: null, rootMargin: '0px', threshold: 0 }
+      { root: null, rootMargin: '0px', threshold: 0 },
     );
 
     observer.observe(el);

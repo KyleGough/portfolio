@@ -12,14 +12,14 @@ export const addCylinderEdges = (
   segments: number,
   x: number,
   yCenter: number,
-  z: number
+  z: number,
 ): void => {
   const geometry = new THREE.CylinderGeometry(
     radiusTop,
     radiusBottom,
     height,
     segments,
-    1
+    1,
   );
   const edges = new THREE.EdgesGeometry(geometry);
   const line = new THREE.LineSegments(edges, material.clone());
@@ -39,7 +39,7 @@ export const addConeEdges = (
   segments: number,
   x: number,
   yCenter: number,
-  z: number
+  z: number,
 ): void => {
   const geometry = new THREE.ConeGeometry(radius, height, segments, 1);
   const edges = new THREE.EdgesGeometry(geometry);
@@ -57,7 +57,7 @@ export const addStrut = (
   material: THREE.LineBasicMaterial,
   x0: number,
   y: number,
-  x1: number
+  x1: number,
 ): void => {
   const geometry = new THREE.BufferGeometry().setFromPoints([
     new THREE.Vector3(x0, y, 0),
@@ -77,7 +77,7 @@ const addMainStageNose = (
   widthSegments: number,
   x: number,
   yEquator: number,
-  z: number
+  z: number,
 ): void => {
   const heightSegs = Math.max(2, Math.floor(widthSegments * 0.4));
   const geometry = new THREE.SphereGeometry(
@@ -87,7 +87,7 @@ const addMainStageNose = (
     0,
     Math.PI * 2,
     0,
-    Math.PI * 0.5
+    Math.PI * 0.5,
   );
   const edges = new THREE.EdgesGeometry(geometry);
   const line = new THREE.LineSegments(edges, material.clone());
@@ -112,7 +112,7 @@ export const addBoosterGridFins = (
   halfZAtAttach: number,
   radialFlare: number,
   nCols: number,
-  nRows: number
+  nRows: number,
 ): void => {
   const outDir = outward;
   const skin = 0.002;
@@ -152,7 +152,7 @@ export const addRoundedPayloadFairingEdges = (
   shoulderH: number,
   x: number,
   yBase: number,
-  z: number
+  z: number,
 ): void => {
   if (shoulderH > 1e-4) {
     addCylinderEdges(
@@ -164,7 +164,7 @@ export const addRoundedPayloadFairingEdges = (
       10,
       x,
       yBase + shoulderH * 0.5,
-      z
+      z,
     );
   }
   addMainStageNose(parent, material, capRadius, 10, x, yBase + shoulderH, z);

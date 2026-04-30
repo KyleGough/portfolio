@@ -85,10 +85,7 @@ export const ProjectFilter: React.FC<ProjectFilterProps> = ({
         >
           <span className={styles.value}>{filter}</span>
           <UnfoldIcon
-            className={clsx(
-              styles.chevron,
-              isOpen && styles.chevronOpen
-            )}
+            className={clsx(styles.chevron, isOpen && styles.chevronOpen)}
           />
         </button>
         {isOpen && (

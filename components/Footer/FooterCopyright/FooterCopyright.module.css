@@ -16,7 +16,9 @@
   letter-spacing: 0.06em;
   color: oklch(96% 0.01 300 / 0.85);
   cursor: default;
-  transition: color 0.22s ease-out, text-shadow 0.22s ease-out;
+  transition:
+    color 0.22s ease-out,
+    text-shadow 0.22s ease-out;
 }
 
 .inner::before {

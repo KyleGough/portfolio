@@ -34,26 +34,24 @@ describe('date utilities', () => {
   });
 
   it('getDateRange returns expected output', () => {
-    expect(getDateRange({ start: { month: 4, year: 1975 } })).toBe(
-      'Apr 1975'
-    );
+    expect(getDateRange({ start: { month: 4, year: 1975 } })).toBe('Apr 1975');
     expect(
       getDateRange({
         start: { month: 11, year: 2000 },
         end: { month: 2, year: 2003 },
-      })
+      }),
     ).toBe('Nov 2000 - Feb 2003');
   });
 
   it('getProjectStartDateTime returns ISO first-of-month', () => {
-    expect(
-      getProjectStartDateTime({ start: { month: 4, year: 1975 } })
-    ).toBe('1975-04-01');
+    expect(getProjectStartDateTime({ start: { month: 4, year: 1975 } })).toBe(
+      '1975-04-01',
+    );
     expect(
       getProjectStartDateTime({
         start: { month: 11, year: 2000 },
         end: { month: 2, year: 2003 },
-      })
+      }),
     ).toBe('2000-11-01');
   });
 });

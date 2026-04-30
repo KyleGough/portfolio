@@ -162,17 +162,22 @@
   background: oklch(17% 0.04 280);
   border: 1px solid oklch(100% 0 0 / 0.14);
   text-decoration: none;
-  box-shadow: 0 0 0 1px oklch(0% 0 0 / 0.2) inset,
+  box-shadow:
+    0 0 0 1px oklch(0% 0 0 / 0.2) inset,
     0 0 28px oklch(50% 0.12 200 / 0.1);
-  transition: color 0.28s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.28s,
-    box-shadow 0.28s, transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    color 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.28s,
+    box-shadow 0.28s,
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .ctaButton:hover,
 .ctaButton:focus-visible {
   color: var(--gothic-magenta, oklch(72% 0.2 310));
   border-color: oklch(100% 0 0 / 0.22);
-  box-shadow: 0 0 0 1px oklch(0% 0 0 / 0.2) inset,
+  box-shadow:
+    0 0 0 1px oklch(0% 0 0 / 0.2) inset,
     0 0 36px oklch(50% 0.14 300 / 0.16);
   transform: translateY(-1px);
   outline: none;

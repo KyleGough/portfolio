@@ -8,7 +8,7 @@ describe('ContactLabel component', () => {
     render(
       <ContactLabel isSent={false} valid={true} htmlFor="email">
         Email
-      </ContactLabel>
+      </ContactLabel>,
     );
 
     const label = screen.getByText('Email');
@@ -20,7 +20,7 @@ describe('ContactLabel component', () => {
     render(
       <ContactLabel isSent={false} valid={false} htmlFor="name">
         Name
-      </ContactLabel>
+      </ContactLabel>,
     );
 
     const label = screen.getByText('Name');

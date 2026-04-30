@@ -84,87 +84,87 @@ export const Nav: React.FC = () => {
         ref={shellRef}
         className={clsx(
           'nav-bar--shell nav-bar--overdrive bg-nav-light relative z-[200] text-white',
-          navScrolled && 'nav-bar--scrolled'
+          navScrolled && 'nav-bar--scrolled',
         )}
         data-nav-elevated={navScrolled ? 'true' : undefined}
       >
         <div className="nav-bar--inner relative z-10 flex w-full flex-wrap items-center justify-between px-2">
-        <Link
-          to="/"
-          ariaLabel="Home"
-          className="group mx-5 flex flex-shrink-0 items-center rounded-sm text-inherit no-underline
+          <Link
+            to="/"
+            ariaLabel="Home"
+            className="group mx-5 flex flex-shrink-0 items-center rounded-sm text-inherit no-underline
             focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
             focus-visible:outline-link/50"
-          aria-current={isNavPathActive(asPath, '/') ? 'page' : undefined}
-        >
-          <div className="mr-4 h-8 w-8">
-            <Image
-              src={Logo.src}
-              alt="Website Logo"
-              width={Logo.width}
-              height={Logo.height}
-              placeholder="blur"
-              blurDataURL={Logo.blurDataURL}
-              priority
-            />
-          </div>
-          <span
-            className={clsx(
-              'nav-wordmark text-white transition-colors duration-200',
-              isNavPathActive(asPath, '/') && 'nav-wordmark--active',
-              /* Keep wordmark white on logo row hover/focus (do not follow link accent) */
-              'group-hover:text-white group-focus-visible:text-white'
-            )}
+            aria-current={isNavPathActive(asPath, '/') ? 'page' : undefined}
           >
-            Kyle Gough
-          </span>
-        </Link>
-        <button
-          type="button"
-          ref={menuBtnRef}
-          onClick={toggleDrawer}
-          className={clsx(
-            'nav-gh border-bottom-slide text-white block transition-colors duration-200',
-            'hover:text-link focus-visible:text-link',
-            FOCUS_CHROME_RINGS,
-            'md:hidden px-6 py-5'
-          )}
-          aria-label="Toggle navigation"
-        >
-          <MenuIcon className="h-6 w-6 fill-current" />
-        </button>
-        <div className="hidden w-auto flex-grow md:block">
-          <div className="text-right text-base">
-            {BAR_LINKS.map(({ to, label }) => {
-              const active = isNavPathActive(asPath, to);
-              return (
-                <Link
-                  key={to}
-                  className={clsx(
-                    BAR_LINK_BASE,
-                    active && 'nav-link--bar--active'
-                  )}
-                  to={to}
-                  aria-current={ARIA_CURRENT_PAGE(active)}
-                >
-                  {label}
-                </Link>
-              );
-            })}
+            <div className="mr-4 h-8 w-8">
+              <Image
+                src={Logo.src}
+                alt="Website Logo"
+                width={Logo.width}
+                height={Logo.height}
+                placeholder="blur"
+                blurDataURL={Logo.blurDataURL}
+                priority
+              />
+            </div>
+            <span
+              className={clsx(
+                'nav-wordmark text-white transition-colors duration-200',
+                isNavPathActive(asPath, '/') && 'nav-wordmark--active',
+                /* Keep wordmark white on logo row hover/focus (do not follow link accent) */
+                'group-hover:text-white group-focus-visible:text-white',
+              )}
+            >
+              Kyle Gough
+            </span>
+          </Link>
+          <button
+            type="button"
+            ref={menuBtnRef}
+            onClick={toggleDrawer}
+            className={clsx(
+              'nav-gh border-bottom-slide text-white block transition-colors duration-200',
+              'hover:text-link focus-visible:text-link',
+              FOCUS_CHROME_RINGS,
+              'md:hidden px-6 py-5',
+            )}
+            aria-label="Toggle navigation"
+          >
+            <MenuIcon className="h-6 w-6 fill-current" />
+          </button>
+          <div className="hidden w-auto flex-grow md:block">
+            <div className="text-right text-base">
+              {BAR_LINKS.map(({ to, label }) => {
+                const active = isNavPathActive(asPath, to);
+                return (
+                  <Link
+                    key={to}
+                    className={clsx(
+                      BAR_LINK_BASE,
+                      active && 'nav-link--bar--active',
+                    )}
+                    to={to}
+                    aria-current={ARIA_CURRENT_PAGE(active)}
+                  >
+                    {label}
+                  </Link>
+                );
+              })}
+            </div>
           </div>
-        </div>
-        <Link
-          className={clsx(
-            'nav-gh border-bottom-slide items-center justify-center text-white',
-            'hidden transition-colors duration-200 hover:text-link',
-            FOCUS_CHROME_RINGS,
-            'focus-visible:text-link md:inline-flex md:px-6 py-5'
-          )}
-          href="https://github.com/KyleGough"
-          ariaLabel="GitHub Profile"
-        >
-          <GitHubIcon className="h-6 w-6 fill-current" />
-        </Link>
+          <Link
+            className={clsx(
+              'nav-gh border-bottom-slide items-center justify-center text-white',
+              'hidden transition-colors duration-200 hover:text-link',
+              FOCUS_CHROME_RINGS,
+              'focus-visible:text-link md:inline-flex md:px-6 py-5',
+            )}
+            href="https://github.com/KyleGough"
+            ariaLabel="GitHub Profile"
+          >
+            <GitHubIcon className="h-6 w-6 fill-current" />
+          </Link>
         </div>
       </div>
       <div
@@ -173,7 +173,7 @@ export const Nav: React.FC = () => {
           { absolute: drawerOpen },
           { hidden: !drawerOpen },
           'slide-in z-[100] drop-shadow',
-          'w-full md:hidden flex-grow'
+          'w-full md:hidden flex-grow',
         )}
       >
         <div className="text-link bg-background text-base">
@@ -184,7 +184,7 @@ export const Nav: React.FC = () => {
                 key={to}
                 className={clsx(
                   DRAWER_LINK_BASE,
-                  active && 'nav-drawer__link--active'
+                  active && 'nav-drawer__link--active',
                 )}
                 to={to}
                 onClick={closeDrawer}

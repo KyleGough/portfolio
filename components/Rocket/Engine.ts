@@ -50,7 +50,7 @@ const addInvertedCone = (
   height: number,
   x: number,
   yCenter: number,
-  z: number
+  z: number,
 ): void => {
   const geometry = new THREE.ConeGeometry(radius, height, CONE_SEGMENTS, 1);
   const edges = new THREE.EdgesGeometry(geometry);
@@ -68,7 +68,7 @@ export const addEngineNozzle = (
   x: number,
   z: number,
   yMount: number,
-  scale: number
+  scale: number,
 ): void => {
   const hStem = 0.052 * scale;
   const hBell = 0.1 * scale;
@@ -82,7 +82,7 @@ export const addEngineNozzle = (
     6,
     x,
     yMount - hStem * 0.5,
-    z
+    z,
   );
   addInvertedCone(
     parent,
@@ -91,7 +91,7 @@ export const addEngineNozzle = (
     hBell,
     x,
     yMount - hStem - hBell * 0.5,
-    z
+    z,
   );
 };
 
@@ -101,7 +101,7 @@ export const addOctawebEngines = (
   material: THREE.LineBasicMaterial,
   yMount: number,
   ringRadius: number,
-  scale: number
+  scale: number,
 ): void => {
   addEngineNozzle(parent, material, 0, 0, yMount, scale);
   for (let i = 0; i < 8; i += 1) {
@@ -117,7 +117,7 @@ export const addOctawebEngines = (
  */
 const addEnginePlumeGroup = (
   spec: PlumeSpec,
-  reducedMotion: boolean
+  reducedMotion: boolean,
 ): { dispose: () => void; group: THREE.Group; layers: PlumeLayer[] } => {
   const s = spec.scale;
   const tipY = spec.y;
@@ -137,7 +137,7 @@ const addEnginePlumeGroup = (
     rBottom: number,
     color: number,
     baseOpacity: number,
-    j: number
+    j: number,
   ): void => {
     const geom = new THREE.CylinderGeometry(rTop, rBottom, height, 8, 1, true);
     const mat = new THREE.MeshBasicMaterial({
@@ -171,7 +171,7 @@ const addEnginePlumeGroup = (
     r0 * 2.6,
     PLUME_ORANGE,
     reducedMotion ? 0.14 : 0.22,
-    0
+    0,
   );
   // Mid bright
   addLayer(
@@ -180,7 +180,7 @@ const addEnginePlumeGroup = (
     r0 * 1.4,
     PLUME_GOLD,
     reducedMotion ? 0.18 : 0.3,
-    1
+    1,
   );
   // Hot core
   addLayer(
@@ -189,7 +189,7 @@ const addEnginePlumeGroup = (
     r0 * 0.5,
     PLUME_CORE,
     reducedMotion ? 0.35 : 0.55,
-    2
+    2,
   );
 
   return {
@@ -221,7 +221,7 @@ const forEachOctawebEngine = (
   centerZ: number,
   ringRadius: number,
   scale: number,
-  fn: (x: number, z: number) => void
+  fn: (x: number, z: number) => void,
 ): void => {
   fn(centerX, centerZ);
   for (let i = 0; i < 8; i += 1) {
@@ -238,7 +238,7 @@ export const addAllEnginePlumes = (
   coreUpper: THREE.Object3D,
   leftBooster: THREE.Group,
   rightBooster: THREE.Group,
-  reducedMotion: boolean
+  reducedMotion: boolean,
 ): AddAllEnginePlumesResult => {
   const allLayers: PlumeLayer[] = [];
   const disposers: (() => void)[] = [];
@@ -254,7 +254,7 @@ export const addAllEnginePlumes = (
     s: number,
     exhaustY: number,
     isBooster: boolean,
-    isCore: boolean
+    isCore: boolean,
   ) => {
     forEachOctawebEngine(centerX, 0, ringR, s, (x, z) => {
       const p = (phase += 0.21) % 12.5;
@@ -269,7 +269,7 @@ export const addAllEnginePlumes = (
           y: exhaustY,
           z,
         },
-        reducedMotion
+        reducedMotion,
       );
       parent.add(group);
       allLayers.push(...layers);
@@ -294,7 +294,7 @@ export const addAllEnginePlumes = (
         y: s2ExhaustY,
         z: 0,
       },
-      reducedMotion
+      reducedMotion,
     );
     coreUpper.add(group);
     allLayers.push(...layers);
@@ -308,7 +308,7 @@ const plumeLayerMul = (
   layer: PlumeLayer,
   corePlumeK: number,
   plumeMul: number,
-  s2PlumeK: number
+  s2PlumeK: number,
 ): number => {
   if (layer.isCore) {
     return corePlumeK;
@@ -330,15 +330,14 @@ export const updatePlumeLayersForTick = (
   s2PlumeK: number,
   reducedMotion: boolean,
   loopFadeK = 1,
-  upperStackFadeK = 1
+  upperStackFadeK = 1,
 ): void => {
   const plumeMulOnly = (layer: PlumeLayer): number =>
     plumeLayerMul(layer, corePlumeK, plumeMul, s2PlumeK) *
     (layer.isUpperStage ? upperStackFadeK : 1);
 
   const setOpacity = (layer: PlumeLayer, flicker: number): void => {
-    const o =
-      layer.baseOpacity * flicker * plumeMulOnly(layer) * loopFadeK;
+    const o = layer.baseOpacity * flicker * plumeMulOnly(layer) * loopFadeK;
     layer.mat.opacity = o;
     layer.mesh.visible = o > 0.002;
   };

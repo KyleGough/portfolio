@@ -42,7 +42,7 @@ const Home: React.FC = () => {
                 className={clsx(
                   { 'opacity-100': isVisible },
                   { 'opacity-0': !isVisible },
-                  'transition-opacity duration-1000 w-64 h-64 rounded-full relative'
+                  'transition-opacity duration-1000 w-64 h-64 rounded-full relative',
                 )}
               >
                 <Image

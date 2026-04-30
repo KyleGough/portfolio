@@ -12,7 +12,7 @@ export const ContactFieldError: React.FC<ContactFieldErrorProps> = ({
     className={clsx(
       'block font-primary text-sm font-medium leading-snug text-error',
       'transition-opacity duration-200',
-      'mb-1'
+      'mb-1',
     )}
   >
     {message}

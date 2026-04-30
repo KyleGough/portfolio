@@ -186,10 +186,26 @@
       "Flat or lightly lifted surfaces: default shadow on form fields, stronger drop-shadow-lg on project image cards, header drop-shadow on section chrome where defined."
     ],
     "rules": [
-      { "name": "The one cool family rule", "body": "Cyan and green own interactive feedback; do not add extra saturated hues for “decoration” on the same screen.", "section": "colors" },
-      { "name": "The indigo is for tags rule", "body": "Full-strength indigo and its 10% wash are reserved for chips and tags, not primary CTAs, so filters stay scannable and links stay the action color.", "section": "colors" },
-      { "name": "The long-measure rule", "body": "Keep paragraphs in max-w-reading on wide viewports. Do not stretch body copy to full 1280px width.", "section": "typography" },
-      { "name": "The flat-caption rule", "body": "Project card metadata is a full-width band, not a nested card with a second box shadow.", "section": "elevation" }
+      {
+        "name": "The one cool family rule",
+        "body": "Cyan and green own interactive feedback; do not add extra saturated hues for “decoration” on the same screen.",
+        "section": "colors"
+      },
+      {
+        "name": "The indigo is for tags rule",
+        "body": "Full-strength indigo and its 10% wash are reserved for chips and tags, not primary CTAs, so filters stay scannable and links stay the action color.",
+        "section": "colors"
+      },
+      {
+        "name": "The long-measure rule",
+        "body": "Keep paragraphs in max-w-reading on wide viewports. Do not stretch body copy to full 1280px width.",
+        "section": "typography"
+      },
+      {
+        "name": "The flat-caption rule",
+        "body": "Project card metadata is a full-width band, not a nested card with a second box shadow.",
+        "section": "elevation"
+      }
     ],
     "dos": [
       "Do keep the canvas in the off-white / grey-ink system and one link accent path for interactivity.",

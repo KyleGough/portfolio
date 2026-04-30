@@ -63,7 +63,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({ image, alt }) => {
               'bottom-2.5 left-2.5 border-b-2 border-l-2',
               'bottom-2.5 right-2.5 border-b-2 border-r-2',
             ] as const
-          ).map(corners => (
+          ).map((corners) => (
             <span
               key={corners}
               className={`pointer-events-none absolute h-3.5 w-3.5 border-link opacity-0 transition-opacity duration-200 ease-out group-hover:opacity-60 group-focus:opacity-70 ${corners}`}
@@ -85,7 +85,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({ image, alt }) => {
           className="fixed left-0 top-0 z-10 flex h-screen w-full items-center justify-center bg-black/80 p-4"
         >
           <div
-            onClick={e => e.stopPropagation()}
+            onClick={(e) => e.stopPropagation()}
             className="max-h-[min(100vh,900px)] overflow-auto rounded-md bg-background shadow-2xl ring-1 ring-header/10"
           >
             <div className="flex items-center justify-center p-1">

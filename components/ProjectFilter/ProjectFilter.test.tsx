@@ -6,18 +6,14 @@ import { ProjectFilter } from './ProjectFilter';
 describe('ProjectFilter component', () => {
   it('renders current filter and label', () => {
     const onFilter = jest.fn();
-    render(
-      <ProjectFilter filter="All" setFilterCallback={onFilter} />
-    );
+    render(<ProjectFilter filter="All" setFilterCallback={onFilter} />);
     expect(screen.getByText('Filter projects')).toBeVisible();
     expect(screen.getByText('All')).toBeVisible();
   });
 
   it('filter selection opens on click', () => {
     const onFilter = jest.fn();
-    render(
-      <ProjectFilter filter="All" setFilterCallback={onFilter} />
-    );
+    render(<ProjectFilter filter="All" setFilterCallback={onFilter} />);
 
     const filterBtn = screen.getByRole('button');
 

@@ -12,7 +12,7 @@ describe('ImageFigure component', () => {
           imageData: mockStaticImageData,
           alt: 'Test Caption',
         }}
-      />
+      />,
     );
     expect(screen.getByText('Test Caption')).toBeVisible();
   });

@@ -58,7 +58,7 @@ export const ContactSendButton: React.FC<ContactSendButtonProps> = ({
         styles.sendRow,
         'transition-[color,box-shadow,opacity,border-color,filter] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)]',
         'motion-reduce:transition-none',
-        getButtonStyle(status)
+        getButtonStyle(status),
       )}
     >
       <span>{getButtonText(status)}</span>

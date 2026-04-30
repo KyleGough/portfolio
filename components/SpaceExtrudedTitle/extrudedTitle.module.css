@@ -24,7 +24,8 @@
   color: oklch(93% 0.05 205 / 0.72);
   transform: rotateX(19deg) rotateY(-12deg) translateZ(6px);
   transform-style: preserve-3d;
-  text-shadow: 0.45px 0.45px 0 oklch(58% 0.09 275 / 0.92),
+  text-shadow:
+    0.45px 0.45px 0 oklch(58% 0.09 275 / 0.92),
     0.9px 0.9px 0 oklch(52% 0.1 280 / 0.9),
     1.35px 1.35px 0 oklch(46% 0.1 282 / 0.88),
     1.8px 1.8px 0 oklch(40% 0.1 285 / 0.85),
@@ -45,11 +46,14 @@
     8.55px 8.55px 0 oklch(5.5% 0.02 285 / 0.4),
     9px 9px 0 oklch(5% 0.02 285 / 0.35),
     -0.35px -0.35px 0 oklch(78% 0.08 200 / 0.35),
-    0 0 1px oklch(90% 0.06 205 / 0.55), 0 0 22px oklch(78% 0.1 200 / 0.45),
-    0 0 52px oklch(68% 0.14 295 / 0.28), 0 0 88px oklch(62% 0.12 270 / 0.18),
+    0 0 1px oklch(90% 0.06 205 / 0.55),
+    0 0 22px oklch(78% 0.1 200 / 0.45),
+    0 0 52px oklch(68% 0.14 295 / 0.28),
+    0 0 88px oklch(62% 0.12 270 / 0.18),
     11px 13px 36px oklch(6% 0.04 285 / 0.55),
     3px 4px 14px oklch(8% 0.03 285 / 0.35);
-  animation: extrudedTitleSettle 2.4s cubic-bezier(0.22, 1, 0.36, 1) 1 both,
+  animation:
+    extrudedTitleSettle 2.4s cubic-bezier(0.22, 1, 0.36, 1) 1 both,
     extrudedEtherealBreath 5.5s cubic-bezier(0.22, 1, 0.36, 1) infinite
       alternate 2.6s;
 }
@@ -63,7 +67,8 @@
   line-height: inherit;
   letter-spacing: inherit;
   color: oklch(93% 0.05 205 / 0.72);
-  text-shadow: 0.14px 0.14px 0 oklch(58% 0.09 275 / 0.92),
+  text-shadow:
+    0.14px 0.14px 0 oklch(58% 0.09 275 / 0.92),
     0.28px 0.28px 0 oklch(52% 0.1 280 / 0.9),
     0.42px 0.42px 0 oklch(46% 0.1 282 / 0.88),
     0.56px 0.56px 0 oklch(40% 0.1 285 / 0.85),
@@ -84,8 +89,10 @@
     2.66px 2.66px 0 oklch(5.5% 0.02 285 / 0.4),
     2.8px 2.8px 0 oklch(5% 0.02 285 / 0.35),
     -0.12px -0.12px 0 oklch(78% 0.08 200 / 0.35),
-    0 0 1px oklch(90% 0.06 205 / 0.55), 0 0 7px oklch(78% 0.1 200 / 0.45),
-    0 0 17px oklch(68% 0.14 295 / 0.28), 0 0 28px oklch(62% 0.12 270 / 0.18),
+    0 0 1px oklch(90% 0.06 205 / 0.55),
+    0 0 7px oklch(78% 0.1 200 / 0.45),
+    0 0 17px oklch(68% 0.14 295 / 0.28),
+    0 0 28px oklch(62% 0.12 270 / 0.18),
     3.4px 4px 13px oklch(6% 0.04 285 / 0.55),
     0.9px 1.2px 5px oklch(8% 0.03 285 / 0.35);
   animation: extrudedEtherealBreath 5.5s cubic-bezier(0.22, 1, 0.36, 1) infinite
@@ -104,7 +111,8 @@
   transform-origin: center center;
   transform: rotateX(14deg) rotateY(0deg) translateZ(1px);
   transform-style: preserve-3d;
-  text-shadow: 0.1px 0.1px 0 oklch(58% 0.09 275 / 0.92),
+  text-shadow:
+    0.1px 0.1px 0 oklch(58% 0.09 275 / 0.92),
     0.2px 0.2px 0 oklch(52% 0.1 280 / 0.9),
     0.3px 0.3px 0 oklch(46% 0.1 282 / 0.88),
     0.4px 0.4px 0 oklch(40% 0.1 285 / 0.85),
@@ -125,8 +133,10 @@
     1.88px 1.88px 0 oklch(5.5% 0.02 285 / 0.4),
     1.98px 1.98px 0 oklch(5% 0.02 285 / 0.35),
     -0.08px -0.08px 0 oklch(78% 0.08 200 / 0.35),
-    0 0 1px oklch(90% 0.06 205 / 0.55), 0 0 5px oklch(78% 0.1 200 / 0.45),
-    0 0 11px oklch(68% 0.14 295 / 0.28), 0 0 19px oklch(62% 0.12 270 / 0.18),
+    0 0 1px oklch(90% 0.06 205 / 0.55),
+    0 0 5px oklch(78% 0.1 200 / 0.45),
+    0 0 11px oklch(68% 0.14 295 / 0.28),
+    0 0 19px oklch(62% 0.12 270 / 0.18),
     2.4px 2.9px 8px oklch(6% 0.04 285 / 0.55),
     0.7px 0.9px 3px oklch(8% 0.03 285 / 0.35);
   animation: extrudedEtherealBreathFooter 6.5s cubic-bezier(0.22, 1, 0.36, 1)

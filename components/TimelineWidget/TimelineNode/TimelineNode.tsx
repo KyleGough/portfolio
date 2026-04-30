@@ -47,7 +47,7 @@ export const TimelineNode: React.FC<TimelineNodeProps> = ({
             'work-timeline__copy mr-8 flex min-w-0 flex-col gap-1',
             {
               'md:ml-8 md:mr-0 md:text-right': align === 'right',
-            }
+            },
           )}
         >
           <h3 className="work-timeline__title">{title}</h3>
@@ -59,7 +59,7 @@ export const TimelineNode: React.FC<TimelineNodeProps> = ({
             'work-timeline__line',
             align === 'left'
               ? 'work-timeline__line--spine-right'
-              : 'work-timeline__line--spine-left'
+              : 'work-timeline__line--spine-left',
           )}
           aria-hidden
         />

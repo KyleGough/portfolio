@@ -98,7 +98,7 @@ export const Contact: React.FC = () => {
     'shadow transition-colors duration-200',
     'mt-2 px-4 py-2.5',
     'border-2 rounded-2xl',
-    'outline-none caret-link-hover bg-background'
+    'outline-none caret-link-hover bg-background',
   );
   const inputFieldStyles = clsx(inputBaseStyles, 'mb-6');
 
@@ -118,7 +118,7 @@ export const Contact: React.FC = () => {
             onChange={onNameChange}
             className={clsx(
               getFieldBorderStyle(!nameError, isSent),
-              inputFieldStyles
+              inputFieldStyles,
             )}
             type="text"
             id="name"
@@ -144,7 +144,7 @@ export const Contact: React.FC = () => {
             onChange={onEmailChange}
             className={clsx(
               getFieldBorderStyle(!emailError && !emailValidError, isSent),
-              inputFieldStyles
+              inputFieldStyles,
             )}
             type="email"
             id="email"
@@ -166,7 +166,7 @@ export const Contact: React.FC = () => {
             className={clsx(
               getFieldBorderStyle(!messageError, isSent),
               inputBaseStyles,
-              'mb-2 h-40 max-h-52 min-h-[10rem] resize-y'
+              'mb-2 h-40 max-h-52 min-h-[10rem] resize-y',
             )}
             id="message"
             name="message"
@@ -181,7 +181,7 @@ export const Contact: React.FC = () => {
             data-testid="contact-form-message-meter"
             className={clsx(
               'contact-form__message-meter mb-2 text-right',
-              messageNearLimit && 'contact-form__message-meter--warn'
+              messageNearLimit && 'contact-form__message-meter--warn',
             )}
           >
             <span className="tabular-nums">{message.length}</span>

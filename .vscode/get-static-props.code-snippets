@@ -12,8 +12,8 @@
       "      project: getProjectData('${TM_FILENAME_BASE}'),",
       "    },",
       "  };",
-      "};"
+      "};",
     ],
-    "description": "getStaticProps function for project page components"
-  }
+    "description": "getStaticProps function for project page components",
+  },
 }

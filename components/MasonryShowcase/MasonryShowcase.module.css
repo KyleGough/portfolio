@@ -75,12 +75,16 @@
   border-radius: 1.15rem;
   border: 1px solid oklch(100% 0 0 / 0.1);
   background: oklch(12% 0.03 280);
-  box-shadow: 0 0 0 1px oklch(0% 0 0 / 0.3) inset, 0 0 32px oklch(0% 0 0 / 0.2);
+  box-shadow:
+    0 0 0 1px oklch(0% 0 0 / 0.3) inset,
+    0 0 32px oklch(0% 0 0 / 0.2);
   text-decoration: none;
   text-align: left;
   overflow: hidden;
   color: inherit;
-  transition: box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s,
+  transition:
+    box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s,
     transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   outline: none;
   contain: content;
@@ -197,8 +201,10 @@
 @media (hover: hover) and (pointer: fine) {
   .tile:hover,
   .tile:focus-visible {
-    box-shadow: 0 0 0 1px oklch(0% 0 0 / 0.2) inset,
-      0 0 0 1px oklch(100% 0 0 / 0.12) inset, 0 20px 48px oklch(0% 0 0 / 0.4),
+    box-shadow:
+      0 0 0 1px oklch(0% 0 0 / 0.2) inset,
+      0 0 0 1px oklch(100% 0 0 / 0.12) inset,
+      0 20px 48px oklch(0% 0 0 / 0.4),
       0 0 50px oklch(50% 0.12 200 / 0.1);
     border-color: oklch(100% 0 0 / 0.2);
   }
@@ -217,7 +223,9 @@
 
 @media (prefers-reduced-motion: reduce) {
   .tile {
-    transition: box-shadow 0.2s, border-color 0.2s;
+    transition:
+      box-shadow 0.2s,
+      border-color 0.2s;
   }
   .tile,
   .tile :global(.home-feature-img) {

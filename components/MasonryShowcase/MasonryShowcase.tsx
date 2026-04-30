@@ -43,9 +43,7 @@ const Tile: React.FC<{
           <h3>{featured.title}</h3>
           <p className={styles.copy}>{featured.excerpt}</p>
           <div className={styles.foot}>
-            <p className={styles.meta}>
-              Case study · {when}
-            </p>
+            <p className={styles.meta}>Case study · {when}</p>
             <span className={styles.arrow} aria-hidden>
               <ArrowForwardIcon className="h-3.5 w-3.5 fill-current" />
             </span>
@@ -77,11 +75,7 @@ export const MasonryShowcase: React.FC = () => {
         <div className={styles.masonryWrap}>
           <div className={styles.masonry}>
             {FEATURED_CASE_STUDIES.map((featured, i) => (
-              <Tile
-                key={featured.id}
-                featured={featured}
-                priority={i === 0}
-              />
+              <Tile key={featured.id} featured={featured} priority={i === 0} />
             ))}
           </div>
         </div>

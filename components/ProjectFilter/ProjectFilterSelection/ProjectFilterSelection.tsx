@@ -27,9 +27,7 @@ export const ProjectFilterSelection: React.FC<ProjectFilterSelectionProps> = ({
       role="option"
       aria-selected={selected}
       onClick={() => onSelect(value)}
-      onKeyDown={(event: KeyboardEvent<HTMLLIElement>) =>
-        onKey(value, event)
-      }
+      onKeyDown={(event: KeyboardEvent<HTMLLIElement>) => onKey(value, event)}
       className={clsx(styles.option, selected && styles.selected)}
     >
       {value}

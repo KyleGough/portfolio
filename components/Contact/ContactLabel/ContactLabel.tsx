@@ -21,7 +21,7 @@ export const ContactLabel: React.FC<ContactLabelProps> = ({
       { 'text-error': !valid && !isSent },
       'block font-primary text-lg font-medium leading-snug tracking-wide',
       'transition-colors duration-200',
-      'mt-6 mb-1.5'
+      'mt-6 mb-1.5',
     )}
     htmlFor={htmlFor}
   >

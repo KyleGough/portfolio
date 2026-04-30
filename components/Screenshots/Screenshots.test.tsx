@@ -12,11 +12,13 @@ describe('Screenshots component', () => {
           { imageData: mockStaticImageData, alt: 'Image A' },
           { imageData: mockStaticImageData, alt: 'Image B' },
         ]}
-      />
+      />,
     );
 
     expect(screen.getByText('Image A')).toBeVisible();
     expect(screen.getByText('Image B')).toBeVisible();
-    expect(screen.getByRole('heading', { name: 'Screenshots' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Screenshots' }),
+    ).toBeInTheDocument();
   });
 });
