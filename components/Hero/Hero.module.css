@@ -1,10 +1,8 @@
 /* Hero: Falcon Heavy wireframe (Three.js) + copy */
 .slot {
   position: relative;
-  min-height: 88vh;
-  min-height: 88dvh;
-  /* Last wins: svh uses the small viewport and avoids resize jitter when browser chrome toggles. */
-  min-height: 88svh;
+  /* Stable baseline for browsers without svh support (avoid dynamic vh growth). */
+  min-height: 34rem;
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
@@ -12,6 +10,13 @@
   padding: 5rem 1.25rem 3.5rem;
   overflow: hidden;
   isolation: isolate;
+}
+
+@supports (height: 100svh) {
+  .slot {
+    /* Small viewport height prevents section gap growth while mobile chrome collapses. */
+    min-height: 88svh;
+  }
 }
 
 /*
@@ -96,11 +101,16 @@
   width: 100%;
   min-height: 12rem;
   aspect-ratio: 10 / 7;
-  max-height: min(70vh, 28rem);
-  max-height: min(70svh, 28rem);
+  max-height: 28rem;
   margin-inline: auto;
   /* No border or shadow: wireframe blends into space-gothic main */
   background: transparent;
+}
+
+@supports (height: 100svh) {
+  .rocketFrame {
+    max-height: min(70svh, 28rem);
+  }
 }
 
 .rocketCanvasHost {
