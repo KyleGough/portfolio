@@ -32,7 +32,7 @@ const Home: React.FC = () => {
 
       <Divider />
 
-      <div className="min-h-screen flex items-center">
+      <div className="min-h-screen-stable flex items-center">
         <Section>
           <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-8">
             <Contact />

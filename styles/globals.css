@@ -10,6 +10,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Stable fullscreen minimum for mobile browser chrome show/hide behavior. */
+.min-h-screen-stable {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
 /* Custom slide in animation for mobile nav. */
 @keyframes slide-in {
   0% {
