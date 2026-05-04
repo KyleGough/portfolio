@@ -1,0 +1,177 @@
+/* Mock GNC/telemetry: row 1 = T+ centered; row 2 = LOX/CH4 | Vrel | Pitch (3 columns). */
+.root {
+  display: grid;
+  /* Equal-width columns so fuel and pitch cells match; strip centred under rocket */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: auto auto;
+  column-gap: 0.5rem;
+  row-gap: 0.45rem;
+  width: min(100%, 22rem);
+  max-width: 100%;
+  margin-inline: auto;
+  min-width: 0;
+  align-items: start;
+  justify-items: stretch;
+  pointer-events: none;
+  filter: drop-shadow(0 0 10px oklch(0% 0 0 / 0.4));
+}
+
+.clockRow {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  padding: 0.15rem 0 0.1rem;
+}
+
+.cellFuel {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.cellVrel {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.cellPitch {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+/* Align pitch strip with fuel meter (same track height, no extra gap under label). */
+.cellPitch .minitrim {
+  margin-top: 0;
+  height: 0.2rem;
+  border-radius: 0.1rem;
+}
+
+.window {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 4.25rem;
+  padding: 0.35rem 0.25rem 0.15rem;
+}
+
+.windowPane {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 0;
+}
+
+.fuelColumn {
+  width: 100%;
+  min-width: 0;
+}
+
+.clock {
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--gothic-cyan, oklch(78% 0.12 200));
+  text-align: center;
+  margin: 0;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.labelRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem;
+  margin-bottom: 0.2rem;
+}
+
+.label {
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
+  font-size: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gothic-faint, oklch(52% 0.03 280));
+}
+
+.value {
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
+  font-size: 0.6rem;
+  line-height: 1.2;
+  color: var(--gothic-cyan, oklch(78% 0.12 200));
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.meter {
+  position: relative;
+  height: 0.2rem;
+  border-radius: 0.1rem;
+  background: oklch(20% 0.02 280 / 0.9);
+  box-shadow: 0 0 0 1px oklch(100% 0 0 / 0.06) inset;
+  overflow: hidden;
+}
+
+.meterFill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    oklch(55% 0.1 200 / 0.4),
+    var(--gothic-cyan, oklch(78% 0.12 200))
+  );
+  box-shadow: 0 0 8px oklch(70% 0.12 200 / 0.3);
+  transition: width 0.35s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .meterFill {
+    transition: none;
+  }
+}
+
+.minitrim {
+  position: relative;
+  height: 0.15rem;
+  margin-top: 0.15rem;
+  border-radius: 0.08rem;
+  background: oklch(25% 0.02 280);
+}
+
+.minitrimTick {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 0.4rem;
+  margin-top: -0.2rem;
+  margin-left: -1px;
+  background: var(--gothic-cyan, oklch(78% 0.12 200));
+  border-radius: 1px;
+  box-shadow: 0 0 4px oklch(70% 0.12 200 / 0.45);
+  transform: translateX(-50%);
+  transition: left 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .minitrimTick {
+    transition: none;
+  }
+}
+
+.units {
+  margin-left: 0.2em;
+  opacity: 0.6;
+  font-size: 0.85em;
+}
+
+@media (max-width: 519px) {
+  .root {
+    width: min(100%, 20rem);
+    column-gap: 0.35rem;
+    row-gap: 0.35rem;
+  }
+}
