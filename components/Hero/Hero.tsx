@@ -1,4 +1,3 @@
-import { FlightTelemetry } from '@components/FlightTelemetry';
 import { Link } from '@components/Link';
 import { LOOP_PERIOD_MISSION_SEC } from '@components/Rocket/MissionTime';
 import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
@@ -33,7 +32,7 @@ export const Hero: React.FC = () => {
       <div
         className={styles.graphic}
         role="img"
-        aria-label="Three-dimensional wireframe of a Falcon Heavy class rocket with animated engine plumes, plus a decorative mock GNC readout: fuel, velocity, pitch, and roll."
+        aria-label="Three-dimensional model of a Falcon Heavy class rocket with animated engine plumes."
       >
         <HeroAnimationActiveContext.Provider value={animationActive}>
           <div
@@ -47,9 +46,6 @@ export const Hero: React.FC = () => {
             }
           >
             <FalconHeavyWireframe />
-            <div className={styles.telemetryBelowRocket}>
-              <FlightTelemetry />
-            </div>
           </div>
         </HeroAnimationActiveContext.Provider>
       </div>
