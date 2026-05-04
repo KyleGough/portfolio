@@ -34,6 +34,15 @@ import {
 
 const CYAN = 0x5bd4ea;
 const CYAN_DIM = 0x3d7a8a;
+
+/**
+ * Yaw (spin about body Y) is driven by mission phase within each loop so it resets with
+ * staging. Offset by −90° so by booster separation (~T+0:30) the triple-body layout reads
+ * clearly from the hero camera. Rate matches legacy `+= 0.0028` per frame at ~60fps.
+ */
+const LOOP_YAW_OFFSET_RAD = -Math.PI / 2;
+const LOOP_YAW_RATE_RAD_PER_MISSION_SEC = 0.0028 * 60;
+
 /** Y mount for all octaweb engine clusters in buildRocket. */
 const Y_MOUNT_CORE = 0.03;
 
@@ -521,7 +530,8 @@ const attachRocketViewport = (
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
     renderer.setSize(w, h, false);
-    fitPerspectiveCameraToObject(camera, pivot, 1.14);
+    const fitMargin = Math.min(w, h) > 420 ? 1.18 : 1.12;
+    fitPerspectiveCameraToObject(camera, pivot, fitMargin);
   };
 
   setSize();
@@ -607,7 +617,10 @@ const attachRocketViewport = (
     }
 
     if (!reducedMotion) {
-      pivot.rotation.y += 0.0028;
+      pivot.rotation.y =
+        LOOP_YAW_OFFSET_RAD + phaseSec * LOOP_YAW_RATE_RAD_PER_MISSION_SEC;
+    } else {
+      pivot.rotation.y = LOOP_YAW_OFFSET_RAD;
     }
     updatePlumeLayersForTick(
       allLayers,
