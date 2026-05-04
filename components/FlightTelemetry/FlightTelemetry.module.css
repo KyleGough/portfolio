@@ -39,6 +39,13 @@
   grid-row: 2;
 }
 
+/* Align pitch strip with fuel meter (same track height, no extra gap under label). */
+.cellPitch .minitrim {
+  margin-top: 0;
+  height: 0.2rem;
+  border-radius: 0.1rem;
+}
+
 .window {
   display: flex;
   flex-direction: column;
@@ -78,12 +85,6 @@
   justify-content: space-between;
   gap: 0.25rem;
   margin-bottom: 0.2rem;
-}
-
-.labelRowInline {
-  justify-content: flex-start;
-  gap: 0.35rem;
-  margin-bottom: 0;
 }
 
 .label {

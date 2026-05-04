@@ -23,12 +23,12 @@ const clamp = (n: number, a: number, b: number): number => {
   return Math.min(b, Math.max(a, n));
 };
 
-/** Relative velocity at T+0 → `VREL_LOOP_MAX` m·s⁻¹ at end of each rocket loop. */
-const VREL_LOOP_MAX = 3489;
+/** Relative velocity at T+0 → `VREL_KMH_MAX` km/h at end of each rocket loop. */
+const VREL_KMH_MAX = 1464;
 
 const vrelForRocketLoop = (phaseMissionSec: number): number => {
   const u = clamp(phaseMissionSec / LOOP_PERIOD_MISSION_SEC, 0, 1);
-  return Math.round(u * VREL_LOOP_MAX);
+  return Math.round(u * VREL_KMH_MAX);
 };
 
 /** Pitch angle 0° at T+0 → 40° at end of each rocket loop. */
@@ -48,7 +48,7 @@ const fuelPctForRocketLoop = (missionSec: number): number => {
 };
 
 /**
- * Mock flight telemetry: T+ (row 1), then LOX/CH4, Vrel, pitch (row 2, three columns).
+ * Mock flight telemetry: T+ (row 1), then LOX/CH4, Vrel (0–1464 km/h), pitch (row 2).
  */
 export const FlightTelemetry: React.FC = () => {
   const animationActive = useHeroAnimationActive();
@@ -107,11 +107,11 @@ export const FlightTelemetry: React.FC = () => {
 
       <section className={`${styles.window} ${styles.cellVrel}`} aria-hidden>
         <div className={styles.windowPane}>
-          <div className={`${styles.labelRow} ${styles.labelRowInline}`}>
+          <div className={styles.labelRow}>
             <span className={styles.label}>Vrel</span>
             <span className={styles.value}>
               {vrel.toLocaleString('en-GB', { useGrouping: true })}
-              <span className={styles.units}>m·s⁻¹</span>
+              <span className={styles.units}>km/h</span>
             </span>
           </div>
         </div>
