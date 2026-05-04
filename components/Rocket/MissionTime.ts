@@ -1,12 +1,12 @@
 /**
- * Shared "mission elapsed" time for the home hero: telemetry (T+ clock) and the
- * Falcon wireframe (booster plume schedule) use the same formula.
+ * Mission elapsed time for the Falcon wireframe: plume schedule, staging, and loop
+ * reset share this timeline.
  *
- * - Clock starts at T+ 0:00.0 on first paint
- * - Mission time advances 0.85 s per 1.0 s wall (decorative)
+ * - Timeline starts at T+ 0:00.0 on first paint
+ * - Mission time advances 1 s per 1 s wall
  */
 
-/** Base mission elapsed time (s) for T+ display: T+0 at load */
+/** Base mission elapsed time (s); T+0 at load */
 export const MISSION_T0 = 0;
 
 /** Mission rate: 1 s per 1 s wall */
@@ -60,9 +60,6 @@ export const LOOP_PERIOD_MISSION_SEC = 60 + 10; // 70 — T+1:10 (rocket loop re
 
 /** Upper stack (S2 + fairing) rises + fades out from this mission second (T+1:05). */
 export const LOOP_UPPER_EXIT_START_MISSION_SEC = 60 + 5; // 65 — T+1:05
-
-/** Flight telemetry fuel gauge: 100% at loop start → this % at loop reset (same instant as wireframe). */
-export const TELEMETRY_FUEL_MIN_PCT = 9;
 
 /** Fade entire rocket in over this many mission seconds after each loop reset (from T+0). */
 export const LOOP_FADE_IN_MISSION_SEC = 5;

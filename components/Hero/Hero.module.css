@@ -112,20 +112,6 @@
   }
 }
 
-/* Mock GNC: docked under the rocket canvas; strip centred on rocket horizontal axis */
-.telemetryBelowRocket {
-  position: relative;
-  z-index: 1;
-  flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  max-width: 100%;
-  margin-top: calc(0.65rem - 2rem);
-  padding-inline: 0;
-  pointer-events: none;
-}
-
 .rocketFrame {
   position: relative;
   width: 100%;
