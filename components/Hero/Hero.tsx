@@ -1,5 +1,6 @@
 import { FlightTelemetry } from '@components/FlightTelemetry';
 import { Link } from '@components/Link';
+import { LOOP_PERIOD_MISSION_SEC } from '@components/Rocket/MissionTime';
 import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
 import { useObserveHeroAnimationActive } from '@hooks/useObserveHeroAnimationActive';
 import dynamic from 'next/dynamic';
@@ -35,7 +36,16 @@ export const Hero: React.FC = () => {
         aria-label="Three-dimensional wireframe of a Falcon Heavy class rocket with animated engine plumes, plus a decorative mock GNC readout: fuel, velocity, pitch, and roll."
       >
         <HeroAnimationActiveContext.Provider value={animationActive}>
-          <div ref={wireframeStageRef} className={styles.wireframeStage}>
+          <div
+            ref={wireframeStageRef}
+            className={styles.wireframeStage}
+            data-rocket-animation-active={animationActive ? 'true' : 'false'}
+            style={
+              {
+                '--hero-rocket-loop-duration': `${LOOP_PERIOD_MISSION_SEC}s`,
+              } as React.CSSProperties
+            }
+          >
             <FalconHeavyWireframe />
             <div className={styles.telemetryOverRocket}>
               <FlightTelemetry />

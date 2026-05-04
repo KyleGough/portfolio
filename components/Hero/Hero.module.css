@@ -32,9 +32,11 @@
 
 @media (min-width: 960px) {
   .slot {
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-    gap: 2rem;
-    padding: 4rem 2rem 3.5rem;
+    grid-template-columns: minmax(0, 1.32fr) minmax(0, 0.68fr);
+    gap: clamp(1.5rem, 2.2vw, 2.75rem);
+    width: min(100%, 100rem);
+    margin-inline: auto;
+    padding: 4.5rem clamp(1.25rem, 2.4vw, 2.75rem) 3.5rem;
   }
 }
 
@@ -51,8 +53,10 @@
 
 @media (min-width: 960px) {
   .graphic {
-    min-height: 24rem;
+    align-self: stretch;
+    width: 100%;
     max-width: none;
+    min-height: min(56vh, 43rem);
     margin-inline: 0;
   }
 }
@@ -65,11 +69,47 @@
   margin-inline: auto;
 }
 
+@media (min-width: 960px) {
+  .wireframeStage {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    max-width: none;
+    min-height: min(52vh, 41rem);
+    margin-inline: 0;
+  }
+}
+
+@keyframes hero-rocket-launch-z {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(40deg);
+  }
+}
+
 .wireframeStage .rocketFrame {
   position: relative;
   z-index: 0;
   width: 100%;
   margin-inline: 0;
+  transform-origin: 50% 45%;
+  animation: hero-rocket-launch-z var(--hero-rocket-loop-duration, 70s) linear
+    infinite;
+}
+
+.wireframeStage[data-rocket-animation-active='false'] .rocketFrame {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wireframeStage .rocketFrame {
+    animation: none;
+    transform: rotateZ(0deg);
+  }
 }
 
 /* Mock GNC: flush to the right edge of the wireframe (same box as the canvas) */
@@ -110,6 +150,34 @@
 @supports (height: 100svh) {
   .rocketFrame {
     max-height: min(70svh, 28rem);
+  }
+}
+
+@media (min-width: 960px) {
+  .rocketFrame,
+  .wireframeStage .rocketFrame {
+    flex: 1 1 auto;
+    width: 100%;
+    max-height: none;
+    min-height: min(47vh, 36rem);
+    margin-inline: 0;
+  }
+}
+
+@supports (height: 100svh) {
+  @media (min-width: 960px) {
+    .graphic {
+      min-height: min(59svh, 45rem);
+    }
+
+    .wireframeStage {
+      min-height: min(58svh, 43rem);
+    }
+
+    .rocketFrame,
+    .wireframeStage .rocketFrame {
+      min-height: min(50svh, 40rem);
+    }
   }
 }
 
