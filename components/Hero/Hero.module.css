@@ -12,13 +12,6 @@
   isolation: isolate;
 }
 
-@supports (height: 100svh) {
-  .slot {
-    /* Small viewport height prevents section gap growth while mobile chrome collapses. */
-    min-height: 88svh;
-  }
-}
-
 /*
  * Single-column hero: avoid stretching rows when min-height exceeds content — extra
  * space belongs below the copy. Otherwise vh/dvh changes while scrolling redistribute
@@ -105,12 +98,6 @@
   margin-inline: auto;
   /* No border or shadow: wireframe blends into space-gothic main */
   background: transparent;
-}
-
-@supports (height: 100svh) {
-  .rocketFrame {
-    max-height: min(70svh, 28rem);
-  }
 }
 
 .rocketCanvasHost {
