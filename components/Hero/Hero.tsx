@@ -46,12 +46,6 @@ export const Hero: React.FC = () => {
             }
           >
             <FalconHeavyWireframe />
-<<<<<<< HEAD
-=======
-            <div className={styles.telemetryBelowRocket}>
-              <FlightTelemetry />
-            </div>
->>>>>>> master
           </div>
         </HeroAnimationActiveContext.Provider>
       </div>
