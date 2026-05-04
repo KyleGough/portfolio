@@ -47,7 +47,7 @@ export const Hero: React.FC = () => {
             }
           >
             <FalconHeavyWireframe />
-            <div className={styles.telemetryOverRocket}>
+            <div className={styles.telemetryBelowRocket}>
               <FlightTelemetry />
             </div>
           </div>

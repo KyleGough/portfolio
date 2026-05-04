@@ -1,43 +1,75 @@
-/* Mock GNC/telemetry: three "windows" overlaid on the wireframe; bg ~80% more transparent */
+/* Mock GNC/telemetry: row 1 = T+ centered; row 2 = LOX/CH4 | Vrel | Pitch (3 columns). */
 .root {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  width: 100%;
+  display: grid;
+  /* Equal-width columns so fuel and pitch cells match; strip centred under rocket */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: auto auto;
+  column-gap: 0.5rem;
+  row-gap: 0.45rem;
+  width: min(100%, 22rem);
+  max-width: 100%;
+  margin-inline: auto;
   min-width: 0;
+  align-items: start;
+  justify-items: stretch;
   pointer-events: none;
   filter: drop-shadow(0 0 10px oklch(0% 0 0 / 0.4));
 }
 
-@media (max-width: 519px) {
-  .root {
-    max-width: 100%;
-  }
+.clockRow {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  padding: 0.15rem 0 0.1rem;
+}
+
+.cellFuel {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.cellVrel {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.cellPitch {
+  grid-column: 3;
+  grid-row: 2;
 }
 
 .window {
-  padding: 0.4rem 0.5rem 0.45rem;
-  /* Prior fill alpha 0.7 -> x0.2 (80% more transparent) */
-  border: 1px solid oklch(100% 0 0 / 0.05);
-  border-radius: 0.3rem;
-  background: oklch(9% 0.03 280 / 0.14);
-  box-shadow:
-    0 0 0 1px oklch(0% 0 0 / 0.05) inset,
-    0 0 20px oklch(40% 0.12 200 / 0.02);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 4.25rem;
+  padding: 0.35rem 0.25rem 0.15rem;
+}
+
+.windowPane {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 0;
+}
+
+.fuelColumn {
+  width: 100%;
+  min-width: 0;
 }
 
 .clock {
   font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
   font-size: 0.7rem;
   font-weight: 500;
+  line-height: 1.15;
   color: var(--gothic-cyan, oklch(78% 0.12 200));
-  text-align: right;
-  margin: 0 0 0.45rem;
-  letter-spacing: 0.06em;
-}
-
-.block {
+  text-align: center;
   margin: 0;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
 }
 
 .labelRow {
@@ -48,10 +80,17 @@
   margin-bottom: 0.2rem;
 }
 
+.labelRowInline {
+  justify-content: flex-start;
+  gap: 0.35rem;
+  margin-bottom: 0;
+}
+
 .label {
   font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
   font-size: 0.5rem;
   font-weight: 500;
+  line-height: 1.2;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--gothic-faint, oklch(52% 0.03 280));
@@ -60,6 +99,7 @@
 .value {
   font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
   font-size: 0.6rem;
+  line-height: 1.2;
   color: var(--gothic-cyan, oklch(78% 0.12 200));
   letter-spacing: 0.02em;
   font-variant-numeric: tabular-nums;
@@ -90,21 +130,6 @@
   .meterFill {
     transition: none;
   }
-}
-
-.chart {
-  display: block;
-  width: 100%;
-  height: auto;
-  color: var(--gothic-cyan, oklch(78% 0.12 200));
-  opacity: 0.92;
-  margin: 0.1rem 0 0;
-}
-
-.pitchRow {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.35rem 0.5rem;
 }
 
 .minitrim {
@@ -140,4 +165,12 @@
   margin-left: 0.2em;
   opacity: 0.6;
   font-size: 0.85em;
+}
+
+@media (max-width: 519px) {
+  .root {
+    width: min(100%, 20rem);
+    column-gap: 0.35rem;
+    row-gap: 0.35rem;
+  }
 }

@@ -112,28 +112,18 @@
   }
 }
 
-/* Mock GNC: flush to the right edge of the wireframe (same box as the canvas) */
-.telemetryOverRocket {
-  position: absolute;
+/* Mock GNC: docked under the rocket canvas; strip centred on rocket horizontal axis */
+.telemetryBelowRocket {
+  position: relative;
   z-index: 1;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  width: min(10.5rem, 40%);
-  min-width: 0;
-  max-height: 96%;
-  overflow: visible;
+  flex-shrink: 0;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 0.65rem;
+  padding-inline: 0;
   pointer-events: none;
-}
-
-@media (max-width: 519px) {
-  .telemetryOverRocket {
-    width: min(9.25rem, 46%);
-    right: 0;
-  }
 }
 
 .rocketFrame {
