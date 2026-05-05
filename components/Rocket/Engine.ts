@@ -161,6 +161,19 @@ export const addEngineBayStructure = (
     ]);
     parent.add(new THREE.Line(braceGeom, material.clone()));
   }
+  // Few radial spokes (hub → ring engines): reads as octaweb without drawing every bay.
+  const spokeY = bayY - 0.014 * scale;
+  const spokeRingK = 0.96;
+  for (const i of [0, 3, 6]) {
+    const a = (i * Math.PI) / 4;
+    const xOuter = Math.cos(a) * ringRadius * spokeRingK;
+    const zOuter = Math.sin(a) * ringRadius * spokeRingK;
+    const spokeGeom = new THREE.BufferGeometry().setFromPoints([
+      new THREE.Vector3(0, spokeY, 0),
+      new THREE.Vector3(xOuter, spokeY, zOuter),
+    ]);
+    parent.add(new THREE.Line(spokeGeom, material.clone()));
+  }
   const mountGeom = new THREE.BufferGeometry().setFromPoints([
     new THREE.Vector3(0, bayY - 0.022 * scale, 0),
     new THREE.Vector3(0, yMount + 0.004 * scale, 0),

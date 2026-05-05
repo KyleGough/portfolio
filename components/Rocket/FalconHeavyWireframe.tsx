@@ -29,6 +29,7 @@ import {
 import {
   addBoosterGridFins,
   addCylinderEdges,
+  addPayloadFairingWithBoatTailEdges,
   addRoundedPayloadFairingEdges,
   addStrut,
 } from './Wireframe';
@@ -143,15 +144,16 @@ const buildRocket = (
     0,
   );
   const fairingR = 0.22;
+  const fairingNeckR = 0.172;
+  const fairingBoatTailH = 0.1;
   const fairingYBase = S1_H + INTERSTAGE_H + S2_H;
-  const fairingDomeR = 0.22;
-  const fairingShoulderH = Math.max(0, FAIRING_H - fairingDomeR);
-  addRoundedPayloadFairingEdges(
+  addPayloadFairingWithBoatTailEdges(
     coreUpper,
     wireMat,
     fairingR,
-    fairingDomeR,
-    fairingShoulderH,
+    fairingNeckR,
+    fairingBoatTailH,
+    FAIRING_H,
     0,
     fairingYBase,
     0,
@@ -544,6 +546,7 @@ const disposeWireframeScene = (scene: THREE.Scene): void => {
   });
 };
 
+/* eslint-disable sonarjs/cognitive-complexity -- attachRocketViewport: mission phases + poses + plumes + lights */
 const attachRocketViewport = (
   mount: HTMLElement,
   getShouldAnimate: () => boolean,
@@ -802,6 +805,7 @@ const attachRocketViewport = (
 
   return { dispose: disposeViewport, resume };
 };
+/* eslint-enable sonarjs/cognitive-complexity */
 
 /**
  * Client-only WebGL: Falcon Heavy style triple-body wireframe (main stage + two boosters).
