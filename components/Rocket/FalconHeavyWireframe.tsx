@@ -27,7 +27,6 @@ import {
 } from './MissionTime';
 import {
   addBoosterGridFins,
-  addConeEdges,
   addCylinderEdges,
   addRoundedPayloadFairingEdges,
   addStrut,
@@ -92,7 +91,7 @@ const buildRocket = (
   const boosterH = 2.95;
   const coreR = S1_BASE_R;
   const boosterR = 0.25;
-  const boosterRTop = 0.24; /* tapers: narrow toward second-stage joint */
+  const boosterRTop = 0.205; /* stronger taper so boosters don't read as straight tubes */
   const boosterOctawebRingR = 0.127; /* ~scaled with diameter vs 0.3 / 0.152 */
 
   // Full first stage: separation seam is S1 / interstage (S1 top — existing ring line)
@@ -169,9 +168,20 @@ const buildRocket = (
       boosterH / 2,
       0,
     );
-    const noseH = 0.34;
-    const noseR = boosterRTop;
-    addConeEdges(b, wireMat, noseR, noseH, 8, 0, boosterH + noseH / 2, 0);
+    // Rounded ogive-like nose: short shoulder + cap reads cleaner than a sharp cone tip.
+    const boosterNoseCapR = boosterRTop;
+    const boosterNoseH = 0.46;
+    const boosterNoseShoulderH = Math.max(0, boosterNoseH - boosterNoseCapR);
+    addRoundedPayloadFairingEdges(
+      b,
+      wireMat,
+      boosterRTop,
+      boosterNoseCapR,
+      boosterNoseShoulderH,
+      0,
+      boosterH,
+      0,
+    );
     addOctawebEngines(b, wireMat, Y_MOUNT_CORE, boosterOctawebRingR, 0.86);
     const finYFlare = 0.12;
     const finYAttach = 0.46;
