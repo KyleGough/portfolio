@@ -7,6 +7,7 @@ import {
   type AddAllEnginePlumesResult,
   type PlumeLayer,
   addAllEnginePlumes,
+  addEngineBayStructure,
   addEngineNozzle,
   addOctawebEngines,
   updatePlumeLayersForTick,
@@ -34,6 +35,7 @@ import {
 
 const CYAN = 0x5bd4ea;
 const CYAN_DIM = 0x3d7a8a;
+const ENGINE_CYAN_DARK = 0x2f8fa3;
 
 /**
  * Yaw (spin about body Y) is driven by mission phase within each loop so it resets with
@@ -68,14 +70,17 @@ const S1_BASE_R = 0.35;
 /** Single MVAC-class bell at second-stage base (interstage / S2 joint). */
 const S2_ENGINE_SCALE = 0.72;
 const S2_ENGINE_Y_MOUNT = S1_H + INTERSTAGE_H;
+const ENGINE_WIREFRAME_OPACITY_FACTOR = 0.42;
 
 const buildRocket = (
   wireMat: THREE.LineBasicMaterial,
   strutMat: THREE.LineBasicMaterial,
+  engineWireMat: THREE.LineBasicMaterial,
 ): {
   body: THREE.Group;
   coreLower: THREE.Group;
   coreUpper: THREE.Group;
+  engineWireGroups: THREE.Group[];
   leftBooster: THREE.Group;
   rightBooster: THREE.Group;
   strutsGroup: THREE.Group;
@@ -84,8 +89,11 @@ const buildRocket = (
   const coreLower = new THREE.Group();
   const coreUpper = new THREE.Group();
   const coreEngineWire = new THREE.Group();
+  const coreUpperEngineWire = new THREE.Group();
   const leftBooster = new THREE.Group();
+  const leftBoosterEngineWire = new THREE.Group();
   const rightBooster = new THREE.Group();
+  const rightBoosterEngineWire = new THREE.Group();
   const strutsGroup = new THREE.Group();
 
   const boosterH = 2.95;
@@ -118,7 +126,8 @@ const buildRocket = (
     S1_H + INTERSTAGE_H / 2,
     0,
   );
-  addOctawebEngines(coreEngineWire, wireMat, Y_MOUNT_CORE, 0.2, 1);
+  addOctawebEngines(coreEngineWire, engineWireMat, Y_MOUNT_CORE, 0.2, 1);
+  addEngineBayStructure(coreEngineWire, engineWireMat, Y_MOUNT_CORE, 0.2, 1);
   coreLower.add(coreEngineWire);
 
   // Second stage, fairing, and single S2 engine (MVAC) — above interstage / seam
@@ -147,14 +156,29 @@ const buildRocket = (
     fairingYBase,
     0,
   );
-  addEngineNozzle(coreUpper, wireMat, 0, 0, S2_ENGINE_Y_MOUNT, S2_ENGINE_SCALE);
+  addEngineNozzle(
+    coreUpperEngineWire,
+    engineWireMat,
+    0,
+    0,
+    S2_ENGINE_Y_MOUNT,
+    S2_ENGINE_SCALE,
+  );
+  addEngineBayStructure(
+    coreUpperEngineWire,
+    engineWireMat,
+    S2_ENGINE_Y_MOUNT,
+    0.08,
+    S2_ENGINE_SCALE,
+  );
+  coreUpper.add(coreUpperEngineWire);
 
   body.add(coreLower, coreUpper);
 
   // Side boosters: local origin at stage center; body-space offset on each group
-  for (const { b, outward } of [
-    { b: leftBooster, outward: -1 as const },
-    { b: rightBooster, outward: 1 as const },
+  for (const { b, outward, engineWire } of [
+    { b: leftBooster, outward: -1 as const, engineWire: leftBoosterEngineWire },
+    { b: rightBooster, outward: 1 as const, engineWire: rightBoosterEngineWire },
   ]) {
     b.position.set(outward * BOOSTER_STAGE_X, 0, 0);
     addCylinderEdges(
@@ -182,7 +206,21 @@ const buildRocket = (
       boosterH,
       0,
     );
-    addOctawebEngines(b, wireMat, Y_MOUNT_CORE, boosterOctawebRingR, 0.86);
+    addOctawebEngines(
+      engineWire,
+      engineWireMat,
+      Y_MOUNT_CORE,
+      boosterOctawebRingR,
+      0.86,
+    );
+    addEngineBayStructure(
+      engineWire,
+      engineWireMat,
+      Y_MOUNT_CORE,
+      boosterOctawebRingR,
+      0.86,
+    );
+    b.add(engineWire);
     const finYFlare = 0.12;
     const finYAttach = 0.46;
     addBoosterGridFins(
@@ -225,6 +263,12 @@ const buildRocket = (
     body,
     coreLower,
     coreUpper,
+    engineWireGroups: [
+      coreEngineWire,
+      coreUpperEngineWire,
+      leftBoosterEngineWire,
+      rightBoosterEngineWire,
+    ],
     leftBooster,
     rightBooster,
     strutsGroup,
@@ -518,6 +562,11 @@ const attachRocketViewport = (
     transparent: true,
     opacity: 0.5,
   });
+  const engineWireMat = new THREE.LineBasicMaterial({
+    color: ENGINE_CYAN_DARK,
+    transparent: true,
+    opacity: 0.72,
+  });
 
   const scene = new THREE.Scene();
   scene.background = null;
@@ -532,8 +581,18 @@ const attachRocketViewport = (
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setClearColor(0x000000, 0);
 
-  const { body, coreLower, coreUpper, leftBooster, rightBooster, strutsGroup } =
-    buildRocket(wireMat, strutMat);
+  const {
+    body,
+    coreLower,
+    coreUpper,
+    engineWireGroups,
+    leftBooster,
+    rightBooster,
+    strutsGroup,
+  } = buildRocket(wireMat, strutMat, engineWireMat);
+  for (const engineWire of engineWireGroups) {
+    setGroupLineOpacityFactor(engineWire, ENGINE_WIREFRAME_OPACITY_FACTOR);
+  }
 
   const plumeSetup: AddAllEnginePlumesResult = addAllEnginePlumes(
     Y_MOUNT_CORE,
@@ -667,6 +726,22 @@ const attachRocketViewport = (
     } else {
       pivot.rotation.y = LOOP_YAW_OFFSET_RAD;
     }
+    setGroupLineOpacityFactor(
+      engineWireGroups[0],
+      ENGINE_WIREFRAME_OPACITY_FACTOR * coreLowerK * loopFadeK,
+    );
+    setGroupLineOpacityFactor(
+      engineWireGroups[1],
+      ENGINE_WIREFRAME_OPACITY_FACTOR * upperStackFadeK * loopFadeK,
+    );
+    setGroupLineOpacityFactor(
+      engineWireGroups[2],
+      ENGINE_WIREFRAME_OPACITY_FACTOR * (t2Wall === null ? loopFadeK : wireAlpha * loopFadeK),
+    );
+    setGroupLineOpacityFactor(
+      engineWireGroups[3],
+      ENGINE_WIREFRAME_OPACITY_FACTOR * (t2Wall === null ? loopFadeK : wireAlpha * loopFadeK),
+    );
     updatePlumeLayersForTick(
       allLayers,
       wallS,
@@ -722,6 +797,7 @@ const attachRocketViewport = (
     disposeWireframeScene(scene);
     wireMat.dispose();
     strutMat.dispose();
+    engineWireMat.dispose();
   };
 
   return { dispose: disposeViewport, resume };

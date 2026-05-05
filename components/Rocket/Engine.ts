@@ -18,23 +18,23 @@ const S2_ENGINE_Y_MOUNT = S1_H + INTERSTAGE_H;
 
 export type PlumeLayer = {
   baseOpacity: number;
+  breathAmp: number;
+  curlAmp: number;
+  curlPhaseX: number;
+  curlPhaseZ: number;
+  curlSpeedX: number;
+  curlSpeedZ: number;
+  flickerCeil: number;
+  flickerFloor: number;
   isBooster: boolean;
   isCore: boolean;
   isUpperStage: boolean;
   mat: THREE.MeshBasicMaterial;
   mesh: THREE.Mesh;
-  phase: number;
   oscSpeedA: number;
   oscSpeedB: number;
-  flickerFloor: number;
-  flickerCeil: number;
+  phase: number;
   pulseAmp: number;
-  breathAmp: number;
-  curlAmp: number;
-  curlSpeedX: number;
-  curlSpeedZ: number;
-  curlPhaseX: number;
-  curlPhaseZ: number;
   tipCurlAmp: number;
 };
 
@@ -121,6 +121,51 @@ export const addOctawebEngines = (
     const oz = Math.sin(a) * ringRadius;
     addEngineNozzle(parent, material, ox, oz, yMount, scale);
   }
+};
+
+/**
+ * Octaweb hints: mounting rings + radial braces so engines feel structurally tied
+ * into the stage base rather than floating nozzles.
+ */
+export const addEngineBayStructure = (
+  parent: THREE.Group | THREE.Object3D,
+  material: THREE.LineBasicMaterial,
+  yMount: number,
+  ringRadius: number,
+  scale: number,
+): void => {
+  const bayY = yMount + 0.032 * scale;
+  const upperR = ringRadius * 1.2;
+  const lowerR = ringRadius * 1.05;
+  addCylinderEdges(parent as THREE.Group, material, upperR, upperR, 0.012 * scale, 8, 0, bayY, 0);
+  addCylinderEdges(
+    parent as THREE.Group,
+    material,
+    lowerR,
+    lowerR,
+    0.01 * scale,
+    8,
+    0,
+    bayY - 0.026 * scale,
+    0,
+  );
+  for (let i = 0; i < 8; i += 1) {
+    const a = (i * Math.PI) / 4;
+    const xUpper = Math.cos(a) * upperR;
+    const zUpper = Math.sin(a) * upperR;
+    const xLower = Math.cos(a + Math.PI / 8) * lowerR;
+    const zLower = Math.sin(a + Math.PI / 8) * lowerR;
+    const braceGeom = new THREE.BufferGeometry().setFromPoints([
+      new THREE.Vector3(xUpper, bayY, zUpper),
+      new THREE.Vector3(xLower, bayY - 0.026 * scale, zLower),
+    ]);
+    parent.add(new THREE.Line(braceGeom, material.clone()));
+  }
+  const mountGeom = new THREE.BufferGeometry().setFromPoints([
+    new THREE.Vector3(0, bayY - 0.022 * scale, 0),
+    new THREE.Vector3(0, yMount + 0.004 * scale, 0),
+  ]);
+  parent.add(new THREE.Line(mountGeom, material.clone()));
 };
 
 /**
