@@ -5,7 +5,9 @@ import styles from '../Hero/Hero.module.css';
 import { useHeroAnimationActive } from '../Hero/HeroAnimationContext';
 import {
   type AddAllEnginePlumesResult,
+  type PlumeLayer,
   addAllEnginePlumes,
+  addEngineBayStructure,
   addEngineNozzle,
   addOctawebEngines,
   updatePlumeLayersForTick,
@@ -26,14 +28,15 @@ import {
 } from './MissionTime';
 import {
   addBoosterGridFins,
-  addConeEdges,
   addCylinderEdges,
+  addPayloadFairingWithBoatTailEdges,
   addRoundedPayloadFairingEdges,
   addStrut,
 } from './Wireframe';
 
 const CYAN = 0x5bd4ea;
 const CYAN_DIM = 0x3d7a8a;
+const ENGINE_CYAN_DARK = 0x2f8fa3;
 
 /**
  * Yaw (spin about body Y) is driven by mission phase within each loop so it resets with
@@ -62,20 +65,25 @@ const CORE_UPPER_RISE = 1.15;
 const S1_H = 3.12;
 const INTERSTAGE_H = 0.2;
 const S2_H = 0.92;
+/** Short shoulder right above the interstage so S2 reads as a separate stage. */
+const S2_SHOULDER_H = 0.18;
 const FAIRING_H = 0.8;
 const S1_TOP_R = 0.32;
 const S1_BASE_R = 0.35;
 /** Single MVAC-class bell at second-stage base (interstage / S2 joint). */
 const S2_ENGINE_SCALE = 0.72;
 const S2_ENGINE_Y_MOUNT = S1_H + INTERSTAGE_H;
+const ENGINE_WIREFRAME_OPACITY_FACTOR = 0.65;
 
 const buildRocket = (
   wireMat: THREE.LineBasicMaterial,
   strutMat: THREE.LineBasicMaterial,
+  engineWireMat: THREE.LineBasicMaterial,
 ): {
   body: THREE.Group;
   coreLower: THREE.Group;
   coreUpper: THREE.Group;
+  engineWireGroups: THREE.Group[];
   leftBooster: THREE.Group;
   rightBooster: THREE.Group;
   strutsGroup: THREE.Group;
@@ -84,14 +92,17 @@ const buildRocket = (
   const coreLower = new THREE.Group();
   const coreUpper = new THREE.Group();
   const coreEngineWire = new THREE.Group();
+  const coreUpperEngineWire = new THREE.Group();
   const leftBooster = new THREE.Group();
+  const leftBoosterEngineWire = new THREE.Group();
   const rightBooster = new THREE.Group();
+  const rightBoosterEngineWire = new THREE.Group();
   const strutsGroup = new THREE.Group();
 
   const boosterH = 2.95;
   const coreR = S1_BASE_R;
   const boosterR = 0.25;
-  const boosterRTop = 0.24; /* tapers: narrow toward second-stage joint */
+  const boosterRTop = 0.205; /* stronger taper so boosters don't read as straight tubes */
   const boosterOctawebRingR = 0.127; /* ~scaled with diameter vs 0.3 / 0.152 */
 
   // Full first stage: separation seam is S1 / interstage (S1 top — existing ring line)
@@ -118,43 +129,77 @@ const buildRocket = (
     S1_H + INTERSTAGE_H / 2,
     0,
   );
-  addOctawebEngines(coreEngineWire, wireMat, Y_MOUNT_CORE, 0.2, 1);
+  addOctawebEngines(coreEngineWire, engineWireMat, Y_MOUNT_CORE, 0.2, 1);
+  addEngineBayStructure(coreEngineWire, engineWireMat, Y_MOUNT_CORE, 0.2, 1);
   coreLower.add(coreEngineWire);
 
   // Second stage, fairing, and single S2 engine (MVAC) — above interstage / seam
+  const s2BaseY = S1_H + INTERSTAGE_H;
+  const s2BodyH = S2_H - S2_SHOULDER_H;
+  // Thin ring seam sitting just above the interstage.
+  addCylinderEdges(coreUpper, wireMat, 0.3, 0.3, 0.028, 16, 0, s2BaseY + 0.014, 0);
+  // Short shoulder that steps in from interstage diameter toward the upper stage tank.
+  addCylinderEdges(
+    coreUpper,
+    wireMat,
+    0.24,
+    0.225,
+    S2_SHOULDER_H,
+    10,
+    0,
+    s2BaseY + S2_SHOULDER_H * 0.5,
+    0,
+  );
+  // Main S2 body above the shoulder.
   addCylinderEdges(
     coreUpper,
     wireMat,
     0.2,
     0.22,
-    S2_H,
+    s2BodyH,
     10,
     0,
-    S1_H + INTERSTAGE_H + S2_H / 2,
+    s2BaseY + S2_SHOULDER_H + s2BodyH * 0.5,
     0,
   );
   const fairingR = 0.22;
+  const fairingNeckR = 0.172;
+  const fairingBoatTailH = 0.1;
   const fairingYBase = S1_H + INTERSTAGE_H + S2_H;
-  const fairingDomeR = 0.22;
-  const fairingShoulderH = Math.max(0, FAIRING_H - fairingDomeR);
-  addRoundedPayloadFairingEdges(
+  addPayloadFairingWithBoatTailEdges(
     coreUpper,
     wireMat,
     fairingR,
-    fairingDomeR,
-    fairingShoulderH,
+    fairingNeckR,
+    fairingBoatTailH,
+    FAIRING_H,
     0,
     fairingYBase,
     0,
   );
-  addEngineNozzle(coreUpper, wireMat, 0, 0, S2_ENGINE_Y_MOUNT, S2_ENGINE_SCALE);
+  addEngineNozzle(
+    coreUpperEngineWire,
+    engineWireMat,
+    0,
+    0,
+    S2_ENGINE_Y_MOUNT,
+    S2_ENGINE_SCALE,
+  );
+  addEngineBayStructure(
+    coreUpperEngineWire,
+    engineWireMat,
+    S2_ENGINE_Y_MOUNT,
+    0.08,
+    S2_ENGINE_SCALE,
+  );
+  coreUpper.add(coreUpperEngineWire);
 
   body.add(coreLower, coreUpper);
 
   // Side boosters: local origin at stage center; body-space offset on each group
-  for (const { b, outward } of [
-    { b: leftBooster, outward: -1 as const },
-    { b: rightBooster, outward: 1 as const },
+  for (const { b, outward, engineWire } of [
+    { b: leftBooster, outward: -1 as const, engineWire: leftBoosterEngineWire },
+    { b: rightBooster, outward: 1 as const, engineWire: rightBoosterEngineWire },
   ]) {
     b.position.set(outward * BOOSTER_STAGE_X, 0, 0);
     addCylinderEdges(
@@ -168,10 +213,35 @@ const buildRocket = (
       boosterH / 2,
       0,
     );
-    const noseH = 0.34;
-    const noseR = boosterRTop;
-    addConeEdges(b, wireMat, noseR, noseH, 8, 0, boosterH + noseH / 2, 0);
-    addOctawebEngines(b, wireMat, Y_MOUNT_CORE, boosterOctawebRingR, 0.86);
+    // Rounded ogive-like nose: short shoulder + cap reads cleaner than a sharp cone tip.
+    const boosterNoseCapR = boosterRTop;
+    const boosterNoseH = 0.46;
+    const boosterNoseShoulderH = Math.max(0, boosterNoseH - boosterNoseCapR);
+    addRoundedPayloadFairingEdges(
+      b,
+      wireMat,
+      boosterRTop,
+      boosterNoseCapR,
+      boosterNoseShoulderH,
+      0,
+      boosterH,
+      0,
+    );
+    addOctawebEngines(
+      engineWire,
+      engineWireMat,
+      Y_MOUNT_CORE,
+      boosterOctawebRingR,
+      0.86,
+    );
+    addEngineBayStructure(
+      engineWire,
+      engineWireMat,
+      Y_MOUNT_CORE,
+      boosterOctawebRingR,
+      0.86,
+    );
+    b.add(engineWire);
     const finYFlare = 0.12;
     const finYAttach = 0.46;
     addBoosterGridFins(
@@ -214,6 +284,12 @@ const buildRocket = (
     body,
     coreLower,
     coreUpper,
+    engineWireGroups: [
+      coreEngineWire,
+      coreUpperEngineWire,
+      leftBoosterEngineWire,
+      rightBoosterEngineWire,
+    ],
     leftBooster,
     rightBooster,
     strutsGroup,
@@ -452,6 +528,26 @@ const resetCoreStagingPose = (
   setGroupLineOpacityFactor(coreLower, loopFadeK);
 };
 
+const averagePlumeBrightness = (
+  layers: readonly PlumeLayer[],
+  pick: (layer: PlumeLayer) => boolean,
+): number => {
+  let sum = 0;
+  let count = 0;
+  for (const layer of layers) {
+    if (!pick(layer)) {
+      continue;
+    }
+    const base = Math.max(0.001, layer.baseOpacity);
+    sum += layer.mat.opacity / base;
+    count += 1;
+  }
+  if (count === 0) {
+    return 0;
+  }
+  return Math.min(1, Math.max(0, sum / count));
+};
+
 const disposeWireframeScene = (scene: THREE.Scene): void => {
   scene.traverse((obj) => {
     if (!(obj instanceof THREE.Line || obj instanceof THREE.LineSegments)) {
@@ -469,6 +565,7 @@ const disposeWireframeScene = (scene: THREE.Scene): void => {
   });
 };
 
+/* eslint-disable sonarjs/cognitive-complexity -- attachRocketViewport: mission phases + poses + plumes + lights */
 const attachRocketViewport = (
   mount: HTMLElement,
   getShouldAnimate: () => boolean,
@@ -487,6 +584,11 @@ const attachRocketViewport = (
     transparent: true,
     opacity: 0.5,
   });
+  const engineWireMat = new THREE.LineBasicMaterial({
+    color: ENGINE_CYAN_DARK,
+    transparent: true,
+    opacity: 0.72,
+  });
 
   const scene = new THREE.Scene();
   scene.background = null;
@@ -501,8 +603,18 @@ const attachRocketViewport = (
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setClearColor(0x000000, 0);
 
-  const { body, coreLower, coreUpper, leftBooster, rightBooster, strutsGroup } =
-    buildRocket(wireMat, strutMat);
+  const {
+    body,
+    coreLower,
+    coreUpper,
+    engineWireGroups,
+    leftBooster,
+    rightBooster,
+    strutsGroup,
+  } = buildRocket(wireMat, strutMat, engineWireMat);
+  for (const engineWire of engineWireGroups) {
+    setGroupLineOpacityFactor(engineWire, ENGINE_WIREFRAME_OPACITY_FACTOR);
+  }
 
   const plumeSetup: AddAllEnginePlumesResult = addAllEnginePlumes(
     Y_MOUNT_CORE,
@@ -516,6 +628,20 @@ const attachRocketViewport = (
   );
   const { allLayers, disposers: plumeDisposers } = plumeSetup;
   centerObjectAtOrigin(body);
+
+  // Blue-white cast near nozzles, intensity driven by live plume brightness.
+  const corePlumeLight = new THREE.PointLight(0xc8dcff, 0, 2.4, 2);
+  corePlumeLight.position.set(0, Y_MOUNT_CORE - 0.1, 0);
+  coreLower.add(corePlumeLight);
+  const leftBoosterPlumeLight = new THREE.PointLight(0xc8dcff, 0, 2.1, 2);
+  leftBoosterPlumeLight.position.set(0, Y_MOUNT_CORE - 0.08, 0);
+  leftBooster.add(leftBoosterPlumeLight);
+  const rightBoosterPlumeLight = new THREE.PointLight(0xc8dcff, 0, 2.1, 2);
+  rightBoosterPlumeLight.position.set(0, Y_MOUNT_CORE - 0.08, 0);
+  rightBooster.add(rightBoosterPlumeLight);
+  const upperPlumeLight = new THREE.PointLight(0xd6e6ff, 0, 1.7, 2);
+  upperPlumeLight.position.set(0, S2_ENGINE_Y_MOUNT - 0.08, 0);
+  coreUpper.add(upperPlumeLight);
 
   const pivot = new THREE.Group();
   pivot.add(body);
@@ -622,9 +748,26 @@ const attachRocketViewport = (
     } else {
       pivot.rotation.y = LOOP_YAW_OFFSET_RAD;
     }
+    setGroupLineOpacityFactor(
+      engineWireGroups[0],
+      ENGINE_WIREFRAME_OPACITY_FACTOR * coreLowerK * loopFadeK,
+    );
+    setGroupLineOpacityFactor(
+      engineWireGroups[1],
+      ENGINE_WIREFRAME_OPACITY_FACTOR * upperStackFadeK * loopFadeK,
+    );
+    setGroupLineOpacityFactor(
+      engineWireGroups[2],
+      ENGINE_WIREFRAME_OPACITY_FACTOR * (t2Wall === null ? loopFadeK : wireAlpha * loopFadeK),
+    );
+    setGroupLineOpacityFactor(
+      engineWireGroups[3],
+      ENGINE_WIREFRAME_OPACITY_FACTOR * (t2Wall === null ? loopFadeK : wireAlpha * loopFadeK),
+    );
     updatePlumeLayersForTick(
       allLayers,
       wallS,
+      phaseSec,
       corePlumeK,
       plumeMul,
       s2PlumeK,
@@ -632,6 +775,20 @@ const attachRocketViewport = (
       loopFadeK,
       upperStackFadeK,
     );
+    const coreBrightness = averagePlumeBrightness(allLayers, (layer) => layer.isCore);
+    const boosterBrightness = averagePlumeBrightness(
+      allLayers,
+      (layer) => layer.isBooster,
+    );
+    const upperBrightness = averagePlumeBrightness(
+      allLayers,
+      (layer) => layer.isUpperStage,
+    );
+    corePlumeLight.intensity = coreBrightness * 1.05 * corePlumeK * loopFadeK;
+    const boosterLightI = boosterBrightness * 0.95 * plumeMul * loopFadeK;
+    leftBoosterPlumeLight.intensity = boosterLightI;
+    rightBoosterPlumeLight.intensity = boosterLightI;
+    upperPlumeLight.intensity = upperBrightness * 1.2 * s2PlumeK * upperStackFadeK;
     renderer.render(scene, camera);
     rafId = window.requestAnimationFrame(tick);
   };
@@ -662,10 +819,12 @@ const attachRocketViewport = (
     disposeWireframeScene(scene);
     wireMat.dispose();
     strutMat.dispose();
+    engineWireMat.dispose();
   };
 
   return { dispose: disposeViewport, resume };
 };
+/* eslint-enable sonarjs/cognitive-complexity */
 
 /**
  * Client-only WebGL: Falcon Heavy style triple-body wireframe (main stage + two boosters).

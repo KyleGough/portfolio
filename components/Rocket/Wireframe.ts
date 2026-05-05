@@ -142,6 +142,51 @@ export const addBoosterGridFins = (
 };
 
 /**
+ * Payload fairing profile: inward frustum at the base (boat-tail from stage) +
+ * constant-radius shoulder + hemispherical nose. Vertical span ≈ totalHeight.
+ * (Reads less like “cylinder + dome on top”.)
+ */
+export const addPayloadFairingWithBoatTailEdges = (
+  parent: THREE.Group,
+  material: THREE.LineBasicMaterial,
+  baseRadius: number,
+  neckRadius: number,
+  boatTailH: number,
+  totalHeight: number,
+  x: number,
+  yBase: number,
+  z: number,
+): void => {
+  if (boatTailH > 1e-4) {
+    addCylinderEdges(
+      parent,
+      material,
+      baseRadius,
+      neckRadius,
+      boatTailH,
+      10,
+      x,
+      yBase + boatTailH * 0.5,
+      z,
+    );
+  }
+  const capR = neckRadius;
+  const cylH = Math.max(1e-4, totalHeight - boatTailH - capR);
+  addCylinderEdges(
+    parent,
+    material,
+    neckRadius,
+    neckRadius,
+    cylH,
+    10,
+    x,
+    yBase + boatTailH + cylH * 0.5,
+    z,
+  );
+  addMainStageNose(parent, material, capR, 10, x, yBase + boatTailH + cylH, z);
+};
+
+/**
  * Cyl shoulder + spherical cap. Total height = shoulderH + capRadius.
  */
 export const addRoundedPayloadFairingEdges = (
