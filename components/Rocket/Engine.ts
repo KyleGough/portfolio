@@ -24,6 +24,12 @@ export type PlumeLayer = {
   mat: THREE.MeshBasicMaterial;
   mesh: THREE.Mesh;
   phase: number;
+  oscSpeedA: number;
+  oscSpeedB: number;
+  flickerFloor: number;
+  flickerCeil: number;
+  pulseAmp: number;
+  breathAmp: number;
 };
 
 export type AddAllEnginePlumesResult = {
@@ -123,9 +129,9 @@ const addEnginePlumeGroup = (
   const phase = spec.phase;
   // Frustum: narrow at nozzle (top, +Y), flares down (-Y) like real exhaust
   const r0 = 0.022 * s;
-  const hOuter = 0.42 * s;
-  const hGold = 0.28 * s;
-  const hCore = 0.14 * s;
+  const hOuter = 0.84 * s;
+  const hGold = 0.56 * s;
+  const hCore = 0.28 * s;
   const layers: PlumeLayer[] = [];
   const group = new THREE.Group();
   group.position.set(spec.x, 0, spec.z);
@@ -160,14 +166,20 @@ const addEnginePlumeGroup = (
       mat,
       mesh,
       phase: phase + j * 0.37,
+      oscSpeedA: THREE.MathUtils.randFloat(15.5, 26),
+      oscSpeedB: THREE.MathUtils.randFloat(23, 36),
+      flickerFloor: THREE.MathUtils.randFloat(0.62, 0.78),
+      flickerCeil: THREE.MathUtils.randFloat(0.22, 0.36),
+      pulseAmp: THREE.MathUtils.randFloat(0.08, 0.16),
+      breathAmp: THREE.MathUtils.randFloat(0.09, 0.18),
     });
   };
 
   // Wider, softer outer
   addLayer(
     hOuter,
-    r0 * 0.55,
-    r0 * 2.6,
+    r0 * 0.78,
+    r0 * 3.35,
     PLUME_ORANGE,
     reducedMotion ? 0.14 : 0.22,
     0,
@@ -175,8 +187,8 @@ const addEnginePlumeGroup = (
   // Mid bright
   addLayer(
     hGold,
-    r0 * 0.35,
-    r0 * 1.4,
+    r0 * 0.5,
+    r0 * 1.9,
     PLUME_GOLD,
     reducedMotion ? 0.18 : 0.3,
     1,
@@ -184,8 +196,8 @@ const addEnginePlumeGroup = (
   // Hot core
   addLayer(
     hCore,
-    r0 * 0.12,
-    r0 * 0.5,
+    r0 * 0.18,
+    r0 * 0.72,
     PLUME_CORE,
     reducedMotion ? 0.35 : 0.55,
     2,
@@ -348,12 +360,12 @@ export const updatePlumeLayersForTick = (
     return;
   }
   for (const layer of layers) {
-    const f = Math.sin(wallS * 19.5 + layer.phase);
-    const g = 0.5 + 0.5 * Math.sin(wallS * 29 + layer.phase * 1.63);
-    const flicker = 0.72 + 0.28 * g;
+    const f = Math.sin(wallS * layer.oscSpeedA + layer.phase);
+    const g = 0.5 + 0.5 * Math.sin(wallS * layer.oscSpeedB + layer.phase * 1.63);
+    const flicker = layer.flickerFloor + layer.flickerCeil * g;
     setOpacity(layer, flicker);
-    const pulse = 1 + 0.1 * f;
-    const breath = 0.94 + 0.12 * g;
+    const pulse = 1 + layer.pulseAmp * f;
+    const breath = 0.94 + layer.breathAmp * g;
     layer.mesh.scale.set(pulse, breath, pulse);
   }
 };
