@@ -30,6 +30,12 @@ export type PlumeLayer = {
   flickerCeil: number;
   pulseAmp: number;
   breathAmp: number;
+  curlAmp: number;
+  curlSpeedX: number;
+  curlSpeedZ: number;
+  curlPhaseX: number;
+  curlPhaseZ: number;
+  tipCurlAmp: number;
 };
 
 export type AddAllEnginePlumesResult = {
@@ -153,9 +159,9 @@ const addEnginePlumeGroup = (
       blending: THREE.AdditiveBlending,
     });
     const mesh = new THREE.Mesh(geom, mat);
-    // Cylinder: top (small) at y = +h/2, large bottom at y = -h/2 — top sits at engine exhaust
-    const cy = tipY - height * 0.5;
-    mesh.position.y = cy;
+    // Anchor at nozzle: move geometry down so local origin is at the top of the plume.
+    geom.translate(0, -height * 0.5, 0);
+    mesh.position.y = tipY;
     mat.side = THREE.DoubleSide;
     group.add(mesh);
     layers.push({
@@ -172,6 +178,12 @@ const addEnginePlumeGroup = (
       flickerCeil: THREE.MathUtils.randFloat(0.22, 0.36),
       pulseAmp: THREE.MathUtils.randFloat(0.08, 0.16),
       breathAmp: THREE.MathUtils.randFloat(0.09, 0.18),
+      curlAmp: THREE.MathUtils.randFloat(0.008, 0.024) * s,
+      curlSpeedX: THREE.MathUtils.randFloat(1.8, 3.6),
+      curlSpeedZ: THREE.MathUtils.randFloat(1.6, 3.2),
+      curlPhaseX: THREE.MathUtils.randFloat(-Math.PI, Math.PI),
+      curlPhaseZ: THREE.MathUtils.randFloat(-Math.PI, Math.PI),
+      tipCurlAmp: THREE.MathUtils.randFloat(0.03, 0.075),
     });
   };
 
@@ -336,6 +348,7 @@ const plumeLayerMul = (
 export const updatePlumeLayersForTick = (
   layers: readonly PlumeLayer[],
   wallS: number,
+  phaseSec: number,
   corePlumeK: number,
   plumeMul: number,
   s2PlumeK: number,
@@ -347,6 +360,16 @@ export const updatePlumeLayersForTick = (
     plumeLayerMul(layer, corePlumeK, plumeMul, s2PlumeK) *
     (layer.isUpperStage ? upperStackFadeK : 1);
 
+  const pressureByPhase = (sec: number): number => {
+    if (sec <= 35) {
+      return THREE.MathUtils.lerp(1, 0.55, sec / 35);
+    }
+    if (sec <= 60) {
+      return THREE.MathUtils.lerp(0.55, 0.28, (sec - 35) / 25);
+    }
+    return THREE.MathUtils.lerp(0.28, 0.12, Math.min(1, (sec - 60) / 10));
+  };
+
   const setOpacity = (layer: PlumeLayer, flicker: number): void => {
     const o = layer.baseOpacity * flicker * plumeMulOnly(layer) * loopFadeK;
     layer.mat.opacity = o;
@@ -356,16 +379,61 @@ export const updatePlumeLayersForTick = (
   if (reducedMotion) {
     for (const layer of layers) {
       setOpacity(layer, 1);
+      const stageK = plumeMulOnly(layer);
+      const pressureK = Math.min(
+        1,
+        Math.max(
+          0,
+          pressureByPhase(phaseSec) + (layer.isUpperStage ? -0.16 : 0.06),
+        ),
+      );
+      const radialPressure = THREE.MathUtils.lerp(1.36, 0.88, pressureK);
+      const axialPressure = THREE.MathUtils.lerp(1.24, 0.92, pressureK);
+      layer.mesh.scale.set(radialPressure, axialPressure * stageK, radialPressure);
+      layer.mesh.position.x = 0;
+      layer.mesh.position.z = 0;
+      layer.mesh.rotation.x = 0;
+      layer.mesh.rotation.z = 0;
     }
     return;
   }
   for (const layer of layers) {
+    const stageK = plumeMulOnly(layer);
+    const pressureK = Math.min(
+      1,
+      Math.max(
+        0,
+        pressureByPhase(phaseSec) + (layer.isUpperStage ? -0.16 : 0.06),
+      ),
+    );
+    const radialPressure = THREE.MathUtils.lerp(1.38, 0.86, pressureK);
+    const axialPressure = THREE.MathUtils.lerp(1.26, 0.9, pressureK);
     const f = Math.sin(wallS * layer.oscSpeedA + layer.phase);
     const g = 0.5 + 0.5 * Math.sin(wallS * layer.oscSpeedB + layer.phase * 1.63);
     const flicker = layer.flickerFloor + layer.flickerCeil * g;
     setOpacity(layer, flicker);
     const pulse = 1 + layer.pulseAmp * f;
     const breath = 0.94 + layer.breathAmp * g;
-    layer.mesh.scale.set(pulse, breath, pulse);
+    layer.mesh.scale.set(
+      pulse * radialPressure,
+      breath * axialPressure * stageK,
+      pulse * radialPressure,
+    );
+    const curlK = layer.curlAmp * (0.65 + 0.35 * g) * Math.max(0.3, stageK);
+    layer.mesh.position.x =
+      Math.sin(wallS * layer.curlSpeedX + layer.phase + layer.curlPhaseX) *
+      curlK *
+      0.34;
+    layer.mesh.position.z =
+      Math.sin(wallS * layer.curlSpeedZ + layer.phase * 1.17 + layer.curlPhaseZ) *
+      curlK *
+      0.34;
+    const tipCurlK = layer.tipCurlAmp * (0.72 + 0.28 * f) * Math.max(0.3, stageK);
+    layer.mesh.rotation.x =
+      Math.sin(wallS * (layer.curlSpeedX * 0.82) + layer.phase * 1.11 + layer.curlPhaseX) *
+      tipCurlK;
+    layer.mesh.rotation.z =
+      Math.sin(wallS * (layer.curlSpeedZ * 0.87) + layer.phase * 1.19 + layer.curlPhaseZ) *
+      tipCurlK;
   }
 };

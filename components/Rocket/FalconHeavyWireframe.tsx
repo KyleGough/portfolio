@@ -5,6 +5,7 @@ import styles from '../Hero/Hero.module.css';
 import { useHeroAnimationActive } from '../Hero/HeroAnimationContext';
 import {
   type AddAllEnginePlumesResult,
+  type PlumeLayer,
   addAllEnginePlumes,
   addEngineNozzle,
   addOctawebEngines,
@@ -452,6 +453,26 @@ const resetCoreStagingPose = (
   setGroupLineOpacityFactor(coreLower, loopFadeK);
 };
 
+const averagePlumeBrightness = (
+  layers: readonly PlumeLayer[],
+  pick: (layer: PlumeLayer) => boolean,
+): number => {
+  let sum = 0;
+  let count = 0;
+  for (const layer of layers) {
+    if (!pick(layer)) {
+      continue;
+    }
+    const base = Math.max(0.001, layer.baseOpacity);
+    sum += layer.mat.opacity / base;
+    count += 1;
+  }
+  if (count === 0) {
+    return 0;
+  }
+  return Math.min(1, Math.max(0, sum / count));
+};
+
 const disposeWireframeScene = (scene: THREE.Scene): void => {
   scene.traverse((obj) => {
     if (!(obj instanceof THREE.Line || obj instanceof THREE.LineSegments)) {
@@ -516,6 +537,20 @@ const attachRocketViewport = (
   );
   const { allLayers, disposers: plumeDisposers } = plumeSetup;
   centerObjectAtOrigin(body);
+
+  // Blue-white cast near nozzles, intensity driven by live plume brightness.
+  const corePlumeLight = new THREE.PointLight(0xc8dcff, 0, 2.4, 2);
+  corePlumeLight.position.set(0, Y_MOUNT_CORE - 0.1, 0);
+  coreLower.add(corePlumeLight);
+  const leftBoosterPlumeLight = new THREE.PointLight(0xc8dcff, 0, 2.1, 2);
+  leftBoosterPlumeLight.position.set(0, Y_MOUNT_CORE - 0.08, 0);
+  leftBooster.add(leftBoosterPlumeLight);
+  const rightBoosterPlumeLight = new THREE.PointLight(0xc8dcff, 0, 2.1, 2);
+  rightBoosterPlumeLight.position.set(0, Y_MOUNT_CORE - 0.08, 0);
+  rightBooster.add(rightBoosterPlumeLight);
+  const upperPlumeLight = new THREE.PointLight(0xd6e6ff, 0, 1.7, 2);
+  upperPlumeLight.position.set(0, S2_ENGINE_Y_MOUNT - 0.08, 0);
+  coreUpper.add(upperPlumeLight);
 
   const pivot = new THREE.Group();
   pivot.add(body);
@@ -625,6 +660,7 @@ const attachRocketViewport = (
     updatePlumeLayersForTick(
       allLayers,
       wallS,
+      phaseSec,
       corePlumeK,
       plumeMul,
       s2PlumeK,
@@ -632,6 +668,20 @@ const attachRocketViewport = (
       loopFadeK,
       upperStackFadeK,
     );
+    const coreBrightness = averagePlumeBrightness(allLayers, (layer) => layer.isCore);
+    const boosterBrightness = averagePlumeBrightness(
+      allLayers,
+      (layer) => layer.isBooster,
+    );
+    const upperBrightness = averagePlumeBrightness(
+      allLayers,
+      (layer) => layer.isUpperStage,
+    );
+    corePlumeLight.intensity = coreBrightness * 1.05 * corePlumeK * loopFadeK;
+    const boosterLightI = boosterBrightness * 0.95 * plumeMul * loopFadeK;
+    leftBoosterPlumeLight.intensity = boosterLightI;
+    rightBoosterPlumeLight.intensity = boosterLightI;
+    upperPlumeLight.intensity = upperBrightness * 1.2 * s2PlumeK * upperStackFadeK;
     renderer.render(scene, camera);
     rafId = window.requestAnimationFrame(tick);
   };
