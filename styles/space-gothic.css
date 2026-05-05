@@ -106,14 +106,14 @@
       90deg,
       oklch(100% 0 0 / 0.065) 0,
       oklch(100% 0 0 / 0.065) 1px,
-      transparent 1px,
+      transparent 2px,
       transparent 80px
     ),
     linear-gradient(
       180deg,
       oklch(100% 0 0 / 0.065) 0,
       oklch(100% 0 0 / 0.065) 1px,
-      transparent 1px,
+      transparent 2px,
       transparent 80px
     );
   background-size: 80px 80px;
@@ -123,7 +123,7 @@
     white 50%,
     rgba(255, 255, 255, 0) 100%
   );
-  opacity: 0.62;
+  opacity: 0.75;
 }
 
 @media (prefers-reduced-motion: reduce) {

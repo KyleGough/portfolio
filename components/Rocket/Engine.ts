@@ -55,7 +55,6 @@ const addInvertedCone = (
   const geometry = new THREE.ConeGeometry(radius, height, CONE_SEGMENTS, 1);
   const edges = new THREE.EdgesGeometry(geometry);
   const line = new THREE.LineSegments(edges, material.clone());
-  line.rotation.x = Math.PI;
   line.position.set(x, yCenter, z);
   parent.add(line);
   geometry.dispose();
@@ -70,16 +69,16 @@ export const addEngineNozzle = (
   yMount: number,
   scale: number,
 ): void => {
-  const hStem = 0.052 * scale;
+  const hStem = 0.052 * scale * 0.33;
   const hBell = 0.1 * scale;
   const rBell = 0.068 * scale;
   addCylinderEdges(
     parent,
     material,
-    0.034 * scale,
     0.042 * scale,
+    0.032 * scale,
     hStem,
-    6,
+    4,
     x,
     yMount - hStem * 0.5,
     z,
