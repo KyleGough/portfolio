@@ -65,6 +65,8 @@ const CORE_UPPER_RISE = 1.15;
 const S1_H = 3.12;
 const INTERSTAGE_H = 0.2;
 const S2_H = 0.92;
+/** Short shoulder right above the interstage so S2 reads as a separate stage. */
+const S2_SHOULDER_H = 0.18;
 const FAIRING_H = 0.8;
 const S1_TOP_R = 0.32;
 const S1_BASE_R = 0.35;
@@ -132,15 +134,32 @@ const buildRocket = (
   coreLower.add(coreEngineWire);
 
   // Second stage, fairing, and single S2 engine (MVAC) — above interstage / seam
+  const s2BaseY = S1_H + INTERSTAGE_H;
+  const s2BodyH = S2_H - S2_SHOULDER_H;
+  // Thin ring seam sitting just above the interstage.
+  addCylinderEdges(coreUpper, wireMat, 0.3, 0.3, 0.028, 16, 0, s2BaseY + 0.014, 0);
+  // Short shoulder that steps in from interstage diameter toward the upper stage tank.
+  addCylinderEdges(
+    coreUpper,
+    wireMat,
+    0.24,
+    0.225,
+    S2_SHOULDER_H,
+    10,
+    0,
+    s2BaseY + S2_SHOULDER_H * 0.5,
+    0,
+  );
+  // Main S2 body above the shoulder.
   addCylinderEdges(
     coreUpper,
     wireMat,
     0.2,
     0.22,
-    S2_H,
+    s2BodyH,
     10,
     0,
-    S1_H + INTERSTAGE_H + S2_H / 2,
+    s2BaseY + S2_SHOULDER_H + s2BodyH * 0.5,
     0,
   );
   const fairingR = 0.22;
