@@ -70,7 +70,7 @@ const S1_BASE_R = 0.35;
 /** Single MVAC-class bell at second-stage base (interstage / S2 joint). */
 const S2_ENGINE_SCALE = 0.72;
 const S2_ENGINE_Y_MOUNT = S1_H + INTERSTAGE_H;
-const ENGINE_WIREFRAME_OPACITY_FACTOR = 0.42;
+const ENGINE_WIREFRAME_OPACITY_FACTOR = 0.65;
 
 const buildRocket = (
   wireMat: THREE.LineBasicMaterial,
