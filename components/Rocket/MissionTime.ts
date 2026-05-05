@@ -30,19 +30,19 @@ export const BOOSTER_WIREFRAME_FADE_WALL_MS = 4000;
 export const BOOSTER_SEP_DURATION_MS = 8000;
 
 /**
- * T+1:00 — main-stage split: top stack stays put; lower first stage falls and the whole
+ * T+0:50 — main-stage split: top stack stays put; lower first stage falls and the whole
  * lower body (tank, octoweb, plumes) fades out in this wall time.
  */
-export const CORE_STAGING_AT_MISSION_SEC = 60;
+export const CORE_STAGING_AT_MISSION_SEC = 50;
 
 /** Wall time for lower-stage fall (ease) and 1 → 0 fade (plumes + wireframe). */
 export const CORE_BOTTOM_STAGING_WALL_MS = 8000;
 
 /**
- * T+1:02 — second-stage (single) engine plume: opacity 0 → 1 (mission clock), after main
- * stack separation (T+1:02 = 62 s in `getMissionSec` time base).
+ * T+0:52 — second-stage (single) engine plume: opacity 0 → 1 (mission clock), after main
+ * stack separation (T+0:52 = 52 s in `getMissionSec` time base).
  */
-export const S2_PLUME_AT_MISSION_SEC = 60 + 2;
+export const S2_PLUME_AT_MISSION_SEC = 50 + 2;
 
 /**
  * Ease the S2 plume in over this wall time from T+1:02.
@@ -54,12 +54,12 @@ export const getMissionSec = (wallSecSinceStart: number): number =>
 
 /**
  * Falcon wireframe loop: mission timeline repeats every `LOOP_PERIOD_MISSION_SEC`.
- * T+1:05 — upper stack exits; T+1:10 — full reset + fade-in from T+0.
+ * T+0:55 — upper stack exits; T+1:00 — full reset + fade-in from T+0.
  */
-export const LOOP_PERIOD_MISSION_SEC = 60 + 10; // 70 — T+1:10 (rocket loop reset)
+export const LOOP_PERIOD_MISSION_SEC = 60; // T+1:00 (rocket loop reset)
 
-/** Upper stack (S2 + fairing) rises + fades out from this mission second (T+1:05). */
-export const LOOP_UPPER_EXIT_START_MISSION_SEC = 60 + 5; // 65 — T+1:05
+/** Upper stack (S2 + fairing) rises + fades out from this mission second (T+0:55). */
+export const LOOP_UPPER_EXIT_START_MISSION_SEC = 55; // T+0:55
 
 /** Fade entire rocket in over this many mission seconds after each loop reset (from T+0). */
 export const LOOP_FADE_IN_MISSION_SEC = 5;
