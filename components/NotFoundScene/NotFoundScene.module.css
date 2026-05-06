@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: min(88dvh, 56rem);
+  min-height: min(88svh, 56rem);
   padding: clamp(1.5rem, 5vw, 3rem) 1rem 4rem;
   overflow: hidden;
 }
