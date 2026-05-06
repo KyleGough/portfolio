@@ -27,11 +27,16 @@ import {
   S2_PLUME_FADEIN_WALL_MS,
 } from './MissionTime';
 import {
+  type RocketDepthOccluderMaterial,
+  type RocketWireDepthPass,
   addBoosterGridFins,
   addCylinderEdges,
   addPayloadFairingWithBoatTailEdges,
   addRoundedPayloadFairingEdges,
   addStrut,
+  createRocketDepthOccluderMaterial,
+  ROCKET_OCCLUDED_SILHOUETTE_OPACITY_MUL,
+  ROCKET_WIRE_DEPTH_PASS_UD,
 } from './Wireframe';
 
 const CYAN = 0x5bd4ea;
@@ -79,6 +84,7 @@ const buildRocket = (
   wireMat: THREE.LineBasicMaterial,
   strutMat: THREE.LineBasicMaterial,
   engineWireMat: THREE.LineBasicMaterial,
+  depthOccluder: RocketDepthOccluderMaterial,
 ): {
   body: THREE.Group;
   coreLower: THREE.Group;
@@ -116,6 +122,7 @@ const buildRocket = (
     0,
     S1_H * 0.5,
     0,
+    depthOccluder,
   );
   // Interstage stays with the first stage through separation (bottom stack).
   addCylinderEdges(
@@ -128,6 +135,7 @@ const buildRocket = (
     0,
     S1_H + INTERSTAGE_H / 2,
     0,
+    depthOccluder,
   );
   addOctawebEngines(coreEngineWire, engineWireMat, Y_MOUNT_CORE, 0.2, 1);
   addEngineBayStructure(coreEngineWire, engineWireMat, Y_MOUNT_CORE, 0.2, 1);
@@ -137,7 +145,18 @@ const buildRocket = (
   const s2BaseY = S1_H + INTERSTAGE_H;
   const s2BodyH = S2_H - S2_SHOULDER_H;
   // Thin ring seam sitting just above the interstage.
-  addCylinderEdges(coreUpper, wireMat, 0.3, 0.3, 0.028, 16, 0, s2BaseY + 0.014, 0);
+  addCylinderEdges(
+    coreUpper,
+    wireMat,
+    0.3,
+    0.3,
+    0.028,
+    16,
+    0,
+    s2BaseY + 0.014,
+    0,
+    depthOccluder,
+  );
   // Short shoulder that steps in from interstage diameter toward the upper stage tank.
   addCylinderEdges(
     coreUpper,
@@ -149,6 +168,7 @@ const buildRocket = (
     0,
     s2BaseY + S2_SHOULDER_H * 0.5,
     0,
+    depthOccluder,
   );
   // Main S2 body above the shoulder.
   addCylinderEdges(
@@ -161,6 +181,7 @@ const buildRocket = (
     0,
     s2BaseY + S2_SHOULDER_H + s2BodyH * 0.5,
     0,
+    depthOccluder,
   );
   const fairingR = 0.22;
   const fairingNeckR = 0.172;
@@ -176,6 +197,7 @@ const buildRocket = (
     0,
     fairingYBase,
     0,
+    depthOccluder,
   );
   addEngineNozzle(
     coreUpperEngineWire,
@@ -212,6 +234,7 @@ const buildRocket = (
       0,
       boosterH / 2,
       0,
+      depthOccluder,
     );
     // Rounded ogive-like nose: short shoulder + cap reads cleaner than a sharp cone tip.
     const boosterNoseCapR = boosterRTop;
@@ -226,6 +249,7 @@ const buildRocket = (
       0,
       boosterH,
       0,
+      depthOccluder,
     );
     addOctawebEngines(
       engineWire,
@@ -332,12 +356,35 @@ const fitPerspectiveCameraToObject = (
   camera.lookAt(center);
 };
 
+const lineLiesUnderSubtree = (
+  line: THREE.Object3D,
+  subtreeRoot: THREE.Object3D,
+): boolean => {
+  for (
+    let p: THREE.Object3D | null = line.parent;
+    p;
+    p = p.parent
+  ) {
+    if (p === subtreeRoot) {
+      return true;
+    }
+  }
+  return false;
+};
+
 const setGroupLineOpacityFactor = (
   root: THREE.Object3D,
   factor: number,
+  excludeSubtree?: THREE.Object3D,
 ): void => {
   root.traverse((obj) => {
     if (!(obj instanceof THREE.Line || obj instanceof THREE.LineSegments)) {
+      return;
+    }
+    if (
+      excludeSubtree &&
+      lineLiesUnderSubtree(obj, excludeSubtree)
+    ) {
       return;
     }
     const m = obj.material as THREE.Material;
@@ -345,9 +392,30 @@ const setGroupLineOpacityFactor = (
       obj.userData.baseLineOpacity = m.opacity;
     }
     const base = obj.userData.baseLineOpacity as number;
-    const next = base * factor;
+    const pass = obj.userData[ROCKET_WIRE_DEPTH_PASS_UD] as
+      | RocketWireDepthPass
+      | undefined;
+    const passOpacityMul =
+      pass === 'behind' ? ROCKET_OCCLUDED_SILHOUETTE_OPACITY_MUL : 1;
+    const next = base * factor * passOpacityMul;
     m.transparent = next < 0.999;
     m.opacity = next;
+  });
+};
+
+/** Booster hull depth-write meshes must hide when booster wireframe fades or they keep occluding the core. */
+const BOOSTER_DEPTH_HULL_VISIBILITY_EPS = 1e-4;
+
+const setBoosterDepthHullVisibility = (
+  booster: THREE.Object3D,
+  lineOpacityFactor: number,
+  depthOccluder: RocketDepthOccluderMaterial,
+): void => {
+  const show = lineOpacityFactor > BOOSTER_DEPTH_HULL_VISIBILITY_EPS;
+  booster.traverse((obj) => {
+    if (obj instanceof THREE.Mesh && obj.material === depthOccluder) {
+      obj.visible = show;
+    }
   });
 };
 
@@ -429,6 +497,9 @@ const applyBoosterSeparationPose = (
   leftBooster: THREE.Group,
   rightBooster: THREE.Group,
   strutsGroup: THREE.Object3D,
+  depthOccluder: RocketDepthOccluderMaterial,
+  leftBoosterEngines: THREE.Object3D,
+  rightBoosterEngines: THREE.Object3D,
 ): void => {
   const extraX = BOOSTER_SEP_EXTRA_X * separationK;
   const extraY = -BOOSTER_SEP_FALL_MAX * boosterFallK;
@@ -437,9 +508,11 @@ const applyBoosterSeparationPose = (
   rightBooster.position.set(BOOSTER_STAGE_X + extraX, extraY, 0);
   leftBooster.rotation.z = BOOSTER_SEP_SPLAY_RAD * rotSplayK;
   rightBooster.rotation.z = -BOOSTER_SEP_SPLAY_RAD * rotSplayK;
-  setGroupLineOpacityFactor(leftBooster, lineK);
-  setGroupLineOpacityFactor(rightBooster, lineK);
+  setGroupLineOpacityFactor(leftBooster, lineK, leftBoosterEngines);
+  setGroupLineOpacityFactor(rightBooster, lineK, rightBoosterEngines);
   setGroupLineOpacityFactor(strutsGroup, lineK);
+  setBoosterDepthHullVisibility(leftBooster, lineK, depthOccluder);
+  setBoosterDepthHullVisibility(rightBooster, lineK, depthOccluder);
 };
 
 const resetBoosterSeparationPose = (
@@ -447,14 +520,19 @@ const resetBoosterSeparationPose = (
   leftBooster: THREE.Group,
   rightBooster: THREE.Group,
   strutsGroup: THREE.Object3D,
+  depthOccluder: RocketDepthOccluderMaterial,
+  leftBoosterEngines: THREE.Object3D,
+  rightBoosterEngines: THREE.Object3D,
 ): void => {
   leftBooster.position.set(-BOOSTER_STAGE_X, 0, 0);
   rightBooster.position.set(BOOSTER_STAGE_X, 0, 0);
   leftBooster.rotation.set(0, 0, 0);
   rightBooster.rotation.set(0, 0, 0);
-  setGroupLineOpacityFactor(leftBooster, loopFadeK);
-  setGroupLineOpacityFactor(rightBooster, loopFadeK);
+  setGroupLineOpacityFactor(leftBooster, loopFadeK, leftBoosterEngines);
+  setGroupLineOpacityFactor(rightBooster, loopFadeK, rightBoosterEngines);
   setGroupLineOpacityFactor(strutsGroup, loopFadeK);
+  setBoosterDepthHullVisibility(leftBooster, loopFadeK, depthOccluder);
+  setBoosterDepthHullVisibility(rightBooster, loopFadeK, depthOccluder);
 };
 
 const t3EventProgress = (
@@ -548,8 +626,16 @@ const averagePlumeBrightness = (
   return Math.min(1, Math.max(0, sum / count));
 };
 
-const disposeWireframeScene = (scene: THREE.Scene): void => {
+const disposeWireframeScene = (
+  scene: THREE.Scene,
+  depthOccluder: RocketDepthOccluderMaterial,
+): void => {
   scene.traverse((obj) => {
+    if (obj instanceof THREE.Mesh) {
+      const hullGeom = obj.geometry as THREE.BufferGeometry;
+      hullGeom.dispose();
+      return;
+    }
     if (!(obj instanceof THREE.Line || obj instanceof THREE.LineSegments)) {
       return;
     }
@@ -563,6 +649,7 @@ const disposeWireframeScene = (scene: THREE.Scene): void => {
     }
     mat.dispose();
   });
+  depthOccluder.dispose();
 };
 
 /* eslint-disable sonarjs/cognitive-complexity -- attachRocketViewport: mission phases + poses + plumes + lights */
@@ -589,6 +676,7 @@ const attachRocketViewport = (
     transparent: true,
     opacity: 0.72,
   });
+  const depthOccluder = createRocketDepthOccluderMaterial();
 
   const scene = new THREE.Scene();
   scene.background = null;
@@ -611,7 +699,7 @@ const attachRocketViewport = (
     leftBooster,
     rightBooster,
     strutsGroup,
-  } = buildRocket(wireMat, strutMat, engineWireMat);
+  } = buildRocket(wireMat, strutMat, engineWireMat, depthOccluder);
   for (const engineWire of engineWireGroups) {
     setGroupLineOpacityFactor(engineWire, ENGINE_WIREFRAME_OPACITY_FACTOR);
   }
@@ -723,6 +811,9 @@ const attachRocketViewport = (
         leftBooster,
         rightBooster,
         strutsGroup,
+        depthOccluder,
+        engineWireGroups[2],
+        engineWireGroups[3],
       );
     } else {
       applyBoosterSeparationPose(
@@ -734,6 +825,9 @@ const attachRocketViewport = (
         leftBooster,
         rightBooster,
         strutsGroup,
+        depthOccluder,
+        engineWireGroups[2],
+        engineWireGroups[3],
       );
     }
     if (t3Wall === null) {
@@ -758,11 +852,13 @@ const attachRocketViewport = (
     );
     setGroupLineOpacityFactor(
       engineWireGroups[2],
-      ENGINE_WIREFRAME_OPACITY_FACTOR * (t2Wall === null ? loopFadeK : wireAlpha * loopFadeK),
+      ENGINE_WIREFRAME_OPACITY_FACTOR *
+        (t2Wall === null ? loopFadeK : wireAlpha * loopFadeK),
     );
     setGroupLineOpacityFactor(
       engineWireGroups[3],
-      ENGINE_WIREFRAME_OPACITY_FACTOR * (t2Wall === null ? loopFadeK : wireAlpha * loopFadeK),
+      ENGINE_WIREFRAME_OPACITY_FACTOR *
+        (t2Wall === null ? loopFadeK : wireAlpha * loopFadeK),
     );
     updatePlumeLayersForTick(
       allLayers,
@@ -816,7 +912,7 @@ const attachRocketViewport = (
     for (const dispose of plumeDisposers) {
       dispose();
     }
-    disposeWireframeScene(scene);
+    disposeWireframeScene(scene, depthOccluder);
     wireMat.dispose();
     strutMat.dispose();
     engineWireMat.dispose();

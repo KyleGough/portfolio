@@ -1,7 +1,86 @@
 import * as THREE from 'three';
 
+/** Build solid hull meshes with this material so wires can depth-test faint vs unobstructed silhouette. */
+export type RocketDepthOccluderMaterial = THREE.MeshBasicMaterial;
+
+/** Multiply base line opacity when a fragment lands “behind” hull depth (`GreaterDepth` pass). */
+export const ROCKET_OCCLUDED_SILHOUETTE_OPACITY_MUL = 0.2;
+
+export type RocketWireDepthPass = 'behind' | 'front';
+
+/** UserData key — `setGroupLineOpacityFactor` scales `behind` passes by ROCKET_OCCLUDED_SILHOUETTE_OPACITY_MUL. */
+export const ROCKET_WIRE_DEPTH_PASS_UD = 'rocketWireDepthPass' as const;
+
+const assignTwinMaterials = (
+  faintMat: THREE.LineBasicMaterial,
+  frontMat: THREE.LineBasicMaterial,
+): void => {
+  faintMat.depthFunc = THREE.GreaterDepth;
+  faintMat.depthWrite = false;
+  faintMat.transparent = true;
+  frontMat.depthFunc = THREE.LessEqualDepth;
+  frontMat.depthWrite = false;
+  frontMat.transparent = true;
+};
+
+/** Two LineSegments share edge topology: behind-hull faint pass then unobstructed silhouette. */
+export const addTwinLineSegmentsDepthPassesToParent = (
+  parent: THREE.Object3D,
+  edgesGeometry: THREE.BufferGeometry,
+  templateMaterial: THREE.LineBasicMaterial,
+  layoutTwin?: (
+    behind: THREE.LineSegments,
+    front: THREE.LineSegments,
+  ) => void,
+): void => {
+  const faintMat = templateMaterial.clone();
+  const frontMat = templateMaterial.clone();
+  assignTwinMaterials(faintMat, frontMat);
+
+  const behindGeom = edgesGeometry;
+  const frontGeom = edgesGeometry.clone();
+
+  const behind = new THREE.LineSegments(behindGeom, faintMat);
+  behind.renderOrder = 1;
+  behind.userData[ROCKET_WIRE_DEPTH_PASS_UD] = 'behind' satisfies RocketWireDepthPass;
+
+  const front = new THREE.LineSegments(frontGeom, frontMat);
+  front.renderOrder = 2;
+  front.userData[ROCKET_WIRE_DEPTH_PASS_UD] = 'front' satisfies RocketWireDepthPass;
+
+  layoutTwin?.(behind, front);
+  parent.add(behind, front);
+};
+
+/** Two Lines over the same vertices: behind-hull faint then unobstructed silhouette. */
+export const addTwinLineDepthPassesToParent = (
+  parent: THREE.Object3D,
+  lineGeometry: THREE.BufferGeometry,
+  templateMaterial: THREE.LineBasicMaterial,
+  layoutTwin?: (behind: THREE.Line, front: THREE.Line) => void,
+): void => {
+  const faintMat = templateMaterial.clone();
+  const frontMat = templateMaterial.clone();
+  assignTwinMaterials(faintMat, frontMat);
+
+  const behindGeom = lineGeometry;
+  const frontGeom = lineGeometry.clone();
+
+  const behind = new THREE.Line(behindGeom, faintMat);
+  behind.renderOrder = 1;
+  behind.userData[ROCKET_WIRE_DEPTH_PASS_UD] = 'behind' satisfies RocketWireDepthPass;
+
+  const front = new THREE.Line(frontGeom, frontMat);
+  front.renderOrder = 2;
+  front.userData[ROCKET_WIRE_DEPTH_PASS_UD] = 'front' satisfies RocketWireDepthPass;
+
+  layoutTwin?.(behind, front);
+  parent.add(behind, front);
+};
+
 /**
  * Cylinder edges used to render the rocket's body, core, and fairing.
+ * Optional `depthOccluder`: matching solid hull writes depth only (no color).
  */
 export const addCylinderEdges = (
   parent: THREE.Group,
@@ -13,6 +92,7 @@ export const addCylinderEdges = (
   x: number,
   yCenter: number,
   z: number,
+  depthOccluder?: RocketDepthOccluderMaterial,
 ): void => {
   const geometry = new THREE.CylinderGeometry(
     radiusTop,
@@ -22,10 +102,30 @@ export const addCylinderEdges = (
     1,
   );
   const edges = new THREE.EdgesGeometry(geometry);
-  const line = new THREE.LineSegments(edges, material.clone());
-  line.position.set(x, yCenter, z);
-  parent.add(line);
+  addTwinLineSegmentsDepthPassesToParent(
+    parent,
+    edges,
+    material.clone(),
+    (behind, front) => {
+      behind.position.set(x, yCenter, z);
+      front.position.set(x, yCenter, z);
+    },
+  );
   geometry.dispose();
+
+  if (depthOccluder) {
+    const hullGeometry = new THREE.CylinderGeometry(
+      radiusTop,
+      radiusBottom,
+      height,
+      segments,
+      1,
+    );
+    const hull = new THREE.Mesh(hullGeometry, depthOccluder);
+    hull.position.set(x, yCenter, z);
+    hull.renderOrder = 0;
+    parent.add(hull);
+  }
 };
 
 /**
@@ -43,9 +143,15 @@ export const addConeEdges = (
 ): void => {
   const geometry = new THREE.ConeGeometry(radius, height, segments, 1);
   const edges = new THREE.EdgesGeometry(geometry);
-  const line = new THREE.LineSegments(edges, material.clone());
-  line.position.set(x, yCenter, z);
-  parent.add(line);
+  addTwinLineSegmentsDepthPassesToParent(
+    parent,
+    edges,
+    material.clone(),
+    (behind, front) => {
+      behind.position.set(x, yCenter, z);
+      front.position.set(x, yCenter, z);
+    },
+  );
   geometry.dispose();
 };
 
@@ -63,8 +169,7 @@ export const addStrut = (
     new THREE.Vector3(x0, y, 0),
     new THREE.Vector3(x1, y, 0),
   ]);
-  const line = new THREE.Line(geometry, material.clone());
-  parent.add(line);
+  addTwinLineDepthPassesToParent(parent, geometry, material.clone());
 };
 
 /**
@@ -78,6 +183,7 @@ const addMainStageNose = (
   x: number,
   yEquator: number,
   z: number,
+  depthOccluder?: RocketDepthOccluderMaterial,
 ): void => {
   const heightSegs = Math.max(2, Math.floor(widthSegments * 0.4));
   const geometry = new THREE.SphereGeometry(
@@ -90,10 +196,32 @@ const addMainStageNose = (
     Math.PI * 0.5,
   );
   const edges = new THREE.EdgesGeometry(geometry);
-  const line = new THREE.LineSegments(edges, material.clone());
-  line.position.set(x, yEquator, z);
-  parent.add(line);
+  addTwinLineSegmentsDepthPassesToParent(
+    parent,
+    edges,
+    material.clone(),
+    (behind, front) => {
+      behind.position.set(x, yEquator, z);
+      front.position.set(x, yEquator, z);
+    },
+  );
   geometry.dispose();
+
+  if (depthOccluder) {
+    const hullGeometry = new THREE.SphereGeometry(
+      radius,
+      widthSegments,
+      heightSegs,
+      0,
+      Math.PI * 2,
+      0,
+      Math.PI * 0.5,
+    );
+    const hull = new THREE.Mesh(hullGeometry, depthOccluder);
+    hull.position.set(x, yEquator, z);
+    hull.renderOrder = 0;
+    parent.add(hull);
+  }
 };
 
 /**
@@ -127,7 +255,7 @@ export const addBoosterGridFins = (
       new THREE.Vector3(x, y, -zH),
       new THREE.Vector3(x, y, zH),
     ]);
-    parent.add(new THREE.Line(geomH, mat.clone()));
+    addTwinLineDepthPassesToParent(parent, geomH, mat.clone());
   }
   for (let i = 0; i <= nCols; i += 1) {
     const u = i / nCols;
@@ -137,7 +265,7 @@ export const addBoosterGridFins = (
       new THREE.Vector3(xFlare, yFlare, z0),
       new THREE.Vector3(xAttach, yAttach, z1),
     ]);
-    parent.add(new THREE.Line(geomV, mat.clone()));
+    addTwinLineDepthPassesToParent(parent, geomV, mat.clone());
   }
 };
 
@@ -156,6 +284,7 @@ export const addPayloadFairingWithBoatTailEdges = (
   x: number,
   yBase: number,
   z: number,
+  depthOccluder?: RocketDepthOccluderMaterial,
 ): void => {
   if (boatTailH > 1e-4) {
     addCylinderEdges(
@@ -168,6 +297,7 @@ export const addPayloadFairingWithBoatTailEdges = (
       x,
       yBase + boatTailH * 0.5,
       z,
+      depthOccluder,
     );
   }
   const capR = neckRadius;
@@ -182,8 +312,18 @@ export const addPayloadFairingWithBoatTailEdges = (
     x,
     yBase + boatTailH + cylH * 0.5,
     z,
+    depthOccluder,
   );
-  addMainStageNose(parent, material, capR, 10, x, yBase + boatTailH + cylH, z);
+  addMainStageNose(
+    parent,
+    material,
+    capR,
+    10,
+    x,
+    yBase + boatTailH + cylH,
+    z,
+    depthOccluder,
+  );
 };
 
 /**
@@ -198,6 +338,7 @@ export const addRoundedPayloadFairingEdges = (
   x: number,
   yBase: number,
   z: number,
+  depthOccluder?: RocketDepthOccluderMaterial,
 ): void => {
   if (shoulderH > 1e-4) {
     addCylinderEdges(
@@ -210,7 +351,21 @@ export const addRoundedPayloadFairingEdges = (
       x,
       yBase + shoulderH * 0.5,
       z,
+      depthOccluder,
     );
   }
-  addMainStageNose(parent, material, capRadius, 10, x, yBase + shoulderH, z);
+  addMainStageNose(parent, material, capRadius, 10, x, yBase + shoulderH, z, depthOccluder);
+};
+
+/**
+ * Material shared by hull occluder meshes so wireframes depth-test correctly.
+ */
+export const createRocketDepthOccluderMaterial = (): RocketDepthOccluderMaterial => {
+  const material = new THREE.MeshBasicMaterial({ color: 0x000000 });
+  material.colorWrite = false;
+  material.depthWrite = true;
+  material.depthTest = true;
+  material.transparent = false;
+  material.side = THREE.FrontSide;
+  return material;
 };
