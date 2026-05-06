@@ -10,7 +10,7 @@
 .layerMid,
 .layerNear {
   position: absolute;
-  inset: -20vh 0;
+  inset: -20lvh 0;
   will-change: transform;
 }
 
@@ -51,12 +51,12 @@
   position: absolute;
   display: block;
   aspect-ratio: 1 / 1;
-  border-radius: 9999px;
-  background: oklch(100% 0 0);
+  border-radius: 50%;
+  background: white;
 }
 
 .starClone {
-  transform: translateY(var(--sg-star-drift-loop-y, 140vh));
+  transform: translateY(var(--sg-star-drift-loop-y, 140lvh));
 }
 
 @media (prefers-reduced-motion: reduce) {

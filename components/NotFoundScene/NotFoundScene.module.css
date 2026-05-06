@@ -42,15 +42,15 @@
   background-image:
     linear-gradient(
       90deg,
-      oklch(100% 0 0 / 0.045) 0,
-      oklch(100% 0 0 / 0.045) 1px,
+      rgb(255 255 255 / 0.045) 0,
+      rgb(255 255 255 / 0.045) 1px,
       transparent 1px,
       transparent 56px
     ),
     linear-gradient(
       0deg,
-      oklch(100% 0 0 / 0.045) 0,
-      oklch(100% 0 0 / 0.045) 1px,
+      rgb(255 255 255 / 0.045) 0,
+      rgb(255 255 255 / 0.045) 1px,
       transparent 1px,
       transparent 56px
     ),

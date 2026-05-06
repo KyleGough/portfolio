@@ -302,7 +302,7 @@
   .project-header-cta--secondOfPair {
     @apply my-0 !-ml-px !gap-1.5 !rounded-l-none !rounded-r-full border-l pl-3
       text-[0.8125rem] font-medium leading-tight;
-    border-left-color: oklch(100% 0 0 / 0.12);
+    border-left-color: rgb(255 255 255 / 0.12);
   }
   .project-header-cta--secondOfPair .project-header-cta__icon {
     @apply h-4 w-4;

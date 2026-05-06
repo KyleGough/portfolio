@@ -20,9 +20,9 @@ export const ContactSendButton: React.FC<ContactSendButtonProps> = ({
   const getButtonStyle = (status: EmailStatus) => {
     switch (status) {
       case EmailStatus.SENT:
-        return 'cursor-default !border-[oklch(100%_0_0_/_0.2)] !text-[oklch(72%_0.04_280)] opacity-90';
+        return 'cursor-default !border-[rgb(255_255_255_/_0.2)] !text-[oklch(72%_0.04_280)] opacity-90';
       case EmailStatus.LOADING:
-        return 'cursor-wait !border-[oklch(100%_0_0_/_0.12)] !text-[oklch(52%_0.03_280)] opacity-85';
+        return 'cursor-wait !border-[rgb(255_255_255_/_0.12)] !text-[oklch(52%_0.03_280)] opacity-85';
       case EmailStatus.FAIL:
         return 'cursor-pointer !border-error !text-error shadow-[0_0_0_1px_#0003_inset] hover:!text-[#ff4d4d] hover:!border-[#ff4d4d]';
       default:
