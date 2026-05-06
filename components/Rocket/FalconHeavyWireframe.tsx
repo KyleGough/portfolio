@@ -28,12 +28,15 @@ import {
 } from './MissionTime';
 import {
   type RocketDepthOccluderMaterial,
+  type RocketWireDepthPass,
   addBoosterGridFins,
   addCylinderEdges,
   addPayloadFairingWithBoatTailEdges,
   addRoundedPayloadFairingEdges,
   addStrut,
   createRocketDepthOccluderMaterial,
+  ROCKET_OCCLUDED_SILHOUETTE_OPACITY_MUL,
+  ROCKET_WIRE_DEPTH_PASS_UD,
 } from './Wireframe';
 
 const CYAN = 0x5bd4ea;
@@ -353,12 +356,35 @@ const fitPerspectiveCameraToObject = (
   camera.lookAt(center);
 };
 
+const lineLiesUnderSubtree = (
+  line: THREE.Object3D,
+  subtreeRoot: THREE.Object3D,
+): boolean => {
+  for (
+    let p: THREE.Object3D | null = line.parent;
+    p;
+    p = p.parent
+  ) {
+    if (p === subtreeRoot) {
+      return true;
+    }
+  }
+  return false;
+};
+
 const setGroupLineOpacityFactor = (
   root: THREE.Object3D,
   factor: number,
+  excludeSubtree?: THREE.Object3D,
 ): void => {
   root.traverse((obj) => {
     if (!(obj instanceof THREE.Line || obj instanceof THREE.LineSegments)) {
+      return;
+    }
+    if (
+      excludeSubtree &&
+      lineLiesUnderSubtree(obj, excludeSubtree)
+    ) {
       return;
     }
     const m = obj.material as THREE.Material;
@@ -366,7 +392,12 @@ const setGroupLineOpacityFactor = (
       obj.userData.baseLineOpacity = m.opacity;
     }
     const base = obj.userData.baseLineOpacity as number;
-    const next = base * factor;
+    const pass = obj.userData[ROCKET_WIRE_DEPTH_PASS_UD] as
+      | RocketWireDepthPass
+      | undefined;
+    const passOpacityMul =
+      pass === 'behind' ? ROCKET_OCCLUDED_SILHOUETTE_OPACITY_MUL : 1;
+    const next = base * factor * passOpacityMul;
     m.transparent = next < 0.999;
     m.opacity = next;
   });
@@ -467,6 +498,8 @@ const applyBoosterSeparationPose = (
   rightBooster: THREE.Group,
   strutsGroup: THREE.Object3D,
   depthOccluder: RocketDepthOccluderMaterial,
+  leftBoosterEngines: THREE.Object3D,
+  rightBoosterEngines: THREE.Object3D,
 ): void => {
   const extraX = BOOSTER_SEP_EXTRA_X * separationK;
   const extraY = -BOOSTER_SEP_FALL_MAX * boosterFallK;
@@ -475,8 +508,8 @@ const applyBoosterSeparationPose = (
   rightBooster.position.set(BOOSTER_STAGE_X + extraX, extraY, 0);
   leftBooster.rotation.z = BOOSTER_SEP_SPLAY_RAD * rotSplayK;
   rightBooster.rotation.z = -BOOSTER_SEP_SPLAY_RAD * rotSplayK;
-  setGroupLineOpacityFactor(leftBooster, lineK);
-  setGroupLineOpacityFactor(rightBooster, lineK);
+  setGroupLineOpacityFactor(leftBooster, lineK, leftBoosterEngines);
+  setGroupLineOpacityFactor(rightBooster, lineK, rightBoosterEngines);
   setGroupLineOpacityFactor(strutsGroup, lineK);
   setBoosterDepthHullVisibility(leftBooster, lineK, depthOccluder);
   setBoosterDepthHullVisibility(rightBooster, lineK, depthOccluder);
@@ -488,13 +521,15 @@ const resetBoosterSeparationPose = (
   rightBooster: THREE.Group,
   strutsGroup: THREE.Object3D,
   depthOccluder: RocketDepthOccluderMaterial,
+  leftBoosterEngines: THREE.Object3D,
+  rightBoosterEngines: THREE.Object3D,
 ): void => {
   leftBooster.position.set(-BOOSTER_STAGE_X, 0, 0);
   rightBooster.position.set(BOOSTER_STAGE_X, 0, 0);
   leftBooster.rotation.set(0, 0, 0);
   rightBooster.rotation.set(0, 0, 0);
-  setGroupLineOpacityFactor(leftBooster, loopFadeK);
-  setGroupLineOpacityFactor(rightBooster, loopFadeK);
+  setGroupLineOpacityFactor(leftBooster, loopFadeK, leftBoosterEngines);
+  setGroupLineOpacityFactor(rightBooster, loopFadeK, rightBoosterEngines);
   setGroupLineOpacityFactor(strutsGroup, loopFadeK);
   setBoosterDepthHullVisibility(leftBooster, loopFadeK, depthOccluder);
   setBoosterDepthHullVisibility(rightBooster, loopFadeK, depthOccluder);
@@ -777,6 +812,8 @@ const attachRocketViewport = (
         rightBooster,
         strutsGroup,
         depthOccluder,
+        engineWireGroups[2],
+        engineWireGroups[3],
       );
     } else {
       applyBoosterSeparationPose(
@@ -789,6 +826,8 @@ const attachRocketViewport = (
         rightBooster,
         strutsGroup,
         depthOccluder,
+        engineWireGroups[2],
+        engineWireGroups[3],
       );
     }
     if (t3Wall === null) {
@@ -813,11 +852,11 @@ const attachRocketViewport = (
     );
     setGroupLineOpacityFactor(
       engineWireGroups[2],
-      ENGINE_WIREFRAME_OPACITY_FACTOR * (t2Wall === null ? loopFadeK : wireAlpha * loopFadeK),
+      ENGINE_WIREFRAME_OPACITY_FACTOR * loopFadeK,
     );
     setGroupLineOpacityFactor(
       engineWireGroups[3],
-      ENGINE_WIREFRAME_OPACITY_FACTOR * (t2Wall === null ? loopFadeK : wireAlpha * loopFadeK),
+      ENGINE_WIREFRAME_OPACITY_FACTOR * loopFadeK,
     );
     updatePlumeLayersForTick(
       allLayers,

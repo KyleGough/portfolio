@@ -1,6 +1,10 @@
 import * as THREE from 'three';
 
-import { addCylinderEdges } from './Wireframe';
+import {
+  addCylinderEdges,
+  addTwinLineDepthPassesToParent,
+  addTwinLineSegmentsDepthPassesToParent,
+} from './Wireframe';
 
 const CONE_SEGMENTS = 8;
 
@@ -66,10 +70,15 @@ const addInvertedCone = (
 ): void => {
   const geometry = new THREE.ConeGeometry(radius, height, CONE_SEGMENTS, 1);
   const edges = new THREE.EdgesGeometry(geometry);
-  const line = new THREE.LineSegments(edges, material.clone());
-  line.position.set(x, yCenter, z);
-  line.renderOrder = 1;
-  parent.add(line);
+  addTwinLineSegmentsDepthPassesToParent(
+    parent,
+    edges,
+    material.clone(),
+    (behind, front) => {
+      behind.position.set(x, yCenter, z);
+      front.position.set(x, yCenter, z);
+    },
+  );
   geometry.dispose();
 };
 
@@ -160,9 +169,7 @@ export const addEngineBayStructure = (
       new THREE.Vector3(xUpper, bayY, zUpper),
       new THREE.Vector3(xLower, bayY - 0.026 * scale, zLower),
     ]);
-    const brace = new THREE.Line(braceGeom, material.clone());
-    brace.renderOrder = 1;
-    parent.add(brace);
+    addTwinLineDepthPassesToParent(parent, braceGeom, material.clone());
   }
   // Few radial spokes (hub → ring engines): reads as octaweb without drawing every bay.
   const spokeY = bayY - 0.014 * scale;
@@ -175,17 +182,13 @@ export const addEngineBayStructure = (
       new THREE.Vector3(0, spokeY, 0),
       new THREE.Vector3(xOuter, spokeY, zOuter),
     ]);
-    const spoke = new THREE.Line(spokeGeom, material.clone());
-    spoke.renderOrder = 1;
-    parent.add(spoke);
+    addTwinLineDepthPassesToParent(parent, spokeGeom, material.clone());
   }
   const mountGeom = new THREE.BufferGeometry().setFromPoints([
     new THREE.Vector3(0, bayY - 0.022 * scale, 0),
     new THREE.Vector3(0, yMount + 0.004 * scale, 0),
   ]);
-  const mountLine = new THREE.Line(mountGeom, material.clone());
-  mountLine.renderOrder = 1;
-  parent.add(mountLine);
+  addTwinLineDepthPassesToParent(parent, mountGeom, material.clone());
 };
 
 /**
