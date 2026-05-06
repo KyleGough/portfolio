@@ -8,6 +8,7 @@ import React from 'react';
 import { OpenGraphMeta } from './OpenGraphMeta';
 import { socialMeta } from './SocialMeta';
 import { SpaceGothicScrollVars } from './SpaceGothicScrollVars';
+import { Starfield } from './Starfield';
 import { TwitterMeta } from './TwitterMeta';
 
 interface LayoutProps {
@@ -77,7 +78,10 @@ export const Layout: React.FC<LayoutProps> = ({
         <title>{title}</title>
       </Head>
       <Nav />
-      <main className="leading-[1.6rem] relative text-primary">{children}</main>
+      <main className="leading-[1.6rem] relative text-primary">
+        <Starfield />
+        {children}
+      </main>
       <Footer />
     </div>
   );
