@@ -1,0 +1,55 @@
+.starfield {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.layerFar,
+.layerMid,
+.layerNear {
+  position: absolute;
+  inset: -20vh 0;
+  will-change: transform;
+}
+
+.layerFar {
+  transform: translate3d(
+    0,
+    calc(var(--sg-scroll-y) * -1 * var(--sg-star-parallax-far-factor)),
+    0
+  );
+}
+
+.layerMid {
+  transform: translate3d(
+    0,
+    calc(var(--sg-scroll-y) * -1 * var(--sg-star-parallax-mid-factor)),
+    0
+  );
+}
+
+.layerNear {
+  transform: translate3d(
+    0,
+    calc(var(--sg-scroll-y) * -1 * var(--sg-star-parallax-near-factor)),
+    0
+  );
+}
+
+.star {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  background: oklch(100% 0 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .layerFar,
+  .layerMid,
+  .layerNear {
+    transform: none;
+    will-change: auto;
+  }
+}

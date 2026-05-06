@@ -5,6 +5,9 @@
 :root {
   --sg-scroll-y: 0px;
   --sg-grid-parallax-factor: 0.26;
+  --sg-star-parallax-far-factor: 0.08;
+  --sg-star-parallax-mid-factor: 0.16;
+  --sg-star-parallax-near-factor: 0.24;
 }
 
 .app-space-gothic {
@@ -134,7 +137,7 @@
   }
 }
 
-.app-space-gothic main > * {
+.app-space-gothic main > :not(.starfield) {
   position: relative;
   z-index: 1;
 }
