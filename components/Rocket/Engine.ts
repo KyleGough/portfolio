@@ -68,6 +68,7 @@ const addInvertedCone = (
   const edges = new THREE.EdgesGeometry(geometry);
   const line = new THREE.LineSegments(edges, material.clone());
   line.position.set(x, yCenter, z);
+  line.renderOrder = 1;
   parent.add(line);
   geometry.dispose();
 };
@@ -159,7 +160,9 @@ export const addEngineBayStructure = (
       new THREE.Vector3(xUpper, bayY, zUpper),
       new THREE.Vector3(xLower, bayY - 0.026 * scale, zLower),
     ]);
-    parent.add(new THREE.Line(braceGeom, material.clone()));
+    const brace = new THREE.Line(braceGeom, material.clone());
+    brace.renderOrder = 1;
+    parent.add(brace);
   }
   // Few radial spokes (hub → ring engines): reads as octaweb without drawing every bay.
   const spokeY = bayY - 0.014 * scale;
@@ -172,13 +175,17 @@ export const addEngineBayStructure = (
       new THREE.Vector3(0, spokeY, 0),
       new THREE.Vector3(xOuter, spokeY, zOuter),
     ]);
-    parent.add(new THREE.Line(spokeGeom, material.clone()));
+    const spoke = new THREE.Line(spokeGeom, material.clone());
+    spoke.renderOrder = 1;
+    parent.add(spoke);
   }
   const mountGeom = new THREE.BufferGeometry().setFromPoints([
     new THREE.Vector3(0, bayY - 0.022 * scale, 0),
     new THREE.Vector3(0, yMount + 0.004 * scale, 0),
   ]);
-  parent.add(new THREE.Line(mountGeom, material.clone()));
+  const mountLine = new THREE.Line(mountGeom, material.clone());
+  mountLine.renderOrder = 1;
+  parent.add(mountLine);
 };
 
 /**

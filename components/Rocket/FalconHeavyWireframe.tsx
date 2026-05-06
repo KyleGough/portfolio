@@ -27,11 +27,13 @@ import {
   S2_PLUME_FADEIN_WALL_MS,
 } from './MissionTime';
 import {
+  type RocketDepthOccluderMaterial,
   addBoosterGridFins,
   addCylinderEdges,
   addPayloadFairingWithBoatTailEdges,
   addRoundedPayloadFairingEdges,
   addStrut,
+  createRocketDepthOccluderMaterial,
 } from './Wireframe';
 
 const CYAN = 0x5bd4ea;
@@ -79,6 +81,7 @@ const buildRocket = (
   wireMat: THREE.LineBasicMaterial,
   strutMat: THREE.LineBasicMaterial,
   engineWireMat: THREE.LineBasicMaterial,
+  depthOccluder: RocketDepthOccluderMaterial,
 ): {
   body: THREE.Group;
   coreLower: THREE.Group;
@@ -116,6 +119,7 @@ const buildRocket = (
     0,
     S1_H * 0.5,
     0,
+    depthOccluder,
   );
   // Interstage stays with the first stage through separation (bottom stack).
   addCylinderEdges(
@@ -128,6 +132,7 @@ const buildRocket = (
     0,
     S1_H + INTERSTAGE_H / 2,
     0,
+    depthOccluder,
   );
   addOctawebEngines(coreEngineWire, engineWireMat, Y_MOUNT_CORE, 0.2, 1);
   addEngineBayStructure(coreEngineWire, engineWireMat, Y_MOUNT_CORE, 0.2, 1);
@@ -137,7 +142,18 @@ const buildRocket = (
   const s2BaseY = S1_H + INTERSTAGE_H;
   const s2BodyH = S2_H - S2_SHOULDER_H;
   // Thin ring seam sitting just above the interstage.
-  addCylinderEdges(coreUpper, wireMat, 0.3, 0.3, 0.028, 16, 0, s2BaseY + 0.014, 0);
+  addCylinderEdges(
+    coreUpper,
+    wireMat,
+    0.3,
+    0.3,
+    0.028,
+    16,
+    0,
+    s2BaseY + 0.014,
+    0,
+    depthOccluder,
+  );
   // Short shoulder that steps in from interstage diameter toward the upper stage tank.
   addCylinderEdges(
     coreUpper,
@@ -149,6 +165,7 @@ const buildRocket = (
     0,
     s2BaseY + S2_SHOULDER_H * 0.5,
     0,
+    depthOccluder,
   );
   // Main S2 body above the shoulder.
   addCylinderEdges(
@@ -161,6 +178,7 @@ const buildRocket = (
     0,
     s2BaseY + S2_SHOULDER_H + s2BodyH * 0.5,
     0,
+    depthOccluder,
   );
   const fairingR = 0.22;
   const fairingNeckR = 0.172;
@@ -176,6 +194,7 @@ const buildRocket = (
     0,
     fairingYBase,
     0,
+    depthOccluder,
   );
   addEngineNozzle(
     coreUpperEngineWire,
@@ -212,6 +231,7 @@ const buildRocket = (
       0,
       boosterH / 2,
       0,
+      depthOccluder,
     );
     // Rounded ogive-like nose: short shoulder + cap reads cleaner than a sharp cone tip.
     const boosterNoseCapR = boosterRTop;
@@ -226,6 +246,7 @@ const buildRocket = (
       0,
       boosterH,
       0,
+      depthOccluder,
     );
     addOctawebEngines(
       engineWire,
@@ -548,8 +569,16 @@ const averagePlumeBrightness = (
   return Math.min(1, Math.max(0, sum / count));
 };
 
-const disposeWireframeScene = (scene: THREE.Scene): void => {
+const disposeWireframeScene = (
+  scene: THREE.Scene,
+  depthOccluder: RocketDepthOccluderMaterial,
+): void => {
   scene.traverse((obj) => {
+    if (obj instanceof THREE.Mesh) {
+      const hullGeom = obj.geometry as THREE.BufferGeometry;
+      hullGeom.dispose();
+      return;
+    }
     if (!(obj instanceof THREE.Line || obj instanceof THREE.LineSegments)) {
       return;
     }
@@ -563,6 +592,7 @@ const disposeWireframeScene = (scene: THREE.Scene): void => {
     }
     mat.dispose();
   });
+  depthOccluder.dispose();
 };
 
 /* eslint-disable sonarjs/cognitive-complexity -- attachRocketViewport: mission phases + poses + plumes + lights */
@@ -589,6 +619,7 @@ const attachRocketViewport = (
     transparent: true,
     opacity: 0.72,
   });
+  const depthOccluder = createRocketDepthOccluderMaterial();
 
   const scene = new THREE.Scene();
   scene.background = null;
@@ -611,7 +642,7 @@ const attachRocketViewport = (
     leftBooster,
     rightBooster,
     strutsGroup,
-  } = buildRocket(wireMat, strutMat, engineWireMat);
+  } = buildRocket(wireMat, strutMat, engineWireMat, depthOccluder);
   for (const engineWire of engineWireGroups) {
     setGroupLineOpacityFactor(engineWire, ENGINE_WIREFRAME_OPACITY_FACTOR);
   }
@@ -816,7 +847,7 @@ const attachRocketViewport = (
     for (const dispose of plumeDisposers) {
       dispose();
     }
-    disposeWireframeScene(scene);
+    disposeWireframeScene(scene, depthOccluder);
     wireMat.dispose();
     strutMat.dispose();
     engineWireMat.dispose();
