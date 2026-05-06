@@ -86,7 +86,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({ image, alt }) => {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="max-h-[min(100vh,900px)] overflow-auto rounded-md bg-background shadow-2xl ring-1 ring-header/10"
+            className="max-h-[min(100svh,900px)] overflow-auto rounded-md bg-background shadow-2xl ring-1 ring-header/10"
           >
             <div className="flex items-center justify-center p-1">
               <Image

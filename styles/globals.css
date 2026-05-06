@@ -10,21 +10,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/*
- * Full-viewport min-height without mobile “toolbar jitter”:
- * `100vh` changes when the address bar shows/hides, which reflows the page.
- * `100svh` (small viewport height) matches the visible area with UI shown and
- * stays stable while scrolling. Use it only where supported so we don’t stack
- * competing viewport units on the same element in one cascade step.
- */
 .min-h-screen-stable {
-  min-height: 100vh;
-}
-
-@supports (min-height: 100svh) {
-  .min-h-screen-stable {
-    min-height: 100svh;
-  }
+  min-height: 100svh;
 }
 
 /* Custom slide in animation for mobile nav. */
