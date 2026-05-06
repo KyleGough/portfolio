@@ -17,7 +17,10 @@
 .layerFar {
   transform: translate3d(
     0,
-    calc(var(--sg-scroll-y) * -1 * var(--sg-star-parallax-far-factor)),
+    calc(
+      (var(--sg-scroll-y) * -1 * var(--sg-star-parallax-far-factor)) -
+        var(--sg-star-drift-y)
+    ),
     0
   );
 }
@@ -25,7 +28,10 @@
 .layerMid {
   transform: translate3d(
     0,
-    calc(var(--sg-scroll-y) * -1 * var(--sg-star-parallax-mid-factor)),
+    calc(
+      (var(--sg-scroll-y) * -1 * var(--sg-star-parallax-mid-factor)) -
+        var(--sg-star-drift-y)
+    ),
     0
   );
 }
@@ -33,7 +39,10 @@
 .layerNear {
   transform: translate3d(
     0,
-    calc(var(--sg-scroll-y) * -1 * var(--sg-star-parallax-near-factor)),
+    calc(
+      (var(--sg-scroll-y) * -1 * var(--sg-star-parallax-near-factor)) -
+        var(--sg-star-drift-y)
+    ),
     0
   );
 }
@@ -41,8 +50,13 @@
 .star {
   position: absolute;
   display: block;
-  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  border-radius: 9999px;
   background: oklch(100% 0 0);
+}
+
+.starClone {
+  transform: translateY(var(--sg-star-drift-loop-y, 140vh));
 }
 
 @media (prefers-reduced-motion: reduce) {

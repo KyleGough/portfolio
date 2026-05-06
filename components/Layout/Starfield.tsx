@@ -50,17 +50,28 @@ const NEAR_STARS = makeStars(24680, 120, 1.2, 3.1, 0.45, 0.95);
 
 const renderStars = (stars: Star[]): React.ReactNode =>
   stars.map((star, index) => (
-    <span
-      key={`${index}-${star.left}-${star.top}-${star.size}`}
-      className={styles.star}
-      style={{
-        left: star.left,
-        top: star.top,
-        width: star.size,
-        height: star.size,
-        opacity: star.opacity,
-      }}
-    />
+    <React.Fragment key={`${index}-${star.left}-${star.top}-${star.size}`}>
+      <span
+        className={styles.star}
+        style={{
+          left: star.left,
+          top: star.top,
+          width: star.size,
+          height: star.size,
+          opacity: star.opacity,
+        }}
+      />
+      <span
+        className={`${styles.star} ${styles.starClone}`}
+        style={{
+          left: star.left,
+          top: star.top,
+          width: star.size,
+          height: star.size,
+          opacity: star.opacity,
+        }}
+      />
+    </React.Fragment>
   ));
 
 export const Starfield: React.FC = () => {
