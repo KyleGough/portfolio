@@ -228,7 +228,7 @@
   border-radius: 9999px;
   color: var(--gothic-cyan, oklch(78% 0.12 200));
   background: oklch(17% 0.04 280);
-  border: 1px solid oklch(100% 0 0 / 0.14);
+  border: 1px solid rgb(255 255 255 / 0.14);
   text-decoration: none;
   box-shadow:
     0 0 0 1px oklch(0% 0 0 / 0.2) inset,
@@ -243,7 +243,7 @@
 .ctaButton:hover,
 .ctaButton:focus-visible {
   color: var(--gothic-magenta, oklch(72% 0.2 310));
-  border-color: oklch(100% 0 0 / 0.22);
+  border-color: rgb(255 255 255 / 0.22);
   box-shadow:
     0 0 0 1px oklch(0% 0 0 / 0.2) inset,
     0 0 36px oklch(50% 0.14 300 / 0.16);

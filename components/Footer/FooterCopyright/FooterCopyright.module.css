@@ -30,11 +30,11 @@
   height: 1px;
   background: linear-gradient(
     90deg,
-    oklch(100% 0 0 / 0%),
+    transparent,
     oklch(78% 0.1 200 / 0.28) 20%,
-    oklch(100% 0 0 / 0.1) 50%,
+    rgb(255 255 255 / 0.1) 50%,
     oklch(72% 0.12 300 / 0.22) 80%,
-    oklch(100% 0 0 / 0%)
+    transparent
   );
   border-radius: 0.5px;
   pointer-events: none;

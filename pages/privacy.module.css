@@ -24,8 +24,8 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    oklch(100% 0 0 / 0.14) 18%,
-    oklch(100% 0 0 / 0.08) 82%,
+    rgb(255 255 255 / 0.14) 18%,
+    rgb(255 255 255 / 0.08) 82%,
     transparent 100%
   );
   pointer-events: none;

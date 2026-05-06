@@ -44,9 +44,9 @@ const makeStars = (
   return stars;
 };
 
-const FAR_STARS = makeStars(13579, 120, 1, 1.65, 0.3, 0.75);
-const MID_STARS = makeStars(97531, 100, 1, 2.3, 0.38, 0.86);
-const NEAR_STARS = makeStars(24680, 80, 1.2, 3.1, 0.45, 0.95);
+const FAR_STARS = makeStars(13579, 100, 1, 1.65, 0.1, 0.55);
+const MID_STARS = makeStars(97531, 80, 1, 2.3, 0.18, 0.66);
+const NEAR_STARS = makeStars(24680, 60, 1.2, 3.1, 0.25, 0.75);
 
 const renderStars = (stars: Star[]): React.ReactNode =>
   stars.map((star, index) => (
