@@ -14,7 +14,7 @@
   },
   "private": true,
   "engines": {
-    "node": ">=20.9.0"
+    "node": ">=22.0.0"
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
@@ -59,7 +59,7 @@
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^13.5.0",
-    "@types/node": "^20.19.0",
+    "@types/node": "^22.19.17",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@types/three": "^0.160.0",
