@@ -2,7 +2,7 @@
 .slot {
   position: relative;
   /* Stable baseline for browsers without svh support (avoid dynamic vh growth). */
-  min-height: 34rem;
+  min-height: max(100svh, 34rem);
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
@@ -10,13 +10,6 @@
   padding: 5rem 1.25rem 3.5rem;
   overflow: hidden;
   isolation: isolate;
-}
-
-@supports (height: 100svh) {
-  .slot {
-    /* Small viewport height prevents section gap growth while mobile chrome collapses. */
-    min-height: 88svh;
-  }
 }
 
 /*
