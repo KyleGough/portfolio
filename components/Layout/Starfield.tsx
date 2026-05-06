@@ -4,9 +4,9 @@ import styles from './Starfield.module.css';
 
 interface Star {
   left: string;
-  top: string;
-  size: string;
   opacity: number;
+  size: string;
+  top: string;
 }
 
 const makeSeededRandom = (seed: number): (() => number) => {
