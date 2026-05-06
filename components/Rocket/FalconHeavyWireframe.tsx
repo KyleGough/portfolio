@@ -372,6 +372,22 @@ const setGroupLineOpacityFactor = (
   });
 };
 
+/** Booster hull depth-write meshes must hide when booster wireframe fades or they keep occluding the core. */
+const BOOSTER_DEPTH_HULL_VISIBILITY_EPS = 1e-4;
+
+const setBoosterDepthHullVisibility = (
+  booster: THREE.Object3D,
+  lineOpacityFactor: number,
+  depthOccluder: RocketDepthOccluderMaterial,
+): void => {
+  const show = lineOpacityFactor > BOOSTER_DEPTH_HULL_VISIBILITY_EPS;
+  booster.traverse((obj) => {
+    if (obj instanceof THREE.Mesh && obj.material === depthOccluder) {
+      obj.visible = show;
+    }
+  });
+};
+
 const loopFadeFromPhaseSec = (phaseSec: number): number => {
   if (phaseSec >= LOOP_FADE_IN_MISSION_SEC) {
     return 1;
@@ -450,6 +466,7 @@ const applyBoosterSeparationPose = (
   leftBooster: THREE.Group,
   rightBooster: THREE.Group,
   strutsGroup: THREE.Object3D,
+  depthOccluder: RocketDepthOccluderMaterial,
 ): void => {
   const extraX = BOOSTER_SEP_EXTRA_X * separationK;
   const extraY = -BOOSTER_SEP_FALL_MAX * boosterFallK;
@@ -461,6 +478,8 @@ const applyBoosterSeparationPose = (
   setGroupLineOpacityFactor(leftBooster, lineK);
   setGroupLineOpacityFactor(rightBooster, lineK);
   setGroupLineOpacityFactor(strutsGroup, lineK);
+  setBoosterDepthHullVisibility(leftBooster, lineK, depthOccluder);
+  setBoosterDepthHullVisibility(rightBooster, lineK, depthOccluder);
 };
 
 const resetBoosterSeparationPose = (
@@ -468,6 +487,7 @@ const resetBoosterSeparationPose = (
   leftBooster: THREE.Group,
   rightBooster: THREE.Group,
   strutsGroup: THREE.Object3D,
+  depthOccluder: RocketDepthOccluderMaterial,
 ): void => {
   leftBooster.position.set(-BOOSTER_STAGE_X, 0, 0);
   rightBooster.position.set(BOOSTER_STAGE_X, 0, 0);
@@ -476,6 +496,8 @@ const resetBoosterSeparationPose = (
   setGroupLineOpacityFactor(leftBooster, loopFadeK);
   setGroupLineOpacityFactor(rightBooster, loopFadeK);
   setGroupLineOpacityFactor(strutsGroup, loopFadeK);
+  setBoosterDepthHullVisibility(leftBooster, loopFadeK, depthOccluder);
+  setBoosterDepthHullVisibility(rightBooster, loopFadeK, depthOccluder);
 };
 
 const t3EventProgress = (
@@ -754,6 +776,7 @@ const attachRocketViewport = (
         leftBooster,
         rightBooster,
         strutsGroup,
+        depthOccluder,
       );
     } else {
       applyBoosterSeparationPose(
@@ -765,6 +788,7 @@ const attachRocketViewport = (
         leftBooster,
         rightBooster,
         strutsGroup,
+        depthOccluder,
       );
     }
     if (t3Wall === null) {
