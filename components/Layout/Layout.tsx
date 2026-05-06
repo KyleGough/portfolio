@@ -79,8 +79,8 @@ export const Layout: React.FC<LayoutProps> = ({
       </Head>
       <Nav />
       <main className="leading-[1.6rem] relative text-primary">
-        <Starfield />
         {children}
+        <Starfield />
       </main>
       <Footer />
     </div>
