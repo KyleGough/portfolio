@@ -4,7 +4,7 @@ import * as THREE from 'three';
 export type RocketDepthOccluderMaterial = THREE.MeshBasicMaterial;
 
 /** Multiply base line opacity when a fragment lands “behind” hull depth (`GreaterDepth` pass). */
-export const ROCKET_OCCLUDED_SILHOUETTE_OPACITY_MUL = 0.25;
+export const ROCKET_OCCLUDED_SILHOUETTE_OPACITY_MUL = 0.2;
 
 export type RocketWireDepthPass = 'behind' | 'front';
 

@@ -852,11 +852,13 @@ const attachRocketViewport = (
     );
     setGroupLineOpacityFactor(
       engineWireGroups[2],
-      ENGINE_WIREFRAME_OPACITY_FACTOR * loopFadeK,
+      ENGINE_WIREFRAME_OPACITY_FACTOR *
+        (t2Wall === null ? loopFadeK : wireAlpha * loopFadeK),
     );
     setGroupLineOpacityFactor(
       engineWireGroups[3],
-      ENGINE_WIREFRAME_OPACITY_FACTOR * loopFadeK,
+      ENGINE_WIREFRAME_OPACITY_FACTOR *
+        (t2Wall === null ? loopFadeK : wireAlpha * loopFadeK),
     );
     updatePlumeLayersForTick(
       allLayers,
