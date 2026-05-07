@@ -185,6 +185,7 @@ const addMainStageNose = (
   z: number,
   depthOccluder?: RocketDepthOccluderMaterial,
 ): void => {
+  const correctionRotation = Math.PI * 0.5;
   const heightSegs = Math.max(2, Math.floor(widthSegments * 0.4));
   const geometry = new THREE.SphereGeometry(
     radius,
@@ -195,6 +196,7 @@ const addMainStageNose = (
     0,
     Math.PI * 0.5,
   );
+  geometry.rotateY(correctionRotation);
   const edges = new THREE.EdgesGeometry(geometry);
   addTwinLineSegmentsDepthPassesToParent(
     parent,
@@ -217,6 +219,7 @@ const addMainStageNose = (
       0,
       Math.PI * 0.5,
     );
+    hullGeometry.rotateY(correctionRotation);
     const hull = new THREE.Mesh(hullGeometry, depthOccluder);
     hull.position.set(x, yEquator, z);
     hull.renderOrder = 0;
