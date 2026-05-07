@@ -1,9 +1,46 @@
-/**
- * Privacy policy — hairlines + vertical rhythm only.
- * Typography tokens live in space-gothic under `.privacy-page`.
- *
- * Sections share one gradient rule; the footer gets the same line on top.
- */
+.page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 1rem + 1.8vw, 2.5rem);
+  max-width: min(50rem, 100%);
+  margin-inline: auto;
+  padding-bottom: clamp(0.5rem, 0.2rem + 1.5vw, 1.25rem);
+  margin-bottom: 2rem;
+}
+
+.header,
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 0.3rem + 0.5vw, 0.85rem);
+}
+
+.header :global(.project-subtitle) {
+  max-width: min(68ch, 100%);
+}
+
+.meta {
+  margin: 0;
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gothic-cyan);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+}
+
 .section {
   position: relative;
   padding-block: clamp(1.35rem, 0.85rem + 1.4vw, 2rem);
@@ -11,6 +48,11 @@
 
 .section:first-child {
   padding-top: 0;
+}
+
+.section :global(.project-header) {
+  margin-top: 0;
+  margin-bottom: clamp(0.65rem, 0.35rem + 0.65vw, 0.95rem);
 }
 
 .section + .section::before,
@@ -31,8 +73,42 @@
   pointer-events: none;
 }
 
+.prose {
+  margin: 0;
+  max-width: min(68ch, 100%);
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
+  font-size: clamp(0.9375rem, 0.88rem + 0.16vw, 1.02rem);
+  line-height: 1.72;
+  letter-spacing: 0.014em;
+  color: var(--gothic-fg) !important;
+}
+
+.prose + .prose {
+  margin-top: 0.85rem;
+}
+
 .outro {
   position: relative;
   margin: 0;
   padding-top: clamp(1.35rem, 0.85rem + 1.4vw, 2rem);
+}
+
+.outro p {
+  margin: 0;
+  max-width: min(68ch, 100%);
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
+  font-size: clamp(0.9375rem, 0.88rem + 0.16vw, 1.02rem);
+  line-height: 1.72;
+  letter-spacing: 0.014em;
+  color: var(--gothic-muted) !important;
+}
+
+.outro a {
+  color: var(--gothic-cyan) !important;
+  text-underline-offset: 0.18em;
+}
+
+.outro a:hover,
+.outro a:focus-visible {
+  color: var(--gothic-magenta) !important;
 }
