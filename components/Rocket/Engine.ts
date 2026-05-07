@@ -147,7 +147,17 @@ export const addEngineBayStructure = (
   const bayY = yMount + 0.032 * scale;
   const upperR = ringRadius * 1.2;
   const lowerR = ringRadius * 1.05;
-  addCylinderEdges(parent as THREE.Group, material, upperR, upperR, 0.012 * scale, 8, 0, bayY, 0);
+  addCylinderEdges(
+    parent as THREE.Group,
+    material,
+    upperR,
+    upperR,
+    0.012 * scale,
+    8,
+    0,
+    bayY,
+    0,
+  );
   addCylinderEdges(
     parent as THREE.Group,
     material,
@@ -457,7 +467,11 @@ export const updatePlumeLayersForTick = (
       );
       const radialPressure = THREE.MathUtils.lerp(1.36, 0.88, pressureK);
       const axialPressure = THREE.MathUtils.lerp(1.24, 0.92, pressureK);
-      layer.mesh.scale.set(radialPressure, axialPressure * stageK, radialPressure);
+      layer.mesh.scale.set(
+        radialPressure,
+        axialPressure * stageK,
+        radialPressure,
+      );
       layer.mesh.position.x = 0;
       layer.mesh.position.z = 0;
       layer.mesh.rotation.x = 0;
@@ -477,7 +491,8 @@ export const updatePlumeLayersForTick = (
     const radialPressure = THREE.MathUtils.lerp(1.38, 0.86, pressureK);
     const axialPressure = THREE.MathUtils.lerp(1.26, 0.9, pressureK);
     const f = Math.sin(wallS * layer.oscSpeedA + layer.phase);
-    const g = 0.5 + 0.5 * Math.sin(wallS * layer.oscSpeedB + layer.phase * 1.63);
+    const g =
+      0.5 + 0.5 * Math.sin(wallS * layer.oscSpeedB + layer.phase * 1.63);
     const flicker = layer.flickerFloor + layer.flickerCeil * g;
     setOpacity(layer, flicker);
     const pulse = 1 + layer.pulseAmp * f;
@@ -493,15 +508,24 @@ export const updatePlumeLayersForTick = (
       curlK *
       0.34;
     layer.mesh.position.z =
-      Math.sin(wallS * layer.curlSpeedZ + layer.phase * 1.17 + layer.curlPhaseZ) *
+      Math.sin(
+        wallS * layer.curlSpeedZ + layer.phase * 1.17 + layer.curlPhaseZ,
+      ) *
       curlK *
       0.34;
-    const tipCurlK = layer.tipCurlAmp * (0.72 + 0.28 * f) * Math.max(0.3, stageK);
+    const tipCurlK =
+      layer.tipCurlAmp * (0.72 + 0.28 * f) * Math.max(0.3, stageK);
     layer.mesh.rotation.x =
-      Math.sin(wallS * (layer.curlSpeedX * 0.82) + layer.phase * 1.11 + layer.curlPhaseX) *
-      tipCurlK;
+      Math.sin(
+        wallS * (layer.curlSpeedX * 0.82) +
+          layer.phase * 1.11 +
+          layer.curlPhaseX,
+      ) * tipCurlK;
     layer.mesh.rotation.z =
-      Math.sin(wallS * (layer.curlSpeedZ * 0.87) + layer.phase * 1.19 + layer.curlPhaseZ) *
-      tipCurlK;
+      Math.sin(
+        wallS * (layer.curlSpeedZ * 0.87) +
+          layer.phase * 1.19 +
+          layer.curlPhaseZ,
+      ) * tipCurlK;
   }
 };

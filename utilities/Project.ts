@@ -43,7 +43,11 @@ export const projects: Project[] = [
     image: imageMars,
     alt: 'Solar System Model',
     link: '/projects/solar-system',
-    filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.THREE_JS, ProjectFilter.WEB],
+    filters: [
+      ProjectFilter.JAVASCRIPT,
+      ProjectFilter.THREE_JS,
+      ProjectFilter.WEB,
+    ],
     description:
       'Dive into a stunningly rendered model of the solar system created using Three.js and TypeScript. This interactive visualization showcases the planets and their moons orbiting in a dynamic environment, complete with realistic lighting and detailed bump maps for an immersive experience.',
     github: 'https://github.com/KyleGough/solar-system',
@@ -107,7 +111,12 @@ export const projects: Project[] = [
     image: imagePortfolio,
     alt: 'Portfolio',
     link: '/projects/portfolio',
-    filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.REACT, ProjectFilter.THREE_JS, ProjectFilter.WEB],
+    filters: [
+      ProjectFilter.JAVASCRIPT,
+      ProjectFilter.REACT,
+      ProjectFilter.THREE_JS,
+      ProjectFilter.WEB,
+    ],
     description:
       "Dynamic showcase of my evolving journey as a front-end engineer. Here, you'll find a curated collection of my projects and a glimpse into my ever-expanding technical repertoire.",
     github: 'https://github.com/KyleGough/portfolio',
@@ -295,11 +304,7 @@ export const projects: Project[] = [
     image: imageBSplit,
     alt: 'BSplit',
     link: '/projects/bsplit',
-    filters: [
-      ProjectFilter.JAVASCRIPT,
-      ProjectFilter.PHP,
-      ProjectFilter.WEB,
-    ],
+    filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.PHP, ProjectFilter.WEB],
     description:
       'Meet BSplit, your all-in-one web application designed to simplify the process of splitting bills and settling payments among friends and housemates. With user-friendly features and a commitment to enhancing the user experience, BSplit makes managing shared expenses a breeze.',
     skills: ['PHP', 'JavaScript', 'jQuery', 'SQL', 'HTML', 'CSS', 'Bootstrap'],

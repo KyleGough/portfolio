@@ -221,7 +221,11 @@ const buildRocket = (
   // Side boosters: local origin at stage center; body-space offset on each group
   for (const { b, outward, engineWire } of [
     { b: leftBooster, outward: -1 as const, engineWire: leftBoosterEngineWire },
-    { b: rightBooster, outward: 1 as const, engineWire: rightBoosterEngineWire },
+    {
+      b: rightBooster,
+      outward: 1 as const,
+      engineWire: rightBoosterEngineWire,
+    },
   ]) {
     b.position.set(outward * BOOSTER_STAGE_X, 0, 0);
     addCylinderEdges(
@@ -360,11 +364,7 @@ const lineLiesUnderSubtree = (
   line: THREE.Object3D,
   subtreeRoot: THREE.Object3D,
 ): boolean => {
-  for (
-    let p: THREE.Object3D | null = line.parent;
-    p;
-    p = p.parent
-  ) {
+  for (let p: THREE.Object3D | null = line.parent; p; p = p.parent) {
     if (p === subtreeRoot) {
       return true;
     }
@@ -381,10 +381,7 @@ const setGroupLineOpacityFactor = (
     if (!(obj instanceof THREE.Line || obj instanceof THREE.LineSegments)) {
       return;
     }
-    if (
-      excludeSubtree &&
-      lineLiesUnderSubtree(obj, excludeSubtree)
-    ) {
+    if (excludeSubtree && lineLiesUnderSubtree(obj, excludeSubtree)) {
       return;
     }
     const m = obj.material as THREE.Material;
@@ -871,7 +868,10 @@ const attachRocketViewport = (
       loopFadeK,
       upperStackFadeK,
     );
-    const coreBrightness = averagePlumeBrightness(allLayers, (layer) => layer.isCore);
+    const coreBrightness = averagePlumeBrightness(
+      allLayers,
+      (layer) => layer.isCore,
+    );
     const boosterBrightness = averagePlumeBrightness(
       allLayers,
       (layer) => layer.isBooster,
@@ -884,7 +884,8 @@ const attachRocketViewport = (
     const boosterLightI = boosterBrightness * 0.95 * plumeMul * loopFadeK;
     leftBoosterPlumeLight.intensity = boosterLightI;
     rightBoosterPlumeLight.intensity = boosterLightI;
-    upperPlumeLight.intensity = upperBrightness * 1.2 * s2PlumeK * upperStackFadeK;
+    upperPlumeLight.intensity =
+      upperBrightness * 1.2 * s2PlumeK * upperStackFadeK;
     renderer.render(scene, camera);
     rafId = window.requestAnimationFrame(tick);
   };

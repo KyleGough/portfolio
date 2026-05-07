@@ -44,10 +44,7 @@ export const SpaceGothicScrollVars: React.FC = () => {
     };
     const tick = (timeMs: number): void => {
       const driftPx = (timeMs * STAR_DRIFT_PX_PER_MS) % driftLoopPx;
-      root.style.setProperty(
-        SG_STAR_DRIFT_Y_PROP,
-        `${driftPx.toFixed(2)}px`,
-      );
+      root.style.setProperty(SG_STAR_DRIFT_Y_PROP, `${driftPx.toFixed(2)}px`);
       animationFrame = window.requestAnimationFrame(tick);
     };
 

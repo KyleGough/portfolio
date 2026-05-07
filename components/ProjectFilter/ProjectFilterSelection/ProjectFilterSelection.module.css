@@ -30,20 +30,20 @@
   box-shadow: inset 0 0 0 1px rgba(63, 81, 181, 0.22);
 }
 
-:global(.app-space-gothic) .option {
+.option {
   color: var(--gothic-cyan) !important;
   background: transparent;
   box-shadow: none;
 }
 
-:global(.app-space-gothic) .option:hover,
-:global(.app-space-gothic) .option:focus {
+.option:hover,
+.option:focus {
   color: var(--gothic-magenta) !important;
   background: oklch(20% 0.06 300 / 0.55) !important;
   box-shadow: inset 0 0 0 1px oklch(60% 0.15 310 / 0.28) !important;
 }
 
-:global(.app-space-gothic) .selected {
+.selected {
   color: var(--gothic-magenta) !important;
   background: oklch(18% 0.06 305 / 0.65) !important;
   box-shadow:
