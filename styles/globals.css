@@ -1,10 +1,12 @@
 /* Sets default font size (1rem = 16px for readable body and Tailwind rem scale). */
 html {
   font-size: 16px;
+  background-color: #03030e;
 }
 
 /* Removes browser default margin and sets font (next/font on `<Html>` in `_document`). */
 body {
+  background-color: #03030e;
   font-family: var(--font-lato), ui-sans-serif, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
