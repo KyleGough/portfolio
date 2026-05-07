@@ -24,10 +24,9 @@ enum ProjectFilter {
   GROUP_PROJECT = 'Group Projects',
   JAVASCRIPT = 'JavaScript',
   PHP = 'PHP',
-  PUZZLE = 'Games/Puzzles',
   PYTHON = 'Python',
   REACT = 'React',
-  SQL = 'SQL',
+  THREE_JS = 'Three.js',
   WEB = 'Web',
 }
 
@@ -44,7 +43,7 @@ export const projects: Project[] = [
     image: imageMars,
     alt: 'Solar System Model',
     link: '/projects/solar-system',
-    filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.WEB],
+    filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.THREE_JS, ProjectFilter.WEB],
     description:
       'Dive into a stunningly rendered model of the solar system created using Three.js and TypeScript. This interactive visualization showcases the planets and their moons orbiting in a dynamic environment, complete with realistic lighting and detailed bump maps for an immersive experience.',
     github: 'https://github.com/KyleGough/solar-system',
@@ -108,7 +107,7 @@ export const projects: Project[] = [
     image: imagePortfolio,
     alt: 'Portfolio',
     link: '/projects/portfolio',
-    filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.REACT, ProjectFilter.WEB],
+    filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.REACT, ProjectFilter.THREE_JS, ProjectFilter.WEB],
     description:
       "Dynamic showcase of my evolving journey as a front-end engineer. Here, you'll find a curated collection of my projects and a glimpse into my ever-expanding technical repertoire.",
     github: 'https://github.com/KyleGough/portfolio',
@@ -145,7 +144,6 @@ export const projects: Project[] = [
       ProjectFilter.JAVASCRIPT,
       ProjectFilter.PYTHON,
       ProjectFilter.REACT,
-      ProjectFilter.SQL,
       ProjectFilter.GROUP_PROJECT,
       ProjectFilter.WEB,
     ],
@@ -179,7 +177,7 @@ export const projects: Project[] = [
     image: imageSudoku,
     alt: 'Logical sudoku solver',
     link: '/projects/sudoku',
-    filters: [ProjectFilter.PYTHON, ProjectFilter.PUZZLE],
+    filters: [ProjectFilter.PYTHON],
     description:
       'A powerful algorithmic tool designed to conquer even the most challenging Sudoku puzzles without resorting to brute force, guessing, or backtracking. This solver showcases a refined approach to puzzle solving, providing users with detailed insights at every step.',
     github: 'https://github.com/KyleGough/sudoku',
@@ -229,7 +227,6 @@ export const projects: Project[] = [
     filters: [
       ProjectFilter.JAVASCRIPT,
       ProjectFilter.PHP,
-      ProjectFilter.SQL,
       ProjectFilter.GROUP_PROJECT,
       ProjectFilter.WEB,
     ],
@@ -301,7 +298,6 @@ export const projects: Project[] = [
     filters: [
       ProjectFilter.JAVASCRIPT,
       ProjectFilter.PHP,
-      ProjectFilter.SQL,
       ProjectFilter.WEB,
     ],
     description:
