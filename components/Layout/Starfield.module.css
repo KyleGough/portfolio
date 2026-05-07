@@ -10,7 +10,7 @@
 .layerMid,
 .layerNear {
   position: absolute;
-  inset: -20svh 0;
+  inset: -20lvh 0;
   will-change: transform;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .starClone {
-  transform: translateY(var(--sg-star-drift-loop-y, 140svh));
+  transform: translateY(var(--sg-star-drift-loop-y, 140lvh));
 }
 
 @media (prefers-reduced-motion: reduce) {
