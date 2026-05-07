@@ -105,6 +105,7 @@
   position: absolute;
   z-index: 100;
   width: 100%;
+  max-height: 75vh;
   max-height: 75svh;
   margin-top: 0.4rem;
   padding: 0.35rem 0;
