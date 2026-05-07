@@ -11,6 +11,7 @@ interface ProjectItemProps {
   date: ProjectDate;
   description: string;
   image: StaticImageData;
+  isLast?: boolean;
   link: string;
   title: string;
 }
@@ -22,9 +23,10 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
   link,
   image,
   alt,
+  isLast = false,
 }) => (
   <Section>
-    <div className="project-item__row">
+    <div className={`project-item__row ${isLast ? 'mb-16' : ''}`}>
       <div className="project-item__text col-span-12 lg:col-span-7">
         <h2 className="project-header !mb-2 text-balance">{title}</h2>
         <time

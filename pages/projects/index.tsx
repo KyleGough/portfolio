@@ -15,6 +15,8 @@ const Projects: React.FC = () => {
     return filter === 'All' ? true : project.filters.includes(filter);
   };
 
+  const filteredProjects = projects.filter((project) => filterProjects(project));
+
   return (
     <Layout title="Project List - Kyle Gough">
       <Section>
@@ -25,9 +27,7 @@ const Projects: React.FC = () => {
 
       <ProjectsFilterPanel filter={filter} setFilter={setFilter} />
 
-      {projects
-        .filter((project) => filterProjects(project))
-        .map((project, i) => {
+      {filteredProjects.map((project, i) => {
           return (
             <React.Fragment key={project.title}>
               {i !== 0 && <Divider />}
@@ -38,6 +38,7 @@ const Projects: React.FC = () => {
                 image={project.image}
                 alt={project.alt}
                 link={project.link}
+                isLast={i === filteredProjects.length - 1}
               />
             </React.Fragment>
           );
