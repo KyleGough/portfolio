@@ -782,7 +782,7 @@ footer.footer--space-gothic a[href]:focus-visible svg {
 }
 
 /* /privacy: long-form policy (~68ch measure, rhythm via privacy.module.css hairlines) */
-.app-space-gothic .privacy-page {
+.privacy-page {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -790,21 +790,22 @@ footer.footer--space-gothic a[href]:focus-visible svg {
   max-width: min(50rem, 100%);
   margin-inline: auto;
   padding-bottom: clamp(0.5rem, 0.2rem + 1.5vw, 1.25rem);
+  margin-bottom: 2rem;
 }
 
-.app-space-gothic .privacy-page__header,
-.app-space-gothic .privacy-page__content {
+.privacy-page__header,
+.privacy-page__content {
   position: relative;
   z-index: 1;
 }
 
-.app-space-gothic .privacy-page__header {
+.privacy-page__header {
   display: flex;
   flex-direction: column;
   gap: clamp(0.5rem, 0.3rem + 0.5vw, 0.85rem);
 }
 
-.app-space-gothic .privacy-page__meta {
+.privacy-page__meta {
   margin: 0;
   font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
   font-size: 0.8125rem;
@@ -813,23 +814,23 @@ footer.footer--space-gothic a[href]:focus-visible svg {
   color: var(--gothic-cyan);
 }
 
-.app-space-gothic .privacy-page__header .project-subtitle {
+.privacy-page__header .project-subtitle {
   max-width: min(68ch, 100%);
 }
 
-.app-space-gothic .privacy-page__content {
+.privacy-page__content {
   display: flex;
   flex-direction: column;
   gap: 0;
   min-width: 0;
 }
 
-.app-space-gothic .privacy-page__section .project-header {
+.privacy-page__section .project-header {
   margin-top: 0;
   margin-bottom: clamp(0.65rem, 0.35rem + 0.65vw, 0.95rem);
 }
 
-.app-space-gothic .privacy-page__prose {
+.privacy-page__prose {
   margin: 0;
   max-width: min(68ch, 100%);
   font-family: var(--font-space-grotesk), system-ui, sans-serif;
@@ -839,11 +840,11 @@ footer.footer--space-gothic a[href]:focus-visible svg {
   color: var(--gothic-fg) !important;
 }
 
-.app-space-gothic .privacy-page__prose + .privacy-page__prose {
+.privacy-page__prose + .privacy-page__prose {
   margin-top: 0.85rem;
 }
 
-.app-space-gothic .privacy-page__outro {
+.privacy-page__outro {
   margin: 0;
   max-width: min(68ch, 100%);
   font-family: var(--font-space-grotesk), system-ui, sans-serif;
@@ -853,13 +854,13 @@ footer.footer--space-gothic a[href]:focus-visible svg {
   color: var(--gothic-muted) !important;
 }
 
-.app-space-gothic .privacy-page__outro a {
+.privacy-page__outro a {
   color: var(--gothic-cyan) !important;
   text-underline-offset: 0.18em;
 }
 
-.app-space-gothic .privacy-page__outro a:hover,
-.app-space-gothic .privacy-page__outro a:focus-visible {
+.privacy-page__outro a:hover,
+.privacy-page__outro a:focus-visible {
   color: var(--gothic-magenta) !important;
 }
 
