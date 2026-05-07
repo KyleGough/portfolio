@@ -32,9 +32,13 @@ const makeStars = (
 
   for (let i = 0; i < count; i += 1) {
     const radius = minRadius + random() * (maxRadius - minRadius);
-    const opacity = minOpacity + random() * (maxOpacity - minOpacity);
+    const left = random() * 100;
+    const distanceFromCenter = Math.abs(50 - left);
+    const opacityFalloff = (50 - distanceFromCenter) / 150;
+    const opacity = minOpacity + random() * (maxOpacity - minOpacity) - opacityFalloff;
+    
     stars.push({
-      left: `${(random() * 100).toFixed(2)}%`,
+      left: `${left.toFixed(2)}%`,
       top: `${(random() * 100).toFixed(2)}%`,
       size: `${radius.toFixed(2)}px`,
       opacity: Number(opacity.toFixed(3)),
