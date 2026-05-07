@@ -87,8 +87,8 @@ const GraphVisualiser: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Pagination
       previousTitle="BSplit"
       previousLink="/projects/bsplit"
-      nextTitle="URL Shortener"
-      nextLink="/projects/url-shortener"
+      nextTitle="RSCBot"
+      nextLink="/projects/rscbot"
     />
   </Layout>
 );
