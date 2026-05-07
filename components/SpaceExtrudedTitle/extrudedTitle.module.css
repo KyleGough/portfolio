@@ -23,7 +23,7 @@
   letter-spacing: -0.07em;
   color: oklch(93% 0.05 205 / 0.72);
   transform-origin: center center;
-  transform: translateX(0.055em) rotateX(19deg) rotateY(-12deg) translateZ(6px);
+  transform: translateX(0) rotateX(0deg) rotateY(0deg) translateZ(6px);
   transform-style: preserve-3d;
   text-shadow:
     0.45px 0.45px 0 oklch(58% 0.09 275 / 0.92),
