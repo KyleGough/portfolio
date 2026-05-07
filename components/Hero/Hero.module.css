@@ -1,8 +1,6 @@
 /* Hero: Falcon Heavy wireframe (Three.js) + copy */
 .slot {
   position: relative;
-  /* Stable baseline for browsers without svh support (avoid dynamic vh growth). */
-  min-height: max(100svh, 34rem);
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
@@ -25,6 +23,8 @@
 
 @media (min-width: 960px) {
   .slot {
+    /* Only enforce full-height hero once two-column layout is active. */
+    min-height: max(100svh, 34rem);
     grid-template-columns: minmax(0, 1.32fr) minmax(0, 0.68fr);
     gap: clamp(1.5rem, 2.2vw, 2.75rem);
     width: min(100%, 100rem);
