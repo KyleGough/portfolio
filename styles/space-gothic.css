@@ -92,13 +92,6 @@
     inset 0 0 200px oklch(26% 0.09 300 / 0.045);
 }
 
-/* Mobile viewport chrome (URL bar) causes fixed-attachment repaint jumps while scrolling. */
-@media (hover: none) and (pointer: coarse) {
-  .app-space-gothic main {
-    background-attachment: scroll, scroll, scroll, scroll, scroll, scroll, scroll, scroll, scroll;
-  }
-}
-
 .app-space-gothic main::before {
   content: '';
   position: fixed;

@@ -15,7 +15,6 @@ const STARFIELD_HEIGHT_MULTIPLIER = 1.4;
 export const SpaceGothicScrollVars: React.FC = () => {
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const touchViewportMq = window.matchMedia('(hover: none) and (pointer: coarse)');
     const root = document.documentElement;
 
     if (mq.matches) {
@@ -55,17 +54,11 @@ export const SpaceGothicScrollVars: React.FC = () => {
     syncDriftLoop();
     sync();
     window.addEventListener('scroll', sync, { passive: true });
-    if (touchViewportMq.matches) {
-      // Mobile browser chrome collapse/expand fires resize while scrolling; ignore it.
-      window.addEventListener('orientationchange', syncDriftLoop, { passive: true });
-    } else {
-      window.addEventListener('resize', syncDriftLoop, { passive: true });
-    }
+    window.addEventListener('resize', syncDriftLoop, { passive: true });
     animationFrame = window.requestAnimationFrame(tick);
     return () => {
       window.removeEventListener('scroll', sync);
       window.removeEventListener('resize', syncDriftLoop);
-      window.removeEventListener('orientationchange', syncDriftLoop);
       window.cancelAnimationFrame(animationFrame);
       root.style.removeProperty(SG_SCROLL_Y_PROP);
       root.style.removeProperty(SG_STAR_DRIFT_Y_PROP);
