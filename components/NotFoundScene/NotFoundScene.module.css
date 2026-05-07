@@ -1,4 +1,4 @@
-/* Scoped 404 void scene: 3D grid floor + extruded type (solid fills, no gradient text). */
+/* Scoped 404 scene with extruded type treatment. */
 
 .root {
   position: relative;
@@ -10,89 +10,6 @@
   min-height: min(88svh, 56rem);
   padding: clamp(1.5rem, 5vw, 3rem) 1rem 4rem;
   overflow: hidden;
-}
-
-.backdrop {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Perspective floor: animated 3D grid */
-.perspective {
-  position: absolute;
-  left: -15%;
-  right: -15%;
-  bottom: -5%;
-  height: 62%;
-  perspective: 920px;
-  perspective-origin: 50% 28%;
-}
-
-.gridFloor {
-  position: absolute;
-  left: -20%;
-  width: 140%;
-  height: 140%;
-  bottom: -35%;
-  transform-origin: 50% 100%;
-  transform-style: preserve-3d;
-  will-change: transform;
-  background-image:
-    linear-gradient(
-      90deg,
-      rgb(255 255 255 / 0.045) 0,
-      rgb(255 255 255 / 0.045) 1px,
-      transparent 1px,
-      transparent 56px
-    ),
-    linear-gradient(
-      0deg,
-      rgb(255 255 255 / 0.045) 0,
-      rgb(255 255 255 / 0.045) 1px,
-      transparent 1px,
-      transparent 56px
-    ),
-    linear-gradient(
-      90deg,
-      oklch(78% 0.12 200 / 0.07) 0,
-      oklch(78% 0.12 200 / 0.07) 1px,
-      transparent 1px,
-      transparent 168px
-    ),
-    linear-gradient(
-      0deg,
-      oklch(72% 0.2 310 / 0.05) 0,
-      oklch(72% 0.2 310 / 0.05) 1px,
-      transparent 1px,
-      transparent 168px
-    );
-  background-size:
-    56px 56px,
-    56px 56px,
-    168px 168px,
-    168px 168px;
-  background-position: center bottom;
-  mask-image: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.15) 0%,
-    rgba(255, 255, 255, 0.95) 38%,
-    white 100%
-  );
-  border-top: 1px solid oklch(65% 0.15 290 / 0.22);
-  animation: gridDrift 18s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
-}
-
-@keyframes gridDrift {
-  0% {
-    transform: rotateX(74deg) translateZ(-140px) translateY(0) scale(1);
-    opacity: 0.55;
-  }
-  100% {
-    transform: rotateX(80deg) translateZ(-96px) translateY(-3%) scale(1.02);
-    opacity: 0.88;
-  }
 }
 
 /* Foreground */
@@ -154,11 +71,9 @@
 @keyframes digitEase {
   0% {
     opacity: 0;
-    transform: translateZ(-40px) translateY(12px);
   }
   100% {
     opacity: 1;
-    transform: translateZ(0) translateY(0);
   }
 }
 
@@ -202,12 +117,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .gridFloor {
-    animation: none !important;
-    transform: rotateX(78deg) translateZ(-120px);
-    opacity: 0.65;
-  }
-
   .digit {
     animation: none;
     opacity: 1;
