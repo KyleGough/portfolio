@@ -9,7 +9,6 @@ import imagePortfolio from '@image/card-portfolio.jpg';
 import imageRSCBot from '@image/card-rscbot.jpg';
 import imageSortingVisualiser from '@image/card-sorting-algorithm-visualiser.jpg';
 import imageSudoku from '@image/card-sudoku.jpg';
-import imageURLShortener from '@image/card-url-shortener.jpg';
 import imageMars from '@image/mars.png';
 
 import { Project } from './types';
@@ -241,23 +240,6 @@ export const projects: Project[] = [
       'PHP',
       'SQL',
     ],
-  },
-  {
-    id: 'url-shortener',
-    title: 'URL Shortener',
-    date: {
-      start: {
-        month: 4,
-        year: 2017,
-      },
-    },
-    image: imageURLShortener,
-    alt: 'URL shortener',
-    link: '/projects/url-shortener',
-    filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.WEB],
-    description:
-      'Simple yet powerful URL shortening tool that is designed to simplify link management while ensuring efficient and reliable shortening. The project marks my debut in harnessing the capabilities of Node.js, Express.js, and MongoDB to create a seamless user experience.',
-    skills: ['JavaScript', 'MongoDB', 'jQuery', 'HTML', 'CSS', 'Materialize'],
   },
   {
     id: 'graph-algorithm-visualiser',

@@ -73,8 +73,8 @@ const RSCBot: React.FC<ProjectPageProps> = ({ images, project }) => (
     <Divider />
 
     <Pagination
-      previousTitle="URL Shortener"
-      previousLink="/projects/url-shortener"
+      previousTitle="Graph Algorithm Visualiser"
+      previousLink="/projects/graph-algorithm-visualiser"
       nextTitle="Cave Exploration"
       nextLink="/projects/cave-exploration"
     />
