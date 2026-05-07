@@ -790,6 +790,7 @@ footer.footer--space-gothic a[href]:focus-visible svg {
   max-width: min(50rem, 100%);
   margin-inline: auto;
   padding-bottom: clamp(0.5rem, 0.2rem + 1.5vw, 1.25rem);
+  margin-bottom: 2rem;
 }
 
 .app-space-gothic .privacy-page__header,
