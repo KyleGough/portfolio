@@ -18,7 +18,7 @@ const filters = [
   'PHP',
   'Python',
   'React',
-  'Games/Puzzles',
+  'Three.js',
   'Group Projects',
   'Web',
 ];
