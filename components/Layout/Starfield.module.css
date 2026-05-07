@@ -10,6 +10,7 @@
 .layerMid,
 .layerNear {
   position: absolute;
+  inset: -20vh 0;
   inset: -20svh 0;
   will-change: transform;
 }
@@ -56,6 +57,7 @@
 }
 
 .starClone {
+  transform: translateY(var(--sg-star-drift-loop-y, 140vh));
   transform: translateY(var(--sg-star-drift-loop-y, 140svh));
 }
 
