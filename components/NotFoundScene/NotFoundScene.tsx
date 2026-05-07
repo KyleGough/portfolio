@@ -6,14 +6,8 @@ import styles from './NotFoundScene.module.css';
 
 export const NotFoundScene: React.FC = () => (
   <div className={styles.root}>
-    <div className={styles.backdrop} aria-hidden="true">
-      <div className={styles.perspective}>
-        <div className={styles.gridFloor} />
-      </div>
-    </div>
-
     <div className={styles.content}>
-      <p className={styles.signal}>signal lost</p>
+      <p className={styles.signal}>Signal Lost</p>
       <h1 id="not-found-heading" className={styles.titleBlock}>
         <span className={extruded.perspectiveWrapHero}>
           <span className={extruded.heroDigits}>
