@@ -271,18 +271,13 @@
       bg-background/90
       px-5 py-2.5
       shadow-sm
-      transition duration-200 ease-out
-      motion-safe:hover:-translate-y-px
-      motion-safe:hover:shadow
-      motion-safe:active:translate-y-0
-      active:shadow-sm
       focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-link/40;
   }
   .project-header-cta:hover {
     @apply border-link/20 text-link-hover;
   }
   .project-header-cta .project-header-cta__icon {
-    @apply h-5 w-5 shrink-0 fill-link transition-colors duration-200;
+    @apply h-5 w-5 shrink-0 fill-link;
   }
   .project-header-cta:hover .project-header-cta__icon,
   .project-header-cta:focus-visible .project-header-cta__icon {

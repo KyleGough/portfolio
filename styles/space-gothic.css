@@ -702,11 +702,6 @@ footer.footer--space-gothic a[href]:focus-visible svg {
 .app-space-gothic a.project-header-cta .project-header-cta__icon {
   fill: currentColor !important;
 }
-@media (prefers-reduced-motion: no-preference) {
-  .app-space-gothic a.project-header-cta:hover {
-    transform: translateY(-1px);
-  }
-}
 
 /* GitHub + stargazers: one visual pill, second segment to the right */
 .app-space-gothic a.project-header-cta--firstOfPair:not(:only-child) {
