@@ -22,9 +22,17 @@ const D = 0.06;
 /** Triangle flap depth — apex sits below the flap base by this amount when the flap is closed. */
 const FLAP_H = 0.42;
 
-/** Static three-quarter pose. A slight yaw + pitch keep the wireframe reading as 3D without spinning. */
-const STATIC_YAW_RAD = -0.32;
-const STATIC_PITCH_RAD = 0.12;
+/** Base three-quarter pose. A slight yaw + pitch keep the wireframe reading as 3D without spinning. */
+const STATIC_YAW_RAD = -0.20;
+const STATIC_PITCH_RAD = 0.20;
+
+/**
+ * Circular wobble: pitch + yaw oscillate with a 90° phase offset around the base pose so the
+ * envelope's facing direction traces a small slow circle. Amplitude kept small so it reads as
+ * a gentle drift rather than swinging.
+ */
+const WOBBLE_AMP_RAD = 0.080;
+const WOBBLE_PERIOD_MS = 5000;
 
 type Disposer = () => void;
 
@@ -171,9 +179,50 @@ const disposeSceneMaterials = (scene: THREE.Scene): void => {
   });
 };
 
+const applyWobblePose = (envelope: THREE.Group, elapsedMs: number): void => {
+  const phase = (elapsedMs / WOBBLE_PERIOD_MS) * Math.PI * 2;
+  envelope.rotation.x = STATIC_PITCH_RAD + WOBBLE_AMP_RAD * Math.cos(phase);
+  envelope.rotation.y = STATIC_YAW_RAD + WOBBLE_AMP_RAD * Math.sin(phase);
+};
+
+const createWobbleController = (
+  envelope: THREE.Group,
+  scene: THREE.Scene,
+  camera: THREE.PerspectiveCamera,
+  renderer: THREE.WebGLRenderer,
+): { start: () => void; stop: () => void } => {
+  const time0 = performance.now();
+  let rafId = 0;
+  let running = false;
+
+  const tick = (): void => {
+    applyWobblePose(envelope, performance.now() - time0);
+    renderer.render(scene, camera);
+    rafId = window.requestAnimationFrame(tick);
+  };
+
+  return {
+    start: () => {
+      if (running) {
+        return;
+      }
+      running = true;
+      rafId = window.requestAnimationFrame(tick);
+    },
+    stop: () => {
+      running = false;
+      window.cancelAnimationFrame(rafId);
+    },
+  };
+};
+
 const attachEnvelopeViewport = (
   mount: HTMLElement,
 ): { dispose: () => void } => {
+  const reducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)',
+  ).matches;
+
   const { camera, renderer, scene, setSize } = createRendererStack(mount);
 
   const wireMat = new THREE.LineBasicMaterial({
@@ -191,14 +240,37 @@ const attachEnvelopeViewport = (
   setSize();
   renderer.render(scene, camera);
 
+  const wobble = createWobbleController(envelope, scene, camera, renderer);
+  if (!reducedMotion) {
+    wobble.start();
+  }
+
   const ro = new ResizeObserver(() => {
     setSize();
-    renderer.render(scene, camera);
+    if (reducedMotion) {
+      renderer.render(scene, camera);
+    }
   });
   ro.observe(mount);
 
+  // Pause off-screen so the wobble loop doesn't burn frames behind other content.
+  const io = new IntersectionObserver((entries) => {
+    if (reducedMotion) {
+      return;
+    }
+    const inView = entries[0]?.isIntersecting ?? false;
+    if (inView) {
+      wobble.start();
+    } else {
+      wobble.stop();
+    }
+  });
+  io.observe(mount);
+
   const dispose = (): void => {
+    wobble.stop();
     ro.disconnect();
+    io.disconnect();
     if (renderer.domElement.parentNode === mount) {
       mount.removeChild(renderer.domElement);
     }
@@ -215,9 +287,9 @@ const attachEnvelopeViewport = (
 };
 
 /**
- * Client-only WebGL: a static cyan wireframe envelope held in a slight three-quarter
- * pose with its flap sealed. Shares the Falcon Heavy hero's depth-aware twin-pass
- * rendering style and palette.
+ * Client-only WebGL: a cyan wireframe envelope held in a slight three-quarter pose with
+ * its flap sealed, gently wobbling in a small circular orbit around its base orientation.
+ * Shares the Falcon Heavy hero's depth-aware twin-pass rendering style and palette.
  */
 export const EnvelopeWireframe: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -236,7 +308,7 @@ export const EnvelopeWireframe: React.FC = () => {
       ref={mountRef}
       className={styles.canvasHost}
       role="img"
-      aria-label="Three-dimensional cyan wireframe envelope with a sealed flap, facing the viewer."
+      aria-label="Three-dimensional cyan wireframe envelope with a sealed flap, gently wobbling."
     />
   );
 };
