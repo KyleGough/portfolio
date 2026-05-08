@@ -1,6 +1,6 @@
 import { GitHubIcon, MenuIcon } from '@components/Icons';
 import { Link } from '@components/Link';
-import Logo from '@image/logo.png';
+import NavAvatar from '@image/nav-avatar.png';
 import { isNavPathActive } from '@utilities/isNavPathActive';
 import { clsx } from 'clsx';
 import Image from 'next/image';
@@ -97,14 +97,14 @@ export const Nav: React.FC = () => {
             focus-visible:outline-link/50"
             aria-current={isNavPathActive(asPath, '/') ? 'page' : undefined}
           >
-            <div className="mr-4 h-8 w-8">
+            <div className="mr-4 h-8 w-8 overflow-hidden rounded-full">
               <Image
-                src={Logo.src}
-                alt="Website Logo"
-                width={Logo.width}
-                height={Logo.height}
+                src={NavAvatar.src}
+                alt="Kyle Gough avatar"
+                width={NavAvatar.width}
+                height={NavAvatar.height}
                 placeholder="blur"
-                blurDataURL={Logo.blurDataURL}
+                blurDataURL={NavAvatar.blurDataURL}
                 priority
               />
             </div>
