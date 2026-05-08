@@ -92,6 +92,12 @@
     inset 0 0 200px oklch(26% 0.09 300 / 0.045);
 }
 
+@supports not (height: 1svh) {
+  .app-space-gothic main {
+    min-height: calc(var(--vp-svh, 1vh) * 100);
+  }
+}
+
 .app-space-gothic main::before {
   content: '';
   position: fixed;
