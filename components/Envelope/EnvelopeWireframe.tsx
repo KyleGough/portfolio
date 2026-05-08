@@ -34,6 +34,17 @@ const STATIC_PITCH_RAD = 0.20;
 const WOBBLE_AMP_RAD = 0.080;
 const WOBBLE_PERIOD_MS = 5000;
 
+/** Subtle in/out breath toward the camera so the envelope feels suspended in space rather than rotating in place. */
+const BREATH_AMP = 0.04;
+const BREATH_PERIOD_MS = 7000;
+
+/**
+ * Tiny roll on the camera axis. Quarter-amplitude and noticeably slower than the wobble — turns
+ * the wobble from a "head shake" into "drifting paper".
+ */
+const ROLL_AMP_RAD = 0.025;
+const ROLL_PERIOD_MS = 12000;
+
 type Disposer = () => void;
 
 interface EnvelopeContent {
@@ -92,6 +103,38 @@ const buildClosedFlap = (
   return flap;
 };
 
+/**
+ * V-fold seam mirrored on the back face: two diagonals from the top corners down to the same
+ * apex point as the front flap. The depth-aware "behind" pass dims it to ~20% when occluded by
+ * the body, so it reads as faint texture from the front and crisp seam during wobble parallax.
+ */
+const buildBackVFold = (
+  material: THREE.LineBasicMaterial,
+  disposers: Disposer[],
+): THREE.Group => {
+  const fold = new THREE.Group();
+  // Slightly outside the back face so the seam doesn't z-fight the body's back edges.
+  fold.position.set(0, 0, -(D / 2 + 0.0008));
+
+  const foldEdges = new THREE.BufferGeometry();
+  foldEdges.setAttribute(
+    'position',
+    new THREE.BufferAttribute(
+      new Float32Array([
+        -W / 2, H / 2, 0,
+        0, H / 2 - FLAP_H, 0,
+        W / 2, H / 2, 0,
+        0, H / 2 - FLAP_H, 0,
+      ]),
+      3,
+    ),
+  );
+  addTwinLineSegmentsDepthPassesToParent(fold, foldEdges, material);
+  disposers.push(() => foldEdges.dispose());
+
+  return fold;
+};
+
 const buildEnvelopeContent = (
   material: THREE.LineBasicMaterial,
   depthOccluder: RocketDepthOccluderMaterial,
@@ -100,6 +143,7 @@ const buildEnvelopeContent = (
   const envelope = new THREE.Group();
   buildBodyEdges(envelope, material, depthOccluder, disposers);
   envelope.add(buildClosedFlap(material, disposers));
+  envelope.add(buildBackVFold(material, disposers));
   envelope.rotation.set(STATIC_PITCH_RAD, STATIC_YAW_RAD, 0);
   return { disposers, envelope };
 };
@@ -180,9 +224,17 @@ const disposeSceneMaterials = (scene: THREE.Scene): void => {
 };
 
 const applyWobblePose = (envelope: THREE.Group, elapsedMs: number): void => {
-  const phase = (elapsedMs / WOBBLE_PERIOD_MS) * Math.PI * 2;
-  envelope.rotation.x = STATIC_PITCH_RAD + WOBBLE_AMP_RAD * Math.cos(phase);
-  envelope.rotation.y = STATIC_YAW_RAD + WOBBLE_AMP_RAD * Math.sin(phase);
+  const wobblePhase = (elapsedMs / WOBBLE_PERIOD_MS) * Math.PI * 2;
+  envelope.rotation.x =
+    STATIC_PITCH_RAD + WOBBLE_AMP_RAD * Math.cos(wobblePhase);
+  envelope.rotation.y =
+    STATIC_YAW_RAD + WOBBLE_AMP_RAD * Math.sin(wobblePhase);
+
+  const breathPhase = (elapsedMs / BREATH_PERIOD_MS) * Math.PI * 2;
+  envelope.position.z = BREATH_AMP * Math.sin(breathPhase);
+
+  const rollPhase = (elapsedMs / ROLL_PERIOD_MS) * Math.PI * 2;
+  envelope.rotation.z = ROLL_AMP_RAD * Math.sin(rollPhase);
 };
 
 const createWobbleController = (
@@ -287,9 +339,12 @@ const attachEnvelopeViewport = (
 };
 
 /**
- * Client-only WebGL: a cyan wireframe envelope held in a slight three-quarter pose with
- * its flap sealed, gently wobbling in a small circular orbit around its base orientation.
- * Shares the Falcon Heavy hero's depth-aware twin-pass rendering style and palette.
+ * Client-only WebGL: a cyan wireframe envelope held in a slight three-quarter pose with its
+ * flap sealed and a matching V-fold mirrored on the back face. Drifts via three layered
+ * oscillators on different periods — a circular pitch/yaw wobble, an in/out breath toward
+ * the camera, and a slow roll around the camera axis — so it reads as gently floating paper
+ * rather than a clean spin. Shares the Falcon Heavy hero's depth-aware twin-pass rendering
+ * style and palette.
  */
 export const EnvelopeWireframe: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
