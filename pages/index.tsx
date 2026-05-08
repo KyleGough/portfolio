@@ -7,11 +7,17 @@ import { Section } from '@components/Section';
 import { TimelineWidget } from '@components/TimelineWidget';
 import { useObserveElement } from '@hooks/useObserveElement';
 import { clsx } from 'clsx';
-import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import React from 'react';
 
+const EnvelopeWireframe = dynamic(
+  () =>
+    import('@components/Envelope').then((m) => m.EnvelopeWireframe),
+  { ssr: false },
+);
+
 const Home: React.FC = () => {
-  const [imageRef, isVisible] = useObserveElement<HTMLDivElement>({
+  const [envelopeRef, isVisible] = useObserveElement<HTMLDivElement>({
     threshold: 0.5,
   });
 
@@ -38,19 +44,14 @@ const Home: React.FC = () => {
             <Contact />
             <div className="hidden lg:flex justify-center my-auto">
               <div
-                ref={imageRef}
+                ref={envelopeRef}
                 className={clsx(
                   { 'opacity-100': isVisible },
                   { 'opacity-0': !isVisible },
-                  'transition-opacity duration-1000 w-64 h-64 rounded-full relative',
+                  'transition-opacity duration-1000 w-80 h-64 relative',
                 )}
               >
-                <Image
-                  src="/img/avatar.png"
-                  alt="Avatar"
-                  width={240}
-                  height={240}
-                />
+                <EnvelopeWireframe />
               </div>
             </div>
           </div>
