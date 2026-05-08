@@ -1,5 +1,8 @@
 import AtomLogo from '@image/atom.png';
+import AtomOriginalLogo from '@image/atom-original.png';
 import BofaLogo from '@image/bofa.png';
+import BofaOriginalLogo from '@image/bofa-original.png';
+import RipjarOriginalLogo from '@image/ripjar-original.png';
 import RipjarLogo from '@image/ripjar.png';
 import { clsx } from 'clsx';
 import React from 'react';
@@ -22,6 +25,7 @@ export const TimelineWidget: React.FC = () => (
       subtitle="Senior Front-End Engineer"
       date="Apr 2023 → Present"
       align="left"
+      hoverLogo={RipjarOriginalLogo}
       logo={RipjarLogo}
     />
     <TimelineNode
@@ -29,6 +33,7 @@ export const TimelineWidget: React.FC = () => (
       subtitle="Front-End Engineer"
       date="Jul 2022 → Jan 2023"
       align="right"
+      hoverLogo={AtomOriginalLogo}
       logo={AtomLogo}
     />
     <TimelineNode
@@ -36,6 +41,7 @@ export const TimelineWidget: React.FC = () => (
       subtitle="Tech Analyst"
       date="Jul 2020 → Jun 2022"
       align="left"
+      hoverLogo={BofaOriginalLogo}
       logo={BofaLogo}
     />
     <TimelineNode
@@ -43,6 +49,7 @@ export const TimelineWidget: React.FC = () => (
       subtitle="Summer Intern"
       date="Jun 2019 → Aug 2019"
       align="right"
+      hoverLogo={BofaOriginalLogo}
       logo={BofaLogo}
     />
   </div>

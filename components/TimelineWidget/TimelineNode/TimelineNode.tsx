@@ -6,6 +6,7 @@ import React from 'react';
 interface TimelineNodeProps {
   align: 'left' | 'right';
   date: string;
+  hoverLogo?: StaticImageData;
   logo: StaticImageData;
   subtitle: string;
   title: string;
@@ -17,6 +18,7 @@ export const TimelineNode: React.FC<TimelineNodeProps> = ({
   date,
   align,
   logo,
+  hoverLogo,
 }) => {
   return (
     <>
@@ -28,9 +30,12 @@ export const TimelineNode: React.FC<TimelineNodeProps> = ({
       >
         <FadeIn>
           <div
-            className={clsx('relative w-16 md:w-24 lg:w-32 mr-8', {
-              'md:ml-8 md:mr-0': align === 'right',
-            })}
+            className={clsx(
+              'group/logo relative w-16 md:w-24 lg:w-32 mr-8',
+              {
+                'md:ml-8 md:mr-0': align === 'right',
+              },
+            )}
           >
             <Image
               src={logo.src}
@@ -39,7 +44,22 @@ export const TimelineNode: React.FC<TimelineNodeProps> = ({
               height={logo.height}
               placeholder="blur"
               blurDataURL={logo.blurDataURL}
+              className={clsx(
+                'transition-opacity duration-500 ease-in-out',
+                hoverLogo ? 'opacity-100 group-hover/logo:opacity-0' : undefined,
+              )}
             />
+            {hoverLogo && (
+              <Image
+                src={hoverLogo.src}
+                alt={title}
+                width={hoverLogo.width}
+                height={hoverLogo.height}
+                placeholder="blur"
+                blurDataURL={hoverLogo.blurDataURL}
+                className="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out group-hover/logo:opacity-100"
+              />
+            )}
           </div>
         </FadeIn>
         <FadeIn
