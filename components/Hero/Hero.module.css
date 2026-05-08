@@ -250,3 +250,29 @@
     transform: none;
   }
 }
+
+/* svh / lvh fallback: see utilities/viewportUnitPolyfill.ts + pages/_document.tsx */
+@supports not (height: 1svh) {
+  @media (min-width: 960px) {
+    .slot {
+      min-height: max(calc(var(--vp-svh, 1vh) * 100), 34rem);
+    }
+
+    .graphic {
+      min-height: min(calc(var(--vp-svh, 1vh) * 59), 45rem);
+    }
+
+    .wireframeStage {
+      min-height: min(calc(var(--vp-svh, 1vh) * 58), 43rem);
+    }
+
+    .rocketFrame,
+    .wireframeStage .rocketFrame {
+      min-height: min(calc(var(--vp-svh, 1vh) * 50), 40rem);
+    }
+  }
+
+  .rocketFrame {
+    max-height: min(calc(var(--vp-svh, 1vh) * 70), 28rem);
+  }
+}

@@ -61,6 +61,20 @@
   transform: translateY(var(--sg-star-drift-loop-y, 140svh));
 }
 
+@supports not (height: 1svh) {
+  .layerFar,
+  .layerMid,
+  .layerNear {
+    inset: calc(var(--vp-svh, 1vh) * -20) 0;
+  }
+
+  .starClone {
+    transform: translateY(
+      var(--sg-star-drift-loop-y, calc(var(--vp-svh, 1vh) * 140))
+    );
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .layerFar,
   .layerMid,

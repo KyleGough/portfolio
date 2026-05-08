@@ -13,6 +13,12 @@
   overflow: hidden;
 }
 
+@supports not (height: 1svh) {
+  .root {
+    min-height: min(calc(var(--vp-svh, 1vh) * 88), 56rem);
+  }
+}
+
 /* Foreground */
 .content {
   position: relative;
