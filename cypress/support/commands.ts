@@ -6,9 +6,9 @@ declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace Cypress {
     interface Chainable {
-      toggleNavigation(): Chainable<Element>;
-      getSubmitButton(): Chainable<Element>;
       getFormLabel(label: string): Chainable<Element>;
+      getSubmitButton(): Chainable<Element>;
+      toggleNavigation(): Chainable<Element>;
     }
   }
 }
