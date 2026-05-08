@@ -120,12 +120,6 @@
   -webkit-backdrop-filter: blur(10px) saturate(1.1);
 }
 
-@supports not (height: 1svh) {
-  .menu {
-    max-height: calc(var(--vp-svh, 1vh) * 75);
-  }
-}
-
 :global(.app-space-gothic) .label {
   color: var(--gothic-cyan) !important;
   text-shadow: 0 0 0.75rem oklch(60% 0.14 200 / 0.2);

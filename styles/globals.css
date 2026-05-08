@@ -17,22 +17,6 @@ body {
   min-height: 100svh;
 }
 
-/* Modal / overlays: matches min(100svh, 900px); pairs with utilities/viewportUnitPolyfill.ts */
-.max-h-screen-svh-cap {
-  max-height: min(100vh, 900px);
-  max-height: min(100svh, 900px);
-}
-
-@supports not (height: 1svh) {
-  .min-h-screen-stable {
-    min-height: calc(var(--vp-svh, 1vh) * 100);
-  }
-
-  .max-h-screen-svh-cap {
-    max-height: min(calc(var(--vp-svh, 1vh) * 100), 900px);
-  }
-}
-
 /* Custom slide in animation for mobile nav. */
 @keyframes slide-in {
   0% {
