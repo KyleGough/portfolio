@@ -98,8 +98,8 @@ export const projects: Project[] = [
         year: 2016,
       },
       end: {
-        month: 11,
-        year: 2022,
+        month: 5,
+        year: 2026,
       },
     },
     image: imagePortfolio,
