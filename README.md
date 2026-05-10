@@ -18,16 +18,9 @@
 
 ## Tech Stack
 
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Frameworks**: [Next.js](https://nextjs.org/) 16, [React](https://react.dev/) 19
-- **3D**: [Three.js](https://threejs.org/)
-- **CSS**: [Tailwind CSS](https://tailwindcss.com/)
-- **Formatting**: [Prettier](https://prettier.io/), [EditorConfig](https://editorconfig.org/)
-- **Linting**: [ESLint](https://eslint.org/) 9 (flat config, `eslint.config.mjs`)
-- **Testing**: [Testing Library](https://testing-library.com/), [Jest](https://jestjs.io/)
-- **Deployment**: [Vercel](https://vercel.com/)
-- **CI/CD**: [GitHub Actions](https://github.com/features/actions)
-- **Analytics**: [Vercel Analytics](https://vercel.com/docs/analytics)
+[TypeScript](https://www.typescriptlang.org/), [Next.js](https://nextjs.org/) 16 / [React](https://react.dev/) 19 · [Three.js](https://threejs.org/) · [Tailwind CSS](https://tailwindcss.com/).  
+[ESLint](https://eslint.org/) 9 · [Prettier](https://prettier.io/) · [EditorConfig](https://editorconfig.org/) · [Jest](https://jestjs.io/) & [Testing Library](https://testing-library.com/).  
+[Vercel](https://vercel.com/) (hosting · [Analytics](https://vercel.com/docs/analytics)) · [GitHub Actions](https://github.com/features/actions).
 
 ## Prerequisites
 
