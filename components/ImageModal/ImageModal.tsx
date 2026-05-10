@@ -71,7 +71,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({ image, alt }) => {
             />
           ))}
         </button>
-        <figcaption className="screenshot-tile__caption text-sm text-header/80 mt-3 text-left">
+        <figcaption className="screenshot-tile__caption text-sm text-header/80 mt-3 text-left pl-1">
           {alt}
         </figcaption>
       </figure>
@@ -86,7 +86,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({ image, alt }) => {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="max-h-screen-svh-cap overflow-auto rounded-md bg-background shadow-2xl ring-1 ring-header/10"
+            className="max-h-[min(100svh,900px)] overflow-auto rounded-md bg-background shadow-2xl ring-1 ring-header/10"
           >
             <div className="flex items-center justify-center p-1">
               <Image
@@ -100,7 +100,10 @@ export const ImageModal: React.FC<ImageModalProps> = ({ image, alt }) => {
               />
             </div>
             <div className="border-t border-header/10 p-3">
-              <p id={titleId} className="text-sm text-header/80 text-center">
+              <p
+                id={titleId}
+                className="text-center text-sm font-thin text-header/80"
+              >
                 {alt}
               </p>
             </div>

@@ -19,7 +19,6 @@ const filters = [
   'Python',
   'React',
   'Three.js',
-  'Group Projects',
   'Web',
 ];
 

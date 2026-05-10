@@ -5,11 +5,11 @@ import imageCaveExploration from '@image/card-cave-exploration.jpg';
 import imageDeliveryPlanner from '@image/card-delivery-route-planner.jpg';
 import imageGraphVisualiser from '@image/card-graph-algorithm-visualiser.jpg';
 import imageLucidLab from '@image/card-lucidlab.jpg';
-import imagePortfolio from '@image/card-portfolio.jpg';
 import imageRSCBot from '@image/card-rscbot.jpg';
 import imageSortingVisualiser from '@image/card-sorting-algorithm-visualiser.jpg';
 import imageSudoku from '@image/card-sudoku.jpg';
 import imageMars from '@image/mars.png';
+import imagePortfolio from '@image/portfolio-homepage.jpg';
 
 import { Project } from './types';
 
@@ -20,7 +20,6 @@ export const getProjectData = (projectKey: string) => {
 enum ProjectFilter {
   CPLUSPLUS = 'C++',
   CSHARP = 'C#',
-  GROUP_PROJECT = 'Group Projects',
   JAVASCRIPT = 'JavaScript',
   PHP = 'PHP',
   PYTHON = 'Python',
@@ -69,7 +68,7 @@ export const projects: Project[] = [
     description:
       'Curated gallery of science-fiction themed images generated using text-to-image AI models. This project explores the capabilities, limitations, and artistic creativity of current AI technologies.',
     github: 'https://github.com/KyleGough/ai-space-telescope',
-    skills: ['React', 'TypeScript', 'TailwindCSS'],
+    skills: ['React', 'TypeScript', 'Tailwind'],
     liveLink: 'https://ai-space-telescope.com',
   },
   {
@@ -99,8 +98,8 @@ export const projects: Project[] = [
         year: 2016,
       },
       end: {
-        month: 11,
-        year: 2022,
+        month: 5,
+        year: 2026,
       },
     },
     image: imagePortfolio,
@@ -108,14 +107,14 @@ export const projects: Project[] = [
     link: '/projects/portfolio',
     filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.REACT, ProjectFilter.THREE_JS, ProjectFilter.WEB],
     description:
-      "Dynamic showcase of my evolving journey as a front-end engineer. Here, you'll find a curated collection of my projects and a glimpse into my ever-expanding technical repertoire.",
+      'Personal developer site with project write-ups, career background, and contact details. Online since 2016 and updated periodically. Implemented in Next.js and TypeScript.',
     github: 'https://github.com/KyleGough/portfolio',
     skills: [
       'Next.js',
       'React',
       'TypeScript',
       'JavaScript',
-      'TailwindCSS',
+      'Tailwind',
       'HTML',
       'CSS',
       'Jest',
@@ -125,7 +124,6 @@ export const projects: Project[] = [
   {
     id: 'lucidlab',
     title: 'LucidLab',
-    subtitle: "Master's Group Project",
     date: {
       start: {
         month: 10,
@@ -143,7 +141,6 @@ export const projects: Project[] = [
       ProjectFilter.JAVASCRIPT,
       ProjectFilter.PYTHON,
       ProjectFilter.REACT,
-      ProjectFilter.GROUP_PROJECT,
       ProjectFilter.WEB,
     ],
     description:
@@ -185,7 +182,6 @@ export const projects: Project[] = [
   {
     id: 'cave-exploration',
     title: 'Using Swarm AI to Map a Cave Network',
-    subtitle: 'Dissertation',
     date: {
       start: {
         month: 12,
@@ -209,7 +205,6 @@ export const projects: Project[] = [
   {
     id: 'rscbot',
     title: 'RSCBot',
-    subtitle: 'Software Engineering Group Project',
     date: {
       start: {
         month: 2,
@@ -226,7 +221,6 @@ export const projects: Project[] = [
     filters: [
       ProjectFilter.JAVASCRIPT,
       ProjectFilter.PHP,
-      ProjectFilter.GROUP_PROJECT,
       ProjectFilter.WEB,
     ],
     description:
@@ -263,7 +257,6 @@ export const projects: Project[] = [
   {
     id: 'bsplit',
     title: 'BSplit',
-    subtitle: 'Web Development Technologies Coursework',
     date: {
       start: {
         month: 2,
@@ -289,7 +282,6 @@ export const projects: Project[] = [
   {
     id: 'delivery-route-planner',
     title: 'Delivery Route Planner',
-    subtitle: 'A-Level Computing Coursework',
     date: {
       start: {
         month: 12,

@@ -12,16 +12,26 @@
   position: absolute;
   inset: -20vh 0;
   inset: -20svh 0;
+}
+
+/* Fill the layer so % top/left on stars resolve to the same box as before. A
+   transformed ancestor becomes the containing block for `position: absolute`
+   children; without `inset: 0` this wrapper had no height and all % tops were 0. */
+.layerDrift {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
   will-change: transform;
+  animation: starfield-drift-y linear infinite;
+  animation-duration: var(--sg-star-drift-duration, 180s);
 }
 
 .layerFar {
   transform: translate3d(
     0,
-    calc(
-      (var(--sg-scroll-y) * -1 * var(--sg-star-parallax-far-factor)) -
-        var(--sg-star-drift-y)
-    ),
+    calc(var(--sg-scroll-y) * -1 * var(--sg-star-parallax-far-factor)),
     0
   );
 }
@@ -29,10 +39,7 @@
 .layerMid {
   transform: translate3d(
     0,
-    calc(
-      (var(--sg-scroll-y) * -1 * var(--sg-star-parallax-mid-factor)) -
-        var(--sg-star-drift-y)
-    ),
+    calc(var(--sg-scroll-y) * -1 * var(--sg-star-parallax-mid-factor)),
     0
   );
 }
@@ -40,12 +47,23 @@
 .layerNear {
   transform: translate3d(
     0,
-    calc(
-      (var(--sg-scroll-y) * -1 * var(--sg-star-parallax-near-factor)) -
-        var(--sg-star-drift-y)
-    ),
+    calc(var(--sg-scroll-y) * -1 * var(--sg-star-parallax-near-factor)),
     0
   );
+}
+
+@keyframes starfield-drift-y {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(
+      0,
+      calc(-1 * var(--sg-star-drift-loop-y, 140svh)),
+      0
+    );
+  }
 }
 
 .star {
@@ -61,25 +79,15 @@
   transform: translateY(var(--sg-star-drift-loop-y, 140svh));
 }
 
-@supports not (height: 1svh) {
-  .layerFar,
-  .layerMid,
-  .layerNear {
-    inset: calc(var(--vp-svh, 1vh) * -20) 0;
-  }
-
-  .starClone {
-    transform: translateY(
-      var(--sg-star-drift-loop-y, calc(var(--vp-svh, 1vh) * 140))
-    );
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .layerFar,
   .layerMid,
   .layerNear {
     transform: none;
+  }
+
+  .layerDrift {
+    animation: none;
     will-change: auto;
   }
 }

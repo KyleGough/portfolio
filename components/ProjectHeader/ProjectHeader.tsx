@@ -22,9 +22,6 @@ export const ProjectHeader: React.FC<ProjectHeaderProps> = ({
   return (
     <Section>
       <h1 className="project-title">{project.title}</h1>
-      {project.subtitle && (
-        <h2 className="project-subtitle">{project.subtitle}</h2>
-      )}
       <p className="my-3 font-primary text-sm font-medium tabular-nums tracking-wide text-link-hover">
         <time dateTime={getShortDate(project.date.start)}>
           {getFormattedDate(project.date.start)}

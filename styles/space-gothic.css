@@ -4,7 +4,8 @@
 /* Scroll-linked parallax for grid (see SpaceGothicScrollVars.tsx) */
 :root {
   --sg-scroll-y: 0px;
-  --sg-star-drift-y: 0px;
+  --sg-star-drift-loop-y: 140vh;
+  --sg-star-drift-duration: 180s;
   --sg-grid-parallax-factor: 0.26;
   --sg-star-parallax-far-factor: 0.08;
   --sg-star-parallax-mid-factor: 0.16;
@@ -90,12 +91,6 @@
   box-shadow:
     inset 0 0 110px oklch(0% 0 0 / 0.38),
     inset 0 0 200px oklch(26% 0.09 300 / 0.045);
-}
-
-@supports not (height: 1svh) {
-  .app-space-gothic main {
-    min-height: calc(var(--vp-svh, 1vh) * 100);
-  }
 }
 
 .app-space-gothic main::before {
