@@ -11,11 +11,11 @@ const CONE_SEGMENTS = 8;
 const PLUME_ORANGE = 0xff5a1a;
 const PLUME_GOLD = 0xffb040;
 const PLUME_CORE = 0xfff4d4;
-/** Nitrogen separation thrusters: cool shell / warm core (still reads as white gas). */
-const SEP_PLUME_HAZE = 0xa8d8ec;
-const SEP_PLUME_SHELL = 0xc8e8f6;
-const SEP_PLUME_MID = 0xf2f8fc;
-const SEP_PLUME_CORE_WARM = 0xfff6ec;
+/** N₂ separation: blue-cold ice-white (additive), densest core still slightly cyan not peach. */
+const SEP_PLUME_HAZE = 0x76b8dc;
+const SEP_PLUME_SHELL = 0xa0cfe8;
+const SEP_PLUME_MID = 0xcce8f6;
+const SEP_PLUME_CORE = 0xe8f4fc;
 
 /** First stage height; joint with interstage is the natural “line” for stack separation. */
 const S1_H = 3.12;
@@ -521,7 +521,7 @@ export const addBoosterSepThrusterPlumes = (
       0.098 * s,
       0.0048 * s,
       0.022 * s,
-      SEP_PLUME_CORE_WARM,
+      SEP_PLUME_CORE,
       reducedMotion ? 0.2 : 0.34,
       3,
     );
