@@ -107,7 +107,7 @@ export const projects: Project[] = [
     link: '/projects/portfolio',
     filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.REACT, ProjectFilter.THREE_JS, ProjectFilter.WEB],
     description:
-      "Dynamic showcase of my evolving journey as a front-end engineer. Here, you'll find a curated collection of my projects and a glimpse into my ever-expanding technical repertoire.",
+      'Personal developer site with project write-ups, career background, and contact details. Online since 2016 and updated periodically. Implemented in Next.js and TypeScript.',
     github: 'https://github.com/KyleGough/portfolio',
     skills: [
       'Next.js',
