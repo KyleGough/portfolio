@@ -81,9 +81,15 @@ const renderStars = (stars: Star[]): React.ReactNode =>
 export const Starfield: React.FC = () => {
   return (
     <div className={`starfield ${styles.starfield}`} aria-hidden>
-      <div className={styles.layerFar}>{renderStars(FAR_STARS)}</div>
-      <div className={styles.layerMid}>{renderStars(MID_STARS)}</div>
-      <div className={styles.layerNear}>{renderStars(NEAR_STARS)}</div>
+      <div className={styles.layerFar}>
+        <div className={styles.layerDrift}>{renderStars(FAR_STARS)}</div>
+      </div>
+      <div className={styles.layerMid}>
+        <div className={styles.layerDrift}>{renderStars(MID_STARS)}</div>
+      </div>
+      <div className={styles.layerNear}>
+        <div className={styles.layerDrift}>{renderStars(NEAR_STARS)}</div>
+      </div>
     </div>
   );
 };
