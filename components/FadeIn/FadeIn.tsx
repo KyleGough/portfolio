@@ -14,7 +14,11 @@ export const FadeIn: React.FC<FadeInProps> = ({ className, children }) => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    isVisible && setShow(true);
+    if (!isVisible) return;
+    const id = requestAnimationFrame(() => {
+      setShow(true);
+    });
+    return () => cancelAnimationFrame(id);
   }, [isVisible]);
 
   return (

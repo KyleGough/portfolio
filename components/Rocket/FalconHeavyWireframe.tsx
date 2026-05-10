@@ -657,7 +657,6 @@ const disposeWireframeScene = (
   depthOccluder.dispose();
 };
 
-/* eslint-disable sonarjs/cognitive-complexity -- attachRocketViewport: mission phases + poses + plumes + lights */
 const attachRocketViewport = (
   mount: HTMLElement,
   getShouldAnimate: () => boolean,
@@ -925,7 +924,6 @@ const attachRocketViewport = (
 
   return { dispose: disposeViewport, resume };
 };
-/* eslint-enable sonarjs/cognitive-complexity */
 
 /**
  * Client-only WebGL: Falcon Heavy style triple-body wireframe (main stage + two boosters).
@@ -934,8 +932,11 @@ export const FalconHeavyWireframe: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
   const animationActive = useHeroAnimationActive();
   const activeRef = useRef(animationActive);
-  activeRef.current = animationActive;
   const resumeRef = useRef<(() => void) | null>(null);
+
+  useEffect(() => {
+    activeRef.current = animationActive;
+  }, [animationActive]);
 
   useEffect(() => {
     const mount = mountRef.current;
