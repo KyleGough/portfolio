@@ -8,7 +8,6 @@
 
 <div>
   <a href="https://github.com/KyleGough/portfolio/actions?query=branch%3Amaster"><img src="https://img.shields.io/github/actions/workflow/status/KyleGough/portfolio/premerge.yml?branch=master&style=flat-square" /></a>
-  <a href="https://github.com/KyleGough/portfolio/actions/workflows/cypress.yml"><img src="https://img.shields.io/github/actions/workflow/status/KyleGough/portfolio/cypress.yml?branch=master&label=cypress&style=flat-square" /></a>
   <a href="https://github.com/KyleGough/portfolio/commits/master"><img src="https://img.shields.io/github/last-commit/KyleGough/portfolio?style=flat-square" /></a>
   <a href="https://github.com/KyleGough/portfolio/pulls"><img src="https://img.shields.io/github/issues-pr/KyleGough/portfolio?style=flat-square" /></a>
   <a href="https://github.com/KyleGough/portfolio/pulls?q=is%3Apr+is%3Aclosed"><img src="https://img.shields.io/github/issues-pr-closed-raw/KyleGough/portfolio?style=flat-square" /></a>
@@ -26,7 +25,7 @@
 - **CSS Framework**: [Tailwind](https://tailwindcss.com/)
 - **Formatting**: [Prettier](https://prettier.io/), [EditorConfig](https://editorconfig.org/)
 - **Linting**: [ESLint](https://eslint.org/)
-- **Testing**: [Testing Library](https://testing-library.com/), [Jest](https://jestjs.io/), [Cypress](https://www.cypress.io/)
+- **Testing**: [Testing Library](https://testing-library.com/), [Jest](https://jestjs.io/)
 - **Deployment**: [Vercel](https://vercel.com/)
 - **CI/CD**: [GitHub Actions](https://github.com/features/actions)
 - **Analytics**: [SplitBee](https://splitbee.io/), [Cloudflare](https://www.cloudflare.com/)
@@ -64,20 +63,6 @@ The portfolio uses [Jest](https://jestjs.io/) as the test runner for unit tests.
 
 ```sh
 npm run test:ci
-```
-
-### e2e Tests
-
-[Cypress](https://www.cypress.io/) is used to run end-to-end tests of the website in a browser. Such tests include the navigation, footer, and contact form. For Cypress to work, the dev server must be running on port `3000` with `npm run dev`. To run Cypress in a browser run the following command:
-
-```sh
-npm run e2e
-```
-
-To run Cypress on the command line run:
-
-```sh
-npm run e2e:headless
 ```
 
 ## Screenshots

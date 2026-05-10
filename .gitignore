@@ -10,8 +10,6 @@
 
 # Testing
 /coverage
-/cypress/screenshots
-/cypress/videos
 
 # Production
 /build

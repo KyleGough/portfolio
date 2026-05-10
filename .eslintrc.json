@@ -6,7 +6,6 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "next/core-web-vitals",
-    "plugin:cypress/recommended",
     "plugin:sonarjs/recommended",
     "plugin:typescript-sort-keys/recommended"
   ],
@@ -23,7 +22,6 @@
     "react-hooks",
     "simple-import-sort",
     "typescript-sort-keys",
-    "cypress",
     "sonarjs"
   ],
   "rules": {
