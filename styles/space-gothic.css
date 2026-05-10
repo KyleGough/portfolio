@@ -4,7 +4,8 @@
 /* Scroll-linked parallax for grid (see SpaceGothicScrollVars.tsx) */
 :root {
   --sg-scroll-y: 0px;
-  --sg-star-drift-y: 0px;
+  --sg-star-drift-loop-y: 140vh;
+  --sg-star-drift-duration: 180s;
   --sg-grid-parallax-factor: 0.26;
   --sg-star-parallax-far-factor: 0.08;
   --sg-star-parallax-mid-factor: 0.16;
