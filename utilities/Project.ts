@@ -5,7 +5,7 @@ import imageCaveExploration from '@image/card-cave-exploration.jpg';
 import imageDeliveryPlanner from '@image/card-delivery-route-planner.jpg';
 import imageGraphVisualiser from '@image/card-graph-algorithm-visualiser.jpg';
 import imageLucidLab from '@image/card-lucidlab.jpg';
-import imagePortfolio from '@image/card-portfolio.jpg';
+import imagePortfolio from '@image/portfolio-homepage.jpg';
 import imageRSCBot from '@image/card-rscbot.jpg';
 import imageSortingVisualiser from '@image/card-sorting-algorithm-visualiser.jpg';
 import imageSudoku from '@image/card-sudoku.jpg';
