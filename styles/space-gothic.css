@@ -1,5 +1,5 @@
 /* Space-gothic: main canvas + components scoped to .app-space-gothic.
-   Fonts load via next/font in Layout (`utilities/siteFonts.ts`); no render-blocking @import. */
+   Fonts load via next/font (`utilities/fonts/*`, re-exported from `siteFonts.ts`); no blocking @import. */
 
 /* Scroll-linked parallax for grid (see SpaceGothicScrollVars.tsx) */
 :root {
