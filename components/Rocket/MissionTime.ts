@@ -24,6 +24,14 @@ export const BOOSTER_FADE_WALL_MS = 2500;
 export const BOOSTER_WIREFRAME_FADE_WALL_MS = 4000;
 
 /**
+ * Extra wall time before plume / wire opacity start falling (after separation event arms).
+ * Separation motion still uses elapsed time since the booster event with no offset.
+ * Each fade’s ramp is shortened by this same amount so full transparency still lines up with
+ * the original schedule (plume done at `BOOSTER_FADE_WALL_MS`, wire at `BOOSTER_WIREFRAME_FADE_WALL_MS`).
+ */
+export const BOOSTER_VISUAL_FADE_DELAY_MS = 1000;
+
+/**
  * Horizontal, vertical, and roll separation eases in over this wall time from T+1.
  * Shorter = boosters “reach” splay/offset faster.
  */

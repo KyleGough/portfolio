@@ -16,6 +16,7 @@ import {
   BOOSTER_FADE_AT_MISSION_SEC,
   BOOSTER_FADE_WALL_MS,
   BOOSTER_SEP_DURATION_MS,
+  BOOSTER_VISUAL_FADE_DELAY_MS,
   BOOSTER_WIREFRAME_FADE_WALL_MS,
   CORE_BOTTOM_STAGING_WALL_MS,
   CORE_STAGING_AT_MISSION_SEC,
@@ -477,8 +478,12 @@ const t2EventProgress = (
     };
   }
   const d = now - t2Wall;
-  const plumeMul = Math.max(0, 1 - d / BOOSTER_FADE_WALL_MS);
-  const wireAlpha = Math.max(0, 1 - d / BOOSTER_WIREFRAME_FADE_WALL_MS);
+  const fadeDelay = BOOSTER_VISUAL_FADE_DELAY_MS;
+  const dFade = Math.max(0, d - fadeDelay);
+  const plumeFadeWallMs = Math.max(1, BOOSTER_FADE_WALL_MS - fadeDelay);
+  const wireFadeWallMs = Math.max(1, BOOSTER_WIREFRAME_FADE_WALL_MS - fadeDelay);
+  const plumeMul = Math.max(0, 1 - dFade / plumeFadeWallMs);
+  const wireAlpha = Math.max(0, 1 - dFade / wireFadeWallMs);
   const uOffset = Math.min(1, d / BOOSTER_SEP_DURATION_MS);
   const separationK = 1 - (1 - uOffset) * (1 - uOffset);
   /** Same timeline as wire fade; rotation uses cubic ease-in (slow roll-up → faster). */
