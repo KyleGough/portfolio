@@ -118,7 +118,6 @@ export const projects: Project[] = [
       'HTML',
       'CSS',
       'Jest',
-      'Cypress',
     ],
   },
   {
