@@ -1,6 +1,6 @@
 import { UnfoldIcon } from '@components/Icons';
 import { clsx } from 'clsx';
-import React, { useEffect, useId, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useId, useRef, useState } from 'react';
 
 import styles from './ProjectFilter.module.css';
 import { ProjectFilterSelection } from './ProjectFilterSelection';
@@ -32,6 +32,10 @@ export const ProjectFilter: React.FC<ProjectFilterProps> = ({
   const labelId = `${baseId}-label`;
   const listId = `${baseId}-listbox`;
 
+  const closeDropdown = useCallback(() => {
+    setOpen(false);
+  }, []);
+
   useEffect(() => {
     // Close dropdown if user clicks outside project filter component.
     const checkClickOutside = (event: MouseEvent) => {
@@ -48,7 +52,7 @@ export const ProjectFilter: React.FC<ProjectFilterProps> = ({
     return () => {
       document.removeEventListener('click', checkClickOutside);
     };
-  }, []);
+  }, [closeDropdown]);
 
   // Sets the value of the filter.
   const setValue = (value: string) => {
@@ -60,11 +64,6 @@ export const ProjectFilter: React.FC<ProjectFilterProps> = ({
   const toggleDropdown = (event: React.MouseEvent) => {
     event.preventDefault();
     setOpen((prev) => !prev);
-  };
-
-  // Closes the dropdown list.
-  const closeDropdown = () => {
-    setOpen(false);
   };
 
   return (

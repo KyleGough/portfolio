@@ -348,7 +348,8 @@ export const addAllEnginePlumes = (
     isCore: boolean,
   ) => {
     forEachOctawebEngine(centerX, 0, ringR, s, (x, z) => {
-      const p = (phase += 0.21) % 12.5;
+      phase += 0.21;
+      const p = phase % 12.5;
       const { group, layers, dispose } = addEnginePlumeGroup(
         {
           isBooster,
@@ -373,7 +374,8 @@ export const addAllEnginePlumes = (
   addCluster(rightBooster, 0, boosterRingR, 0.86, exhaustBooster, true, false);
 
   {
-    const p = (phase += 0.21) % 12.5;
+    phase += 0.21;
+    const p = phase % 12.5;
     const { group, layers, dispose } = addEnginePlumeGroup(
       {
         isBooster: false,
