@@ -480,47 +480,47 @@ export const addBoosterSepThrusterPlumes = (
         oscSpeedB: 31,
         flickerFloor,
         flickerCeil: 0.1,
-        pulseAmp: 0.035,
-        breathAmp: 0.045,
-        curlAmp: 0.008 * s * curlMul,
+        pulseAmp: 0.015,
+        breathAmp: 0.028,
+        curlAmp: 0.0045 * s * curlMul,
         curlSpeedX: 4.8,
         curlSpeedZ: 4.4,
         curlPhaseX: 0,
         curlPhaseZ: 0,
-        tipCurlAmp: 0.02,
+        tipCurlAmp: 0.004,
       });
     };
 
-    /* Outermost diffuse */
+    /* Outermost diffuse — narrower frusta + modest length → directed GN₂ jets */
     addLayer(
-      0.42 * s,
-      0.012 * s,
-      0.102 * s,
+      0.32 * s,
+      0.0085 * s,
+      0.056 * s,
       SEP_PLUME_HAZE,
       reducedMotion ? 0.045 : 0.075,
       0,
-      { curlMul: 1.45, flickerFloor: 0.82 },
+      { curlMul: 1.08, flickerFloor: 0.82 },
     );
     addLayer(
-      0.34 * s,
-      0.014 * s,
-      0.078 * s,
+      0.26 * s,
+      0.01 * s,
+      0.044 * s,
       SEP_PLUME_SHELL,
       reducedMotion ? 0.085 : 0.125,
       1,
     );
     addLayer(
-      0.22 * s,
-      0.0095 * s,
-      0.05 * s,
+      0.17 * s,
+      0.0065 * s,
+      0.028 * s,
       SEP_PLUME_MID,
       reducedMotion ? 0.115 : 0.19,
       2,
     );
     addLayer(
-      0.098 * s,
-      0.0048 * s,
-      0.022 * s,
+      0.082 * s,
+      0.0036 * s,
+      0.012 * s,
       SEP_PLUME_CORE,
       reducedMotion ? 0.2 : 0.34,
       3,
