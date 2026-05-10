@@ -23,7 +23,7 @@
 
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Frameworks**: [Next.js](https://nextjs.org/), [React](https://reactjs.org/)
-- **CSS Framework**: [TailwindCSS](https://tailwindcss.com/)
+- **CSS Framework**: [Tailwind](https://tailwindcss.com/)
 - **Formatting**: [Prettier](https://prettier.io/), [EditorConfig](https://editorconfig.org/)
 - **Linting**: [ESLint](https://eslint.org/)
 - **Testing**: [Testing Library](https://testing-library.com/), [Jest](https://jestjs.io/), [Cypress](https://www.cypress.io/)

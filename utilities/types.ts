@@ -11,7 +11,6 @@ export interface Project {
   link: string;
   liveLink?: string;
   skills: string[];
-  subtitle?: string;
   title: string;
   video?: string;
 }
