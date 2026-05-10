@@ -20,7 +20,6 @@ export const getProjectData = (projectKey: string) => {
 enum ProjectFilter {
   CPLUSPLUS = 'C++',
   CSHARP = 'C#',
-  GROUP_PROJECT = 'Group Projects',
   JAVASCRIPT = 'JavaScript',
   PHP = 'PHP',
   PYTHON = 'Python',
@@ -69,7 +68,7 @@ export const projects: Project[] = [
     description:
       'Curated gallery of science-fiction themed images generated using text-to-image AI models. This project explores the capabilities, limitations, and artistic creativity of current AI technologies.',
     github: 'https://github.com/KyleGough/ai-space-telescope',
-    skills: ['React', 'TypeScript', 'TailwindCSS'],
+    skills: ['React', 'TypeScript', 'Tailwind'],
     liveLink: 'https://ai-space-telescope.com',
   },
   {
@@ -115,7 +114,7 @@ export const projects: Project[] = [
       'React',
       'TypeScript',
       'JavaScript',
-      'TailwindCSS',
+      'Tailwind',
       'HTML',
       'CSS',
       'Jest',
@@ -125,7 +124,6 @@ export const projects: Project[] = [
   {
     id: 'lucidlab',
     title: 'LucidLab',
-    subtitle: "Master's Group Project",
     date: {
       start: {
         month: 10,
@@ -143,7 +141,6 @@ export const projects: Project[] = [
       ProjectFilter.JAVASCRIPT,
       ProjectFilter.PYTHON,
       ProjectFilter.REACT,
-      ProjectFilter.GROUP_PROJECT,
       ProjectFilter.WEB,
     ],
     description:
@@ -185,7 +182,6 @@ export const projects: Project[] = [
   {
     id: 'cave-exploration',
     title: 'Using Swarm AI to Map a Cave Network',
-    subtitle: 'Dissertation',
     date: {
       start: {
         month: 12,
@@ -209,7 +205,6 @@ export const projects: Project[] = [
   {
     id: 'rscbot',
     title: 'RSCBot',
-    subtitle: 'Software Engineering Group Project',
     date: {
       start: {
         month: 2,
@@ -226,7 +221,6 @@ export const projects: Project[] = [
     filters: [
       ProjectFilter.JAVASCRIPT,
       ProjectFilter.PHP,
-      ProjectFilter.GROUP_PROJECT,
       ProjectFilter.WEB,
     ],
     description:
@@ -263,7 +257,6 @@ export const projects: Project[] = [
   {
     id: 'bsplit',
     title: 'BSplit',
-    subtitle: 'Web Development Technologies Coursework',
     date: {
       start: {
         month: 2,
@@ -289,7 +282,6 @@ export const projects: Project[] = [
   {
     id: 'delivery-route-planner',
     title: 'Delivery Route Planner',
-    subtitle: 'A-Level Computing Coursework',
     date: {
       start: {
         month: 12,

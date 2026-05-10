@@ -8,7 +8,6 @@ import { ProjectHeader } from './ProjectHeader';
 const baseProject: Project = {
   id: 'portfolio',
   title: 'Portfolio',
-  subtitle: 'Passion Project',
   date: {
     start: {
       month: 1,
@@ -34,7 +33,6 @@ describe('ProjectHeader component', () => {
     render(<ProjectHeader project={baseProject} />);
 
     expect(screen.getByText('Portfolio')).toBeVisible();
-    expect(screen.getByText('Passion Project')).toBeVisible();
     expect(screen.getByText('Jan 2021')).toBeVisible();
     expect(screen.getByText('Mar 2022')).toBeVisible();
     expect(screen.getByText('Personal portfolio website')).toBeVisible();

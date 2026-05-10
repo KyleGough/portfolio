@@ -230,6 +230,12 @@ const addMainStageNose = (
 /**
  * Outboard grid fin: top edge (yAttach) lies on the tank, bottom (yFlare) is
  * canted out in +radial and slightly wider in z (hinged / fanned look).
+ *
+ * The fin face is subtly cambered like a real Falcon grid fin: the leading and
+ * trailing (±z) edges bow radially away from the booster, while the centerline
+ * (z = 0) dips slightly inward. Camber is parameterised as a fraction of
+ * `radialFlare` so it scales with the fin's overall radial throw.
+ *
  * y: booster base = 0, up = +Y. Booster origin at center: `outward` = −1 = toward −X, +1 = toward +X.
  */
 export const addBoosterGridFins = (
@@ -247,26 +253,38 @@ export const addBoosterGridFins = (
 ): void => {
   const outDir = outward;
   const skin = 0.002;
-  const xAttach = outDir * (boosterR + skin);
-  const xFlare = outDir * (boosterR + radialFlare);
+  const baseAttach = boosterR + skin;
+  const baseFlare = boosterR + radialFlare;
+
+  const edgeBow = radialFlare * 0.18;
+  const centerDip = radialFlare * 0.05;
+  /** u ∈ [-1, 1] across the fin chord; +outward at edges, −outward at center. */
+  const camber = (u: number): number =>
+    (edgeBow + centerDip) * u * u - centerDip;
+
+  const hSegs = Math.max(8, nCols * 3);
   for (let j = 0; j <= nRows; j += 1) {
     const t = j / nRows;
     const y = THREE.MathUtils.lerp(yFlare, yAttach, t);
-    const x = THREE.MathUtils.lerp(xFlare, xAttach, t);
+    const baseR = THREE.MathUtils.lerp(baseFlare, baseAttach, t);
     const zH = THREE.MathUtils.lerp(halfZAtFlare, halfZAtAttach, t);
-    const geomH = new THREE.BufferGeometry().setFromPoints([
-      new THREE.Vector3(x, y, -zH),
-      new THREE.Vector3(x, y, zH),
-    ]);
+    const points: THREE.Vector3[] = [];
+    for (let s = 0; s <= hSegs; s += 1) {
+      const u = (s / hSegs) * 2 - 1;
+      points.push(new THREE.Vector3(outDir * (baseR + camber(u)), y, u * zH));
+    }
+    const geomH = new THREE.BufferGeometry().setFromPoints(points);
     addTwinLineDepthPassesToParent(parent, geomH, mat.clone());
   }
+
   for (let i = 0; i <= nCols; i += 1) {
-    const u = i / nCols;
-    const z0 = THREE.MathUtils.lerp(-halfZAtFlare, halfZAtFlare, u);
-    const z1 = THREE.MathUtils.lerp(-halfZAtAttach, halfZAtAttach, u);
+    const u = (i / nCols) * 2 - 1;
+    const dx = outDir * camber(u);
+    const z0 = u * halfZAtFlare;
+    const z1 = u * halfZAtAttach;
     const geomV = new THREE.BufferGeometry().setFromPoints([
-      new THREE.Vector3(xFlare, yFlare, z0),
-      new THREE.Vector3(xAttach, yAttach, z1),
+      new THREE.Vector3(outDir * baseFlare + dx, yFlare, z0),
+      new THREE.Vector3(outDir * baseAttach + dx, yAttach, z1),
     ]);
     addTwinLineDepthPassesToParent(parent, geomV, mat.clone());
   }

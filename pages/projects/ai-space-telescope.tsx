@@ -33,7 +33,7 @@ const AISpaceTelescope: React.FC<ProjectPageProps> = ({ images, project }) => (
         to be shown on this website.
       </p>
       <p className="max-w-reading">
-        AI Space Telescope is a web-app developed using React, TailwindCSS, and
+        AI Space Telescope is a web-app developed using React, Tailwind, and
         TypeScript. Images are uploaded via a script to Sirv, an image CDN which
         helps optimise images by serving images in the best format and size. The
         website is deployed on Vercel, and uses Cloudflare services for DNS, and

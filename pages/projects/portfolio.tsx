@@ -75,18 +75,18 @@ const Portfolio: React.FC<ProjectPageProps> = ({ images, project }) => (
       </p>
 
       <h3 className="mb-4">
-        <strong>Create React App, TypeScript, TailwindCSS</strong>
+        <strong>Create React App, TypeScript, Tailwind</strong>
       </h3>
       <p className="max-w-reading mb-8">
         In January 2022, another major update was undertaken to replace
-        Materialize with TailwindCSS which has now become my personal favourite
+        Materialize with Tailwind which has now become my personal favourite
         CSS framework for web development. During this period, considerable
         effort and research was taken to improve and understand responsiveness,
         page speed, SEO, accessibility, and best practices.
       </p>
 
       <h3 className="mb-4">
-        <strong>Next.js, TypeScript, TailwindCSS</strong>
+        <strong>Next.js, TypeScript, Tailwind</strong>
       </h3>
       <p className="max-w-reading mb-2">
         In November 2022, the latest major update to the website replaced the
