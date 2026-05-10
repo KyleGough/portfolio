@@ -1,8 +1,4 @@
-<h1>kylegough.co.uk</h1>
-
-<div>
-  <a href="https://kylegough.co.uk" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/-kylegough.co.uk-purple?style=flat-square&logoColor=white" alt="Website Badge" height="25"/></a>
-</div>
+<h1><a href="https://kylegough.co.uk" target="_blank" rel="noreferrer">kylegough.co.uk</a></h1>
 
 <br />
 
