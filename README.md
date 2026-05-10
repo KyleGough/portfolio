@@ -1,8 +1,4 @@
-<h1>Portfolio</h1>
-
-<div>
-  <a href="https://kylegough.co.uk" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/-kylegough.co.uk-purple?style=flat-square&logoColor=white" alt="Website Badge" height="25"/></a>
-</div>
+<h1><a href="https://kylegough.co.uk" target="_blank" rel="noreferrer">kylegough.co.uk</a></h1>
 
 <br />
 
@@ -18,24 +14,23 @@
 
 <p>Personal portfolio website created to showcase my projects and technical skills. Initially created as a static HTML website, the website has experienced multiple upgrades over the years including migration to PHP, Create React App, and most recently Next.js.</p>
 
+<p>The homepage hero includes a timeline-driven <a href="https://threejs.org/">Three.js</a> Falcon Heavy rocket wireframe (staging, booster separation, plumes, and lighting) rendered alongside the rest of the site.</p>
+
 ## Tech Stack
 
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Frameworks**: [Next.js](https://nextjs.org/), [React](https://reactjs.org/)
-- **CSS Framework**: [Tailwind](https://tailwindcss.com/)
-- **Formatting**: [Prettier](https://prettier.io/), [EditorConfig](https://editorconfig.org/)
-- **Linting**: [ESLint](https://eslint.org/)
-- **Testing**: [Testing Library](https://testing-library.com/), [Jest](https://jestjs.io/)
-- **Deployment**: [Vercel](https://vercel.com/)
-- **CI/CD**: [GitHub Actions](https://github.com/features/actions)
-- **Analytics**: [SplitBee](https://splitbee.io/), [Cloudflare](https://www.cloudflare.com/)
-- **Other**: [Cloudflare](https://www.cloudflare.com/)
+[TypeScript](https://www.typescriptlang.org/), [Next.js](https://nextjs.org/) 16 / [React](https://react.dev/) 19 · [Three.js](https://threejs.org/) · [Tailwind CSS](https://tailwindcss.com/).  
+[ESLint](https://eslint.org/) 9 · [Prettier](https://prettier.io/) · [EditorConfig](https://editorconfig.org/) · [Jest](https://jestjs.io/) & [Testing Library](https://testing-library.com/).  
+[Vercel](https://vercel.com/) · [GitHub Actions](https://github.com/features/actions).
+
+## Prerequisites
+
+- **Node.js** 24 or newer (`engines` in `package.json`)
 
 ## Scripts
 
 ### Dev Server
 
-The project is built upon the [Next.js](https://nextjs.org/) framework. The development server can be run with the following command allowing hot-code reloading, error reporting, and more. By default the website will run at `http://localhost:3000`.
+The project uses [Next.js](https://nextjs.org/). The development server supports hot reloading and runs at `http://localhost:3000` by default.
 
 ```sh
 npm run dev
@@ -43,15 +38,13 @@ npm run dev
 
 ### Linting
 
-Linting of the project is achieved using [ESLint](https://eslint.org/).
-
 ```sh
 npm run lint
 ```
 
 ### Build
 
-To create the production-ready build of the website run the following command. The build files will be optimised, compressed. Furthermore the file size of each route and how each route will be rendered is logged.
+Production build: optimised output and per-route information from Next.js.
 
 ```sh
 npm run build
