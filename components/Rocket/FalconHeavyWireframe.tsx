@@ -7,6 +7,7 @@ import {
   type AddAllEnginePlumesResult,
   type PlumeLayer,
   addAllEnginePlumes,
+  addBoosterSepThrusterPlumes,
   addEngineBayStructure,
   addEngineNozzle,
   addOctawebEngines,
@@ -26,6 +27,7 @@ import {
   LOOP_UPPER_EXIT_START_MISSION_SEC,
   S2_PLUME_AT_MISSION_SEC,
   S2_PLUME_FADEIN_WALL_MS,
+  separationThrusterBurstMul,
 } from './MissionTime';
 import {
   type RocketDepthOccluderMaterial,
@@ -708,6 +710,10 @@ const attachRocketViewport = (
     setGroupLineOpacityFactor(engineWire, ENGINE_WIREFRAME_OPACITY_FACTOR);
   }
 
+  const boosterNoseShoulderH = Math.max(
+    0,
+    0.46 - 0.205,
+  ); /* matches buildRocket booster nose shoulders */
   const plumeSetup: AddAllEnginePlumesResult = addAllEnginePlumes(
     Y_MOUNT_CORE,
     0.2,
@@ -718,7 +724,19 @@ const attachRocketViewport = (
     rightBooster,
     reducedMotion,
   );
-  const { allLayers, disposers: plumeDisposers } = plumeSetup;
+  const sepPlumes = addBoosterSepThrusterPlumes(
+    leftBooster,
+    rightBooster,
+    {
+      boosterH: 2.95,
+      boosterNoseCapR: 0.205,
+      boosterRTop: 0.205,
+      shoulderH: boosterNoseShoulderH,
+    },
+    reducedMotion,
+  );
+  const allLayers = [...plumeSetup.allLayers, ...sepPlumes.layers];
+  const plumeDisposers = [...plumeSetup.disposers, ...sepPlumes.disposers];
   centerObjectAtOrigin(body);
 
   // Blue-white cast near nozzles, intensity driven by live plume brightness.
@@ -874,6 +892,7 @@ const attachRocketViewport = (
       reducedMotion,
       loopFadeK,
       upperStackFadeK,
+      separationThrusterBurstMul(now, t2Wall),
     );
     const coreBrightness = averagePlumeBrightness(allLayers, (layer) => layer.isCore);
     const boosterBrightness = averagePlumeBrightness(
