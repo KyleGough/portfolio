@@ -69,8 +69,4 @@ npm run test:ci
 
 ![Portfolio Homepage](./public/img/portfolio-homepage.jpg)
 
-![Portfolio Project Showcase](./public/img/portfolio-project-showcase.jpg)
-
-![Portfolio Projects Page](./public/img/portfolio-projects.jpg)
-
-![Portfolio About Page](./public/img/portfolio-about.jpg)
+![Portfolio Project Showcase](./public/img/portfolio-project-page.jpg)
