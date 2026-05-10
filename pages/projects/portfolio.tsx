@@ -6,12 +6,10 @@ import { Pagination } from '@components/Pagination';
 import { ProjectHeader } from '@components/ProjectHeader';
 import { Screenshots } from '@components/Screenshots';
 import { Section } from '@components/Section';
-import imageAbout from '@image/portfolio-about.jpg';
-import imageHomepage from '@image/portfolio-homepage.jpg';
+import imagePortfolioHomepage from '@image/portfolio-homepage.jpg';
+import imagePortfolioProject from '@image/portfolio-project-page.jpg';
 import imageShowcase from '@image/portfolio-project-showcase.jpg';
-import imageProjects from '@image/portfolio-projects.jpg';
-import imageV1Projects from '@image/portfolio-projects-v1a.jpg';
-import imageV1About from '@image/portfolio-projects-v1b.jpg';
+import imageV1Projects from '@image/portfolio-projects-v1.jpg';
 import imageV2Projects from '@image/portfolio-projects-v2.jpg';
 import imageV3Projects from '@image/portfolio-projects-v3.jpg';
 import { getProjectData } from '@utilities/Project';
@@ -123,10 +121,6 @@ export const getStaticProps: GetStaticProps = () => {
       alt: 'Portfolio project page version 1',
     },
     {
-      imageData: imageV1About,
-      alt: 'Portfolio about page version 1',
-    },
-    {
       imageData: imageV2Projects,
       alt: 'Portfolio project page version 2',
     },
@@ -135,21 +129,18 @@ export const getStaticProps: GetStaticProps = () => {
       alt: 'Portfolio project page version 3',
     },
     {
-      imageData: imageHomepage,
-      alt: 'Current Portfolio Homepage',
-    },
-    {
-      imageData: imageAbout,
-      alt: 'Current Portfolio About Page',
-    },
-    {
-      imageData: imageProjects,
-      alt: 'Current Portfolio Projects Page',
-    },
-    {
       imageData: imageShowcase,
       alt: 'Current Portfolio Project Showcase',
     },
+    {
+      imageData: imagePortfolioHomepage,
+      alt: "Homepage with rocket animation"
+    },
+    {
+      imageData: imagePortfolioProject,
+      alt: "Project list page"
+    }
+
   ];
 
   return {
