@@ -48,6 +48,7 @@ export const ContactSendButton: React.FC<ContactSendButtonProps> = ({
     <button
       id="submit"
       type="button"
+      data-testid="contact-send"
       data-tone={tone}
       disabled={inactive}
       onClick={onClick}

@@ -55,6 +55,14 @@ export const Nav: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    const closeOnRoute = () => setDrawerOpen(false);
+    router.events.on('routeChangeComplete', closeOnRoute);
+    return () => {
+      router.events.off('routeChangeComplete', closeOnRoute);
+    };
+  }, [router]);
+
+  useEffect(() => {
     // Close mobile nav drawer if user clicks outside nav component.
     const checkClickOutside = (event: MouseEvent) => {
       if (
@@ -187,7 +195,6 @@ export const Nav: React.FC = () => {
                   active && 'nav-drawer__link--active',
                 )}
                 to={to}
-                onClick={closeDrawer}
                 aria-current={ARIA_CURRENT_PAGE(active)}
               >
                 {label}

@@ -8,17 +8,24 @@ describe('Mobile Navigation', () => {
   it('Navigate to projects page', () => {
     cy.visit('/');
     cy.toggleNavigation();
-    cy.get('nav a[href="/projects"]:visible').click();
+    cy.get('nav a[href="/projects"]:visible').first().as('drawerProjects');
+    cy.get('@drawerProjects').click();
     cy.url().should('include', '/projects');
-    cy.get('h1').should('have.text', 'Projects');
+    cy.get('h1.projects-list-page-title').should('contain.text', 'Projects');
   });
 
   it('Navigate to homepage', () => {
     cy.visit('/projects');
     cy.toggleNavigation();
-    cy.get('nav .nav-drawer__link[href="/"]:visible').contains('Home').click();
+    cy.get('nav .nav-drawer__link[href="/"]:visible')
+      .contains('Home')
+      .as('drawerHome');
+    cy.get('@drawerHome').click();
     cy.location('pathname').should('eq', '/');
-    cy.get('h1').should('have.text', 'Kyle Gough');
+    cy.get('header[aria-label="Welcome"] h1').should(
+      'contain.text',
+      'Kyle Gough',
+    );
   });
 });
 

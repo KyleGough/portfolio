@@ -8,6 +8,7 @@ declare global {
     interface Chainable {
       getFormLabel(label: string): Chainable<Element>;
       getSubmitButton(): Chainable<Element>;
+      scrollContactFormIntoView(): Chainable<void>;
       toggleNavigation(): Chainable<Element>;
     }
   }
@@ -18,7 +19,11 @@ Cypress.Commands.add('toggleNavigation', () => {
 });
 
 Cypress.Commands.add('getSubmitButton', () => {
-  cy.get('button#submit');
+  cy.get('[data-testid="contact-send"]');
+});
+
+Cypress.Commands.add('scrollContactFormIntoView', () => {
+  cy.get('[data-testid="contact-form-email"]').scrollIntoView();
 });
 
 Cypress.Commands.add('getFormLabel', (label: string) => {

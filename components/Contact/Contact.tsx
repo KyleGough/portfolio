@@ -53,9 +53,7 @@ export const Contact: React.FC = () => {
       return;
     }
 
-    setStatus(EmailStatus.LOADING);
-
-    // Form validation.
+    // Validate before LOADING so the submit button is not replaced mid-click.
     let validForm = true;
 
     const validator = (condition: boolean, setError: (a: boolean) => void) => {
@@ -69,10 +67,11 @@ export const Contact: React.FC = () => {
     validator(!!message, setMessageError);
 
     if (!validForm) {
-      setStatus(EmailStatus.IDLE);
       event.currentTarget.blur();
       return;
     }
+
+    setStatus(EmailStatus.LOADING);
 
     // Send Email.
     fetch('/api/send', {

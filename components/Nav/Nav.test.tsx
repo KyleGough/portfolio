@@ -10,9 +10,14 @@ jest.mock('next/router', () => ({
 
 const mockUseRouter = useRouter as jest.MockedFunction<typeof useRouter>;
 
+const routerEvents = { on: jest.fn(), off: jest.fn() };
+
 describe('Nav component', () => {
   beforeEach(() => {
-    mockUseRouter.mockReturnValue({ asPath: '/' } as never);
+    mockUseRouter.mockReturnValue({
+      asPath: '/',
+      events: routerEvents,
+    } as never);
   });
 
   afterEach(() => {
@@ -27,7 +32,10 @@ describe('Nav component', () => {
   });
 
   it('marks the projects link as current for project routes (desktop and drawer)', () => {
-    mockUseRouter.mockReturnValue({ asPath: '/projects' } as never);
+    mockUseRouter.mockReturnValue({
+      asPath: '/projects',
+      events: routerEvents,
+    } as never);
     render(<Nav />);
     const projectsLinks = screen.getAllByRole('link', { name: 'Projects' });
     expect(projectsLinks).toHaveLength(2);
