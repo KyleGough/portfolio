@@ -20,7 +20,7 @@
 
 [TypeScript](https://www.typescriptlang.org/), [Next.js](https://nextjs.org/) 16 / [React](https://react.dev/) 19 · [Three.js](https://threejs.org/) · [Tailwind CSS](https://tailwindcss.com/).  
 [ESLint](https://eslint.org/) 9 · [Prettier](https://prettier.io/) · [EditorConfig](https://editorconfig.org/) · [Jest](https://jestjs.io/) & [Testing Library](https://testing-library.com/).  
-[Vercel](https://vercel.com/) (hosting · [Analytics](https://vercel.com/docs/analytics)) · [GitHub Actions](https://github.com/features/actions).
+[Vercel](https://vercel.com/) · [GitHub Actions](https://github.com/features/actions).
 
 ## Prerequisites
 
