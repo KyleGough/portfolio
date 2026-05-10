@@ -11,6 +11,11 @@ const CONE_SEGMENTS = 8;
 const PLUME_ORANGE = 0xff5a1a;
 const PLUME_GOLD = 0xffb040;
 const PLUME_CORE = 0xfff4d4;
+/** N₂ separation: blue-cold ice-white (additive), densest core still slightly cyan not peach. */
+const SEP_PLUME_HAZE = 0x76b8dc;
+const SEP_PLUME_SHELL = 0xa0cfe8;
+const SEP_PLUME_MID = 0xcce8f6;
+const SEP_PLUME_CORE = 0xe8f4fc;
 
 /** First stage height; joint with interstage is the natural “line” for stack separation. */
 const S1_H = 3.12;
@@ -32,6 +37,8 @@ export type PlumeLayer = {
   flickerFloor: number;
   isBooster: boolean;
   isCore: boolean;
+  /** GN₂ sideways nose thrusters ({@link addBoosterSepThrusterPlumes}); uses `sepThrusterMul`. */
+  isSepThruster?: boolean;
   isUpperStage: boolean;
   mat: THREE.MeshBasicMaterial;
   mesh: THREE.Mesh;
@@ -397,12 +404,154 @@ export const addAllEnginePlumes = (
   return { allLayers, disposers };
 };
 
+export type BoosterSepThrusterPlumeDims = {
+  boosterH: number;
+  boosterNoseCapR: number;
+  boosterRTop: number;
+  shoulderH: number;
+};
+
+/**
+ * White sideways cones at booster nose (~GN₂ separation); cool shell / warm core (MeshBasic + tick opacity).
+ */
+export const addBoosterSepThrusterPlumes = (
+  leftBooster: THREE.Group,
+  rightBooster: THREE.Group,
+  dims: BoosterSepThrusterPlumeDims,
+  reducedMotion: boolean,
+): { disposers: (() => void)[]; layers: PlumeLayer[] } => {
+  const layers: PlumeLayer[] = [];
+  const thrusterRoots: THREE.Group[] = [];
+  const expandAxis = new THREE.Vector3(0, -1, 0);
+
+  /* Nose shoulder sits on y = boosterH; keep thrusters at that “base of nose” level, not up at the cap. */
+  const flankX = dims.boosterRTop * 0.54;
+  const yAttach = dims.boosterH + dims.shoulderH * 0.12;
+
+  const addToBooster = (
+    booster: THREE.Group,
+    thrustSign: -1 | 1,
+  ): void => {
+    const thrust = new THREE.Vector3(thrustSign, 0, 0).normalize();
+    const group = new THREE.Group();
+    group.position.set(thrustSign * flankX, yAttach, 0);
+    const q = new THREE.Quaternion().setFromUnitVectors(expandAxis, thrust);
+    group.setRotationFromQuaternion(q);
+    booster.add(group);
+    thrusterRoots.push(group);
+
+    const s = 0.88;
+    const tipY = 0;
+    const phase = 8.2;
+    const addLayer = (
+      height: number,
+      rTop: number,
+      rBottom: number,
+      color: number,
+      baseOpacity: number,
+      j: number,
+      opts?: { curlMul?: number; flickerFloor?: number },
+    ): void => {
+      const geom = new THREE.CylinderGeometry(rTop, rBottom, height, 8, 1, true);
+      const mat = new THREE.MeshBasicMaterial({
+        color,
+        transparent: true,
+        opacity: baseOpacity,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+      });
+      const mesh = new THREE.Mesh(geom, mat);
+      geom.translate(0, -height * 0.5, 0);
+      mesh.position.y = tipY;
+      mat.side = THREE.DoubleSide;
+      group.add(mesh);
+      const curlMul = opts?.curlMul ?? 1;
+      const flickerFloor = opts?.flickerFloor ?? 0.88;
+      layers.push({
+        baseOpacity,
+        isBooster: false,
+        isCore: false,
+        isSepThruster: true,
+        isUpperStage: false,
+        mat,
+        mesh,
+        phase: phase + j * 0.21,
+        oscSpeedA: 22,
+        oscSpeedB: 31,
+        flickerFloor,
+        flickerCeil: 0.1,
+        pulseAmp: 0.015,
+        breathAmp: 0.028,
+        curlAmp: 0.0045 * s * curlMul,
+        curlSpeedX: 4.8,
+        curlSpeedZ: 4.4,
+        curlPhaseX: 0,
+        curlPhaseZ: 0,
+        tipCurlAmp: 0.004,
+      });
+    };
+
+    /* Outermost diffuse — narrower frusta + modest length → directed GN₂ jets */
+    addLayer(
+      0.32 * s,
+      0.0085 * s,
+      0.056 * s,
+      SEP_PLUME_HAZE,
+      reducedMotion ? 0.045 : 0.075,
+      0,
+      { curlMul: 1.08, flickerFloor: 0.82 },
+    );
+    addLayer(
+      0.26 * s,
+      0.01 * s,
+      0.044 * s,
+      SEP_PLUME_SHELL,
+      reducedMotion ? 0.085 : 0.125,
+      1,
+    );
+    addLayer(
+      0.17 * s,
+      0.0065 * s,
+      0.028 * s,
+      SEP_PLUME_MID,
+      reducedMotion ? 0.115 : 0.19,
+      2,
+    );
+    addLayer(
+      0.082 * s,
+      0.0036 * s,
+      0.012 * s,
+      SEP_PLUME_CORE,
+      reducedMotion ? 0.2 : 0.34,
+      3,
+    );
+  };
+
+  addToBooster(leftBooster, 1);
+  addToBooster(rightBooster, -1);
+
+  const disposeSepThrusters = (): void => {
+    for (const layer of layers) {
+      layer.mat.dispose();
+      layer.mesh.geometry.dispose();
+    }
+    for (const root of thrusterRoots) {
+      root.removeFromParent();
+    }
+  };
+  return { layers, disposers: [disposeSepThrusters] };
+};
+
 const plumeLayerMul = (
   layer: PlumeLayer,
   corePlumeK: number,
   plumeMul: number,
   s2PlumeK: number,
+  sepThrusterMul: number,
 ): number => {
+  if (layer.isSepThruster) {
+    return sepThrusterMul;
+  }
   if (layer.isCore) {
     return corePlumeK;
   }
@@ -425,9 +574,10 @@ export const updatePlumeLayersForTick = (
   reducedMotion: boolean,
   loopFadeK = 1,
   upperStackFadeK = 1,
+  sepThrusterMul = 1,
 ): void => {
   const plumeMulOnly = (layer: PlumeLayer): number =>
-    plumeLayerMul(layer, corePlumeK, plumeMul, s2PlumeK) *
+    plumeLayerMul(layer, corePlumeK, plumeMul, s2PlumeK, sepThrusterMul) *
     (layer.isUpperStage ? upperStackFadeK : 1);
 
   const pressureByPhase = (sec: number): number => {
@@ -448,8 +598,17 @@ export const updatePlumeLayersForTick = (
 
   if (reducedMotion) {
     for (const layer of layers) {
-      setOpacity(layer, 1);
       const stageK = plumeMulOnly(layer);
+      if (layer.isSepThruster) {
+        setOpacity(layer, 1);
+        const y = THREE.MathUtils.clamp(stageK, 0, 1);
+        layer.mesh.scale.set(1, Math.max(0.04, y), 1);
+        layer.mesh.position.set(0, 0, 0);
+        layer.mesh.rotation.x = 0;
+        layer.mesh.rotation.z = 0;
+        continue;
+      }
+      setOpacity(layer, 1);
       const pressureK = Math.min(
         1,
         Math.max(
@@ -469,6 +628,19 @@ export const updatePlumeLayersForTick = (
   }
   for (const layer of layers) {
     const stageK = plumeMulOnly(layer);
+    if (layer.isSepThruster) {
+      const f = Math.sin(wallS * layer.oscSpeedA + layer.phase);
+      const g = 0.5 + 0.5 * Math.sin(wallS * layer.oscSpeedB + layer.phase * 1.63);
+      const flicker = layer.flickerFloor + layer.flickerCeil * g;
+      setOpacity(layer, flicker);
+      const pulse = 1 + layer.pulseAmp * f;
+      const yScale = pulse * THREE.MathUtils.clamp(stageK, 0.04, 1);
+      layer.mesh.scale.set(1, yScale, 1);
+      layer.mesh.position.set(0, 0, 0);
+      layer.mesh.rotation.x = layer.tipCurlAmp * 0.08 * f * Math.max(0.2, stageK);
+      layer.mesh.rotation.z = layer.tipCurlAmp * 0.06 * g * Math.max(0.2, stageK);
+      continue;
+    }
     const pressureK = Math.min(
       1,
       Math.max(

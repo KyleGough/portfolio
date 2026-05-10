@@ -37,6 +37,57 @@ export const BOOSTER_VISUAL_FADE_DELAY_MS = 1000;
  */
 export const BOOSTER_SEP_DURATION_MS = 8000;
 
+/** Length of the first N₂ / GN₂ separation-thruster puff (wall ms). */
+export const BOOSTER_SEP_THRUSTER_BURST_MS = 500;
+
+/**
+ * Length of the second puff — typically longer (sustain) after the initial valve pop / gap.
+ */
+export const BOOSTER_SEP_THRUSTER_BURST_2_MS = 2500;
+
+/** Gap between the two bursts (wall ms). */
+export const BOOSTER_SEP_THRUSTER_BURST_GAP_MS = 200;
+
+/**
+ * N₂ separation thrusters: intensity 0–1 driven by wall clock since the booster-separation event
+ * arms ({@link BOOSTER_FADE_AT_MISSION_SEC}). Two pulses:
+ * `[0,T1)`, `[T1+G, T1+G+T2)` with {@link BOOSTER_SEP_THRUSTER_BURST_MS} and
+ * {@link BOOSTER_SEP_THRUSTER_BURST_2_MS}.
+ */
+export const separationThrusterBurstMul = (
+  now: number,
+  separationEventWallMs: number | null,
+): number => {
+  if (separationEventWallMs === null) {
+    return 0;
+  }
+  const t = now - separationEventWallMs;
+  const burst1 = BOOSTER_SEP_THRUSTER_BURST_MS;
+  const burst2 = BOOSTER_SEP_THRUSTER_BURST_2_MS;
+  const gap = BOOSTER_SEP_THRUSTER_BURST_GAP_MS;
+  const envelope = (u: number, burstLen: number): number => {
+    if (u <= 0 || u >= burstLen) {
+      return 0;
+    }
+    const edge = Math.min(120, burstLen / 5);
+    if (u < edge) {
+      return u / edge;
+    }
+    if (u > burstLen - edge) {
+      return (burstLen - u) / edge;
+    }
+    return 1;
+  };
+  if (t >= 0 && t < burst1) {
+    return envelope(t, burst1);
+  }
+  const t2Start = burst1 + gap;
+  if (t >= t2Start && t < t2Start + burst2) {
+    return envelope(t - t2Start, burst2);
+  }
+  return 0;
+};
+
 /**
  * T+0:50 — main-stage split: top stack stays put; lower first stage falls and the whole
  * lower body (tank, octoweb, plumes) fades out in this wall time.
