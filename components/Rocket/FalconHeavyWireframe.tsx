@@ -48,10 +48,10 @@ const ENGINE_CYAN_DARK = 0x2f8fa3;
 
 /**
  * Yaw (spin about body Y) is driven by mission phase within each loop so it resets with
- * staging. Offset by −90° so by booster separation (~T+0:30) the triple-body layout reads
+ * staging. Offset by −90° so by booster separation (~T+0:25) the triple-body layout reads
  * clearly from the hero camera. Rate matches legacy `+= 0.0028` per frame at ~60fps.
  */
-const LOOP_YAW_OFFSET_RAD = -Math.PI / 2;
+const LOOP_YAW_OFFSET_RAD = 0;
 const LOOP_YAW_RATE_RAD_PER_MISSION_SEC = 0.0028 * 60;
 
 /** Y mount for all octaweb engine clusters in buildRocket. */
