@@ -21,8 +21,15 @@ const SEP_PLUME_CORE = 0xe8f4fc;
 const S1_H = 3.12;
 const INTERSTAGE_H = 0.2;
 
-/** Single MVAC-class bell at second-stage base (interstage / S2 joint). */
-const S2_ENGINE_SCALE = 0.72;
+/**
+ * Three-engine cluster at second-stage base (interstage / S2 joint). Must stay in sync
+ * with the wireframe nozzle constants in `FalconHeavyWireframe.tsx` — both files position
+ * the same physical engines (wireframe + plume).
+ */
+const S2_ENGINE_COUNT = 3;
+const S2_ENGINE_SCALE = 0.55;
+const S2_ENGINE_RING_R = 0.08;
+const S2_ENGINE_RING_ANGLE_OFFSET = -Math.PI / 2;
 const S2_ENGINE_Y_MOUNT = S1_H + INTERSTAGE_H;
 
 export type PlumeLayer = {
@@ -380,7 +387,9 @@ export const addAllEnginePlumes = (
   addCluster(leftBooster, 0, boosterRingR, 0.86, exhaustBooster, true, false);
   addCluster(rightBooster, 0, boosterRingR, 0.86, exhaustBooster, true, false);
 
-  {
+  for (let i = 0; i < S2_ENGINE_COUNT; i += 1) {
+    const a =
+      (i * 2 * Math.PI) / S2_ENGINE_COUNT + S2_ENGINE_RING_ANGLE_OFFSET;
     phase += 0.21;
     const p = phase % 12.5;
     const { group, layers, dispose } = addEnginePlumeGroup(
@@ -390,9 +399,9 @@ export const addAllEnginePlumes = (
         isUpperStage: true,
         phase: p,
         scale: S2_ENGINE_SCALE,
-        x: 0,
+        x: Math.cos(a) * S2_ENGINE_RING_R,
         y: s2ExhaustY,
-        z: 0,
+        z: Math.sin(a) * S2_ENGINE_RING_R,
       },
       reducedMotion,
     );
