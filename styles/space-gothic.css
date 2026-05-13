@@ -169,46 +169,6 @@ nav[aria-label='Main'] [class~='nav-bar--shell'] {
   backdrop-filter: blur(8px);
 }
 
-/* Scrolled: lighter veil, stronger depth (still a signal layer, not decorative glass) */
-nav[aria-label='Main'] .nav-bar--shell.nav-bar--scrolled {
-  background-color: oklch(11% 0.03 280 / 0.7) !important;
-  border-bottom: 1px solid rgb(255 255 255 / 0.1) !important;
-  box-shadow: 0 4px 28px oklch(0% 0 0 / 0.35) !important;
-  backdrop-filter: blur(16px) saturate(1.15) !important;
-  -webkit-backdrop-filter: blur(16px) saturate(1.15) !important;
-}
-
-/* Nav overdrive: cold cyan + violet signal in the void */
-nav[aria-label='Main'] .nav-bar--overdrive::before {
-  background: linear-gradient(
-    102deg,
-    oklch(15% 0.04 280 / 0) 0%,
-    oklch(45% 0.12 200 / 0.35) 44%,
-    oklch(38% 0.2 310 / 0.32) 71%,
-    oklch(12% 0.03 280 / 0) 100%
-  ) !important;
-  background-size: 220% 100% !important;
-  mix-blend-mode: plus-lighter !important;
-  opacity: calc(0.14 + var(--nav-scroll) * 0.52) !important;
-}
-nav[aria-label='Main'] .nav-bar--overdrive::after {
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    oklch(72% 0.12 200 / 0.75) 42%,
-    oklch(68% 0.2 310 / 0.55) 58%,
-    transparent 100%
-  ) !important;
-  filter: blur(0.6px) !important;
-  opacity: calc(0.08 + var(--nav-scroll) * 0.88) !important;
-}
-@media (prefers-reduced-motion: reduce) {
-  nav[aria-label='Main'] .nav-bar--overdrive::before,
-  nav[aria-label='Main'] .nav-bar--overdrive::after {
-    opacity: 0 !important;
-  }
-}
-
 /* Nav type: void chrome (not Merriweather); wordmark always white on all routes */
 nav[aria-label='Main'] .nav-wordmark,
 nav[aria-label='Main'] .nav-wordmark--active {

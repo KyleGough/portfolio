@@ -5,15 +5,7 @@ import { isNavPathActive } from '@utilities/isNavPathActive';
 import { clsx } from 'clsx';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
-
-/** useLayoutEffect warns on SSR; on the server, use `useEffect` (effects still run only in the browser). */
-const useIsomorphicLayoutEffect =
-  typeof window !== 'undefined' ? useLayoutEffect : useEffect;
-
-const SCROLL_ELEVATE_PX = 8;
-/** 0–1: ramp over first ~220px of scroll (drives overdrive layer intensity). */
-const SCROLL_RAMP_PX = 220;
+import React, { useEffect, useRef, useState } from 'react';
 
 const BAR_LINK_BASE =
   'nav-link--bar border-bottom-slide mt-0 inline-block px-5 py-5';
@@ -32,27 +24,11 @@ export const Nav: React.FC = () => {
   const router = useRouter();
   const { asPath } = router;
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [navScrolled, setNavScrolled] = useState(false);
   const menuBtnRef = useRef<HTMLButtonElement>(null);
   const mobileNavRef = useRef<HTMLDivElement>(null);
-  const shellRef = useRef<HTMLDivElement>(null);
 
   const toggleDrawer = () => setDrawerOpen((prev) => !prev);
   const closeDrawer = () => setDrawerOpen(false);
-
-  useIsomorphicLayoutEffect(() => {
-    const sync = () => {
-      const y = window.scrollY;
-      setNavScrolled(y > SCROLL_ELEVATE_PX);
-      const t = Math.min(1, Math.max(0, y / SCROLL_RAMP_PX));
-      shellRef.current?.style.setProperty('--nav-scroll', t.toFixed(4));
-    };
-    sync();
-    window.addEventListener('scroll', sync, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', sync);
-    };
-  }, []);
 
   useEffect(() => {
     // Close mobile nav drawer if user clicks outside nav component.
@@ -80,14 +56,7 @@ export const Nav: React.FC = () => {
       role="navigation"
       aria-label="Main"
     >
-      <div
-        ref={shellRef}
-        className={clsx(
-          'nav-bar--shell nav-bar--overdrive bg-nav-light relative z-[200] text-white',
-          navScrolled && 'nav-bar--scrolled',
-        )}
-        data-nav-elevated={navScrolled ? 'true' : undefined}
-      >
+      <div className="nav-bar--shell bg-nav-light relative z-[200] text-white">
         <div className="nav-bar--inner relative z-10 flex w-full flex-wrap items-center justify-between px-2">
           <Link
             to="/"
