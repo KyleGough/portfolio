@@ -48,10 +48,10 @@ const ENGINE_CYAN_DARK = 0x2f8fa3;
 
 /**
  * Yaw (spin about body Y) is driven by mission phase within each loop so it resets with
- * staging. Offset by −90° so by booster separation (~T+0:30) the triple-body layout reads
+ * staging. Offset by −90° so by booster separation (~T+0:25) the triple-body layout reads
  * clearly from the hero camera. Rate matches legacy `+= 0.0028` per frame at ~60fps.
  */
-const LOOP_YAW_OFFSET_RAD = -Math.PI / 2;
+const LOOP_YAW_OFFSET_RAD = 0;
 const LOOP_YAW_RATE_RAD_PER_MISSION_SEC = 0.0028 * 60;
 
 /** Y mount for all octaweb engine clusters in buildRocket. */
@@ -78,8 +78,17 @@ const S2_SHOULDER_H = 0.18;
 const FAIRING_H = 0.8;
 const S1_TOP_R = 0.32;
 const S1_BASE_R = 0.35;
-/** Single MVAC-class bell at second-stage base (interstage / S2 joint). */
-const S2_ENGINE_SCALE = 0.72;
+/**
+ * Three-engine cluster at second-stage base (interstage / S2 joint).
+ * Scale is reduced vs. the original single MVAC-class bell so three bells fit cleanly
+ * within the S2 base diameter; ring radius is sized so the bells (and their plumes) sit
+ * apart with a visible gap rather than reading as one fat exhaust.
+ */
+const S2_ENGINE_COUNT = 3;
+const S2_ENGINE_SCALE = 0.55;
+const S2_ENGINE_RING_R = 0.08;
+/** First engine points toward −Z so the cluster reads triangle-up from the hero camera. */
+const S2_ENGINE_RING_ANGLE_OFFSET = -Math.PI / 2;
 const S2_ENGINE_Y_MOUNT = S1_H + INTERSTAGE_H;
 const ENGINE_WIREFRAME_OPACITY_FACTOR = 0.65;
 
@@ -202,19 +211,23 @@ const buildRocket = (
     0,
     depthOccluder,
   );
-  addEngineNozzle(
-    coreUpperEngineWire,
-    engineWireMat,
-    0,
-    0,
-    S2_ENGINE_Y_MOUNT,
-    S2_ENGINE_SCALE,
-  );
+  for (let i = 0; i < S2_ENGINE_COUNT; i += 1) {
+    const a =
+      (i * 2 * Math.PI) / S2_ENGINE_COUNT + S2_ENGINE_RING_ANGLE_OFFSET;
+    addEngineNozzle(
+      coreUpperEngineWire,
+      engineWireMat,
+      Math.cos(a) * S2_ENGINE_RING_R,
+      Math.sin(a) * S2_ENGINE_RING_R,
+      S2_ENGINE_Y_MOUNT,
+      S2_ENGINE_SCALE,
+    );
+  }
   addEngineBayStructure(
     coreUpperEngineWire,
     engineWireMat,
     S2_ENGINE_Y_MOUNT,
-    0.08,
+    S2_ENGINE_RING_R,
     S2_ENGINE_SCALE,
   );
   coreUpper.add(coreUpperEngineWire);
