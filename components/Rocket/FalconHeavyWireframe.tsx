@@ -61,7 +61,7 @@ const Y_MOUNT_CORE = 0.03;
 const BOOSTER_STAGE_X = 0.7;
 const BOOSTER_SEP_EXTRA_X = 0.38;
 /** Max downward Y (body space) while side boosters fade; scales 0–1 with wireframe fade. */
-const BOOSTER_SEP_FALL_MAX = 0.5;
+const BOOSTER_SEP_FALL_MAX = 1;
 /** Outward roll about Z, max at rotSplayK = 1. */
 const BOOSTER_SEP_SPLAY_RAD = 0.55;
 
@@ -503,8 +503,8 @@ const t2EventProgress = (
   const separationK = 1 - (1 - uOffset) * (1 - uOffset);
   /** Same timeline as wire fade; rotation uses cubic ease-in (slow roll-up → faster). */
   const uRot = Math.min(1, d / BOOSTER_WIREFRAME_FADE_WALL_MS);
-  const rotSplayK = uRot * uRot * uRot;
-  const boosterFallK = uRot;
+  const rotSplayK = Math.pow(uRot, 3);
+  const boosterFallK = Math.pow(uRot, 2);
   return { boosterFallK, plumeMul, rotSplayK, separationK, t2Wall, wireAlpha };
 };
 
