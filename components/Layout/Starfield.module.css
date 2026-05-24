@@ -23,7 +23,6 @@
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  will-change: transform;
   animation: starfield-drift-y linear infinite;
   animation-duration: var(--sg-star-drift-duration, 180s);
 }
@@ -88,6 +87,5 @@
 
   .layerDrift {
     animation: none;
-    will-change: auto;
   }
 }

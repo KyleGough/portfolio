@@ -1,5 +1,4 @@
 import { Link } from '@components/Link';
-import { LOOP_PERIOD_MISSION_SEC } from '@components/Rocket/MissionTime';
 import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
 import { useObserveHeroAnimationActive } from '@hooks/useObserveHeroAnimationActive';
 import dynamic from 'next/dynamic';
@@ -35,16 +34,7 @@ export const Hero: React.FC = () => {
         aria-label="Three-dimensional model of a Falcon Heavy class rocket with animated engine plumes."
       >
         <HeroAnimationActiveContext.Provider value={animationActive}>
-          <div
-            ref={wireframeStageRef}
-            className={styles.wireframeStage}
-            data-rocket-animation-active={animationActive ? 'true' : 'false'}
-            style={
-              {
-                '--hero-rocket-loop-duration': `${LOOP_PERIOD_MISSION_SEC}s`,
-              } as React.CSSProperties
-            }
-          >
+          <div ref={wireframeStageRef} className={styles.wireframeStage}>
             <FalconHeavyWireframe />
           </div>
         </HeroAnimationActiveContext.Provider>

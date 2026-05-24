@@ -74,35 +74,11 @@
   }
 }
 
-@keyframes hero-rocket-launch-z {
-  from {
-    transform: rotateZ(0deg);
-  }
-
-  to {
-    transform: rotateZ(40deg);
-  }
-}
-
 .wireframeStage .rocketFrame {
   position: relative;
   z-index: 0;
   width: 100%;
   margin-inline: 0;
-  transform-origin: 50% 45%;
-  animation: hero-rocket-launch-z var(--hero-rocket-loop-duration, 70s) linear
-    infinite;
-}
-
-.wireframeStage[data-rocket-animation-active='false'] .rocketFrame {
-  animation-play-state: paused;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .wireframeStage .rocketFrame {
-    animation: none;
-    transform: rotateZ(0deg);
-  }
 }
 
 .rocketFrame {
