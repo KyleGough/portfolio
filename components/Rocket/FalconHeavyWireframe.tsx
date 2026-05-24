@@ -54,7 +54,7 @@ const ENGINE_CYAN_DARK = 0x2f8fa3;
 const LOOP_YAW_OFFSET_RAD = 0;
 const LOOP_YAW_RATE_RAD_PER_MISSION_SEC = 0.0028 * 60;
 /** Screen-space launch tilt over one mission loop (was CSS `hero-rocket-launch-z`). */
-const LOOP_LAUNCH_TILT_RAD = THREE.MathUtils.degToRad(40);
+const LOOP_LAUNCH_TILT_RAD = -THREE.MathUtils.degToRad(40);
 
 /** Y mount for all octaweb engine clusters in buildRocket. */
 const Y_MOUNT_CORE = 0.03;
