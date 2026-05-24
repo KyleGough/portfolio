@@ -53,6 +53,8 @@ const ENGINE_CYAN_DARK = 0x2f8fa3;
  */
 const LOOP_YAW_OFFSET_RAD = 0;
 const LOOP_YAW_RATE_RAD_PER_MISSION_SEC = 0.0028 * 60;
+/** Screen-space launch tilt over one mission loop (was CSS `hero-rocket-launch-z`). */
+const LOOP_LAUNCH_TILT_RAD = THREE.MathUtils.degToRad(40);
 
 /** Y mount for all octaweb engine clusters in buildRocket. */
 const Y_MOUNT_CORE = 0.03;
@@ -768,7 +770,9 @@ const attachRocketViewport = (
 
   const pivot = new THREE.Group();
   pivot.add(body);
-  scene.add(pivot);
+  const rollGroup = new THREE.Group();
+  rollGroup.add(pivot);
+  scene.add(rollGroup);
 
   const setSize = () => {
     const w = mount.clientWidth;
@@ -872,9 +876,12 @@ const attachRocketViewport = (
     }
 
     if (!reducedMotion) {
+      const loopT = phaseSec / LOOP_PERIOD_MISSION_SEC;
+      rollGroup.rotation.z = loopT * LOOP_LAUNCH_TILT_RAD;
       pivot.rotation.y =
         LOOP_YAW_OFFSET_RAD + phaseSec * LOOP_YAW_RATE_RAD_PER_MISSION_SEC;
     } else {
+      rollGroup.rotation.z = 0;
       pivot.rotation.y = LOOP_YAW_OFFSET_RAD;
     }
     setGroupLineOpacityFactor(

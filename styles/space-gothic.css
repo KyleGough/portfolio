@@ -26,7 +26,10 @@
   --gothic-stroke-bright: oklch(65% 0.15 290 / 0.45);
 }
 
-/* Main canvas: layered radii + grid parallax (::before) */
+/* Main canvas: void fill + grid parallax (::before). Viewport glows live on ::after
+   (position: fixed) instead of background-attachment: fixed — Chrome repaints fixed
+   backgrounds when composited layers animate (starfield, WebGL hero), which reads as
+   jitter even when scroll position is unchanged. */
 .app-space-gothic main {
   position: relative;
   z-index: 0;
@@ -35,6 +38,25 @@
   min-height: 100svh;
   color: var(--gothic-fg) !important;
   background-color: var(--void-deep) !important;
+  background-image: linear-gradient(
+    180deg,
+    var(--void-mid) 0%,
+    var(--void-deep) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /* Slight black vignette + whisper of violet at the edges */
+  box-shadow:
+    inset 0 0 110px oklch(0% 0 0 / 0.38),
+    inset 0 0 200px oklch(26% 0.09 300 / 0.045);
+}
+
+.app-space-gothic main::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
   background-image:
     radial-gradient(
       ellipse 118% 64% at 50% -6%,
@@ -51,24 +73,21 @@
       oklch(21% 0.09 265 / 0.26),
       transparent 54%
     ),
-    /* Lower bloom: lifts mid / footer void */
     radial-gradient(
-        ellipse 96% 46% at 50% 104%,
-        oklch(21% 0.09 305 / 0.26),
-        transparent 56%
-      ),
-    /* Sides: vertical violet wash so edges aren’t flat black */
+      ellipse 96% 46% at 50% 104%,
+      oklch(21% 0.09 305 / 0.26),
+      transparent 56%
+    ),
     radial-gradient(
-        ellipse 36% 56% at -3% 48%,
-        oklch(18% 0.08 295 / 0.22),
-        transparent 53%
-      ),
-    /* Pink / lemon washes — same depth & chroma band as violet layers */
+      ellipse 36% 56% at -3% 48%,
+      oklch(18% 0.08 295 / 0.22),
+      transparent 53%
+    ),
     radial-gradient(
-        ellipse 74% 46% at 70% 16%,
-        oklch(25% 0.09 322 / 0.19),
-        transparent 58%
-      ),
+      ellipse 74% 46% at 70% 16%,
+      oklch(25% 0.09 322 / 0.19),
+      transparent 58%
+    ),
     radial-gradient(
       ellipse 70% 42% at 12% 68%,
       oklch(23% 0.08 108 / 0.17),
@@ -78,19 +97,11 @@
       ellipse 88% 44% at 52% 96%,
       oklch(22% 0.09 328 / 0.18),
       transparent 54%
-    ),
-    linear-gradient(180deg, var(--void-mid) 0%, var(--void-deep) 100%);
-  /* Radials fixed to viewport so purple / neon glows don’t scroll away on long pages */
-  background-attachment:
-    fixed, fixed, fixed, fixed, fixed, fixed, fixed, fixed, scroll;
+    );
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  background-blend-mode:
-    screen, screen, screen, screen, screen, screen, screen, screen, normal;
-  /* Slight black vignette + whisper of violet at the edges */
-  box-shadow:
-    inset 0 0 110px oklch(0% 0 0 / 0.38),
-    inset 0 0 200px oklch(26% 0.09 300 / 0.045);
+  background-blend-mode: screen, screen, screen, screen, screen, screen, screen,
+    screen;
 }
 
 .app-space-gothic main::before {
@@ -105,7 +116,6 @@
     calc(var(--sg-scroll-y) * -1 * var(--sg-grid-parallax-factor)),
     0
   );
-  will-change: transform;
   background-image:
     linear-gradient(
       90deg,
@@ -135,7 +145,6 @@
   .app-space-gothic main::before {
     opacity: 0.3;
     transform: none;
-    will-change: auto;
   }
 }
 
