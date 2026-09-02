@@ -6,7 +6,6 @@ import {
   type FeaturedCaseStudy,
   FEATURED_CASE_STUDIES,
 } from '@utilities/featuredCaseStudies';
-import { clsx } from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -18,15 +17,11 @@ const Tile: React.FC<{
   priority: boolean;
 }> = ({ featured, priority }) => {
   const when = getDateRange(featured.date);
-  const isSudoku = featured.id === 'sudoku';
   const img = featured.image;
 
   return (
     <FadeIn className={styles.item}>
-      <Link
-        className={clsx(styles.tile, isSudoku && styles.tileSudoku)}
-        href={featured.link}
-      >
+      <Link className={styles.tile} href={featured.link}>
         <div className={styles.image}>
           <Image
             className="home-feature-img"

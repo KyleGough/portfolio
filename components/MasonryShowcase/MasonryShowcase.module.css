@@ -192,12 +192,6 @@
   transition: color 0.25s ease;
 }
 
-@media (min-width: 64rem) {
-  .tileSudoku .image :global(.home-feature-img) {
-    object-position: 50% 35%;
-  }
-}
-
 @media (hover: hover) and (pointer: fine) {
   .tile:hover,
   .tile:focus-visible {

@@ -40,6 +40,9 @@ export const Footer: React.FC = () => (
             </h2>
             <ul>
               <FooterLink href="/projects">All Projects</FooterLink>
+              <FooterLink href="/projects/qubit-evolution">
+                Qubit Evolution
+              </FooterLink>
               <FooterLink href="/projects/solar-system">
                 Solar System Model
               </FooterLink>
@@ -48,9 +51,6 @@ export const Footer: React.FC = () => (
               </FooterLink>
               <FooterLink href="/projects/ai-space-telescope">
                 AI Space Telescope
-              </FooterLink>
-              <FooterLink href="/projects/cave-exploration">
-                Cave Exploration
               </FooterLink>
             </ul>
           </div>
