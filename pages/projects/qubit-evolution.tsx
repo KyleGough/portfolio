@@ -1,10 +1,10 @@
 import { Divider } from '@components/Divider';
-import { ImageFigure } from '@components/ImageFigure';
 import { Layout } from '@components/Layout';
 import { Pagination } from '@components/Pagination';
 import { ProjectHeader } from '@components/ProjectHeader';
 import { Screenshots } from '@components/Screenshots';
 import { Section } from '@components/Section';
+import { VideoFigure } from '@components/VideoFigure';
 import imageVisualiser from '@image/qubit-evolution.jpg';
 import imageEigenstate from '@image/qubit-evolution2.jpg';
 import { fetchGitHubStargazerCount } from '@utilities/fetchGitHubStargazerCount';
@@ -26,7 +26,7 @@ const QubitEvolution: React.FC<ProjectPageProps> = ({
 
     <Divider />
 
-    <ImageFigure image={images[0]} />
+    <VideoFigure src="/video/qubit-evolution.mp4" caption="Qubit Evolution" />
 
     <Divider />
 

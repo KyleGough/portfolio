@@ -1,5 +1,6 @@
 import Image, { StaticImageData } from 'next/image';
 import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 let screenshotLightboxId = 0;
 
@@ -10,6 +11,7 @@ interface ImageModalProps {
 
 export const ImageModal: React.FC<ImageModalProps> = ({ image, alt }) => {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [ids] = useState(() => {
     const n = ++screenshotLightboxId;
     return { dialog: `shot-lightbox-${n}`, title: `shot-title-${n}` };
@@ -19,6 +21,10 @@ export const ImageModal: React.FC<ImageModalProps> = ({ image, alt }) => {
   const openModal = () => setOpen(true);
 
   const closeModal = () => setOpen(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (!open) {
@@ -33,6 +39,43 @@ export const ImageModal: React.FC<ImageModalProps> = ({ image, alt }) => {
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, [open]);
+
+  const dialog =
+    open && mounted ? (
+      <div
+        role="dialog"
+        id={dialogId}
+        aria-modal="true"
+        aria-labelledby={titleId}
+        onClick={closeModal}
+        className="fixed inset-0 z-[300] isolate flex h-dvh w-full items-center justify-center bg-black/80 p-4"
+      >
+        <div
+          onClick={(e) => e.stopPropagation()}
+          className="max-h-[min(100svh,900px)] overflow-auto rounded-md bg-background shadow-2xl ring-1 ring-header/10"
+        >
+          <div className="flex items-center justify-center p-1">
+            <Image
+              className="max-w-full border border-link/20 lg:max-w-screen-lg"
+              src={image.src}
+              alt={alt}
+              width={image.width}
+              height={image.height}
+              placeholder="blur"
+              blurDataURL={image.blurDataURL}
+            />
+          </div>
+          <div className="border-t border-header/10 p-3">
+            <p
+              id={titleId}
+              className="text-center text-sm font-thin text-header/80"
+            >
+              {alt}
+            </p>
+          </div>
+        </div>
+      </div>
+    ) : null;
 
   return (
     <>
@@ -75,41 +118,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({ image, alt }) => {
           {alt}
         </figcaption>
       </figure>
-      {open && (
-        <div
-          role="dialog"
-          id={dialogId}
-          aria-modal="true"
-          aria-labelledby={titleId}
-          onClick={closeModal}
-          className="fixed left-0 top-0 z-10 flex h-screen w-full items-center justify-center bg-black/80 p-4"
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            className="max-h-[min(100svh,900px)] overflow-auto rounded-md bg-background shadow-2xl ring-1 ring-header/10"
-          >
-            <div className="flex items-center justify-center p-1">
-              <Image
-                className="max-w-full border border-link/20 lg:max-w-screen-lg"
-                src={image.src}
-                alt={alt}
-                width={image.width}
-                height={image.height}
-                placeholder="blur"
-                blurDataURL={image.blurDataURL}
-              />
-            </div>
-            <div className="border-t border-header/10 p-3">
-              <p
-                id={titleId}
-                className="text-center text-sm font-thin text-header/80"
-              >
-                {alt}
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
+      {dialog ? createPortal(dialog, document.body) : null}
     </>
   );
 };

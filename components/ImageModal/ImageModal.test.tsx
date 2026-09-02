@@ -17,6 +17,7 @@ describe('ImageModal component', () => {
       screen.getByRole('button', { name: 'View larger version: Test Caption' }),
     );
     expect(screen.queryByRole('dialog')).toBeInTheDocument();
+    expect(screen.getByRole('dialog').parentElement).toBe(document.body);
 
     // Modal closes upon click event.
     const dialog = screen.getByRole('dialog');
