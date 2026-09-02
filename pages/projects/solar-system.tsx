@@ -81,6 +81,8 @@ const SolarSystem: React.FC<ProjectPageProps> = ({
     <Pagination
       previousTitle="AI Space Telescope"
       previousLink="/projects/ai-space-telescope"
+      nextTitle="Qubit Evolution"
+      nextLink="/projects/qubit-evolution"
     />
   </Layout>
 );

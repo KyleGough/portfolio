@@ -10,6 +10,7 @@ import imageSortingVisualiser from '@image/card-sorting-algorithm-visualiser.jpg
 import imageSudoku from '@image/card-sudoku.jpg';
 import imageMars from '@image/mars.png';
 import imagePortfolio from '@image/portfolio-homepage.jpg';
+import imageQubitEvolution from '@image/qubit-evolution.jpg';
 
 import { Project } from './types';
 
@@ -29,6 +30,30 @@ enum ProjectFilter {
 }
 
 export const projects: Project[] = [
+  {
+    id: 'qubit-evolution',
+    title: 'Qubit Evolution',
+    date: {
+      start: {
+        month: 9,
+        year: 2026,
+      },
+    },
+    image: imageQubitEvolution,
+    alt: 'Qubit Evolution visualiser',
+    link: '/projects/qubit-evolution',
+    filters: [
+      ProjectFilter.JAVASCRIPT,
+      ProjectFilter.REACT,
+      ProjectFilter.THREE_JS,
+      ProjectFilter.WEB,
+    ],
+    description:
+      'Interactive single-qubit visualiser: tune a Hamiltonian, pick an initial state, and watch time-independent Schrödinger evolution on the Bloch sphere. The same state is shown as a ket in Dirac notation, so the geometry and the maths stay aligned as the system precesses.',
+    github: 'https://github.com/KyleGough/qubit-evolution',
+    skills: ['React', 'TypeScript', 'Three.js', 'KaTeX', 'Vite'],
+    liveLink: 'https://kylegough.github.io/qubit-evolution/',
+  },
   {
     id: 'solar-system',
     title: 'Interactive Solar System Model',
