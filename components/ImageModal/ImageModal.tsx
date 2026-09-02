@@ -11,7 +11,6 @@ interface ImageModalProps {
 
 export const ImageModal: React.FC<ImageModalProps> = ({ image, alt }) => {
   const [open, setOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const [ids] = useState(() => {
     const n = ++screenshotLightboxId;
     return { dialog: `shot-lightbox-${n}`, title: `shot-title-${n}` };
@@ -21,10 +20,6 @@ export const ImageModal: React.FC<ImageModalProps> = ({ image, alt }) => {
   const openModal = () => setOpen(true);
 
   const closeModal = () => setOpen(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     if (!open) {
@@ -40,8 +35,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({ image, alt }) => {
     return () => document.removeEventListener('keydown', onKey);
   }, [open]);
 
-  const dialog =
-    open && mounted ? (
+  const dialog = open ? (
       <div
         role="dialog"
         id={dialogId}
