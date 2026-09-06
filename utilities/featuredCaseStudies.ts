@@ -1,4 +1,4 @@
-import imageMars from '@image/mars.png';
+import imageMars from '@image/mars.jpg';
 import imageQubitEvolution from '@image/qubit-evolution.jpg';
 
 import type { ProjectDate } from './types';

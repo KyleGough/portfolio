@@ -8,7 +8,7 @@ import imageLucidLab from '@image/card-lucidlab.jpg';
 import imageRSCBot from '@image/card-rscbot.jpg';
 import imageSortingVisualiser from '@image/card-sorting-algorithm-visualiser.jpg';
 import imageSudoku from '@image/card-sudoku.jpg';
-import imageMars from '@image/mars.png';
+import imageMars from '@image/mars.jpg';
 import imagePortfolio from '@image/portfolio-homepage.jpg';
 import imageQubitEvolution from '@image/qubit-evolution.jpg';
 
