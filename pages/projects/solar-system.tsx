@@ -9,7 +9,7 @@ import imageEarth from '@image/earth.jpg';
 import imageMars from '@image/mars.jpg';
 import imageMoon from '@image/moon.jpg';
 import imageNeptune from '@image/neptune.jpg';
-import imageSolarSystemModel from '@image/solar-system-model.jpg';
+import imageSaturn from '@image/saturn.jpg';
 import { fetchGitHubStargazerCount } from '@utilities/fetchGitHubStargazerCount';
 import { getProjectData } from '@utilities/Project';
 import { ProjectPageProps } from '@utilities/types';
@@ -95,10 +95,6 @@ export const getStaticProps: GetStaticProps<ProjectPageProps> = async () => {
       alt: 'Mars',
     },
     {
-      imageData: imageSolarSystemModel,
-      alt: 'Solar System Model',
-    },
-    {
       imageData: imageEarth,
       alt: 'Earth',
     },
@@ -109,6 +105,10 @@ export const getStaticProps: GetStaticProps<ProjectPageProps> = async () => {
     {
       imageData: imageNeptune,
       alt: 'Neptune',
+    },
+    {
+      imageData: imageSaturn,
+      alt: 'Saturn',
     },
   ];
 
