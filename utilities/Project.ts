@@ -68,9 +68,9 @@ export const projects: Project[] = [
     link: '/projects/solar-system',
     filters: [ProjectFilter.JAVASCRIPT, ProjectFilter.THREE_JS, ProjectFilter.WEB],
     description:
-      'Dive into a stunningly rendered model of the solar system created using Three.js and TypeScript. This interactive visualization showcases the planets and their moons orbiting in a dynamic environment, complete with realistic lighting and detailed bump maps for an immersive experience.',
+      'Interactive Three.js orrery of the Sun, planets, and major moons. Travel between bodies, toggle orbit trails and points of interest, and read HUD facts—with atmospheres, Earth night lights, and a bloomed Sun.',
     github: 'https://github.com/KyleGough/solar-system',
-    skills: ['Three.js', 'TypeScript'],
+    skills: ['Three.js', 'TypeScript', 'Vite'],
     liveLink: 'https://kylegough.github.io/solar-system/',
   },
   {
