@@ -38,6 +38,6 @@ export const FEATURED_CASE_STUDIES: readonly FeaturedCaseStudy[] = [
     date: { start: { month: 7, year: 2023 } },
     image: imageMars,
     excerpt:
-      'Interactive 3D solar system in the browser, with orbital mechanics inspired motion, cinematic camera controls, and educational waypoints.',
+      'Interactive Three.js orrery: travel between the Sun, planets, and moons, toggle trails and points of interest, and read HUD facts.',
   },
 ];

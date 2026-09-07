@@ -37,38 +37,46 @@ const SolarSystem: React.FC<ProjectPageProps> = ({
       <h2 className="project-header">Key Features</h2>
       <ul className="project-list max-w-reading">
         <li className="mb-4">
-          <strong>Orbital Dynamics</strong>
+          <strong>Travel Between Bodies</strong>
           <br />
-          Observe the natural motion of planets as they follow their respective
-          orbits, giving you a sense of the scale and structure of our solar
-          system.
+          Click a body to fly to it, use the orbit nav to jump between the Sun,
+          planets, and major moons, or link straight to a focus with a URL hash
+          such as <code>#mars</code>. Travel favours the dayside so the surface
+          is lit when you arrive.
         </li>
         <li className="mb-4">
-          <strong>Planetary Waypoints</strong>
+          <strong>Orbit Trails &amp; Simulation Controls</strong>
           <br />
-          Access detailed waypoints for each planet, highlighting significant
-          locations such as the landing sites of Mars rovers, including
-          Curiosity and Perseverance.
+          Toggle orbit paths, ride the focused body&apos;s rotation with Spin,
+          and open Controls for simulation settings including speed—so you can
+          explore at your own pace.
         </li>
         <li className="mb-4">
-          <strong>Cinematic Camera Control</strong>
+          <strong>Points of Interest</strong>
           <br />
-          Rotate the camera around the planets like an orbiting satellite,
-          allowing you to view each planet in its entirety from different
-          angles.
+          Labels mark probes and landmarks on selected bodies, including Mars
+          rover landing sites such as Curiosity and Perseverance, Apollo on the
+          Moon, and features on Jupiter, Saturn, and Neptune.
         </li>
         <li className="mb-4">
-          <strong>Speed Control</strong>
+          <strong>Body Info Panel</strong>
           <br />
-          Adjust the speed of the model to explore the solar system at your own
-          pace, whether you want to experience rapid movements or slow,
-          deliberate exploration.
+          A HUD panel shows a short description and stats for the focused body
+          so orientation stays clear while you look around.
         </li>
         <li className="mb-4">
-          <strong>Day and Night Cycle</strong>
+          <strong>Atmospheres, Rings &amp; Lighting</strong>
           <br />
-          Witness the mesmerizing day and night cycles on each planet,
-          showcasing the interplay of light and shadow as they rotate.
+          Custom atmosphere glow, Saturn&apos;s rings and ring shadow, Earth
+          night lights, a bloomed Sun, and a subtle starfield give each world
+          depth beyond a flat texture map.
+        </li>
+        <li className="mb-4">
+          <strong>Cinematic Camera</strong>
+          <br />
+          Orbit the focused body like a satellite, with smooth focus
+          transitions and zoom suited to both planet-scale and close surface
+          views.
         </li>
       </ul>
     </Section>
