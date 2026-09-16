@@ -3,7 +3,7 @@ import { Layout } from '@components/Layout';
 import { ProjectItem } from '@components/ProjectItem';
 import { ProjectsFilterPanel } from '@components/ProjectsFilterPanel';
 import { Section } from '@components/Section';
-import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
+import { TelemetryHeading } from '@components/TelemetryHeading';
 import { projects } from '@utilities/Project';
 import { Project } from '@utilities/types';
 import React, { useState } from 'react';
@@ -20,9 +20,15 @@ const Projects: React.FC = () => {
   return (
     <Layout title="Project List - Kyle Gough">
       <Section>
-        <h1 className="projects-list-page-title mb-8 mt-12 text-center md:text-left">
-          <span className={extruded.nameExtruded}>Projects</span>
-        </h1>
+        <TelemetryHeading
+          as="h1"
+          kicker="Archive"
+          title="Projects"
+          align="responsive"
+          extrudedTitle
+          className="mb-8 mt-12"
+          titleClassName="projects-list-page-title"
+        />
       </Section>
 
       <ProjectsFilterPanel filter={filter} setFilter={setFilter} />

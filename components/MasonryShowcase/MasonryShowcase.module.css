@@ -5,31 +5,11 @@
 }
 
 .heading {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   max-width: 32rem;
   margin: 0 auto 2.25rem;
   padding: 0 0.5rem;
-}
-
-.headingKicker {
-  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--gothic-cyan, oklch(78% 0.12 200));
-  margin: 0 0 0.5rem;
-}
-
-.title {
-  font-family: var(--font-space-grotesk), system-ui, sans-serif;
-  font-size: clamp(1.75rem, 1rem + 2.2vw, 2.35rem);
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
-  color: var(--gothic-fg, oklch(93% 0.02 280));
-  text-shadow: 0 0 1.2rem oklch(50% 0.15 300 / 0.2);
-  margin: 0;
 }
 
 .masonryWrap {
@@ -56,6 +36,7 @@
 }
 
 .item {
+  --signal-delay: 0ms;
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -90,6 +71,66 @@
   contain: content;
 }
 
+/* CAD viewport corners — draw in as the signal locks. */
+.cadFrame {
+  position: absolute;
+  inset: 0.55rem;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.corner {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: var(--gothic-cyan, oklch(78% 0.12 200));
+  border-style: solid;
+  border-width: 0;
+  opacity: 0.15;
+  filter: drop-shadow(0 0 6px oklch(78% 0.12 200 / 0.45));
+  transition:
+    width 0.55s cubic-bezier(0.22, 1, 0.36, 1) var(--signal-delay),
+    height 0.55s cubic-bezier(0.22, 1, 0.36, 1) var(--signal-delay),
+    opacity 0.4s ease var(--signal-delay),
+    border-color 0.45s ease calc(var(--signal-delay) + 0.35s);
+}
+
+.cornerTl {
+  top: 0;
+  left: 0;
+  border-top-width: 1.5px;
+  border-left-width: 1.5px;
+}
+
+.cornerTr {
+  top: 0;
+  right: 0;
+  border-top-width: 1.5px;
+  border-right-width: 1.5px;
+}
+
+.cornerBl {
+  bottom: 0;
+  left: 0;
+  border-bottom-width: 1.5px;
+  border-left-width: 1.5px;
+}
+
+.cornerBr {
+  bottom: 0;
+  right: 0;
+  border-bottom-width: 1.5px;
+  border-right-width: 1.5px;
+}
+
+.itemAcquired .corner,
+.itemStatic .corner {
+  width: 1.15rem;
+  height: 1.15rem;
+  opacity: 1;
+  border-color: oklch(78% 0.12 200 / 0.85);
+}
+
 .image {
   position: relative;
   width: 100%;
@@ -108,8 +149,98 @@
     oklch(0% 0 0 / 0) 45%,
     oklch(3% 0.02 280 / 0.4) 100%
   );
+  z-index: 3;
+  pointer-events: none;
+}
+
+.imageSignal {
+  position: absolute;
+  inset: 0;
+  /* Blocky “signal lock” aperture — opens as the tile acquires. */
+  clip-path: inset(38% 22% 38% 22%);
+  filter:
+    brightness(1.35) contrast(1.25) saturate(0.35)
+    drop-shadow(-4px 0 0 oklch(78% 0.14 200 / 0.55))
+    drop-shadow(4px 0 0 oklch(72% 0.2 310 / 0.5));
+  transform: scale(1.06);
+  transition:
+    clip-path 0.95s cubic-bezier(0.22, 1, 0.36, 1) var(--signal-delay),
+    filter 0.9s cubic-bezier(0.22, 1, 0.36, 1) calc(var(--signal-delay) + 0.08s),
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1) var(--signal-delay);
+  will-change: clip-path, filter, transform;
+}
+
+.itemAcquired .imageSignal,
+.itemStatic .imageSignal {
+  clip-path: inset(0);
+  filter: brightness(1) contrast(1) saturate(1) drop-shadow(0 0 0 transparent);
+  transform: scale(1.01);
+}
+
+.chromaCyan,
+.chromaMagenta {
+  position: absolute;
+  inset: -2%;
   z-index: 1;
   pointer-events: none;
+  opacity: 0.55;
+  mix-blend-mode: screen;
+  transition: opacity 0.7s ease calc(var(--signal-delay) + 0.2s);
+}
+
+.chromaCyan {
+  background: linear-gradient(
+    90deg,
+    oklch(78% 0.14 200 / 0.35),
+    transparent 42%
+  );
+  transform: translateX(-6px);
+}
+
+.chromaMagenta {
+  background: linear-gradient(
+    270deg,
+    oklch(72% 0.2 310 / 0.35),
+    transparent 42%
+  );
+  transform: translateX(6px);
+}
+
+.itemAcquired .chromaCyan,
+.itemAcquired .chromaMagenta,
+.itemStatic .chromaCyan,
+.itemStatic .chromaMagenta {
+  opacity: 0;
+}
+
+.noiseMask {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.45;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 2px,
+      oklch(0% 0 0 / 0.28) 2px,
+      oklch(0% 0 0 / 0.28) 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 3px,
+      oklch(78% 0.12 200 / 0.08) 3px,
+      oklch(78% 0.12 200 / 0.08) 4px
+    );
+  mix-blend-mode: overlay;
+  transition: opacity 0.75s ease calc(var(--signal-delay) + 0.15s);
+}
+
+.itemAcquired .noiseMask,
+.itemStatic .noiseMask {
+  opacity: 0;
 }
 
 .tile :global(.home-feature-img) {
@@ -140,6 +271,30 @@
     var(--void-deep) 100%
   );
   border-top: 1px solid rgb(255 255 255 / 0.08);
+  overflow: hidden;
+}
+
+.bodyReveal {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  clip-path: inset(100% 0 0 0);
+  transform: translateY(0.65rem);
+  opacity: 0.35;
+  transition:
+    clip-path 0.75s cubic-bezier(0.22, 1, 0.36, 1)
+      calc(var(--signal-delay) + 0.28s),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1)
+      calc(var(--signal-delay) + 0.28s),
+    opacity 0.55s ease calc(var(--signal-delay) + 0.32s);
+}
+
+.itemAcquired .bodyReveal,
+.itemStatic .bodyReveal {
+  clip-path: inset(0);
+  transform: none;
+  opacity: 1;
 }
 
 .tile h3 {
@@ -224,6 +379,40 @@
   .tile,
   .tile :global(.home-feature-img) {
     transform: none;
+  }
+
+  .corner,
+  .imageSignal,
+  .chromaCyan,
+  .chromaMagenta,
+  .noiseMask,
+  .bodyReveal {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .corner {
+    width: 1.15rem;
+    height: 1.15rem;
+    opacity: 1;
+  }
+
+  .imageSignal {
+    clip-path: none;
+    filter: none;
+    transform: scale(1.01);
+  }
+
+  .chromaCyan,
+  .chromaMagenta,
+  .noiseMask {
+    opacity: 0;
+  }
+
+  .bodyReveal {
+    clip-path: none;
+    transform: none;
+    opacity: 1;
   }
 }
 
