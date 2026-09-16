@@ -1,8 +1,8 @@
 import heroStyles from '@components/Hero/Hero.module.css';
 import { ArrowForwardIcon } from '@components/Icons';
 import { TelemetryHeading } from '@components/TelemetryHeading';
-import { useObserveElement } from '@hooks/useObserveElement';
 import { usePrefersReducedMotion } from '@hooks/usePrefersReducedMotion';
+import { useScrollReveal } from '@hooks/useScrollReveal';
 import { getDateRange } from '@utilities/date';
 import {
   type FeaturedCaseStudy,
@@ -11,14 +11,9 @@ import {
 import { clsx } from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import styles from './MasonryShowcase.module.css';
-
-const TILE_OBSERVE: IntersectionObserverInit = {
-  threshold: 0.22,
-  rootMargin: '0px 0px -4% 0px',
-};
 
 const Tile: React.FC<{
   featured: FeaturedCaseStudy;
@@ -27,18 +22,11 @@ const Tile: React.FC<{
 }> = ({ featured, index, priority }) => {
   const when = getDateRange(featured.date);
   const img = featured.image;
-  const [tileRef, isVisible] = useObserveElement<HTMLDivElement>(TILE_OBSERVE);
+  const [tileRef, acquired] = useScrollReveal<HTMLDivElement>({
+    ratio: 0.28,
+    bottomExclusion: '16%',
+  });
   const reducedMotion = usePrefersReducedMotion();
-  const [acquired, setAcquired] = useState(false);
-
-  useEffect(() => {
-    if (!isVisible) return;
-    const frame = requestAnimationFrame(() => {
-      setAcquired(true);
-    });
-    return () => cancelAnimationFrame(frame);
-  }, [isVisible]);
-
   const columnDelayMs = reducedMotion ? 0 : (index % 2) * 140;
 
   return (

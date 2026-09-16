@@ -48,4 +48,13 @@ describe('TelemetryHeading', () => {
       screen.getByRole('heading', { name: 'Work Experience' }),
     ).toBeVisible();
   });
+
+  it('keeps the title clipped until scroll reveal fires', () => {
+    const { container } = render(
+      <TelemetryHeading kicker="Selected" title="Case Studies" />,
+    );
+    const root = container.firstElementChild as HTMLElement;
+    expect(root.className).not.toMatch(/rootDecoded/);
+    expect(root.className).not.toMatch(/rootStatic/);
+  });
 });

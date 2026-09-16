@@ -1,8 +1,8 @@
 import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
-import { useObserveElement } from '@hooks/useObserveElement';
 import { usePrefersReducedMotion } from '@hooks/usePrefersReducedMotion';
+import { useScrollReveal } from '@hooks/useScrollReveal';
 import { clsx } from 'clsx';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 
 import styles from './TelemetryHeading.module.css';
 
@@ -24,11 +24,6 @@ interface TelemetryHeadingProps {
   variant?: 'showcase' | 'section';
 }
 
-const OBSERVE_OPTIONS: IntersectionObserverInit = {
-  threshold: 0.45,
-  rootMargin: '0px 0px -6% 0px',
-};
-
 const DEPTH_LAYERS = 3;
 
 export const TelemetryHeading: React.FC<TelemetryHeadingProps> = ({
@@ -42,18 +37,11 @@ export const TelemetryHeading: React.FC<TelemetryHeadingProps> = ({
   titleClassName,
   variant = 'showcase',
 }) => {
-  const [rootRef, isVisible] = useObserveElement<HTMLDivElement>(OBSERVE_OPTIONS);
+  const [rootRef, decoded] = useScrollReveal<HTMLDivElement>({
+    ratio: 0.45,
+    bottomExclusion: '20%',
+  });
   const reducedMotion = usePrefersReducedMotion();
-  const [decoded, setDecoded] = useState(false);
-
-  useEffect(() => {
-    if (!isVisible) return;
-    const frame = requestAnimationFrame(() => {
-      setDecoded(true);
-    });
-    return () => cancelAnimationFrame(frame);
-  }, [isVisible]);
-
   const TitleTag = as;
 
   const kickerChars = useMemo(() => {
