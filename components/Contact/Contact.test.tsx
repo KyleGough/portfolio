@@ -9,6 +9,19 @@ const MESSAGE_METER_TEST_ID = 'contact-form-message-meter';
 describe('Contact component', () => {
   beforeEach(() => {
     mockIntersectionObserver();
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      value: jest.fn().mockImplementation((query: string) => ({
+        matches: false,
+        media: query,
+        onchange: null,
+        addListener: jest.fn(),
+        removeListener: jest.fn(),
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn(),
+        dispatchEvent: jest.fn(),
+      })),
+    });
     global.fetch = jest.fn();
   });
   afterEach(() => {

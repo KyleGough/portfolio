@@ -206,7 +206,7 @@
       motion-reduce:transition-colors;
   }
 
-  /* GitHub / Website on case studies: soft pill, not harsh outlined square */
+  /* GitHub / Live on case studies: soft pill, not harsh outlined square */
   .project-header-cta {
     @apply my-2 inline-flex items-center gap-2 rounded-full font-primary text-sm font-medium
       text-link

@@ -55,7 +55,7 @@
 }
 
 .rootDecoded .kickerChar {
-  animation: telemetryCharDecode 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: telemetryCharDecode 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .titleShell {
@@ -109,7 +109,7 @@
 }
 
 .rootDecoded .titleFace {
-  transition: clip-path 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.12s;
+  transition: clip-path 1.15s cubic-bezier(0.22, 1, 0.36, 1) 0.12s;
   clip-path: inset(0 -2% 0 -2%);
 }
 
@@ -153,7 +153,7 @@
 }
 
 .rootDecoded .depthLayer {
-  animation: telemetryDepthAssemble 0.7s cubic-bezier(0.22, 1, 0.36, 1)
+  animation: telemetryDepthAssemble 0.9s cubic-bezier(0.22, 1, 0.36, 1)
     forwards;
 }
 
@@ -193,8 +193,9 @@
 }
 
 .rootDecoded .scan {
-  animation: telemetryScanSweep 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.12s
-    forwards;
+  animation:
+    telemetryScanSweep 1.15s cubic-bezier(0.22, 1, 0.36, 1) 0.12s forwards,
+    telemetryScanFade 1.15s linear 0.12s forwards;
 }
 
 @keyframes telemetryCharDecode {
@@ -232,17 +233,28 @@
 
 @keyframes telemetryScanSweep {
   0% {
-    left: 0;
+    left: 8px;
+  }
+  100% {
+    left: calc(100% + 6px);
+  }
+}
+
+/* Linear fade: start 750ms before the swipe ends, reach 0% at 200ms remaining. */
+@keyframes telemetryScanFade {
+  0% {
     opacity: 0;
   }
   8% {
     opacity: 1;
   }
-  88% {
+  34.7826% {
     opacity: 1;
   }
+  82.6087% {
+    opacity: 0;
+  }
   100% {
-    left: calc(100% - 2px);
     opacity: 0;
   }
 }
