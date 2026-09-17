@@ -1,7 +1,7 @@
 import { Layout } from '@components/Layout';
 import { Link } from '@components/Link';
 import { Section } from '@components/Section';
-import { TelemetryHeading } from '@components/TelemetryHeading';
+import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
 import React from 'react';
 
 import styles from './privacy.module.css';
@@ -12,15 +12,9 @@ const Privacy: React.FC = () => {
       <Section>
         <article className={styles.page}>
           <header className={styles.header}>
-            <TelemetryHeading
-              as="h1"
-              kicker="Notice"
-              title="Privacy"
-              align="responsive"
-              extrudedTitle
-              className="mb-8 mt-16 md:mt-20"
-              titleClassName="projects-list-page-title"
-            />
+            <h1 className="projects-list-page-title mb-8 mt-16 text-center md:mt-20 md:text-left">
+              <span className={extruded.nameExtruded}>Privacy</span>
+            </h1>
             <p className={styles.meta}>
               Last updated <time dateTime="2026-04-25">25 April 2026</time>
             </p>

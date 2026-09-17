@@ -35,10 +35,9 @@ describe('TelemetryHeading', () => {
       />,
     );
 
-    expect(screen.getByRole('heading', { name: 'Case Studies' })).toHaveAttribute(
-      'id',
-      'case-studies',
-    );
+    expect(
+      screen.getByRole('heading', { name: 'Case Studies' }),
+    ).toHaveAttribute('id', 'case-studies');
     expect(screen.getByLabelText('Selected')).toBeInTheDocument();
   });
 

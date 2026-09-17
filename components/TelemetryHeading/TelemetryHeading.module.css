@@ -83,17 +83,10 @@
   will-change: clip-path;
 }
 
-/* Showcase / section titles: cool ink. Extruded titles keep the hero face colour. */
+/* Showcase / section titles: cool ink. */
 .titleFaceInk {
   color: var(--gothic-fg, oklch(93% 0.02 280));
   text-shadow: 0 0 1.2rem oklch(50% 0.15 300 / 0.2);
-}
-
-.titleFaceH1 {
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-  letter-spacing: inherit;
 }
 
 .titleFaceProjectHeader {
@@ -153,8 +146,7 @@
 }
 
 .rootDecoded .depthLayer {
-  animation: telemetryDepthAssemble 0.9s cubic-bezier(0.22, 1, 0.36, 1)
-    forwards;
+  animation: telemetryDepthAssemble 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .rootDecoded .depthLayer:nth-child(1) {
