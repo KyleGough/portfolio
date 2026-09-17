@@ -1,7 +1,8 @@
 import { Chip } from '@components/Chip';
-import { GitHubIcon, StarIcon, WebsiteIcon } from '@components/Icons';
+import { GitHubIcon, LiveIcon, StarIcon } from '@components/Icons';
 import { Link } from '@components/Link';
 import { Section } from '@components/Section';
+import extruded from '@components/SpaceExtrudedTitle/extrudedTitle.module.css';
 import { getFormattedDate, getShortDate } from '@utilities/date';
 import { Project } from '@utilities/types';
 import React from 'react';
@@ -21,7 +22,11 @@ export const ProjectHeader: React.FC<ProjectHeaderProps> = ({
 }) => {
   return (
     <Section>
-      <h1 className="project-title">{project.title}</h1>
+      <h1
+        className={`projects-list-page-title mt-12 ${extruded.nameExtruded}`}
+      >
+        {project.title}
+      </h1>
       <p className="my-3 font-primary text-sm font-medium tabular-nums tracking-wide text-link-hover">
         <time dateTime={getShortDate(project.date.start)}>
           {getFormattedDate(project.date.start)}
@@ -42,6 +47,15 @@ export const ProjectHeader: React.FC<ProjectHeaderProps> = ({
 
       {(project.github || project.liveLink) && (
         <div className="flex flex-col items-start gap-1 sm:flex-row sm:flex-wrap sm:gap-3">
+          {project.liveLink && (
+            <Link
+              className="project-header-cta group w-fit"
+              href={project.liveLink}
+            >
+              <LiveIcon className="project-header-cta__icon" />
+              Live
+            </Link>
+          )}
           {project.github && (
             <>
               {typeof githubStargazerCount === 'number' ? (
@@ -71,15 +85,6 @@ export const ProjectHeader: React.FC<ProjectHeaderProps> = ({
                 </Link>
               )}
             </>
-          )}
-          {project.liveLink && (
-            <Link
-              className="project-header-cta group w-fit"
-              href={project.liveLink}
-            >
-              <WebsiteIcon className="project-header-cta__icon" />
-              Website
-            </Link>
           )}
         </div>
       )}

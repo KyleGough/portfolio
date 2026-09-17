@@ -32,10 +32,33 @@ describe('ProjectHeader component', () => {
   it('renders', () => {
     render(<ProjectHeader project={baseProject} />);
 
-    expect(screen.getByText('Portfolio')).toBeVisible();
+    expect(screen.getByRole('heading', { name: 'Portfolio' })).toBeVisible();
     expect(screen.getByText('Jan 2021')).toBeVisible();
     expect(screen.getByText('Mar 2022')).toBeVisible();
     expect(screen.getByText('Personal portfolio website')).toBeVisible();
     expect(screen.getByText('TypeScript')).toBeVisible();
+  });
+
+  it('renders the live link before GitHub links', () => {
+    render(
+      <ProjectHeader
+        project={{
+          ...baseProject,
+          liveLink: 'https://example.com',
+        }}
+        githubStargazerCount={12}
+      />,
+    );
+
+    const live = screen.getByRole('link', { name: 'Live' });
+    const github = screen.getByRole('link', { name: 'GitHub' });
+    const stargazers = screen.getByRole('link', { name: '12' });
+
+    expect(live.compareDocumentPosition(github)).toBe(
+      Node.DOCUMENT_POSITION_FOLLOWING,
+    );
+    expect(github.compareDocumentPosition(stargazers)).toBe(
+      Node.DOCUMENT_POSITION_FOLLOWING,
+    );
   });
 });

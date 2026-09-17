@@ -1,4 +1,5 @@
 import { UnfoldIcon } from '@components/Icons';
+import { projects } from '@utilities/Project';
 import { clsx } from 'clsx';
 import React, { useCallback, useEffect, useId, useRef, useState } from 'react';
 
@@ -21,6 +22,11 @@ const filters = [
   'Three.js',
   'Web',
 ];
+
+const countProjectsForFilter = (name: string): number =>
+  name === 'All'
+    ? projects.length
+    : projects.filter((project) => project.filters.includes(name)).length;
 
 export const ProjectFilter: React.FC<ProjectFilterProps> = ({
   filter,
@@ -97,6 +103,7 @@ export const ProjectFilter: React.FC<ProjectFilterProps> = ({
             {filters.map((name) => (
               <ProjectFilterSelection
                 key={name}
+                count={countProjectsForFilter(name)}
                 onSelect={setValue}
                 selected={filter === name}
                 value={name}

@@ -24,4 +24,17 @@ describe('ProjectFilter component', () => {
     fireEvent.click(filterBtn);
     expect(screen.queryByRole('listbox')).toBeInTheDocument();
   });
+
+  it('shows a project count for each filter option', () => {
+    const onFilter = jest.fn();
+    render(<ProjectFilter filter="All" setFilterCallback={onFilter} />);
+
+    fireEvent.click(screen.getByRole('button'));
+
+    const options = screen.getAllByRole('option');
+    expect(options.length).toBeGreaterThan(1);
+    options.forEach((option) => {
+      expect(option).toHaveTextContent(/\(\d+\)$/);
+    });
+  });
 });

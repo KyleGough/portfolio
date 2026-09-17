@@ -9,11 +9,13 @@ describe('ProjectFilterSelection component', () => {
     render(
       <ProjectFilterSelection
         value="Web"
+        count={5}
         onSelect={onSelect}
         selected={false}
       />,
     );
 
     expect(screen.getByText('Web')).toBeVisible();
+    expect(screen.getByText('(5)')).toBeVisible();
   });
 });

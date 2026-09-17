@@ -5,31 +5,11 @@
 }
 
 .heading {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   max-width: 32rem;
   margin: 0 auto 2.25rem;
   padding: 0 0.5rem;
-}
-
-.headingKicker {
-  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--gothic-cyan, oklch(78% 0.12 200));
-  margin: 0 0 0.5rem;
-}
-
-.title {
-  font-family: var(--font-space-grotesk), system-ui, sans-serif;
-  font-size: clamp(1.75rem, 1rem + 2.2vw, 2.35rem);
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
-  color: var(--gothic-fg, oklch(93% 0.02 280));
-  text-shadow: 0 0 1.2rem oklch(50% 0.15 300 / 0.2);
-  margin: 0;
 }
 
 .masonryWrap {

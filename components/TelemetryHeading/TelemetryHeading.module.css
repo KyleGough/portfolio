@@ -1,0 +1,299 @@
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 36rem;
+}
+
+.alignCenter {
+  margin-inline: auto;
+  text-align: center;
+  align-items: center;
+}
+
+.alignStart {
+  margin-inline: 0;
+  text-align: left;
+  align-items: flex-start;
+}
+
+.alignResponsive {
+  margin-inline: auto;
+  text-align: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .alignResponsive {
+    margin-inline: 0;
+    text-align: left;
+    align-items: flex-start;
+  }
+}
+
+.kicker {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: inherit;
+  margin: 0;
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gothic-cyan, oklch(78% 0.12 200));
+  line-height: 1.4;
+}
+
+.kickerChar {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(0.35em) scale(0.92);
+  will-change: transform, opacity, filter, color;
+}
+
+.rootDecoded .kickerChar {
+  animation: telemetryCharDecode 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.titleShell {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  /* Clip hosts the CRT wipe; overflow keeps the scan bar inside the title. */
+  overflow: hidden;
+  vertical-align: top;
+  text-align: inherit;
+}
+
+.titleFace {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  margin: 0;
+  max-width: 100%;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
+  font-size: clamp(1.75rem, 1rem + 2.2vw, 2.35rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  clip-path: inset(0 105% 0 -2%);
+  will-change: clip-path;
+}
+
+/* Showcase / section titles: cool ink. */
+.titleFaceInk {
+  color: var(--gothic-fg, oklch(93% 0.02 280));
+  text-shadow: 0 0 1.2rem oklch(50% 0.15 300 / 0.2);
+}
+
+.titleFaceProjectHeader {
+  font-size: clamp(1.3125rem, 0.5rem + 1.5vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 1.5rem oklch(50% 0.15 300 / 0.25);
+}
+
+.variantSection .depthLayer {
+  font-size: clamp(1.3125rem, 0.5rem + 1.5vw, 1.75rem);
+  letter-spacing: -0.02em;
+}
+
+.rootDecoded .titleFace {
+  transition: clip-path 1.15s cubic-bezier(0.22, 1, 0.36, 1) 0.12s;
+  clip-path: inset(0 -2% 0 -2%);
+}
+
+/* Ghost depth plates: assemble behind the face as the wipe runs. */
+.depthStack {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.depthLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
+  font-size: clamp(1.75rem, 1rem + 2.2vw, 2.35rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  white-space: pre-wrap;
+  opacity: 0;
+  transform: translate3d(0, 0, 0);
+  color: oklch(55% 0.12 290 / 0.35);
+}
+
+.depthLayer:nth-child(1) {
+  transform: translate3d(3px, 3px, 0);
+  color: oklch(42% 0.1 285 / 0.45);
+}
+
+.depthLayer:nth-child(2) {
+  transform: translate3d(6px, 6px, 0);
+  color: oklch(32% 0.08 285 / 0.4);
+}
+
+.depthLayer:nth-child(3) {
+  transform: translate3d(9px, 9px, 0);
+  color: oklch(24% 0.06 285 / 0.32);
+}
+
+.rootDecoded .depthLayer {
+  animation: telemetryDepthAssemble 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.rootDecoded .depthLayer:nth-child(1) {
+  animation-delay: 0.28s;
+}
+
+.rootDecoded .depthLayer:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.rootDecoded .depthLayer:nth-child(3) {
+  animation-delay: 0.52s;
+}
+
+.scan {
+  position: absolute;
+  top: 8%;
+  bottom: 8%;
+  left: 0;
+  z-index: 3;
+  width: 2px;
+  border-radius: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--gothic-cyan, oklch(78% 0.12 200)) 18%,
+    oklch(92% 0.08 200) 50%,
+    var(--gothic-magenta, oklch(72% 0.2 310)) 82%,
+    transparent 100%
+  );
+  box-shadow:
+    0 0 10px oklch(78% 0.12 200 / 0.75),
+    0 0 22px oklch(72% 0.2 310 / 0.35);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.rootDecoded .scan {
+  animation:
+    telemetryScanSweep 1.15s cubic-bezier(0.22, 1, 0.36, 1) 0.12s forwards,
+    telemetryScanFade 1.15s linear 0.12s forwards;
+}
+
+@keyframes telemetryCharDecode {
+  0% {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(0.35em) scale(0.92);
+    color: oklch(78% 0.12 200 / 0.2);
+  }
+  35% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(-0.05em) scale(1.04);
+    color: var(--gothic-magenta, oklch(72% 0.2 310));
+  }
+  55% {
+    color: oklch(92% 0.08 200);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+    color: var(--gothic-cyan, oklch(78% 0.12 200));
+  }
+}
+
+@keyframes telemetryDepthAssemble {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes telemetryScanSweep {
+  0% {
+    left: 8px;
+  }
+  100% {
+    left: calc(100% + 6px);
+  }
+}
+
+/* Linear fade: start 750ms before the swipe ends, reach 0% at 200ms remaining. */
+@keyframes telemetryScanFade {
+  0% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  34.7826% {
+    opacity: 1;
+  }
+  82.6087% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Final state without motion (a11y + already-decoded). */
+.rootStatic .kickerChar {
+  opacity: 1;
+  filter: none;
+  transform: none;
+  animation: none;
+  color: var(--gothic-cyan, oklch(78% 0.12 200));
+}
+
+.rootStatic .titleFace {
+  clip-path: none;
+  transition: none;
+}
+
+.rootStatic .depthLayer {
+  opacity: 1;
+  animation: none;
+}
+
+.rootStatic .scan {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kickerChar {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    animation: none !important;
+    color: var(--gothic-cyan, oklch(78% 0.12 200));
+  }
+
+  .titleFace {
+    clip-path: none !important;
+    transition: none !important;
+  }
+
+  .depthLayer {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+
+  .scan {
+    display: none !important;
+  }
+}

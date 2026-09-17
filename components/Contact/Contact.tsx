@@ -1,4 +1,5 @@
 import { FadeIn } from '@components/FadeIn';
+import { TelemetryHeading } from '@components/TelemetryHeading';
 import { clsx } from 'clsx';
 import React, { useState } from 'react';
 
@@ -105,9 +106,13 @@ export const Contact: React.FC = () => {
   return (
     <form className="contact-form flex w-full justify-center">
       <fieldset className="w-full max-w-field">
-        <legend className="project-header mb-10 w-full text-center lg:text-left">
-          Contact Me
-        </legend>
+        <legend className="sr-only">Contact Me</legend>
+        <TelemetryHeading
+          title="Contact Me"
+          align="responsive"
+          variant="section"
+          className="mb-10 w-full"
+        />
 
         <FadeIn className="group">
           <ContactLabel valid={!nameError} isSent={isSent} htmlFor="name">
