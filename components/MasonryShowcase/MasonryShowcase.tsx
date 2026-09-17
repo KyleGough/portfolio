@@ -1,6 +1,7 @@
 import { FadeIn } from '@components/FadeIn';
 import heroStyles from '@components/Hero/Hero.module.css';
 import { ArrowForwardIcon } from '@components/Icons';
+import { TelemetryHeading } from '@components/TelemetryHeading';
 import { getDateRange } from '@utilities/date';
 import {
   type FeaturedCaseStudy,
@@ -61,10 +62,11 @@ export const MasonryShowcase: React.FC = () => {
     >
       <div className="container text-primary py-8 md:py-12">
         <header className={styles.heading}>
-          <p className={styles.headingKicker}>Selected</p>
-          <h2 className={styles.title} id="featured-heading">
-            Case Studies
-          </h2>
+          <TelemetryHeading
+            id="featured-heading"
+            kicker="Selected"
+            title="Case Studies"
+          />
         </header>
 
         <div className={styles.masonryWrap}>

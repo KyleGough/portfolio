@@ -4,6 +4,7 @@ import { Hero } from '@components/Hero';
 import { Layout } from '@components/Layout';
 import { MasonryShowcase } from '@components/MasonryShowcase';
 import { Section } from '@components/Section';
+import { TelemetryHeading } from '@components/TelemetryHeading';
 import { TimelineWidget } from '@components/TimelineWidget';
 import { useObserveElement } from '@hooks/useObserveElement';
 import { clsx } from 'clsx';
@@ -29,9 +30,13 @@ const Home: React.FC = () => {
 
       <div className="min-h-0 border-t border-divider">
         <Section id="work-experience">
-          <h2 className="mb-6 text-center project-header md:mb-8 md:text-left">
-            Work Experience
-          </h2>
+          <TelemetryHeading
+            className="mb-6 md:mb-8"
+            kicker="Career"
+            title="Work Experience"
+            align="responsive"
+            variant="section"
+          />
           <TimelineWidget />
         </Section>
       </div>
